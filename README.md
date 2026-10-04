@@ -12,8 +12,11 @@
 - `CONTEXT.md`：领域术语草稿。
 - `process/tasks.md`：起步任务定义草稿。
 - `process/meetings/meeting-template.md`：会议纪要初版模板。
+- `docs/decisions/team-workflow-interview.md`：M1 Team Workflow 采访决策记录，未确认分支单独标记。
+- `docs/ai-workflow.md`：项目级 AI 协作方式草稿。
+- `AGENTS.md`：给 AI coding agent 的最小项目入口与硬约束。
 
-草稿不等于团队正式约定，未补齐的内容不能原样提交。组长的本地启动说明不进入本仓库。
+草稿不等于团队正式约定，未补齐的内容不能原样提交。组长的本地启动说明不进入本仓库。Matt Pocock skills 不复制进仓库，只记录项目如何使用这类外部工作方法。
 
 ## 目录
 
