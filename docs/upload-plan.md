@@ -1,6 +1,6 @@
 # 待上传材料清单
 
-更新日期：2026-10-04。本文件只说明目录用途、预计文件和上传检查，不包含现有讨论稿正文。名称是建议，最终以组长审阅后的文件为准。
+更新日期：2026-10-04。本文件记录材料状态、预计文件和上传检查，不包含各讨论稿正文。草稿允许入库，不代表已经成为正式约定或可直接提交的材料。
 
 ## 当前已放入仓库
 
@@ -8,7 +8,20 @@
 - `docs/upload-plan.md`，本清单。
 - 各目录的 `.gitkeep` 占位文件。
 
-当前没有 Team Workflow、Vision & Scope、汇报讨论稿、课件、截图、成员资料、实现代码或实验数据。以下均是预计上传项，不能据此认为已完成。
+## 本批获准上传的材料
+
+| 仓库位置 | 材料状态 |
+| --- | --- |
+| `docs/requirements/team-workflow.md` | 草稿 |
+| `docs/requirements/vision-and-scope.md` | 草稿 |
+| `presentations/proposal-outline.md` | 草稿，未制作 PPT 或 PDF |
+| `CONTEXT.md` | 草稿 |
+| `process/tasks.md` | 草稿，只定义任务与验收标准，不维护实时状态 |
+| `process/meetings/meeting-template.md` | 初版模板，不是实际会议记录 |
+| `docs/sources/0 - Project (2026).pdf` | 原始课程课件 |
+| `docs/sources/background-notes.md` | 初版背景整理，区分来源与待核实项 |
+
+本地项目启动说明不上传，仅在本地同步更新。尚无实际会议截图、Notion 工作区、成员邀请、项目实现或实验结果。此批同时更新仓库首页和本清单，其他修订不自动上传。
 
 ## 近期准备上传
 
@@ -21,6 +34,7 @@
 | `docs/requirements/vision-and-scope.md` | Milestone 2 审阅版 | 确认目标、范围、路线、风险与验收，不写未经验证的结果 |
 | `docs/requirements/vision-and-scope.pdf` | Vision & Scope 提交 PDF | 不超过 5 页，检查字体、表格和版本 |
 | `CONTEXT.md` | 经审阅的领域术语表 | 统一相关记忆、有效记忆、来源证据与状态关系定义 |
+| `process/tasks.md` | 任务定义与验收依据 | 不增加负责人、期限、进度等实时状态列；范围变化时修订 |
 | `process/meetings/meeting-template.md` | 经团队确认的会议纪要模板 | 标为模板，不宣称会议已举行 |
 | `process/meetings/YYYY-MM-DD-kickoff.md` | 首次真实会议纪要 | 日期为实际会议日期，记录真实参会、决定与行动项 |
 | `process/meetings/YYYY-MM-DD-kickoff.png` | 对应会议截图 | 确认共享范围，遮去无关通知、私人信息和凭据 |
@@ -48,7 +62,7 @@ Milestone 1/2 的最终文件组织、是否分开提交 PDF、过程 ZIP 内容
 
 ## 暂不上传或配置
 
-- 现有本地讨论稿，等待组长修改后的明确上传确认。
+- 本地项目启动说明，以及未经本次批准的文档或修订。
 - API key、token、cookie、真实 `.env` 或带凭据的日志。后续只能上传不含真实值的 `.env.example`。
 - 微信私密历史、无关个人资料或未经处理的会议截图。
 - 未审查的生成代码、虚构实验结果或模板伪造的会议记录。
@@ -58,4 +72,4 @@ Milestone 1/2 的最终文件组织、是否分开提交 PDF、过程 ZIP 内容
 
 组长指定本次文件与版本 → 检查共享范围、占位项和敏感信息 → 明确确认上传 → 仅上传批准的文件 → 核对远端路径与内容 → 记录实际结果。
 
-首轮目录初始化之外的上传，需另行确认。本仓库不自动读取或同步本地启动包。
+本批之外的上传需另行确认。本仓库不自动读取或同步本地启动包。PDF、可编辑演示文件暂不制作，待组长决定后再处理。

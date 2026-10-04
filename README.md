@@ -1,6 +1,19 @@
 # locomo-dynamic-memory
 
-软件需求工程课程项目仓库。当前仅初始化资料目录和待上传清单，没有上传项目讨论稿，也没有项目实现或实验结果。
+软件需求工程课程项目仓库，当前处于起步阶段。资料包含课程课件、整理后的背景笔记、经组长允许入库的草稿，以及会议纪要初版模板。没有项目实现或实验结果。
+
+## 资料入口
+
+- `docs/sources/0 - Project (2026).pdf`：课程原始课件。
+- `docs/sources/background-notes.md`：背景信息整理版，区分来源和待核实项。
+- `docs/requirements/team-workflow.md`：Team Workflow 草稿。
+- `docs/requirements/vision-and-scope.md`：Vision & Scope 草稿。
+- `presentations/proposal-outline.md`：汇报提纲草稿，尚非可直接展示的 PPT。
+- `CONTEXT.md`：领域术语草稿。
+- `process/tasks.md`：起步任务定义草稿。
+- `process/meetings/meeting-template.md`：会议纪要初版模板。
+
+草稿不等于团队正式约定，未补齐的内容不能原样提交。组长的本地启动说明不进入本仓库。
 
 ## 目录
 
@@ -22,7 +35,7 @@
 
 预计材料与上传条件见 `docs/upload-plan.md`。该清单不是正式需求或分工文件。
 
-- 项目讨论稿由组长修改并确认后再上传，不自动同步本地文件。
+- 项目资料按组长逐批确认的范围上传，不自动同步本地文件。当前允许入库的草稿不意味着未来修订也自动获准上传。
 - Notion 保存实时任务状态；仓库只保存注明导出时间的阶段快照。
 - 不上传真实凭据、私密聊天或未经检查的截图。只邀请经组长确认的成员。
 - 不把模板当作真实会议记录，不把计划写成已实现结果。
