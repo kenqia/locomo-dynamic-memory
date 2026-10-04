@@ -1,2 +1,28 @@
 # locomo-dynamic-memory
-Software Requirements Engineering course project: dynamic conversational memory
+
+软件需求工程课程项目仓库。当前仅初始化资料目录和待上传清单，没有上传项目讨论稿，也没有项目实现或实验结果。
+
+## 目录
+
+| 目录 | 预计内容 |
+| --- | --- |
+| `docs/sources/` | 经确认可共享的课程原始材料、来源说明 |
+| `docs/requirements/` | 审阅后的 Team Workflow、Vision & Scope，后续需求规格 |
+| `docs/design/` | 后续模块设计、接口约定和必要的决策记录 |
+| `process/meetings/` | 真实会议纪要及经检查的截图 |
+| `process/snapshots/` | Notion 阶段任务快照、阶段复盘和提交记录 |
+| `presentations/` | 审阅后的汇报源文件与导出 PDF |
+| `src/` | 后续项目源代码 |
+| `tests/` | 后续测试代码与不含敏感信息的样例 |
+| `experiments/` | 后续评测说明、运行配置记录和实验结果 |
+
+各目录的 `.gitkeep` 仅用于保留目录，没有业务含义。技术栈、依赖、CI 和运行方式尚未配置。
+
+## 上传前检查
+
+预计材料与上传条件见 `docs/upload-plan.md`。该清单不是正式需求或分工文件。
+
+- 项目讨论稿由组长修改并确认后再上传，不自动同步本地文件。
+- Notion 保存实时任务状态；仓库只保存注明导出时间的阶段快照。
+- 不上传真实凭据、私密聊天或未经检查的截图。只邀请经组长确认的成员。
+- 不把模板当作真实会议记录，不把计划写成已实现结果。
