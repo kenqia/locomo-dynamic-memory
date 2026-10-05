@@ -30,3 +30,9 @@
 预计材料见 `docs/upload-plan.md`。
 
 - Notion 保存实时任务状态；仓库只保存注明导出时间的阶段快照。
+
+## M1 Team Workflow
+
+- [Markdown 源稿](docs/requirements/team-workflow.md)
+- [可编辑 Word](docs/requirements/team-workflow.docx)
+- [PDF](docs/requirements/team-workflow.pdf)

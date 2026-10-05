@@ -21,5 +21,9 @@ notes, and client setup.
 
 ### skills
 
-使用`.agent/skills/to-spec`生成并且成功上传的specs，额外复制到`docs/specs/`内
-使用`.agent/skills/to-tickets`生成并且成功上传的tickets，额外复制到`process/tickets/`内
+使用`.agents/skills/to-spec`生成并且成功上传的specs，额外复制到`docs/specs/`内
+使用`.agents/skills/to-tickets`生成并且成功上传的tickets，额外复制到`process/tickets/`内
+
+### Notion 任务更新
+
+AI 在获授权创建、领取、送审、标记阻塞或验收任务时，同步更新已关联的 Notion 任务记录和 Issue/PR 链接；只有非作者复核通过且合并、验证完成后才标记“完成”。缺少关联、权限或更新失败时，明确报告未同步项，由负责人补录，不宣称已同步；不重复复制 spec、ticket 正文，也不持续后台运行。
