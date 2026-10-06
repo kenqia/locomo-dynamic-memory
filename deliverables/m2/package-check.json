@@ -1,6 +1,6 @@
 {
   "report_pages": 5,
-  "archive_files": 36,
+  "archive_files": 49,
   "zip_crc": "pass",
   "payload_hashes": "pass",
   "manifest": "pass",
@@ -14,7 +14,8 @@
   "report_matches_repository": true,
   "all_archive_files_match_repository": true,
   "member_review": "pending",
-  "notion_updated": false,
-  "remote_write": false,
+  "notion_updated": true,
+  "remote_write": true,
+  "github_remote_write": false,
   "submitted": false
 }

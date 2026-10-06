@@ -1,0 +1,17 @@
+{
+  "report_pages": 5,
+  "archive_files": 36,
+  "zip_crc": "pass",
+  "payload_hashes": "pass",
+  "manifest": "pass",
+  "safe_relative_paths": "pass",
+  "offline_html_links": "pass",
+  "report_hashes": "pass",
+  "credential_pattern_check": "pass",
+  "all_archive_files_match_repository": true,
+  "report_matches_repository": true,
+  "notion_updated": true,
+  "member_review_current_revision": "pending",
+  "github_remote_write": false,
+  "submitted": false
+}

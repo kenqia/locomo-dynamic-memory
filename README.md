@@ -37,6 +37,8 @@
 - [可编辑 Word](docs/requirements/team-workflow.docx)
 - [PDF](docs/requirements/team-workflow.pdf)
 
+M1 源稿修改后运行 `python scripts/build_m1_report.py` 重建 Word，PDF 使用 LibreOffice 导出。
+
 ## M2 项目提案
 
 本轮制作中文报告和过程材料，暂不制作汇报文件。宏观方案由组长确认全组接受；当前文件属于本地制作版本，成员非作者复核、远端同步与正式提交按真实进度另行完成。
@@ -56,3 +58,9 @@
 修改源稿后可运行 `python scripts/build_m2_report.py` 重建 Word 和图示，所需环境及 PDF 渲染方式见验证记录。当前分支 `codex/m2-proposal-materials` 用于本轮留档，正式合并、推送和提交仍按复核及授权执行。
 
 M2 联网调研依据见 [现实系统与基准调研](docs/sources/m2-real-world-memory-research.md)。报告采用一手资料修订问题、可行性与评测边界；调研前快照保存在 `process/m2/iterations/vision-and-scope-before-research.md`。两者均进入过程 ZIP，不代表已运行系统实验。
+
+## 过程材料同步与打包
+
+修改任务快照或成员反馈后，运行 `python scripts/build_process_documents.py` 重建对应 Word，再使用 LibreOffice 导出同名 PDF。执行 `python scripts/package_m1_materials.py` 与 `python scripts/package_m2_materials.py` 重建两个过程包。
+
+包内包含检查结果、文件清单和 SHA-256。版本记录仅保存演进，当前哈希由脚本生成；M1 另附独立报告校验。新任务快照不覆盖历史 CSV，成员反馈表只记录真实结果。

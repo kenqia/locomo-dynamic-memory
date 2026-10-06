@@ -1,58 +1,35 @@
-# M2 本地制作验证记录
+# M2 文档与过程包验证
 
-日期：2026-10-06。验证对象为本轮报告、简化图和过程包，不包括未来系统实现与实验效果。
+日期：2026-10-06。验证范围为报告、图示和过程包。
 
-## 文档环境
+## 文档构建与检查
 
-当前会话未提供 `load_workspace_dependencies`，本轮以本机已有 Python、python-docx、Pillow、LibreOffice 7.3 与 Poppler 作为替代。标准文档渲染脚本缺少 pdf2image，因此在 `/tmp/locomo-m2-docs-20261006` 创建临时隔离环境，使用既有包并仅补充 pdf2image 1.17.0。没有修改系统配置或项目生产依赖。
-
-图示使用 Noto Sans CJK SC，保留可编辑 SVG 与高分辨率 PNG。Word 正文使用 11 pt 中文字体；表格按内容使用 9.5–10 pt。PDF 从 Word 渲染导出，避免分别制作而产生内容漂移。
-
-## 实际命令
+使用 Python、python-docx、Pillow、LibreOffice 7.3 和 Poppler 构建及检查文档。没有改变项目生产依赖。图示保留 PNG 和 SVG，报告以 Word 导出 PDF。
 
 ```sh
-/tmp/locomo-m2-docs-20261006/bin/python scripts/build_m2_report.py
-
-/tmp/locomo-m2-docs-20261006/bin/python \
-  /mnt/c/Users/26960/.codex/plugins/cache/openai-primary-runtime/documents/26.909.11814/skills/documents/render_docx.py \
-  docs/requirements/vision-and-scope.docx \
-  --output_dir /tmp/locomo-m2-docs-20261006/render-v3 --emit_pdf
-
+python scripts/build_m2_report.py
+python scripts/build_m1_report.py
+libreoffice --headless --convert-to pdf --outdir output docs/requirements/vision-and-scope.docx
 pdfinfo docs/requirements/vision-and-scope.pdf
+python scripts/package_m2_materials.py
+python scripts/package_m1_materials.py
 git diff --check
 ```
 
-临时环境和渲染目录不进入交付包。制作脚本可在具备 python-docx、Pillow 和指定字体的环境重用；渲染脚本需要 pdf2image、LibreOffice 与 Poppler。工具路径是本次环境记录，不是项目运行环境要求。
+正文修订后，两份 PDF 均为 5 页 A4；已检查渲染页面、表格、图示、页码和文字边界。Markdown 正文与 Word 内容逐项对应，DOCX XML、PNG 与 SVG 可解析。本轮只优化过程材料，报告 PDF 保持上一轮已检查的版本。修改后的任务快照和 M1 反馈记录另行导出 Word/PDF。
 
-## 已完成的文档检查
+## 打包与校验
 
-- 报告 PDF 为 5 页 A4，符合本轮不超过 5 页的目标。
-- 已逐页打开最终渲染的五张页图，检查正文、表格、页码、两张图及引用说明。未发现缺字、裁切、重叠、断表或多余空白页。
-- 已打开两张简化图检查流程和箭头，修正多行文字贴边。
-- 逐项比较 Markdown 正文和表格单元与 Word 内容，未发现遗漏。
-- Word 中嵌入图数量为 2，DOCX 压缩包、相关 XML 和两张 SVG 可解析。
-- PDF 可提取预期章节、Recall@K 与 CONFLICT 等关键文字，未出现替换字符。
-- 制作脚本语法可解析，已实际运行并完成文档构建与渲染。
-- `git diff --check` 通过。
+打包采用显式文件清单，包内路径与仓库一致。脚本检查 ZIP CRC、文件大小、SHA-256、安全相对路径、离线链接、图源可读取性和报告副本一致性；原历史任务 CSV 保持原字节。
 
-## 打包检查
+本次检查结果保存在包内 process/m2/package-check.json。最终文件数以该文件为准；file-manifest.csv 覆盖清单和校验文件以外的全部载荷，file-sha256sums.txt 另包含 manifest 的校验，不计算自身。版本记录仅说明版本演进，不再保存另一份哈希表。
 
-打包脚本对显式文件清单操作，不收集整个工作区。按组长提供的 M1 ZIP 调整留档方式后，包内保留仓库相对路径，全部文件与仓库文件逐字节一致，不再改写报告源稿的图引用。阅读页、文件清单与校验值先写入仓库，再打包。报告 Word/PDF 独立交付，ZIP 保留其 Markdown 作为迭代过程材料。
+历史过程包依次为 33、34、36、39 个文件；这些数字表示当时的迭代，不表示本轮数量。
 
-过程 ZIP 与文件清单的逐项完整性、SHA-256、相对链接、Markdown 图引用、PNG/SVG 可读取性，以及导出的 10 条 M2 任务是否保留原状态，由 `scripts/package_m2_materials.py` 构建时检查，命令结果另存 `deliverables/m2/package-check.json`。包内附带清单与校验文件，避免将初稿、旧快照或参考图片误作当前成果。
+## 任务与成员检查
 
-首次制作的过程包为 33 个文件。后续依据 M1 ZIP 调整为保留仓库原始路径，移除包内重复报告 Word/PDF，并加入真实已有会议 Word 和历史快照 Word/PDF，调整后的清单共 34 个文件。运行 `/tmp/locomo-m2-docs-20261006/bin/python scripts/package_m2_materials.py` 检查 ZIP CRC、文件清单、校验值、相对路径、离线 HTML 链接、Markdown 图引用、PNG/SVG 读取及仓库对应内容；实际结果见交付目录的 `package-check.json`。
+本轮读取现有 Notion 任务表，将已有 M2 产物的相关任务按实际进度送入待复核，并重新读取导出快照。历史 W09 的“进行中 / 验收通过”仅保留为旧记录，当前 Notion 已为“已完成”。最新快照附在过程包中，不改写历史 CSV。
 
-10 条 M2 任务与原始导出逐字段相同；独立报告副本与仓库报告一致，PDF 保持 5 页。文本类包内文件的常见凭据模式检查不打印匹配值；该检查不替代截图共享范围核对。组长提供的 M1 包中 19 个文件也与仓库对应原件逐字节相同。
+M1 原执行流程和此前全员核对事实保留。M2 文件尚缺真实成员复核记录，检查范围及填写位置见 member-review-record.md。文档生成和自动检查不能替代成员复核。
 
-## 未验证与未完成事项
-
-尚未进行系统功能测试、模型调用或对照实验；这些属于 M3–M5 后续工作。此记录只证明文档与打包检查。
-
-当前 M2 文件未取得成员非作者复核记录，未合并或推送，未更新 Notion，未正式提交。包内的成员清单未勾选。实际展示安排及最新文件命名、收件渠道仍由负责人核对；本轮未制作汇报文件。
-
-## 联网修订检查
-
-新增两份材料后，过程包显式清单为 36 个文件。报告经两轮渲染，最终输出目录为 `/tmp/locomo-m2-docs-20261006/research-v2`，PDF 为 5 页 A4，逐页检查无裁切、断表或空白页。参考资料在 Word 中保留 6 个可点击链接，正文使用五组编号。全文与表格按 Markdown 标签文本核对，嵌入图仍为 2 张。新增调研已按 unslop 润色。
-
-重新运行文档构建、渲染与打包脚本，核对 CRC、36 个文件逐字节仓库对应、清单与校验值、离线链接及原历史任务。最终结果以 `deliverables/m2/package-check.json` 为准。这些检查不包含系统功能、用户访谈或模型效果验证。
+尚未执行系统功能测试、模型调用、对照实验、合并、推送、正式提交或课堂展示。Issue/PR 尚未建立，不编造其链接；本轮本地修订也没有可用的远端交付地址。

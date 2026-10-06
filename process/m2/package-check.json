@@ -1,0 +1,21 @@
+{
+  "report_pages": 5,
+  "archive_files": 49,
+  "zip_crc": "pass",
+  "payload_hashes": "pass",
+  "manifest": "pass",
+  "safe_relative_paths": "pass",
+  "offline_html_links": "pass",
+  "markdown_image_links": "pass",
+  "png_svg_readability": "pass",
+  "historical_m2_tasks": 10,
+  "historical_states_unchanged": true,
+  "credential_pattern_check": "pass",
+  "report_matches_repository": true,
+  "all_archive_files_match_repository": true,
+  "member_review": "pending",
+  "notion_updated": true,
+  "remote_write": true,
+  "github_remote_write": false,
+  "submitted": false
+}

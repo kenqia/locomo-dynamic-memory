@@ -56,7 +56,12 @@ def markdown_html(text):
         i+=1
     return "\n".join(out)
 
-def build():
+def build(include_result=True):
+    if include_result:
+        build(include_result=False)
+        result=json.loads((OUTPUT/"package-check.json").read_text())
+        result["archive_files"] += 1
+        (PROCESS/"package-check.json").write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     OUTPUT.mkdir(parents=True,exist_ok=True)
     PROCESS.mkdir(parents=True,exist_ok=True)
     items={}
@@ -67,18 +72,27 @@ def build():
         assert not src.is_symlink(),str(src)
         items[path.as_posix()]=src.read_bytes()
     add("process/m2-process-index.md")
+    if include_result:
+        add("process/m2/package-check.json")
+    for name in ["member-review-record.md","notion-before-review-sync.json","notion-review-sync.json"]:
+        add("process/m2/"+name)
+    add("process/snapshots/2026-10-06-m1-m2.csv")
+    for ext in [".md",".csv",".docx",".pdf"]:
+        add("process/snapshots/2026-10-06-review-sync"+ext)
     # The report PDF/Word are separate deliverables, as in the M1 package.
     add("docs/requirements/vision-and-scope.md")
     add("docs/sources/m2-real-world-memory-research.md")
     add("process/m2/iterations/vision-and-scope-before-research.md")
     add("process/m2/iterations/vision-and-scope-initial-draft.md")
     add("process/m2/iterations/revision-notes.md")
+    add("process/m2/iterations/vision-and-scope-before-review.md")
+    add("process/m2/iterations/team-workflow-before-review.md")
     add("docs/decisions/m2-proposal-interview.md")
     add("CONTEXT.md")
     for path in sorted((ROOT/"docs/requirements/assets/m2").iterdir()):
         if path.suffix in [".png",".svg"]:
             add(path.relative_to(ROOT))
-    for name in ["build_m2_report.py","package_m2_materials.py"]:
+    for name in ["build_m1_report.py","build_m2_report.py","build_process_documents.py","package_m2_materials.py"]:
         add("scripts/"+name)
     for path in sorted((ROOT/"process/m2/reference-images").glob("*.png")):
         add(path.relative_to(ROOT))
@@ -112,7 +126,9 @@ def build():
         ("首次会议纪要 PDF","process/meetings/first-meeting.pdf"),
         ("原会议截图","process/meetings/screenshots/first-meeting-participants.png"),
         ("M2 历史任务 CSV","process/m2/m2-tasks-historical-20261006.csv"),
-        ("M1/M2 原始历史快照 PDF","process/snapshots/2026-10-06-m1-m2.pdf"),
+        ("本轮任务快照","process/snapshots/2026-10-06-review-sync.md"),
+        ("成员检查范围与反馈登记","process/m2/member-review-record.md"),
+        ("M1/M2 历史快照与后续注记 PDF","process/snapshots/2026-10-06-m1-m2.pdf"),
     ]
     style="""body{font:16px/1.75 system-ui,'Noto Sans CJK SC','Microsoft YaHei',sans-serif;color:#202a35;background:#fff;margin:0}
 main{max-width:1000px;margin:40px auto;padding:0 24px 60px}h1{font-size:30px}h2{font-size:23px}h3{font-size:19px}a{color:#245d8d}
@@ -123,7 +139,7 @@ details{border-top:1px solid #d9d9d9;margin-top:20px}img{max-width:100%;height:a
           "<title>M2 过程材料阅读说明</title><style>"+style+"</style><main>",
           "<h1>M2 项目提案过程材料</h1>",
           "<p>在阴雨天游泳 · Team ID 3 · 2026-10-06</p>",
-          "<p>本轮报告和过程包已本地制作。方案经组长确认全组接受，文件仍待成员复核。未合并、推送、更新 Notion 或正式提交。</p>",
+          "<p>本轮报告和过程包已本地制作。方案经组长确认全组接受，文件仍待成员复核。Notion 已同步为待复核；未合并、推送或正式提交。</p>",
           "<p>报告 PDF 和 Word 独立交付。过程包保留仓库相对路径，全部文件可在仓库中找到对应原件。</p>",
           "<nav><h2>文件入口</h2><ul>"]
     for label,path in links:
@@ -228,8 +244,11 @@ def verify(zip_path):
         "historical_states_unchanged":True,"credential_pattern_check":"pass",
         "report_matches_repository":(OUTPUT/(BASE+"-报告.pdf")).read_bytes()==(ROOT/"docs/requirements/vision-and-scope.pdf").read_bytes(),
         "all_archive_files_match_repository":True,
-        "member_review":"pending","notion_updated":False,"remote_write":False,"submitted":False,
+        "member_review":"pending","notion_updated":True,"remote_write":True,
+        "github_remote_write":False,"submitted":False,
     }
+    if "process/m2/package-check.json" in names:
+        assert json.loads((ROOT/"process/m2/package-check.json").read_text()) == report, "Packaged validation report mismatch"
     (OUTPUT/"package-check.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     deliverables=[OUTPUT/(BASE+suffix) for suffix in ["-报告.pdf","-报告.docx","-过程材料.zip"]]
     (OUTPUT/"sha256sums.txt").write_text("".join(f"{sha(p.read_bytes())}  {p.name}\n" for p in deliverables),encoding="utf-8")
