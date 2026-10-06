@@ -141,7 +141,7 @@ details{border-top:1px solid #d9d9d9;margin-top:20px}img{max-width:100%;height:a
     # A manifest hashes the payload. A checksum file also hashes the manifest.
     # Neither file hashes itself.
     buf=io.StringIO(newline="")
-    writer=csv.writer(buf)
+    writer=csv.writer(buf,lineterminator="\n")
     writer.writerow(["仓库及包内路径","字节数","SHA-256"])
     for path,data in sorted(items.items()):
         writer.writerow([path,len(data),sha(data)])
