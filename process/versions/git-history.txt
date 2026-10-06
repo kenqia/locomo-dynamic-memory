@@ -1,0 +1,8 @@
+9561e63 2026-10-05 kenqia docs: simplify meeting template version note
+1aaac89 2026-10-05 kenqia docs: add M1 workflow report and agreed team process
+35e494a 2026-10-05 kenqia docs: update directory guide and add spec and ticket folders
+5fbc358 2026-10-05 kenqia chore: bundle workflow skills for contributors
+cf5cf59 2026-10-05 kenqia docs: record confirmed AI workflow discussion
+a8cabc9 2026-10-04 kenqia docs: add approved drafts, meeting template and course sources
+df3f073 2026-10-04 kenqia chore: initialize directories and upload checklist without project drafts
+0dd92d2 2026-10-04 kenqia Initial commit
