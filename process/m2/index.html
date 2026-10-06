@@ -1,0 +1,272 @@
+<!doctype html><html lang='zh-CN'><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>M2 过程材料阅读说明</title><style>body{font:16px/1.75 system-ui,'Noto Sans CJK SC','Microsoft YaHei',sans-serif;color:#202a35;background:#fff;margin:0}
+main{max-width:1000px;margin:40px auto;padding:0 24px 60px}h1{font-size:30px}h2{font-size:23px}h3{font-size:19px}a{color:#245d8d}
+nav ul{padding-left:24px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border:1px solid #d9d9d9;padding:8px 12px;text-align:left;vertical-align:middle}
+th{background:#e7edf4}.table-wrap{overflow:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 monospace}summary{cursor:pointer;font-size:19px;font-weight:600;padding:14px 0}
+details{border-top:1px solid #d9d9d9;margin-top:20px}img{max-width:100%;height:auto}footer{font-size:14px;color:#5f6e7c;margin-top:40px}</style><main>
+<h1>M2 项目提案过程材料</h1>
+<p>在阴雨天游泳 · Team ID 3 · 2026-10-06</p>
+<p>本轮报告和过程包已本地制作。方案经组长确认全组接受，文件仍待成员复核。未合并、推送、更新 Notion 或正式提交。</p>
+<p>报告 PDF 和 Word 独立交付。过程包保留仓库相对路径，全部文件可在仓库中找到对应原件。</p>
+<nav><h2>文件入口</h2><ul>
+<li><a href="../../docs/requirements/vision-and-scope.md">报告 Markdown</a></li>
+<li><a href="../../docs/requirements/assets/m2/system-architecture.png">总体架构图</a></li>
+<li><a href="../../docs/requirements/assets/m2/recording-retrieval-flow.png">记录与检索流程图</a></li>
+<li><a href="../../process/meetings/first-meeting.pdf">首次会议纪要 PDF</a></li>
+<li><a href="../../process/meetings/screenshots/first-meeting-participants.png">原会议截图</a></li>
+<li><a href="../../process/m2/m2-tasks-historical-20261006.csv">M2 历史任务 CSV</a></li>
+<li><a href="../../process/snapshots/2026-10-06-m1-m2.pdf">M1/M2 原始历史快照 PDF</a></li>
+</ul></nav>
+<details open><summary>材料说明</summary>
+<h2>M2 过程材料说明</h2>
+<p>团队：在阴雨天游泳，Team ID 3。整理日期：2026-10-06。</p>
+<p>本包保存提案从初稿到本地制作稿的过程。报告正文独立提供，过程材料不计入报告 5 页。方案经组长确认全组接受，本轮文件仍待成员按清单复核；材料制作不代表任务已完成或已正式提交。</p>
+<p>解压后进入 `PROJECT-MILESTONE2-3-在阴雨天游泳/`，打开 `process/m2/index.html`。可离线查看过程说明、图示、会议 PDF 与截图。报告 Word/PDF 单独交付，过程包保留当前报告 Markdown 作为迭代依据。</p>
+<p>与组长提供的 M1 过程包一样，材料先存入仓库，再整合成 ZIP。包内保留仓库相对路径与原始内容，不在打包时改名、改正文或新增只存在于 ZIP 内的文件。阅读页、文件清单和校验值也先写入 `process/m2/`；脚本逐项检查 ZIP 与仓库文件相同。</p>
+<div class='table-wrap'><table>
+<tr><th>包内目录</th><th>材料与作用</th></tr>
+<tr><td>`docs/requirements/` 与 `process/m2/iterations/`</td><td>当前报告 Markdown、修改前初稿和修订说明；当前报告 Word/PDF 独立提供</td></tr>
+<tr><td>`docs/decisions/`、`CONTEXT.md`、`docs/requirements/assets/m2/`</td><td>方案确认、术语和两张简化图的 PNG 与 SVG；制作与打包脚本位于 `scripts/`</td></tr>
+<tr><td>`process/m2/reference-images/`</td><td>本次附件中的四张参考架构图，不冒充实现截图</td></tr>
+<tr><td>`process/meetings/` 与 `docs/requirements/team-workflow.md`</td><td>首次会议纪要的 Markdown、Word、PDF、原截图与共用团队流程，保留当时结论</td></tr>
+<tr><td>`process/snapshots/` 与 `process/m2/m2-tasks-historical-20261006.csv`</td><td>原有历史快照的 Markdown、Word、PDF 与 M2 筛选 CSV，保留导出时间和状态</td></tr>
+<tr><td>`process/m2/source-notes.md`、`review-checklist.md`、`validation-record.md`</td><td>来源依据、待成员复核清单、实际文档与打包检查</td></tr>
+<tr><td>`process/m2/version-record.md`、`git-history-baseline.txt`、`file-manifest.csv`、`file-sha256sums.txt`</td><td>制作基准、版本说明、文件清单与校验值</td></tr>
+</table></div>
+<h3>本次确定的方案</h3>
+<p>记录采用结构化 Memory，保留人物、时间、来源和历史，维护状态关系及 Current State。检索结合 BM25、Vector 与 Entity/Time 条件，再依据问题时间选择有效证据。当前问题与历史问题可以采用不同 Memory；无法消解的冲突展示来源与不确定性。大模型辅助抽取和语义理解，规则核查可明确的字段、来源与时间。</p>
+<p>M2 说明方法、流程、范围、可行性、功能路线与评测计划。数据库、接口、Prompt 和代码细节不在本轮锁定。Graph Memory 与多跳等扩展仍是候选。</p>
+<h3>本次制作与过程边界</h3>
+<p>本次整理真实已有会议材料和历史任务快照，并记录组长在本次讨论中的确认。没有补造新会议、成员贡献、复核签字、系统截图或实验结果。原有 M1 全员核对记录不能证明当前 M2 文件已经通过复核，因此不作为本轮 M2 验收证明。</p>
+<p>原 Notion 截图含无关侧栏，本包以原导出数据及时间说明为任务证据。私人聊天、凭据和无关文件不进入包内。参考图片属于方案素材，不是可运行系统。</p>
+<p>本轮只制作报告与过程包，不制作汇报文件。课程要求的汇报 PDF 与试讲保留为后续工作。实际展示场次、收件渠道与最终命名须核对最新通知。</p>
+<h3>尚未完成的外部工作</h3>
+<p>成员非作者复核、合并与推送、Notion 任务及交付链接更新、正式提交和回执尚未完成。本轮不宣称已同步 Notion，也不将任何关联任务标记完成。</p>
+<p>在线入口为私有仓库 `kenqia/locomo-dynamic-memory` 和团队既有 Notion 任务表；访问仍需授权。包内已有离线副本，阅读不依赖助教拥有线上权限。</p>
+</details>
+<details><summary>方案确认</summary>
+<h2>M2 宏观方案与材料讨论记录</h2>
+<p>日期：2026-10-06，北京时间。团队：在阴雨天游泳，Team ID 3。</p>
+<p>本文记录组长与助手通过 grill-with-docs 确认的方案和本轮交付范围。组长已说明宏观方案经全组确认；这一确认不代表尚未生成的报告或过程包已通过成员复核。本文不是会议纪要，不改写首次会议当时的候选方案状态。</p>
+<h3>已确认的方案</h3>
+<p>对话中的重要事实和事件提取为结构化 Memory，保留人物、时间和来源证据。旧 Memory 不因状态变化被直接删除，后续信息与历史记录之间维护 UPDATE、SUPERSEDE 等关系，并另外维护 Current State。</p>
+<p>检索采用 Hybrid Retrieval，结合 BM25 关键词检索、Vector 相似度检索及 Entity/Time 结构化条件，寻找相关记忆。检索后根据问题、时间条件和历史状态关系选择有效记忆，再生成答案。</p>
+<p>主流程如下：</p>
+<pre>Dialogue → Memory Extraction → Structured Memory / History / Current State
+Question → Hybrid Retrieval → Relevant Memories → State Resolution → Effective Memory → Answer</pre>
+<p>M2 通过一张总体架构图和一张 Memory Recording / Retrieval 流程图讲清方法、流程与实现可行性。数据库、接口、Prompt 和具体代码模块在后续阶段细化。图片中的 Temporal Graph 等扩展不自动成为本轮承诺。</p>
+<h3>第一轮答复</h3>
+<p>组长确认以下事项：</p>
+<p>- 使用中文，本轮只制作报告和过程包，暂不制作 PPTX 或汇报文件。</p>
+<p>- 宏观方案已获全组确认，报告可以作为团队拟实施路线陈述。</p>
+<p>- 当前问题依据状态关系选择当前有效证据。</p>
+<p>- 历史问题按问题时间使用历史 Memory，Current State 不覆盖全部历史问题的答案。</p>
+<p>- 证据矛盾且无法消解时，展示冲突和不确定性，不直接采用最新一条。</p>
+<p>报告按可编辑 Word 与 PDF 组织；过程材料单独打包。课程课件仍列有汇报 PDF 要求，后续任务保留，此次缩小制作范围不表示课程要求已取消。</p>
+<h3>文档与事实依据</h3>
+<p>- `docs/sources/0 - Project (2026).pdf` 第 4 页列出 M2 文档 PDF 不超过 5 页、过程 ZIP 和汇报 PDF 不超过 10 页。原课件展示日期存在歧义，实际场次按课程通知核对。</p>
+<p>- `docs/requirements/team-workflow.md` 保存实名职责及三轮迭代规则。M2 正文主责为卓新烨，复核为莫远序；过程材料由黎志丽整理，田亦洁检查。</p>
+<p>- `process/meetings/first-meeting.md` 证明首次会议讨论过候选路线，不证明当时已选定本次具体架构。</p>
+<p>- `process/snapshots/2026-10-06-m1-m2.md` 是有时间标注的历史快照，不作为本轮实时完成状态。</p>
+<p>- `docs/requirements/vision-and-scope.md` 和 `presentations/proposal-outline.md` 为已有草稿，可复用；其中成员、资格与迭代信息需按最新记录修订。</p>
+<h3>第二轮答复</h3>
+<p>组长确认全组接受大模型辅助与规则检查的分工。大模型从对话提取重要事实和事件，辅助理解人物指代、时间表达及状态变化；规则检查来源和字段完整性，处理能够明确换算的时间。状态判断结合问题时间、历史关系和模型建议，无法消解的冲突保持未确定。检索复用已有 BM25、向量检索和结构化条件能力。</p>
+<p>本轮不锁定模型平台、数据库、库版本、Prompt 或内部接口。采用大模型辅助不意味着模型判断无须核查，也不意味着已经验证效果。</p>
+<h3>后续事实核实</h3>
+<p>数据划分、评测脚本、K 值、状态标签边界及准确 model ID 等事实待课程材料核实，可以在 M2 报告中列为后续落实项，不编造为已确认配置或实验结果。</p>
+<h3>交付蓝图</h3>
+<p>报告采用中文，修订已有 `docs/requirements/vision-and-scope.md`，形成同名可编辑 Word 与 PDF。PDF 总页数不超过 5 页，封面信息放在正文首页，不另占一页。</p>
+<div class='table-wrap'><table>
+<tr><th>计划页</th><th>主要内容</th></tr>
+<tr><td>1</td><td>项目与团队、问题、愿景、目标用户，以及当前问题和历史问题的解释场景</td></tr>
+<tr><td>2</td><td>首版功能、范围边界、使用流程与可检查的验收场景</td></tr>
+<tr><td>3</td><td>简化总体架构图、模块职责，以及大模型辅助与规则检查的宏观分工</td></tr>
+<tr><td>4</td><td>Memory Recording / Retrieval 两条流程图，历史与当前状态的区别、冲突处理及实现可行性</td></tr>
+<tr><td>5</td><td>M3–M5 Feature Roadmap、三轮迭代与缓冲、数据与对照评测计划、风险和来源</td></tr>
+</table></div>
+<p>页数分配是排版目标，可按可读性调整；最终页数、图中文字和表格需要以渲染结果检查。总体架构图和记录／检索流程图采用本次确认内容重绘，避免直接使用含有详细字段和未承诺扩展的原图。</p>
+<p>过程包包含材料索引、本次方案讨论与确认记录、原有报告草稿及修订说明、两张图的源文件与成图、与 M2 相关的真实首次会议纪要和原截图、有时间标注的既有任务快照、来源说明、版本与文件校验记录，以及待完成的成员复核清单。原始材料保留当时状态，不回写成当前结论；共享的会议和快照注明其同时涉及 M1/M2。</p>
+<p>仅打包与 M2 相关的文件，不复制整个仓库，不收录无关聊天或凭据。复核清单是待办，不能充当已复核证明。报告和过程包在本段拟定时尚未生成。组长随后明确回复“确认”，已授权按此蓝图制作本地报告和过程包；这项授权不包含远端写入或正式提交。</p>
+<h3>验证计划</h3>
+<p>制作后检查报告 PDF 不超过 5 页、Word 与 PDF 内容一致、两张图的标签和箭头与已确认流程一致，并逐页检查字体、表格、换行与图中文字。过程 ZIP 检查可读取性、相对路径、所列文件、校验值，以及计划与真实记录的区分。检查结果随材料留档，不把文档检查称为系统功能测试或实验验证。</p>
+<h3>本地制作结果</h3>
+<p>按组长整体确认完成报告 Word、五页 PDF、两张简化图及本地过程 ZIP。初稿、修订、来源、真实会议与历史快照、验证记录及待复核清单已留档。文件和打包检查结果见 `process/m2/validation-record.md`，交付文件位于 `deliverables/m2/`。当前未取得文件的成员非作者复核记录，未更新 Notion、合并、推送或正式提交。</p>
+<h3>过程材料归档方式修订</h3>
+<p>组长随后要求过程材料存入 repo，ZIP 仅为这些材料的整合，并提供 M1 过程 ZIP 作为参照。已核对 M1 包中的 19 个文件与仓库原件一致；当前会话无 `read_thread` 工具，未读取所引用 Codex 会话。</p>
+<p>M2 调整为先在仓库保存所有材料及生成的阅读页、清单和校验值，再按仓库相对路径打包，不改写文件内容。报告 Word/PDF 独立交付，过程包保留报告 Markdown、初稿、修订、图示、会议、历史快照和待复核记录。当前过程包共 34 个文件，逐项与仓库原件一致。本地留档使用 `codex/m2-proposal-materials` 分支，不包含远端写入或正式提交。</p>
+<h3>过程记录边界</h3>
+<p>过程包使用真实已有纪要、来源明确的阶段快照和本次方案确认记录。未完成的非作者复核、试讲、合并和正式提交单独列为待办，不用模板充当完成证据。没有获得本轮远端写入授权，不更新 Notion 状态或发布 GitHub Issues；此记录不声称相关任务已同步或完成。</p>
+</details>
+<details><summary>本次修订</summary>
+<h2>M2 报告修订记录</h2>
+<p>整理日期：2026-10-06。初稿为 `vision-and-scope-initial-draft.md`，由本轮修改前的仓库文件复制保留；初稿正文标注 2026-10-04。当前报告源稿为 `docs/requirements/vision-and-scope.md`。</p>
+<h3>内容修订</h3>
+<p>初稿已有愿景、范围、功能、评测和候选路线，本次在其基础上明确全组已确认的宏观方法：</p>
+<p>- 结构化 Memory 保留人物、时间和来源，旧记录不因更新而直接删除。</p>
+<p>- Current State 描述当前状态，历史问题继续按问题时间选择证据。</p>
+<p>- Hybrid Retrieval 结合 BM25、Vector 和 Entity/Time 条件，检索后再判断状态。</p>
+<p>- 大模型辅助抽取与理解语义，规则核查来源、字段和明确时间；不确定性保留。</p>
+<p>- 对当前、历史、未消解冲突及证据不足给出可检查的场景。</p>
+<p>- 两张宏观图替换包含详细字段及候选扩展的完整版图。</p>
+<p>- 更新为已确认实名职责，按 M1 约定采用三轮迭代和缓冲；删除四人资格仍待确认的过时条目。</p>
+<p>- 保留课程指标与对照计划，不写未经运行的效果或数字目标。</p>
+<p>初稿中的数据库、完整接口和 Prompt 仍未定型，本轮不把它们升级为固定实现承诺。首版扩展仍独立于必做链路。</p>
+<h3>本地排版迭代</h3>
+<p>首轮 Word 渲染为 6 页，第一页末段溢出到单独一页；检查还发现流程图多行文字贴近边框，以及 Word 默认 Title 样式带有装饰线。</p>
+<p>第二轮删除重复说明、调整段间距与表后空段、去除 Title 样式装饰线，并调整图内多行文字的位置。报告内容已能容纳五页，但独立分页段落造成一个多余空白页；第三轮改为在下一页标题前分页，重新渲染为五页并逐页检查。最终页数与验证结果见 `process/m2/validation-record.md`。</p>
+<p>这些是本次制作中实际发生的修订，不表示已经完成未来日期的团队优化轮或验收轮。</p>
+</details>
+<details><summary>材料来源</summary>
+<h2>M2 材料来源与使用边界</h2>
+<p>整理日期：2026-10-06。团队：在阴雨天游泳，Team ID 3。</p>
+<p>本说明将课程要求、团队决定、解释场景和制作记录分开。报告中的实施方法是后续计划，不代表已实现、已评测或已通过最终验收。</p>
+<h3>课程依据</h3>
+<p>原始材料为仓库中的 `docs/sources/0 - Project (2026).pdf`，此次用 `pdftotext -layout` 检查相关页。页码为 PDF 文件的一基页码。</p>
+<div class='table-wrap'><table>
+<tr><th>页码</th><th>本次采用的信息</th></tr>
+<tr><td>4</td><td>M2 为 Vision and Scope &amp; Feature Roadmap；文档 PDF ≤5 页、过程 ZIP、汇报 PDF ≤10 页；M1/M2 截止 2026-10-10 24:00</td></tr>
+<tr><td>9</td><td>从 LoCoMo 对话构建结构化 Memory，支持查询驱动状态解析、有效记忆选择及 Web 可视化</td></tr>
+<tr><td>10</td><td>课程指定 6 段对话，4 开发、2 独立测试；F1、Recall@K、动态状态更新判断准确率；Full Text 与 Vector RAG 对照</td></tr>
+<tr><td>11</td><td>内容、时间和来源可追溯；JSON、Web、关系判断为必做；图谱、多跳、合并压缩等列为扩展</td></tr>
+<tr><td>12</td><td>UPDATE、SUPERSEDE、CONFLICT 的解释场景，旧 Memory 保留为历史</td></tr>
+<tr><td>13</td><td>DimMem 结构化三路检索与 MRAgent 图上重构作为参考路线</td></tr>
+</table></div>
+<p>未另行核验参考论文全文，不在报告中声称已复现或优于它们。课件展示日期写作 Oct 9/Sep 29, 2026，实际场次与最新提交通知待核对。课件文件名规则为 PROJECT-MILESTONE[n]-[team_id]-[team_name]；本轮在明确的阶段与团队名后分别标识报告和过程包，最终命名与收件渠道仍应按助教通知核对。</p>
+<h3>团队与讨论依据</h3>
+<p>`docs/requirements/team-workflow.md` 保存实名职责、三轮迭代、日期和缓冲。组长在本次讨论中确认宏观方案已获全组认可，并接受当前问题、历史问题、冲突处理及大模型辅助与规则检查的建议。最终明确回复“确认”，授权制作本地报告与过程包。</p>
+<p>本次决定的完整整理见 `docs/decisions/m2-proposal-interview.md`。它是组长与助手的方案讨论记录，不伪装为一次新会议或四位成员各自签署的复核记录。原始私人聊天不进入包内。</p>
+<p>首次会议纪要和截图沿用已有文件，只能证明当时确实讨论了候选方法及协作。记录中“尚未确定最终方案”保留为当时状态，不因后来确认而回写。</p>
+<h3>原图与最终图</h3>
+<p>组长此次提供四张参考图片，标题分别为 System Architecture View、Memory Construction Flow、Query Processing Flow、Memory State Model。参考图含有详细模块、字段和 Temporal Graph 等候选扩展。</p>
+<p>最终报告重绘两张简化图，使用已确认的记录与查询流程。参考图没有自动成为首版规格。当前问题和历史问题的示例为构造场景；原图与课件中的 Caroline、Gina 示例未在本轮运行验证。</p>
+<p>`process/m2/reference-images/` 保存此次提供的四张架构参考原图，`docs/requirements/assets/m2/` 保存本次重绘的 PNG 与可编辑 SVG，制作脚本位于 `scripts/`。ZIP 保留相同路径和原始内容。原图来自对话附件，不作为团队系统运行截图。</p>
+<h3>历史任务快照</h3>
+<p>`process/snapshots/2026-10-06-m1-m2.csv` 是原有 Notion 导出，导出时间为 2026-10-06T18:08:33+08:00。本轮只筛选其中 M2 的 10 条任务，保留原字段、说明和 URL，不修改任何任务状态。</p>
+<p>包内筛选 CSV 不包含 M1 行；快照 Markdown 则保留原始全文，用于说明导出时间与会议后记录。二者均是历史材料，不表示本轮实时状态。原 Notion 截图包含无关侧栏，本轮不复制该截图；任务证据采用已有导出文件。</p>
+<h3>实际制作与未完成事项</h3>
+<p>组长随后提供 M1 过程 ZIP 作为参照。已检查其 19 个文件，README 与仓库的 `process/m1-process-index.md` 一致，其余文件与仓库 `process/` 中同名路径的文件逐字节一致。该包将报告独立交付，过程材料保存会议、任务快照、成员复核和版本记录。M1 ZIP 的 SHA-256 为 `d15413352d1d8b4a01a57c4630e2e4750bfce33934dc900e43e4ceb06c3d7980`。</p>
+<p>组长引用的 Codex 会话链接在当前会话无法通过 `read_thread` 访问，未读取会话，也未读取本机私密会话历史。本次依据所提供 M1 ZIP 和仓库实际材料调整组织方式。</p>
+<p>此次由 AI 按组长确认内容修订报告、绘制简化图、导出 Word/PDF 并整理本地材料。记录命令、布局检查与 ZIP 验证，不能将这些文档检查当作系统功能测试。</p>
+<p>尚无本轮报告的成员非作者复核记录，未进行合并、推送、Notion 状态写入或正式提交。汇报文件和试讲不属于本轮制作范围，课程对应要求保留为后续待办。上述事项由负责人按真实结果补录。</p>
+</details>
+<details><summary>待成员复核</summary>
+<h2>M2 成员复核清单</h2>
+<p>状态：待成员复核，2026-10-06。这里的勾选项是待办，不是已通过证明。完成后填写复核人、日期、实际问题和对应版本，不用组长方案确认代替文件验收。</p>
+<p>报告正文沿用卓新烨主责、莫远序复核的团队分工；过程材料沿用黎志丽整理、田亦洁检查。本轮 AI 制作记录保留在包内，成员应理解并核对产物。</p>
+<h3>报告内容</h3>
+<p>- [ ] 问题、愿景、使用者及范围符合课程 M2 要求。</p>
+<p>- [ ] 首版功能覆盖 Memory、检索、状态解析、Web、JSON 和对照评测。</p>
+<p>- [ ] 全组认可本文宏观方法，能解释 BM25、Vector、Entity/Time 各自的作用。</p>
+<p>- [ ] 两张图与正文一致，Current State 不覆盖历史问题，旧证据保留。</p>
+<p>- [ ] 当前、历史、冲突和证据不足场景的预期行为合理。</p>
+<p>- [ ] 三轮计划、成员职责、日期及缓冲与团队安排一致。</p>
+<p>- [ ] 数据、指标、模型待确认项已明确，没有假实验、假效果或假来源。</p>
+<p>- [ ] Word/PDF 内容、字体、图表及页数已由成员查看。</p>
+<h3>过程包</h3>
+<p>- [ ] 原始会议材料确与此次项目对应，共享范围合适。</p>
+<p>- [ ] 旧任务快照保留原时间和状态，不误读为最新看板。</p>
+<p>- [ ] 初稿、方案确认、修订与版本记录可以对应到最终文件。</p>
+<p>- [ ] 参考原图与简化方案有清楚区别，候选扩展没有混入必做承诺。</p>
+<p>- [ ] ZIP 可打开，阅读说明、图源、文件清单与校验值齐全。</p>
+<p>- [ ] 本轮尚未完成的复核、合并、Notion 更新和正式提交已如实标注。</p>
+<h3>最终提交前</h3>
+<p>- [ ] 核对实际展示场次、时长、文件命名和收件渠道。</p>
+<p>- [ ] 完成后续汇报 PDF 与试讲，本轮未制作汇报文件。</p>
+<p>- [ ] 获授权后将当前产物提交、合并及推送，记录真实 commit/tag。</p>
+<p>- [ ] 按实际进度更新关联 Notion 任务及交付链接。</p>
+<p>- [ ] 正式提交后保留回执。</p>
+<h3>待填写的复核记录</h3>
+<p>报告复核人及日期：待填写。</p>
+<p>过程包检查人及日期：待填写。</p>
+<p>实际发现的问题及修订版本：待填写。</p>
+<p>非作者复核、合并及必要验证完成后，才将关联任务标为完成。</p>
+</details>
+<details><summary>本地检查</summary>
+<h2>M2 本地制作验证记录</h2>
+<p>日期：2026-10-06。验证对象为本轮报告、简化图和过程包，不包括未来系统实现与实验效果。</p>
+<h3>文档环境</h3>
+<p>当前会话未提供 `load_workspace_dependencies`，本轮以本机已有 Python、python-docx、Pillow、LibreOffice 7.3 与 Poppler 作为替代。标准文档渲染脚本缺少 pdf2image，因此在 `/tmp/locomo-m2-docs-20261006` 创建临时隔离环境，使用既有包并仅补充 pdf2image 1.17.0。没有修改系统配置或项目生产依赖。</p>
+<p>图示使用 Noto Sans CJK SC，保留可编辑 SVG 与高分辨率 PNG。Word 正文使用 11 pt 中文字体；表格按内容使用 9.5–10 pt。PDF 从 Word 渲染导出，避免分别制作而产生内容漂移。</p>
+<h3>实际命令</h3>
+<pre>/tmp/locomo-m2-docs-20261006/bin/python scripts/build_m2_report.py
+
+/tmp/locomo-m2-docs-20261006/bin/python \
+  /mnt/c/Users/26960/.codex/plugins/cache/openai-primary-runtime/documents/26.909.11814/skills/documents/render_docx.py \
+  docs/requirements/vision-and-scope.docx \
+  --output_dir /tmp/locomo-m2-docs-20261006/render-v3 --emit_pdf
+
+pdfinfo docs/requirements/vision-and-scope.pdf
+git diff --check</pre>
+<p>临时环境和渲染目录不进入交付包。制作脚本可在具备 python-docx、Pillow 和指定字体的环境重用；渲染脚本需要 pdf2image、LibreOffice 与 Poppler。工具路径是本次环境记录，不是项目运行环境要求。</p>
+<h3>已完成的文档检查</h3>
+<p>- 报告 PDF 为 5 页 A4，符合本轮不超过 5 页的目标。</p>
+<p>- 已逐页打开最终渲染的五张页图，检查正文、表格、页码、两张图及引用说明。未发现缺字、裁切、重叠、断表或多余空白页。</p>
+<p>- 已打开两张简化图检查流程和箭头，修正多行文字贴边。</p>
+<p>- 逐项比较 Markdown 正文和表格单元与 Word 内容，未发现遗漏。</p>
+<p>- Word 中嵌入图数量为 2，DOCX 压缩包、相关 XML 和两张 SVG 可解析。</p>
+<p>- PDF 可提取预期章节、Recall@K 与 CONFLICT 等关键文字，未出现替换字符。</p>
+<p>- 制作脚本语法可解析，已实际运行并完成文档构建与渲染。</p>
+<p>- `git diff --check` 通过。</p>
+<h3>打包检查</h3>
+<p>打包脚本对显式文件清单操作，不收集整个工作区。按组长提供的 M1 ZIP 调整留档方式后，包内保留仓库相对路径，全部文件与仓库文件逐字节一致，不再改写报告源稿的图引用。阅读页、文件清单与校验值先写入仓库，再打包。报告 Word/PDF 独立交付，ZIP 保留其 Markdown 作为迭代过程材料。</p>
+<p>过程 ZIP 与文件清单的逐项完整性、SHA-256、相对链接、Markdown 图引用、PNG/SVG 可读取性，以及导出的 10 条 M2 任务是否保留原状态，由 `scripts/package_m2_materials.py` 构建时检查，命令结果另存 `deliverables/m2/package-check.json`。包内附带清单与校验文件，避免将初稿、旧快照或参考图片误作当前成果。</p>
+<p>首次制作的过程包为 33 个文件。后续依据 M1 ZIP 调整为保留仓库原始路径，移除包内重复报告 Word/PDF，并加入真实已有会议 Word 和历史快照 Word/PDF，调整后的清单共 34 个文件。运行 `/tmp/locomo-m2-docs-20261006/bin/python scripts/package_m2_materials.py` 检查 ZIP CRC、文件清单、校验值、相对路径、离线 HTML 链接、Markdown 图引用、PNG/SVG 读取及仓库对应内容；实际结果见交付目录的 `package-check.json`。</p>
+<p>10 条 M2 任务与原始导出逐字段相同；独立报告副本与仓库报告一致，PDF 保持 5 页。文本类包内文件的常见凭据模式检查不打印匹配值；该检查不替代截图共享范围核对。组长提供的 M1 包中 19 个文件也与仓库对应原件逐字节相同。</p>
+<h3>未验证与未完成事项</h3>
+<p>尚未进行系统功能测试、模型调用或对照实验；这些属于 M3–M5 后续工作。此记录只证明文档与打包检查。</p>
+<p>当前 M2 文件未取得成员非作者复核记录，未合并或推送，未更新 Notion，未正式提交。包内的成员清单未勾选。实际展示安排及最新文件命名、收件渠道仍由负责人核对；本轮未制作汇报文件。</p>
+</details>
+<details><summary>版本说明</summary>
+<h2>M2 本地版本记录</h2>
+<p>整理日期：2026-10-06。</p>
+<p>制作基准为本地 HEAD：1799d549649741829fce7250e7a91cb0f6f6fb3b。</p>
+<p>本轮产物在首次制作时属于该基准上的未提交工作区文件；不宣称它们已包含在基准 commit 内。组长随后要求材料存入 repo，本轮在 `codex/m2-proposal-materials` 分支留档，实际提交以本地 Git 记录为准；未合并到 main 或更新远程。</p>
+<h3>报告与图示校验</h3>
+<div class='table-wrap'><table>
+<tr><th>仓库路径</th><th>SHA-256</th></tr>
+<tr><td>docs/requirements/vision-and-scope.md</td><td>859bff614cd7c58dc2fdcfb4bc5a71a06dd6a032abe3f1ff13551234e08fabc6</td></tr>
+<tr><td>docs/requirements/vision-and-scope.docx</td><td>dfea5fec9be8e30818369684aab1030348f2a76477b22773c2a132b438e95888</td></tr>
+<tr><td>docs/requirements/vision-and-scope.pdf</td><td>407a4598261684352335e423f3148b955d8c13029bec2723874f7977d4987d6a</td></tr>
+<tr><td>docs/requirements/assets/m2/recording-retrieval-flow.png</td><td>b851fddedcdd844b0dad17ce806f58ff455d88ed53a9a7e2dcddb810f6123348</td></tr>
+<tr><td>docs/requirements/assets/m2/recording-retrieval-flow.svg</td><td>cd228bf48c00b8ee5720ee02772c7fbb96ffae47a179e2a335d31dfd16f8d1db</td></tr>
+<tr><td>docs/requirements/assets/m2/system-architecture.png</td><td>43e863ad74408645444d4633eaeb743fb005517ac93ebefa68b860c02f14b472</td></tr>
+<tr><td>docs/requirements/assets/m2/system-architecture.svg</td><td>1bb79a1c9041e744ec902266611637f102aa9d071baa4f4c811ceb38153d40e7</td></tr>
+</table></div>
+<p>包内文件校验值见 `process/m2/file-sha256sums.txt`，文件清单见 `process/m2/file-manifest.csv`。这些文件先生成并保存在仓库，再与原始材料一起打包，包内路径及内容与仓库一致。外层报告、Word 和 ZIP 的校验值另存于交付目录。</p>
+<p>正式提交、成员复核、合并与推送后，应补录实际 commit/tag 和回执，不用本轮基准替代。</p>
+</details>
+<h2>全部文件</h2><ul>
+<li><a href="../../CONTEXT.md">CONTEXT.md</a></li>
+<li><a href="../../docs/decisions/m2-proposal-interview.md">docs/decisions/m2-proposal-interview.md</a></li>
+<li><a href="../../docs/requirements/assets/m1-milestone-timeline.png">docs/requirements/assets/m1-milestone-timeline.png</a></li>
+<li><a href="../../docs/requirements/assets/m2/recording-retrieval-flow.png">docs/requirements/assets/m2/recording-retrieval-flow.png</a></li>
+<li><a href="../../docs/requirements/assets/m2/recording-retrieval-flow.svg">docs/requirements/assets/m2/recording-retrieval-flow.svg</a></li>
+<li><a href="../../docs/requirements/assets/m2/system-architecture.png">docs/requirements/assets/m2/system-architecture.png</a></li>
+<li><a href="../../docs/requirements/assets/m2/system-architecture.svg">docs/requirements/assets/m2/system-architecture.svg</a></li>
+<li><a href="../../docs/requirements/team-workflow.md">docs/requirements/team-workflow.md</a></li>
+<li><a href="../../docs/requirements/vision-and-scope.md">docs/requirements/vision-and-scope.md</a></li>
+<li><a href="../../process/m2-process-index.md">process/m2-process-index.md</a></li>
+<li><a href="../../process/m2/git-history-baseline.txt">process/m2/git-history-baseline.txt</a></li>
+<li><a href="../../process/m2/iterations/revision-notes.md">process/m2/iterations/revision-notes.md</a></li>
+<li><a href="../../process/m2/iterations/vision-and-scope-initial-draft.md">process/m2/iterations/vision-and-scope-initial-draft.md</a></li>
+<li><a href="../../process/m2/m2-tasks-historical-20261006.csv">process/m2/m2-tasks-historical-20261006.csv</a></li>
+<li><a href="../../process/m2/reference-images/memory-construction-reference.png">process/m2/reference-images/memory-construction-reference.png</a></li>
+<li><a href="../../process/m2/reference-images/memory-state-model-reference.png">process/m2/reference-images/memory-state-model-reference.png</a></li>
+<li><a href="../../process/m2/reference-images/query-processing-reference.png">process/m2/reference-images/query-processing-reference.png</a></li>
+<li><a href="../../process/m2/reference-images/system-architecture-reference.png">process/m2/reference-images/system-architecture-reference.png</a></li>
+<li><a href="../../process/m2/review-checklist.md">process/m2/review-checklist.md</a></li>
+<li><a href="../../process/m2/source-notes.md">process/m2/source-notes.md</a></li>
+<li><a href="../../process/m2/validation-record.md">process/m2/validation-record.md</a></li>
+<li><a href="../../process/m2/version-record.md">process/m2/version-record.md</a></li>
+<li><a href="../../process/meetings/first-meeting.docx">process/meetings/first-meeting.docx</a></li>
+<li><a href="../../process/meetings/first-meeting.md">process/meetings/first-meeting.md</a></li>
+<li><a href="../../process/meetings/first-meeting.pdf">process/meetings/first-meeting.pdf</a></li>
+<li><a href="../../process/meetings/screenshots/first-meeting-participants.png">process/meetings/screenshots/first-meeting-participants.png</a></li>
+<li><a href="../../process/snapshots/2026-10-06-m1-m2.docx">process/snapshots/2026-10-06-m1-m2.docx</a></li>
+<li><a href="../../process/snapshots/2026-10-06-m1-m2.md">process/snapshots/2026-10-06-m1-m2.md</a></li>
+<li><a href="../../process/snapshots/2026-10-06-m1-m2.pdf">process/snapshots/2026-10-06-m1-m2.pdf</a></li>
+<li><a href="../../scripts/build_m2_report.py">scripts/build_m2_report.py</a></li>
+<li><a href="../../scripts/package_m2_materials.py">scripts/package_m2_materials.py</a></li>
+<li><a href="../../process/m2/file-manifest.csv">process/m2/file-manifest.csv</a></li>
+<li><a href="../../process/m2/file-sha256sums.txt">process/m2/file-sha256sums.txt</a></li>
+</ul><footer>解压后离线阅读。原始材料保留当时状态，候选图不作为实现截图。具体共享与提交范围由项目负责人核对。</footer></main></html>

@@ -36,3 +36,21 @@
 - [Markdown 源稿](docs/requirements/team-workflow.md)
 - [可编辑 Word](docs/requirements/team-workflow.docx)
 - [PDF](docs/requirements/team-workflow.pdf)
+
+## M2 项目提案
+
+本轮制作中文报告和过程材料，暂不制作汇报文件。宏观方案由组长确认全组接受；当前文件属于本地制作版本，成员非作者复核、远端同步与正式提交按真实进度另行完成。
+
+- [Markdown 源稿](docs/requirements/vision-and-scope.md)
+- [可编辑 Word](docs/requirements/vision-and-scope.docx)
+- [报告 PDF](docs/requirements/vision-and-scope.pdf)
+- [方案确认记录](docs/decisions/m2-proposal-interview.md)
+- [过程材料说明](process/m2-process-index.md)
+- [过程材料离线阅读页](process/m2/index.html)
+- [仓库与 ZIP 文件清单](process/m2/file-manifest.csv)
+- [本地制作与打包验证](process/m2/validation-record.md)
+- [报告与图示制作脚本](scripts/build_m2_report.py)
+
+报告内两张简化图的 PNG 与可编辑 SVG 位于 `docs/requirements/assets/m2/`。过程材料、阅读页、文件清单与校验值全部在仓库留档，再通过 `python scripts/package_m2_materials.py` 整合为 ZIP；包内保留仓库路径和原始内容。报告 Word/PDF 独立提供，交付文件存放于 `deliverables/m2/`。
+
+修改源稿后可运行 `python scripts/build_m2_report.py` 重建 Word 和图示，所需环境及 PDF 渲染方式见验证记录。当前分支 `codex/m2-proposal-materials` 用于本轮留档，正式合并、推送和提交仍按复核及授权执行。

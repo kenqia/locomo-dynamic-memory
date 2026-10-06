@@ -1,0 +1,9 @@
+仅记录本地制作基准之前的提交历史，不包含本轮未提交产物。
+1799d54 docs: record published M1 version and final task snapshot
+1373c10 docs: finalize M1 report and reviewed process materials
+9561e63 docs: simplify meeting template version note
+1aaac89 docs: add M1 workflow report and agreed team process
+35e494a docs: update directory guide and add spec and ticket folders
+5fbc358 chore: bundle workflow skills for contributors
+cf5cf59 docs: record confirmed AI workflow discussion
+a8cabc9 docs: add approved drafts, meeting template and course sources
