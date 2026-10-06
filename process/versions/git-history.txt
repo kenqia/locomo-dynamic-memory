@@ -1,3 +1,4 @@
+1373c10 2026-10-06 kenqia docs: finalize M1 report and reviewed process materials
 9561e63 2026-10-05 kenqia docs: simplify meeting template version note
 1aaac89 2026-10-05 kenqia docs: add M1 workflow report and agreed team process
 35e494a 2026-10-05 kenqia docs: update directory guide and add spec and ticket folders
