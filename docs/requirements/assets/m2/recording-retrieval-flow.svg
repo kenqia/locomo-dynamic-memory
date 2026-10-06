@@ -32,13 +32,15 @@
 <text x="285.0" y="721" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#16736C">History + Current State</text>
 <text x="285.0" y="753" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="22" font-weight="400" fill="#172C45">旧 Memory 保留，支持重复查询</text>
 <rect x="645" y="70" width="460" height="100" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>
-<text x="875.0" y="96" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#245D8D">Question</text>
-<text x="875.0" y="128" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="22" font-weight="400" fill="#172C45">识别问题对象与时间条件</text>
+<text x="875.0" y="96" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#245D8D">Query Analysis</text>
+<text x="875.0" y="128" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">LLM 辅助提取 Entity/Topic</text>
+<text x="875.0" y="154" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">Time/Keywords · 保留原始问题</text>
 <polyline points="875,170 875,195" fill="none" stroke="#245D8D" stroke-width="3" stroke-linejoin="round"/>
 <polygon points="875.0,195.0 869.0,182.0 881.0,182.0" fill="#245D8D"/>
 <rect x="645" y="195" width="460" height="100" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>
 <text x="875.0" y="221" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#245D8D">Hybrid Retrieval</text>
-<text x="875.0" y="253" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="22" font-weight="400" fill="#172C45">BM25 + Vector + Entity/Time</text>
+<text x="875.0" y="253" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">Original Query + BM25 + Vector</text>
+<text x="875.0" y="279" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">分析结果补充结构化检索信号</text>
 <polyline points="875,295 875,320" fill="none" stroke="#245D8D" stroke-width="3" stroke-linejoin="round"/>
 <polygon points="875.0,320.0 869.0,307.0 881.0,307.0" fill="#245D8D"/>
 <rect x="645" y="320" width="460" height="100" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>
@@ -49,7 +51,7 @@
 <rect x="645" y="445" width="460" height="100" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>
 <text x="875.0" y="471" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#245D8D">State Resolution</text>
 <text x="875.0" y="503" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">历史关系 + Current State</text>
-<text x="875.0" y="529" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">按问题时间判断适用性</text>
+<text x="875.0" y="529" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">按问题时间与状态判断适用性</text>
 <polyline points="875,545 875,570" fill="none" stroke="#245D8D" stroke-width="3" stroke-linejoin="round"/>
 <polygon points="875.0,570.0 869.0,557.0 881.0,557.0" fill="#245D8D"/>
 <rect x="645" y="570" width="460" height="100" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>

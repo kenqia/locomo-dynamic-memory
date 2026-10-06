@@ -80,18 +80,18 @@ def diagrams():
     s.line([(265,130),(265,170)],TEAL)
     s.line([(265,280),(265,335)],TEAL)
     s.line([(265,485),(265,585)],TEAL)
-    s.box(650,60,450,70,"用户问题 Question")
-    s.box(650,170,450,110,"Hybrid Retrieval","BM25 + Vector + Entity/Time\n按问题对象与时间寻找候选")
+    s.box(650,60,450,90,"Question / Query Analysis","LLM 辅助提取对象、主题、时间、关键词")
+    s.box(650,170,450,110,"Hybrid Retrieval","Original Query + BM25 + Vector\n分析结果作为补充检索信号")
     s.box(650,325,450,70,"相关 Memory")
-    s.box(650,435,450,110,"State Resolution","历史 + 关系 + 问题时间\n冲突无法消解时保留不确定性")
+    s.box(650,435,450,110,"State Resolution","历史 + 关系 + 问题时间与状态\n冲突无法消解时保留不确定性")
     s.box(650,585,450,85,"有效 Memory → Answer","Web 展示答案、证据及状态过程")
-    for a,b in [(130,170),(280,325),(395,435),(545,585)]:
+    for a,b in [(150,170),(280,325),(395,435),(545,585)]:
         s.line([(875,a),(875,b)],BLUE)
     s.line([(490,355),(550,355),(550,225),(650,225)],TEAL)
     s.text(554,307,"历史",19,False,TEAL)
     s.line([(490,465),(570,465),(570,490),(650,490)],TEAL)
     s.text(566,427,"关系与状态",18,False,TEAL)
-    s.text(580,718,"保留旧 Memory；有效证据由问题与时间条件决定",23,True,INK)
+    s.text(580,718,"保留旧 Memory；有效证据由问题时间与状态关系决定",23,True,INK)
     s.save("system-architecture")
 
     s=Scene(1160,860)
@@ -106,10 +106,10 @@ def diagrams():
         ("History + Current State","旧 Memory 保留，支持重复查询"),
     ]
     retrieval=[
-        ("Question","识别问题对象与时间条件"),
-        ("Hybrid Retrieval","BM25 + Vector + Entity/Time"),
+        ("Query Analysis","LLM 辅助提取 Entity/Topic\nTime/Keywords · 保留原始问题"),
+        ("Hybrid Retrieval","Original Query + BM25 + Vector\n分析结果补充结构化检索信号"),
         ("Relevant Memories","合并候选、去重、保留来源"),
-        ("State Resolution","历史关系 + Current State\n按问题时间判断适用性"),
+        ("State Resolution","历史关系 + Current State\n按问题时间与状态判断适用性"),
         ("Effective Memory","选择有效证据或说明不确定性"),
         ("Answer + Evidence","展示原文及状态解析过程"),
     ]
@@ -146,8 +146,8 @@ def text_runs(p,text,size=11):
     set_font(p.add_run(text[start:]),size)
     return p
 
-def table(doc,rows):
-    widths= [4.2,12.4] if len(rows[0])==2 else [3.6,7.6,5.4]
+def table(doc,rows,widths=None):
+    widths=widths or ([4.2,12.4] if len(rows[0])==2 else [3.6,7.6,5.4])
     t=doc.add_table(rows=1, cols=len(rows[0]))
     t.alignment=WD_TABLE_ALIGNMENT.CENTER
     t.autofit=False
@@ -188,9 +188,10 @@ def table(doc,rows):
     spacer.add_run().font.size=Pt(2)
     return t
 
-def build():
-    diagrams()
-    source=ROOT/"docs/requirements/vision-and-scope.md"
+def build(source=None, milestone="M2"):
+    if source is None:
+        diagrams()
+        source=ROOT/"docs/requirements/vision-and-scope.md"
     doc=Document()
     sec=doc.sections[0]
     sec.page_width=Cm(21);sec.page_height=Cm(29.7)
@@ -205,10 +206,10 @@ def build():
         st=doc.styles[style]
         st.font.name="Noto Sans CJK SC";st.font.color.rgb=RGBColor(0,0,0)
         st._element.get_or_add_rPr().get_or_add_rFonts().set(qn("w:eastAsia"),"Noto Sans CJK SC")
-        st.paragraph_format.space_after=Pt(5)
-    doc.styles["Normal"].font.size=Pt(11)
-    doc.styles["Normal"].paragraph_format.line_spacing=1.15
-    doc.styles["Title"].font.size=Pt(21)
+        st.paragraph_format.space_after=Pt(5 if milestone=="M2" else 3)
+    doc.styles["Normal"].font.size=Pt(11 if milestone=="M2" else 10)
+    doc.styles["Normal"].paragraph_format.line_spacing=1.15 if milestone=="M2" else 1.08
+    doc.styles["Title"].font.size=Pt(21 if milestone=="M2" else 17)
     doc.styles["Title"].font.bold=True
     doc.styles["Title"].paragraph_format.space_after=Pt(8)
     doc.styles["Heading 1"].font.size=Pt(13)
@@ -220,9 +221,9 @@ def build():
     doc.styles["Caption"].font.bold=False
     doc.styles["Caption"].paragraph_format.space_after=Pt(6)
     header=sec.header.paragraphs[0]
-    text_runs(header,"在阴雨天游泳   |   Team 3   |   M2 项目提案",8)
+    text_runs(header,f"在阴雨天游泳   |   Team 3   |   {milestone} " + ("项目提案" if milestone=="M2" else "Team Workflow"),8)
     footer=sec.footer.paragraphs[0];footer.alignment=WD_ALIGN_PARAGRAPH.RIGHT
-    text_runs(footer,"Vision and Scope    ·    ",8)
+    text_runs(footer,("Vision and Scope" if milestone=="M2" else "Team Workflow") + "    ·    ",8)
     field=OxmlElement("w:fldSimple");field.set(qn("w:instr"),"PAGE")
     footer._p.append(field)
     lines=source.read_text(encoding="utf-8").splitlines()
@@ -235,7 +236,7 @@ def build():
         if line=="<!-- pagebreak -->":
             pending_pagebreak=True
         elif line.startswith("# "):
-            p=doc.add_paragraph(style="Title");text_runs(p,line[2:],21);p.runs[0].bold=True
+            p=doc.add_paragraph(style="Title");text_runs(p,line[2:],21 if milestone=="M2" else 17);p.runs[0].bold=True
         elif line.startswith("## "):
             p=doc.add_paragraph(style="Heading 1");text_runs(p,line[3:],13);p.runs[0].bold=True
             if pending_pagebreak:
@@ -255,24 +256,30 @@ def build():
                 if not all(re.fullmatch(r":?-+:?",s.replace(" ","")) for s in vals):
                     rows.append(vals)
                 i+=1
-            table(doc,rows)
+            table(doc,rows, ([7.4,4.6,4.6] if rows[0][0]=="工作" else [2,8.1,6.5] if rows[0][0]=="成员" else None) if milestone=="M1" else None)
             continue
-        elif line.startswith("图 "):
+        elif line.startswith(("图 ","表 ")):
             p=doc.add_paragraph(style="Caption");text_runs(p,line,9)
+            if pending_pagebreak:
+                p.paragraph_format.page_break_before=True
+                pending_pagebreak=False
         else:
             p=doc.add_paragraph()
             p.paragraph_format.widow_control=True
-            text_runs(p,line,9 if re.match(r"\[\d+\]",line) else (10 if line.startswith(("Milestone","队名：","成员：")) else 11))
+            if re.match(r"\[\d+\]",line):
+                p.paragraph_format.space_after=Pt(2)
+            text_runs(p,line,9 if re.match(r"\[\d+\]",line) else (10 if line.startswith(("Milestone","队名：","成员：")) else (11 if milestone=="M2" else 10)))
         i+=1
-    doc.core_properties.title="动态对话记忆管理项目提案"
-    doc.core_properties.subject="M2 Vision and Scope and Feature Roadmap"
+    doc.core_properties.title="动态对话记忆管理项目提案" if milestone=="M2" else "M1 Team Workflow"
+    doc.core_properties.subject="M2 Vision and Scope and Feature Roadmap" if milestone=="M2" else "M1 Team Workflow"
     doc.core_properties.author="在阴雨天游泳项目组"
-    doc.core_properties.keywords="M2, LoCoMo, Dynamic Memory"
+    doc.core_properties.keywords=f"{milestone}, LoCoMo, Dynamic Memory"
     doc.core_properties.comments="本地制作稿，正式交付前按团队流程复核。"
     output=source.with_suffix(".docx")
     doc.save(output)
     print(f"Created {output}")
-    print("Created 2 diagrams in PNG and SVG formats")
+    if milestone=="M2":
+        print("Created 2 diagrams in PNG and SVG formats")
 
 if __name__=="__main__":
     build()

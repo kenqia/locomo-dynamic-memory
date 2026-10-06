@@ -21,22 +21,23 @@
 <polygon points="265.0,335.0 259.0,322.0 271.0,322.0" fill="#16736C"/>
 <polyline points="265,485 265,585" fill="none" stroke="#16736C" stroke-width="3" stroke-linejoin="round"/>
 <polygon points="265.0,585.0 259.0,572.0 271.0,572.0" fill="#16736C"/>
-<rect x="650" y="60" width="450" height="70" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>
-<text x="875.0" y="95.0" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#245D8D">用户问题 Question</text>
+<rect x="650" y="60" width="450" height="90" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>
+<text x="875.0" y="86" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#245D8D">Question / Query Analysis</text>
+<text x="875.0" y="118" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="22" font-weight="400" fill="#172C45">LLM 辅助提取对象、主题、时间、关键词</text>
 <rect x="650" y="170" width="450" height="110" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>
 <text x="875.0" y="196" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#245D8D">Hybrid Retrieval</text>
-<text x="875.0" y="228" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">BM25 + Vector + Entity/Time</text>
-<text x="875.0" y="254" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">按问题对象与时间寻找候选</text>
+<text x="875.0" y="228" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">Original Query + BM25 + Vector</text>
+<text x="875.0" y="254" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">分析结果作为补充检索信号</text>
 <rect x="650" y="325" width="450" height="70" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>
 <text x="875.0" y="360.0" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#245D8D">相关 Memory</text>
 <rect x="650" y="435" width="450" height="110" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>
 <text x="875.0" y="461" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#245D8D">State Resolution</text>
-<text x="875.0" y="493" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">历史 + 关系 + 问题时间</text>
+<text x="875.0" y="493" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">历史 + 关系 + 问题时间与状态</text>
 <text x="875.0" y="519" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="20" font-weight="400" fill="#172C45">冲突无法消解时保留不确定性</text>
 <rect x="650" y="585" width="450" height="85" rx="12" fill="#F1F6FB" stroke="#245D8D" stroke-width="2"/>
 <text x="875.0" y="611" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="27" font-weight="700" fill="#245D8D">有效 Memory → Answer</text>
 <text x="875.0" y="643" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="22" font-weight="400" fill="#172C45">Web 展示答案、证据及状态过程</text>
-<polyline points="875,130 875,170" fill="none" stroke="#245D8D" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="875,150 875,170" fill="none" stroke="#245D8D" stroke-width="3" stroke-linejoin="round"/>
 <polygon points="875.0,170.0 869.0,157.0 881.0,157.0" fill="#245D8D"/>
 <polyline points="875,280 875,325" fill="none" stroke="#245D8D" stroke-width="3" stroke-linejoin="round"/>
 <polygon points="875.0,325.0 869.0,312.0 881.0,312.0" fill="#245D8D"/>
@@ -50,5 +51,5 @@
 <polyline points="490,465 570,465 570,490 650,490" fill="none" stroke="#16736C" stroke-width="3" stroke-linejoin="round"/>
 <polygon points="650.0,490.0 637.0,496.0 637.0,484.0" fill="#16736C"/>
 <text x="566" y="427" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="18" font-weight="400" fill="#16736C">关系与状态</text>
-<text x="580" y="718" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" font-weight="700" fill="#172C45">保留旧 Memory；有效证据由问题与时间条件决定</text>
+<text x="580" y="718" dominant-baseline="central" text-anchor="middle" font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" font-size="23" font-weight="700" fill="#172C45">保留旧 Memory；有效证据由问题时间与状态关系决定</text>
 </svg>

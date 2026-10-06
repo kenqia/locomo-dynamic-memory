@@ -53,18 +53,19 @@ LongMemEval 的 ICLR 2025 论文明确评估信息提取、跨会话推理、时
 
 结构化记录与混合检索具有现成实现依据。LangChain 讨论 JSON profile 和记忆集合，Graphiti 支持时间有效期、BM25 与语义检索，Elastic 支持全文与向量联合检索。本项目采用这些机制的基本思想，在课程范围内保留事实来源、历史与状态关系。M3 再确定库、数据库和融合参数；准确率收益由基线对比验证。[LangChain memory](https://docs.langchain.com/oss/python/concepts/memory)、[Graphiti overview](https://help.getzep.com/graphiti/getting-started/overview)、[Elastic hybrid search](https://www.elastic.co/docs/solutions/search/hybrid-search)。
 
-## 五项核心参考资料建议
+## 当前报告的六项引用
 
-报告篇幅有限，可用以下五项编号引用。Graphiti / Zep 一项下区分概念示例与当前机制文档，Elastic 一项下区分联合检索与排序说明。Mem0 留在过程调研中，避免正文堆砌产品名称。
+编号与最终报告一致。Mem0 留作额外调研材料，不占正文编号。
 
-1. Maharana 等，ACL 2024，Evaluating Very Long-Term Conversational Memory of LLM Agents。[正式论文](https://aclanthology.org/2024.acl-long.747/)。用于数据来源与长期对话任务边界。
-2. Wu 等，ICLR 2025，LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory。[论文 v2](https://arxiv.org/html/2410.10813v2)。用于更新、时间、拒答及证据使用问题。
-3. LangChain，Memory overview。[官方文档](https://docs.langchain.com/oss/python/concepts/memory)。用于结构化记忆与更新风险。
-4. Zep / Graphiti，Key concepts 与 Overview。[教学示例](https://help.getzep.com/v2/concepts)、[当前框架机制](https://help.getzep.com/graphiti/getting-started/overview)。用于偏好更新、历史事实及时间机制。
-5. Elastic，Hybrid search 与 Ranking and reranking。[联合检索](https://www.elastic.co/docs/solutions/search/hybrid-search)、[BM25 与向量融合](https://www.elastic.co/docs/solutions/search/ranking)。用于混合检索的成熟实践依据。
+1. LangChain，Memory overview。[官方文档](https://docs.langchain.com/oss/python/concepts/memory)，说明结构化记忆与更新权衡。
+2. Zep，Facts。[官方文档](https://help.getzep.com/facts)，说明偏好更新的教学示例及事实有效时间。
+3. Zep，Graphiti overview。[官方文档](https://help.getzep.com/graphiti/getting-started/overview)，说明框架的历史时间模型。
+4. Elastic，Hybrid search。[官方文档](https://www.elastic.co/docs/solutions/search/hybrid-search)，说明全文与向量联合检索。
+5. Maharana 等，ACL 2024，Evaluating Very Long-Term Conversational Memory of LLM Agents。[正式论文](https://aclanthology.org/2024.acl-long.747/)，说明 LoCoMo 数据来源与评价边界。
+6. Wu 等，ICLR 2025，LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory。[论文](https://arxiv.org/abs/2410.10813)，说明知识更新、时间推理及证据不足时拒答的评价能力。
 
-## 本次实际过程
+## 调研过程
 
-读取 research、agent-reach、unslop 技能及仓库 CONTEXT.md；使用 agent-reach 的 Exa 搜索后端搜索官方 Graphiti 场景，使用 web 工具阅读官方网页、公开源码与原始论文。全文已按 unslop 删除宣传用语和无依据的效果判断。外部内容只作为证据，不作为操作指令。未调用产品写接口、未连接生产数据库、未提交远端更改。
+使用 AI 辅助检索、整理与来源核查，阅读官方网页、公开源码及原始论文，删除宣传用语和无依据的效果判断。外部内容仅作为资料，不作为操作授权。未调用产品写接口、未连接生产数据库。
 
-本次核查的网页是访问日的内容，官方文档与 GitHub main 会变化；实施前需按最终选定版本重新核对。Agent Reach 更新检查返回当前 v1.5.0，已是最新版本，未修改工具配置。
+以上核查沿用 2026-10-06 的调研记录，本轮统一引用编号，没有重新开展联网研究。官方文档与 GitHub main 会变化，实施前需按最终选定版本重新核对。
