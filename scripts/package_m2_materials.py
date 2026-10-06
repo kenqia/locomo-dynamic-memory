@@ -69,6 +69,8 @@ def build():
     add("process/m2-process-index.md")
     # The report PDF/Word are separate deliverables, as in the M1 package.
     add("docs/requirements/vision-and-scope.md")
+    add("docs/sources/m2-real-world-memory-research.md")
+    add("process/m2/iterations/vision-and-scope-before-research.md")
     add("process/m2/iterations/vision-and-scope-initial-draft.md")
     add("process/m2/iterations/revision-notes.md")
     add("docs/decisions/m2-proposal-interview.md")
@@ -103,6 +105,8 @@ def build():
 
     links=[
         ("报告 Markdown","docs/requirements/vision-and-scope.md"),
+        ("联网调研与一手来源","docs/sources/m2-real-world-memory-research.md"),
+        ("联网调研前的报告","process/m2/iterations/vision-and-scope-before-research.md"),
         ("总体架构图","docs/requirements/assets/m2/system-architecture.png"),
         ("记录与检索流程图","docs/requirements/assets/m2/recording-retrieval-flow.png"),
         ("首次会议纪要 PDF","process/meetings/first-meeting.pdf"),

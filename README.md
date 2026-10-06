@@ -54,3 +54,5 @@
 报告内两张简化图的 PNG 与可编辑 SVG 位于 `docs/requirements/assets/m2/`。过程材料、阅读页、文件清单与校验值全部在仓库留档，再通过 `python scripts/package_m2_materials.py` 整合为 ZIP；包内保留仓库路径和原始内容。报告 Word/PDF 独立提供，交付文件存放于 `deliverables/m2/`。
 
 修改源稿后可运行 `python scripts/build_m2_report.py` 重建 Word 和图示，所需环境及 PDF 渲染方式见验证记录。当前分支 `codex/m2-proposal-materials` 用于本轮留档，正式合并、推送和提交仍按复核及授权执行。
+
+M2 联网调研依据见 [现实系统与基准调研](docs/sources/m2-real-world-memory-research.md)。报告采用一手资料修订问题、可行性与评测边界；调研前快照保存在 `process/m2/iterations/vision-and-scope-before-research.md`。两者均进入过程 ZIP，不代表已运行系统实验。

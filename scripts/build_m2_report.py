@@ -16,6 +16,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+from docx.opc.constants import RELATIONSHIP_TYPE as RT
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "docs/requirements/assets/m2"
@@ -132,9 +133,17 @@ def set_font(run,size=11,bold=None):
         fonts.set(qn("w:"+k),"Noto Sans CJK SC")
 
 def text_runs(p,text,size=11):
-    # This source has plain text only; remove Markdown inline backticks if added.
-    r=p.add_run(text.replace("`",""))
-    set_font(r,size)
+    # Render source links as clickable Word hyperlinks, retaining readable labels.
+    text=text.replace("`","")
+    start=0
+    for match in re.finditer(r"\[([^\]]+)\]\((https?://[^)]+)\)",text):
+        set_font(p.add_run(text[start:match.start()]),size)
+        link=OxmlElement("w:hyperlink")
+        link.set(qn("r:id"),p.part.relate_to(match.group(2),RT.HYPERLINK,is_external=True))
+        run=p.add_run(match.group(1));set_font(run,size)
+        link.append(run._element);p._p.append(link)
+        start=match.end()
+    set_font(p.add_run(text[start:]),size)
     return p
 
 def table(doc,rows):
@@ -253,7 +262,7 @@ def build():
         else:
             p=doc.add_paragraph()
             p.paragraph_format.widow_control=True
-            text_runs(p,line,10 if line.startswith(("Milestone","队名：","成员：")) else 11)
+            text_runs(p,line,9 if re.match(r"\[\d+\]",line) else (10 if line.startswith(("Milestone","队名：","成员：")) else 11))
         i+=1
     doc.core_properties.title="动态对话记忆管理项目提案"
     doc.core_properties.subject="M2 Vision and Scope and Feature Roadmap"

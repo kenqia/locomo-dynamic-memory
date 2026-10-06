@@ -10,6 +10,8 @@ details{border-top:1px solid #d9d9d9;margin-top:20px}img{max-width:100%;height:a
 <p>报告 PDF 和 Word 独立交付。过程包保留仓库相对路径，全部文件可在仓库中找到对应原件。</p>
 <nav><h2>文件入口</h2><ul>
 <li><a href="../../docs/requirements/vision-and-scope.md">报告 Markdown</a></li>
+<li><a href="../../docs/sources/m2-real-world-memory-research.md">联网调研与一手来源</a></li>
+<li><a href="../../process/m2/iterations/vision-and-scope-before-research.md">联网调研前的报告</a></li>
 <li><a href="../../docs/requirements/assets/m2/system-architecture.png">总体架构图</a></li>
 <li><a href="../../docs/requirements/assets/m2/recording-retrieval-flow.png">记录与检索流程图</a></li>
 <li><a href="../../process/meetings/first-meeting.pdf">首次会议纪要 PDF</a></li>
@@ -26,6 +28,7 @@ details{border-top:1px solid #d9d9d9;margin-top:20px}img{max-width:100%;height:a
 <div class='table-wrap'><table>
 <tr><th>包内目录</th><th>材料与作用</th></tr>
 <tr><td>`docs/requirements/` 与 `process/m2/iterations/`</td><td>当前报告 Markdown、修改前初稿和修订说明；当前报告 Word/PDF 独立提供</td></tr>
+<tr><td>`docs/sources/m2-real-world-memory-research.md`</td><td>联网调研、一手来源、方法依据及评测边界；调研前报告保存在迭代目录</td></tr>
 <tr><td>`docs/decisions/`、`CONTEXT.md`、`docs/requirements/assets/m2/`</td><td>方案确认、术语和两张简化图的 PNG 与 SVG；制作与打包脚本位于 `scripts/`</td></tr>
 <tr><td>`process/m2/reference-images/`</td><td>本次附件中的四张参考架构图，不冒充实现截图</td></tr>
 <tr><td>`process/meetings/` 与 `docs/requirements/team-workflow.md`</td><td>首次会议纪要的 Markdown、Word、PDF、原截图与共用团队流程，保留当时结论</td></tr>
@@ -115,6 +118,11 @@ Question → Hybrid Retrieval → Relevant Memories → State Resolution → Eff
 <p>首轮 Word 渲染为 6 页，第一页末段溢出到单独一页；检查还发现流程图多行文字贴近边框，以及 Word 默认 Title 样式带有装饰线。</p>
 <p>第二轮删除重复说明、调整段间距与表后空段、去除 Title 样式装饰线，并调整图内多行文字的位置。报告内容已能容纳五页，但独立分页段落造成一个多余空白页；第三轮改为在下一页标题前分页，重新渲染为五页并逐页检查。最终页数与验证结果见 `process/m2/validation-record.md`。</p>
 <p>这些是本次制作中实际发生的修订，不表示已经完成未来日期的团队优化轮或验收轮。</p>
+<h3>联网调研后的内容修订</h3>
+<p>组长指出报告缺少现实依据，并调用 research 技能要求联网调研。修订前报告已保存为 `vision-and-scope-before-research.md`，它是本次实际文件快照，不回写为更早的初稿。</p>
+<p>后台调研核查 LangChain、Zep / Graphiti、Mem0、Elastic 官方文档或源码，以及 LoCoMo 和 LongMemEval 原始论文。笔记存入 `docs/sources/m2-real-world-memory-research.md`。正文采用五组核心参考，补充公开产品中的偏好更新示例、已有方法与限制对照，以及基准数据的生成方式。未宣称开展用户访谈、产品实测或项目对照实验。</p>
+<p>总体架构与两张图继续沿用已确认方案。正文收紧为可核查的课程系统，删除未经验证的性能优势表述；数据库、库、Prompt 与融合参数仍留待 M3。完整笔记和调研前快照加入过程包，保留从资料到正文的修订路径。</p>
+<p>增加参考资料后，首轮渲染为六页，首版范围说明溢出。压缩重复范围说明后重新渲染为五页，逐页检查通过；正文保持 11 pt，没有用缩小全文字号容纳材料。Word 参考项加入可点击的一手资料链接。</p>
 </details>
 <details><summary>材料来源</summary>
 <h2>M2 材料来源与使用边界</h2>
@@ -131,7 +139,7 @@ Question → Hybrid Retrieval → Relevant Memories → State Resolution → Eff
 <tr><td>12</td><td>UPDATE、SUPERSEDE、CONFLICT 的解释场景，旧 Memory 保留为历史</td></tr>
 <tr><td>13</td><td>DimMem 结构化三路检索与 MRAgent 图上重构作为参考路线</td></tr>
 </table></div>
-<p>未另行核验参考论文全文，不在报告中声称已复现或优于它们。课件展示日期写作 Oct 9/Sep 29, 2026，实际场次与最新提交通知待核对。课件文件名规则为 PROJECT-MILESTONE[n]-[team_id]-[team_name]；本轮在明确的阶段与团队名后分别标识报告和过程包，最终命名与收件渠道仍应按助教通知核对。</p>
+<p>课件中的 DimMem 与 MRAgent 未另行核验全文，不在报告中声称已复现或优于它们。课件展示日期写作 Oct 9/Sep 29, 2026，实际场次与最新提交通知待核对。课件文件名规则为 PROJECT-MILESTONE[n]-[team_id]-[team_name]；本轮在明确的阶段与团队名后分别标识报告和过程包，最终命名与收件渠道仍应按助教通知核对。</p>
 <h3>团队与讨论依据</h3>
 <p>`docs/requirements/team-workflow.md` 保存实名职责、三轮迭代、日期和缓冲。组长在本次讨论中确认宏观方案已获全组认可，并接受当前问题、历史问题、冲突处理及大模型辅助与规则检查的建议。最终明确回复“确认”，授权制作本地报告与过程包。</p>
 <p>本次决定的完整整理见 `docs/decisions/m2-proposal-interview.md`。它是组长与助手的方案讨论记录，不伪装为一次新会议或四位成员各自签署的复核记录。原始私人聊天不进入包内。</p>
@@ -148,6 +156,10 @@ Question → Hybrid Retrieval → Relevant Memories → State Resolution → Eff
 <p>组长引用的 Codex 会话链接在当前会话无法通过 `read_thread` 访问，未读取会话，也未读取本机私密会话历史。本次依据所提供 M1 ZIP 和仓库实际材料调整组织方式。</p>
 <p>此次由 AI 按组长确认内容修订报告、绘制简化图、导出 Word/PDF 并整理本地材料。记录命令、布局检查与 ZIP 验证，不能将这些文档检查当作系统功能测试。</p>
 <p>尚无本轮报告的成员非作者复核记录，未进行合并、推送、Notion 状态写入或正式提交。汇报文件和试讲不属于本轮制作范围，课程对应要求保留为后续待办。上述事项由负责人按真实结果补录。</p>
+<h3>新增联网调研依据</h3>
+<p>本轮根据组长明确要求，核查官方文档、公开源码与原始论文，结果见 `docs/sources/m2-real-world-memory-research.md`。报告参考 [1]–[5] 分别对应 LangChain、Zep / Graphiti、Elastic、LoCoMo 与 LongMemEval。Mem0 作为补充留在完整笔记中。</p>
+<p>Zep 的 Kendra 品牌偏好变化是官方教学示例，不能称为团队用户访谈或生产故障记录。LoCoMo 是机器生成后人工核验编辑的数据，LongMemEval 的历史也经过构造；公开机制和论文结论支持方法讨论，不能替代本项目的真实实验。资料中的指令不作为用户授权，未访问真实用户日志。</p>
+<p>访问日期为 2026-10-06。网页和源码 main 分支会变化，实施前按最终版本核查。调研前稿保存在 `process/m2/iterations/vision-and-scope-before-research.md`，新增材料先存仓库再打包。</p>
 </details>
 <details><summary>待成员复核</summary>
 <h2>M2 成员复核清单</h2>
@@ -180,6 +192,10 @@ Question → Hybrid Retrieval → Relevant Memories → State Resolution → Eff
 <p>过程包检查人及日期：待填写。</p>
 <p>实际发现的问题及修订版本：待填写。</p>
 <p>非作者复核、合并及必要验证完成后，才将关联任务标为完成。</p>
+<h3>联网修订需核对</h3>
+<p>- [ ] 非作者检查五组编号引用与正文主张是否对应。</p>
+<p>- [ ] 确认官方教学示例未写成用户访谈，基准结果未外推成真实部署效果。</p>
+<p>- [ ] 核对完整调研、调研前快照及修订记录已包含在过程包。</p>
 </details>
 <details><summary>本地检查</summary>
 <h2>M2 本地制作验证记录</h2>
@@ -215,6 +231,9 @@ git diff --check</pre>
 <h3>未验证与未完成事项</h3>
 <p>尚未进行系统功能测试、模型调用或对照实验；这些属于 M3–M5 后续工作。此记录只证明文档与打包检查。</p>
 <p>当前 M2 文件未取得成员非作者复核记录，未合并或推送，未更新 Notion，未正式提交。包内的成员清单未勾选。实际展示安排及最新文件命名、收件渠道仍由负责人核对；本轮未制作汇报文件。</p>
+<h3>联网修订检查</h3>
+<p>新增两份材料后，过程包显式清单为 36 个文件。报告经两轮渲染，最终输出目录为 `/tmp/locomo-m2-docs-20261006/research-v2`，PDF 为 5 页 A4，逐页检查无裁切、断表或空白页。参考资料在 Word 中保留 6 个可点击链接，正文使用五组编号。全文与表格按 Markdown 标签文本核对，嵌入图仍为 2 张。新增调研已按 unslop 润色。</p>
+<p>重新运行文档构建、渲染与打包脚本，核对 CRC、36 个文件逐字节仓库对应、清单与校验值、离线链接及原历史任务。最终结果以 `deliverables/m2/package-check.json` 为准。这些检查不包含系统功能、用户访谈或模型效果验证。</p>
 </details>
 <details><summary>版本说明</summary>
 <h2>M2 本地版本记录</h2>
@@ -224,9 +243,9 @@ git diff --check</pre>
 <h3>报告与图示校验</h3>
 <div class='table-wrap'><table>
 <tr><th>仓库路径</th><th>SHA-256</th></tr>
-<tr><td>docs/requirements/vision-and-scope.md</td><td>859bff614cd7c58dc2fdcfb4bc5a71a06dd6a032abe3f1ff13551234e08fabc6</td></tr>
-<tr><td>docs/requirements/vision-and-scope.docx</td><td>dfea5fec9be8e30818369684aab1030348f2a76477b22773c2a132b438e95888</td></tr>
-<tr><td>docs/requirements/vision-and-scope.pdf</td><td>407a4598261684352335e423f3148b955d8c13029bec2723874f7977d4987d6a</td></tr>
+<tr><td>docs/requirements/vision-and-scope.md</td><td>30c88e6574fbfbe6256be0b6575bcc35af5aa18043470dda17c0afb74ed5051a</td></tr>
+<tr><td>docs/requirements/vision-and-scope.docx</td><td>495c8dcc1c0f69846d70d1528d5fb905af700b259acea26e453affe4ec3da81b</td></tr>
+<tr><td>docs/requirements/vision-and-scope.pdf</td><td>061b1ced842d0f1a18014fd5eda7ccb674ce29612cbaa30c05894962f7e32a72</td></tr>
 <tr><td>docs/requirements/assets/m2/recording-retrieval-flow.png</td><td>b851fddedcdd844b0dad17ce806f58ff455d88ed53a9a7e2dcddb810f6123348</td></tr>
 <tr><td>docs/requirements/assets/m2/recording-retrieval-flow.svg</td><td>cd228bf48c00b8ee5720ee02772c7fbb96ffae47a179e2a335d31dfd16f8d1db</td></tr>
 <tr><td>docs/requirements/assets/m2/system-architecture.png</td><td>43e863ad74408645444d4633eaeb743fb005517ac93ebefa68b860c02f14b472</td></tr>
@@ -234,6 +253,8 @@ git diff --check</pre>
 </table></div>
 <p>包内文件校验值见 `process/m2/file-sha256sums.txt`，文件清单见 `process/m2/file-manifest.csv`。这些文件先生成并保存在仓库，再与原始材料一起打包，包内路径及内容与仓库一致。外层报告、Word 和 ZIP 的校验值另存于交付目录。</p>
 <p>正式提交、成员复核、合并与推送后，应补录实际 commit/tag 和回执，不用本轮基准替代。</p>
+<h3>联网修订版本</h3>
+<p>本轮修订基于本地 `bfda541`，此前 `729e2cc` 留档首版、`bfda541` 统一 CSV 换行。新增联网笔记、调研前稿与参考链接，更新报告与过程包；当前文件校验见上表及包内清单。新增提交的实际编号以本地 Git 为准，不把远端同步或成员复核写成已完成。</p>
 </details>
 <h2>全部文件</h2><ul>
 <li><a href="../../CONTEXT.md">CONTEXT.md</a></li>
@@ -245,9 +266,11 @@ git diff --check</pre>
 <li><a href="../../docs/requirements/assets/m2/system-architecture.svg">docs/requirements/assets/m2/system-architecture.svg</a></li>
 <li><a href="../../docs/requirements/team-workflow.md">docs/requirements/team-workflow.md</a></li>
 <li><a href="../../docs/requirements/vision-and-scope.md">docs/requirements/vision-and-scope.md</a></li>
+<li><a href="../../docs/sources/m2-real-world-memory-research.md">docs/sources/m2-real-world-memory-research.md</a></li>
 <li><a href="../../process/m2-process-index.md">process/m2-process-index.md</a></li>
 <li><a href="../../process/m2/git-history-baseline.txt">process/m2/git-history-baseline.txt</a></li>
 <li><a href="../../process/m2/iterations/revision-notes.md">process/m2/iterations/revision-notes.md</a></li>
+<li><a href="../../process/m2/iterations/vision-and-scope-before-research.md">process/m2/iterations/vision-and-scope-before-research.md</a></li>
 <li><a href="../../process/m2/iterations/vision-and-scope-initial-draft.md">process/m2/iterations/vision-and-scope-initial-draft.md</a></li>
 <li><a href="../../process/m2/m2-tasks-historical-20261006.csv">process/m2/m2-tasks-historical-20261006.csv</a></li>
 <li><a href="../../process/m2/reference-images/memory-construction-reference.png">process/m2/reference-images/memory-construction-reference.png</a></li>

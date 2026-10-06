@@ -11,6 +11,7 @@
 | 包内目录 | 材料与作用 |
 | --- | --- |
 | `docs/requirements/` 与 `process/m2/iterations/` | 当前报告 Markdown、修改前初稿和修订说明；当前报告 Word/PDF 独立提供 |
+| `docs/sources/m2-real-world-memory-research.md` | 联网调研、一手来源、方法依据及评测边界；调研前报告保存在迭代目录 |
 | `docs/decisions/`、`CONTEXT.md`、`docs/requirements/assets/m2/` | 方案确认、术语和两张简化图的 PNG 与 SVG；制作与打包脚本位于 `scripts/` |
 | `process/m2/reference-images/` | 本次附件中的四张参考架构图，不冒充实现截图 |
 | `process/meetings/` 与 `docs/requirements/team-workflow.md` | 首次会议纪要的 Markdown、Word、PDF、原截图与共用团队流程，保留当时结论 |
