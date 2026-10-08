@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the current snapshot and member records as editable Word files."""
+"""Render M1 meeting, snapshot, and member records as editable Word files."""
 from pathlib import Path
 import re
 from docx import Document
@@ -10,6 +10,7 @@ from docx.oxml.ns import qn
 from build_m2_report import ROOT, text_runs
 
 SOURCES = [
+    'process/meetings/first-meeting.md',
     'process/snapshots/2026-10-06-m1-m2.md',
     'process/snapshots/2026-10-06-review-sync.md',
     'process/reviews/m1-member-review.md',
@@ -30,7 +31,7 @@ def build(path):
         style._element.get_or_add_rPr().get_or_add_rFonts().set(qn('w:eastAsia'), 'Noto Sans CJK SC')
         style.paragraph_format.space_after = Pt(4)
     doc.styles['Normal'].paragraph_format.line_spacing = 1.1
-    lines = source.read_text().splitlines()
+    lines = source.read_text(encoding="utf-8").splitlines()
     i = 0
     while i < len(lines):
         line = lines[i].strip()
