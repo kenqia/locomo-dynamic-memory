@@ -1,3 +1,3 @@
-71feb7271d56b53dd8b78258dd66934453da9ab1fcba6cdc4a6529f4492bda7f  docs/requirements/team-workflow.md
+f7de2784ca9092b5a4e93890535f26e27043e2500aa28390ef4c1308f48624d2  docs/requirements/team-workflow.md
 17d734c6b994cf1b5b6825ea9ca3b5c6152b83233b61bf6c4482ff201bf89823  docs/requirements/team-workflow.docx
 592d6d81a1daf6740452f928893f5f2f9a64459d12eecc72f5627983e9944cd3  docs/requirements/team-workflow.pdf

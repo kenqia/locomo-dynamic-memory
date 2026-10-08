@@ -1,17 +1,26 @@
 {
   "report_pages": 4,
-  "archive_files": 37,
+  "archive_files": 24,
+  "categories": [
+    "首次会议",
+    "仓库与成员访问",
+    "任务快照",
+    "Notion原始截图",
+    "成员反馈",
+    "版本记录"
+  ],
   "zip_crc": "pass",
   "payload_hashes": "pass",
   "manifest": "pass",
   "safe_relative_paths": "pass",
   "offline_html_links": "pass",
+  "markdown_links": "pass",
+  "source_mapping": "pass",
   "report_hashes": "pass",
   "credential_pattern_check": "pass",
-  "all_archive_files_match_repository": true,
   "report_matches_repository": true,
-  "notion_updated": true,
   "member_review_current_revision": "pending",
+  "notion_updated": false,
   "github_remote_write": false,
   "submitted": false
 }
