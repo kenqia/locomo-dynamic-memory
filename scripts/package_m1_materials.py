@@ -36,6 +36,7 @@ def build(include_result=True):
         items[path] = source.read_bytes()
     for path in [
         'process/m1-process-index.md',
+        'process/process-record/m1-m2-action-plan.md',
         'process/access/m1-access.md',
         'process/versions/m1-version-record.md',
         'process/versions/git-history.txt',
@@ -148,7 +149,7 @@ def verify(archive,items):
     match = re.search(r'Pages:\s+(\d+)', info)
     assert match, 'pdfinfo did not report a page count'
     pages = int(match.group(1))
-    assert pages == 5
+    assert 1 <= pages <= 5, f'M1 report exceeds the 5-page limit: {pages}'
     result = {'report_pages':pages,'archive_files':len(items),
               'zip_crc':'pass','payload_hashes':'pass','manifest':'pass',
               'safe_relative_paths':'pass','offline_html_links':'pass',
