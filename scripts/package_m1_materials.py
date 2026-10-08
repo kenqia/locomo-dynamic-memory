@@ -81,7 +81,7 @@ def build(include_result=True):
         entries.append(f'<li><a href="../../{quote(path,safe="/")}">{escape(path)}</a></li>')
     entries.extend(['<li><a href="file-manifest.csv">文件清单</a></li>',
                     '<li><a href="file-sha256sums.txt">文件校验</a></li>', '</ul></body></html>'])
-    (PROCESS/'index.html').write_text('\n'.join(entries))
+    (PROCESS/'index.html').write_text('\n'.join(entries), encoding='utf-8')
     add('process/m1/index.html')
     manifest = io.StringIO(newline='')
     writer = csv.writer(manifest, lineterminator='\n')
@@ -138,8 +138,16 @@ def verify(archive,items):
                         if key == 'href':
                             assert normpath(join('process/m1',unquote(value))) in items,value
         Links().feed(items['process/m1/index.html'].decode())
-    info = subprocess.check_output(['pdfinfo',str(OUTPUT/(BASE+'-报告.pdf'))],text=True)
-    pages = int(re.search(r'Pages:\s+(\d+)',info).group(1))
+    pdfinfo = subprocess.run(
+        ['pdfinfo', str(OUTPUT/(BASE+'-报告.pdf'))],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    info = pdfinfo.stdout.decode('utf-8', errors='replace')
+    match = re.search(r'Pages:\s+(\d+)', info)
+    assert match, 'pdfinfo did not report a page count'
+    pages = int(match.group(1))
     assert pages == 5
     result = {'report_pages':pages,'archive_files':len(items),
               'zip_crc':'pass','payload_hashes':'pass','manifest':'pass',
