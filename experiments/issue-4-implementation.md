@@ -53,6 +53,33 @@ reported as passing.
   `c9745ed1d9f207416be6d2e6f8de32d1f16199bf`. Its presence is not a load or
   encoding result.
 
+### Issue #5: import and source browsing
+
+Integrated with merge commit `3a1f697`. See
+`experiments/issue-5-import-validation.md` for the ticket's test record.
+The integration directory reran `tests/test_imports.py` against its source:
+11 passed, with one upstream Starlette/HTTPX deprecation warning.
+
+An isolated Chromium smoke test started separate FastAPI and Streamlit
+processes using a temporary SQLite database. Clicking the official import
+button displayed 10 conversations and 5,882 turns. The source locator requested
+`D1:1` successfully through FastAPI. No browser page exceptions were captured.
+The first run exposed official orphan session timestamps; the validator was
+corrected and the same scenario passed on rerun. This does not verify the
+downstream build, query or evaluation pages.
+
+### Real MiniLM preflight
+
+An independent Python 3.12 environment loaded the existing pinned snapshot
+offline on CPU with `trust_remote_code=False` and `token=False`.
+Versions were Torch `2.14.1+cpu`, sentence-transformers `6.1.0`, transformers
+`5.20.1`, NumPy `2.5.4`. Two short English sentences encoded to shape
+`(2, 384)`, all finite, with normalized vector lengths `1.0`.
+The tokenizer measured a synthetic long input at 302 tokens against
+`max_seq_length=256`; that input was not encoded. This preflight establishes
+model availability and dimensionality, not the application's overlength
+rejection policy, retrieval quality or answer quality.
+
 ### Implementation references
 
 The official [FastAPI testing guide](https://fastapi.tiangolo.com/tutorial/testing/)
