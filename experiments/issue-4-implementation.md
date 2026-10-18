@@ -68,6 +68,16 @@ The first run exposed official orphan session timestamps; the validator was
 corrected and the same scenario passed on rerun. This does not verify the
 downstream build, query or evaluation pages.
 
+### Issue #6: atomic memory construction
+
+Integrated with merge commit `c754a28`. `uv sync --locked` passed in the
+integration directory, followed by `uv run pytest -q --tb=short`:
+27 passed, 1 opt-in live model test skipped, 1 upstream deprecation warning.
+See `experiments/issue-6-extraction-validation.md` for protocol, provenance,
+retry and partial-build cases. This ticket's page was not separately exercised
+in a browser; cumulative browser verification remains part of #12.
+No real DeepSeek call was made.
+
 ### Real MiniLM preflight
 
 An independent Python 3.12 environment loaded the existing pinned snapshot
