@@ -53,6 +53,21 @@ reported as passing.
   `c9745ed1d9f207416be6d2e6f8de32d1f16199bf`. Its presence is not a load or
   encoding result.
 
+### Issue #5: import and source browsing
+
+Integrated with merge commit `3a1f697`. See
+`experiments/issue-5-import-validation.md` for the ticket's test record.
+The integration directory reran `tests/test_imports.py` against its source:
+11 passed, with one upstream Starlette/HTTPX deprecation warning.
+
+An isolated Chromium smoke test started separate FastAPI and Streamlit
+processes using a temporary SQLite database. Clicking the official import
+button displayed 10 conversations and 5,882 turns. The source locator requested
+`D1:1` successfully through FastAPI. No browser page exceptions were captured.
+The first run exposed official orphan session timestamps; the validator was
+corrected and the same scenario passed on rerun. This does not verify the
+downstream build, query or evaluation pages.
+
 ### Implementation references
 
 The official [FastAPI testing guide](https://fastapi.tiangolo.com/tutorial/testing/)
