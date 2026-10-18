@@ -40,3 +40,29 @@ tuning or a fabricated course development/test split.
 
 Results are recorded below as each ticket is integrated. Pending work is not
 reported as passing.
+
+### Initial checks
+
+- The local parent specification and all eight ticket bodies match the GitHub
+  issue bodies, ignoring only trailing whitespace. All nine issues were open
+  and had no comments when read.
+- All five upstream file hashes match `data/raw/locomo/provenance.json`.
+- Only the presence of the `DEEPSEEK_API_KEY` environment variable was checked.
+  It was absent. No real DeepSeek request was made during these checks.
+- The existing MiniLM snapshot directory has revision
+  `c9745ed1d9f207416be6d2e6f8de32d1f16199bf`. Its presence is not a load or
+  encoding result.
+
+### Implementation references
+
+The official [FastAPI testing guide](https://fastapi.tiangolo.com/tutorial/testing/)
+supports the agreed TestClient/HTTPX and pytest boundary. Pydantic validation
+uses the [model contracts](https://docs.pydantic.dev/latest/concepts/models/).
+The [DeepSeek thinking guide](https://api-docs.deepseek.com/guides/thinking_mode/)
+and [JSON guide](https://api-docs.deepseek.com/guides/json_mode/) govern the
+explicit request settings and validation. The
+[MiniLM model card](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+and [pinned revision metadata](https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/revision/c9745ed1d9f207416be6d2e6f8de32d1f16199bf)
+provide model identity and length constraints. QA scoring follows the retained
+upstream evaluator at commit `3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376`, with
+explicit unavailable-evidence handling required by this project's spec.
