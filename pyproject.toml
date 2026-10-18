@@ -24,3 +24,4 @@ packages = ["src/locomo_memory"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = ["live_model: explicit opt-in paid DeepSeek integration check"]

@@ -2,6 +2,7 @@
 
 import os
 from pathlib import Path
+from typing import Literal
 import tomllib
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -13,12 +14,12 @@ class Settings(BaseModel):
     db_path: Path = Path("var/memory.sqlite3")
     api_url: str = "http://127.0.0.1:8000"
     model_name: str = "deepseek-flash"
-    model_base_url: str = "https://api.deepseek.com"
-    model_timeout_seconds: float = Field(default=60, gt=0)
+    model_base_url: Literal["https://api.deepseek.com"] = "https://api.deepseek.com"
+    model_timeout_seconds: float = Field(default=60, gt=0, allow_inf_nan=False)
     model_retries: int = Field(default=2, ge=0, le=10)
     model_temperature: float = Field(default=0, ge=0, le=2)
     model_max_tokens: int = Field(default=4096, gt=0)
-    thinking_enabled: bool = False
+    thinking_enabled: Literal[False] = False
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
     embedding_revision: str = "c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
     embedding_dimensions: int = Field(default=384, gt=0)

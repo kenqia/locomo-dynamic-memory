@@ -1,5 +1,6 @@
 """FastAPI entry point. All app state is scoped to the factory's settings."""
 
+from contextlib import asynccontextmanager
 import hashlib
 import json
 from pathlib import Path
@@ -12,7 +13,10 @@ from pydantic import ValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from .config import Settings, load_settings
-from .database import Database
+from .database import Database, backend_ownership
+from .build_api import register_build_routes
+from .builds import BuildService
+from .model import DeepSeekModel
 from .imports import import_dataset
 from .schemas import Conversation, Dataset, ErrorResponse, ImportRequest, ImportResult, Page, Session, SourceTurn
 
@@ -23,12 +27,23 @@ OFFICIAL_DIRECTORY = Path(__file__).resolve().parents[2] / "data/raw/locomo"
 
 def create_app(settings: Settings | None = None, model=None, embedder=None) -> FastAPI:
     settings = settings or load_settings()
-    app = FastAPI(title="LoCoMo dynamic memory", responses={400: {"model": ErrorResponse}, 404: {"model": ErrorResponse}, 422: {"model": ErrorResponse}})
+    database = Database(settings.db_path)
+    model = model if model is not None else DeepSeekModel(settings)
+    builds = BuildService(database, settings, model)
+
+    @asynccontextmanager
+    async def lifespan(app):
+        with backend_ownership(settings.db_path):
+            builds.recover_interrupted()
+            yield
+
+    app = FastAPI(title="LoCoMo dynamic memory", lifespan=lifespan, responses={400: {"model": ErrorResponse}, 404: {"model": ErrorResponse}, 422: {"model": ErrorResponse}})
     app.state.settings = settings
-    app.state.database = Database(settings.db_path)
+    app.state.database = database
     app.state.model = model
     app.state.embedder = embedder
-    database = app.state.database
+    app.state.builds = builds
+    register_build_routes(app, builds)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, exc: RequestValidationError):

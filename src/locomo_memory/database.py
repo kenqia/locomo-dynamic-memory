@@ -50,3 +50,19 @@ class Database:
                 yield connection
         finally:
             connection.close()
+
+
+@contextmanager
+def backend_ownership(path: Path):
+    """A kernel lock distinguishes a restart from a competing local backend."""
+    import fcntl
+
+    with path.with_suffix(path.suffix + ".runtime.lock").open("a") as handle:
+        try:
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise RuntimeError("Another backend owns this SQLite database") from None
+        try:
+            yield
+        finally:
+            fcntl.flock(handle, fcntl.LOCK_UN)
