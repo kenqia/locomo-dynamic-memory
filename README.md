@@ -2,6 +2,16 @@
 
 软件需求工程课程项目仓库。
 
+## 代码实现准备
+
+- [核心课程课件](docs/sources/0%20-%20Project%20%282026%29.pdf)
+- [M3/M4 实现决策与待定项](docs/adr/0001-memory-architecture.md)
+- [M3/M4 代码实现 spec](docs/specs/issue-4-m3-m4-dynamic-memory.md)，已发布为 [GitHub Issue #4](https://github.com/kenqia/locomo-dynamic-memory/issues/4)，标签为 `ready-for-agent`
+- [实现 tickets 原样副本](process/tickets/)，对应 GitHub Issues #5–#12；每张票声明阻塞关系，并建立 GitHub 原生阻塞链接
+- [本地 LoCoMo 原始数据与版本校验](data/raw/locomo/README.md)
+
+当前已确认架构与最小数据契约，保存官方数据并发布实现 spec；应用代码、依赖和运行入口尚未建立。数据未划分为课程开发集和测试集。spec 的准备标签不代表实现或验收完成。
+
 ## 目录
 
 | 目录 | 预计内容 |

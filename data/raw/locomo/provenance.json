@@ -1,0 +1,141 @@
+{
+  "repository": "https://github.com/snap-research/locomo",
+  "commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+  "download_date": "2026-10-19",
+  "license": "CC-BY-NC-4.0",
+  "files": [
+    {
+      "path": "locomo10.json",
+      "upstream_path": "data/locomo10.json",
+      "bytes": 2805274,
+      "sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4"
+    },
+    {
+      "path": "LICENSE.txt",
+      "upstream_path": "LICENSE.txt",
+      "bytes": 19347,
+      "sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0"
+    },
+    {
+      "path": "upstream/README.MD",
+      "upstream_path": "README.MD",
+      "bytes": 7109,
+      "sha256": "9f8e6fd00a3400aa687109f40ed53715f0a2c028ee3f8c465bdfa96475640e8a"
+    },
+    {
+      "path": "upstream/task_eval/evaluation.py",
+      "upstream_path": "task_eval/evaluation.py",
+      "bytes": 9441,
+      "sha256": "8e3be5d57ff2ff9ec5cd05939592f468c5f3f1fd95d13e431932bdf6bf0fd6fd"
+    },
+    {
+      "path": "upstream/task_eval/evaluate_qa.py",
+      "upstream_path": "task_eval/evaluate_qa.py",
+      "bytes": 4381,
+      "sha256": "dde7c1c6b5501486f96ce31398d6e49de76abbfa656e980b137e54fc69e9f6ee"
+    }
+  ],
+  "samples": [
+    {
+      "sample_id": "conv-26",
+      "turns": 419,
+      "qa": 199
+    },
+    {
+      "sample_id": "conv-30",
+      "turns": 369,
+      "qa": 105
+    },
+    {
+      "sample_id": "conv-41",
+      "turns": 663,
+      "qa": 193
+    },
+    {
+      "sample_id": "conv-42",
+      "turns": 629,
+      "qa": 260
+    },
+    {
+      "sample_id": "conv-43",
+      "turns": 680,
+      "qa": 242
+    },
+    {
+      "sample_id": "conv-44",
+      "turns": 675,
+      "qa": 158
+    },
+    {
+      "sample_id": "conv-47",
+      "turns": 689,
+      "qa": 190
+    },
+    {
+      "sample_id": "conv-48",
+      "turns": 681,
+      "qa": 239
+    },
+    {
+      "sample_id": "conv-49",
+      "turns": 509,
+      "qa": 196
+    },
+    {
+      "sample_id": "conv-50",
+      "turns": 568,
+      "qa": 204
+    }
+  ],
+  "total_turns": 5882,
+  "total_qa": 1986,
+  "evidence_entries_not_matching_a_single_turn_id": [
+    {
+      "sample_id": "conv-26",
+      "qa_index_zero_based": 37,
+      "raw_evidence": "D8:6; D9:17"
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index_zero_based": 58,
+      "raw_evidence": "D10:19"
+    },
+    {
+      "sample_id": "conv-42",
+      "qa_index_zero_based": 88,
+      "raw_evidence": "D"
+    },
+    {
+      "sample_id": "conv-43",
+      "qa_index_zero_based": 18,
+      "raw_evidence": "D:11:26"
+    },
+    {
+      "sample_id": "conv-47",
+      "qa_index_zero_based": 38,
+      "raw_evidence": "D4:36"
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index_zero_based": 31,
+      "raw_evidence": "D9:1 D4:4 D4:6"
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index_zero_based": 38,
+      "raw_evidence": "D22:1 D22:2 D9:10 D9:11"
+    },
+    {
+      "sample_id": "conv-49",
+      "qa_index_zero_based": 46,
+      "raw_evidence": "D21:18 D21:22 D11:15 D11:19"
+    },
+    {
+      "sample_id": "conv-50",
+      "qa_index_zero_based": 69,
+      "raw_evidence": "D30:05"
+    }
+  ],
+  "course_split": null,
+  "course_dynamic_state_annotations": "not included in downloaded upstream files"
+}
