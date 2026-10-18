@@ -11,7 +11,7 @@ from locomo_memory.config import load_settings
 settings = load_settings()
 st.set_page_config(page_title="动态对话记忆", layout="wide")
 st.title("动态对话记忆 · 原始来源")
-st.caption("导入原始英文对话并核对来源。记忆构建与问答将在后续票中实现。")
+st.caption("导入原始英文对话、核对来源并检查原子 Memory 抽取。完整版本问答由后续阶段实现。")
 
 
 def request(method: str, path: str, **kwargs):
@@ -85,3 +85,45 @@ else:
         st.text(f"{turn['dia_id']} · {turn['speaker']}")
         st.caption(f"{turn['session_time']} · {turn['source_id']}")
         st.text(turn["text"])
+
+st.divider()
+st.subheader("原子 Memory 构建与检查")
+st.caption("抽取产物可检查；索引、关系和完整版本发布由后续阶段处理。")
+if st.button("构建所选对话的 Memory"):
+    result = request("POST", "/builds", json={"dataset_id": dataset_id, "sample_id": sample_id})
+    st.success(f"构建已接受：{result['build_id']}")
+if st.button("刷新构建进度"):
+    st.rerun()
+build_page = st.number_input("构建版本页", min_value=1, value=1, step=1)
+builds = request("GET", "/builds", params={"dataset_id": dataset_id, "sample_id": sample_id, "limit": 20, "offset": (build_page - 1) * 20})
+st.caption(f"当前对话共 {builds['total']} 个构建版本")
+if builds["items"]:
+    build_id = st.selectbox("构建版本", [item["build_id"] for item in builds["items"]])
+    build = request("GET", f"/builds/{build_id}")
+    labels = {"queued": "等待抽取", "running": "抽取中", "failed": "抽取失败，可显式重试", "interrupted": "上次运行已中断，可显式重试", "extracted": "抽取结束，待索引与关系阶段", "complete": "完整版本"}
+    st.write(f"状态：{labels.get(build['status'], build['status'])}")
+    progress = build["progress"]
+    st.progress((progress["succeeded"] + progress["failed"]) / max(progress["total"], 1), text=f"片段 {progress['total']}，成功 {progress['succeeded']}，失败/中断 {progress['failed']}，待处理 {progress['pending']}")
+    if not build["query_ready"]:
+        st.info("此版本只供检查，不是可回答完整记忆库问题的版本。")
+    if build["status"] in {"failed", "interrupted"} and st.button("仅重试失败或中断片段"):
+        request("POST", f"/builds/{build_id}/retry")
+        st.rerun()
+    with st.expander("版本、配置与模型调用记录"):
+        st.json(build)
+    fragment_page = st.number_input("片段页", min_value=1, value=1, step=1)
+    fragments = request("GET", f"/builds/{build_id}/fragments", params={"limit": 20, "offset": (fragment_page - 1) * 20})
+    st.dataframe([{key: fragment[key] for key in ("ordinal", "status", "attempts", "error_code", "error_message", "no_facts_reason")} for fragment in fragments["items"]], hide_index=True)
+    memory_page = st.number_input("Memory 页", min_value=1, value=1, step=1)
+    memories = request("GET", f"/builds/{build_id}/memories", params={"limit": 20, "offset": (memory_page - 1) * 20})
+    st.caption(f"已保存 {memories['total']} 条原子 Memory（含部分成功产物）")
+    for memory in memories["items"]:
+        st.text(memory["content"])
+        st.caption(f"{memory['memory_id']} · {memory['memory_type']} · {memory['statement_type']} · {memory['polarity']} · {memory['state_key']}")
+        with st.expander(f"Memory 时间与来源：{memory['memory_id']}"):
+            st.json(memory["time"])
+            for source_id in memory["source_ids"]:
+                source_dataset, source_sample, source_dia = source_id.split("/")
+                source = request("GET", f"/datasets/{source_dataset}/conversations/{source_sample}/turns/{source_dia}")
+                st.caption(f"{source_id} · {source['speaker']} · {source['session_time']}")
+                st.text(source["text"])
