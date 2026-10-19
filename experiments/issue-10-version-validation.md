@@ -14,7 +14,9 @@
 - 三个阶段分别返回可见失败，拒绝发布部分结果，显式重试后可发布新版本。
 - 导出验证跨 session 多来源、多个 Memory 共用来源、关系/投影/index/build 一致、部分版本拒绝、旧版可下载、没有 QA 标注或测试凭据。
 
-`tests/test_versions.py` 默认运行结果为 12 passed、1 skipped。跳过项为显式 opt-in 的真实 MiniLM 验证。出现现有 Starlette/httpx TestClient 弃用提醒，不影响断言。
+`tests/test_versions.py` 前 12 项默认测试运行结果为 12 passed、1 skipped；随后新增的发布拒绝不安全 encoder identity 用例单独运行 1 passed。跳过项为显式 opt-in 的真实 MiniLM 验证。出现现有 Starlette/httpx TestClient 弃用提醒，不影响断言。
+
+完整 suite 在新增三项阶段失败重试测试前运行结果为 71 passed、4 skipped。最终来源 schema 校验后，`tests/test_versions.py tests/test_relations.py` 为 35 passed、1 skipped。
 
 ## 未执行与限制
 
@@ -23,3 +25,7 @@
 已提供 `LOCOMO_LOCAL_EMBEDDING=1 .venv/bin/pytest -q tests/test_versions.py -m local_embedding`，需要先有 optional Embedding 环境和缓存。该用例使用真实 `c9745ed1d9f207416be6d2e6f8de32d1f16199bf` 建立完整版本，重启到不存在的本地 `000...` revision，验证旧版本仍可查询、新版本索引明确失败。
 
 Streamlit 已接入分阶段恢复与后端完整 JSON 下载按钮；本票没有运行浏览器冒烟，下载交互留待 Issue #12 验证。接口测试不能代替浏览器下载验证。未修改 GitHub 或 Notion，未标记远端任务完成。
+
+## 集成检查
+
+合并 Issue #9 的 integration `59f7102` 后，`tests/test_versions.py tests/test_queries.py` 为 20 passed、1 skipped。两处追加注册冲突均保留双方功能。随后发布检查进一步对比完整投影 JSON，导出及发布相关子集为 3 passed。真实模型与浏览器仍未在本票执行。

@@ -41,7 +41,7 @@ class VersionsService:
             if memory_ids != indexed_ids or len(memory_ids) != index["memory_count"]:
                 raise BuildError("version_not_publishable")
             expected = create_projection(db, dict(row))
-            if expected["fingerprint"] != projection["fingerprint"]:
+            if expected["fingerprint"] != projection["fingerprint"] or expected != json.loads(projection["projection_json"]):
                 raise BuildError("version_not_publishable")
             prospective = dict(row)
             prospective["config"] = json.loads(prospective.pop("config_json"))

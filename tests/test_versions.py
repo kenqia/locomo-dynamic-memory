@@ -348,3 +348,27 @@ def test_explicit_failed_phase_retry_keeps_old_version_available(settings, sampl
             assert client.post(f"/builds/{second}/relations").status_code == 202
         assert client.post(f"/builds/{second}/publish").status_code == 200
         assert len(client.get(f"/builds/{second}/export").json()["memories"]) == 2
+
+
+def test_publication_rejects_invalid_encoder_artifact_without_moving_active_version(settings, sample):
+    invalid = False
+
+    class InvalidIdentityEncoder(ControlledEmbedder):
+        def identity(self):
+            return {**super().identity(), "normalized": not invalid}
+
+    with TestClient(create_app(settings, model=model(settings), embedder=InvalidIdentityEncoder())) as client:
+        first = complete(client, sample)
+        baseline = client.get(f"/builds/{first}/export").json()
+        invalid = True
+        second = build(client, sample)
+        assert client.post(f"/builds/{second}/index").status_code == 201
+        assert client.post(f"/builds/{second}/relations").status_code == 202
+        rejected = client.post(f"/builds/{second}/publish")
+        assert rejected.status_code == 409
+        assert rejected.json()["error"]["code"] == "version_not_publishable"
+        params = {"dataset_id": baseline["build"]["dataset_id"], "sample_id": "conv-a"}
+        assert client.get("/versions/pin", params=params).json()["build_id"] == first
+        assert client.get(f"/builds/{second}").json()["status"] == "related"
+        assert client.get(f"/builds/{second}/export").status_code == 409
+        assert client.get(f"/builds/{first}/export").json() == baseline
