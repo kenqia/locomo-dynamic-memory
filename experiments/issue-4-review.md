@@ -34,3 +34,35 @@ Other documented rules checked: domain vocabulary and ADR boundary; single local
 ` .venv/bin/python /tmp/locomo-issue4-context/spec-recovery-repro.py`
 
 Initial review: Standards 1 finding, worst P2; Spec 2 findings, worst P2.
+
+## Standards recheck
+
+The original P2 is resolved in `b30612e`, integrated by `f51c3ba`.
+Settings rejects API URL userinfo and all query parameters before snapshotting.
+Rejected inputs are redacted in textual and structured validation errors.
+The Standards reviewer independently ran `tests/test_config.py`: **3 passed**.
+Additional synthetic probes confirmed safe error serialization for userinfo,
+query parameters and malformed credential URLs; ordinary base paths remain valid.
+No real credentials were read.
+
+## Spec recheck
+
+Both original P2 findings are resolved in the same commit.
+The query passes its unified explicit date into bounded expansion; direct
+candidate expansion shares English/ISO parsing. Date priority changes ordering
+without excluding unknown or other historical dates.
+
+New builds and recovery compare the same artifact fingerprint, including actual
+Prompt/schema content and versions, projection version, source and settings.
+Extraction retry, index and relation advancement/recovery, and projection rebuild
+reject changed contracts before writing. Complete-version reads remain available.
+The Spec reviewer independently ran the 15 contract tests and the capped-history
+test: **16 passed**, 48.12 seconds. Three additional public API probes confirmed
+index, relation and projection advancement return `409 build_contract_changed`
+without changing the build after a Prompt change.
+
+The implementer separately ran the complete default suite: **109 passed,
+4 skipped**, 187.63 seconds. See `issue-4-review-fixes.md` for RED/GREEN details.
+The merge tree exactly matches that tested commit; compile and diff checks passed.
+
+Recheck: Standards 0 unresolved findings; Spec 0 unresolved findings.
