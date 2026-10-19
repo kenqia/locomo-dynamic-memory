@@ -89,3 +89,5 @@ uv run pytest -q
 TDD 使用 FastAPI 测试客户端与 Pydantic 模型校验，参考 [FastAPI 测试指南](https://fastapi.tiangolo.com/tutorial/testing/) 和 [Pydantic 模型文档](https://docs.pydantic.dev/latest/concepts/models/)。运行记录见 `experiments/issue-5-import-validation.md`。浏览器与真实模型检查单独记录，API 测试通过不证明两者通过。
 
 完整 Chromium 集成复现、受控适配器范围、下载校验与真实模型未执行项见[Issue #12 验证记录](../../experiments/issue-12-integration-validation.md)。
+
+当前 CI 命令、浏览器独立环境准备与失败诊断步骤见[检查指南](checking.md)。浏览器脚本使用每次运行专属的应用环境，不再同步根目录 `.venv`。
