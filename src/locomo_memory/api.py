@@ -27,6 +27,7 @@ from .version_api import register_version_routes
 from .expansion import ExpansionService
 from .queries import QueryService
 from .evaluation import register_evaluation_routes
+from .evaluation_plans import register_evaluation_plan_routes
 from .query_api import register_query_routes
 from .imports import import_dataset
 from .schemas import Conversation, Dataset, ErrorResponse, ImportRequest, ImportResult, Page, Session, SourceTurn
@@ -71,6 +72,7 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
     app.state.queries = QueryService(versions, retrieval, expansion, model)
     register_query_routes(app, app.state.queries)
     register_evaluation_routes(app, app.state.queries)
+    register_evaluation_plan_routes(app, app.state.evaluation)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, exc: RequestValidationError):

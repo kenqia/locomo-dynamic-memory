@@ -1,6 +1,6 @@
 # 运行本地动态记忆应用
 
-本地应用通过 FastAPI 导入 LoCoMo 数据、持久化至 SQLite，并在 Streamlit 页面浏览原始英文对话。来源管理与原子 Memory 抽取已实现，抽取与重试步骤见 [构建指南](building.md)。初始混合检索见 [候选检查指南](retrieval.md)。关系与完整构建发布见 [历史状态指南](relations.md)。完整版本的有效证据问答见[问答指南](querying.md)。独立评测与四种策略比较见[评测指南](evaluation.md)；正式课程指标仍需六段对话、4/2 划分和独立动态真值。
+本地应用通过 FastAPI 导入 LoCoMo 数据、持久化至 SQLite，并在 Streamlit 页面浏览原始英文对话。来源管理与原子 Memory 抽取已实现，抽取与重试步骤见 [构建指南](building.md)。初始混合检索见 [候选检查指南](retrieval.md)。关系与完整构建发布见 [历史状态指南](relations.md)。完整版本的有效证据问答见[问答指南](querying.md)。独立评测与四种策略比较见[评测指南](evaluation.md)；开发集与本地测试划分已固定，可先预览开发计划；独立动态真值缺失时动态指标未评，本地测试结果不代表教师隐藏评分。
 
 ## 准备环境
 
