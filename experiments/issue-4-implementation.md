@@ -78,6 +78,19 @@ retry and partial-build cases. This ticket's page was not separately exercised
 in a browser; cumulative browser verification remains part of #12.
 No real DeepSeek call was made.
 
+### Issue #7: hybrid candidate inspection
+
+Integrated with merge commit `dc3e9c5`. Default integration installation and
+tests passed: `uv sync --locked`, then `uv run pytest -q --tb=short` produced
+39 passed, 3 opt-in checks skipped, 1 upstream deprecation warning.
+The default installation did not install Torch. In the ticket worktree,
+`LOCOMO_LOCAL_EMBEDDING=1 HF_HUB_OFFLINE=1 uv run --extra embedding --locked
+pytest tests/test_local_embedding.py -q` passed both real MiniLM checks.
+These exercised the actual application adapter and actual SQLite/BM25/dense/RRF
+API path, with only the generation HTTP response controlled. Enriched input
+over the tokenizer limit was rejected even when its plain content fit.
+See `experiments/issue-7-retrieval-validation.md`.
+
 ### Real MiniLM preflight
 
 An independent Python 3.12 environment loaded the existing pinned snapshot
