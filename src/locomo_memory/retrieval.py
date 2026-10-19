@@ -69,8 +69,7 @@ class RetrievalService:
 
     def create_index(self, build_id: str) -> dict:
         build = self.builds.get(build_id)
-        if build["config"] != self.settings.snapshot():
-            raise BuildError("build_configuration_changed")
+        self.builds.require_current_contract(build)
         if build["status"] not in {"extracted", "indexed", "index_failed"} and not (build["status"] == "interrupted" and build["phase"] == "indexing"):
             raise BuildError("build_not_indexable")
         with self.database.connect() as db:

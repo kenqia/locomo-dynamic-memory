@@ -4,8 +4,9 @@ import os
 from pathlib import Path
 from typing import Literal
 import tomllib
+from urllib.parse import urlsplit
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
 
 class Settings(BaseModel):
@@ -36,6 +37,23 @@ class Settings(BaseModel):
     relation_history_limit: int = Field(default=20, gt=0)
     candidate_token_budget: int = Field(default=12000, gt=0)
     evidence_token_budget: int = Field(default=6000, gt=0)
+
+    @model_validator(mode="before")
+    @classmethod
+    def reject_credential_url(cls, values):
+        if isinstance(values, dict) and isinstance(values.get("api_url"), str):
+            try:
+                url = urlsplit(values["api_url"])
+                rejected = "@" in url.netloc or bool(url.query)
+            except ValueError:
+                rejected = True
+            if rejected:
+                # Redact the structured error too, since callers may serialize errors().
+                raise ValidationError.from_exception_data(cls.__name__, [{
+                    "type": "value_error", "loc": ("api_url",), "input": "[redacted]",
+                    "ctx": {"error": ValueError("API URL must omit userinfo and query parameters")},
+                }])
+        return values
 
     def snapshot(self) -> dict:
         # No credential is accepted by this schema; adapters read protected env separately.

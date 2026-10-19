@@ -33,3 +33,23 @@ def conversation_cutoff(db, dataset_id: str, sample_id: str) -> tuple[datetime, 
         raise BuildError("not_found", 404)
     raw = max(times, key=session_datetime)
     return session_datetime(raw), raw
+
+
+def explicit_question_date(question):
+    """Recognize one exact date; ambiguous ranges stay in the original question."""
+    matches = []
+    patterns = [
+        (r"\b\d{4}-\d{2}-\d{2}\b", ("%Y-%m-%d",)),
+        (r"\b\d{1,2} [A-Za-z]+,? \d{4}\b", ("%d %B %Y", "%d %b %Y")),
+        (r"\b[A-Za-z]+ \d{1,2},? \d{4}\b", ("%B %d %Y", "%b %d %Y")),
+    ]
+    for pattern, formats in patterns:
+        for match in re.finditer(pattern, question):
+            for format in formats:
+                try:
+                    matches.append(datetime.strptime(match.group().replace(",", ""), format).date())
+                    break
+                except ValueError:
+                    continue
+    unique = set(matches)
+    return matches[0] if len(unique) == 1 else None

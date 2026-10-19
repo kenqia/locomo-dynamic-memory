@@ -1,12 +1,13 @@
 """One-hop evidence history expansion from immutable original hybrid seeds."""
 
+from datetime import date
 import json
-import re
 import uuid
 
 from .builds import BuildError
 from .imports import canonical_json
 from .model import utc_now
+from .temporal import explicit_question_date
 from .retrieval import budget_tokens, indexing_text, TOKEN_BUDGET_METHOD
 
 
@@ -18,7 +19,7 @@ class ExpansionService:
         with self.database.connect() as db:
             db.execute("CREATE TABLE IF NOT EXISTS candidate_expansions(expansion_id TEXT PRIMARY KEY, query_id TEXT NOT NULL REFERENCES candidate_queries(query_id), build_id TEXT NOT NULL REFERENCES build_versions(build_id),result_json TEXT NOT NULL)")
 
-    def expand(self, query_id: str) -> dict:
+    def expand(self, query_id: str, *, requested_date: date | None = None) -> dict:
         with self.database.connect() as db:
             db.execute("BEGIN")
             row = db.execute("SELECT result_json FROM candidate_queries WHERE query_id=?", (query_id,)).fetchone()
@@ -78,8 +79,8 @@ class ExpansionService:
                         append(memory, {"kind": "relation", "seed_memory_id": seed_id, "relation_id": relation["relation_id"], "label": relation["label"], "reason": "One-hop evidence-backed historical relation; applicability remains explicit context", "applicability": relation["applicability"]})
             # Supplements also originate only in the initial set's state keys.
             # Explicit question dates may prioritize an interval, never hard-filter history.
-            explicit = re.search(r"\b\d{4}-\d{2}-\d{2}\b", query["question"])
-            date_text = explicit.group(0) if explicit else ""
+            requested = requested_date or explicit_question_date(query["question"])
+            date_text = requested.isoformat() if requested else ""
             for seed in seeds:
                 seed_id, key = seed["memory"]["memory_id"], seed["memory"]["state_key"]
                 remaining = max(0, self.settings.expansion_scan_limit - scanned)

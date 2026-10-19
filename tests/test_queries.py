@@ -242,3 +242,43 @@ def test_explicit_english_question_date_overrides_default_cutoff(settings, sampl
         assert trace["time"]["origin"] == "explicit_question"
         assert trace["time"]["requested_date"] == "2023-05-01"
         assert "Paris" in trace["answer"]["answer"]
+
+
+def test_capped_history_uses_the_same_date_for_request_english_and_iso_questions(settings, sample):
+    settings = settings.model_copy(update={"initial_k": 1, "bm25_k": 1, "dense_k": 1, "expansion_max_candidates": 2})
+    conversation = sample[0]["conversation"]
+    conversation["session_1_date_time"] = "2023-05-03T13:00:00"
+    conversation["session_1"] = [{"dia_id": f"D1:{day}", "speaker": "Alex", "text": f"I live in {city} on 2023-05-0{day}."} for day, city in enumerate(["London", "Rome", "Paris"], 1)]
+    del conversation["session_2"], conversation["session_2_date_time"]
+
+    def provider(request):
+        payload = json.loads(json.loads(request.content)["messages"][1]["content"])
+        if "new_memory" in payload:
+            return completion({"judgments": [relation(old, payload["new_memory"]) for old in payload["history"]]})
+        if "sources" in payload and "operation" not in payload:
+            return completion({"memories": [draft([source["source_id"]], content=f"Alex lives in {city}.", state_value=city,
+                time={"valid_from": f"2023-05-0{day}", "valid_to": f"2023-05-0{day}", "original_expression": f"2023-05-0{day}", "anchor_source_id": source["source_id"], "basis": "Explicit date"})
+                for day, (source, city) in enumerate(zip(payload["sources"], ["London", "Rome", "Paris"]), 1)]})
+        if payload.get("operation") == "resolve":
+            ids = [m["memory_id"] for m in payload["memories"] if m["time"]["valid_from"] == payload["time"]["requested_date"]]
+            return completion({"status": "sufficient" if ids else "insufficient", "effective_memory_ids": ids,
+                "decisions": [{"memory_id": m["memory_id"], "selected": m["memory_id"] in ids, "reason": "Explicit interval applicability"} for m in payload["memories"]], "explanation": "Use the date interval"})
+        if payload.get("operation") == "answer":
+            return completion({"status": payload["status"], "answer": payload["memories"][0]["state_value"] if payload["memories"] else "Insufficient evidence",
+                "citations": [{"memory_id": m["memory_id"], "source_ids": m["source_ids"]} for m in payload["memories"]]})
+        return completion({"entities": [], "topic": None, "time": None, "keywords": ["Paris"]})
+
+    model = DeepSeekModel(settings, api_key="synthetic-test-key", transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        build_id = build(client, sample)
+        assert client.post(f"/builds/{build_id}/index").status_code == 201
+        assert client.post(f"/builds/{build_id}/relations").status_code == 202
+        dataset_id = client.post(f"/builds/{build_id}/publish").json()["dataset_id"]
+        for suffix, extra in [("", {"requested_date": "2023-05-02"}), (" on 2 May 2023", {}), (" on 2023-05-02", {})]:
+            response = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where did Alex live before Paris?" + suffix, **extra})
+            assert response.status_code == 201, response.text
+            trace = response.json()
+            assert trace["time"]["requested_date"] == "2023-05-02"
+            assert [item["memory"]["state_value"] for item in trace["initial"]["initial_candidates"]] == ["Paris"]
+            assert [item["memory"]["state_value"] for item in trace["expanded"]["candidates"]] == ["Paris", "Rome"]
+            assert trace["answer"]["answer"] == "Rome"
