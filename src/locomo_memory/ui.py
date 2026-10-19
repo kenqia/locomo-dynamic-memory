@@ -223,4 +223,7 @@ if builds["items"]:
                         st.json({"origins": candidate["origins"], "source_ids": candidate["memory"]["source_ids"]})
 
 if builds["items"]:
+    from locomo_memory.version_ui import render_version
+
+    render_version(request, build)
     render_queries(request, dataset_id, sample_id, build)

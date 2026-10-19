@@ -74,3 +74,5 @@ LOCOMO_LIVE_MODEL=1 uv run pytest -m live_model -q
 ```
 
 该检查只有一个小型合成构建，模型重试为 0，超时 30 秒。默认测试报告将它标记为跳过。它只检查真实提供方到来源映射的集成，不证明正式课程指标或整体抽取质量。实际执行状态见 `experiments/issue-6-extraction-validation.md`。
+
+跨阶段恢复、完整版本固定及 JSON 下载见 [恢复构建与导出完整版本](versions.md)。
