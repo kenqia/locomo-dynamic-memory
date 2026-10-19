@@ -78,6 +78,19 @@ retry and partial-build cases. This ticket's page was not separately exercised
 in a browser; cumulative browser verification remains part of #12.
 No real DeepSeek call was made.
 
+### Issue #7: hybrid candidate inspection
+
+Integrated with merge commit `dc3e9c5`. Default integration installation and
+tests passed: `uv sync --locked`, then `uv run pytest -q --tb=short` produced
+39 passed, 3 opt-in checks skipped, 1 upstream deprecation warning.
+The default installation did not install Torch. In the ticket worktree,
+`LOCOMO_LOCAL_EMBEDDING=1 HF_HUB_OFFLINE=1 uv run --extra embedding --locked
+pytest tests/test_local_embedding.py -q` passed both real MiniLM checks.
+These exercised the actual application adapter and actual SQLite/BM25/dense/RRF
+API path, with only the generation HTTP response controlled. Enriched input
+over the tokenizer limit was rejected even when its plain content fit.
+See `experiments/issue-7-retrieval-validation.md`.
+
 ### Real MiniLM preflight
 
 An independent Python 3.12 environment loaded the existing pinned snapshot
@@ -89,6 +102,17 @@ The tokenizer measured a synthetic long input at 302 tokens against
 `max_seq_length=256`; that input was not encoded. This preflight establishes
 model availability and dimensionality, not the application's overlength
 rejection policy, retrieval quality or answer quality.
+
+### Official evidence mapping preflight
+
+A read-only structural check of all 1,986 supplied QA records found 1,977
+samples with reliably resolvable evidence, 4 with missing/empty evidence and
+5 with unmappable evidence. Four samples use valid composite evidence
+elements, split only at whitespace or semicolons and validated individually.
+The five unresolved elements match the retained provenance positions:
+`conv-42/58`, `conv-42/88`, `conv-43/18`, `conv-47/38`, `conv-50/69`, using
+zero-based QA positions. Original IDs and source files were not modified.
+This check is source mapping coverage, not retrieval Recall or course scoring.
 
 ### Implementation references
 
