@@ -91,6 +91,18 @@ API path, with only the generation HTTP response controlled. Enriched input
 over the tokenizer limit was rejected even when its plain content fit.
 See `experiments/issue-7-retrieval-validation.md`.
 
+### Issue #8: relations, projection and bounded expansion
+
+Integrated with merge commit `81d2ecf`. Fresh integration commands
+`uv sync --locked` and `uv run pytest -q --tb=short` passed:
+62 passed, 3 opt-in checks skipped, 1 upstream deprecation warning.
+Tests include dated supersession with history retained, conservative unknown/
+future/conditional applicability, conflicts and compatible claims, source safety,
+durable relation retry, actual retrieval omission recovery and an unextracted
+counterexample, one-hop/original-seed expansion, configurable budgets and version
+publication gates. See `experiments/issue-8-relations-validation.md`.
+No separate browser or paid model check was executed for this ticket.
+
 ### Real MiniLM preflight
 
 An independent Python 3.12 environment loaded the existing pinned snapshot

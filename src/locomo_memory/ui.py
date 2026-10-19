@@ -6,12 +6,13 @@ import httpx
 import streamlit as st
 
 from locomo_memory.config import load_settings
+from locomo_memory.query_ui import render_queries
 
 
 settings = load_settings()
 st.set_page_config(page_title="动态对话记忆", layout="wide")
 st.title("动态对话记忆 · 原始来源")
-st.caption("导入原始英文对话、核对来源并检查原子 Memory 抽取。完整版本问答由后续阶段实现。")
+st.caption("导入原始英文对话、核对来源并检查原子 Memory 抽取。完整版本支持英文有效证据问答。")
 
 
 def request(method: str, path: str, **kwargs):
@@ -21,6 +22,9 @@ def request(method: str, path: str, **kwargs):
             try:
                 error = response.json()["error"]
                 st.error(f"{error['code']}：{error['message']}")
+                if error.get('trace_id'):
+                    st.caption(f"失败 Trace：{error['trace_id']}（失败不代表没有证据）")
+                    st.json(request('GET', f"/queries/{error['trace_id']}"))
             except (ValueError, KeyError, TypeError):
                 st.error("后端返回了无法识别的错误。")
             st.stop()
@@ -189,7 +193,7 @@ if builds["items"]:
                 request("POST", f"/builds/{build_id}/publish")
                 st.rerun()
         else:
-            st.caption("完整版本已固定；仍未实现本阶段之外的最终有效证据问答。")
+            st.caption("完整版本已固定，问答始终使用所选版本。")
             st.json(request("GET", "/versions/pin", params={"dataset_id": dataset_id, "sample_id": sample_id}))
         relation_page = st.number_input("历史关系页", min_value=1, value=1, step=1)
         relation_rows = request("GET", f"/builds/{build_id}/relations", params={"limit": 20, "offset": (relation_page - 1) * 20})
@@ -222,3 +226,4 @@ if builds["items"]:
     from locomo_memory.version_ui import render_version
 
     render_version(request, build)
+    render_queries(request, dataset_id, sample_id, build)
