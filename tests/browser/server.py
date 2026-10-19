@@ -48,6 +48,12 @@ def provider(request):
         return completion({'judgments': [relation(old, new, label='CONFLICT', reason='Same birth attribute has incompatible unconditional reports, explicitly unresolved in source.', support_quote='My birth year is 1992. These reports are contradictory and unresolved.') for old in payload['history']]})
     operation = payload.get('operation')
     question = payload.get('question', '')
+    if operation is None and 'question' in payload:
+        # Give real BM25 a discriminating term; all-zero ties depend on random IDs.
+        birth = 'birth year' in question.lower()
+        return completion({'entities': ['Sam' if birth else 'Alex'],
+                           'topic': 'birth_year' if birth else 'residence', 'time': None,
+                           'keywords': ['1990' if birth else 'Rome']})
     if operation == 'resolve' and ('birth year' in question or 'passport' in question):
         selected = [m for m in payload['memories'] if m['entity_id'] == 'Sam' and m['state_dimension'] == 'birth_year'] if 'birth year' in question else []
         return completion({'status': 'conflict' if selected else 'insufficient',
