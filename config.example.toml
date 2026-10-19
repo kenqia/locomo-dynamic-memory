@@ -1,0 +1,26 @@
+# Copy to a local file and set LOCOMO_CONFIG to its path. No credentials belong here.
+db_path = "var/memory.sqlite3"
+api_url = "http://127.0.0.1:8000"
+model_name = "deepseek-flash"
+model_base_url = "https://api.deepseek.com"
+model_timeout_seconds = 60
+model_retries = 2
+model_temperature = 0
+model_max_tokens = 4096
+thinking_enabled = false
+embedding_model = "sentence-transformers/all-MiniLM-L6-v2"
+embedding_revision = "c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
+embedding_dimensions = 384
+embedding_local_files_only = true
+embedding_max_tokens = 256
+fragment_turns = 20
+bm25_k = 20
+dense_k = 20
+initial_k = 20
+rrf_constant = 60
+expansion_max_candidates = 60
+expansion_depth = 1
+expansion_scan_limit = 200
+relation_history_limit = 20
+candidate_token_budget = 12000
+evidence_token_budget = 6000

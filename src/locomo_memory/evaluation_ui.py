@@ -1,0 +1,50 @@
+"""Evaluation controls and side-by-side comparisons through backend HTTP only."""
+import json
+import streamlit as st
+
+
+LABELS = {'dynamic': '完整动态系统', 'full_text': 'Full Text 原始轮次', 'vector': 'Vector RAG（无状态解析）', 'hybrid_no_resolution': 'Hybrid + 扩展（无状态解析）'}
+
+
+def render_evaluation(request, dataset_id):
+    st.subheader('独立评测与基线比较')
+    st.caption('仅合成案例用于行为验证；正式课程需提供六段 ID、4/2 划分及独立动态真值。原文来源覆盖不能证明语义事实已被抽取。')
+    uploaded = st.file_uploader('独立评测 JSON（samples、kind、可选 course_split）', type=['json'], key='evaluation_upload')
+    if st.button('保存独立评测输入', disabled=uploaded is None):
+        try:
+            body = json.loads(uploaded.getvalue())
+        except (ValueError, UnicodeError):
+            st.error('评测文件必须是 UTF-8 JSON。')
+        else:
+            if not isinstance(body, dict):
+                st.error('评测文件必须是 JSON object。')
+            else:
+                body['dataset_id'] = dataset_id
+                value = request('POST', '/evaluation-inputs', json=body)
+                st.session_state['evaluation_input_id'] = value['input_id']
+                st.json(value)
+    input_id = st.text_input('评测 Input ID', key='evaluation_input_id')
+    strategies = st.multiselect('对照策略', list(LABELS), default=list(LABELS), format_func=LABELS.get)
+    partition = st.selectbox('课程划分（合成案例选择不适用）', ['不适用', 'dev', 'test'])
+    if st.button('运行所选对照', disabled=not input_id or not strategies):
+        st.session_state['evaluation_run'] = request('POST', '/evaluation-runs', json={'input_id': input_id, 'strategies': strategies, 'partition': None if partition == '不适用' else partition})
+    run_id = st.text_input('读取已保存 Run ID', key='evaluation_saved_run')
+    if st.button('读取评测记录', disabled=not run_id):
+        st.session_state['evaluation_run'] = request('GET', f'/evaluation-runs/{run_id}')
+    run = st.session_state.get('evaluation_run')
+    if not run:
+        return
+    st.caption(f"Run {run['run_id']} · {run['kind']} · 耗时 {run['elapsed_seconds']:.2f}s")
+    if run['course_metrics']['status'] == 'unavailable':
+        st.info('课程正式指标未评：' + str(run['course_metrics']['reason']))
+    columns = st.columns(len(run['summary']))
+    for column, (strategy, summary) in zip(columns, run['summary'].items()):
+        with column:
+            st.write(LABELS[strategy])
+            st.json(summary)
+    st.dataframe([{'样本': r['sample_index'], '策略': LABELS[r['strategy']], 'QA': r['qa']['value'], 'QA不可计分原因': r['qa'].get('reason'), '证据不可计分原因': r['mapping']['reason'], **r['source_coverage']} for r in run['results']], hide_index=True)
+    for row in run['results']:
+        with st.expander(f"样本 {row['sample_index']} · {LABELS[row['strategy']]} · 结果与失败检查"):
+            st.json(row)
+    with st.expander('固定版本、实际配置、共享 Prompt 与完整记录'):
+        st.json(run)
