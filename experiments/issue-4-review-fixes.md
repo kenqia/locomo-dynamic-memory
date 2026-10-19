@@ -31,3 +31,13 @@
 合并 `9b57a79` 后运行一次 `.venv/bin/python -m pytest -q`：**109 passed, 4 skipped, 1 warning，187.63 秒**。跳过项为 1 个真实 DeepSeek 检查和 3 个需要明确选择的真实本地 MiniLM 检查。唯一 warning 来自现有 Starlette TestClient 对 `httpx` 的弃用提示；本轮未增加依赖或处理该上游迁移。
 
 `git diff --check` 通过。独立 Standards 与 Spec 复核由主任务单独记录，本记录只报告本分支执行的验证。
+
+## 浏览器受控夹具稳定性修复
+
+后续浏览器回归在当前问答遇到 `resolve/invalid_output`，尚未完成该轮冒烟。诊断发现 `tests/browser/server.py` 复用的受控问题分析返回空关键词；四条 Memory 的 BM25 分数均为 0，RRF 平分时按随机生成的 Memory ID 排序，可能将 Sam 的出生年份选为 Alex 居住问题唯一初始候选。受控 resolver 预设居住证据存在，因而返回无效结果。该故障属于合成夹具不确定性，不能据此判定生产检索错误，也不能把失败浏览器运行记为通过。
+
+仅在浏览器夹具中为问题分析明确返回区分性关键词：出生年份用 `1990`，本夹具其余居住、护照及故障检查问题用 `Rome`。生产实现、`initial_k=1`、真实 BM25/Dense/RRF 和关系扩展均未修改。
+
+公开 API 临时探针在修改前已失败：出生年份问题没有得到预期 `conflict`。修改后在 6 个全新构建上重复当前、历史、冲突、护照证据不足问题，共 24 次查询全部返回 201：12 次 `sufficient`、6 次 `conflict`、6 次 `insufficient`。12 次居住问题均初始只召回 Rome，再真实扩展为 Rome + Paris；历史回答使用 Paris，当前回答使用 Rome。探针复用 `tests/browser/smoke.py` 的合成输入、浏览器受控模型/Embedding 和公开 API，临时 SQLite 与构建 ID 每次重新生成；未访问失败运行数据库或任何凭据。
+
+探针命令：`PYTHONPATH=src:tests:tests/browser /home/kenqia/my_folder/locomo-dynamic-memory/.venv/bin/python /tmp/locomo-browser-ranking-check.py`。使用已有解释器与当前 worktree 源码，无环境同步或新依赖。`git diff --check` 通过。本次仅改测试夹具，因此未重复运行生产全套；浏览器完整回归由主任务合并后重新执行，本段不宣称浏览器已通过。
