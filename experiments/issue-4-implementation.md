@@ -186,3 +186,27 @@ and [pinned revision metadata](https://huggingface.co/api/models/sentence-transf
 provide model identity and length constraints. QA scoring follows the retained
 upstream evaluator at commit `3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376`, with
 explicit unavailable-evidence handling required by this project's spec.
+
+### Issue #12: isolated local integration
+
+See `experiments/issue-12-integration-validation.md` and
+`experiments/issue-12-browser-result.json` for the fresh environment commands,
+actual Chromium results and three non-sensitive screenshots. The production
+factory and Streamlit started as two real processes; a separate production
+missing-credential build persisted `missing_credentials` without a live call.
+
+The repeatable browser harness uses explicit controlled generation and embedding
+boundaries only. Actual SQLite, BM25, cosine/RRF, relations, projections and
+complete versions remain in use. Chromium passed UI upload, failed extraction
+and explicit retry, indexing, relation construction, projection rebuild,
+publication/pin, current/history answers, independently checkable birth-year
+conflict, absent passport evidence, citations/Trace and native JSON download.
+The download passed the production export schema. Four strategies produced eight
+synthetic evaluation rows, with four deliberate external-response failures and
+one scored/one unscored QA sample per strategy. Page exceptions and console errors
+were both zero. This ticket changed no production source or dependencies.
+
+No real DeepSeek request was made: only environment-variable presence was checked,
+and the protected credential was absent. Formal course metrics remain unavailable;
+no formal test split was invented or used for tuning. These results do not establish
+model quality, non-author human review, final course acceptance or remote closure.
