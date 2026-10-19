@@ -10,7 +10,32 @@
 - [实现 tickets 原样副本](process/tickets/)，对应 GitHub Issues #5–#12；每张票声明阻塞关系，并建立 GitHub 原生阻塞链接
 - [本地 LoCoMo 原始数据与版本校验](data/raw/locomo/README.md)
 
-已建立 FastAPI、Streamlit、SQLite 来源管理与原子 Memory 抽取切片，启动见 [本地应用运行指南](docs/app/running.md)，抽取、失败重试与来源检查见 [构建指南](docs/app/building.md)。初始混合检索已提供 [候选检查](docs/app/retrieval.md)，[历史关系、状态、扩展与完整版本发布](docs/app/relations.md) 已接入；[有效证据问答](docs/app/querying.md)、[完整版本与导出](docs/app/versions.md) 和 [独立评测与基线比较](docs/app/evaluation.md) 已接入。数据未划分为课程开发集和测试集，spec 的准备标签不代表实现或验收完成。
+本地 FastAPI、Streamlit、SQLite 应用已支持来源导入、原子 Memory 抽取、混合检索、历史关系和完整版本问答。启动见 [本地应用运行指南](docs/app/running.md)，抽取、失败重试与来源检查见 [构建指南](docs/app/building.md)。初始混合检索已提供 [候选检查](docs/app/retrieval.md)，[历史关系、状态、扩展与完整版本发布](docs/app/relations.md) 已接入；[有效证据问答](docs/app/querying.md)、[完整版本与导出](docs/app/versions.md) 和 [独立评测与基线比较](docs/app/evaluation.md) 已接入。数据未划分为课程开发集和测试集，spec 的准备标签不代表实现或验收完成。
+
+## 本地启动与验证
+
+在仓库根目录创建独立环境，再分别在两个终端启动后端与页面：
+
+```sh
+uv sync --locked
+uv run --locked uvicorn locomo_memory.api:create_app --factory --host 127.0.0.1 --port 8000
+uv run --locked streamlit run src/locomo_memory/ui.py --server.address 127.0.0.1
+```
+
+`uv sync --locked` 不包含本地 Embedding 模型运行依赖。构建索引前，运行
+`uv sync --locked --extra embedding` 并准备固定 revision 的 MiniLM 本地缓存；
+真实生成还需要进程环境中的 `DEEPSEEK_API_KEY`。配置文件不接受凭据。
+详细步骤见[运行指南](docs/app/running.md)。
+
+```sh
+uv run --locked pytest -q
+LOCOMO_LOCAL_EMBEDDING=1 HF_HUB_OFFLINE=1 uv run --locked --extra embedding pytest -m local_embedding -q
+```
+
+默认测试不调用付费服务。`local_embedding` 检查真实缓存模型；`live_model`
+需要显式设置 `LOCOMO_LIVE_MODEL=1` 和受保护凭据，才运行真实 DeepSeek 调用。
+真实浏览器、受控外部适配器和未执行项分别记录在
+[本地集成验证](experiments/issue-12-integration-validation.md)。
 
 ## 目录
 
@@ -27,9 +52,9 @@
 | `process/meetings/` | 会议纪要模板、真实会议记录及经检查的截图 |
 | `process/snapshots/` | Notion 阶段任务快照、阶段复盘和提交记录 |
 | `presentations/` | 审阅后的汇报源文件与导出 PDF |
-| `src/` | 后续项目源代码 |
-| `tests/` | 后续测试代码与不含敏感信息的样例 |
-| `experiments/` | 后续评测说明、运行配置记录和实验结果 |
+| `src/` | FastAPI、Streamlit 与记忆构建、检索、问答、评测模块 |
+| `tests/` | 公开 API 行为测试与本地浏览器 smoke |
+| `experiments/` | 分票实验记录、集成验证与非敏感截图 |
 
 `docs/decisions/` 记录为什么作出某项决定，`docs/design/` 说明具体如何设计。两者可以通过链接关联，同一份决策正文只保留在一个位置。架构与领域决策按现有 Agent 约定存入 `docs/adr/`，在首次需要时创建。
 

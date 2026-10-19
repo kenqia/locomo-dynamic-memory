@@ -1,6 +1,6 @@
-# 运行原始来源浏览应用
+# 运行本地动态记忆应用
 
-本地应用通过 FastAPI 导入 LoCoMo 数据、持久化至 SQLite，并在 Streamlit 页面浏览原始英文对话。来源管理与原子 Memory 抽取已实现，抽取与重试步骤见 [构建指南](building.md)。初始混合检索见 [候选检查指南](retrieval.md)。关系与完整构建发布见 [历史状态指南](relations.md)。完整版本的有效证据问答见[问答指南](querying.md)。正式课程评测由后续票实现。
+本地应用通过 FastAPI 导入 LoCoMo 数据、持久化至 SQLite，并在 Streamlit 页面浏览原始英文对话。来源管理与原子 Memory 抽取已实现，抽取与重试步骤见 [构建指南](building.md)。初始混合检索见 [候选检查指南](retrieval.md)。关系与完整构建发布见 [历史状态指南](relations.md)。完整版本的有效证据问答见[问答指南](querying.md)。独立评测与四种策略比较见[评测指南](evaluation.md)；正式课程指标仍需六段对话、4/2 划分和独立动态真值。
 
 ## 准备环境
 
@@ -12,7 +12,7 @@
 uv sync --locked
 ```
 
-默认配置可直接启动。需要覆盖设置时，将 `config.example.toml` 复制到自己的本地文件，并在两个终端设置相同的配置路径：
+默认配置可直接启动来源浏览。真实构建还需要受保护的 DeepSeek 进程凭据；索引需要固定 revision 的本地 MiniLM 缓存和 `uv sync --locked --extra embedding`。模型准备与长度政策见[候选检查指南](retrieval.md)。需要覆盖设置时，将 `config.example.toml` 复制到自己的本地文件，并在两个终端设置相同的配置路径：
 
 ```sh
 cp config.example.toml /tmp/locomo-local.toml
@@ -87,3 +87,5 @@ uv run pytest -q
 测试从公开 FastAPI 接口验证真实 SQLite 的导入、重启持久化、分页、错误、隔离与官方来源映射；不调用付费模型。不以 SQLite 私有查询作为断言，也不把官方数据结构检查当作检索效果评测。
 
 TDD 使用 FastAPI 测试客户端与 Pydantic 模型校验，参考 [FastAPI 测试指南](https://fastapi.tiangolo.com/tutorial/testing/) 和 [Pydantic 模型文档](https://docs.pydantic.dev/latest/concepts/models/)。运行记录见 `experiments/issue-5-import-validation.md`。浏览器与真实模型检查单独记录，API 测试通过不证明两者通过。
+
+完整 Chromium 集成复现、受控适配器范围、下载校验与真实模型未执行项见[Issue #12 验证记录](../../experiments/issue-12-integration-validation.md)。
