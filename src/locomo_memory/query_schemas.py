@@ -9,7 +9,7 @@ from .relation_schemas import RelationDraft
 from .retrieval_schemas import CandidateQueryRequest
 
 RESOLUTION_SCHEMA_VERSION = "effective-resolution-v1"
-ANSWER_SCHEMA_VERSION = "evidence-answer-v1"
+ANSWER_SCHEMA_VERSION = "evidence-answer-v2-raw-sources"
 EvidenceStatus = Literal["sufficient", "conflict", "insufficient"]
 
 
@@ -80,7 +80,7 @@ class EffectiveResolution(BaseModel):
 
 class Citation(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    memory_id: StrictStr
+    memory_id: StrictStr | None = None
     source_ids: list[StrictStr] = Field(min_length=1)
 
 
@@ -103,6 +103,10 @@ class EvidenceAnswer(BaseModel):
             raise ValueError("Evidence-backed answer needs citations")
         memories = context["memories"]
         for citation in self.citations:
+            if citation.memory_id is None and context.get("raw_sources") is not None:
+                if not set(citation.source_ids) <= set(context["raw_sources"]) or len(set(citation.source_ids)) != len(citation.source_ids):
+                    raise ValueError("Raw citation outside delivered sources")
+                continue
             memory = memories.get(citation.memory_id)
             if memory is None or not set(citation.source_ids) <= set(memory["source_ids"]) or len(set(citation.source_ids)) != len(citation.source_ids):
                 raise ValueError("Citation outside delivered effective evidence")

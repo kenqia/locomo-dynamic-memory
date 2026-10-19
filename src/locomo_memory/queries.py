@@ -18,7 +18,7 @@ from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
 from .temporal import conversation_cutoff
 
 RESOLUTION_PROMPT_VERSION = "effective-resolution-v1"
-ANSWER_PROMPT_VERSION = "evidence-answer-v1"
+ANSWER_PROMPT_VERSION = "evidence-answer-v2-raw-sources"
 
 
 def explicit_question_date(question):
@@ -69,7 +69,7 @@ class QueryService:
         with self.database.connect() as db:
             db.execute("INSERT INTO query_traces VALUES (?,?,?)", (trace["trace_id"], trace["build_id"], canonical_json(trace)))
 
-    def generate_answer(self, question, time_condition, memories, sources, status, *, audit=None):
+    def generate_answer(self, question, time_condition, memories, sources, status, *, audit=None, raw_sources=None):
         """Shared final evidence budget and answer operation for controlled comparisons.
 
         Return the validated answer, delivered memories, and budget/provider metadata.
@@ -85,9 +85,22 @@ class QueryService:
                 continue
             delivered.append(memory)
             used += cost
-        effective_status = "insufficient" if omitted or not delivered else status
+        raw_delivered = []
+        if raw_sources is not None:
+            for source in raw_sources:
+                cost = budget_tokens(canonical_json(source))
+                if used + cost > self.settings.evidence_token_budget:
+                    omitted.append(source["source_id"])
+                    continue
+                used += cost
+                raw_delivered.append(source)
+        effective_status = "insufficient" if omitted or not (delivered or raw_delivered) else status
         delivered_sources = {sid: sources[sid] for memory in delivered for sid in memory["source_ids"]}
+        if raw_sources is not None:
+            delivered_sources = {s["source_id"]: s for s in raw_delivered}
         context = {"status": effective_status, "memories": {m["memory_id"]: m for m in delivered}}
+        if raw_sources is not None:
+            context["raw_sources"] = delivered_sources
         payload = {"operation": "answer", "question": question, "time": time_condition, "status": effective_status,
                    "memories": delivered, "sources": list(delivered_sources.values()), "evidence_truncated": bool(omitted)}
         budget = {"token_count": used, "budget": self.settings.evidence_token_budget,
@@ -98,7 +111,9 @@ class QueryService:
         generation = self.model.generate("answer", payload, EvidenceAnswer, context=context)
         answer = EvidenceAnswer.model_validate(generation.value.model_dump(mode="json"), context=context)
         budget["model_metadata"] = generation.metadata
-        return answer.model_dump(mode="json"), delivered, budget
+        if raw_sources is not None:
+            budget["omitted_source_ids"] = budget.pop("omitted_memory_ids")
+        return answer.model_dump(mode="json"), raw_delivered if raw_sources is not None else delivered, budget
 
     def query(self, request):
         # Pin before analysis, embeddings or generation. Never re-read the active pointer.
