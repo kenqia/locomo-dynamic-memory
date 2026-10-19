@@ -101,7 +101,7 @@ class BuildService:
 
     def retry(self, build_id: str) -> dict:
         build = self.get(build_id)
-        if build["status"] not in {"failed", "interrupted"}:
+        if build["phase"] != "extraction" or build["status"] not in {"failed", "interrupted"}:
             raise BuildError("build_not_retryable")
         if build["config"] != self.settings.snapshot():
             raise BuildError("build_configuration_changed")

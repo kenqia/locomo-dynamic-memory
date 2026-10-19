@@ -9,8 +9,21 @@ dependencies = [
   "uvicorn>=0.30,<1",
   "pydantic>=2.9,<3",
   "httpx>=0.27,<1",
+  "numpy>=2,<3",
+  "rank-bm25==0.2.2",
   "streamlit>=1.40,<2",
 ]
+
+[project.optional-dependencies]
+embedding = ["sentence-transformers==6.1.0", "torch==2.14.1+cpu"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
 
 [dependency-groups]
 dev = ["pytest>=8,<10"]
@@ -24,4 +37,4 @@ packages = ["src/locomo_memory"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-markers = ["live_model: explicit opt-in paid DeepSeek integration check"]
+markers = ["live_model: explicit opt-in paid DeepSeek integration check", "local_embedding: opt-in real cached MiniLM load and encoding"]

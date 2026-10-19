@@ -100,13 +100,13 @@ st.caption(f"当前对话共 {builds['total']} 个构建版本")
 if builds["items"]:
     build_id = st.selectbox("构建版本", [item["build_id"] for item in builds["items"]])
     build = request("GET", f"/builds/{build_id}")
-    labels = {"queued": "等待抽取", "running": "抽取中", "failed": "抽取失败，可显式重试", "interrupted": "上次运行已中断，可显式重试", "extracted": "抽取结束，待索引与关系阶段", "complete": "完整版本"}
-    st.write(f"状态：{labels.get(build['status'], build['status'])}")
+    labels = {"queued": "等待抽取", "running": "构建中", "failed": "抽取失败，可显式重试", "interrupted": "上次运行已中断，可显式重试", "extracted": "抽取结束，待索引与关系阶段", "indexed": "已建立索引，待关系与完整版本发布", "index_failed": "索引失败，Memory 仍可检查", "complete": "完整版本"}
+    st.write(f"状态：{labels.get(build['status'], build['status'])} · 阶段 {build['phase']}")
     progress = build["progress"]
     st.progress((progress["succeeded"] + progress["failed"]) / max(progress["total"], 1), text=f"片段 {progress['total']}，成功 {progress['succeeded']}，失败/中断 {progress['failed']}，待处理 {progress['pending']}")
     if not build["query_ready"]:
         st.info("此版本只供检查，不是可回答完整记忆库问题的版本。")
-    if build["status"] in {"failed", "interrupted"} and st.button("仅重试失败或中断片段"):
+    if build["phase"] == "extraction" and build["status"] in {"failed", "interrupted"} and st.button("仅重试失败或中断片段"):
         request("POST", f"/builds/{build_id}/retry")
         st.rerun()
     with st.expander("版本、配置与模型调用记录"):
@@ -127,3 +127,40 @@ if builds["items"]:
                 source = request("GET", f"/datasets/{source_dataset}/conversations/{source_sample}/turns/{source_dia}")
                 st.caption(f"{source_id} · {source['speaker']} · {source['session_time']}")
                 st.text(source["text"])
+
+    st.subheader("初始混合检索候选检查")
+    st.caption("英文检索；当前仅展示候选、通道排名与分析回退，不生成最终答案。")
+    indexable = build["status"] in {"extracted", "indexed", "index_failed"} or (build["status"] == "interrupted" and build["phase"] == "indexing")
+    if st.button("建立或重试混合检索索引", disabled=not indexable):
+        request("POST", f"/builds/{build_id}/index")
+        st.rerun()
+    if build["status"] in {"indexed", "index_failed"}:
+        with st.expander("索引版本、模型与长度政策"):
+            st.json(request("GET", f"/builds/{build_id}/index"))
+    question = st.text_input("英文问题（候选检查）", key="candidate_question")
+    if st.button("检查 BM25 / Dense / RRF 候选", disabled=build["status"] != "indexed"):
+        st.session_state["candidate_result"] = request("POST", "/candidate-queries", json={"build_id": build_id, "question": question})
+    result = st.session_state.get("candidate_result")
+    if result and result["build_id"] == build_id:
+        st.caption(f"候选记录 {result['query_id']} · 构建 {result['build_id']} · 索引 {result['index_fingerprint']}")
+        st.text(result["question"])
+        if result["analysis"]["status"] == "fallback":
+            st.info(f"问题分析失败，继续检索原问题：{result['analysis']['error_code']}")
+        with st.expander("问题分析与实际检索配置"):
+            st.json({"analysis": result["analysis"], "config": result["config"], "token_budget_method": result["token_budget_method"]})
+        if result["initial_truncated"]:
+            st.warning("候选已按预算截断：" + ", ".join(result["truncation_reasons"]))
+        for channel in ("bm25", "dense"):
+            st.write(f"{channel} 通道排名")
+            st.dataframe(result["channels"][channel], hide_index=True)
+        st.write("RRF 融合后的初始 Memory")
+        for candidate in result["initial_candidates"]:
+            memory = candidate["memory"]
+            st.text(memory["content"])
+            st.caption(f"{memory['memory_id']} · ranks={candidate['channel_ranks']} · RRF={candidate['rrf_score']:.6f}")
+            with st.expander(f"候选来源：{memory['memory_id']}"):
+                for source_id in memory["source_ids"]:
+                    source_dataset, source_sample, source_dia = source_id.split("/")
+                    source = request("GET", f"/datasets/{source_dataset}/conversations/{source_sample}/turns/{source_dia}")
+                    st.caption(f"{source_id} · {source['session_time']}")
+                    st.text(source["text"])

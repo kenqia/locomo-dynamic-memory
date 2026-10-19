@@ -20,9 +20,10 @@ class Settings(BaseModel):
     model_temperature: float = Field(default=0, ge=0, le=2)
     model_max_tokens: int = Field(default=4096, gt=0)
     thinking_enabled: Literal[False] = False
-    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
-    embedding_revision: str = "c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
-    embedding_dimensions: int = Field(default=384, gt=0)
+    embedding_model: Literal["sentence-transformers/all-MiniLM-L6-v2"] = "sentence-transformers/all-MiniLM-L6-v2"
+    embedding_revision: str = Field(default="c9745ed1d9f207416be6d2e6f8de32d1f16199bf", pattern=r"^[a-f0-9]{40}$")
+    embedding_dimensions: Literal[384] = 384
+    embedding_local_files_only: bool = True
     embedding_max_tokens: int = Field(default=256, gt=0)
     fragment_turns: int = Field(default=20, gt=0)
     bm25_k: int = Field(default=20, gt=0)
