@@ -1,6 +1,13 @@
 """Minimal atomic publication and complete-version pinning for query callers."""
 
 import json
+import hashlib
+
+import numpy as np
+
+from .exports import read_bundle
+from .imports import canonical_json
+from .retrieval import indexing_text, TEXT_SCHEMA_VERSION
 
 from .builds import BuildError, BuildService
 from .projection import create_projection
@@ -34,8 +41,25 @@ class VersionsService:
             if memory_ids != indexed_ids or len(memory_ids) != index["memory_count"]:
                 raise BuildError("version_not_publishable")
             expected = create_projection(db, dict(row))
-            if expected["fingerprint"] != projection["fingerprint"]:
+            if expected["fingerprint"] != projection["fingerprint"] or expected != json.loads(projection["projection_json"]):
                 raise BuildError("version_not_publishable")
+            prospective = dict(row)
+            prospective["config"] = json.loads(prospective.pop("config_json"))
+            prospective["status"] = "complete"
+            try:
+                bundle = read_bundle(db, prospective)
+                entries = list(db.execute("SELECT memory_id,index_text,vector FROM index_entries WHERE build_id=? ORDER BY memory_id", (build_id,)))
+                identity = bundle.index.embedding.model_dump()
+                texts = {memory.memory_id: indexing_text(memory.model_dump(mode="json")) for memory in bundle.memories}
+                for entry in entries:
+                    vector = np.frombuffer(entry["vector"], dtype=np.float32)
+                    if entry["index_text"] != texts[entry["memory_id"]] or vector.shape != (identity["dimensions"],) or not np.isfinite(vector).all() or not np.isclose(np.linalg.norm(vector), 1, atol=1e-5):
+                        raise BuildError("version_not_publishable")
+                fingerprint = hashlib.sha256(canonical_json({"build_fingerprint": row["fingerprint"], "embedding": identity, "text_schema": TEXT_SCHEMA_VERSION, "entries": [(entry["memory_id"], entry["index_text"]) for entry in entries]}).encode()).hexdigest()
+                if fingerprint != index["fingerprint"]:
+                    raise BuildError("version_not_publishable")
+            except (BuildError, ValueError, KeyError, TypeError):
+                raise BuildError("version_not_publishable") from None
             db.execute("UPDATE build_versions SET status='complete',phase='complete',updated_at=? WHERE build_id=?", (utc_now(), build_id))
             db.execute("INSERT INTO active_versions VALUES (?,?,?) ON CONFLICT(dataset_id,sample_id) DO UPDATE SET build_id=excluded.build_id", (row["dataset_id"], row["sample_id"], build_id))
         return self.builds.get(build_id)
