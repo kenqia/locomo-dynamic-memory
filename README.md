@@ -10,7 +10,7 @@
 - [实现 tickets 原样副本](process/tickets/)，对应 GitHub Issues #5–#12；每张票声明阻塞关系，并建立 GitHub 原生阻塞链接
 - [本地 LoCoMo 原始数据与版本校验](data/raw/locomo/README.md)
 
-已建立 FastAPI、Streamlit、SQLite 来源管理与原子 Memory 抽取切片，启动见 [本地应用运行指南](docs/app/running.md)，抽取、失败重试与来源检查见 [构建指南](docs/app/building.md)。初始混合检索已提供 [候选检查](docs/app/retrieval.md)，[历史关系、状态、扩展与完整版本发布](docs/app/relations.md) 已接入；最终有效证据问答由后续票实现。数据未划分为课程开发集和测试集，spec 的准备标签不代表实现或验收完成。
+已建立 FastAPI、Streamlit、SQLite 来源管理与原子 Memory 抽取切片，启动见 [本地应用运行指南](docs/app/running.md)，抽取、失败重试与来源检查见 [构建指南](docs/app/building.md)。初始混合检索已提供 [候选检查](docs/app/retrieval.md)，[历史关系、状态、扩展与完整版本发布](docs/app/relations.md) 已接入；[有效证据问答](docs/app/querying.md)、[完整版本与导出](docs/app/versions.md) 和 [独立评测与基线比较](docs/app/evaluation.md) 已接入。数据未划分为课程开发集和测试集，spec 的准备标签不代表实现或验收完成。
 
 ## 目录
 

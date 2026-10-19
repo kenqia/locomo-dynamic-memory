@@ -7,6 +7,7 @@ import streamlit as st
 
 from locomo_memory.config import load_settings
 from locomo_memory.query_ui import render_queries
+from locomo_memory.evaluation_ui import render_evaluation
 
 
 settings = load_settings()
@@ -227,3 +228,5 @@ if builds["items"]:
 
     render_version(request, build)
     render_queries(request, dataset_id, sample_id, build)
+
+render_evaluation(request, dataset_id)
