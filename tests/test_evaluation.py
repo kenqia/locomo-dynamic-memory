@@ -20,7 +20,7 @@ def test_evaluation_is_separate_persisted_and_reports_mapping_denominators(setti
         response = client.post("/evaluation-inputs", json=payload)
         assert response.status_code == 201, response.text
         inputs = response.json()
-        result = client.post("/evaluation-runs", json={"input_id": inputs["input_id"], "strategies": ["dynamic"], "build_ids": {"conv-a": build_id}})
+        result = client.post("/evaluation-runs", json={"wait": True, "input_id": inputs["input_id"], "strategies": ["dynamic"], "build_ids": {"conv-a": build_id}})
         assert result.status_code == 201, result.text
         run = result.json()
         assert run["summary"]["dynamic"]["source_coverage"]["initial"]["scored"] == 1
@@ -44,7 +44,7 @@ def test_category_branches_unknown_missing_and_strict_reference_mapping(settings
         dataset_id, build_id = complete_build(client, sample)
         cases = [('Lists?', 'blue, red', 1, ['D1:1; D2:1']), ('Stems?', 'runs', 2, ['D1:1']), ('Domain?', 'Paris; non-gold explanation', 3, ['D1:1']), ('Refusal?', None, 5, []), ('Missing?', None, 4, ['D1:1']), ('Unknown?', 'Paris', 99, ['D1:1']), ('Malformed?', 'Paris', 4, ['D1:1, D9:9']), ('Malformed?', 'Paris', 4, ['D1:1 and D2:1']), ('Number?', 3, 4, ['D1:1'])]
         inputs = client.post('/evaluation-inputs', json={'dataset_id': dataset_id, 'samples': [{'sample_id': 'conv-a', 'question': question, 'answer': answer, 'category': category, 'evidence': refs} for question, answer, category, refs in cases]}).json()
-        response = client.post('/evaluation-runs', json={'input_id': inputs['input_id'], 'strategies': ['hybrid_no_resolution'], 'build_ids': {'conv-a': build_id}})
+        response = client.post('/evaluation-runs', json={'wait': True, 'input_id': inputs['input_id'], 'strategies': ['hybrid_no_resolution'], 'build_ids': {'conv-a': build_id}})
         assert response.status_code == 201, response.text
         run = response.json()
         assert [r['qa']['value'] for r in run['results']] == [1, 1, 1, 1, None, None, 1, 1, 1]
@@ -71,7 +71,7 @@ def test_baselines_really_select_dense_raw_and_expanded_context_and_never_leak_g
         dataset_id, build_id = complete_build(client, sample)
         observed.clear()
         inputs = client.post('/evaluation-inputs', json={'dataset_id': dataset_id, 'samples': [{'sample_id': 'conv-a', 'question': 'Where does Alex live?', 'answer': 'HIDDEN_GOLD', 'category': 4, 'evidence': ['D2:1']}]}).json()
-        response = client.post('/evaluation-runs', json={'input_id': inputs['input_id'], 'strategies': ['full_text', 'vector', 'hybrid_no_resolution', 'dynamic'], 'build_ids': {'conv-a': build_id}})
+        response = client.post('/evaluation-runs', json={'wait': True, 'input_id': inputs['input_id'], 'strategies': ['full_text', 'vector', 'hybrid_no_resolution', 'dynamic'], 'build_ids': {'conv-a': build_id}})
         assert response.status_code == 201, response.text
         rows = {r['strategy']: r for r in response.json()['results']}
         assert len(rows['full_text']['trace']['raw_context']) == 3
@@ -83,7 +83,10 @@ def test_baselines_really_select_dense_raw_and_expanded_context_and_never_leak_g
         assert rows['vector']['memory_rankings']['initial'] == [rows['vector']['trace']['retrieval']['channels']['dense'][0]['memory_id']]
         assert len([p for p in observed if p.get('operation') == 'resolve']) == 1
         for row in rows.values():
-            assert row['trace']['evidence_budget']['token_count'] <= settings.evidence_token_budget
+            if row['strategy'] == 'full_text':
+                assert row['trace']['evidence_budget']['budget'] is None
+            else:
+                assert row['trace']['evidence_budget']['token_count'] <= settings.evidence_token_budget
             assert row['trace']['evidence_budget']['model_metadata']['calls']
             assert row['diagnosis']['certainty'] == 'possible_causes_only'
 
@@ -95,7 +98,7 @@ def test_evaluation_rejects_unknown_conversations_split_and_official_generation(
     assert client.post('/evaluation-inputs', json={**body, 'samples': [{'sample_id': 'unknown', 'question': 'Where?'}]}).status_code == 422
     assert client.post('/evaluation-inputs', json={**body, 'course_split': {'dev': ['a'] * 4, 'test': ['b'] * 2}}).status_code == 422
     inputs = client.post('/evaluation-inputs', json=body).json()
-    result = client.post('/evaluation-runs', json={'input_id': inputs['input_id'], 'strategies': ['dynamic']})
+    result = client.post('/evaluation-runs', json={'wait': True, 'input_id': inputs['input_id'], 'strategies': ['dynamic']})
     assert result.status_code == 422
     assert result.json()['error']['code'] == 'official_structure_only_no_generation'
 
@@ -115,7 +118,7 @@ def test_legal_whitespace_composites_and_failed_baseline_are_persisted(settings,
         assert inputs['mappings'][0]['scorable']
         assert len(inputs['mappings'][0]['source_ids']) == 2
         fail['enabled'] = True
-        response = client.post('/evaluation-runs', json={'input_id': inputs['input_id'], 'strategies': ['full_text', 'vector'], 'build_ids': {'conv-a': build_id}})
+        response = client.post('/evaluation-runs', json={'wait': True, 'input_id': inputs['input_id'], 'strategies': ['full_text', 'vector'], 'build_ids': {'conv-a': build_id}})
         assert response.status_code == 201, response.text
         run = response.json()
         for item in run['results']:
@@ -141,16 +144,16 @@ def test_course_partition_and_independent_truth_are_validated_without_fabricated
         body = {'dataset_id': dataset_id, 'kind': 'course', 'course_split': {'dev': ['conv-a', 'conv-b', 'conv-c', 'conv-d'], 'test': ['conv-e', 'conv-f']}, 'samples': [{'sample_id': 'conv-a', 'question': 'Where does Alex live?', 'category': 4, 'answer': 'Rome', 'evidence': ['D2:1'], 'dynamic_truth': {'provenance': 'human-reviewed synthetic fixture, not actual course labels', 'effective_memory_ids': expected, 'relation_labels': [{'old_memory_id': next(m['memory_id'] for m in memories if m['state_value'] == 'Paris'), 'new_memory_id': expected[0], 'label': 'SUPERSEDE'}]}}]}
         inputs = client.post('/evaluation-inputs', json=body)
         assert inputs.status_code == 201, inputs.text
-        request = {'input_id': inputs.json()['input_id'], 'strategies': ['dynamic'], 'build_ids': {'conv-a': build_id}}
+        request = {'input_id': inputs.json()['input_id'], 'strategies': ['dynamic'], 'build_ids': {'conv-a': build_id}, 'wait': True}
         assert client.post('/evaluation-runs', json=request).status_code == 422
-        result = client.post('/evaluation-runs', json={**request, 'partition': 'dev'})
+        result = client.post('/evaluation-runs', json={'wait': True, **request, 'partition': 'dev'})
         assert result.status_code == 201, result.text
         assert result.json()['results'][0]['dynamic_metric']['value'] == 1
         assert result.json()['summary']['dynamic']['relations']['scored'] == 1
-        assert client.post('/evaluation-runs', json={**request, 'partition': 'test'}).status_code == 422
+        assert client.post('/evaluation-runs', json={'wait': True, **request, 'partition': 'test'}).status_code == 422
         body['samples'][0]['dynamic_truth']['effective_memory_ids'] = ['other-version']
         other = client.post('/evaluation-inputs', json=body).json()
-        result = client.post('/evaluation-runs', json={**request, 'input_id': other['input_id'], 'partition': 'dev'}).json()
+        result = client.post('/evaluation-runs', json={'wait': True, **request, 'input_id': other['input_id'], 'partition': 'dev'}).json()
         assert result['results'][0]['dynamic_metric']['value'] is None
         assert result['results'][0]['dynamic_metric']['reason'] == 'truth_outside_pinned_build'
 
@@ -169,7 +172,7 @@ def test_failed_embedding_reports_unknown_call_count_and_preserves_run(settings,
         dataset_id, build_id = complete_build(client, sample)
         inputs = client.post('/evaluation-inputs', json={'dataset_id': dataset_id, 'samples': [{'sample_id': 'conv-a', 'question': 'Where does Alex live?', 'answer': 'Rome', 'category': 4, 'evidence': ['D2:1']}]}).json()
         embedder.fail = True
-        response = client.post('/evaluation-runs', json={'input_id': inputs['input_id'], 'strategies': ['vector', 'dynamic'], 'build_ids': {'conv-a': build_id}})
+        response = client.post('/evaluation-runs', json={'wait': True, 'input_id': inputs['input_id'], 'strategies': ['vector', 'dynamic'], 'build_ids': {'conv-a': build_id}})
         assert response.status_code == 201, response.text
         run = response.json()
         assert all(r['error']['code'] == 'embedding_unavailable' for r in run['results'])
