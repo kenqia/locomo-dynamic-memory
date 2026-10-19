@@ -50,10 +50,10 @@ class DynamicTruth(BaseModel):
 
 
 class Sample(BaseModel):
-    model_config = ConfigDict(extra='forbid')
+    model_config = ConfigDict(extra='forbid', allow_inf_nan=False)
     sample_id: str = Field(min_length=1)
     question: str = Field(min_length=1, max_length=10000)
-    answer: str | None = None
+    answer: str | int | float | None = None
     category: int | None = None
     evidence: list[str] = Field(default_factory=list)
     # Independent, human/course supplied semantic truth, never inferred from source IDs.
@@ -221,7 +221,7 @@ class EvaluationService:
             raise BuildError('empty_evaluation_partition', 422)
         # Pin ALL conversations before any model call so comparisons share versions.
         pins = {s['sample_id']: self.queries.versions.pin(inputs['dataset_id'], s['sample_id'], request.build_ids.get(s['sample_id'])) for _, s in selected}
-        run = {'run_id': uuid.uuid4().hex, 'input_id': request.input_id, 'kind': inputs['kind'], 'partition': request.partition, 'started_at': utc_now(), 'config': self.queries.settings.snapshot(),
+        run = {'run_id': uuid.uuid4().hex, 'input_id': request.input_id, 'strategies': request.strategies, 'kind': inputs['kind'], 'partition': request.partition, 'started_at': utc_now(), 'config': self.queries.settings.snapshot(),
                'builds': {sid: self.queries.versions.builds.get(bid) for sid, bid in pins.items()}, 'answer_prompt': ANSWER_PROMPT, 'answer_schema': EvidenceAnswer.model_json_schema(), 'resolution_prompt': RESOLUTION_PROMPT, 'resolution_schema': EffectiveResolution.model_json_schema(), 'query_analysis_prompt': QUERY_ANALYSIS_PROMPT, 'known_service_version': KNOWN_MODEL_VERSION,
                'results': [], 'course_metrics': {'status': 'available' if inputs['kind'] == 'course' and inputs['course_split'] and all(s.get('dynamic_truth') for _, s in selected) else 'unavailable', 'reason': 'synthetic_or_structure_data_only' if inputs['kind'] != 'course' else 'course_split_missing' if not inputs['course_split'] else 'independent_dynamic_truth_missing' if not all(s.get('dynamic_truth') for _, s in selected) else None}, 'metric_version': 'locomo-official-category-v1', 'token_budget_method': TOKEN_BUDGET_METHOD}
         run['runtime'] = {'python': platform.python_version(), 'packages': {name: version(name) for name in ('locomo-dynamic-memory', 'nltk', 'numpy', 'rank-bm25', 'pydantic', 'fastapi')}}
@@ -236,8 +236,6 @@ class EvaluationService:
                     trace = self.queries.query(query) if strategy == 'dynamic' else self.baseline(query, strategy)
                     item['trace'] = trace
                     item['ranking_units'] = {'initial': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'expanded': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'effective': 'Memory' if strategy == 'dynamic' else 'not_applicable', 'answer_context': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'source_coverage': 'unique SourceTurn IDs per stage; K is actual delivered rank count'}
-                    calls = [call for operation in trace['operations'].values() for call in operation.get('calls', [])]
-                    item['usage_summary'] = {'generation_calls': len(calls), 'calls_without_reported_usage': sum(not c.get('usage') for c in calls), 'reported_tokens': {field: sum(c.get('usage', {}).get(field, 0) for c in calls) for field in ('prompt_tokens', 'completion_tokens', 'total_tokens')}, 'embedding_calls': trace.get('embedding_calls', int(bool(trace.get('initial', {}).get('channels', {}).get('dense'))) if isinstance(trace.get('initial'), dict) else 0)}
                     item['qa'] = qa_score(trace['answer']['answer'], sample)
                     if strategy == 'dynamic':
                         stages = {'initial': [c['memory'] for c in trace['initial']['initial_candidates']], 'expanded': [c['memory'] for c in trace['expanded']['candidates']], 'effective': trace['effective_memories'], 'answer_context': trace['effective_memories']}
@@ -278,12 +276,30 @@ class EvaluationService:
                     elif isinstance(error, ModelFailure):
                         item['model_metadata'] = error.metadata
                 calls = [call for operation in item.get('trace', {}).get('operations', {}).values() for call in operation.get('calls', [])]
-                item['usage_summary'] = {'generation_calls': len(calls), 'calls_without_reported_usage': sum(not c.get('usage') for c in calls), 'reported_tokens': {field: sum(c.get('usage', {}).get(field, 0) for c in calls) for field in ('prompt_tokens', 'completion_tokens', 'total_tokens')}, 'embedding_calls': item.get('usage_summary', {}).get('embedding_calls', item.get('trace', {}).get('embedding_calls', 0))}
+                trace = item.get('trace', {})
+                # A retrieval failure can precede or follow encode; do not claim zero.
+                embedding_count = 0 if strategy == 'full_text' else None
+                retrieval_trace = trace.get('initial') if strategy == 'dynamic' else trace.get('retrieval')
+                if isinstance(retrieval_trace, dict) and 'channels' in retrieval_trace:
+                    embedding_count = int(bool(retrieval_trace['channels']['dense']))
+                item['usage_summary'] = {'generation_calls': len(calls), 'calls_without_reported_usage': sum(not c.get('usage') for c in calls), 'reported_tokens': {field: sum(c.get('usage', {}).get(field, 0) for c in calls) for field in ('prompt_tokens', 'completion_tokens', 'total_tokens')}, 'embedding_calls': embedding_count}
                 run['results'].append(item)
-        run['summary'] = {strategy: {'qa': aggregate([r['qa']['value'] for r in run['results'] if r['strategy'] == strategy]), 'source_coverage': {stage: aggregate([r['source_coverage'][stage] for r in run['results'] if r['strategy'] == strategy]) for stage in ('initial', 'expanded', 'effective', 'answer_context')}, 'dynamic': aggregate([r['dynamic_metric']['value'] for r in run['results'] if r['strategy'] == strategy]), 'relations': aggregate([r.get('relation_metric', {}).get('value') for r in run['results'] if r['strategy'] == strategy]), 'missing_gold': sum(s.get('answer') is None or not s.get('answer', '').strip() for _, s in selected), 'unknown_category': sum(s.get('category') not in (1,2,3,4,5) for _, s in selected), 'invalid_evidence': sum(not inputs['mappings'][i]['scorable'] for i, _ in selected)} for strategy in request.strategies}
-        run['usage_summary'] = {'generation_calls': sum(r['usage_summary']['generation_calls'] for r in run['results']), 'calls_without_reported_usage': sum(r['usage_summary']['calls_without_reported_usage'] for r in run['results']), 'embedding_calls': sum(r['usage_summary']['embedding_calls'] for r in run['results']), 'reported_tokens': {field: sum(r['usage_summary']['reported_tokens'][field] for r in run['results']) for field in ('prompt_tokens', 'completion_tokens', 'total_tokens')}}
+        run['summary'] = {strategy: {'qa': aggregate([r['qa']['value'] for r in run['results'] if r['strategy'] == strategy]), 'source_coverage': {stage: aggregate([r['source_coverage'][stage] for r in run['results'] if r['strategy'] == strategy]) for stage in ('initial', 'expanded', 'effective', 'answer_context')}, 'dynamic': aggregate([r['dynamic_metric']['value'] for r in run['results'] if r['strategy'] == strategy]), 'relations': aggregate([r.get('relation_metric', {}).get('value') for r in run['results'] if r['strategy'] == strategy]), 'missing_gold': sum(s.get('answer') is None or not str(s.get('answer', '')).strip() for _, s in selected), 'unknown_category': sum(s.get('category') not in (1,2,3,4,5) for _, s in selected), 'invalid_evidence': sum(not inputs['mappings'][i]['scorable'] for i, _ in selected)} for strategy in request.strategies}
+        if inputs['kind'] == 'course' and inputs['course_split']:
+            dynamic_rows = [row for row in run['results'] if row['strategy'] == 'dynamic']
+            complete_truth = bool(dynamic_rows)
+            for row in dynamic_rows:
+                truth = inputs['samples'][row['sample_index']].get('dynamic_truth')
+                if not truth:
+                    complete_truth = False
+                elif ((truth.get('effective_memory_ids') is not None and row['dynamic_metric']['value'] is None)
+                      or (truth.get('relation_labels') and row.get('relation_metric', {}).get('value') is None)):
+                    complete_truth = False
+            run['course_metrics'] = {'status': 'available' if complete_truth else 'unavailable',
+                                     'reason': None if complete_truth else 'dynamic_not_run_or_independent_truth_missing_invalid'}
+        run['usage_summary'] = {'generation_calls': sum(r['usage_summary']['generation_calls'] for r in run['results']), 'calls_without_reported_usage': sum(r['usage_summary']['calls_without_reported_usage'] for r in run['results']), 'reported_embedding_calls': sum(r['usage_summary']['embedding_calls'] or 0 for r in run['results']), 'samples_with_unknown_embedding_call_count': sum(r['usage_summary']['embedding_calls'] is None for r in run['results']), 'reported_tokens': {field: sum(r['usage_summary']['reported_tokens'][field] for r in run['results']) for field in ('prompt_tokens', 'completion_tokens', 'total_tokens')}}
         run['elapsed_seconds'], run['completed_at'] = time.perf_counter() - start, utc_now()
-        run['fingerprint'] = hashlib.sha256(canonical_json({'input': inputs, 'pins': pins, 'config': run['config'], 'prompt': ANSWER_PROMPT}).encode()).hexdigest()
+        run['fingerprint'] = hashlib.sha256(canonical_json({'input': inputs, 'pins': pins, 'config': run['config'], 'prompt': ANSWER_PROMPT, 'resolution_prompt': RESOLUTION_PROMPT, 'query_analysis_prompt': QUERY_ANALYSIS_PROMPT, 'implementation': run['implementation_sha256'], 'strategies': request.strategies, 'partition': request.partition}).encode()).hexdigest()
         with self.database.connect() as db:
             db.execute('INSERT INTO evaluation_runs VALUES (?,?)', (run['run_id'], canonical_json(run)))
         return run

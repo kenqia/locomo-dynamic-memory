@@ -36,20 +36,20 @@ def test_category_branches_unknown_missing_and_strict_reference_mapping(settings
     def scoring_provider(request):
         payload = json.loads(json.loads(request.content)["messages"][1]["content"])
         if payload.get('operation') == 'answer':
-            texts = {'Lists?': 'red, blue, extra', 'Stems?': 'Running!', 'Domain?': 'Paris', 'Refusal?': 'Not mentioned here.'}
+            texts = {'Number?': '3', 'Lists?': 'red, blue, extra', 'Stems?': 'Running!', 'Domain?': 'Paris', 'Refusal?': 'Not mentioned here.'}
             return __import__('test_builds').completion({'status': payload['status'], 'answer': texts.get(payload['question'], 'Paris'), 'citations': [{'memory_id': m['memory_id'], 'source_ids': m['source_ids']} for m in payload['memories']]})
         return query_provider(request)
     model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(scoring_provider))
     with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
         dataset_id, build_id = complete_build(client, sample)
-        cases = [('Lists?', 'blue, red', 1, ['D1:1; D2:1']), ('Stems?', 'runs', 2, ['D1:1']), ('Domain?', 'Paris; non-gold explanation', 3, ['D1:1']), ('Refusal?', None, 5, []), ('Missing?', None, 4, ['D1:1']), ('Unknown?', 'Paris', 99, ['D1:1']), ('Malformed?', 'Paris', 4, ['D1:1, D9:9']), ('Malformed?', 'Paris', 4, ['D1:1 and D2:1'])]
+        cases = [('Lists?', 'blue, red', 1, ['D1:1; D2:1']), ('Stems?', 'runs', 2, ['D1:1']), ('Domain?', 'Paris; non-gold explanation', 3, ['D1:1']), ('Refusal?', None, 5, []), ('Missing?', None, 4, ['D1:1']), ('Unknown?', 'Paris', 99, ['D1:1']), ('Malformed?', 'Paris', 4, ['D1:1, D9:9']), ('Malformed?', 'Paris', 4, ['D1:1 and D2:1']), ('Number?', 3, 4, ['D1:1'])]
         inputs = client.post('/evaluation-inputs', json={'dataset_id': dataset_id, 'samples': [{'sample_id': 'conv-a', 'question': question, 'answer': answer, 'category': category, 'evidence': refs} for question, answer, category, refs in cases]}).json()
         response = client.post('/evaluation-runs', json={'input_id': inputs['input_id'], 'strategies': ['hybrid_no_resolution'], 'build_ids': {'conv-a': build_id}})
         assert response.status_code == 201, response.text
         run = response.json()
-        assert [r['qa']['value'] for r in run['results']] == [1, 1, 1, 1, None, None, 1, 1]
+        assert [r['qa']['value'] for r in run['results']] == [1, 1, 1, 1, None, None, 1, 1, 1]
         assert run['results'][3]['qa']['missing_gold']
-        assert run['summary']['hybrid_no_resolution']['qa']['scored'] == 6
+        assert run['summary']['hybrid_no_resolution']['qa']['scored'] == 7
         assert run['results'][6]['source_coverage']['initial'] is None
         assert run['results'][7]['mapping']['errors'][0]['reason'] == 'malformed_reference'
         assert run['summary']['hybrid_no_resolution']['source_coverage']['effective']['scored'] == 0
@@ -138,7 +138,7 @@ def test_course_partition_and_independent_truth_are_validated_without_fabricated
         dataset_id, build_id = complete_build(client, sample)
         memories = client.get(f'/builds/{build_id}/memories').json()['items']
         expected = [m['memory_id'] for m in memories if m['state_value'] == 'Rome']
-        body = {'dataset_id': dataset_id, 'kind': 'course', 'course_split': {'dev': ['conv-a', 'conv-b', 'conv-c', 'conv-d'], 'test': ['conv-e', 'conv-f']}, 'samples': [{'sample_id': 'conv-a', 'question': 'Where does Alex live?', 'category': 4, 'answer': 'Rome', 'evidence': ['D2:1'], 'dynamic_truth': {'provenance': 'human-reviewed synthetic fixture, not actual course labels', 'effective_memory_ids': expected}}]}
+        body = {'dataset_id': dataset_id, 'kind': 'course', 'course_split': {'dev': ['conv-a', 'conv-b', 'conv-c', 'conv-d'], 'test': ['conv-e', 'conv-f']}, 'samples': [{'sample_id': 'conv-a', 'question': 'Where does Alex live?', 'category': 4, 'answer': 'Rome', 'evidence': ['D2:1'], 'dynamic_truth': {'provenance': 'human-reviewed synthetic fixture, not actual course labels', 'effective_memory_ids': expected, 'relation_labels': [{'old_memory_id': next(m['memory_id'] for m in memories if m['state_value'] == 'Paris'), 'new_memory_id': expected[0], 'label': 'SUPERSEDE'}]}}]}
         inputs = client.post('/evaluation-inputs', json=body)
         assert inputs.status_code == 201, inputs.text
         request = {'input_id': inputs.json()['input_id'], 'strategies': ['dynamic'], 'build_ids': {'conv-a': build_id}}
@@ -146,10 +146,34 @@ def test_course_partition_and_independent_truth_are_validated_without_fabricated
         result = client.post('/evaluation-runs', json={**request, 'partition': 'dev'})
         assert result.status_code == 201, result.text
         assert result.json()['results'][0]['dynamic_metric']['value'] == 1
-        assert result.json()['summary']['dynamic']['relations']['scored'] == 0
+        assert result.json()['summary']['dynamic']['relations']['scored'] == 1
         assert client.post('/evaluation-runs', json={**request, 'partition': 'test'}).status_code == 422
         body['samples'][0]['dynamic_truth']['effective_memory_ids'] = ['other-version']
         other = client.post('/evaluation-inputs', json=body).json()
         result = client.post('/evaluation-runs', json={**request, 'input_id': other['input_id'], 'partition': 'dev'}).json()
         assert result['results'][0]['dynamic_metric']['value'] is None
         assert result['results'][0]['dynamic_metric']['reason'] == 'truth_outside_pinned_build'
+
+
+def test_failed_embedding_reports_unknown_call_count_and_preserves_run(settings, sample):
+    from locomo_memory.embeddings import EmbeddingFailure
+    class FailingEmbedder(ControlledEmbedder):
+        fail = False
+        def encode(self, texts):
+            if self.fail:
+                raise EmbeddingFailure('embedding_unavailable')
+            return super().encode(texts)
+    embedder = FailingEmbedder()
+    model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(query_provider))
+    with TestClient(create_app(settings, model=model, embedder=embedder)) as client:
+        dataset_id, build_id = complete_build(client, sample)
+        inputs = client.post('/evaluation-inputs', json={'dataset_id': dataset_id, 'samples': [{'sample_id': 'conv-a', 'question': 'Where does Alex live?', 'answer': 'Rome', 'category': 4, 'evidence': ['D2:1']}]}).json()
+        embedder.fail = True
+        response = client.post('/evaluation-runs', json={'input_id': inputs['input_id'], 'strategies': ['vector', 'dynamic'], 'build_ids': {'conv-a': build_id}})
+        assert response.status_code == 201, response.text
+        run = response.json()
+        assert all(r['error']['code'] == 'embedding_unavailable' for r in run['results'])
+        assert run['usage_summary']['samples_with_unknown_embedding_call_count'] == 2
+        assert run['usage_summary']['generation_calls'] == 0
+        assert all(r['usage_summary']['embedding_calls'] is None for r in run['results'])
+        assert client.get('/evaluation-runs/' + run['run_id']).json() == run

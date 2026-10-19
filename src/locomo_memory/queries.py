@@ -106,13 +106,15 @@ class QueryService:
         budget = {"token_count": used, "budget": self.settings.evidence_token_budget,
                   "token_budget_method": TOKEN_BUDGET_METHOD, "truncated": bool(omitted),
                   "omitted_memory_ids": omitted, "truncation_reasons": ["evidence_token_budget"] if omitted else []}
+        if raw_sources is not None:
+            budget["omitted_source_ids"] = budget.pop("omitted_memory_ids")
         if audit is not None:
             audit["effective_memories"], audit["evidence_budget"] = delivered, budget
+            if raw_sources is not None:
+                audit["answer_context_sources"] = raw_delivered
         generation = self.model.generate("answer", payload, EvidenceAnswer, context=context)
         answer = EvidenceAnswer.model_validate(generation.value.model_dump(mode="json"), context=context)
         budget["model_metadata"] = generation.metadata
-        if raw_sources is not None:
-            budget["omitted_source_ids"] = budget.pop("omitted_memory_ids")
         return answer.model_dump(mode="json"), raw_delivered if raw_sources is not None else delivered, budget
 
     def query(self, request):

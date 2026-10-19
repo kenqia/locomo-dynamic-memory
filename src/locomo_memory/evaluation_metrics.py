@@ -24,6 +24,7 @@ def f1(prediction, gold):
 
 def qa_score(prediction, sample):
     category, gold = sample['category'], sample.get('answer')
+    gold = str(gold) if gold is not None else None
     if category == 5:
         return {'value': float(any(s in prediction.lower() for s in ('no information available', 'not mentioned'))),
                 'rule': 'official_adversarial_refusal', 'missing_gold': gold is None, 'reason': None}
