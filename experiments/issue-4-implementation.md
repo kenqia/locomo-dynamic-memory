@@ -103,6 +103,22 @@ counterexample, one-hop/original-seed expansion, configurable budgets and versio
 publication gates. See `experiments/issue-8-relations-validation.md`.
 No separate browser or paid model check was executed for this ticket.
 
+### Issues #9 and #10: answering, recovery and export
+
+Question answering was integrated with merge commit `59f7102`:
+70 passed, 3 opt-in checks skipped in fresh default tests.
+Recovery and export were then integrated with merge commit `5dfca1b`:
+`uv sync --locked` and `uv run pytest -q --tb=short` passed with
+83 passed, 4 opt-in checks skipped and the same upstream warning.
+
+See `experiments/issue-9-query-validation.md` and
+`experiments/issue-10-version-validation.md`. Cases include current/history
+interleaving without global writes, strict reference validation, failure Trace,
+future/insufficient/conflict handling, immutable complete-version queries,
+three-phase process interruption and idempotent recovery, concurrent publication,
+old encoder identity selection and schema-validated coherent JSON export.
+Browser and paid model checks were not part of these ticket runs.
+
 ### Real MiniLM preflight
 
 An independent Python 3.12 environment loaded the existing pinned snapshot
