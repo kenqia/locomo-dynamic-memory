@@ -103,6 +103,17 @@ The tokenizer measured a synthetic long input at 302 tokens against
 model availability and dimensionality, not the application's overlength
 rejection policy, retrieval quality or answer quality.
 
+### Official evidence mapping preflight
+
+A read-only structural check of all 1,986 supplied QA records found 1,977
+samples with reliably resolvable evidence, 4 with missing/empty evidence and
+5 with unmappable evidence. Four samples use valid composite evidence
+elements, split only at whitespace or semicolons and validated individually.
+The five unresolved elements match the retained provenance positions:
+`conv-42/58`, `conv-42/88`, `conv-43/18`, `conv-47/38`, `conv-50/69`, using
+zero-based QA positions. Original IDs and source files were not modified.
+This check is source mapping coverage, not retrieval Recall or course scoring.
+
 ### Implementation references
 
 The official [FastAPI testing guide](https://fastapi.tiangolo.com/tutorial/testing/)
