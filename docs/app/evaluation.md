@@ -88,12 +88,20 @@ curl -X POST http://127.0.0.1:8000/evaluation-runs/<Run-ID>/resume \
 
 | 策略 | 实际上下文 | 状态解析与额外调用 |
 | --- | --- | --- |
-| `full_text` | 按原始位置排列的真实 SourceTurn；共享最终证据预算，超出部分明确记录 | 不抽造 Memory，不检索或扩展；直接调用共享回答操作，引用 `memory_id: null` 与实际来源 |
+| `full_text` | 按原始位置排列的全部真实有文本 SourceTurn，不受 RAG 最终证据预算限制 | 不抽造 Memory，不检索或扩展；直接调用共享回答操作，引用 `memory_id: null` 与实际来源；孤立会话时间不制造来源 |
 | `vector` | 原始问题的 Dense 排名，经 `initial_k` 和候选预算限制，再分配共享最终预算 | 不扩展、不解析；共用检索器仍执行 BM25 和一次问题分析，分析不影响 Dense 选择，额外调用保留在 Trace |
 | `hybrid_no_resolution` | 真实 BM25/Dense/RRF 初始候选，加一跳及同键历史扩展 | 不调用有效证据解析，所有扩展候选进入共享最终预算 |
 | `dynamic` | 初始检索、历史扩展、有效证据解析后的送达 Memory | 使用完整查询链路与持久 QueryTrace |
 
-四种策略共享生成模型、参数、回答 Prompt、schema 和最终 token 预算。Full Text 上下文单位是 SourceTurn，其余排序单位是 Memory；预算使用 `regex-word-punctuation-v1` 近似计数，并非 provider 计费 token。上下文字段不同会产生不同开销，记录保留实际计数、遗漏 ID、截断和调用，不能据此预设质量提升或假装上下文长度一致。
+四种策略共享生成模型、温度、输出上限、回答 Prompt 和 schema。Full Text 的 `evidence_budget.budget` 为 null，`scope` 为 `complete_raw_sources`；RAG 保留配置中的候选预算和最终证据预算，后者默认 6,000。Full Text 上下文单位是 SourceTurn，其余排序单位是 Memory。不同策略的上下文长度不相同。
+
+`evidence_budget.token_count` 使用 `regex-word-punctuation-v1` 近似计算实际回答证据的大小。每个模型操作还在 `model_metadata.request_context_estimate` 记录包含 system Prompt、JSON schema 和用户 payload 的完整 messages 近似计数，以及预留输出上限。这些计数都不是 provider tokenizer 结果或账单 token，也不用于猜测服务是否接受上下文。provider 已报告的 `prompt_tokens`、`completion_tokens` 和 `total_tokens` 单独保存在调用记录的 `usage` 中。
+
+Full Text 的 `source_delivery` 保留有序的 `expected_source_ids`、`attempted_source_ids` 和 `delivered_source_ids`。成功响应标记为 `accepted`。请求收到 provider 响应时，送达列表表示该请求包含的来源；上下文被拒绝时 `provider_accepted` 为 false，不能据此称模型已使用这些来源。请求未收到响应时只记录尝试来源，送达列表保持空，状态为 `request_attempted`；未发起调用时为 `not_sent`。`raw_context` 与 `initial_source_ids` 保留完整应有输入，即使回答失败也可以核查末尾来源。
+
+provider 明确拒绝上下文时，样本保存 `context_length_exceeded` 错误和 `evidence_budget.context_limit_exceeded: true`，不把运行失败当作证据不足。相同超长请求不再重试，也不会回退为前缀、摘要或分块后的“完整全文”；其他模型错误继续采用既有有限重试。regex 近似计数不能证明输入适合服务上下文，实际服务结果为准。
+
+Vector 的 `retrieval.executed_components` 披露实际执行的问题分析、BM25、Dense 和 RRF。`selection.unused_components` 明确哪些步骤不影响 Dense 选择，`operations.query_analysis_unused_by_vector_selection.calls` 仍计入调用与 provider 用量。检索阶段耗时包含这些步骤，不将 Vector 冒称为只执行一次 Dense 的成本。
 
 `memory_rankings` 保存真实 Memory 排名，`source_sets` 按阶段保存去重 SourceTurn；`source_coverage` 的分母是该样本所有可靠映射的独立 gold 来源。初始、扩展、动态有效集合和实际回答上下文分开统计。无状态解析的策略没有经验证的有效集合，其 `effective` 为 null。Full Text 和 Vector 未执行扩展，其扩展覆盖为 null。初始 K 指实际候选数，扩展集合与实际送达集合各自有独立数量，不将这三者统称 Recall@K。
 
@@ -125,14 +133,14 @@ curl -X POST http://127.0.0.1:8000/evaluation-runs/<Run-ID>/resume \
 
 有效集合使用集合完全一致匹配；持久关系标签按标注的有向端点比较，缺关系算错误。端点必须属于固定构建，否则该指标不可计分。关系标签允许 RETAIN、UPDATE、SUPERSEDE、CONFLICT、undetermined。该接入点不产生真值；系统关系、LLM 自标和 gold 来源 ID 均不能替代独立语义标注。缺少课程划分或独立标签时显示未评；样本对应指标仍单独报告覆盖率。
 
-页面并列显示策略汇总、逐样本 QA、各阶段覆盖、错误、调用及完整配置。失败分析只有在独立证据足够时才能归因；当前自动说明统一标为可能原因，不能从 gold 来源是否命中直接断言抽取或解析错误。
+页面并列显示策略汇总、逐样本 QA、各阶段覆盖、错误、调用及完整配置。上下文表显示全文应有来源数、已确认请求来源数、送达状态、证据及完整请求近似计数、截断或超限与已报告用量；展开逐项记录可核查有序来源 ID。失败分析只有在独立证据足够时才能归因；当前自动说明统一标为可能原因，不能从 gold 来源是否命中直接断言抽取或解析错误。
 
 运行记录保存配置、完整构建元数据、Prompt/schema、Python/包版本、实现 SHA256、耗时、实际调用与 provider 已报告 token 用量。未报告用量单独计数，不将部分合计宣称为完整费用。
 
 ## 验证
 
 ```sh
-uv run --locked pytest tests/test_evaluation_plans.py tests/test_evaluation.py tests/test_queries.py -q
+uv run --locked pytest tests/test_full_text.py tests/test_evaluation_plans.py tests/test_evaluation.py tests/test_queries.py -q
 ```
 
 测试通过 FastAPI、真实 SQLite、真实 BM25/cosine/RRF、关系与扩展，只控制 LLM 与 Embedding。计划预览实验记录见 [Issue #16 验证](../../experiments/issue-16-development-plan-validation.md)，既有评测记录见 `experiments/issue-11-evaluation-validation.md`。未进行正式测试集调参或付费模型质量评测。
