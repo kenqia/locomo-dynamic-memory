@@ -135,6 +135,21 @@ stored cached encoder identity. Generation responses remain controlled; no
 DeepSeek call was made. This result applies to the integrated #10 code, before
 the later evaluation and browser changes.
 
+### Issue #11: scoring and baselines
+
+Integrated with merge commit `a7830ca`. The resulting tracked tree exactly
+matched tested ticket `c524a78`. The ticket's fresh full run produced
+90 passed, 4 opt-in checks skipped. Integration installation, the seven
+evaluation API tests, `git diff --check` and `compileall` also passed.
+The full run was not redundantly repeated on the identical tree.
+
+The ticket compared 80 scoring cases with the retained upstream functions and
+reconciled all official QA source mappings without tuning retrieval. A real
+local Uvicorn/SQLite + Streamlit AppTest HTTP check ran all four strategies,
+comparison display and persisted-result reading. This is not browser or model
+quality verification. NLTK supplies Porter stemming without corpus downloads.
+See `experiments/issue-11-evaluation-validation.md`.
+
 ### Real MiniLM preflight
 
 An independent Python 3.12 environment loaded the existing pinned snapshot
