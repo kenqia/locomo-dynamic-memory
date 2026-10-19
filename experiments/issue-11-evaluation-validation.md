@@ -29,3 +29,5 @@
 项目独立 `.venv` 新增锁定 `nltk==3.10.3`，仅使用无需下载语料的 PorterStemmer，以复用官方计分依赖。没有新增生产服务或重型BERT模型。运行记录包含Python/包版本、实现源码SHA256、固定构建与配置、各Prompt/schema、真实上下文差异、截断、耗时、额外分析调用及provider已报告token。Embedding在成功检索中计实际一次或空索引零次；检索在返回前失败时次数不可确定，明确null并汇总未知样本数。未报告provider用量独立计数，不把部分用量当完整费用。
 
 合并 #10 后首次完整回归：`uv run --locked pytest -q`，89 passed、4 skipped，93.62s。最后补入Embedding失败审计测试及独立关系真值验证后，`uv run --locked pytest tests/test_evaluation.py -q`，7 passed；失败Embedding不会被记作零次调用，Run持久可读。组合验证与最终全量结果随后追加。
+
+最终验证：`uv run --locked pytest tests/test_evaluation.py tests/test_queries.py tests/test_versions.py -q`，28 passed、1 skipped，60.52s；`uv run --locked pytest -q`，90 passed、4 skipped，120.43s。最后的无穷数输入拒绝配置及删除重复用量计算由随后 `uv run --locked pytest tests/test_evaluation.py -q` 覆盖，7 passed，12.23s。`git diff --check` 与 `python -m compileall -q src/locomo_memory` 均通过。唯一已知测试警告为现有 Starlette/httpx TestClient 弃用提示。
