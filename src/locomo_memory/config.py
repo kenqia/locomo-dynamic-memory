@@ -31,6 +31,9 @@ class Settings(BaseModel):
     initial_k: int = Field(default=20, gt=0)
     rrf_constant: int = Field(default=60, gt=0)
     expansion_max_candidates: int = Field(default=60, gt=0)
+    expansion_depth: Literal[0, 1] = 1
+    expansion_scan_limit: int = Field(default=200, gt=0)
+    relation_history_limit: int = Field(default=20, gt=0)
     candidate_token_budget: int = Field(default=12000, gt=0)
     evidence_token_budget: int = Field(default=6000, gt=0)
 

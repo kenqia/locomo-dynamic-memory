@@ -20,6 +20,10 @@ from .model import DeepSeekModel
 from .embeddings import MiniLMEmbedder
 from .retrieval import RetrievalService
 from .retrieval_api import register_retrieval_routes
+from .relations import RelationService
+from .relation_api import register_relation_routes
+from .versions import VersionsService
+from .expansion import ExpansionService
 from .imports import import_dataset
 from .schemas import Conversation, Dataset, ErrorResponse, ImportRequest, ImportResult, Page, Session, SourceTurn
 
@@ -35,11 +39,15 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
     builds = BuildService(database, settings, model)
     embedder = embedder if embedder is not None else MiniLMEmbedder(settings)
     retrieval = RetrievalService(builds, settings, embedder, model)
+    relations = RelationService(builds, model)
+    versions = VersionsService(builds)
+    expansion = ExpansionService(relations)
 
     @asynccontextmanager
     async def lifespan(app):
         with backend_ownership(settings.db_path):
             builds.recover_interrupted()
+            relations.recover_interrupted()
             yield
 
     app = FastAPI(title="LoCoMo dynamic memory", lifespan=lifespan, responses={400: {"model": ErrorResponse}, 404: {"model": ErrorResponse}, 422: {"model": ErrorResponse}})
@@ -51,6 +59,10 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
     register_build_routes(app, builds)
     app.state.retrieval = retrieval
     register_retrieval_routes(app, retrieval)
+    app.state.relations = relations
+    app.state.versions = versions
+    register_relation_routes(app, relations, versions, expansion)
+    app.state.expansion = expansion
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, exc: RequestValidationError):

@@ -10,7 +10,9 @@ from .config import Settings
 from .database import Database
 from .imports import canonical_json
 from .memory_schemas import ExtractionBatch, Memory
-from .model import EXTRACTION_PROMPT, EXTRACTION_PROMPT_VERSION, KNOWN_MODEL_VERSION, MEMORY_SCHEMA_VERSION, ModelFailure, utc_now
+from .model import EXTRACTION_PROMPT, EXTRACTION_PROMPT_VERSION, KNOWN_MODEL_VERSION, MEMORY_SCHEMA_VERSION, RELATION_PROMPT, RELATION_PROMPT_VERSION, ModelFailure, utc_now
+from .relation_schemas import RelationBatch, RELATION_SCHEMA_VERSION
+from .projection import PROJECTION_VERSION
 
 
 class BuildError(Exception):
@@ -73,8 +75,8 @@ class BuildService:
             if dataset is None or not turns:
                 raise BuildError("not_found", 404)
             snapshot = self.settings.snapshot()
-            fingerprint = hashlib.sha256(canonical_json({"source": dataset["source_sha256"], "sample_id": sample_id, "settings": snapshot, "prompt": EXTRACTION_PROMPT, "prompt_version": EXTRACTION_PROMPT_VERSION, "schema": ExtractionBatch.model_json_schema(), "schema_version": MEMORY_SCHEMA_VERSION}).encode()).hexdigest()
-            metadata = {"requested_model": self.settings.model_name, "known_service_version": KNOWN_MODEL_VERSION, "run_date": now[:10], "returned_models": [], "calls": []}
+            fingerprint = hashlib.sha256(canonical_json({"source": dataset["source_sha256"], "sample_id": sample_id, "settings": snapshot, "prompt": EXTRACTION_PROMPT, "prompt_version": EXTRACTION_PROMPT_VERSION, "schema": ExtractionBatch.model_json_schema(), "schema_version": MEMORY_SCHEMA_VERSION, "relation_prompt": RELATION_PROMPT, "relation_prompt_version": RELATION_PROMPT_VERSION, "relation_schema": RelationBatch.model_json_schema(), "relation_schema_version": RELATION_SCHEMA_VERSION, "projection_version": PROJECTION_VERSION}).encode()).hexdigest()
+            metadata = {"requested_model": self.settings.model_name, "known_service_version": KNOWN_MODEL_VERSION, "run_date": now[:10], "returned_models": [], "calls": [], "artifact_versions": {"relation_prompt_version": RELATION_PROMPT_VERSION, "relation_schema_version": RELATION_SCHEMA_VERSION, "projection_version": PROJECTION_VERSION}}
             try:
                 db.execute("INSERT INTO build_versions VALUES (?, ?, ?, 'queued', 'extraction', ?, ?, ?, ?, ?, ?, ?, ?)",
                            (build_id, dataset_id, sample_id, fingerprint, dataset["source_sha256"], canonical_json(snapshot), EXTRACTION_PROMPT_VERSION, MEMORY_SCHEMA_VERSION, canonical_json(metadata), now, now))

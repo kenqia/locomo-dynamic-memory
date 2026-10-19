@@ -1,6 +1,6 @@
 # 运行原始来源浏览应用
 
-本地应用通过 FastAPI 导入 LoCoMo 数据、持久化至 SQLite，并在 Streamlit 页面浏览原始英文对话。来源管理与原子 Memory 抽取已实现，抽取与重试步骤见 [构建指南](building.md)。初始混合检索见 [候选检查指南](retrieval.md)。关系、完整版本问答及正式课程评测由后续票实现。
+本地应用通过 FastAPI 导入 LoCoMo 数据、持久化至 SQLite，并在 Streamlit 页面浏览原始英文对话。来源管理与原子 Memory 抽取已实现，抽取与重试步骤见 [构建指南](building.md)。初始混合检索见 [候选检查指南](retrieval.md)。关系与完整构建发布见 [历史状态指南](relations.md)。最终问答及正式课程评测由后续票实现。
 
 ## 准备环境
 
