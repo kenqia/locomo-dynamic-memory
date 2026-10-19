@@ -230,3 +230,15 @@ def test_no_complete_version_and_non_english_are_explicit_errors(settings, sampl
         assert response.json()["error"]["code"] == "no_complete_version"
         response = client.post("/queries", json={**payload, "question": "他住在哪里？"})
         assert response.status_code == 422
+
+
+def test_explicit_english_question_date_overrides_default_cutoff(settings, sample):
+    model = DeepSeekModel(settings, api_key="synthetic-test-key", transport=httpx.MockTransport(query_provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        dataset_id, _ = complete_build(client, sample)
+        result = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where did Alex live on 1 May 2023?"})
+        assert result.status_code == 201
+        trace = result.json()
+        assert trace["time"]["origin"] == "explicit_question"
+        assert trace["time"]["requested_date"] == "2023-05-01"
+        assert "Paris" in trace["answer"]["answer"]

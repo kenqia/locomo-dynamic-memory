@@ -1,6 +1,6 @@
 """Pin one complete version, resolve bounded history, answer and retain an audit Trace."""
 
-from datetime import date
+from datetime import date, datetime
 import json
 import hashlib
 import re
@@ -19,6 +19,26 @@ from .temporal import conversation_cutoff
 
 RESOLUTION_PROMPT_VERSION = "effective-resolution-v1"
 ANSWER_PROMPT_VERSION = "evidence-answer-v1"
+
+
+def explicit_question_date(question):
+    """Recognize one exact date; ambiguous ranges stay in the original question."""
+    matches = []
+    patterns = [
+        (r"\b\d{4}-\d{2}-\d{2}\b", ("%Y-%m-%d",)),
+        (r"\b\d{1,2} [A-Za-z]+,? \d{4}\b", ("%d %B %Y", "%d %b %Y")),
+        (r"\b[A-Za-z]+ \d{1,2},? \d{4}\b", ("%B %d %Y", "%b %d %Y")),
+    ]
+    for pattern, formats in patterns:
+        for match in re.finditer(pattern, question):
+            for format in formats:
+                try:
+                    matches.append(datetime.strptime(match.group().replace(",", ""), format).date())
+                    break
+                except ValueError:
+                    continue
+    unique = set(matches)
+    return matches[0] if len(unique) == 1 else None
 
 
 class QueryFailure(BuildError):
@@ -93,20 +113,13 @@ class QueryService:
                  "query_fingerprint": hashlib.sha256(canonical_json({"settings": self.settings.snapshot(),
                      "resolve_prompt": RESOLUTION_PROMPT, "answer_prompt": ANSWER_PROMPT,
                      "resolve_schema": EffectiveResolution.model_json_schema(), "answer_schema": EvidenceAnswer.model_json_schema()}).encode()).hexdigest()}
-        stage = "retrieval"
+        stage, tick = "retrieval", started
         try:
             with self.database.connect() as db:
                 cutoff, cutoff_raw = conversation_cutoff(db, request.dataset_id, request.sample_id)
                 projection = db.execute("SELECT fingerprint FROM current_state_projections WHERE build_id=?", (build_id,)).fetchone()
-            explicit_question = re.search(r"\b\d{4}-\d{2}-\d{2}\b", request.question)
-            requested = request.requested_date
-            origin = "explicit_request" if requested else "conversation_cutoff"
-            if requested is None and explicit_question:
-                try:
-                    requested = date.fromisoformat(explicit_question.group())
-                    origin = "explicit_question"
-                except ValueError:
-                    pass
+            requested = request.requested_date or explicit_question_date(request.question)
+            origin = "explicit_request" if request.requested_date else "explicit_question" if requested else "conversation_cutoff"
             trace["time"] = {"requested_date": requested.isoformat() if requested else None, "anchor_date": (requested or cutoff.date()).isoformat(),
                              "origin": origin, "cutoff": cutoff.isoformat(), "cutoff_source_time": cutoff_raw,
                              "beyond_cutoff": bool(requested and requested > cutoff.date())}
@@ -156,6 +169,7 @@ class QueryService:
             trace["stage_seconds"][stage] = time.perf_counter() - tick
             trace["outcome"] = "succeeded"
         except (ModelFailure, ValidationError, BuildError, EmbeddingFailure) as error:
+            trace["stage_seconds"][stage] = time.perf_counter() - tick
             trace["outcome"] = "failed"
             trace["error"] = {"stage": stage, "code": error.code if hasattr(error, "code") else "invalid_output"}
             if isinstance(error, ModelFailure):

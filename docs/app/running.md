@@ -1,6 +1,6 @@
 # 运行原始来源浏览应用
 
-本地应用通过 FastAPI 导入 LoCoMo 数据、持久化至 SQLite，并在 Streamlit 页面浏览原始英文对话。来源管理与原子 Memory 抽取已实现，抽取与重试步骤见 [构建指南](building.md)。初始混合检索见 [候选检查指南](retrieval.md)。关系与完整构建发布见 [历史状态指南](relations.md)。最终问答及正式课程评测由后续票实现。
+本地应用通过 FastAPI 导入 LoCoMo 数据、持久化至 SQLite，并在 Streamlit 页面浏览原始英文对话。来源管理与原子 Memory 抽取已实现，抽取与重试步骤见 [构建指南](building.md)。初始混合检索见 [候选检查指南](retrieval.md)。关系与完整构建发布见 [历史状态指南](relations.md)。完整版本的有效证据问答见[问答指南](querying.md)。正式课程评测由后续票实现。
 
 ## 准备环境
 
@@ -19,7 +19,7 @@ cp config.example.toml /tmp/locomo-local.toml
 export LOCOMO_CONFIG=/tmp/locomo-local.toml
 ```
 
-配置字段由 `src/locomo_memory/config.py` 校验；未知字段被拒绝。生成模型固定使用官方 Base URL `https://api.deepseek.com` 并关闭思考，不能通过普通配置改向其他服务或开启思考。`db_path` 相对启动目录解析。示例也列出后续模型与检索预算，来源导入不调用模型；只有显式发起构建才调用生成模型。配置文件不接受 API key；不要将凭据写入示例、配置、JSON 导入内容或仓库。
+配置字段由 `src/locomo_memory/config.py` 校验；未知字段被拒绝。生成模型固定使用官方 Base URL `https://api.deepseek.com` 并关闭思考，不能通过普通配置改向其他服务或开启思考。`db_path` 相对启动目录解析。示例也列出后续模型与检索预算，来源导入不调用模型；显式发起构建、候选问题分析和完整版本问答会调用生成模型。配置文件不接受 API key；不要将凭据写入示例、配置、JSON 导入内容或仓库。
 
 ## 启动应用
 
