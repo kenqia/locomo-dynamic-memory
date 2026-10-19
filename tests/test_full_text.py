@@ -43,7 +43,7 @@ def test_full_text_delivers_complete_ordered_conversation_beyond_rag_budget(sett
             {'sample_id': 'conv-a', 'question': 'What is the final access word?',
              'answer': 'HIDDEN_GOLD', 'category': 4, 'evidence': ['D3:61']},
         ]}).json()
-        response = client.post('/evaluation-runs', json={'input_id': inputs['input_id'],
+        response = client.post('/evaluation-runs', json={'wait': True, 'input_id': inputs['input_id'],
             'strategies': ['full_text', 'vector'], 'build_ids': {'conv-a': build_id}})
         assert response.status_code == 201, response.text
         rows = {r['strategy']: r for r in response.json()['results']}
@@ -93,7 +93,7 @@ def test_full_text_context_rejection_preserves_complete_attempt_and_safe_failure
             {'sample_id': 'conv-a', 'question': 'Where does Alex live?', 'answer': 'Rome',
              'category': 4, 'evidence': ['D2:1']},
         ]}).json()
-        response = client.post('/evaluation-runs', json={'input_id': inputs['input_id'],
+        response = client.post('/evaluation-runs', json={'wait': True, 'input_id': inputs['input_id'],
             'strategies': ['full_text'], 'build_ids': {'conv-a': build_id}})
         assert response.status_code == 201, response.text
         row = response.json()['results'][0]

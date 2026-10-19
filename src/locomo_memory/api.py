@@ -53,7 +53,11 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
         with backend_ownership(settings.db_path):
             builds.recover_interrupted()
             relations.recover_interrupted()
-            yield
+            app.state.evaluation.execution.recover_interrupted()
+            try:
+                yield
+            finally:
+                app.state.evaluation.execution.shutdown()
 
     app = FastAPI(title="LoCoMo dynamic memory", lifespan=lifespan, responses={400: {"model": ErrorResponse}, 404: {"model": ErrorResponse}, 422: {"model": ErrorResponse}})
     app.state.settings = settings
