@@ -19,7 +19,7 @@ def register_build_routes(app: FastAPI, service: BuildService):
 
     @app.exception_handler(BuildError)
     async def build_error(request: Request, error: BuildError):
-        messages = {"not_found": "Resource not found", "build_already_running": "Another build is active", "build_not_retryable": "Only failed or interrupted builds can be retried", "build_configuration_changed": "Settings changed; create a new build to preserve version identity"}
+        messages = {"not_found": "Resource not found", "build_already_running": "Another build is active", "build_not_retryable": "Only failed or interrupted extraction can use this retry; later stages have separate controls", "build_configuration_changed": "Settings changed; create a new build to preserve version identity", "index_not_ready": "This version has no ready index", "build_not_indexable": "Indexing requires extracted memories or an interrupted index phase", "index_fingerprint_mismatch": "The index and current model identity differ; use a matching version", "index_failed": "Index construction failed"}
         return JSONResponse(status_code=error.status, content={"error": {"code": error.code, "message": messages.get(error.code, "Build operation failed")}})
 
     @app.post("/builds", response_model=BuildVersion, status_code=202)

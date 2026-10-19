@@ -17,6 +17,9 @@ from .database import Database, backend_ownership
 from .build_api import register_build_routes
 from .builds import BuildService
 from .model import DeepSeekModel
+from .embeddings import MiniLMEmbedder
+from .retrieval import RetrievalService
+from .retrieval_api import register_retrieval_routes
 from .imports import import_dataset
 from .schemas import Conversation, Dataset, ErrorResponse, ImportRequest, ImportResult, Page, Session, SourceTurn
 
@@ -30,6 +33,8 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
     database = Database(settings.db_path)
     model = model if model is not None else DeepSeekModel(settings)
     builds = BuildService(database, settings, model)
+    embedder = embedder if embedder is not None else MiniLMEmbedder(settings)
+    retrieval = RetrievalService(builds, settings, embedder, model)
 
     @asynccontextmanager
     async def lifespan(app):
@@ -44,6 +49,8 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
     app.state.embedder = embedder
     app.state.builds = builds
     register_build_routes(app, builds)
+    app.state.retrieval = retrieval
+    register_retrieval_routes(app, retrieval)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, exc: RequestValidationError):

@@ -11,6 +11,7 @@ thinking_enabled = false
 embedding_model = "sentence-transformers/all-MiniLM-L6-v2"
 embedding_revision = "c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
 embedding_dimensions = 384
+embedding_local_files_only = true
 embedding_max_tokens = 256
 fragment_turns = 20
 bm25_k = 20
