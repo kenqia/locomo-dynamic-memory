@@ -93,6 +93,23 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def is_context_limit_response(response: httpx.Response) -> bool:
+    """Classify a provider rejection without retaining its possibly private text."""
+    if response.status_code not in {400, 413, 422}:
+        return False
+    try:
+        error = response.json().get("error", {})
+        if not isinstance(error, dict):
+            return False
+        if error.get("code") in ("context_length_exceeded", "context_window_exceeded"):
+            return True
+        message = error.get("message", "")
+        return isinstance(message, str) and bool(re.search(
+            r"(?:maximum context length|context (?:length|window).*(?:exceed|too long))", message, re.I))
+    except (ValueError, AttributeError):
+        return False
+
+
 class ModelFailure(Exception):
     def __init__(self, code: str, metadata: dict | None = None):
         self.code = code
@@ -125,14 +142,19 @@ class DeepSeekModel:
         body = {"model": self.settings.model_name, "thinking": {"type": "disabled"},
                 "response_format": {"type": "json_object"}, "messages": messages,
                 "temperature": self.settings.model_temperature, "max_tokens": self.settings.model_max_tokens}
+        request_context_estimate = {"token_count": len(re.findall(r"\w+|[^\w\s]", json.dumps(messages, ensure_ascii=False))),
+            "method": "regex-word-punctuation-v1", "scope": "serialized_messages_including_prompt_schema_and_payload",
+            "is_provider_token_count": False, "reserved_output_tokens": self.settings.model_max_tokens}
         calls = []
         last_code = "invalid_output"
         for attempt in range(1, self.settings.model_retries + 2):
             call_started = time.perf_counter()
-            call = {"attempt": attempt, "timestamp": utc_now(), "requested_model": self.settings.model_name, "returned_model": None, "usage": {}}
+            call = {"attempt": attempt, "timestamp": utc_now(), "requested_model": self.settings.model_name,
+                    "returned_model": None, "usage": {}, "response_received": False}
             try:
                 with httpx.Client(transport=self._transport, timeout=self.settings.model_timeout_seconds, follow_redirects=False) as client:
                     response = client.post(self.settings.model_base_url.rstrip("/") + "/chat/completions", headers={"Authorization": "Bearer " + api_key}, json=body)
+                call["response_received"] = True
                 response.raise_for_status()
                 document = response.json()
                 if not isinstance(document, dict):
@@ -155,9 +177,11 @@ class DeepSeekModel:
                 call["elapsed_seconds"] = time.perf_counter() - call_started
                 call["outcome"] = "succeeded"
                 calls.append(call)
-                return Generation(value=validated, metadata={"calls": calls})
+                return Generation(value=validated, metadata={"calls": calls, "request_context_estimate": request_context_estimate})
             except httpx.TimeoutException:
                 last_code = "model_timeout"
+            except httpx.HTTPStatusError as error:
+                last_code = "context_length_exceeded" if is_context_limit_response(error.response) else "model_http_error"
             except httpx.HTTPError:
                 last_code = "model_http_error"
             except (ValueError, KeyError, IndexError, TypeError, ValidationError):
@@ -165,5 +189,7 @@ class DeepSeekModel:
             call["elapsed_seconds"] = time.perf_counter() - call_started
             call["outcome"] = last_code
             calls.append(call)
+            if last_code == "context_length_exceeded":
+                break
         # Never include provider response, request data, headers or exception text.
-        raise ModelFailure(last_code, {"calls": calls}) from None
+        raise ModelFailure(last_code, {"calls": calls, "request_context_estimate": request_context_estimate}) from None

@@ -43,6 +43,24 @@ def render_evaluation(request, dataset_id):
             st.write(LABELS[strategy])
             st.json(summary)
     st.dataframe([{'样本': r['sample_index'], '策略': LABELS[r['strategy']], 'QA': r['qa']['value'], 'QA不可计分原因': r['qa'].get('reason'), '证据不可计分原因': r['mapping']['reason'], **r['source_coverage']} for r in run['results']], hide_index=True)
+    st.caption('Full Text 使用完整原始对话；RAG 保留证据预算。近似计数采用 regex，不是 provider tokenizer 或账单 token。发送后未收到响应时，来源送达情况未知。')
+    contexts = []
+    for row in run['results']:
+        trace = row.get('trace', {})
+        budget = trace.get('evidence_budget', {})
+        delivery = trace.get('source_delivery', {})
+        estimate = budget.get('model_metadata', {}).get('request_context_estimate', {})
+        usage = row.get('usage_summary', {})
+        contexts.append({'样本': row['sample_index'], '策略': LABELS[row['strategy']],
+            '全文应有来源数': len(delivery['expected_source_ids']) if delivery else None,
+            '已确认请求来源数': len(delivery['delivered_source_ids']) if delivery else None,
+            '送达状态': delivery.get('status'), '回答证据近似计数': budget.get('token_count'),
+            '完整请求近似计数': estimate.get('token_count'), '证据预算': budget.get('budget'),
+            '证据截断': budget.get('truncated'), '上下文超限': budget.get('context_limit_exceeded', False),
+            '生成调用数': usage.get('generation_calls'), '缺少用量的调用数': usage.get('calls_without_reported_usage'),
+            'provider 已报告 token': usage.get('reported_tokens'),
+            '错误': row.get('error', {}).get('code')})
+    st.dataframe(contexts, hide_index=True)
     for row in run['results']:
         with st.expander(f"样本 {row['sample_index']} · {LABELS[row['strategy']]} · 结果与失败检查"):
             st.json(row)

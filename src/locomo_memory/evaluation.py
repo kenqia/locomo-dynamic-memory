@@ -165,12 +165,14 @@ class EvaluationService:
         requested = explicit_question_date(request.question)
         condition = {'requested_date': requested.isoformat() if requested else None, 'anchor_date': (requested or cutoff.date()).isoformat(), 'cutoff': cutoff.isoformat(), 'cutoff_source_time': raw, 'beyond_cutoff': bool(requested and requested > cutoff.date())}
         if strategy == 'full_text':
+            # Keep the complete intended input even when the provider rejects it.
+            trace['initial_source_ids'] = [s['source_id'] for s in sources]
+            trace['expanded_source_ids'] = trace['initial_source_ids']
+            trace['raw_context'] = sources
             tick = time.perf_counter()
             answer, delivered, budget = q.generate_answer(request.question, condition, [], source_map, 'insufficient' if condition['beyond_cutoff'] else 'sufficient', raw_sources=sources, audit=trace)
             trace['raw_context'] = delivered
             trace['answer_context'] = [s['source_id'] for s in delivered]
-            trace['initial_source_ids'] = [s['source_id'] for s in sources]
-            trace['expanded_source_ids'] = trace['initial_source_ids']
             trace['k_unit'] = 'SourceTurn; original conversation order'
         else:
             tick = time.perf_counter()
@@ -190,7 +192,9 @@ class EvaluationService:
                         break
                     selected.append(memory)
                     used += cost
-                trace['selection'] = {'channel': 'dense_only', 'analysis_used': False, 'expansion_used': False, 'candidate_token_count': used, 'truncated': len(selected) < len(memories)}
+                trace['selection'] = {'channel': 'dense_only', 'analysis_used': False, 'expansion_used': False,
+                    'unused_components': ['query_analysis', 'bm25', 'rrf'],
+                    'candidate_token_count': used, 'truncated': len(selected) < len(memories)}
                 trace['initial'] = selected
                 trace['expanded'] = selected
             else:

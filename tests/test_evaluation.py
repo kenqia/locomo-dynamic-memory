@@ -83,7 +83,10 @@ def test_baselines_really_select_dense_raw_and_expanded_context_and_never_leak_g
         assert rows['vector']['memory_rankings']['initial'] == [rows['vector']['trace']['retrieval']['channels']['dense'][0]['memory_id']]
         assert len([p for p in observed if p.get('operation') == 'resolve']) == 1
         for row in rows.values():
-            assert row['trace']['evidence_budget']['token_count'] <= settings.evidence_token_budget
+            if row['strategy'] == 'full_text':
+                assert row['trace']['evidence_budget']['budget'] is None
+            else:
+                assert row['trace']['evidence_budget']['token_count'] <= settings.evidence_token_budget
             assert row['trace']['evidence_budget']['model_metadata']['calls']
             assert row['diagnosis']['certainty'] == 'possible_causes_only'
 

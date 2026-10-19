@@ -48,7 +48,7 @@ class QueryService:
             db.execute("INSERT INTO query_traces VALUES (?,?,?)", (trace["trace_id"], trace["build_id"], canonical_json(trace)))
 
     def generate_answer(self, question, time_condition, memories, sources, status, *, audit=None, raw_sources=None):
-        """Shared final evidence budget and answer operation for controlled comparisons.
+        """Shared answer contract, with bounded RAG evidence or complete raw sources.
 
         Return the validated answer, delivered memories, and budget/provider metadata.
         The caller must supply memories and sources from one already pinned version.
@@ -67,9 +67,6 @@ class QueryService:
         if raw_sources is not None:
             for source in raw_sources:
                 cost = budget_tokens(canonical_json(source))
-                if used + cost > self.settings.evidence_token_budget:
-                    omitted.append(source["source_id"])
-                    continue
                 used += cost
                 raw_delivered.append(source)
         effective_status = "insufficient" if omitted or not (delivered or raw_delivered) else status
@@ -81,7 +78,8 @@ class QueryService:
             context["raw_sources"] = delivered_sources
         payload = {"operation": "answer", "question": question, "time": time_condition, "status": effective_status,
                    "memories": delivered, "sources": list(delivered_sources.values()), "evidence_truncated": bool(omitted)}
-        budget = {"token_count": used, "budget": self.settings.evidence_token_budget,
+        budget = {"token_count": used, "budget": None if raw_sources is not None else self.settings.evidence_token_budget,
+                  "scope": "complete_raw_sources" if raw_sources is not None else "rag_evidence",
                   "token_budget_method": TOKEN_BUDGET_METHOD, "truncated": bool(omitted),
                   "omitted_memory_ids": omitted, "truncation_reasons": ["evidence_token_budget"] if omitted else []}
         if raw_sources is not None:
@@ -90,7 +88,24 @@ class QueryService:
             audit["effective_memories"], audit["evidence_budget"] = delivered, budget
             if raw_sources is not None:
                 audit["answer_context_sources"] = raw_delivered
-        generation = self.model.generate("answer", payload, EvidenceAnswer, context=context)
+                audit["source_delivery"] = {"expected_source_ids": [s["source_id"] for s in raw_sources],
+                    "delivered_source_ids": [], "attempted_source_ids": [],
+                    "status": "not_sent", "provider_accepted": None}
+        try:
+            generation = self.model.generate("answer", payload, EvidenceAnswer, context=context)
+        except ModelFailure as error:
+            budget["model_metadata"] = error.metadata
+            if audit is not None and raw_sources is not None and error.metadata.get("calls"):
+                response_received = any(call.get("response_received") for call in error.metadata["calls"])
+                audit["source_delivery"].update(attempted_source_ids=list(delivered_sources),
+                    delivered_source_ids=list(delivered_sources) if response_received else [],
+                    status="request_attempted", provider_accepted=False if error.code == "context_length_exceeded" else None)
+            if error.code == "context_length_exceeded":
+                budget["context_limit_exceeded"] = True
+            raise
+        if audit is not None and raw_sources is not None:
+            audit["source_delivery"].update(attempted_source_ids=list(delivered_sources),
+                delivered_source_ids=list(delivered_sources), status="accepted", provider_accepted=True)
         answer = EvidenceAnswer.model_validate(generation.value.model_dump(mode="json"), context=context)
         budget["model_metadata"] = generation.metadata
         return answer.model_dump(mode="json"), raw_delivered if raw_sources is not None else delivered, budget
