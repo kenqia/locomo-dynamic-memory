@@ -119,6 +119,22 @@ three-phase process interruption and idempotent recovery, concurrent publication
 old encoder identity selection and schema-validated coherent JSON export.
 Browser and paid model checks were not part of these ticket runs.
 
+The integration directory then installed the locked optional CPU embedding
+dependencies and ran:
+
+```sh
+uv sync --locked --extra embedding
+LOCOMO_LOCAL_EMBEDDING=1 HF_HUB_OFFLINE=1 uv run --extra embedding --locked pytest -m local_embedding -q --tb=short
+```
+
+Result: **3 passed, 84 deselected**, with the same upstream warning. These
+real-model checks include the application adapter, enriched-text/query length
+rejection, actual index/candidate APIs, and querying an old complete version
+after restarting with an unavailable current revision. The latter loads the
+stored cached encoder identity. Generation responses remain controlled; no
+DeepSeek call was made. This result applies to the integrated #10 code, before
+the later evaluation and browser changes.
+
 ### Real MiniLM preflight
 
 An independent Python 3.12 environment loaded the existing pinned snapshot
