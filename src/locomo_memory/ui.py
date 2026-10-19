@@ -100,7 +100,7 @@ st.caption(f"当前对话共 {builds['total']} 个构建版本")
 if builds["items"]:
     build_id = st.selectbox("构建版本", [item["build_id"] for item in builds["items"]])
     build = request("GET", f"/builds/{build_id}")
-    labels = {"queued": "等待抽取", "running": "构建中", "failed": "抽取失败，可显式重试", "interrupted": "上次运行已中断，可显式重试", "extracted": "抽取结束，待索引与关系阶段", "indexed": "已建立索引，待关系与完整版本发布", "index_failed": "索引失败，Memory 仍可检查", "complete": "完整版本"}
+    labels = {"queued": "等待抽取", "running": "构建中", "failed": "抽取失败，可显式重试", "interrupted": "上次运行已中断，可显式重试", "extracted": "抽取结束，待索引与关系阶段", "indexed": "已建立索引，待关系阶段", "related": "关系与投影已保存，待完整版本发布", "relations_failed": "关系阶段失败，可显式重试", "index_failed": "索引失败，Memory 仍可检查", "complete": "完整版本"}
     st.write(f"状态：{labels.get(build['status'], build['status'])} · 阶段 {build['phase']}")
     progress = build["progress"]
     st.progress((progress["succeeded"] + progress["failed"]) / max(progress["total"], 1), text=f"片段 {progress['total']}，成功 {progress['succeeded']}，失败/中断 {progress['failed']}，待处理 {progress['pending']}")
@@ -138,7 +138,7 @@ if builds["items"]:
         with st.expander("索引版本、模型与长度政策"):
             st.json(request("GET", f"/builds/{build_id}/index"))
     question = st.text_input("英文问题（候选检查）", key="candidate_question")
-    if st.button("检查 BM25 / Dense / RRF 候选", disabled=build["status"] != "indexed"):
+    if st.button("检查 BM25 / Dense / RRF 候选", disabled=build["status"] not in {"indexed", "related", "complete"}):
         st.session_state["candidate_result"] = request("POST", "/candidate-queries", json={"build_id": build_id, "question": question})
     result = st.session_state.get("candidate_result")
     if result and result["build_id"] == build_id:
@@ -164,3 +164,56 @@ if builds["items"]:
                     source = request("GET", f"/datasets/{source_dataset}/conversations/{source_sample}/turns/{source_dia}")
                     st.caption(f"{source_id} · {source['session_time']}")
                     st.text(source["text"])
+
+    st.subheader("历史关系与 Current State")
+    relation_retry = build["status"] in {"indexed", "relations_failed"} or (build["status"] == "interrupted" and build["phase"] == "relations")
+    if st.button("构建或重试历史关系", disabled=not relation_retry):
+        request("POST", f"/builds/{build_id}/relations")
+        st.rerun()
+    if build["phase"] in {"relations", "complete"}:
+        phase = request("GET", f"/builds/{build_id}/relation-progress")
+        st.json(phase)
+        task_page = st.number_input("关系任务页", min_value=1, value=1, step=1)
+        tasks = request("GET", f"/builds/{build_id}/relation-tasks", params={"limit": 20, "offset": (task_page - 1) * 20})
+        st.dataframe([{key: task[key] for key in ("ordinal", "status", "attempts", "truncated_count", "error_code")} for task in tasks["items"]], hide_index=True)
+    if build["status"] in {"related", "complete"}:
+        state = request("GET", f"/builds/{build_id}/current-state")
+        st.caption(f"已知状态截止：{state['cutoff_source_time']}（不代表此后的现实变化）")
+        with st.expander("当前候选、历史、事件、计划及条件/冲突说明"):
+            st.json(state)
+        if build["status"] == "related":
+            if st.button("从历史与关系重算投影"):
+                request("POST", f"/builds/{build_id}/current-state/rebuild")
+                st.rerun()
+            if st.button("校验并发布为完整构建版本"):
+                request("POST", f"/builds/{build_id}/publish")
+                st.rerun()
+        else:
+            st.caption("完整版本已固定；仍未实现本阶段之外的最终有效证据问答。")
+            st.json(request("GET", "/versions/pin", params={"dataset_id": dataset_id, "sample_id": sample_id}))
+        relation_page = st.number_input("历史关系页", min_value=1, value=1, step=1)
+        relation_rows = request("GET", f"/builds/{build_id}/relations", params={"limit": 20, "offset": (relation_page - 1) * 20})
+        st.caption(f"共 {relation_rows['total']} 条判断（含明确未确定）")
+        if relation_rows["items"]:
+            selected_relation = st.selectbox("关系来源检查", relation_rows["items"], format_func=lambda item: f"{item['label']} · {item['relation_id']}")
+            st.json(selected_relation)
+            for endpoint in ("old_memory_id", "new_memory_id"):
+                st.json(request("GET", f"/builds/{build_id}/memories/{selected_relation[endpoint]}"))
+            with st.expander("双方原始证据"):
+                for source_id in selected_relation["source_ids"]:
+                    source_dataset, source_sample, source_dia = source_id.split("/")
+                    source = request("GET", f"/datasets/{source_dataset}/conversations/{source_sample}/turns/{source_dia}")
+                    st.caption(f"{source_id} · {source['session_time']}")
+                    st.text(source["text"])
+        if result and result["build_id"] == build_id:
+            if st.button("扩展当前候选的相关历史"):
+                st.session_state["expanded_result"] = request("POST", "/candidate-expansions", json={"query_id": result["query_id"]})
+            expanded = st.session_state.get("expanded_result")
+            if expanded and expanded["query_id"] == result["query_id"]:
+                st.caption(f"初始 {len(expanded['initial_candidates'])} · 补充 {len(expanded['added_candidates'])} · 合并 {len(expanded['candidates'])}")
+                if expanded["truncated"]:
+                    st.warning("相关历史存在截断：" + ", ".join(expanded["truncation_reasons"]))
+                for candidate in expanded["candidates"]:
+                    st.text(candidate["memory"]["content"])
+                    with st.expander(f"扩展入口与来源：{candidate['memory']['memory_id']}"):
+                        st.json({"origins": candidate["origins"], "source_ids": candidate["memory"]["source_ids"]})
