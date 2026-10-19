@@ -26,6 +26,7 @@ uv run --locked streamlit run src/locomo_memory/ui.py --server.address 127.0.0.1
 `uv sync --locked --extra embedding` 并准备固定 revision 的 MiniLM 本地缓存；
 真实生成还需要进程环境中的 `DEEPSEEK_API_KEY`。配置文件不接受凭据。
 详细步骤见[运行指南](docs/app/running.md)。
+CI、夹具回归、独立浏览器环境和失败诊断见[检查指南](docs/app/checking.md)。
 
 ```sh
 uv run --locked pytest -q

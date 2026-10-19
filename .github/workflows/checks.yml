@@ -1,0 +1,47 @@
+name: Checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      LOCOMO_LIVE_MODEL: "0"
+      LOCOMO_LOCAL_EMBEDDING: "0"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          version: "0.9.11"
+          enable-cache: true
+      - name: Install locked development dependencies
+        run: uv sync --locked
+      - name: Check whitespace in the proposed changes
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [[ -z "$BASE_SHA" || "$BASE_SHA" =~ ^0+$ ]]; then
+            git diff-tree --check --root HEAD
+          else
+            git diff --check "$BASE_SHA" HEAD
+          fi
+      - name: Compile application and tests
+        run: uv run --locked python -m compileall -q src tests
+      - name: Check browser runner shell syntax
+        run: bash -n tests/browser/run.sh
+      - name: Run default API and fixture regression tests
+        run: uv run --locked pytest -q --tb=short
