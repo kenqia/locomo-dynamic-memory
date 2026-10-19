@@ -6,9 +6,35 @@ import streamlit as st
 LABELS = {'dynamic': '完整动态系统', 'full_text': 'Full Text 原始轮次', 'vector': 'Vector RAG（无状态解析）', 'hybrid_no_resolution': 'Hybrid + 扩展（无状态解析）'}
 
 
+def render_development_plan(request, dataset_id):
+    with st.expander('开发集评测计划预览', expanded=True):
+        st.caption('开发集：conv-26、conv-30、conv-41、conv-42。本地测试：conv-43、conv-44，系统冻结后再测；教师隐藏评分集另行保密。')
+        st.caption('预览只读取已导入的来源和独立 QA，不需要完整构建，不调用生成模型，也不运行本地测试。预览数量不代表已完成模型评测。')
+        artifacts = request('GET', f'/datasets/{dataset_id}/provenance', params={'limit': 100})['items']
+        artifact = st.selectbox('评测原件 artifact SHA256', [a['artifact_sha256'] for a in artifacts], key=f'evaluation_artifact_{dataset_id}')
+        scope = st.selectbox('开发计划范围', ['development', 'smoke'], format_func=lambda value: '官方原件全量开发集：757 题 / 3,028 组合' if value == 'development' else 'conv-26：类别 1–5 各首题 / 20 组合')
+        if st.button('生成开发集计划预览', disabled=not artifact):
+            plan = request('POST', '/evaluation-plans', json={'dataset_id': dataset_id, 'artifact_sha256': artifact, 'scope': scope})
+            st.session_state['evaluation_plan'] = plan
+            st.session_state['evaluation_input_id'] = plan['input_id']
+        plan_id = st.text_input('读取已保存 Plan ID', key='evaluation_saved_plan')
+        if st.button('读取计划预览', disabled=not plan_id):
+            st.session_state['evaluation_plan'] = request('GET', f'/evaluation-plans/{plan_id}')
+        plan = st.session_state.get('evaluation_plan')
+        if plan and plan['dataset_id'] == dataset_id:
+            st.write(f"Plan {plan['plan_id']}")
+            st.write(f"{plan['question_count']} 题 · {len(plan['strategies'])} 策略 · {plan['combination_count']} 组合 · 尚未执行")
+            st.json({'course_split': plan['course_split'], 'strategies': plan['strategies'], 'input_id': plan['input_id'], 'artifact_sha256': plan['artifact_sha256']})
+            st.dataframe(plan['questions'], hide_index=True)
+            st.download_button('导出开发集计划 JSON', json.dumps(plan, ensure_ascii=False, indent=2), file_name=f"evaluation-plan-{plan['plan_id']}.json", mime='application/json')
+            with st.expander('完整计划与来源身份'):
+                st.json(plan)
+
+
 def render_evaluation(request, dataset_id):
     st.subheader('独立评测与基线比较')
-    st.caption('仅合成案例用于行为验证；正式课程需提供六段 ID、4/2 划分及独立动态真值。原文来源覆盖不能证明语义事实已被抽取。')
+    render_development_plan(request, dataset_id)
+    st.caption('独立动态真值缺失时动态指标未评；原文来源覆盖不能证明语义事实已被抽取。运行对照前需发布完整构建版本。')
     uploaded = st.file_uploader('独立评测 JSON（samples、kind、可选 course_split）', type=['json'], key='evaluation_upload')
     if st.button('保存独立评测输入', disabled=uploaded is None):
         try:

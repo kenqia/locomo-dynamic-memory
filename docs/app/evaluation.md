@@ -1,8 +1,30 @@
 # 运行独立评测与基线比较
 
-评测 API 单独保存 QA 与证据标注，不将其传给抽取、索引、问题分析、有效证据解析或回答。先按[构建指南](building.md)发布完整版本，再在页面 **独立评测与基线比较** 上传评测 JSON、保存 Input ID，并选择对照策略。一次运行在任何模型调用前固定所有对话版本；读取已有 Run ID 不重新调用模型。
+评测 API 单独保存 QA 与证据标注，不将其传给抽取、索引、问题分析、有效证据解析或回答。可先在页面 **独立评测与基线比较** 生成开发集计划预览；执行评测前，按[构建指南](building.md)发布所选对话的完整版本。也可上传独立评测 JSON、保存 Input ID，并选择对照策略。一次运行在任何模型调用前固定所有对话版本；读取已有 Run ID 不重新调用模型。
 
-运行真实模型会产生与所选样本和策略对应的模型调用。默认验证只使用合成数据和受控模型。`official_structure_only` 输入只允许映射检查，运行生成时返回 422。正式课程六段对话、4/2 划分和独立标注尚未取得，不能将本项目合成测试分数当成课程结果。
+运行真实模型会产生与所选样本和策略对应的模型调用。默认验证只使用合成数据和受控模型。`official_structure_only` 输入只允许映射检查，运行生成时返回 422。开发集固定为 `conv-26`、`conv-30`、`conv-41`、`conv-42`；本地测试固定为 `conv-43`、`conv-44`，开发阶段不查看其模型成绩。教师隐藏评分集另行保密，本地测试不能代表最终评分。独立动态标注仍缺失，动态指标未评。
+
+## 预览固定开发集计划
+
+预览不需要完整 BuildVersion，也不调用生成模型或加载 Embedding 模型。先调用 `POST /imports/official` 校验并导入仓库官方原件，保存返回的 `dataset_id` 和 `artifact_sha256`。导入完整原件只保存数据，不运行本地测试。
+
+在页面 **开发集评测计划预览** 选择对应原件 SHA256 和范围，点击 **生成开发集计划预览**。页面显示固定划分、问题位置、四种策略、题目和组合数量，并提供 JSON 下载。读取已保存 Plan ID 也只读取记录。
+
+公开 API 使用相同入口：
+
+```bash
+curl -X POST http://127.0.0.1:8000/evaluation-plans \
+  -H 'Content-Type: application/json' \
+  -d '{"dataset_id":"<导入返回的 dataset_id>","artifact_sha256":"<导入返回的 artifact_sha256>","scope":"development"}'
+```
+
+`scope` 为 `development` 时，只选择四个开发对话，按固定开发对话顺序和各自原始 QA 顺序保存 757 道题、四种策略、3,028 个组合。`scope: "smoke"` 只读取 `conv-26`，按原始 QA 顺序为类别 1–5 各取首题，再保留原始顺序，共五题、20 个组合。官方原件中的原始位置为 `0`、`2`、`3`、`82`、`152`；任何必要类别缺失时返回 422、`smoke_categories_missing`。不依据模型成绩选题。
+
+返回 201 和 `status: "preview"`、`plan_id`、`input_id`、`course_split`、`partition: "dev"`、`strategies`、`questions`、`question_count` 和 `combination_count`。每个问题保存 `sample_id`、从零开始的 `qa_index` 及 `question_id`，例如 `conv-26:qa:0`。重复问题文本保留为不同位置，不去重。`GET /evaluation-plans/{plan_id}` 读取完整计划，可将响应保存为 JSON。
+
+计划保留数据版本、许可证、`source_sha256`、原件 `artifact_sha256`、校验依据和 provenance。必须显式指定原件；同一来源对应多个 QA 原件时不自动猜选。固定输入与范围生成稳定 Plan ID，重复请求读取已有计划。对应的独立评测 Input 只包含所选开发问题，并保存原始问题身份和来源身份，答案、证据和辅助摘要不进入 Source Turn、构建或查询。
+
+预览数量不代表模型已经运行或评测已经完成。计划不固定 BuildVersion；执行前由评测运行固定完整版本。此入口不提供本地测试计划，也不获取隐藏评分题目。
 
 ## 输入和公开 API
 
@@ -67,7 +89,7 @@ Vector 的 `retrieval.executed_components` 披露实际执行的问题分析、B
 
 ## 接入正式课程划分与独立真值
 
-使用 `kind: "course"`，在输入提供 `course_split: {"dev": [四个 ID], "test": [两个 ID]}`，六个 ID 必须互异且属于所选数据集。执行时显式提供 `partition: "dev"` 或 `"test"`，仅运行对应样本。服务不挑选划分、不自动调参。
+固定开发计划已自动生成 `kind: "course"` 和上述划分。手工独立评测输入仍使用 `kind: "course"`，在输入提供 `course_split: {"dev": [四个 ID], "test": [两个 ID]}`，六个 ID 必须互异且属于所选数据集。执行时显式提供 `partition: "dev"` 或 `"test"`，仅运行对应样本。服务不挑选划分、不自动调参。
 
 每个样本可提供 `dynamic_truth`，必须有非空 `provenance`，并提供 `effective_memory_ids` 或 `relation_labels`：
 
@@ -92,7 +114,7 @@ Vector 的 `retrieval.executed_components` 披露实际执行的问题分析、B
 ## 验证
 
 ```sh
-uv run --locked pytest tests/test_full_text.py tests/test_evaluation.py tests/test_queries.py -q
+uv run --locked pytest tests/test_full_text.py tests/test_evaluation_plans.py tests/test_evaluation.py tests/test_queries.py -q
 ```
 
-测试通过 FastAPI、真实 SQLite、真实 BM25/cosine/RRF、关系与扩展，只控制 LLM 与 Embedding。实验记录见 `experiments/issue-11-evaluation-validation.md`。未进行正式测试集调参或付费模型质量评测。
+测试通过 FastAPI、真实 SQLite、真实 BM25/cosine/RRF、关系与扩展，只控制 LLM 与 Embedding。计划预览实验记录见 [Issue #16 验证](../../experiments/issue-16-development-plan-validation.md)，既有评测记录见 `experiments/issue-11-evaluation-validation.md`。未进行正式测试集调参或付费模型质量评测。
