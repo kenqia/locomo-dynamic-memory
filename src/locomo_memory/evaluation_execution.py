@@ -89,6 +89,7 @@ class EvaluationExecution:
             'source_turns_sha256': {sid: digest(self.service.sources(inputs['dataset_id'], sid)) for sid in pins},
             'builds': {sid: q.versions.builds.get(bid) for sid, bid in pins.items()},
             'build_artifacts': {sid: q.versions.pin_details(inputs['dataset_id'], sid, bid) for sid, bid in pins.items()},
+            'build_indexes': {sid: q.retrieval.index_info(bid) for sid, bid in pins.items()},
             'config': q.settings.snapshot(), 'answer_prompt': ANSWER_PROMPT,
             'answer_schema': EvidenceAnswer.model_json_schema(), 'resolution_prompt': RESOLUTION_PROMPT,
             'resolution_schema': EffectiveResolution.model_json_schema(), 'query_analysis_prompt': QUERY_ANALYSIS_PROMPT,
@@ -111,6 +112,7 @@ class EvaluationExecution:
     def create(self, request):
         if not self.lock.acquire(blocking=False):
             raise BuildError('evaluation_already_running')
+        owns_reservation = True
         try:
             plan = self.plan(request.plan_id)
             if plan and ((request.input_id and request.input_id != plan['input_id']) or (request.strategies and request.strategies != plan['strategies']) or (request.partition and request.partition != plan['partition'])):
@@ -150,9 +152,11 @@ class EvaluationExecution:
             with self.database.connect() as db:
                 db.execute('INSERT INTO evaluation_runs VALUES (?,?)', (run['run_id'], canonical_json(run)))
                 db.executemany('INSERT INTO evaluation_run_items VALUES (?,?,?,?)', [(run['run_id'], item['ordinal'], item['status'], canonical_json(item)) for item in items])
+            owns_reservation = False
             return self.launch(run, request.wait)
         except BaseException:
-            self.lock.release()
+            if owns_reservation:
+                self.lock.release()
             raise
 
     def compatible(self, run):
@@ -169,6 +173,7 @@ class EvaluationExecution:
     def resume(self, run_id, request):
         if not self.lock.acquire(blocking=False):
             raise BuildError('evaluation_already_running')
+        owns_reservation = True
         try:
             run = self.metadata(run_id)
             self.compatible(run)
@@ -182,12 +187,15 @@ class EvaluationExecution:
                         db.execute('UPDATE evaluation_run_items SET status=?, item_json=? WHERE run_id=? AND ordinal=?', (item['status'], canonical_json(item), run_id, item['ordinal']))
                 if not any(i['status'] == 'pending' for i in items):
                     self.lock.release()
+                    owns_reservation = False
                     return self.view(run)
                 run.update(status='running', completed_at=None)
                 self.save_metadata(db, run)
+            owns_reservation = False
             return self.launch(run, request.wait)
         except BaseException:
-            self.lock.release()
+            if owns_reservation:
+                self.lock.release()
             raise
 
     def launch(self, run, wait):
@@ -196,7 +204,11 @@ class EvaluationExecution:
             self.execute(run)
         else:
             self.worker = threading.Thread(target=self.execute, args=(run,), name='evaluation-' + run['run_id'], daemon=True)
-            self.worker.start()
+            try:
+                self.worker.start()
+            except BaseException:
+                self.lock.release()
+                raise
         return self.view(self.metadata(run['run_id']))
 
     def execute(self, run):

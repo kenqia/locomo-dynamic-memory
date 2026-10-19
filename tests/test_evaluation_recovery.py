@@ -87,7 +87,7 @@ def test_failed_retry_is_explicit_and_retains_attempts_while_completed_resume_is
     settings = settings.model_copy(update={'model_retries': 0})
     model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
     with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
-        dataset_id, _ = complete_build(client, sample)
+        dataset_id, original_build = complete_build(client, sample)
         input_id = input_for(client, dataset_id, ['Successful question?', 'Retry question?'])
         fail['enabled'] = True
         run = client.post('/evaluation-runs', json={'input_id': input_id, 'strategies': ['dynamic'], 'wait': True}).json()
@@ -95,6 +95,8 @@ def test_failed_retry_is_explicit_and_retains_attempts_while_completed_resume_is
         failed = run['items'][1]['attempts'][0]
         assert failed['result']['error']['code'] == 'model_http_error'
         fail['enabled'] = False
+        _, newer_build = complete_build(client, sample)
+        assert newer_build != original_build
         untouched = client.post('/evaluation-runs/' + run['run_id'] + '/resume', json={'wait': True}).json()
         assert len(answers) == 2
         assert untouched['progress']['failed'] == 1
@@ -102,6 +104,7 @@ def test_failed_retry_is_explicit_and_retains_attempts_while_completed_resume_is
         assert retried.status_code == 202, retried.text
         done = retried.json()
         assert done['status'] == 'completed'
+        assert done['builds']['conv-a']['build_id'] == original_build
         assert done['progress']['total'] == 2
         assert len(done['results']) == 2
         assert [a['status'] for a in done['items'][1]['attempts']] == ['failed', 'succeeded']
@@ -222,3 +225,50 @@ with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())
         assert [a['status'] for a in recovered.json()['items'][1]['attempts']] == ['unknown', 'succeeded']
         assert resumed_answers == ['Pending question?', 'Uncommitted question?']
         assert recovered.json()['builds']['conv-a']['build_id'] == build_id
+
+
+def test_plan_only_execution_pins_complete_build_and_rejects_changed_scope(settings, sample):
+    from copy import deepcopy
+    from conftest import import_sample
+    answers = []
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'answer':
+            answers.append(payload['question'])
+            if not payload['memories']:
+                return completion({'status': payload['status'], 'answer': 'Rome', 'citations': [{'memory_id': None, 'source_ids': [payload['sources'][0]['source_id']]}]})
+        return query_provider(request)
+    data = []
+    for sid in ['conv-26', 'conv-30', 'conv-41', 'conv-42', 'conv-43', 'conv-44']:
+        item = deepcopy(sample[0])
+        item['sample_id'] = sid
+        item['conversation']['session_2'][0]['text'] = 'I moved from Paris to Rome on 2 May 2023.'
+        item['qa'] = [{'question': 'Same question?', 'answer': 'Rome', 'category': category, 'evidence': ['D2:1']} for category in (1, 2, 3, 4, 5)]
+        data.append(item)
+    model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        imported = import_sample(client, data).json()
+        plan = client.post('/evaluation-plans', json={'dataset_id': imported['dataset_id'], 'artifact_sha256': imported['artifact_sha256'], 'scope': 'smoke'}).json()
+        for changed in ({'strategies': ['dynamic']}, {'partition': 'test'}, {'input_id': 'different-input'}):
+            response = client.post('/evaluation-runs', json={'plan_id': plan['plan_id'], **changed})
+            assert response.status_code == 422
+            assert response.json()['error']['code'] == 'evaluation_plan_mismatch'
+        missing = client.post('/evaluation-runs', json={'plan_id': plan['plan_id']})
+        assert missing.status_code == 409
+        assert missing.json()['error']['code'] == 'no_complete_version'
+        assert answers == []
+        build_id = client.post('/builds', json={'dataset_id': imported['dataset_id'], 'sample_id': 'conv-26'}).json()['build_id']
+        assert client.post('/builds/' + build_id + '/index').status_code == 201
+        assert client.post('/builds/' + build_id + '/relations').status_code == 202
+        assert client.post('/builds/' + build_id + '/publish').status_code == 200
+        response = client.post('/evaluation-runs', json={'plan_id': plan['plan_id'], 'wait': True})
+        assert response.status_code == 201, response.text
+        run = response.json()
+        assert run['status'] == 'completed'
+        assert run['progress']['total'] == 20
+        assert run['plan'] == plan
+        assert run['partition'] == 'dev'
+        assert run['build_indexes']['conv-26']['embedding']['model'] == 'controlled-test'
+        assert run['query_analysis_schema']
+        assert [i['question_id'] for i in run['items'][::4]] == ['conv-26:qa:0', 'conv-26:qa:1', 'conv-26:qa:2', 'conv-26:qa:3', 'conv-26:qa:4']
+        assert len(answers) == 20
