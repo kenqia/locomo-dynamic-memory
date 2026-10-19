@@ -217,3 +217,8 @@ if builds["items"]:
                     st.text(candidate["memory"]["content"])
                     with st.expander(f"扩展入口与来源：{candidate['memory']['memory_id']}"):
                         st.json({"origins": candidate["origins"], "source_ids": candidate["memory"]["source_ids"]})
+
+if builds["items"]:
+    from locomo_memory.version_ui import render_version
+
+    render_version(request, build)

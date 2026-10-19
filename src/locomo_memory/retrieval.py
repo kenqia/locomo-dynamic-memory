@@ -11,7 +11,7 @@ from rank_bm25 import BM25Okapi
 
 from .builds import BuildError, BuildService
 from .config import Settings
-from .embeddings import EmbeddingFailure, normalize_vectors
+from .embeddings import EmbeddingFailure, MiniLMEmbedder, normalize_vectors
 from .imports import canonical_json
 from .model import ModelFailure, QUERY_ANALYSIS_PROMPT_VERSION, utc_now
 from .retrieval_schemas import QueryAnalysis
@@ -117,11 +117,25 @@ class RetrievalService:
             info = dict(row)
             info.update(json.loads(info.pop("metadata_json")))
             rows = [dict(row) for row in db.execute("SELECT e.*,m.memory_json FROM index_entries e JOIN memories m ON e.memory_id=m.memory_id WHERE e.build_id=? ORDER BY e.memory_id", (build_id,))]
-        if info["build_fingerprint"] != build["fingerprint"] or info["embedding"] != self.embedder.identity():
+        if info["build_fingerprint"] != build["fingerprint"]:
             raise BuildError("index_fingerprint_mismatch")
+        identity = info["embedding"]
+        # Production selects the cached persisted revision before loading any model.
+        # Controlled adapters may implement the same narrow encoder selection boundary.
+        if isinstance(self.embedder, MiniLMEmbedder):
+            encoder = self.embedder.for_identity(identity)
+        elif self.embedder.identity() == identity:
+            encoder = self.embedder
+        elif hasattr(self.embedder, "for_identity"):
+            encoder = self.embedder.for_identity(identity)
+        else:
+            raise BuildError("index_fingerprint_mismatch")
+        if encoder.identity() != identity:
+            raise BuildError("index_fingerprint_mismatch")
+        dimensions = identity["dimensions"]
         memories = {row["memory_id"]: json.loads(row["memory_json"]) for row in rows}
         # Reject an overlong query before an optional paid analysis request.
-        query_vector = normalize_vectors(self.embedder.encode([question]), 1, self.settings.embedding_dimensions)[0] if rows else None
+        query_vector = normalize_vectors(encoder.encode([question]), 1, dimensions)[0] if rows else None
         analysis = {"status": "fallback", "result": None, "error_code": None, "model_metadata": {"calls": []}, "prompt_version": QUERY_PROMPT_VERSION}
         try:
             generated = self.model.generate("query_analysis", {"question": question}, QueryAnalysis)
@@ -138,7 +152,7 @@ class RetrievalService:
         if rows:
             corpus = [tokenize(row["index_text"]) for row in rows]
             bm25_scores = BM25Okapi(corpus).get_scores(query_terms) if any(corpus) else np.zeros(len(rows))
-            vectors = normalize_vectors(np.vstack([np.frombuffer(row["vector"], dtype=np.float32) for row in rows]), len(rows), self.settings.embedding_dimensions)
+            vectors = normalize_vectors(np.vstack([np.frombuffer(row["vector"], dtype=np.float32) for row in rows]), len(rows), dimensions)
             dense_scores = vectors @ query_vector
             for name, scores, limit in (("bm25", bm25_scores, self.settings.bm25_k), ("dense", dense_scores, self.settings.dense_k)):
                 order = sorted(range(len(rows)), key=lambda index: (-float(scores[index]), rows[index]["memory_id"]))[:limit]

@@ -14,7 +14,7 @@ from .retrieval_schemas import CandidateQueryRequest, CandidateQueryResult, Inde
 def register_retrieval_routes(app: FastAPI, service: RetrievalService):
     @app.exception_handler(EmbeddingFailure)
     async def embedding_error(request: Request, error: EmbeddingFailure):
-        messages = {"embedding_input_too_long": "Embedding input exceeds the checked word-piece limit; no text was silently truncated", "embedding_dependency_missing": "Install the optional embedding dependencies before indexing", "embedding_model_unavailable": "The pinned local embedding model could not be loaded", "invalid_embedding_vector": "Embedding output has invalid dimensions, values, or normalization", "embedding_dimension_mismatch": "Embedding model dimensions do not match configuration"}
+        messages = {"embedding_identity_unavailable": "The exact persisted encoder identity is unavailable; preserve the original cached model revision", "embedding_input_too_long": "Embedding input exceeds the checked word-piece limit; no text was silently truncated", "embedding_dependency_missing": "Install the optional embedding dependencies before indexing", "embedding_model_unavailable": "The pinned local embedding model could not be loaded", "invalid_embedding_vector": "Embedding output has invalid dimensions, values, or normalization", "embedding_dimension_mismatch": "Embedding model dimensions do not match configuration"}
         return JSONResponse(status_code=error.status, content={"error": {"code": error.code, "message": messages.get(error.code, "Embedding operation failed")}})
 
     @app.post("/builds/{build_id}/index", response_model=IndexInspection, status_code=201)

@@ -34,6 +34,31 @@ class MiniLMEmbedder:
         self.settings = settings
         self._model = None
         self._lock = Lock()
+        self._versions = {}
+
+    def for_identity(self, identity: dict):
+        """Select the exact persisted MiniLM encoder without loading current settings."""
+        try:
+            settings = Settings.model_validate({**self.settings.snapshot(),
+                "embedding_model": identity["model"], "embedding_revision": identity["revision"],
+                "embedding_dimensions": identity["dimensions"], "embedding_max_tokens": identity["max_tokens"],
+                "embedding_local_files_only": True})
+        except (ValueError, KeyError):
+            raise EmbeddingFailure("embedding_identity_unavailable", 409) from None
+        if all(getattr(self.settings, field) == getattr(settings, field) for field in ("embedding_model", "embedding_revision", "embedding_dimensions", "embedding_max_tokens")):
+            if self.identity() != identity:
+                raise EmbeddingFailure("embedding_identity_unavailable", 409)
+            return self
+        key = (settings.embedding_model, settings.embedding_revision, settings.embedding_max_tokens)
+        with self._lock:
+            encoder = self._versions.get(key)
+            if encoder is None:
+                encoder = MiniLMEmbedder(settings)
+                self._versions[key] = encoder
+        # Includes normalization, truncation policy and actual model dimension/limit.
+        if encoder.identity() != identity:
+            raise EmbeddingFailure("embedding_identity_unavailable", 409)
+        return encoder
 
     def _load(self):
         with self._lock:

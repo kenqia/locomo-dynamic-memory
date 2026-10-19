@@ -23,6 +23,7 @@ from .retrieval_api import register_retrieval_routes
 from .relations import RelationService
 from .relation_api import register_relation_routes
 from .versions import VersionsService
+from .version_api import register_version_routes
 from .expansion import ExpansionService
 from .imports import import_dataset
 from .schemas import Conversation, Dataset, ErrorResponse, ImportRequest, ImportResult, Page, Session, SourceTurn
@@ -63,6 +64,7 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
     app.state.versions = versions
     register_relation_routes(app, relations, versions, expansion)
     app.state.expansion = expansion
+    register_version_routes(app, versions, retrieval, relations)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, exc: RequestValidationError):
