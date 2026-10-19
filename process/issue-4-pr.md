@@ -16,9 +16,14 @@ Refs #4, #5, #6, #7, #8, #9, #10, #11, #12。
 
 - **Before:** 已有批准的规格、票据和上游数据，缺少应用及测试入口。
   **After:** 来源、构建、检索、关系、问答、恢复、导出和评测均已实现；
-  实际验证命令及结果见 `experiments/issue-4-implementation.md`。
+  默认全套 **109 passed，4 skipped**。实际命令及结果见
+  `experiments/issue-4-implementation.md`。
 - 真实离线 MiniLM 已验证编码、长度拒绝、混合检索和旧版本编码器选择。
-  Chromium 已验证完整页面流程、失败重试、冲突、证据不足、下载和四策略评测。
+  合并后复跑 **3 passed**。Chromium 完整流程退出 0，页面异常和控制台错误为 0，
+  覆盖失败重试、冲突、证据不足、下载和四策略评测。
+- Standards 原 1 项 P2、Spec 原 2 项 P2 均已修复并通过独立代理复核；
+  两轴报告见 `experiments/issue-4-review.md`。浏览器夹具的随机排名问题
+  也已复现并修正，不作为真实模型质量证据。
 - 未执行真实 DeepSeek 请求。课程六段对话、4/2 划分、动态真值未提供，
   正式指标保持 unavailable。未关联 M3/M4 Notion 任务，未宣称同步。
 

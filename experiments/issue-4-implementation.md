@@ -210,3 +210,68 @@ No real DeepSeek request was made: only environment-variable presence was checke
 and the protected credential was absent. Formal course metrics remain unavailable;
 no formal test split was invented or used for tuning. These results do not establish
 model quality, non-author human review, final course acceptance or remote closure.
+
+### Final integration and review
+
+Issue #12 was integrated by `409f0b9`. The two independent agent reviews used
+the fixed diff `53f116e...409f0b9`. Standards reported one P2; Spec reported two
+P2 findings. All were fixed in `b30612e`, integrated by `f51c3ba`.
+See `issue-4-review.md` for the separate original reports and independent
+rechecks, and `issue-4-review-fixes.md` for RED/GREEN evidence.
+
+The fixes reject credential-bearing API URLs without echoing their input,
+pass the unified explicit date into bounded history expansion, and require
+unchanged Prompt/schema/artifact contracts before incomplete-build recovery
+or stage advancement. Reading old complete versions remains supported.
+No production dependency or database migration was added by these fixes.
+
+The implementer's fresh `.venv/bin/python -m pytest -q` produced
+**109 passed, 4 skipped**, 187.63 seconds. The skipped tests require explicit
+real-model opt-in. Independent reviewers additionally ran **3 Settings tests**
+and **16 date/contract tests**, plus synthetic error-safety and three public
+stage-advancement probes. Both axes have zero unresolved findings.
+Integration checked the merge tree against the tested commit and passed
+`git diff --check` and `compileall`; it did not repeat the full suite.
+
+On the merged production code, the integration directory ran:
+
+```sh
+uv sync --locked --extra embedding
+LOCOMO_LOCAL_EMBEDDING=1 HF_HUB_OFFLINE=1 uv run --extra embedding --locked pytest -m local_embedding -q --tb=short
+```
+
+Result: **3 passed, 110 deselected**, 25.86 seconds. This rechecks the actual
+cached CPU MiniLM adapter, length rejection, retrieval API and old complete
+version's stored encoder selection after the recovery-contract changes.
+Generation responses remain controlled; no real DeepSeek call was made.
+
+The first final Chromium run timed out waiting for a Trace. Inspection of the
+isolated synthetic test state found a failed resolution after retrieval selected
+birth-year evidence for a residence question. The controlled query-analysis
+adapter returned no keywords, all BM25 scores were zero, and RRF ties depended
+on random Memory IDs. This was a browser-fixture defect. Commit `b453eb1`,
+integrated by `b0935df`, supplies discriminating synthetic analysis keywords.
+It changes only the browser fixture and experiment record, with no production
+changes. Six fresh builds and 24 public API queries then passed, retaining
+Top-1 initial retrieval and actual history expansion.
+
+The final full browser command was:
+
+```sh
+bash tests/browser/run.sh /tmp/locomo-browser-env/bin/python
+```
+
+It exited **0** on Chromium `156.0.8078.4`. All workflows listed in #12 passed;
+page exceptions and console errors were both empty. Eight evaluation rows
+include four deliberately failed external responses, correctly retained as
+failures rather than scores. The native download passed `memory-export-v1`.
+See `issue-4-final-browser-result.json` and
+`screenshots/issue-4-final-history-trace.png`. Both services stopped and their
+ports were confirmed reusable. The browser harness restores default locked
+dependencies; install the embedding extra again before a real local build.
+
+All implementation worktrees were removed without force. Their local branches
+and commits remain available. The five upstream hashes remain unchanged.
+The local PR description is `process/issue-4-pr.md`. No push, PR publication,
+ticket closure or Notion update has been performed. The external completion
+conditions above remain open; agent review does not replace human acceptance.
