@@ -10,9 +10,9 @@ from .config import Settings
 from .database import Database
 from .imports import canonical_json
 from .memory_schemas import ExtractionBatch, Memory
-from .model import EXTRACTION_PROMPT, EXTRACTION_PROMPT_VERSION, KNOWN_MODEL_VERSION, MEMORY_SCHEMA_VERSION, RELATION_PROMPT, RELATION_PROMPT_VERSION, ModelFailure, utc_now
-from .relation_schemas import RelationBatch, RELATION_SCHEMA_VERSION
-from .projection import PROJECTION_VERSION
+from . import model as model_contract, projection as projection_contract, relation_schemas as relation_contract
+from .model import KNOWN_MODEL_VERSION, ModelFailure, utc_now
+from .relation_schemas import RelationBatch
 
 
 class BuildError(Exception):
@@ -60,6 +60,27 @@ class BuildService:
                 CREATE INDEX IF NOT EXISTS memory_state ON memories(build_id, state_key);
             """)
 
+    def fingerprint(self, source_sha256: str, sample_id: str) -> str:
+        """Use the same producer contract for new builds and recovery checks."""
+        contract = {
+            "source": source_sha256, "sample_id": sample_id, "settings": self.settings.snapshot(),
+            "prompt": model_contract.EXTRACTION_PROMPT,
+            "prompt_version": model_contract.EXTRACTION_PROMPT_VERSION,
+            "schema": ExtractionBatch.model_json_schema(), "schema_version": model_contract.MEMORY_SCHEMA_VERSION,
+            "relation_prompt": model_contract.RELATION_PROMPT,
+            "relation_prompt_version": model_contract.RELATION_PROMPT_VERSION,
+            "relation_schema": RelationBatch.model_json_schema(),
+            "relation_schema_version": relation_contract.RELATION_SCHEMA_VERSION,
+            "projection_version": projection_contract.PROJECTION_VERSION,
+        }
+        return hashlib.sha256(canonical_json(contract).encode()).hexdigest()
+
+    def require_current_contract(self, build: dict):
+        if build["config"] != self.settings.snapshot():
+            raise BuildError("build_configuration_changed")
+        if build["fingerprint"] != self.fingerprint(build["source_sha256"], build["sample_id"]):
+            raise BuildError("build_contract_changed")
+
     def recover_interrupted(self):
         # Called only by the exclusive backend owner at startup.
         with self.database.connect() as db:
@@ -75,11 +96,11 @@ class BuildService:
             if dataset is None or not turns:
                 raise BuildError("not_found", 404)
             snapshot = self.settings.snapshot()
-            fingerprint = hashlib.sha256(canonical_json({"source": dataset["source_sha256"], "sample_id": sample_id, "settings": snapshot, "prompt": EXTRACTION_PROMPT, "prompt_version": EXTRACTION_PROMPT_VERSION, "schema": ExtractionBatch.model_json_schema(), "schema_version": MEMORY_SCHEMA_VERSION, "relation_prompt": RELATION_PROMPT, "relation_prompt_version": RELATION_PROMPT_VERSION, "relation_schema": RelationBatch.model_json_schema(), "relation_schema_version": RELATION_SCHEMA_VERSION, "projection_version": PROJECTION_VERSION}).encode()).hexdigest()
-            metadata = {"requested_model": self.settings.model_name, "known_service_version": KNOWN_MODEL_VERSION, "run_date": now[:10], "returned_models": [], "calls": [], "artifact_versions": {"relation_prompt_version": RELATION_PROMPT_VERSION, "relation_schema_version": RELATION_SCHEMA_VERSION, "projection_version": PROJECTION_VERSION}}
+            fingerprint = self.fingerprint(dataset["source_sha256"], sample_id)
+            metadata = {"requested_model": self.settings.model_name, "known_service_version": KNOWN_MODEL_VERSION, "run_date": now[:10], "returned_models": [], "calls": [], "artifact_versions": {"relation_prompt_version": model_contract.RELATION_PROMPT_VERSION, "relation_schema_version": relation_contract.RELATION_SCHEMA_VERSION, "projection_version": projection_contract.PROJECTION_VERSION}}
             try:
                 db.execute("INSERT INTO build_versions VALUES (?, ?, ?, 'queued', 'extraction', ?, ?, ?, ?, ?, ?, ?, ?)",
-                           (build_id, dataset_id, sample_id, fingerprint, dataset["source_sha256"], canonical_json(snapshot), EXTRACTION_PROMPT_VERSION, MEMORY_SCHEMA_VERSION, canonical_json(metadata), now, now))
+                           (build_id, dataset_id, sample_id, fingerprint, dataset["source_sha256"], canonical_json(snapshot), model_contract.EXTRACTION_PROMPT_VERSION, model_contract.MEMORY_SCHEMA_VERSION, canonical_json(metadata), now, now))
             except sqlite3.IntegrityError:
                 raise BuildError("build_already_running") from None
             for ordinal, start in enumerate(range(0, len(turns), self.settings.fragment_turns)):
@@ -105,8 +126,7 @@ class BuildService:
         build = self.get(build_id)
         if build["phase"] != "extraction" or build["status"] not in {"failed", "interrupted"}:
             raise BuildError("build_not_retryable")
-        if build["config"] != self.settings.snapshot():
-            raise BuildError("build_configuration_changed")
+        self.require_current_contract(build)
         with self.database.connect() as db:
             try:
                 changed = db.execute("UPDATE build_versions SET status='queued',updated_at=? WHERE build_id=? AND status IN ('failed','interrupted')", (utc_now(), build_id)).rowcount

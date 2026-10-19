@@ -1,9 +1,7 @@
 """Pin one complete version, resolve bounded history, answer and retain an audit Trace."""
 
-from datetime import date, datetime
 import json
 import hashlib
-import re
 import time
 import uuid
 
@@ -15,30 +13,10 @@ from .imports import canonical_json
 from .model import ModelFailure, utc_now, RESOLUTION_PROMPT, ANSWER_PROMPT, KNOWN_MODEL_VERSION
 from .query_schemas import EffectiveResolution, EvidenceAnswer, RESOLUTION_SCHEMA_VERSION, ANSWER_SCHEMA_VERSION
 from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
-from .temporal import conversation_cutoff
+from .temporal import conversation_cutoff, explicit_question_date
 
 RESOLUTION_PROMPT_VERSION = "effective-resolution-v1"
 ANSWER_PROMPT_VERSION = "evidence-answer-v2-raw-sources"
-
-
-def explicit_question_date(question):
-    """Recognize one exact date; ambiguous ranges stay in the original question."""
-    matches = []
-    patterns = [
-        (r"\b\d{4}-\d{2}-\d{2}\b", ("%Y-%m-%d",)),
-        (r"\b\d{1,2} [A-Za-z]+,? \d{4}\b", ("%d %B %Y", "%d %b %Y")),
-        (r"\b[A-Za-z]+ \d{1,2},? \d{4}\b", ("%B %d %Y", "%b %d %Y")),
-    ]
-    for pattern, formats in patterns:
-        for match in re.finditer(pattern, question):
-            for format in formats:
-                try:
-                    matches.append(datetime.strptime(match.group().replace(",", ""), format).date())
-                    break
-                except ValueError:
-                    continue
-    unique = set(matches)
-    return matches[0] if len(unique) == 1 else None
 
 
 class QueryFailure(BuildError):
@@ -148,7 +126,7 @@ class QueryService:
             trace["operations"]["query_analysis"] = initial["analysis"]["model_metadata"]
             trace["stage_seconds"][stage] = time.perf_counter() - tick
             stage, tick = "expansion", time.perf_counter()
-            expanded = self.expansion.expand(initial["query_id"])
+            expanded = self.expansion.expand(initial["query_id"], requested_date=requested)
             trace["expanded"] = expanded
             trace["stage_seconds"][stage] = time.perf_counter() - tick
             memories = {item["memory"]["memory_id"]: item["memory"] for item in expanded["candidates"]}

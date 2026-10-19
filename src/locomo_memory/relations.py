@@ -49,8 +49,7 @@ class RelationService:
 
     def start(self, build_id: str) -> dict:
         build = self.builds.get(build_id)
-        if build["config"] != self.settings.snapshot():
-            raise BuildError("build_configuration_changed")
+        self.builds.require_current_contract(build)
         retryable = build["status"] == "relations_failed" or (build["status"] == "interrupted" and build["phase"] == "relations")
         if build["status"] != "indexed" and not retryable:
             raise BuildError("relations_not_ready")
@@ -150,6 +149,7 @@ class RelationService:
         build = self.builds.get(build_id)
         if build["status"] == "complete" or (not internal and build["status"] != "related"):
             raise BuildError("projection_not_mutable")
+        self.builds.require_current_contract(build)
         with self.database.connect() as db:
             db.execute("BEGIN IMMEDIATE")
             status = db.execute("SELECT status FROM build_versions WHERE build_id=?", (build_id,)).fetchone()[0]
