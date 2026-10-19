@@ -56,7 +56,33 @@ curl -X POST http://127.0.0.1:8000/evaluation-plans \
 }
 ```
 
-`build_ids` 可省略，后端固定各对话当前活动完整版本。返回 201 和持久运行记录。单样本模型错误保存为 `error`，该样本分数为 null，其他样本继续；HTTP 201 表示运行记录已保存，不能单凭状态码认定每个样本成功。`GET /evaluation-runs/{run_id}` 读取完整结果。
+`build_ids` 可省略，后端在首次模型调用前固定所有所选对话的完整版本。固定开发计划可直接提交 `{"plan_id":"<Plan ID>"}`，后端采用计划的 Input、四种策略和 `dev` 划分；附带字段与计划不一致时返回 422。手工 Input 接口继续保留。
+
+默认创建立即返回 201 和持久 `run_id`，无需等待全量生成。每项完成后独立事务保存结果或安全错误、Trace、耗时、已报告用量及尝试历史。后续失败保留此前已提交结果。HTTP 201 表示记录已创建，每项是否成功以状态为准。测试或短合成调用可显式提交 `"wait": true` 等待执行结束；长评测使用默认异步模式。
+
+## 查看进度和显式恢复
+
+页面启动后立即显示 Run ID。点击 **刷新评测进度** 或输入 Run ID 后点击 **读取评测记录**，查看已提交结果、计划项状态、尝试次数和部分汇总。运行未结束时 `completed_at` 为 null，界面显示尚未完成。
+
+`GET /evaluation-runs/{run_id}` 返回完整记录，包括 `items`、已提交 `results` 和部分 `summary`。`items` 是固定的逻辑计划，每项只计一次；其 `attempts` 按顺序保留各次错误、结果、Trace、耗时及用量。`GET /evaluation-runs/{run_id}/progress` 只返回 `run_id`、`status`、`completed_at`、`elapsed_seconds` 和状态计数 `progress`，适合轮询，不返回输入或富 Trace。读取上述资源不会调用模型。
+
+Run 状态为 `running`、`completed`、`completed_with_errors` 或 `interrupted`。计划项状态为 `pending`、`running`、`succeeded`、`failed`、`interrupted` 或 `unknown`。后端重启将未提交的执行中项标为 `unknown`，活动 Run 标为 `interrupted`；未执行项保留为可恢复的中断项。启动不会自动续跑。
+
+显式恢复使用：
+
+```bash
+curl -X POST http://127.0.0.1:8000/evaluation-runs/<Run-ID>/resume \
+  -H 'Content-Type: application/json' \
+  -d '{"retry_failed":false,"retry_unknown":false}'
+```
+
+默认只继续待执行或尚未开始的中断项，跳过所有已提交成功项。`retry_failed: true` 明确重试已记录失败项；`retry_unknown: true` 明确重试外部结果未确认项。页面提供对应复选框和 **显式恢复此运行** 按钮。重试成功保留首次失败及全部历史尝试。恢复已完成且没有可重试项的 Run 只返回记录。
+
+恢复前重新核对原始 Input、Plan、题目及顺序、数据及原件身份、划分、策略、固定完整构建、配置、Prompt/schema、计分版本、运行依赖和实现 SHA256。不一致时返回 409、`evaluation_identity_changed`，旧结果仍可读取，应创建新运行。新活动版本发布不会替换本 Run 固定的旧完整版本。
+
+模型返回后、事务提交前退出时，供应商可能已经计费，但结果无法确认。`unknown` 不代表没有调用，显式重试可能再次计费，系统不保证供应商恰好一次计费。已报告的用量与未知账单分别解释，不把缺失用量当作零。
+
+本地后端仍由 SQLite 所有权锁限制为单进程，同一时刻只执行一个评测 Run。重复启动或并发恢复返回 409、`evaluation_already_running`。正常关闭在当前有限超时、有限重试的调用结束后停止，不再启动下一项，并在释放后端所有权前等待工作线程退出。没有外部队列或自动恢复循环。历史整批运行记录保持可读，缺少逐项身份的旧记录不能恢复。
 
 ## 策略与比较口径
 

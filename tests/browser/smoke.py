@@ -7,6 +7,7 @@ import argparse
 import json
 import re
 import subprocess
+import time
 from pathlib import Path
 from urllib.request import urlopen
 from playwright.sync_api import sync_playwright, expect
@@ -153,6 +154,13 @@ with sync_playwright() as playwright:
         page.get_by_test_id('stFileUploader').last.locator('input[type=file]').set_input_files({'name': 'evaluation.json', 'mimeType': 'application/json', 'buffer': json.dumps(evaluation).encode()})
         click('保存独立评测输入')
         click('运行所选对照')
+        expect(page.get_by_text(re.compile(r'^Run [a-f0-9]+ ·'))).to_be_visible(timeout=30000)
+        run_id = page.get_by_text(re.compile(r'^Run [a-f0-9]+ ·')).inner_text().split()[1]
+        deadline = time.monotonic() + 30
+        while get('/evaluation-runs/' + run_id + '/progress')['status'] == 'running':
+            assert time.monotonic() < deadline, 'evaluation did not finish'
+            time.sleep(.1)
+        click('刷新评测进度')
         expect(page.get_by_text('课程正式指标未评：', exact=False)).to_be_visible(timeout=30000)
         for name in ['完整动态系统', 'Full Text 原始轮次', 'Vector RAG（无状态解析）', 'Hybrid + 扩展（无状态解析）']:
             expect(page.get_by_test_id('stMarkdownContainer').get_by_text(name, exact=True).filter(visible=True).first).to_be_visible()
