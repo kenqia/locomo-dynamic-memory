@@ -232,6 +232,33 @@ def test_task_pagination_preserves_all_calls_for_each_task(settings, sample):
         assert all(item['diagnostic_history'][0]['calls'][0]['task_id'] == item['task_id'] for item in items)
 
 
+@pytest.mark.parametrize('invalid,code', [('blank_reason', 'nonblank_reason_required'),
+                                         ('duplicate_sources', 'unique_evidence_required')])
+def test_specific_reason_or_evidence_failure_survives_restart(settings, sample, invalid, code):
+    settings = settings.model_copy(update={'model_retries': 0})
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if 'new_memory' not in payload:
+            return two_memory_provider(request)
+        judgment = relation(payload['history'][0], payload['new_memory'])
+        if invalid == 'blank_reason':
+            judgment['reason'] = ' '
+        else:
+            judgment['source_ids'].append(judgment['source_ids'][0])
+        return completion({'judgments': [judgment]})
+    model = DeepSeekModel(settings, api_key='synthetic', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        build_id = build(client, sample)
+        client.post(f'/builds/{build_id}/index')
+        client.post(f'/builds/{build_id}/relations')
+        task = client.get(f'/builds/{build_id}/relation-tasks').json()['items'][0]
+        call = task['diagnostic_history'][0]['calls'][0]
+        assert (call['error_code'], call['field_path']) == (code, 'judgments[0]')
+        assert call['failure_stage'] == 'domain_validation'
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        assert client.get(f'/builds/{build_id}/relation-tasks').json()['items'][0] == task
+
+
 def test_preflight_failure_has_no_fabricated_provider_attempt(settings, sample, monkeypatch):
     monkeypatch.delenv('DEEPSEEK_API_KEY', raising=False)
     model = DeepSeekModel(settings, api_key='synthetic', transport=httpx.MockTransport(two_memory_provider))

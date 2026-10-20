@@ -47,8 +47,10 @@ class RelationDraft(BaseModel):
 
     @model_validator(mode="after")
     def validate_evidence(self, info: ValidationInfo):
-        if not self.reason.strip() or len(set(self.source_ids)) != len(self.source_ids):
-            raise domain_error("reason_and_unique_evidence_required")
+        if not self.reason.strip():
+            raise domain_error("nonblank_reason_required")
+        if len(set(self.source_ids)) != len(self.source_ids):
+            raise domain_error("unique_evidence_required")
         context = info.context or {}
         if "new_memory" not in context:
             return self

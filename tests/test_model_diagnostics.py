@@ -72,7 +72,8 @@ def test_missing_finish_reason_is_not_inferred_from_tokens(settings):
     ({'private-marker': 'private-marker'}, 'extra_field', 'judgments[0]'),
     ({'applicability': {'private-marker': True}}, 'extra_field', 'judgments[0].applicability'),
     ({'applicability': {'from_date': '2024-01-02', 'to_date': '2024-01-01'}}, 'applicability_range_reversed', 'judgments[0].applicability'),
-    ({'reason': ' '}, 'reason_and_unique_evidence_required', 'judgments[0]'),
+    ({'reason': ' '}, 'nonblank_reason_required', 'judgments[0]'),
+    ({'source_ids': ['s1', 's1']}, 'unique_evidence_required', 'judgments[0]'),
 ])
 def test_schema_and_domain_diagnostics_never_echo_values_or_unknown_keys(settings, changes, code, path):
     judgment = {'old_memory_id': 'a', 'new_memory_id': 'b', 'label': 'undetermined',
@@ -83,7 +84,7 @@ def test_schema_and_domain_diagnostics_never_echo_values_or_unknown_keys(setting
         model.generate('relate', {}, RelationBatch)
     call = failure.value.metadata['calls'][0]
     assert (call['error_code'], call['field_path']) == (code, path)
-    assert call['failure_stage'] == ('domain_validation' if code in {'applicability_range_reversed', 'reason_and_unique_evidence_required'} else 'schema_validation')
+    assert call['failure_stage'] == ('domain_validation' if code in {'applicability_range_reversed', 'nonblank_reason_required', 'unique_evidence_required'} else 'schema_validation')
     assert 'private-marker' not in json.dumps(call)
 
 
@@ -121,7 +122,7 @@ def test_transport_exceptions_are_safe_and_saved_before_propagation(settings, er
     assert 'private-marker' not in json.dumps(failure.value.metadata)
 
 
-def test_relation_request_adds_state_key_gate_without_changing_other_contract_fields(settings):
+def test_relation_request_adds_label_and_unique_source_guidance_only(settings):
     import hashlib
     requests = []
     def provider(request):
@@ -135,12 +136,39 @@ def test_relation_request_adds_state_key_gate_without_changing_other_contract_fi
             'reinterpret different keys as the same dimension. For different keys, still\n'
             'assess UPDATE under its same-process evidence rule; otherwise use undetermined.\n')
     assert gate in body['messages'][0]['content']
-    # Removing the sole new instruction must reproduce the independently captured
+    unique_sources = ("Each judgment's source_ids must be a set-like list with no repeated IDs, including\n"
+                      'when both endpoint memories cite the same source. A shared source_id covers both\n'
+                      'endpoints when it supports both; list it once. Preserve evidence for each endpoint.\n')
+    assert unique_sources in body['messages'][0]['content']
+    # Removing the added instructions must reproduce the independently captured
     # pre-diagnostics request: same schema, payload, parameters and other guidance.
     body['messages'][0]['content'] = body['messages'][0]['content'].replace(gate, '', 1)
+    body['messages'][0]['content'] = body['messages'][0]['content'].replace(unique_sources, '', 1)
     with httpx.Client() as client:
         previous = client.build_request('POST', 'https://api.deepseek.com/chat/completions', json=body)
     assert hashlib.sha256(previous.content).hexdigest() == '0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846'
+
+
+@pytest.mark.parametrize('label', ['UPDATE', 'undetermined'])
+@pytest.mark.parametrize('source_ids', [['s1'], ['s1', 's1']])
+def test_one_shared_source_can_support_both_endpoints_but_duplicate_ids_fail(settings, label, source_ids):
+    common = dict(build_id='b', dataset_id='d', sample_id='s', entity_id='Alex',
+                  memory_type='state', statement_type='fact', source_ids=['s1'])
+    old = dict(common, memory_id='old', state_key='s:Alex:research')
+    new = dict(common, memory_id='new', state_key='s:Alex:application')
+    context = dict(new_memory=new, history=[old],
+                   sources={'s1': {'text': 'I researched agencies and submitted an application.'}})
+    judgment = dict(old_memory_id='old', new_memory_id='new', label=label,
+                    reason='The same source describes two stages', source_ids=source_ids,
+                    support_quote='I researched agencies and submitted an application.')
+    model = DeepSeekModel(settings.model_copy(update={'model_retries': 0}), api_key='synthetic',
+                          transport=httpx.MockTransport(lambda _: httpx.Response(200, json=document(json.dumps({'judgments': [judgment]})))))
+    if len(source_ids) == 1:
+        assert model.generate('relate', context, RelationBatch, context=context).value.judgments[0].source_ids == ['s1']
+    else:
+        with pytest.raises(ModelFailure) as failure:
+            model.generate('relate', context, RelationBatch, context=context)
+        assert failure.value.metadata['calls'][0]['error_code'] == 'unique_evidence_required'
 
 
 @pytest.mark.parametrize('label', ['RETAIN', 'SUPERSEDE', 'CONFLICT', 'UPDATE', 'undetermined'])

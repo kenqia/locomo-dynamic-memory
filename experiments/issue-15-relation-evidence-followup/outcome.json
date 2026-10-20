@@ -1,0 +1,56 @@
+{
+  "approved_additional_calls": 16,
+  "additional_calls_used": 4,
+  "additional_calls_remaining": 12,
+  "previous_campaign_calls": 6,
+  "total_calls_across_campaigns": 10,
+  "stop_reason": "selected_replays_passed",
+  "semantic_correctness": "not_independently_evaluated",
+  "usage": {
+    "generation_calls": 4,
+    "unknown_attempts": 0,
+    "calls_without_reported_usage": 0,
+    "calls_with_partial_usage": 0,
+    "reported_tokens": {
+      "prompt_tokens": 35306,
+      "completion_tokens": 14762,
+      "total_tokens": 50068
+    },
+    "usage_fields": {
+      "prompt_tokens": {
+        "reported": 35306,
+        "calls_with_reported_usage": 4,
+        "calls_missing_usage": 0,
+        "complete": true
+      },
+      "completion_tokens": {
+        "reported": 14762,
+        "calls_with_reported_usage": 4,
+        "calls_missing_usage": 0,
+        "complete": true
+      },
+      "total_tokens": {
+        "reported": 50068,
+        "calls_with_reported_usage": 4,
+        "calls_missing_usage": 0,
+        "complete": true
+      }
+    },
+    "provider_usage_complete": true,
+    "provider_retries": 0,
+    "reported_provider_seconds": 44.76066365999941
+  },
+  "rounds": [
+    {
+      "directory": "round-1",
+      "calls": 4,
+      "after_label_counts": {
+        "undetermined": 40
+      },
+      "candidate_coverage": [
+        20,
+        20
+      ]
+    }
+  ]
+}

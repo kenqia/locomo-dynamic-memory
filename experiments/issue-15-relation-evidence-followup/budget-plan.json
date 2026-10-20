@@ -1,0 +1,15 @@
+{
+  "approved_additional_calls": 16,
+  "previous_campaign_calls": 6,
+  "round_call_limit": 4,
+  "allowed_rounds": [
+    "round-1",
+    "round-2",
+    "round-3",
+    "round-4"
+  ],
+  "allocated_now": [
+    "round-1"
+  ],
+  "policy": "Each round freezes a separate plan and SQLite budget of at most four calls. Previous ledgers are never reset or increased. Use later rounds only on new evidence; stop when selected cases pass or allocation is exhausted."
+}

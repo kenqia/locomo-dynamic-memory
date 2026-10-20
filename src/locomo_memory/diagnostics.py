@@ -10,6 +10,8 @@ DOMAIN_ERRORS = {
     "condition_evidence_required": "Satisfied condition requires source evidence",
     "explicit_condition_required": "Condition status requires an explicit condition",
     "reason_and_unique_evidence_required": "A relation needs a reason and unique evidence",
+    "nonblank_reason_required": "A relation needs a nonblank reason",
+    "unique_evidence_required": "A relation needs unique evidence IDs",
     "comparison_endpoints_required": "Relation endpoints must belong to the supplied historical comparison",
     "same_endpoint_scope_required": "Relation endpoints cross version, conversation or entity scope",
     "known_source_required": "Relation cites an unknown source",

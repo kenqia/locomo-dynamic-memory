@@ -1,0 +1,29 @@
+{
+  "implementation_sha256": "b6d38a90328a403651da8582a078d1015f9a2ead7ac4db42adaa56d9416bfcd0",
+  "prompt_version": "relations-v3",
+  "source_database_sha256": "13497e43f418275585532d7d8a3a2bb326035662ed6eef67f41a05b6e8f46116",
+  "tasks": [
+    {
+      "task_id": "91f1f50938064972820e3ab7b390d9dd:relation:44",
+      "request_sha256": "3f36a652ae0c4b033adf0e1f625f11a086302bbf9d37a15a7ebe8da018d4f4a0",
+      "request_context_estimate": {
+        "token_count": 9417,
+        "method": "regex-word-punctuation-v1",
+        "scope": "serialized_messages_including_prompt_schema_and_payload",
+        "is_provider_token_count": false,
+        "reserved_output_tokens": 4096
+      }
+    },
+    {
+      "task_id": "91f1f50938064972820e3ab7b390d9dd:relation:90",
+      "request_sha256": "54f157150c3cee6890ec47e2e0c14905fa4897f8c8ea0c869eb64655fa6a1eaf",
+      "request_context_estimate": {
+        "token_count": 10057,
+        "method": "regex-word-punctuation-v1",
+        "scope": "serialized_messages_including_prompt_schema_and_payload",
+        "is_provider_token_count": false,
+        "reserved_output_tokens": 4096
+      }
+    }
+  ]
+}
