@@ -18,6 +18,7 @@ DOMAIN_ERRORS = {
     "comparison_endpoints_required": "Relation endpoints must belong to the supplied historical comparison",
     "same_endpoint_scope_required": "Relation endpoints cross version, conversation or entity scope",
     "known_source_required": "Relation cites an unknown source",
+    "endpoint_evidence_required": "Relation evidence must belong to its two endpoints",
     "both_endpoints_evidence_required": "Relation evidence must support both endpoints",
     "same_state_dimension_required": "This judgment requires the same state dimension",
     "factual_states_required": "Only factual states can supersede factual states; preserve events and plans",

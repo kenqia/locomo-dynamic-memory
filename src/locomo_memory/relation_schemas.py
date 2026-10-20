@@ -97,6 +97,8 @@ class RelationDraft(BaseModel):
         sources = context["sources"]
         if any(source_id not in sources for source_id in self.source_ids):
             raise domain_error("known_source_required")
+        if not set(self.source_ids) <= set(old["source_ids"] + new["source_ids"]):
+            raise domain_error("endpoint_evidence_required")
         if not set(self.source_ids).intersection(old["source_ids"]) or not set(self.source_ids).intersection(new["source_ids"]):
             raise domain_error("both_endpoints_evidence_required")
         label_error = relation_label_error(self.label, old, new)

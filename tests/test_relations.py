@@ -20,6 +20,38 @@ def stage_evidence(old, new, sources):
             "new_stage": {"description": new["content"], "source_id": new["source_ids"][0], "quote": by_id[new["source_ids"][0]]["text"]}}
 
 
+def test_third_history_evidence_is_rejected_before_publication(settings, sample):
+    settings = settings.model_copy(update={"model_retries": 0})
+    fixed = False
+
+    def provider(request):
+        payload = json.loads(json.loads(request.content)["messages"][1]["content"])
+        if "new_memory" not in payload:
+            return completion({"memories": [draft([source["source_id"]], content=f"Alex lives in {city}.", state_value=city)
+                for source, city in zip(payload["sources"][:3], ["Paris", "Rome", "Berlin"])]})
+        new, history = payload["new_memory"], payload["history"]
+        judgments = [relation(old, new) for old in history]
+        if len(history) > 1 and not fixed:
+            # This source is known to the batch, but belongs to a different comparison.
+            judgments[0]["source_ids"] += history[1]["source_ids"]
+        return completion({"judgments": judgments})
+
+    model = DeepSeekModel(settings, api_key="synthetic-test-key", transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        build_id = build(client, sample)
+        client.post(f"/builds/{build_id}/index")
+        client.post(f"/builds/{build_id}/relations")
+        assert client.get(f"/builds/{build_id}").json()["status"] == "relations_failed"
+        tasks = client.get(f"/builds/{build_id}/relation-tasks").json()["items"]
+        failed = next(task for task in tasks if task["status"] == "failed")
+        assert failed["diagnostic_history"][0]["calls"][0]["error_code"] == "endpoint_evidence_required"
+        assert client.post(f"/builds/{build_id}/publish").status_code == 409
+        fixed = True
+        assert client.post(f"/builds/{build_id}/relations").status_code == 202
+        assert client.post(f"/builds/{build_id}/publish").status_code == 200
+        assert client.get(f"/builds/{build_id}/export").status_code == 200
+
+
 def test_source_supported_supersession_preserves_history_and_publishes_complete_version(settings, sample):
     sample[0]["conversation"]["session_2"][0]["text"] = "I moved from Paris to Rome on 2 May 2023."
 

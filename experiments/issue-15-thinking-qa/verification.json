@@ -1,15 +1,15 @@
 {
   "offline_regression": {
     "command": "HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 .venv/bin/python -m pytest -q -m 'not live_model and not local_embedding'",
-    "passed": 349,
+    "passed": 350,
     "deselected": 4,
-    "elapsed_seconds": 242.59,
+    "elapsed_seconds": 238.24,
     "warnings": [
       "Existing Starlette/httpx deprecation warning"
     ],
-    "output_directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/regression-tests.txt"
+    "output_file": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/final-regression-tests.txt"
   },
-  "implementation_sha256": "839b4daaa71ff5a47d9f122775416e181fc09cce39ac4dd7620833d1cbce1255",
+  "implementation_sha256": "0030145b3c277edea88e81da5f33ef4e5113444075fdef52ff3065d3a89b10a1",
   "embedding_smoke": {
     "offline": true,
     "model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -35,5 +35,37 @@
       "Existing Starlette/httpx deprecation warning"
     ]
   },
-  "previous_implementation_sha256": "0b5b7135c0dd3893b680aad1e1f9de6c6fb715596382272357cc1610fbac0f1c"
+  "previous_implementation_sha256": "0b5b7135c0dd3893b680aad1e1f9de6c6fb715596382272357cc1610fbac0f1c",
+  "offline_regression_history": [
+    {
+      "command": ".venv/bin/python -m pytest -m 'not live_model and not local_embedding' -q --tb=short",
+      "passed": 340,
+      "deselected": 4,
+      "elapsed_seconds": 240.66,
+      "warnings": [
+        "Existing Starlette/httpx deprecation warning"
+      ]
+    },
+    {
+      "command": "HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 .venv/bin/python -m pytest -q -m 'not live_model and not local_embedding'",
+      "passed": 349,
+      "deselected": 4,
+      "elapsed_seconds": 242.59,
+      "warnings": [
+        "Existing Starlette/httpx deprecation warning"
+      ],
+      "output_directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/regression-tests.txt"
+    }
+  ],
+  "experiment_implementation_sha256": "839b4daaa71ff5a47d9f122775416e181fc09cce39ac4dd7620833d1cbce1255",
+  "endpoint_ingress_regression": {
+    "test": "tests/test_relations.py::test_third_history_evidence_is_rejected_before_publication",
+    "before_fix": "failed: invalid endpoint evidence incorrectly marked related",
+    "after_fix": "passed: rejected at ingress, explicit retry publishes and exports successfully",
+    "applied_after_paid_calls": true,
+    "complete_export_revalidated": {
+      "memories": 272,
+      "relations": 4902
+    }
+  }
 }
