@@ -1,0 +1,18 @@
+{
+  "checked_date": "2026-10-20",
+  "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+  "model_name": "deepseek-flash",
+  "known_service_version": "DeepSeek-V4.1-Flash-1017",
+  "context_window_tokens": 1000000,
+  "thinking_enabled": false,
+  "response_format": "json_object",
+  "verification_scope": [
+    "Official pricing and model-details page checked on 2026-10-20: alias, service version, 1M context, JSON and thinking support.",
+    "Explicit disabled thinking and JSON object request settings retained from the ADR 0001 guide check on 2026-10-19."
+  ],
+  "limitations": [
+    "Mutable service alias does not identify fixed model weights; actual returned model is recorded per call.",
+    "Thinking, JSON and Chat API guide re-fetches unavailable on 2026-10-20: Jina HTTP 401 and direct-fetch failure.",
+    "No provider tokenizer verification or complete price quotation; regex counts are approximate."
+  ]
+}
