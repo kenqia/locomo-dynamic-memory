@@ -115,6 +115,36 @@ Vector 的 `retrieval.executed_components` 披露实际执行的问题分析、B
 
 数值 gold 保留原类型，计分时按官方方式转为字符串。缺少其他类别 gold、空答案、未知类别均返回 null 和原因。来源无法可靠映射不妨碍适用 QA 计分。每个指标分别报告 `scored`、`unscored`、`coverage` 和仅针对可计分样本的 `mean`，不把不可计分项算作零或正确。逐样本存未四舍五入值；缺 gold、未知类别、坏证据另有计数。
 
+## 失败分母和部分结果
+
+每个 `summary[strategy]` 并列提供下列指标。分母都按计划中的逻辑项计算，显式重试不会增加题目数。
+
+| 字段 | 计算口径 |
+| --- | --- |
+| `qa` | 只汇总执行成功且可计分项的官方 QA 分数；`coverage` 为计分数除以全部计划项数，失败和未执行项均不产生 QA 分数 |
+| `execution` | `planned` 为全部计划项数；分别报告成功、失败、待执行、执行中、中断待恢复和结果未知数量；`success_rate` 为成功数除以计划数 |
+| `baseline_run_score` | 在具有适用参考规则的全部计划项上，将成功项 QA 分数相加，终态执行失败贡献零，再除以适用规则项数 |
+
+补充的基线运行得分不等于教师评分，也不替代成功样本 QA。`numerator`、`denominator`、`excluded` 和 `failure_zero_count` 保留原始分子、适用规则分母、参考规则不可用项数及实际按零计入的失败数。类别 5 即使缺普通 gold 仍适用拒答规则；其他类别缺 gold 或类别未知时排除。坏来源标注只使证据覆盖不可计分，不阻断适用 QA，也不从基线运行得分分母中排除。
+
+只要该组还有 `pending`、`running`、`interrupted` 或 `unknown` 项，`baseline_run_score.status` 就为 `incomplete`，最终 `value` 为 null。即使未执行项本来不可计分，也要等计划范围结束后才能报告最终结果。成功样本的当前 QA 均值仍可查看。所有项终态后状态为 `complete`；若没有适用参考规则，分母为零，得分仍为 null。
+
+例如，五个具有适用参考规则的计划项中，四个成功且各得 1 分，一个执行失败，则 QA 均值为 1、运行成功率为 4/5、基线运行得分为 4/5。不能只用四个成功项作基线运行得分分母。
+
+`overall_summary` 对所有计划中的样本与策略组合逐项汇总。`grouped_summary.conversation[sample_id][strategy]` 与 `grouped_summary.category[category][strategy]` 分别保留对话及 QA 类别的指标和分母。`grouped_summary.conversation_means` 单独平均各对话均值，不与总体逐题汇总混用。例如，两段对话分别得 3/4 和 1/1 时，总体为 4/5，对话得分均值为 0.875。
+
+这些分组同时保留各阶段来源覆盖、独立动态指标及查询尝试用量。Full Text 的原始全体输入覆盖不是检索能力；Memory 排名与去重 Source Turn 覆盖继续分别记录。独立标签缺失、无成功项或空分组时，指标显示未评或 null。
+
+## 读取、导出和成本核查
+
+读取完整 Run ID 后，页面显示总体、各策略、对话及类别的指标，点击 **导出评测完整 JSON** 保存机器可读记录。`results` 是当前采用的逐项原始结果，`items[].attempts` 保留旧错误、重试、用量和耗时。读取已有记录不会生成答案；未完成记录导出的仍是部分结果。
+
+`usage_summary` 汇总所有已保存查询尝试，包含后来恢复成功前的失败。`logical_attempts`、`logical_retries`、`first_attempt_failures` 和 `failed_attempts` 与题目分母分别记录。`reported_attempt_seconds` 与 `reported_stage_seconds` 合计已记录的尝试及阶段耗时，不将未知耗时填成零。`provider_retries` 单列一次逻辑尝试内模型适配器的重试。
+
+`reported_tokens` 只合计 provider 实际报告的字段。字段完全未报告时为 null；有部分报告时保留已知合计，`usage_fields` 分别给出报告及缺失调用数和 `complete`。`calls_with_partial_usage` 统计只报告部分 token 字段的调用，`unknown_attempts` 统计没有已保存结果、包括仍执行中的尝试，`running_attempts` 单列当前执行中数量。`provider_usage_complete` 只说明可追溯范围内的字段完整性，不能据此恢复未记录的账单。已知 Embedding 调用和调用数未知的尝试分别计数。
+
+`build_usage_summary` 按唯一固定 BuildVersion 汇总已保存的抽取和关系调用，与逐问题开销分开，同一构建不会因策略或问题复用而重复统计。历史构建没有保存的 Embedding 调用数和实际运行耗时为 null，并注明缺口。构建模型 metadata 只支持核对已保留调用，不能重建未保存的外部调用或完整费用。页面和 JSON 都不根据这些部分用量编造金额。
+
 ## 接入正式课程划分与独立真值
 
 固定开发计划已自动生成 `kind: "course"` 和上述划分。手工独立评测输入仍使用 `kind: "course"`，在输入提供 `course_split: {"dev": [四个 ID], "test": [两个 ID]}`，六个 ID 必须互异且属于所选数据集。执行时显式提供 `partition: "dev"` 或 `"test"`，仅运行对应样本。服务不挑选划分、不自动调参。
@@ -142,7 +172,7 @@ Vector 的 `retrieval.executed_components` 披露实际执行的问题分析、B
 ## 验证
 
 ```sh
-uv run --locked pytest tests/test_full_text.py tests/test_evaluation_plans.py tests/test_evaluation.py tests/test_queries.py -q
+uv run --locked pytest tests/test_evaluation_reports.py tests/test_evaluation_recovery.py tests/test_full_text.py tests/test_evaluation_plans.py tests/test_evaluation.py tests/test_queries.py -q
 ```
 
 测试通过 FastAPI、真实 SQLite、真实 BM25/cosine/RRF、关系与扩展，只控制 LLM 与 Embedding。计划预览实验记录见 [Issue #16 验证](../../experiments/issue-16-development-plan-validation.md)，既有评测记录见 `experiments/issue-11-evaluation-validation.md`。未进行正式测试集调参或付费模型质量评测。
