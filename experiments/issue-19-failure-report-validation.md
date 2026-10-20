@@ -29,4 +29,12 @@ PYTHONPATH=src /home/kenqia/my_folder/locomo-worktrees/issue15/.venv/bin/python 
 
 结果为 13 passed，耗时 27.14 秒，现有 Starlette/httpx 弃用警告 1 条。
 
+另运行与报告、恢复和 Full Text 交互相关的回归：
+
+```sh
+PYTHONPATH=src /home/kenqia/my_folder/locomo-worktrees/issue15/.venv/bin/python -m pytest tests/test_evaluation_reports.py tests/test_evaluation.py tests/test_evaluation_recovery.py tests/test_full_text.py -q
+```
+
+结果为 18 passed，耗时 40.80 秒，同一弃用警告 1 条。
+
 未执行付费模型调用。页面改动未单独运行浏览器 smoke check，最终集成检查另行记录。没有新增依赖、配置、后台监控或外部写操作。
