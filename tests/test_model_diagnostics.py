@@ -40,6 +40,45 @@ def document(content='{"judgments": []}', **choice_changes):
             'usage': {'prompt_tokens': 3, 'completion_tokens': 1, 'total_tokens': 4}}
 
 
+@pytest.mark.parametrize('operation,effort', [
+    ('extract', 'disabled'), ('relate', 'high'), ('query_analysis', 'disabled'),
+    ('resolve', 'low'), ('resolve_raw', 'low'), ('answer', 'disabled'), ('answer_raw', 'disabled'),
+])
+def test_stage_thinking_is_delivered_and_recorded_without_reasoning_text(settings, operation, effort):
+    from pydantic import BaseModel
+    class EmptyOutput(BaseModel):
+        pass
+    requests = []
+    def provider(request):
+        requests.append(json.loads(request.content))
+        response = document('{}')
+        response['choices'][0]['message']['reasoning_content'] = 'private-reasoning-marker'
+        return httpx.Response(200, json=response)
+    model = DeepSeekModel(settings, api_key='synthetic', transport=httpx.MockTransport(provider))
+    generated = model.generate(operation, {}, EmptyOutput)
+    body = requests[0]
+    enabled = effort != 'disabled'
+    assert body['thinking'] == {'type': 'enabled' if enabled else 'disabled'}
+    assert body.get('reasoning_effort') == (effort if enabled else None)
+    assert ('temperature' in body) is not enabled
+    call = generated.metadata['calls'][0]
+    assert call['thinking'] == body['thinking']
+    assert call['reasoning_effort'] == body.get('reasoning_effort')
+    assert 'private-reasoning-marker' not in json.dumps(generated.metadata)
+
+
+def test_stage_effort_can_be_disabled_for_a_control_run(settings):
+    requests = []
+    settings = settings.model_copy(update={'relation_thinking_effort': 'disabled'})
+    def provider(request):
+        requests.append(json.loads(request.content))
+        return httpx.Response(200, json=document())
+    DeepSeekModel(settings, api_key='synthetic', transport=httpx.MockTransport(provider)).generate('relate', {}, RelationBatch)
+    assert requests[0]['thinking'] == {'type': 'disabled'}
+    assert 'reasoning_effort' not in requests[0]
+    assert requests[0]['temperature'] == settings.model_temperature
+
+
 @pytest.mark.parametrize('response,stage,code,finish,finish_status', [
     ([], 'provider_response', 'invalid_provider_document', None, 'not_observed'),
     ({'choices': []}, 'provider_response', 'invalid_provider_document', None, 'not_observed'),
@@ -146,9 +185,9 @@ def test_relation_prompt_changes_preserve_request_envelope(settings):
     assert len(messages) == 2 and messages[0]['role'] == 'system'
     assert json.loads(messages[0]['content'].split('\nJSON schema:\n', 1)[1]) == RelationBatch.model_json_schema()
     assert messages[1]['role'] == 'user' and json.loads(messages[1]['content']) == payload
-    assert body == {'model': settings.model_name, 'thinking': {'type': 'disabled'},
+    assert body == {'model': settings.model_name, 'thinking': {'type': 'enabled'},
                     'response_format': {'type': 'json_object'},
-                    'temperature': settings.model_temperature, 'max_tokens': settings.model_max_tokens}
+                    'reasoning_effort': 'high', 'max_tokens': settings.model_max_tokens}
 
 
 @pytest.mark.parametrize('label', ['UPDATE', 'undetermined'])

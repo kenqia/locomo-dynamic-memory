@@ -21,6 +21,11 @@ class Settings(BaseModel):
     model_temperature: float = Field(default=0, ge=0, le=2)
     model_max_tokens: int = Field(default=8192, gt=0)
     thinking_enabled: Literal[False] = False
+    extraction_thinking_effort: Literal["disabled", "low", "high"] = "disabled"
+    relation_thinking_effort: Literal["disabled", "low", "high"] = "high"
+    query_analysis_thinking_effort: Literal["disabled", "low", "high"] = "disabled"
+    resolution_thinking_effort: Literal["disabled", "low", "high"] = "low"
+    answer_thinking_effort: Literal["disabled", "low", "high"] = "disabled"
     embedding_model: Literal["sentence-transformers/all-MiniLM-L6-v2"] = "sentence-transformers/all-MiniLM-L6-v2"
     embedding_revision: str = Field(default="c9745ed1d9f207416be6d2e6f8de32d1f16199bf", pattern=r"^[a-f0-9]{40}$")
     embedding_dimensions: Literal[384] = 384

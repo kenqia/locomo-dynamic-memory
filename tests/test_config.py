@@ -6,6 +6,16 @@ from pydantic import ValidationError
 from locomo_memory.config import Settings
 
 
+@pytest.mark.parametrize('field', [
+    'extraction_thinking_effort', 'relation_thinking_effort', 'query_analysis_thinking_effort',
+    'resolution_thinking_effort', 'answer_thinking_effort',
+])
+def test_stage_effort_is_validated_and_saved(field):
+    assert Settings(**{field: 'low'}).snapshot()[field] == 'low'
+    with pytest.raises(ValidationError):
+        Settings(**{field: 'unsupported'})
+
+
 @pytest.mark.parametrize("api_url", [
     "http://synthetic-user:synthetic-rejected-secret@127.0.0.1:8000",
     "http://synthetic-rejected-secret@127.0.0.1:8000",

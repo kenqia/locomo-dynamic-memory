@@ -228,8 +228,11 @@ class DeepSeekModel:
         api_key = self._api_key or os.environ.get("DEEPSEEK_API_KEY")
         if not api_key:
             raise ModelFailure("missing_credentials")
-        if self.settings.thinking_enabled:
-            raise ModelFailure("unsupported_thinking_mode")
+        effort_field = {"extract": "extraction", "relate": "relation",
+                        "query_analysis": "query_analysis", "resolve": "resolution",
+                        "resolve_raw": "resolution", "answer": "answer", "answer_raw": "answer"}.get(operation)
+        effort = getattr(self.settings, effort_field + "_thinking_effort") if effort_field else "disabled"
+        thinking = {"type": "disabled" if effort == "disabled" else "enabled"}
         if operation == "relate" and context is not None and "new_memory" in context and "history" in context:
             labels = ("RETAIN", "UPDATE", "SUPERSEDE", "CONFLICT", "undetermined")
             payload = {**payload, "allowed_labels_by_old_memory": {
@@ -237,9 +240,13 @@ class DeepSeekModel:
                 for old in context["history"]
             }}
         messages = request_messages(operation, payload, schema)
-        body = {"model": self.settings.model_name, "thinking": {"type": "disabled"},
+        body = {"model": self.settings.model_name, "thinking": thinking,
                 "response_format": {"type": "json_object"}, "messages": messages,
-                "temperature": self.settings.model_temperature, "max_tokens": self.settings.model_max_tokens}
+                "max_tokens": self.settings.model_max_tokens}
+        if effort == "disabled":
+            body["temperature"] = self.settings.model_temperature
+        else:
+            body["reasoning_effort"] = effort
         request_context_estimate = {"token_count": len(re.findall(r"\w+|[^\w\s]", json.dumps(messages, ensure_ascii=False))),
             "method": "regex-word-punctuation-v1", "scope": "serialized_messages_including_prompt_schema_and_payload",
             "is_provider_token_count": False, "reserved_output_tokens": self.settings.model_max_tokens}
@@ -266,6 +273,7 @@ class DeepSeekModel:
                 request_context_estimate["scope"] = "largest_serialized_messages_including_prompt_schema_and_payload"
             call_started = time.perf_counter()
             call = {"attempt": attempt, "timestamp": utc_now(), "requested_model": self.settings.model_name,
+                    "thinking": thinking, "reasoning_effort": None if effort == "disabled" else effort,
                     "returned_model": None, "usage": {}, "response_received": False,
                     "diagnostic_version": 1, "status": "started", "finish_reason": None,
                     "finish_reason_status": "not_observed", "failure_stage": None,

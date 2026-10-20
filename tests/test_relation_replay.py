@@ -14,6 +14,19 @@ from test_relation_diagnostics import two_memory_provider
 from test_retrieval import ControlledEmbedder, build
 
 
+def test_replay_keeps_legacy_build_thinking_disabled(settings, sample, tmp_path):
+    import sqlite3
+    settings = settings.model_copy(update={'db_path': tmp_path / 'source' / 'memory.sqlite3'})
+    build_id = stopped_source(settings, sample)
+    with sqlite3.connect(settings.db_path) as db:
+        saved = json.loads(db.execute('SELECT config_json FROM build_versions WHERE build_id=?', (build_id,)).fetchone()[0])
+        saved = {key: value for key, value in saved.items() if not key.endswith('_thinking_effort')}
+        db.execute('UPDATE build_versions SET config_json=? WHERE build_id=?', (json.dumps(saved), build_id))
+    db.close()
+    plan = prepare_plan(settings.db_path, build_id, [1], tmp_path / 'legacy-replay')
+    assert plan['settings']['relation_thinking_effort'] == 'disabled'
+
+
 def stopped_source(settings, sample):
     model = DeepSeekModel(settings, api_key='synthetic', transport=httpx.MockTransport(two_memory_provider))
     with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:

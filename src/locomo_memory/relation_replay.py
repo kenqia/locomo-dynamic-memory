@@ -99,9 +99,12 @@ def prepare_plan(source: Path, build_id: str, ordinals: list[int], directory: Pa
         build = db.execute('SELECT * FROM build_versions WHERE build_id=?', (build_id,)).fetchone()
         if build is None:
             raise ReplayError('build_not_found')
-        original = Settings.model_validate(json.loads(build['config_json']))
+        saved_config = json.loads(build['config_json'])
+        # Old builds predate per-stage thinking and always sent disabled.
+        original = Settings.model_validate({**saved_config,
+            'relation_thinking_effort': saved_config.get('relation_thinking_effort', 'disabled')})
         fields = ('model_name', 'model_base_url', 'model_timeout_seconds', 'model_temperature',
-                  'model_max_tokens', 'thinking_enabled')
+                  'model_max_tokens', 'thinking_enabled', 'relation_thinking_effort')
         settings = Settings(**{key: getattr(original, key) for key in fields}, model_retries=0)
         tasks = []
         for ordinal in ordinals:

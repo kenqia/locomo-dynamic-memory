@@ -2,6 +2,29 @@
 
 你可以从已导入的原始对话抽取 Memory，检查每条陈述及其来源，并显式重试失败片段。抽取结束的版本标记为 `extracted`，`query_ready=false`；它还没有完成索引、关系与完整版本发布。[候选检查指南](retrieval.md) 说明显式索引阶段，成功后标记为 `indexed`，仍不能当作完整版本回答。[历史状态指南](relations.md) 说明后续关系、投影和显式发布流程。
 
+## 分阶段思考配置
+
+当前默认按调用阶段设置思考强度。每项接受 `disabled`、`low`、`high`，
+实际值进入构建指纹、评测配置及每次模型调用的安全 metadata。
+
+| TOML 字段 | 默认值 | 阶段 |
+| --- | --- | --- |
+| `extraction_thinking_effort` | `disabled` | 原子 Memory 抽取 |
+| `relation_thinking_effort` | `high` | 历史关系判断 |
+| `query_analysis_thinking_effort` | `disabled` | 查询分析 |
+| `resolution_thinking_effort` | `low` | 有效证据解析，含原文兜底 |
+| `answer_thinking_effort` | `disabled` | 答案生成，含原文兜底与 Full Text |
+
+`thinking_enabled=false` 只保留为旧配置兼容字段；阶段字段决定实际请求。
+开启时发送 `thinking.type=enabled` 与 `reasoning_effort`，不发送无效的 `temperature`；
+关闭时发送 `thinking.type=disabled` 与既有温度。仅解析最终 JSON，不保存或展示
+`reasoning_content`。参数依据 [DeepSeek 思考模式文档](https://api-docs.deepseek.com/guides/thinking_mode/)，
+核查日期为 2026-10-20。
+
+修改前备份本地 TOML。恢复备份即可回滚配置；旧版全关闭对照需要显式将五项均设为
+`disabled`。修改阶段字段后新建 Build，不能继续旧指纹的未完成构建或恢复旧评测。
+回放工具对未保存阶段字段的历史构建仍使用关闭思考的关系请求。
+
 ## 前提
 
 - 按 [运行指南](running.md) 启动 FastAPI 与 Streamlit，并导入一个数据集。

@@ -8,6 +8,12 @@ model_retries = 2
 model_temperature = 0
 model_max_tokens = 8192
 thinking_enabled = false
+# Legacy global field remains false; each operation uses its own effort below.
+extraction_thinking_effort = "disabled"
+relation_thinking_effort = "high"
+query_analysis_thinking_effort = "disabled"
+resolution_thinking_effort = "low"
+answer_thinking_effort = "disabled"
 embedding_model = "sentence-transformers/all-MiniLM-L6-v2"
 embedding_revision = "c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
 embedding_dimensions = 384
