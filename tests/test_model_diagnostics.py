@@ -8,6 +8,15 @@ from locomo_memory.model import DeepSeekModel, ModelFailure
 from locomo_memory.relation_schemas import RelationBatch
 
 
+def update_stages(old, new, sources):
+    def stage(memory):
+        source_id = memory['source_ids'][0]
+        return {'description':sources[source_id]['text'], 'source_id':source_id,
+                'quote':sources[source_id]['text']}
+    return {'same_process':True, 'real_stage_changed':True,
+            'old_stage':stage(old), 'new_stage':stage(new)}
+
+
 @pytest.mark.parametrize('content,stage,code,path', [
     ('{private-marker', 'json_parsing', 'invalid_json', None),
     ('{}', 'schema_validation', 'missing_field', 'judgments'),
@@ -154,6 +163,8 @@ def test_one_shared_source_can_support_both_endpoints_but_duplicate_ids_fail(set
     judgment = dict(old_memory_id='old', new_memory_id='new', label=label,
                     reason='The same source describes two stages', source_ids=source_ids,
                     support_quote='I researched agencies and submitted an application.')
+    if label == 'UPDATE' and new.get('statement_type') == 'fact':
+        judgment['update_evidence'] = update_stages(old,new,context['sources'])
     model = DeepSeekModel(settings.model_copy(update={'model_retries': 0}), api_key='synthetic',
                           transport=httpx.MockTransport(lambda _: httpx.Response(200, json=document(json.dumps({'judgments': [judgment]})))))
     if len(source_ids) == 1:
@@ -175,6 +186,8 @@ def test_state_key_gate_preserves_cross_dimension_update_and_undetermined(settin
     judgment = dict(old_memory_id='old', new_memory_id='new', label=label,
                     reason='Evidence for stages of the same process', source_ids=['s1', 's2'],
                     support_quote='I submitted the application.')
+    if label == 'UPDATE' and new.get('statement_type') == 'fact':
+        judgment['update_evidence'] = update_stages(old,new,context['sources'])
     model = DeepSeekModel(settings.model_copy(update={'model_retries': 0}), api_key='synthetic',
                           transport=httpx.MockTransport(lambda _: httpx.Response(200, json=document(json.dumps({'judgments': [judgment]})))))
     if label in {'UPDATE', 'undetermined'}:
@@ -236,13 +249,16 @@ def test_candidate_label_prerequisites_match_validation_without_mutating_input(s
                   source_ids=['s1'])
     history = [dict(common, memory_id=memory_id) for memory_id in ['z-old', 'a-old']]
     new = {**common, 'memory_id': 'new', **new_changes}
-    source = {'text': 'I live in Paris and may move to Rome.'}
+    source = {'text': 'I researched agencies and submitted an application.'}
     context = dict(new_memory=new, history=history, sources={'s1': source})
     payload = dict(new_memory=new, history=history, sources=[source])
     original_payload, original_context = deepcopy(payload), deepcopy(context)
     judgments = [dict(old_memory_id=old['memory_id'], new_memory_id='new', label=label,
                       reason='Compare the supplied residence claims', source_ids=['s1'],
                       support_quote=source['text']) for old in history]
+    if label == 'UPDATE':
+        for judgment,old in zip(judgments,history):
+            judgment['update_evidence'] = update_stages(old,new,context['sources'])
     requests = []
     def provider(request):
         requests.append(json.loads(request.content))

@@ -8,6 +8,7 @@ import pytest
 
 from locomo_memory.model import DeepSeekModel, ModelFailure
 from locomo_memory.relation_schemas import RelationBatch
+from test_model_diagnostics import update_stages
 
 
 @pytest.mark.parametrize('failure_kind', ['length', 'quote'])
@@ -24,6 +25,8 @@ def test_relation_retry_delivers_safe_feedback_and_keeps_complete_validation(set
     judgments = [dict(old_memory_id=old['memory_id'], new_memory_id='new', label='UPDATE',
                       reason='The application follows research', source_ids=['s1'],
                       support_quote='I researched agencies and submitted an application.') for old in history]
+    for judgment,old in zip(judgments,history):
+        judgment['update_evidence'] = update_stages(old,new,context['sources'])
     invalid = deepcopy(judgments)
     invalid[19]['support_quote'] = 'private-response-marker'
     requests = []

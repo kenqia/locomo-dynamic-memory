@@ -80,14 +80,11 @@ class RelationDraft(BaseModel):
         if len(set(self.source_ids)) != len(self.source_ids):
             raise domain_error("unique_evidence_required")
         context = info.context or {}
-        if self.label == "UPDATE":
-            if self.update_evidence is None:
-                # Legacy reads have no generation context; fresh judgments always do.
-                if "new_memory" in context:
-                    raise domain_error("update_stage_evidence_required")
-            elif not (self.update_evidence.same_process and self.update_evidence.real_stage_changed):
-                raise domain_error("update_real_stage_required")
         if "new_memory" not in context:
+            # Legacy reads may lack stage evidence; supplied predicates remain strict.
+            if self.label == "UPDATE" and self.update_evidence is not None:
+                if not (self.update_evidence.same_process and self.update_evidence.real_stage_changed):
+                    raise domain_error("update_real_stage_required")
             return self
         new = context["new_memory"]
         history = {memory["memory_id"]: memory for memory in context["history"]}
@@ -107,6 +104,11 @@ class RelationDraft(BaseModel):
             raise domain_error(label_error)
         evidence_texts = [sources[source_id]["text"] for source_id in self.source_ids]
         if self.label == "UPDATE":
+            # Preserve endpoint/type diagnostics before requiring a label's evidence.
+            if self.update_evidence is None:
+                raise domain_error("update_stage_evidence_required")
+            if not (self.update_evidence.same_process and self.update_evidence.real_stage_changed):
+                raise domain_error("update_real_stage_required")
             for stage, endpoint in ((self.update_evidence.old_stage, old), (self.update_evidence.new_stage, new)):
                 if (stage.source_id not in endpoint["source_ids"] or stage.source_id not in self.source_ids
                         or not stage.description.strip() or not stage.quote.strip()
