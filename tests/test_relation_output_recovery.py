@@ -100,7 +100,7 @@ def test_retry_feedback_is_latest_only_and_context_estimate_includes_it(settings
         budget_tokens(json.dumps(request['messages'], ensure_ascii=False)) for request in requests)
 
 
-def test_non_relation_truncation_keeps_existing_retry_request(settings):
+def test_query_analysis_truncation_keeps_existing_retry_request(settings):
     requests = []
     def provider(request):
         requests.append(json.loads(request.content))
@@ -110,5 +110,5 @@ def test_non_relation_truncation_keeps_existing_retry_request(settings):
         }]})
     model = DeepSeekModel(settings.model_copy(update={'model_retries': 1}), api_key='synthetic',
                           transport=httpx.MockTransport(provider))
-    model.generate('extract', {}, RelationBatch)
+    model.generate('query_analysis', {}, RelationBatch)
     assert len(requests) == 2 and requests[0] == requests[1]
