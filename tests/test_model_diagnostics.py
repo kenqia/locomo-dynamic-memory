@@ -121,7 +121,7 @@ def test_transport_exceptions_are_safe_and_saved_before_propagation(settings, er
     assert 'private-marker' not in json.dumps(failure.value.metadata)
 
 
-def test_relation_request_matches_frozen_pre_diagnostics_contract(settings):
+def test_relation_request_adds_state_key_gate_without_changing_other_contract_fields(settings):
     import hashlib
     requests = []
     def provider(request):
@@ -129,8 +129,40 @@ def test_relation_request_matches_frozen_pre_diagnostics_contract(settings):
         return httpx.Response(200, json=document())
     model = DeepSeekModel(settings, api_key='synthetic', transport=httpx.MockTransport(provider))
     model.generate('relate', {'diagnostic_fixture': 'synthetic'}, RelationBatch)
-    # Independently captured from d65e380 before introducing diagnostics.
-    assert hashlib.sha256(requests[0]).hexdigest() == '0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846'
+    body = json.loads(requests[0])
+    gate = ('First compare the supplied state_key values exactly. RETAIN, SUPERSEDE and\n'
+            'CONFLICT are allowed only when old.state_key equals new.state_key. Do not\n'
+            'reinterpret different keys as the same dimension. For different keys, still\n'
+            'assess UPDATE under its same-process evidence rule; otherwise use undetermined.\n')
+    assert gate in body['messages'][0]['content']
+    # Removing the sole new instruction must reproduce the independently captured
+    # pre-diagnostics request: same schema, payload, parameters and other guidance.
+    body['messages'][0]['content'] = body['messages'][0]['content'].replace(gate, '', 1)
+    with httpx.Client() as client:
+        previous = client.build_request('POST', 'https://api.deepseek.com/chat/completions', json=body)
+    assert hashlib.sha256(previous.content).hexdigest() == '0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846'
+
+
+@pytest.mark.parametrize('label', ['RETAIN', 'SUPERSEDE', 'CONFLICT', 'UPDATE', 'undetermined'])
+def test_state_key_gate_preserves_cross_dimension_update_and_undetermined(settings, label):
+    common = dict(build_id='b', dataset_id='d', sample_id='s', entity_id='Alex',
+                  memory_type='state', statement_type='fact')
+    old = dict(common, memory_id='old', state_key='s:Alex:research', source_ids=['s1'])
+    new = dict(common, memory_id='new', state_key='s:Alex:application', source_ids=['s2'])
+    sources = {'s1': {'text': 'I researched agencies.'}, 's2': {'text': 'I submitted the application.'}}
+    context = dict(new_memory=new, history=[old], sources=sources)
+    judgment = dict(old_memory_id='old', new_memory_id='new', label=label,
+                    reason='Evidence for stages of the same process', source_ids=['s1', 's2'],
+                    support_quote='I submitted the application.')
+    model = DeepSeekModel(settings.model_copy(update={'model_retries': 0}), api_key='synthetic',
+                          transport=httpx.MockTransport(lambda _: httpx.Response(200, json=document(json.dumps({'judgments': [judgment]})))))
+    if label in {'UPDATE', 'undetermined'}:
+        result = model.generate('relate', context, RelationBatch, context=context)
+        assert result.value.judgments[0].label == label
+    else:
+        with pytest.raises(ModelFailure) as failure:
+            model.generate('relate', context, RelationBatch, context=context)
+        assert failure.value.metadata['calls'][0]['error_code'] == 'same_state_dimension_required'
 
 
 def test_failed_checkpoint_does_not_trigger_another_provider_call(settings):
