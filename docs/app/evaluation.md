@@ -176,3 +176,7 @@ uv run --locked pytest tests/test_evaluation_reports.py tests/test_evaluation_re
 ```
 
 测试通过 FastAPI、真实 SQLite、真实 BM25/cosine/RRF、关系与扩展，只控制 LLM 与 Embedding。计划预览实验记录见 [Issue #16 验证](../../experiments/issue-16-development-plan-validation.md)，既有评测记录见 `experiments/issue-11-evaluation-validation.md`。未进行正式测试集调参或付费模型质量评测。
+
+### 创建响应丢失后的身份发现
+
+`POST /evaluation-runs` 可选接收 32–64 字符的 `creation_token`，原样保存到 Run。同一 Build 或 Run 类型内重复使用非空 token 返回 HTTP 409，SQLite 唯一约束阻止创建第二资源。它用于关联客户端请求与已创建资源，不是认证凭据，也不承诺提供方恰好一次调用。`GET /evaluation-runs` 返回轻量分页列表，支持 `creation_token` 精确筛选、`limit`（1–100）与 `offset`（非负）。列表仅含 Run ID、状态、计划 ID 与关联 token；完整身份继续从 `GET /evaluation-runs/{run_id}` 读取。实验入口的 `recover --resource-id` 在核对完整身份后保存 receipt；发现候选不会自动认领或重建。

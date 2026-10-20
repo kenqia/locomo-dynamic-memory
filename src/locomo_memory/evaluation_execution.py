@@ -2,14 +2,15 @@
 import hashlib
 import json
 import platform
+import sqlite3
 import threading
 import time
 import uuid
 from importlib.metadata import version
-from pathlib import Path
 
 from .builds import BuildError
 from .imports import canonical_json
+from .implementation_identity import implementation_sha256
 from .model import ANSWER_PROMPT, QUERY_ANALYSIS_PROMPT, RESOLUTION_PROMPT, KNOWN_MODEL_VERSION, utc_now
 from .query_schemas import EvidenceAnswer, EffectiveResolution
 from .retrieval import TOKEN_BUDGET_METHOD
@@ -31,6 +32,7 @@ class EvaluationExecution:
         self.stop = threading.Event()
         self.worker = None
         with self.database.connect() as db:
+            db.execute("CREATE UNIQUE INDEX IF NOT EXISTS unique_run_creation_token ON evaluation_runs(json_extract(result_json,'$.creation_token')) WHERE json_extract(result_json,'$.creation_token') IS NOT NULL")
             db.execute('CREATE TABLE IF NOT EXISTS evaluation_run_items(run_id TEXT NOT NULL REFERENCES evaluation_runs(run_id), ordinal INTEGER NOT NULL, status TEXT NOT NULL, item_json TEXT NOT NULL, PRIMARY KEY(run_id,ordinal))')
 
     def metadata(self, run_id):
@@ -97,7 +99,7 @@ class EvaluationExecution:
             'known_service_version': KNOWN_MODEL_VERSION, 'metric_version': METRIC_VERSION,
             'token_budget_method': TOKEN_BUDGET_METHOD,
             'runtime': {'python': platform.python_version(), 'packages': {name: version(name) for name in ('locomo-dynamic-memory', 'nltk', 'numpy', 'rank-bm25', 'pydantic', 'fastapi')}},
-            'implementation_sha256': hashlib.sha256(b''.join(p.name.encode() + p.read_bytes() for p in sorted(Path(__file__).parent.glob('*.py')))).hexdigest(),
+            'implementation_sha256': implementation_sha256(),
         }
 
     def plan(self, plan_id):
@@ -137,7 +139,7 @@ class EvaluationExecution:
                 raise BuildError('empty_evaluation_partition', 422)
             pins = {inputs['samples'][i]['sample_id']: self.service.queries.versions.pin(inputs['dataset_id'], inputs['samples'][i]['sample_id'], request.build_ids.get(inputs['samples'][i]['sample_id'])) for i in selected}
             identity = self.identity(inputs, plan, selected, pins, strategies, partition)
-            run = {**identity, 'run_id': uuid.uuid4().hex, 'input_id': input_id,
+            run = {**identity, 'run_id': uuid.uuid4().hex, 'creation_token': request.creation_token, 'input_id': input_id,
                    'plan_id': plan['plan_id'] if plan else None, 'execution_version': 1,
                    'fingerprint': digest(identity), 'kind': inputs['kind'], 'status': 'running',
                    'started_at': utc_now(), 'completed_at': None, 'elapsed_seconds': 0,
@@ -149,9 +151,12 @@ class EvaluationExecution:
                 identity = inputs.get('question_identities', [])[index] if inputs.get('question_identities') else {'sample_id': sample['sample_id'], 'qa_index': index, 'question_id': f"{sample['sample_id']}:input:{index}"}
                 for strategy in strategies:
                     items.append({'ordinal': len(items), 'sample_index': index, **identity, 'strategy': strategy, 'status': 'pending', 'attempts': [], 'result': None})
-            with self.database.connect() as db:
-                db.execute('INSERT INTO evaluation_runs VALUES (?,?)', (run['run_id'], canonical_json(run)))
-                db.executemany('INSERT INTO evaluation_run_items VALUES (?,?,?,?)', [(run['run_id'], item['ordinal'], item['status'], canonical_json(item)) for item in items])
+            try:
+                with self.database.connect() as db:
+                    db.execute('INSERT INTO evaluation_runs VALUES (?,?)', (run['run_id'], canonical_json(run)))
+                    db.executemany('INSERT INTO evaluation_run_items VALUES (?,?,?,?)', [(run['run_id'], item['ordinal'], item['status'], canonical_json(item)) for item in items])
+            except sqlite3.IntegrityError:
+                raise BuildError('creation_token_already_used') from None
             owns_reservation = False
             return self.launch(run, request.wait)
         except BaseException:
@@ -253,9 +258,25 @@ class EvaluationExecution:
             run['elapsed_seconds'] += time.perf_counter() - started
             try:
                 with self.database.connect() as db:
+                    self.normalize_orphan_items(db, run['run_id'])
                     self.save_metadata(db, run)
             finally:
                 self.lock.release()
+
+    def normalize_orphan_items(self, db, run_id, *, interrupt_pending=False):
+        # The caller owns execution exclusively and no provider worker can commit.
+        changed = False
+        for item in self.items(run_id, db):
+            if item['status'] == 'running':
+                item['status'] = 'unknown'
+                item['attempts'][-1].update(status='unknown', completed_at=utc_now(), error={'code': 'external_outcome_unknown'})
+            elif interrupt_pending and item['status'] == 'pending':
+                item['status'] = 'interrupted'
+            else:
+                continue
+            changed = True
+            db.execute('UPDATE evaluation_run_items SET status=?, item_json=? WHERE run_id=? AND ordinal=?', (item['status'], canonical_json(item), run_id, item['ordinal']))
+        return changed
 
     def recover_interrupted(self):
         # Called only while holding the exclusive backend ownership lock.
@@ -263,14 +284,10 @@ class EvaluationExecution:
             rows = db.execute('SELECT result_json FROM evaluation_runs').fetchall()
             for row in rows:
                 run = json.loads(row[0])
-                if run.get('execution_version') and run['status'] == 'running':
-                    for item in self.items(run['run_id'], db):
-                        if item['status'] == 'running':
-                            item['status'] = 'unknown'
-                            item['attempts'][-1].update(status='unknown', completed_at=utc_now(), error={'code': 'external_outcome_unknown'})
-                        elif item['status'] == 'pending':
-                            item['status'] = 'interrupted'
-                        db.execute('UPDATE evaluation_run_items SET status=?, item_json=? WHERE run_id=? AND ordinal=?', (item['status'], canonical_json(item), run['run_id'], item['ordinal']))
+                if not run.get('execution_version'):
+                    continue
+                changed = self.normalize_orphan_items(db, run['run_id'], interrupt_pending=run['status'] == 'running')
+                if changed or run['status'] == 'running':
                     run.update(status='interrupted', completed_at=None)
                     self.save_metadata(db, run)
 

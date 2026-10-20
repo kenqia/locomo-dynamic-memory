@@ -8,7 +8,7 @@ from pathlib import Path
 from importlib.metadata import version
 from typing import Literal
 
-from fastapi import HTTPException
+from fastapi import HTTPException, Query
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from .builds import BuildError
@@ -86,6 +86,7 @@ class EvaluationInput(BaseModel):
 
 
 class RunRequest(BaseModel):
+    creation_token: str | None = Field(default=None, min_length=32, max_length=64)
     model_config = ConfigDict(extra='forbid')
     input_id: str | None = None
     plan_id: str | None = None
@@ -326,6 +327,15 @@ def register_evaluation_routes(app, queries):
     @app.get('/evaluation-inputs/{input_id}')
     def get_input(input_id: str):
         return execute(service.get, 'evaluation_inputs', input_id)
+
+    @app.get('/evaluation-runs')
+    def list_runs(creation_token: str | None = None, limit: int = Query(default=20, ge=1, le=100), offset: int = Query(default=0, ge=0)):
+        where = " WHERE json_extract(result_json,'$.creation_token')=?" if creation_token else ''
+        values = [creation_token] if creation_token else []
+        with service.database.connect() as db:
+            total = db.execute('SELECT COUNT(*) FROM evaluation_runs' + where, values).fetchone()[0]
+            rows = db.execute("SELECT run_id, json_extract(result_json,'$.status') AS status, json_extract(result_json,'$.creation_token') AS creation_token, json_extract(result_json,'$.plan_id') AS plan_id FROM evaluation_runs" + where + ' ORDER BY run_id LIMIT ? OFFSET ?', [*values, limit, offset]).fetchall()
+        return {'items': [dict(row) for row in rows], 'total': total, 'limit': limit, 'offset': offset}
 
     @app.post('/evaluation-runs', status_code=201)
     def create_run(request: RunRequest):

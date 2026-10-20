@@ -1,14 +1,13 @@
 """Read-only, credential-safe prerequisites for the local experiment runner."""
-import hashlib
 import importlib.util
 import os
 import platform
-from pathlib import Path
 
 import numpy as np
 from importlib.metadata import version
 
 from .embeddings import EmbeddingFailure, MiniLMEmbedder
+from .implementation_identity import implementation_sha256
 from .model import KNOWN_MODEL_VERSION, utc_now
 
 
@@ -18,7 +17,7 @@ def register_experiment_routes(app):
         settings = app.state.settings
         record = {
             'checked_at': utc_now(),
-            'implementation_sha256': hashlib.sha256(b''.join(p.name.encode() + p.read_bytes() for p in sorted(Path(__file__).parent.glob('*.py')))).hexdigest(),
+            'implementation_sha256': implementation_sha256(),
             'database_path': str(settings.db_path.resolve()),
             'credential_present': bool(os.environ.get('DEEPSEEK_API_KEY')),
             'config': settings.snapshot(), 'python': platform.python_version(),
