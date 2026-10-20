@@ -1,0 +1,77 @@
+{
+  "tested_commit": "c88075ff7bb140269932e89f49874d8bbfc0788b",
+  "implementation_sha256": "da5e28bd1f3244ad5bfaa51b03593e699e7408dcb52b14bc184a1a3be80944ae",
+  "complete_offline_command": ".venv/bin/python -m pytest -m 'not live_model and not local_embedding' -q --tb=short --junitxml=experiments/issue-15-quality/final-offline-regression.xml",
+  "initial_full": {
+    "artifact": "offline-regression.xml",
+    "tests": 324,
+    "failures": 13,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 264.857
+  },
+  "diagnostic_fix": {
+    "artifact": "diagnostics-regression.xml",
+    "tests": 126,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 42.145
+  },
+  "query_export_recovery": {
+    "artifact": "final-contract-regression.xml",
+    "tests": 57,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1,
+    "seconds": 62.275
+  },
+  "final_full": {
+    "artifact": "final-offline-regression.xml",
+    "tests": 324,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 222.157,
+    "deselected": 4,
+    "passed": 324
+  },
+  "initial_failures_passed_in_targeted_rerun": 13,
+  "compileall": {
+    "command": ".venv/bin/python -m compileall -q src tests",
+    "exit_code": 0
+  },
+  "whitespace_check": {
+    "command": "git diff 8258f03...HEAD --check",
+    "exit_code": 0
+  },
+  "live_campaign": {
+    "ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v6/campaign.sqlite3",
+    "calls": 364,
+    "limit": 1000,
+    "remaining": 636,
+    "unknown_unfinished": 0,
+    "quality_phases": {
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2,
+      "quality-C-stages": 3,
+      "quality-D-raw": 7,
+      "quality-E-evidence": 10
+    }
+  },
+  "review": {
+    "artifact": "review.md",
+    "standards": "reviewed_fixes_closed",
+    "spec": "reviewed_fixes_closed",
+    "semantic_review_provenance": "non-author agents, not human or course truth"
+  },
+  "release_gate": {
+    "status": "not_passed",
+    "reason": "case_172_still_incorrect_UPDATE",
+    "identity_frozen": false,
+    "full_conv26_build_started": false,
+    "publication_started": false,
+    "qa_25_started": false
+  },
+  "remote_writes": false
+}

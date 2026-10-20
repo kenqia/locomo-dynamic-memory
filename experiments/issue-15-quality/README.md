@@ -98,3 +98,23 @@ Trace记录answer_boundary及版本；公开API对模型遗漏边界的当前/�
 A四例、B73/91及C73/148的有限输出经另一代理独立核对；C172仍不支持阶段推进。
 这些是非作者代理复核，不是人工真值或课程评分。完整Build、发布和25QA继续未执行。
 详细双轴报告见[审查记录](review.md)，完整离线回归结果另附。
+
+## 最终验证
+
+首个完整离线回归为311 passed、13 failed、4 deselected，见 `offline-regression.xml`。
+修复既有合法UPDATE夹具和诊断顺序后，相关126项通过；查询/导出/恢复56项通过、1项条件跳过。
+两轴均独立复审该修复，通过。
+
+因首跑失败且修改了共享校验，最终版本再做一次完整离线回归：
+
+```sh
+.venv/bin/python -m pytest -m 'not live_model and not local_embedding' -q --tb=short --junitxml=experiments/issue-15-quality/final-offline-regression.xml
+```
+
+最终324 passed、4 deselected，耗时222.21秒。只出现现有Starlette/httpx弃用提示。
+`.venv/bin/python -m compileall -q src tests` 及 `git diff 8258f03...HEAD --check` 均通过；
+项目未引入静态类型检查器。新鲜结果及最终源码摘要保存在 `verification.json`。
+离线检查未发真实模型请求，账本仍为364/1000，未知未结束请求为0。
+
+本轮工程实现与审查修复已本地提交，没有push、PR、Issue或Notion写入。
+这不是语义验收完成：172仍误判UPDATE，新完整身份未冻结，完整conv-26 Build、发布和25项QA未开始。
