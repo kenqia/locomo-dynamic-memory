@@ -13,7 +13,9 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from .builds import BuildError
 from .embeddings import EmbeddingFailure
-from .evaluation_metrics import aggregate, coverage, map_evidence, qa_score
+from .evaluation_metrics import coverage, map_evidence, qa_score
+from .evaluation_reports import summarize_run
+from .usage import provider_usage
 from .imports import canonical_json
 from .model import ANSWER_PROMPT, QUERY_ANALYSIS_PROMPT, RESOLUTION_PROMPT, KNOWN_MODEL_VERSION, ModelFailure, utc_now
 from .queries import QueryFailure, explicit_question_date
@@ -287,16 +289,14 @@ class EvaluationService:
         retrieval_trace = trace.get('initial') if strategy == 'dynamic' else trace.get('retrieval')
         if isinstance(retrieval_trace, dict) and 'channels' in retrieval_trace:
             embedding_count = int(bool(retrieval_trace['channels']['dense']))
-        item['usage_summary'] = {'generation_calls': len(calls), 'calls_without_reported_usage': sum(not c.get('usage') for c in calls), 'reported_tokens': {field: sum(c.get('usage', {}).get(field, 0) for c in calls) for field in ('prompt_tokens', 'completion_tokens', 'total_tokens')}, 'embedding_calls': embedding_count}
+        item['usage_summary'] = {**provider_usage(calls), 'embedding_calls': embedding_count}
         return item
 
     def summarize(self, run):
         inputs = run['input']
-        selected = [(i, inputs['samples'][i]) for i in run['selected_indices']]
-        run['summary'] = {strategy: {'qa': aggregate([r['qa']['value'] for r in run['results'] if r['strategy'] == strategy]), 'source_coverage': {stage: aggregate([r['source_coverage'][stage] for r in run['results'] if r['strategy'] == strategy]) for stage in ('initial', 'expanded', 'effective', 'answer_context')}, 'dynamic': aggregate([r['dynamic_metric']['value'] for r in run['results'] if r['strategy'] == strategy]), 'relations': aggregate([r.get('relation_metric', {}).get('value') for r in run['results'] if r['strategy'] == strategy]), 'missing_gold': sum(s.get('answer') is None or not str(s.get('answer', '')).strip() for _, s in selected), 'unknown_category': sum(s.get('category') not in (1,2,3,4,5) for _, s in selected), 'invalid_evidence': sum(not inputs['mappings'][i]['scorable'] for i, _ in selected)} for strategy in run['strategies']}
         if inputs['kind'] == 'course' and inputs['course_split']:
             dynamic_rows = [row for row in run['results'] if row['strategy'] == 'dynamic']
-            complete_truth = bool(dynamic_rows)
+            complete_truth = bool(dynamic_rows) and all(item['status'] == 'succeeded' for item in run['items'] if item['strategy'] == 'dynamic')
             for row in dynamic_rows:
                 truth = inputs['samples'][row['sample_index']].get('dynamic_truth')
                 if not truth:
@@ -306,8 +306,7 @@ class EvaluationService:
                     complete_truth = False
             run['course_metrics'] = {'status': 'available' if complete_truth else 'unavailable',
                                      'reason': None if complete_truth else 'dynamic_not_run_or_independent_truth_missing_invalid'}
-        run['usage_summary'] = {'generation_calls': sum(r['usage_summary']['generation_calls'] for r in run['results']), 'calls_without_reported_usage': sum(r['usage_summary']['calls_without_reported_usage'] for r in run['results']), 'reported_embedding_calls': sum(r['usage_summary']['embedding_calls'] or 0 for r in run['results']), 'samples_with_unknown_embedding_call_count': sum(r['usage_summary']['embedding_calls'] is None for r in run['results']), 'reported_tokens': {field: sum(r['usage_summary']['reported_tokens'][field] for r in run['results']) for field in ('prompt_tokens', 'completion_tokens', 'total_tokens')}}
-        return run
+        return summarize_run(run)
 
 
 def register_evaluation_routes(app, queries):

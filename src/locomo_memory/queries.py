@@ -14,6 +14,7 @@ from .model import ModelFailure, utc_now, RESOLUTION_PROMPT, ANSWER_PROMPT, KNOW
 from .query_schemas import EffectiveResolution, EvidenceAnswer, RESOLUTION_SCHEMA_VERSION, ANSWER_SCHEMA_VERSION
 from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
 from .temporal import conversation_cutoff, explicit_question_date
+from .usage import provider_usage
 
 RESOLUTION_PROMPT_VERSION = "effective-resolution-v1"
 ANSWER_PROMPT_VERSION = "evidence-answer-v2-raw-sources"
@@ -41,9 +42,7 @@ class QueryService:
 
     def _save(self, trace):
         calls = [call for operation in trace["operations"].values() for call in operation.get("calls", [])]
-        trace["usage_summary"] = {"calls": len(calls), "calls_without_reported_usage": sum(not call.get("usage") for call in calls),
-            "reported_tokens": {field: sum(call.get("usage", {}).get(field, 0) for call in calls)
-                                for field in ("prompt_tokens", "completion_tokens", "total_tokens")}}
+        trace["usage_summary"] = {"calls": len(calls), **provider_usage(calls)}
         with self.database.connect() as db:
             db.execute("INSERT INTO query_traces VALUES (?,?,?)", (trace["trace_id"], trace["build_id"], canonical_json(trace)))
 

@@ -90,6 +90,34 @@ def render_evaluation(request, dataset_id):
         with column:
             st.write(LABELS[strategy])
             st.json(summary)
+    if 'overall_summary' in run:
+        st.caption('QA 均值只含成功且可计分项。运行成功率使用全部计划项。基线运行得分将适用参考规则的执行失败记零；未完成时最终得分为空，此指标不是教师评分。')
+        st.write('总体逐项汇总')
+        st.json(run['overall_summary'])
+        grouped = run.get('grouped_summary', {})
+        for dimension, label in (('conversation', '按对话'), ('category', '按 QA 类别')):
+            rows = []
+            for identity, strategies in grouped.get(dimension, {}).items():
+                for strategy, summary in strategies.items():
+                    execution, baseline = summary['execution'], summary['baseline_run_score']
+                    rows.append({'分组': identity, '策略': LABELS[strategy],
+                        '成功可计分 QA 均值': summary['qa']['mean'], 'QA计分数': summary['qa']['scored'],
+                        '计划数': execution['planned'], '执行成功数': execution['succeeded'],
+                        '运行成功率': execution['success_rate'], '基线运行得分': baseline['value'],
+                        '得分分母': baseline['denominator'], '参考规则不可用数': baseline['excluded'],
+                        '得分状态': baseline['status']})
+            with st.expander(label):
+                if rows:
+                    st.dataframe(rows, hide_index=True)
+                else:
+                    st.caption('当前没有该分组的计划项。')
+        with st.expander('分对话均值，单独报告'):
+            st.json(grouped.get('conversation_means', {}))
+        with st.expander('构建开销与全部查询尝试用量'):
+            st.caption('仅合计已保存的 provider 用量。缺失字段、未知结果及未记录的历史构建开销分别标明，不据此计算完整账单。')
+            st.json({'query_attempts': run.get('usage_summary', {}), 'pinned_builds': run.get('build_usage_summary', {})})
+    st.download_button('导出评测完整 JSON', json.dumps(run, ensure_ascii=False, indent=2),
+        file_name=f"evaluation-run-{run['run_id']}.json", mime='application/json')
     st.dataframe([{'样本': r['sample_index'], '策略': LABELS[r['strategy']], 'QA': r['qa']['value'], 'QA不可计分原因': r['qa'].get('reason'), '证据不可计分原因': r['mapping']['reason'], **r['source_coverage']} for r in run['results']], hide_index=True)
     st.caption('Full Text 使用完整原始对话；RAG 保留证据预算。近似计数采用 regex，不是 provider tokenizer 或账单 token。发送后未收到响应时，来源送达情况未知。')
     contexts = []
