@@ -5,6 +5,9 @@ from pydantic_core import PydanticCustomError
 
 
 DOMAIN_ERRORS = {
+    "update_stage_evidence_required": "UPDATE requires source-supported evidence of both stages",
+    "update_real_stage_required": "UPDATE requires the same process and a real stage change",
+    "update_endpoint_stage_required": "Stage quotation must be verbatim evidence from its own endpoint",
     "applicability_range_reversed": "Applicability range reversed",
     "applicability_time_evidence_required": "Applicability dates need source anchor, original expression and basis",
     "condition_evidence_required": "Satisfied condition requires source evidence",

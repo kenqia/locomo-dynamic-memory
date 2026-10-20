@@ -3,11 +3,11 @@
 from datetime import date
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationInfo, model_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, ValidationInfo, model_validator
 
 from .diagnostics import domain_error
 
-RELATION_SCHEMA_VERSION = "relation-v1"
+RELATION_SCHEMA_VERSION = "relation-v2-stage-evidence"
 
 
 def relation_label_error(label: str, old: dict, new: dict) -> str | None:
@@ -47,6 +47,21 @@ class Applicability(BaseModel):
         return self
 
 
+class StageEvidence(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    description: StrictStr = Field(min_length=1)
+    source_id: StrictStr
+    quote: StrictStr = Field(min_length=1)
+
+
+class UpdateEvidence(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    same_process: StrictBool
+    real_stage_changed: StrictBool
+    old_stage: StageEvidence
+    new_stage: StageEvidence
+
+
 class RelationDraft(BaseModel):
     model_config = ConfigDict(extra="forbid")
     old_memory_id: StrictStr
@@ -56,6 +71,7 @@ class RelationDraft(BaseModel):
     source_ids: list[str] = Field(min_length=1)
     support_quote: str | None = None
     applicability: Applicability = Field(default_factory=Applicability)
+    update_evidence: UpdateEvidence | None = None
 
     @model_validator(mode="after")
     def validate_evidence(self, info: ValidationInfo):
@@ -64,6 +80,13 @@ class RelationDraft(BaseModel):
         if len(set(self.source_ids)) != len(self.source_ids):
             raise domain_error("unique_evidence_required")
         context = info.context or {}
+        if self.label == "UPDATE":
+            if self.update_evidence is None:
+                # Legacy reads have no generation context; fresh judgments always do.
+                if "new_memory" in context:
+                    raise domain_error("update_stage_evidence_required")
+            elif not (self.update_evidence.same_process and self.update_evidence.real_stage_changed):
+                raise domain_error("update_real_stage_required")
         if "new_memory" not in context:
             return self
         new = context["new_memory"]
@@ -83,6 +106,12 @@ class RelationDraft(BaseModel):
         if label_error:
             raise domain_error(label_error)
         evidence_texts = [sources[source_id]["text"] for source_id in self.source_ids]
+        if self.label == "UPDATE":
+            for stage, endpoint in ((self.update_evidence.old_stage, old), (self.update_evidence.new_stage, new)):
+                if (stage.source_id not in endpoint["source_ids"] or stage.source_id not in self.source_ids
+                        or not stage.description.strip() or not stage.quote.strip()
+                        or stage.quote not in sources[stage.source_id]["text"]):
+                    raise domain_error("update_endpoint_stage_required")
         if self.label != "undetermined":
             if not (self.support_quote or "").strip() or not any(self.support_quote in text for text in evidence_texts):
                 raise domain_error("verbatim_support_required")

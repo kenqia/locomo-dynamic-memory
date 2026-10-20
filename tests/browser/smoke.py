@@ -148,7 +148,7 @@ with sync_playwright() as playwright:
         subprocess.run([args.app_python, '-c',
                         'import sys; from pathlib import Path; from locomo_memory.export_schemas import MemoryExport; MemoryExport.model_validate_json(Path(sys.argv[1]).read_text())',
                         str(args.output / 'issue-12-memory.json')], check=True)
-        assert bundle['schema_version'] == 'memory-export-v1'
+        assert bundle['schema_version'] == 'memory-export-v2'
         assert bundle['build']['build_id'] == bundle['index']['build_id'] == bundle['projection']['build_id'] == build
         evaluation = {'kind': 'synthetic', 'samples': [{'sample_id': 'conv-a', 'question': q, 'answer': 'Rome', 'category': 4, 'evidence': ['D2:1']} for q in ['Where does Alex live?', 'Trigger failure.']]}
         page.get_by_test_id('stFileUploader').last.locator('input[type=file]').set_input_files({'name': 'evaluation.json', 'mimeType': 'application/json', 'buffer': json.dumps(evaluation).encode()})

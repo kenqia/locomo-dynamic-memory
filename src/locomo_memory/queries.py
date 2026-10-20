@@ -16,7 +16,7 @@ from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
 from .temporal import conversation_cutoff, explicit_question_date
 from .usage import provider_usage
 
-RESOLUTION_PROMPT_VERSION = "effective-resolution-v1"
+RESOLUTION_PROMPT_VERSION = "effective-resolution-v2-stage-evidence"
 ANSWER_PROMPT_VERSION = "evidence-answer-v2-raw-sources"
 
 

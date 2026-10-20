@@ -13,6 +13,13 @@ def relation(old, new, **changes):
     return {"old_memory_id": old["memory_id"], "new_memory_id": new["memory_id"], "label": "undetermined", "reason": "The evidence does not establish a transition", "source_ids": list(dict.fromkeys(old["source_ids"] + new["source_ids"])), "support_quote": None, "applicability": {}, **changes}
 
 
+def stage_evidence(old, new, sources):
+    by_id = {s["source_id"]: s for s in sources}
+    return {"same_process": True, "real_stage_changed": True,
+            "old_stage": {"description": old["content"], "source_id": old["source_ids"][0], "quote": by_id[old["source_ids"][0]]["text"]},
+            "new_stage": {"description": new["content"], "source_id": new["source_ids"][0], "quote": by_id[new["source_ids"][0]]["text"]}}
+
+
 def test_source_supported_supersession_preserves_history_and_publishes_complete_version(settings, sample):
     sample[0]["conversation"]["session_2"][0]["text"] = "I moved from Paris to Rome on 2 May 2023."
 
@@ -68,7 +75,7 @@ def adoption_provider(omit_research=False):
         if "new_memory" in payload:
             new = payload["new_memory"]
             quote = next(source["text"] for source in payload["sources"] if source["source_id"] == new["source_ids"][0])
-            return completion({"judgments": [relation(old, new, label="UPDATE", reason="These are documented stages of the same adoption process", support_quote=quote) for old in payload["history"]]})
+            return completion({"judgments": [relation(old, new, label="UPDATE", reason="These are documented stages of the same adoption process", support_quote=quote, update_evidence=stage_evidence(old, new, payload["sources"])) for old in payload["history"]]})
         return completion({"entities": ["Alex"], "topic": "adoption", "time": None, "keywords": []})
     return provider
 
@@ -274,7 +281,7 @@ def graph_provider(request):
             output = relation(old, new)
             if (old["state_value"], new["state_value"]) in {("A", "B"), ("B", "C"), ("D", "E")}:
                 quote = next(source["text"] for source in payload["sources"] if source["source_id"] == new["source_ids"][0])
-                output.update(label="UPDATE", reason="Explicitly supported progression in the same application process", support_quote=quote)
+                output.update(label="UPDATE", reason="Explicitly supported progression in the same application process", support_quote=quote, update_evidence=stage_evidence(old, new, payload["sources"]))
             judgments.append(output)
         return completion({"judgments": judgments})
     return completion({"entities": ["Alex"], "topic": None, "time": None, "keywords": []})

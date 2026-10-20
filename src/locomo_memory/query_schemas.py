@@ -8,7 +8,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationInfo, fi
 from .relation_schemas import RelationDraft
 from .retrieval_schemas import CandidateQueryRequest
 
-RESOLUTION_SCHEMA_VERSION = "effective-resolution-v1"
+RESOLUTION_SCHEMA_VERSION = "effective-resolution-v2-stage-evidence"
 ANSWER_SCHEMA_VERSION = "evidence-answer-v2-raw-sources"
 EvidenceStatus = Literal["sufficient", "conflict", "insufficient"]
 

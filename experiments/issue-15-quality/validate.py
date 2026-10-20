@@ -74,9 +74,22 @@ def candidates(model):
                'metadata':result.metadata}
 
 
+def stages(model):
+    from locomo_memory.relation_replay import source_snapshot, comparison
+    from locomo_memory.relation_schemas import RelationBatch
+    with source_snapshot(PRIOR.parent/'memory.sqlite3') as (db, digest):
+        if digest != '12410a8a857e91a9e23b97280b4cbcb647278daef83200cb9907c748cd238e2d':
+            raise ValueError('historical_source_changed')
+        for ordinal in (73, 148, 172):
+            identity,payload,context = comparison(db,'23f0459c5b3b47269dc1497cfc066810',ordinal)
+            generated = model.generate('relate',payload,RelationBatch,context=context)
+            yield {'case':ordinal,'input_identity':identity,'output':generated.value.model_dump(mode='json'),
+                   'metadata':generated.metadata}
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('phase', choices=['extraction', 'candidates'])
+    parser.add_argument('phase', choices=['extraction', 'candidates', 'stages'])
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     if args.output.exists():
@@ -86,12 +99,12 @@ def main():
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         campaign = QualityCampaign(CAMPAIGN, PRIOR)
         model = DeepSeekModel(Settings(model_retries=0))
-        campaign.bind(model, {'extraction':'quality-A-extraction','candidates':'quality-B-candidates'}[args.phase])
+        campaign.bind(model, {'extraction':'quality-A-extraction','candidates':'quality-B-candidates','stages':'quality-C-stages'}[args.phase])
         result = {'created_at': utc_now(), 'implementation_sha256': implementation_sha256(),
                   'before': campaign.summary(), 'phase': args.phase}
         try:
             result['cases'] = []
-            for case in {'extraction':extraction,'candidates':candidates}[args.phase](model):
+            for case in {'extraction':extraction,'candidates':candidates,'stages':stages}[args.phase](model):
                 result['cases'].append(case)
                 args.output.parent.mkdir(parents=True, exist_ok=True)
                 args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')

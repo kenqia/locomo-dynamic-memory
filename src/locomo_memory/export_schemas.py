@@ -5,7 +5,7 @@ from pydantic import BaseModel, ConfigDict, model_validator
 
 from .config import Settings
 from .memory_schemas import Memory
-from .relation_schemas import MemoryRelation
+from .relation_schemas import MemoryRelation, RelationDraft, RELATION_SCHEMA_VERSION
 from .schemas import Dataset, SourceTurn
 
 
@@ -82,7 +82,8 @@ class ExportProjection(ExportRecord):
 
 
 class MemoryExport(ExportRecord):
-    schema_version: Literal["memory-export-v1"] = "memory-export-v1"
+    schema_version: Literal["memory-export-v1", "memory-export-v2"] = "memory-export-v2"
+    relation_contract_version: Literal["relation-v1", "relation-v2-stage-evidence"] = "relation-v1"
     dataset: Dataset
     build: ExportBuild
     memories: list[Memory]
@@ -122,6 +123,11 @@ class MemoryExport(ExportRecord):
                 raise ValueError("Relation condition evidence differs")
             if not set(relation.source_ids) <= allowed:
                 raise ValueError("Relation evidence is not endpoint evidence")
+            if self.relation_contract_version == RELATION_SCHEMA_VERSION:
+                RelationDraft.model_validate({k: v for k, v in relation.model_dump(mode="json").items() if k in RelationDraft.model_fields},
+                    context={"new_memory": memories[relation.new_memory_id].model_dump(mode="json"),
+                             "history": [memories[relation.old_memory_id].model_dump(mode="json")],
+                             "sources": {sid: s.model_dump(mode="json") for sid, s in sources.items()}})
         projected = self.projection.current_states + self.projection.historical_states + self.projection.events + self.projection.nonfactual
         if len(projected) != len(memories) or {item.memory_id for item in projected} != memories.keys():
             raise ValueError("Projection collection differs")

@@ -225,3 +225,16 @@ v5 的中断 Build 及其预算库保留原样。v6 改变 Build 指纹，后续
 任务的 `selection` 保存配额、借用、分数、池和遗漏数，重试复用原名单。跨键词面候选
 不等于已确认同过程，也不保证所有历史覆盖。新增列是可保留的选择诊断，回退代码可忽略；
 旧实验数据库不启动新版后端。算法与参数进入新构建指纹。
+
+## UPDATE 阶段依据契约
+
+`relations-v7-stage-evidence` / `relation-v2-stage-evidence` 对新 UPDATE 要求 `update_evidence`，
+含严格布尔值 `same_process`、`real_stage_changed`，以及旧、新阶段的摘要、端点来源ID和
+连续逐字引句。缺字段、假引句、错误端点或显式否认阶段变化会拒绝，并沿用有限重试。
+查询补判采用同一契约。结构校验不能验证两个阶段在语义上确实不同。
+
+新导出使用 `memory-export-v2` 并携带 `relation_contract_version`；历史v1导出仍能读取，
+缺阶段依据的旧记录不补造、不宣称通过新校验。新旧构建不能混用或原地恢复。
+
+首次固定20候选真实回放中，73仍为UPDATE、148为RETAIN，但172仍为UPDATE，模型同时把
+阶段变化标为true。该语义关卡未通过，不能据此启动完整conv-26构建或QA smoke。
