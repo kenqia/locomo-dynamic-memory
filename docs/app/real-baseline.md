@@ -49,6 +49,11 @@ uv sync --locked --extra embedding
 
 `deepseek-flash` 的已知服务别名仍记为 `DeepSeek-V4.1-Flash-1017`，实际返回模型逐次记录。Full Text 的 regex 计数只是文本近似，不是提供方 tokenizer 或账单 token。
 
+`conv-26` 的分阶段思考实验已建立完整版本，并执行 10 道固定开发集 QA 的四策略比较。
+40 项中 24 项成功、16 项输出校验失败；[原始得分](../../experiments/issue-15-thinking-qa/results/report.md)
+与[失败诊断及解释](../../experiments/issue-15-thinking-qa/results/analysis.md)分别保存。
+该实验使用 `expanded` 证据配置，未运行全关闭思考对照、开发集全量或本地测试集。
+
 ## 小型抽取和五题预检
 
 显式授权付费后运行小型原始对话抽取检查：

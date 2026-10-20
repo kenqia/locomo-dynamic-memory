@@ -12,7 +12,7 @@
 - [实现 tickets 原样副本](process/tickets/)，对应 GitHub Issues #5–#12；每张票声明阻塞关系，并建立 GitHub 原生阻塞链接
 - [本地 LoCoMo 原始数据与版本校验](data/raw/locomo/README.md)
 
-本地 FastAPI、Streamlit、SQLite 应用已支持来源导入、原子 Memory 抽取、混合检索、历史关系和完整版本问答。启动见 [本地应用运行指南](docs/app/running.md)，抽取、失败重试与来源检查见 [构建指南](docs/app/building.md)。初始混合检索已提供 [候选检查](docs/app/retrieval.md)，[历史关系、状态、扩展与完整版本发布](docs/app/relations.md) 已接入；[有效证据问答](docs/app/querying.md)、[完整版本与导出](docs/app/versions.md) 和 [独立评测与基线比较](docs/app/evaluation.md) 已接入。根据用户转述的教师新说明，开发集为 `conv-26`、`conv-30`、`conv-41`、`conv-42`，最终评分集不公开；本组预先固定本地测试集为 `conv-43`、`conv-44`，系统冻结后再查看其模型成绩。公开 API 与页面可预览开发集全量和五题 smoke 计划，无需完整构建或模型调用。隔离准备、真实预检和全量入口见[真实基线运行指南](docs/app/real-baseline.md)。真实运行仍待落实，见[本次访谈](docs/decisions/real-deepseek-evaluation-interview.md)。spec 的准备标签不代表实现或验收完成。
+本地 FastAPI、Streamlit、SQLite 应用已支持来源导入、原子 Memory 抽取、混合检索、历史关系和完整版本问答。启动见 [本地应用运行指南](docs/app/running.md)，抽取、失败重试与来源检查见 [构建指南](docs/app/building.md)。初始混合检索已提供 [候选检查](docs/app/retrieval.md)，[历史关系、状态、扩展与完整版本发布](docs/app/relations.md) 已接入；[有效证据问答](docs/app/querying.md)、[完整版本与导出](docs/app/versions.md) 和 [独立评测与基线比较](docs/app/evaluation.md) 已接入。根据用户转述的教师新说明，开发集为 `conv-26`、`conv-30`、`conv-41`、`conv-42`，最终评分集不公开；本组预先固定本地测试集为 `conv-43`、`conv-44`，系统冻结后再查看其模型成绩。公开 API 与页面可预览开发集全量和五题 smoke 计划，无需完整构建或模型调用。隔离准备、真实预检和全量入口见[真实基线运行指南](docs/app/real-baseline.md)。`conv-26` 的 10 题四策略真实实验已执行，含 16 项输出校验失败，见[实验结果](experiments/issue-15-thinking-qa/results/report.md)及[解释与限制](experiments/issue-15-thinking-qa/results/analysis.md)。开发集全量运行尚未完成，原始约束见[本次访谈](docs/decisions/real-deepseek-evaluation-interview.md)。spec 的准备标签不代表实现或验收完成。
 
 ## 本地启动与验证
 

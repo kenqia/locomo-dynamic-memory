@@ -17,6 +17,7 @@ from locomo_memory.config import Settings
 from locomo_memory.implementation_identity import implementation_sha256
 from locomo_memory.model import DeepSeekModel, utc_now
 from locomo_memory.memory_schemas import ExtractionBatch
+from locomo_memory.evaluation_plans import COURSE_SPLIT
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'experiments/issue-15-v6-gates'))
@@ -145,31 +146,7 @@ def execute(directory, plan, *, resume=False):
             exported = client.get(f'/builds/{build_id}/export')
             exported.raise_for_status()
             save(directory / 'memory-export.json', exported.json())
-            samples = []
-            for question in plan['questions']:
-                qa = question['official_qa']
-                samples.append({'sample_id': 'conv-26', 'question': qa['question'],
-                                'answer': qa.get('answer'), 'category': qa['category'],
-                                'evidence': qa['evidence']})
-            created = client.post('/evaluation-inputs', json={
-                'dataset_id': dataset_id, 'kind': 'official_structure_only', 'samples': samples})
-            created.raise_for_status()
-            save(directory / 'evaluation-input.json', created.json())
-            response = client.post('/evaluation-runs', json={
-                'input_id': created.json()['input_id'], 'strategies': STRATEGIES,
-                'build_ids': {'conv-26': build_id}, 'evidence_profile': 'expanded', 'wait': False})
-            response.raise_for_status()
-            run_id = response.json()['run_id']
-            outcome['run_id'] = run_id
-            save(directory / 'outcome.json', outcome)
-            while True:
-                progress = app.state.evaluation.execution.progress(run_id)
-                if progress['status'] != 'running':
-                    break
-                time.sleep(1)
-            result = app.state.evaluation.get('evaluation_runs', run_id)
-            save(directory / 'evaluation-run.json', result)
-            outcome.update(status=result['status'], progress=result['progress'])
+            run_evaluation(client, app, directory, plan, outcome)
     except Exception as error:
         # No provider message, headers, request body, or arbitrary exception string.
         known = {'extraction_incomplete', 'relations_incomplete'}
@@ -181,9 +158,72 @@ def execute(directory, plan, *, resume=False):
         print(json.dumps({k: outcome[k] for k in ('status', 'build_id', 'run_id') if k in outcome}), flush=True)
 
 
+def run_evaluation(client, app, directory, plan, outcome):
+    dataset_id, build_id = outcome['dataset_id'], outcome['build_id']
+    samples = []
+    for question in plan['questions']:
+        qa = question['official_qa']
+        samples.append({'sample_id': 'conv-26', 'question': qa['question'],
+                        'answer': qa.get('answer'), 'category': qa['category'],
+                        'evidence': qa['evidence']})
+    created = client.post('/evaluation-inputs', json={
+        'dataset_id': dataset_id, 'kind': 'course', 'course_split': COURSE_SPLIT, 'samples': samples})
+    created.raise_for_status()
+    save(directory / 'evaluation-input.json', created.json())
+    response = client.post('/evaluation-runs', json={
+        'input_id': created.json()['input_id'], 'strategies': STRATEGIES, 'partition': 'dev',
+        'build_ids': {'conv-26': build_id}, 'evidence_profile': 'expanded', 'wait': False})
+    response.raise_for_status()
+    run_id = response.json()['run_id']
+    outcome['run_id'] = run_id
+    save(directory / 'outcome.json', outcome)
+    while True:
+        progress = app.state.evaluation.execution.progress(run_id)
+        if progress['status'] != 'running':
+            break
+        time.sleep(1)
+    result = app.state.evaluation.get('evaluation_runs', run_id)
+    save(directory / 'evaluation-run.json', result)
+    outcome.update(status=result['status'], progress=result['progress'])
+
+
+def evaluate_complete(directory, plan):
+    """Continue after a completed build without repeating extraction or relations."""
+    if plan['implementation_sha256'] != implementation_sha256():
+        raise ValueError('implementation_changed_since_plan')
+    previous = json.loads((directory / 'outcome.json').read_text())
+    if previous['status'] != 'experiment_stopped' or previous.get('run_id'):
+        raise ValueError('completed_build_without_run_required')
+    campaign = v6_campaign.Campaign(CAMPAIGN, PRIOR)
+    v6_campaign.FIELDS += ('thinking', 'reasoning_effort', 'max_tokens')
+    settings = Settings.model_validate(plan['settings'])
+    model = DeepSeekModel(settings)
+    campaign.bind(model, 'thinking-conv26-build-qa')
+    history_path = directory / 'outcome-history.json'
+    history = json.loads(history_path.read_text()) if history_path.exists() else []
+    save(history_path, [*history, previous])
+    outcome = {'started_at': utc_now(), 'status': 'running', 'directory': str(directory),
+               'dataset_id': previous['dataset_id'], 'build_id': previous['build_id']}
+    try:
+        app = create_app(settings, model=model)
+        with TestClient(app) as client:
+            if app.state.builds.get(outcome['build_id'])['status'] != 'complete':
+                raise ValueError('complete_build_required')
+            if client.get('/evaluation-runs').json()['total']:
+                raise ValueError('evaluation_already_exists')
+            save(directory / 'outcome.json', outcome)
+            run_evaluation(client, app, directory, plan, outcome)
+    except Exception as error:
+        outcome.update(status='experiment_stopped', error_type=type(error).__name__)
+    finally:
+        outcome.update(completed_at=utc_now(), budget_after=campaign.summary())
+        save(directory / 'outcome.json', outcome)
+        print(json.dumps({k: outcome[k] for k in ('status', 'build_id', 'run_id') if k in outcome}), flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('action', choices=['prepare', 'execute', 'resume'])
+    parser.add_argument('action', choices=['prepare', 'execute', 'resume', 'evaluate'])
     parser.add_argument('--directory', type=Path, required=True)
     parser.add_argument('--relation-max-tokens', type=int)
     parser.add_argument('--model-timeout-seconds', type=float, default=60)
@@ -194,6 +234,8 @@ def main():
         if args.action == 'prepare':
             plan = prepare(directory, args.relation_max_tokens, args.model_timeout_seconds)
             print(json.dumps({'status': 'prepared', 'logical_items': plan['logical_items']}))
+        elif args.action == 'evaluate':
+            evaluate_complete(directory, json.loads((directory / 'plan.json').read_text()))
         else:
             if args.action == 'execute' and (directory / 'outcome.json').exists():
                 raise ValueError('existing_execution_requires_explicit_recovery')

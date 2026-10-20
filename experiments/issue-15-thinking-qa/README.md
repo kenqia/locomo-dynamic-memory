@@ -1,8 +1,10 @@
 # conv-26 分阶段思考与 10 题配对实验
 
-2026-10-20，Asia/Shanghai。用户授权在 `codex/issue-15-integration` 调整思考强度，
+2026-10-20 至 2026-10-21，Asia/Shanghai。用户授权在 `codex/issue-15-integration` 调整思考强度，
 创建真实 `conv-26` 实验构建，并用 10 道原始开发集 QA 比较四种策略。
-实验尚在执行；最终状态和结果以保存的 outcome、Run JSON 及报告为准。
+完整构建已完成，40 项 QA 全部执行，24 项成功、16 项输出校验失败，Run 状态为
+`completed_with_errors`。见[得分与逐题回答](results/report.md)、[诊断与解释](results/analysis.md)
+及[完整产物路径和哈希](results/artifacts.json)。
 
 ## 配置与样本
 
@@ -58,6 +60,21 @@ DeepSeek [Chat API 文档](https://api-docs.deepseek.com/api/create-chat-complet
 不代表收到提供方结果。审查保存在实验目录的 `interruption-review.json`。
 随后只补做剩余 4 个片段，21/21 完成，共得到 272 条 Memory；没有重抽成功片段。
 增加关系上限覆盖后的新鲜回归为 349 passed、4 deselected，242.59 秒。
+关系完成 112/266 项后，执行进程以 143 退出，具体外部终止原因未确定。
+再次备份并审查后，序号 302 记为 `interrupted_unknown`，成功任务保留，
+恢复剩余任务。第二次审查保存为 `second-interruption-review.json`，累计调用仍为 615/1000。
+
+最终 266/266 个关系任务成功，完整版本保存 4902 条模型判断。发布校验发现一条
+`UPDATE` 引用了端点以外的来源，原始结果与数据库先备份、隔离，再只重试第 132 号任务，
+随后正常发布及导出。见 [诊断](v3-endpoint-evidence-diagnosis.json)与
+[原任务保留记录](v3-endpoint-evidence-repair.json)。全部付费调用结束后才补齐入口校验，
+使其与导出已有的端点来源约束一致；受控回归先红后绿，最终全量非 live 回归
+350 passed、4 deselected，238.24 秒。原实验实现身份与修复后身份分别记录，未改写原 Run。
+
+初次创建 QA 时，脚本误用了禁止生成的 `official_structure_only`，系统拒绝请求，未发生模型调用。
+脚本改用项目已有 `COURSE_SPLIT` 和 `kind=course, partition=dev`，只选本轮 10 题，
+通过新增 `evaluate` 入口复用已完整构建。运行 40 项 QA 后累计 907/1000；
+另一次独立答案诊断使用 4 次，最终累计 911/1000。诊断结果未替换原配对结果。
 
 [运行脚本](run.py) 使用已有服务和持久预算账本，发送前预留额度，沿用历史 1,000 次总上限。
 本次开始时累计 364 次。失败、重试和用量未知调用均占用额度。没有新生产依赖或凭据变更。
@@ -76,6 +93,8 @@ HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 \
 以上目录已存在时，`prepare` 和重复 `execute` 会拒绝覆盖；选择新目录进行新实验。
 已知抽取或关系失败时，可显式使用 `resume`，只重试失败任务，保留原账本及成功项。
 未知外部结果和达到上限的调用不自动重发。运行时持有原 Campaign 锁及独立数据库所有权锁。
+`evaluate` 仅用于已完整构建、尚未创建任何 Run 且上次状态为 `experiment_stopped` 的显式恢复。
+本轮完成后的目录保留为只读实验记录；后续入口校验修复改变了实现身份，不能直接恢复旧计划。
 
 完整产物位于上述目录，包含 `plan.json`、`outcome.json`、`memory-export.json`、
 `evaluation-input.json` 和 `evaluation-run.json`。只有完成相应阶段才会生成对应文件。

@@ -6,6 +6,23 @@ from pathlib import Path
 from statistics import mean
 
 
+def candidate_rankings(result):
+    """Answer failures still retain retrieval/expansion evidence in their trace."""
+    rankings = dict(result.get('memory_rankings', {}))
+    trace = result.get('trace', {})
+    for stage, key in [('initial', 'initial_candidates'), ('expanded', 'candidates')]:
+        if stage in rankings or stage not in trace:
+            continue
+        saved = trace[stage]
+        if isinstance(saved, dict):
+            if key not in saved:
+                continue
+            rankings[stage] = [item['memory']['memory_id'] for item in saved[key]]
+        elif isinstance(saved, list) and all(isinstance(item, dict) and 'memory_id' in item for item in saved):
+            rankings[stage] = [item['memory_id'] for item in saved]
+    return rankings
+
+
 def render(directory, output):
     plan = json.loads((directory / 'plan.json').read_text())
     outcome = json.loads((directory / 'outcome.json').read_text())
@@ -21,12 +38,15 @@ def render(directory, output):
         delivery = trace.get('source_delivery', {})
         raw = trace.get('raw_fallback', {})
         budget = trace.get('evidence_budget', {})
+        answer_calls = [call for metadata in trace.get('operations', {}).values()
+                        for call in metadata.get('calls', [])]
         rows.append({'question_id': question['question_id'], 'purpose': question['purpose'],
                      'question': question['official_qa']['question'],
                      'gold': question['official_qa'].get('answer'),
                      'category': question['official_qa']['category'], 'strategy': item['strategy'],
                      'execution_status': item['status'], 'answer_status': answer.get('status'),
                      'answer': answer.get('answer'), 'qa_score': result.get('qa', {}).get('value'),
+                     'run_qa_score': 0 if item['status'] == 'failed' else result.get('qa', {}).get('value'),
                      'answer_source_coverage': result.get('source_coverage', {}).get('answer_context'),
                      'initial_source_coverage': result.get('source_coverage', {}).get('initial'),
                      'expanded_source_coverage': result.get('source_coverage', {}).get('expanded'),
@@ -36,6 +56,8 @@ def render(directory, output):
                      'full_text_expected_sources': len(delivery.get('expected_source_ids', [])) if delivery else None,
                      'full_text_delivered_sources': len(delivery.get('delivered_source_ids', [])) if delivery else None,
                      'provider_accepted': delivery.get('provider_accepted'),
+                     'full_text_http_accepted': any(c.get('http_status') == 200 for c in answer_calls)
+                                               if item['strategy'] == 'full_text' else None,
                      'evidence_truncated': budget.get('truncated'),
                      'context_limit_exceeded': budget.get('context_limit_exceeded', False),
                      'raw_fallback_triggered': raw.get('triggered'),
@@ -64,9 +86,9 @@ def render(directory, output):
     comparisons = []
     for index, question in enumerate(plan['questions']):
         results = {i['strategy']: i.get('result') or {} for i in run['items'] if i['sample_index'] == index}
-        base = results['dynamic'].get('memory_rankings', {})
+        base = candidate_rankings(results['dynamic'])
         for other in ['dynamic_raw_fallback', 'hybrid_no_resolution']:
-            candidate = results[other].get('memory_rankings', {})
+            candidate = candidate_rankings(results[other])
             comparisons.append({'question_id': question['question_id'], 'comparison': 'dynamic vs ' + other,
                                 **{stage + '_same_order': base.get(stage) == candidate.get(stage)
                                    if stage in base and stage in candidate else None for stage in ['initial', 'expanded']},
@@ -78,8 +100,18 @@ def render(directory, output):
              'implementation_sha256': plan['implementation_sha256'], 'config': plan['settings'],
              'dynamic_accuracy': 'unavailable_without_independent_truth'}
     full_text = [r for r in rows if r['strategy'] == 'full_text']
+    saved['candidate_audit'] = {
+        other: {stage + '_same_set_items': sum(
+            c['comparison'] == 'dynamic vs ' + other and c[stage + '_same_set'] is True
+            for c in comparisons) for stage in ['initial', 'expanded']}
+        for other in ['dynamic_raw_fallback', 'hybrid_no_resolution']}
     saved['full_text_delivery'] = {
         'planned': len(full_text),
+        'complete_sources_with_http_200_items': sum(
+            r['full_text_http_accepted'] is True
+            and r['full_text_expected_sources'] == r['full_text_delivered_sources']
+            and bool(r['full_text_expected_sources']) and r['evidence_truncated'] is False
+            and not r['context_limit_exceeded'] for r in full_text),
         'accepted_complete_items': sum(
             r['execution_status'] == 'succeeded' and r['provider_accepted'] is True
             and r['full_text_expected_sources'] == r['full_text_delivered_sources']
@@ -104,14 +136,18 @@ def render(directory, output):
         lines.append(f"| {name} | {values['successful']}/{values['planned']} | {fmt(values['answerable_qa_mean'])} | {fmt(values['official_refusal_mean'])} | {fmt(values['all_qa_mean'])} | {values['mean_attempt_seconds']:.2f} | {values['usage']['reported_tokens']['total_tokens']} |")
     full = saved['full_text_delivery']
     budget = outcome['budget_after']
+    candidate_summary = '；'.join(
+        f"dynamic 对 {other}：初始 {counts['initial_same_set_items']}/10、扩展 {counts['expanded_same_set_items']}/10"
+        for other, counts in saved['candidate_audit'].items())
     lines += ['',
-              f"Full Text 完整来源且提供方接受的项目为 {full['accepted_complete_items']}/{full['planned']}；预期来源轮次数为 {full['expected_source_counts']}。完整检查同时要求执行成功、未截断及未超出上下文。",
+              f"Full Text 完整来源并获得 HTTP 200 的项目为 {full['complete_sources_with_http_200_items']}/{full['planned']}；预期来源轮次数为 {full['expected_source_counts']}。其中答案也通过校验的项目为 {full['accepted_complete_items']}/{full['planned']}。完整来源检查要求未截断且未超出上下文。",
               f"原文兜底实际触发 {summary['dynamic_raw_fallback']['raw_fallback_triggered_items']}/10 题；逐题检索、有效与引用来源数见 CSV。",
               f"共享账本累计预留 {budget.get('reserved_total_calls')}/{budget.get('limit')} 次，包含历史、失败、重试及未知结果。",
               '', '官方 QA 采用既有类别 F1 和拒答短语规则，长答案可能因多余词扣分。',
+              '计划均值与下表对已知失败记 0；CSV 的 qa_score 保留失败时未生成原始得分的 null，run_qa_score 记录聚合采用的值。',
               '拒答规则只识别 `no information available`、`not mentioned`，须结合实际回答检查。',
               '来源覆盖只说明标注轮次是否进入上下文，不证明事实正确。对抗题的标注轮次可能属于另一人物。',
-              '三种 RAG 各自执行查询分析；`results.json` 的 `candidate_comparisons` 核对初始及扩展候选是否相同。候选不同的题不能把差异完全归因于解析。',
+              f"三种 RAG 各自执行查询分析；从成功结果及失败轨迹核对候选集合，相同题数为 {candidate_summary}。逐题顺序与集合比较见 results.json 的 candidate_comparisons。",
               '`dynamic` 与 `hybrid_no_resolution` 比较查询时有效证据解析，两者仍共享构建时关系与历史扩展，不能据此隔离构建关系判断的作用。',
               '动态关系与有效证据准确率缺少独立真值，保持未评。Full Text 的完整来源覆盖不算检索能力。', '',
               '## 同题得分', '',
@@ -120,7 +156,7 @@ def render(directory, output):
     for question in plan['questions']:
         group = [r for r in rows if r['question_id'] == question['question_id']]
         lines.append('| ' + ' | '.join([str(question['qa_index']), question['purpose'], *[
-            fmt(next(r['qa_score'] for r in group if r['strategy'] == name)) for name in plan['strategies']]]) + ' |')
+            fmt(next(r['run_qa_score'] for r in group if r['strategy'] == name)) for name in plan['strategies']]]) + ' |')
     lines += ['', '## 逐题回答', '']
     for question in plan['questions']:
         lines += [f"### QA {question['qa_index']}：{question['official_qa']['question']}", '',
