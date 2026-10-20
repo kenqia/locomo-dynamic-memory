@@ -1,15 +1,16 @@
 {
-  "created_at": "2026-10-20T14:46:16.086101+00:00",
+  "created_at": "2026-10-20T15:08:33.906273+00:00",
   "sample_id": "conv-26",
   "settings": {
-    "db_path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v2/memory.sqlite3",
+    "db_path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/memory.sqlite3",
     "api_url": "http://127.0.0.1:8000",
     "model_name": "deepseek-flash",
     "model_base_url": "https://api.deepseek.com",
-    "model_timeout_seconds": 60.0,
+    "model_timeout_seconds": 120.0,
     "model_retries": 2,
     "model_temperature": 0.0,
     "model_max_tokens": 8192,
+    "relation_max_tokens": 16384,
     "thinking_enabled": false,
     "extraction_thinking_effort": "disabled",
     "relation_thinking_effort": "high",
@@ -40,7 +41,7 @@
     "raw_token_budget": 2000,
     "resolution_input_budget": 12000
   },
-  "implementation_sha256": "0b5b7135c0dd3893b680aad1e1f9de6c6fb715596382272357cc1610fbac0f1c",
+  "implementation_sha256": "839b4daaa71ff5a47d9f122775416e181fc09cce39ac4dd7620833d1cbce1255",
   "questions": [
     {
       "question_id": "conv-26:qa:3",
@@ -190,8 +191,8 @@
     "previous_calls": 313,
     "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
     "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
-    "reserved_new_calls": 84,
-    "reserved_total_calls": 397,
+    "reserved_new_calls": 166,
+    "reserved_total_calls": 479,
     "phases": {
       "gate2-lengths": 13,
       "gate4-evidence": 6,
@@ -202,52 +203,52 @@
       "quality-C-stages": 3,
       "quality-D-raw": 7,
       "quality-E-evidence": 10,
-      "thinking-conv26-build-qa": 33
+      "thinking-conv26-build-qa": 115
     },
     "operations": {
-      "relate": 30,
-      "extract": 37,
+      "relate": 91,
+      "extract": 58,
       "resolve_raw": 12,
       "answer_raw": 5
     },
     "outcomes": {
       "model_http_error": 1,
-      "succeeded": 66,
-      "invalid_output": 17
+      "succeeded": 139,
+      "invalid_output": 26
     },
     "usage": {
-      "generation_calls": 84,
+      "generation_calls": 166,
       "unknown_attempts": 0,
       "calls_without_reported_usage": 1,
       "calls_with_partial_usage": 0,
       "reported_tokens": {
-        "prompt_tokens": 466816,
-        "completion_tokens": 132367,
-        "total_tokens": 599183
+        "prompt_tokens": 1039017,
+        "completion_tokens": 425472,
+        "total_tokens": 1464489
       },
       "usage_fields": {
         "prompt_tokens": {
-          "reported": 466816,
-          "calls_with_reported_usage": 83,
+          "reported": 1039017,
+          "calls_with_reported_usage": 165,
           "calls_missing_usage": 1,
           "complete": false
         },
         "completion_tokens": {
-          "reported": 132367,
-          "calls_with_reported_usage": 83,
+          "reported": 425472,
+          "calls_with_reported_usage": 165,
           "calls_missing_usage": 1,
           "complete": false
         },
         "total_tokens": {
-          "reported": 599183,
-          "calls_with_reported_usage": 83,
+          "reported": 1464489,
+          "calls_with_reported_usage": 165,
           "calls_missing_usage": 1,
           "complete": false
         }
       },
       "provider_usage_complete": false,
-      "provider_retries": 10,
-      "reported_provider_seconds": 401.0142119949978
+      "provider_retries": 17,
+      "reported_provider_seconds": 1520.0236278179927
     }
   },
   "logical_items": 40,

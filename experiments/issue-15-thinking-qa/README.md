@@ -7,8 +7,8 @@
 ## 配置与样本
 
 抽取、查询分析及答案生成关闭思考；历史关系判断为 `high`；有效证据解析为 `low`，
-包括原文兜底。共用输出上限仍为 8192，有限重试仍为 2，MiniLM 使用原本地缓存版本。
-原文兜底使用默认 `expanded` 输入，四策略共享一个完整构建，未运行全关闭思考的对照。
+包括原文兜底。抽取与查询输出上限为 8192，关系阶段单独为 16384，有限重试仍为 2，MiniLM 使用原本地缓存版本。
+本轮请求超时为 120 秒。原文兜底使用默认 `expanded` 输入，四策略共享一个完整构建，未运行全关闭思考的对照。
 
 | 用途 | 官方 conv-26 QA index | 问题内容 |
 | --- | --- | --- |
@@ -32,24 +32,45 @@
 抽取提示更新为 `extract-v3-output-constraints`，明确上述原有规则；有限重试增加
 安全错误字段反馈。校验器、思考开关及输出上限保持相同。新 Prompt 使用独立目录和新 Build，
 旧失败库及调用账本保留。受控回归先红后绿，修复后定向 129 项通过。
-最终全量回归 340 passed、4 deselected，240.66 秒；另有离线真实 MiniLM 编码和
+抽取修复时全量回归 340 passed、4 deselected，240.66 秒；另有离线真实 MiniLM 编码和
 报告失败记零分母检查通过。旧的抽取重试请求不变测试按新增反馈行为调整，并保留
 查询分析请求不变的检查。完整验证范围见 [verification.json](verification.json)。
 
 ## 本地复现与记录
+
+`v2` Build `eca7ec7974d4492eb0a4047be6fe2906` 在 8192 共用上限下完成 21 个抽取片段、
+270 条 Memory 和索引。关系阶段 52/264 个任务通过，两个任务连续三次 `length`，
+无法形成完整版本。为更改上限而停止时，源码身份门禁阻止后续请求，调用账本全部已结束，
+正常重启将剩余运行项标为中断。该轮使用 82 次调用，累计达到 479/1000，未执行 QA。
+`v2-*` 文件保留快照；`DiagnosticPersistenceFailure` 来自有意触发的源码身份停止门禁，
+不能据此归因为数据库损坏。
+
+`v3` 新增可选 `relation_max_tokens`，仅本轮显式设为 16384，其他操作仍为 8192；
+请求超时从 60 调为 120 秒。关系覆盖、来源及语义校验保持原约束，不从旧库复制 Memory 或关系。
+新字段进入配置指纹，每次调用保存实际输出上限。恢复默认只需移除覆盖项并新建版本。
+DeepSeek [Chat API 文档](https://api-docs.deepseek.com/api/create-chat-completion/)
+允许该输出范围，2026-10-20 已重新核对；不把服务默认预算当作本次实际预算。
+
+`v3` 在执行环境中断时保留 17 个成功片段、1 个运行片段和 3 个待处理片段，
+账本累计 497/1000 次。恢复前确认旧进程不存在，取得 Campaign 和后端独占锁，
+备份数据库，并通过正常启动将运行片段标为中断。序号 184 的提供方结果无法确认，
+记为 `interrupted_unknown` 并继续占用额度；其 `completed_at` 表示审查关闭，
+不代表收到提供方结果。审查保存在实验目录的 `interruption-review.json`。
+随后只补做剩余 4 个片段，21/21 完成，共得到 272 条 Memory；没有重抽成功片段。
+增加关系上限覆盖后的新鲜回归为 349 passed、4 deselected，242.59 秒。
 
 [运行脚本](run.py) 使用已有服务和持久预算账本，发送前预留额度，沿用历史 1,000 次总上限。
 本次开始时累计 364 次。失败、重试和用量未知调用均占用额度。没有新生产依赖或凭据变更。
 本地实验目录中的 `publish` 只把该库的完整 Build 标为可查询；没有远端发布。
 
 ```sh
-.venv/bin/python experiments/issue-15-thinking-qa/run.py prepare \
-  --directory /home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v2
+.venv/bin/python experiments/issue-15-thinking-qa/run.py prepare --relation-max-tokens 16384 --model-timeout-seconds 120 \
+  --directory /home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3
 
 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 \
   .venv/bin/python scripts/with_deepseek_env.py -- .venv/bin/python \
   experiments/issue-15-thinking-qa/run.py execute \
-  --directory /home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v2
+  --directory /home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3
 ```
 
 以上目录已存在时，`prepare` 和重复 `execute` 会拒绝覆盖；选择新目录进行新实验。
@@ -64,7 +85,7 @@ HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 \
 
 ```sh
 .venv/bin/python experiments/issue-15-thinking-qa/report.py \
-  --directory /home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v2 \
+  --directory /home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3 \
   --output experiments/issue-15-thinking-qa/results
 ```
 

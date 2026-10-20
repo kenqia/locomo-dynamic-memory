@@ -64,9 +64,10 @@ def save(path, value):
     temporary.replace(path)
 
 
-def prepare(directory):
+def prepare(directory, relation_max_tokens=None, model_timeout_seconds=60):
     directory.mkdir(parents=True, exist_ok=False)
-    settings = Settings(db_path=directory / 'memory.sqlite3')
+    settings = Settings(db_path=directory / 'memory.sqlite3', relation_max_tokens=relation_max_tokens,
+                        model_timeout_seconds=model_timeout_seconds)
     raw = (ROOT / 'data/raw/locomo/locomo10.json').read_bytes()
     conversation = next(c for c in json.loads(raw) if c['sample_id'] == 'conv-26')
     questions = []
@@ -91,7 +92,7 @@ def execute(directory, plan, *, resume=False):
     campaign = v6_campaign.Campaign(CAMPAIGN, PRIOR)
     if not resume and campaign.summary()['reserved_total_calls'] != plan['budget_before']['reserved_total_calls']:
         raise ValueError('campaign_changed_since_plan')
-    v6_campaign.FIELDS += ('thinking', 'reasoning_effort')
+    v6_campaign.FIELDS += ('thinking', 'reasoning_effort', 'max_tokens')
     settings = Settings.model_validate(plan['settings'])
     model = DeepSeekModel(settings, transport=ExtractionAudit(directory / 'extraction-validation-causes.json') if resume else None)
     campaign.bind(model, 'thinking-conv26-build-qa')
@@ -184,12 +185,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('action', choices=['prepare', 'execute', 'resume'])
     parser.add_argument('--directory', type=Path, required=True)
+    parser.add_argument('--relation-max-tokens', type=int)
+    parser.add_argument('--model-timeout-seconds', type=float, default=60)
     args = parser.parse_args()
     directory = args.directory.resolve()
     with CAMPAIGN.with_suffix('.quality.lock').open('a+') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         if args.action == 'prepare':
-            plan = prepare(directory)
+            plan = prepare(directory, args.relation_max_tokens, args.model_timeout_seconds)
             print(json.dumps({'status': 'prepared', 'logical_items': plan['logical_items']}))
         else:
             if args.action == 'execute' and (directory / 'outcome.json').exists():
