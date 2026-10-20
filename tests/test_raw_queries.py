@@ -277,3 +277,18 @@ def test_explicit_context_rejection_is_recorded_as_provider_refusal(settings,sam
         assert trace['source_delivery']['attempted_source_ids']
         assert trace['source_delivery']['provider_accepted'] is False
         assert trace['evidence_budget']['context_limit_exceeded'] is True
+
+
+@pytest.mark.parametrize('requested_date', [None, '2024-01-01'])
+def test_controller_always_exposes_known_time_boundary_even_when_model_omits_it(settings,sample,requested_date):
+    observed = []
+    model = DeepSeekModel(settings,api_key='synthetic-test-key',transport=httpx.MockTransport(raw_provider(observed,enough=True)))
+    with TestClient(create_app(settings,model=model,embedder=ControlledEmbedder())) as client:
+        response = client.post('/queries',json={**published(client,sample),'requested_date':requested_date})
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['time']['cutoff'] in trace['answer']['answer']
+        assert 'later reality is unknown' in trace['answer']['answer'].lower()
+        assert trace['answer_boundary']['applied_by'] == 'controller'
+        if requested_date:
+            assert trace['answer']['status'] == 'insufficient'

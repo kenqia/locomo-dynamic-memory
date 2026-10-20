@@ -86,11 +86,11 @@ class EvaluationExecution:
         with self.database.connect() as db:
             source = dict(db.execute('SELECT * FROM datasets WHERE dataset_id=?', (inputs['dataset_id'],)).fetchone())
         from .evidence_selection import FOCUS_VERSION
-        from .raw_schemas import MixedResolution, RAW_RESOLUTION_PROMPT, RAW_ANSWER_PROMPT, RAW_RESOLUTION_VERSION, RAW_ANSWER_VERSION
+        from .raw_schemas import MixedResolution, RAW_RESOLUTION_PROMPT, RAW_ANSWER_PROMPT, RAW_RESOLUTION_VERSION, RAW_ANSWER_VERSION, ANSWER_BOUNDARY_VERSION
         return {
             'raw_fallback': {'resolution_prompt':RAW_RESOLUTION_PROMPT, 'answer_prompt':RAW_ANSWER_PROMPT,
                 'resolution_schema':MixedResolution.model_json_schema(), 'resolution_version':RAW_RESOLUTION_VERSION,
-                'answer_version':RAW_ANSWER_VERSION, 'evidence_profile':evidence_profile, 'selection_version':FOCUS_VERSION},
+                'answer_version':RAW_ANSWER_VERSION, 'answer_boundary_version':ANSWER_BOUNDARY_VERSION, 'evidence_profile':evidence_profile, 'selection_version':FOCUS_VERSION},
             'input': inputs, 'plan': plan, 'selected_indices': selected, 'pins': pins,
             'strategies': strategies, 'partition': partition, 'source': source,
             'source_turns_sha256': {sid: digest(self.service.sources(inputs['dataset_id'], sid)) for sid in pins},

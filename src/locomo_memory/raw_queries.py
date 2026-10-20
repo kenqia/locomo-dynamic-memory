@@ -6,7 +6,7 @@ from .builds import BuildError
 from .imports import canonical_json
 from .model import ModelFailure, request_token_estimate
 from .query_schemas import EvidenceAnswer
-from .raw_schemas import MixedResolution, RAW_RESOLUTION_VERSION, RAW_ANSWER_VERSION
+from .raw_schemas import MixedResolution, RAW_RESOLUTION_VERSION, RAW_ANSWER_VERSION, ANSWER_BOUNDARY_VERSION
 from .raw_retrieval import retrieve_sources, RAW_RETRIEVAL_VERSION
 from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
 
@@ -111,7 +111,7 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
         'raw_retrieval':RAW_RETRIEVAL_VERSION,'resolve_schema':MixedResolution.model_json_schema(),
         'source_snapshot':snapshot_audit,'strategy':trace['strategy'],
         'evidence_profile':profile,'selection_version':FOCUS_VERSION,
-        'answer_schema':EvidenceAnswer.model_json_schema()}).encode()).hexdigest()
+        'answer_schema':EvidenceAnswer.model_json_schema(), 'answer_boundary_version':ANSWER_BOUNDARY_VERSION}).encode()).hexdigest()
     from .raw_schemas import RAW_RESOLUTION_PROMPT, RAW_ANSWER_PROMPT
     trace['query_fingerprint'] = hashlib.sha256(canonical_json({'fingerprint':trace['query_fingerprint'],
         'resolve_prompt':RAW_RESOLUTION_PROMPT,'answer_prompt':RAW_ANSWER_PROMPT}).encode()).hexdigest()
@@ -203,6 +203,11 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
             trace['evidence_budget']['context_limit_exceeded'] = True
         raise
     trace['answer'] = EvidenceAnswer.model_validate(result.value.model_dump(mode='json'),context=context).model_dump(mode='json')
+    if trace['time']['beyond_cutoff'] or trace['time']['origin']=='conversation_cutoff':
+        scope = 'The requested date exceeds the known conversation cutoff' if trace['time']['beyond_cutoff'] else 'Known only as of the conversation cutoff'
+        boundary = f"{scope} ({trace['time']['cutoff']}); later reality is unknown."
+        trace['answer_boundary'] = {'version':ANSWER_BOUNDARY_VERSION, 'applied_by':'controller', 'text':boundary}
+        trace['answer']['answer'] += '\n\n' + boundary
     trace['operations']['answer'] = result.metadata
     trace['stage_seconds']['answer'] = time.perf_counter()-started
     record_delivery(trace['source_delivery'], result.metadata, accepted=True)
