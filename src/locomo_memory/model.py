@@ -14,8 +14,9 @@ from pydantic import BaseModel, ValidationError
 from .config import Settings
 from .diagnostics import validation_diagnostics
 from .relation_schemas import relation_label_error
+from .extraction_examples import EXTRACTION_EXAMPLES
 
-EXTRACTION_PROMPT_VERSION = "extract-v1"
+EXTRACTION_PROMPT_VERSION = "extract-v2-examples"
 MEMORY_SCHEMA_VERSION = "memory-v1"
 KNOWN_MODEL_VERSION = "DeepSeek-V4.1-Flash-1017 (documented 2026-10-19; mutable service alias)"
 EXTRACTION_PROMPT = """Extract atomic English memories from raw conversation sources.
@@ -31,7 +32,13 @@ imply mutual exclusion; a person can have multiple jobs. Keep original time
 expressions, anchor source IDs and justification separately. Unknown dates remain
 null; vague dates may be intervals, never invented exact dates. Do not treat session
 time as event time without explicit text support. For no extractable facts return
-memories: [] with a nonempty no_facts_reason. Return JSON only."""
+memories: [] with a nonempty no_facts_reason. Resolve first person using the speaker,
+but use the quoted speaker for reported speech. Resolve pronouns only when the supplied
+context supports a unique referent; never guess a person's identity. Examples are
+synthetic guidance, not additional input sources: never copy their IDs or claims.
+Return JSON only.
+Synthetic examples JSON:
+""" + json.dumps(EXTRACTION_EXAMPLES, ensure_ascii=False)
 
 
 QUERY_ANALYSIS_PROMPT_VERSION = "query-analysis-v1"

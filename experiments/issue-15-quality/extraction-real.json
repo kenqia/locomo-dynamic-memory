@@ -1,0 +1,534 @@
+{
+  "created_at": "2026-10-20T12:32:10.691217+00:00",
+  "implementation_sha256": "c2e1bb73d5d22598cdfce95334cb47dd7569d2bc607d8f03298183c71ea6ad74",
+  "before": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 25,
+    "reserved_total_calls": 338,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4
+    },
+    "operations": {
+      "relate": 25
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 24
+    },
+    "usage": {
+      "generation_calls": 25,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 209682,
+        "completion_tokens": 56566,
+        "total_tokens": 266248
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 209682,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 56566,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 266248,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 167.7667884259954
+    }
+  },
+  "phase": "extraction",
+  "cases": [
+    {
+      "case": "plan",
+      "source": {
+        "source_id": "synthetic/plan",
+        "speaker": "Riley",
+        "text": "I intend to relocate to Oslo, but I have not moved yet.",
+        "session_time": "2023-05-01",
+        "session_id": "session_1"
+      },
+      "output": {
+        "memories": [
+          {
+            "content": "Riley intends to relocate to Oslo.",
+            "memory_type": "event",
+            "statement_type": "intention",
+            "polarity": "positive",
+            "entity_id": "Riley",
+            "state_dimension": "relocation",
+            "state_value": "Oslo",
+            "source_ids": [
+              "synthetic/plan"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            }
+          },
+          {
+            "content": "Riley has not moved yet.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "negative",
+            "entity_id": "Riley",
+            "state_dimension": "relocation",
+            "state_value": null,
+            "source_ids": [
+              "synthetic/plan"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            }
+          }
+        ],
+        "no_facts_reason": null
+      },
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T12:32:10.694510+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 1960,
+              "completion_tokens": 150,
+              "total_tokens": 2110
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "elapsed_seconds": 1.0264271270025347,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T12:32:11.720939+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 3079,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      }
+    },
+    {
+      "case": "fact",
+      "source": {
+        "source_id": "synthetic/fact",
+        "speaker": "Riley",
+        "text": "I relocated to Oslo. I no longer work for Northwind.",
+        "session_time": "2023-05-01",
+        "session_id": "session_1"
+      },
+      "output": {
+        "memories": [
+          {
+            "content": "Riley relocated to Oslo.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "entity_id": "Riley",
+            "state_dimension": "relocation",
+            "state_value": "Oslo",
+            "source_ids": [
+              "synthetic/fact"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            }
+          },
+          {
+            "content": "Riley no longer works for Northwind.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "negative",
+            "entity_id": "Riley",
+            "state_dimension": "employment",
+            "state_value": "Northwind",
+            "source_ids": [
+              "synthetic/fact"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            }
+          }
+        ],
+        "no_facts_reason": null
+      },
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T12:32:11.733508+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 1959,
+              "completion_tokens": 123,
+              "total_tokens": 2082
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "elapsed_seconds": 0.8719729249969532,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T12:32:12.605483+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 3077,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      }
+    },
+    {
+      "case": "speaker",
+      "source": {
+        "source_id": "synthetic/speaker",
+        "speaker": "Riley",
+        "text": "Morgan said, 'I hope to start a bakery.' I still work as a nurse.",
+        "session_time": "2023-05-01",
+        "session_id": "session_1"
+      },
+      "output": {
+        "memories": [
+          {
+            "content": "Morgan hopes to start a bakery.",
+            "memory_type": "event",
+            "statement_type": "intention",
+            "polarity": "positive",
+            "entity_id": "Morgan",
+            "state_dimension": "business_venture",
+            "state_value": "bakery",
+            "source_ids": [
+              "synthetic/speaker"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            }
+          },
+          {
+            "content": "Riley still works as a nurse.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "entity_id": "Riley",
+            "state_dimension": "employment",
+            "state_value": "nurse",
+            "source_ids": [
+              "synthetic/speaker"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            }
+          }
+        ],
+        "no_facts_reason": null
+      },
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T12:32:12.621943+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 1965,
+              "completion_tokens": 153,
+              "total_tokens": 2118
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "elapsed_seconds": 0.9149543720013753,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T12:32:13.536899+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 3084,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      }
+    },
+    {
+      "case": "stages",
+      "source": {
+        "source_id": "synthetic/stages",
+        "speaker": "Riley",
+        "text": "I researched foster agencies, then filed my application, and later passed the interview. The placement is not finalized.",
+        "session_time": "2023-05-01",
+        "session_id": "session_1"
+      },
+      "output": {
+        "memories": [
+          {
+            "content": "Riley researched foster agencies.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "entity_id": "Riley",
+            "state_dimension": "foster_status",
+            "state_value": "research",
+            "source_ids": [
+              "synthetic/stages"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            }
+          },
+          {
+            "content": "Riley filed a foster application.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "entity_id": "Riley",
+            "state_dimension": "foster_status",
+            "state_value": "application",
+            "source_ids": [
+              "synthetic/stages"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            }
+          },
+          {
+            "content": "Riley passed the foster interview.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "entity_id": "Riley",
+            "state_dimension": "foster_status",
+            "state_value": "interview",
+            "source_ids": [
+              "synthetic/stages"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            }
+          },
+          {
+            "content": "Riley's foster placement is not finalized.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "negative",
+            "entity_id": "Riley",
+            "state_dimension": "foster_status",
+            "state_value": "placement",
+            "source_ids": [
+              "synthetic/stages"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            }
+          }
+        ],
+        "no_facts_reason": null
+      },
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T12:32:13.552829+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 1968,
+              "completion_tokens": 295,
+              "total_tokens": 2263
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "elapsed_seconds": 1.3904080860011163,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T12:32:14.943239+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 3087,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      }
+    }
+  ],
+  "status": "requires_semantic_review",
+  "after": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 29,
+    "reserved_total_calls": 342,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4
+    },
+    "operations": {
+      "relate": 25,
+      "extract": 4
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 28
+    },
+    "usage": {
+      "generation_calls": 29,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 217534,
+        "completion_tokens": 57287,
+        "total_tokens": 274821
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 217534,
+          "calls_with_reported_usage": 28,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 57287,
+          "calls_with_reported_usage": 28,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 274821,
+          "calls_with_reported_usage": 28,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 171.97055093599738
+    }
+  }
+}
