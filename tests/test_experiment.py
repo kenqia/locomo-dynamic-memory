@@ -174,3 +174,96 @@ def test_offline_status_and_export_are_read_only_and_do_not_claim_completed_eval
     assert '未启动' in report
     assert '动态准确率未评' in report
     assert '教师隐藏评分' in report
+
+
+def controlled_experiment_provider(request):
+    from test_builds import completion, draft
+    from test_relations import relation
+    payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+    if payload.get('operation') == 'answer':
+        citations = [{'memory_id': m['memory_id'], 'source_ids': m['source_ids']} for m in payload['memories']]
+        if not citations and payload.get('sources'):
+            citations = [{'memory_id': None, 'source_ids': [payload['sources'][0]['source_id']]}]
+        return completion({'status': payload['status'], 'answer': 'Not mentioned.', 'citations': citations})
+    if payload.get('operation') == 'resolve':
+        return completion({'status': 'sufficient', 'effective_memory_ids': [m['memory_id'] for m in payload['memories']], 'decisions': [{'memory_id': m['memory_id'], 'selected': True, 'reason': 'Controlled fixture'} for m in payload['memories']], 'supplemental_relations': [], 'explanation': 'Controlled fixture'})
+    if 'new_memory' in payload:
+        return completion({'judgments': [relation(old, payload['new_memory']) for old in payload['history']]})
+    if 'sources' in payload:
+        return completion({'memories': [draft([payload['sources'][0]['source_id']])]})
+    return completion({'entities': [], 'topic': None, 'time': None, 'keywords': []})
+
+
+def wait_for_run(client, run_id):
+    import time
+    deadline = time.monotonic() + 20
+    while time.monotonic() < deadline:
+        progress = client.get(f'/evaluation-runs/{run_id}/progress').json()
+        if progress['status'] != 'running':
+            return client.get('/evaluation-runs/' + run_id).json()
+        time.sleep(0.02)
+    raise AssertionError('Controlled evaluation did not finish')
+
+
+def test_smoke_runner_persists_twenty_items_and_reads_without_repeating_successes(settings, tmp_path, monkeypatch, capsys):
+    from locomo_memory.experiment import main
+    monkeypatch.setenv('DEEPSEEK_API_KEY', 'synthetic-protected-key')
+    settings = settings.model_copy(update={'fragment_turns': 1000})
+    calls = []
+    def provider(request):
+        calls.append(request)
+        return controlled_experiment_provider(request)
+    model = DeepSeekModel(settings, transport=httpx.MockTransport(provider))
+    arguments = ['--directory', str(tmp_path)]
+    with TestClient(create_app(settings, model=model, embedder=LengthCheckedEmbedder())) as client:
+        assert main(['prepare', *arguments], client=client) == 0
+        assert main(['smoke', *arguments, '--allow-paid', '--contract-record', str(contract_record(tmp_path))], client=client) == 0
+        state = json.loads((tmp_path / 'experiment.json').read_text())
+        assert state.get('smoke_run_id'), state
+        run = wait_for_run(client, state['smoke_run_id'])
+        assert run['progress']['succeeded'] == 20, run['progress']
+        count = len(calls)
+        assert main(['smoke', *arguments, '--allow-paid'], client=client) == 0
+        assert main(['status', *arguments], client=client) == 0
+        assert main(['export', *arguments], client=client) == 0
+        state = json.loads((tmp_path / 'experiment.json').read_text())
+        assert state['live_smoke'] == 'controlled_validation_only'
+        assert len(calls) == count
+        assert main(['full', *arguments, '--allow-paid'], client=client) == 2
+        assert len(calls) == count
+        exported = json.loads((tmp_path / 'runs' / run['run_id'] / 'run.json').read_text())
+        assert len(exported['items']) == 20
+        assert all(len(i['attempts']) == 1 for i in exported['items'])
+    assert 'successful_live_smoke_required' in capsys.readouterr().out
+
+
+def test_resume_requires_explicit_failure_retry_and_preserves_attempts(settings, tmp_path, monkeypatch):
+    from locomo_memory.experiment import main
+    monkeypatch.setenv('DEEPSEEK_API_KEY', 'synthetic-protected-key')
+    settings = settings.model_copy(update={'fragment_turns': 1000, 'model_retries': 0})
+    failure = {'enabled': True}
+    calls = []
+    def provider(request):
+        calls.append(request)
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if failure['enabled'] and payload.get('operation') == 'answer':
+            return httpx.Response(503, text='private-provider-body-not-retained')
+        return controlled_experiment_provider(request)
+    model = DeepSeekModel(settings, transport=httpx.MockTransport(provider))
+    arguments = ['--directory', str(tmp_path)]
+    with TestClient(create_app(settings, model=model, embedder=LengthCheckedEmbedder())) as client:
+        assert main(['prepare', *arguments], client=client) == 0
+        assert main(['smoke', *arguments, '--allow-paid', '--contract-record', str(contract_record(tmp_path))], client=client) == 0
+        run_id = json.loads((tmp_path / 'experiment.json').read_text())['smoke_run_id']
+        run = wait_for_run(client, run_id)
+        assert run['progress']['failed'] == 20
+        count = len(calls)
+        failure['enabled'] = False
+        assert main(['resume', *arguments, '--allow-paid'], client=client) == 0
+        assert len(calls) == count
+        assert main(['resume', *arguments, '--allow-paid', '--retry-failed'], client=client) == 0
+        run = wait_for_run(client, run_id)
+        assert run['progress']['succeeded'] == 20
+        assert all([a['status'] for a in i['attempts']] == ['failed', 'succeeded'] for i in run['items'])
+        assert main(['export', *arguments], client=client) == 0
+        assert 'private-provider-body-not-retained' not in (tmp_path / 'runs' / run_id / 'run.json').read_text()

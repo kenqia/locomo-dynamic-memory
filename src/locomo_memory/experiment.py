@@ -311,7 +311,13 @@ class Experiment:
             target = self.directory / 'runs' / run_id
             write_json(target / 'run.json', run)
             write_json(target / 'grouped-summary.json', run.get('grouped_summary', {}))
-            failures = [{'sample_id': i['sample_id'], 'question_id': i.get('question_id'), 'strategy': i['strategy'], 'status': i['status'], 'diagnosis': 'undetermined', 'evidence_pointer': f"run.json#items/{n}"} for n, i in enumerate(run.get('items', [])) if i['status'] != 'succeeded']
+            failures = []
+            for n, item in enumerate(run.get('items', [])):
+                result = item.get('result') or {}
+                score = result.get('qa', {}).get('value')
+                if item['status'] != 'succeeded' or score is not None and score < 1:
+                    trace = result.get('trace', {})
+                    failures.append({'sample_id': item['sample_id'], 'qa_index': item.get('qa_index'), 'question_id': item.get('question_id'), 'strategy': item['strategy'], 'status': item['status'], 'qa': result.get('qa'), 'source_mapping': result.get('mapping'), 'memory_rankings': result.get('memory_rankings'), 'source_sets': result.get('source_sets'), 'citations': trace.get('answer', {}).get('citations'), 'diagnosis': 'undetermined', 'evidence_pointer': f"run.json#items/{n}"})
             write_json(target / 'failure-cases.json', failures)
             (target / 'report.md').write_text(render_report(self.state, scope, run))
         (self.directory / f'report-{scope}.md').write_text(render_report(self.state, scope, run))

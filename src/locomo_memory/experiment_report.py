@@ -17,6 +17,13 @@ def render_report(state, scope, run=None):
     for strategy, group in run.get('summary', {}).items():
         execution, qa, score = group.get('execution', {}), group.get('qa', {}), group.get('baseline_run_score', {})
         lines.append(f"| {strategy} | {execution.get('succeeded')} / {execution.get('planned')} | {qa.get('mean')} / {qa.get('scored')} | {score.get('value')} / {score.get('denominator')} ({score.get('status')}) | {score.get('excluded')} |")
+    grouped = run.get('grouped_summary', {})
+    for dimension, label in [('conversation', '分对话'), ('category', '分类别')]:
+        lines += ['', f'## {label}', '', '| 分组 | 策略 | 成功 / 计划 | QA 均值 / 可计分 | 运行得分 / 分母 / 排除 |', '| --- | --- | --- | --- | --- |']
+        for identity, groups in grouped.get(dimension, {}).items():
+            for strategy, group in groups.items():
+                execution, qa, score = group.get('execution', {}), group.get('qa', {}), group.get('baseline_run_score', {})
+                lines.append(f"| {identity} | {strategy} | {execution.get('succeeded')} / {execution.get('planned')} | {qa.get('mean')} / {qa.get('scored')} | {score.get('value')} / {score.get('denominator')} / {score.get('excluded')} |")
     lines += ['', '按对话、类别及不同分母的完整统计保存在 `grouped-summary.json`。未完成运行的基线运行得分保持未完成，不能将待执行项提前判零。', '',
               '## 开销', '', '构建与查询分别统计；provider 未报告用量与结果未知调用不视为零。完整全文与 RAG 的上下文量分别保留；Vector 的额外问题分析和 BM25 开销保留在 Trace。', '',
               '构建：`' + json.dumps(run.get('build_usage_summary', {}), ensure_ascii=False) + '`', '',
