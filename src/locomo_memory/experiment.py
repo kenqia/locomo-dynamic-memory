@@ -35,13 +35,31 @@ class Experiment:
         self.state = json.loads(self.state_path.read_text()) if self.state_path.exists() else {'created_at': utc_now(), 'status': 'unprepared', 'blockers': [], 'builds': {}, 'live_smoke': 'not_run', 'full_baseline': 'not_run'}
 
     def request(self, method, path, **kwargs):
+        initiating = method == 'POST' and path in {'/builds', '/evaluation-runs'}
+        if initiating:
+            body = kwargs.get('json', {})
+            for receipt in self.state.get('initiation_receipts', []):
+                if receipt['path'] == path and receipt['request'] == body:
+                    return self.request('GET', path + '/' + receipt['resource_id'])
+            if self.state.get('pending_initiation'):
+                raise ExperimentError('initiation_outcome_unknown')
+            self.state['pending_initiation'] = {'path': path, 'request': body, 'requested_at': utc_now(), 'status': 'unknown_until_identity_saved'}
+            self.save()
         started_at, tick = utc_now(), time.perf_counter()
         try:
             response = self.client.request(method, path, **kwargs)
         except httpx.HTTPError:
-            raise ExperimentError('backend_unavailable') from None
+            raise ExperimentError('initiation_outcome_unknown' if initiating else 'backend_unavailable') from None
         if method == 'POST':
             self.state.setdefault('phase_invocations', []).append({'path': path, 'requested_at': started_at, 'response_observed_at': utc_now(), 'http_elapsed_seconds': time.perf_counter() - tick, 'elapsed_scope': 'HTTP round-trip only; background processing can continue after response', 'http_status': response.status_code})
+            self.save()
+        if initiating:
+            if response.status_code >= 500:
+                raise ExperimentError('initiation_outcome_unknown')
+            if not response.is_error:
+                resource_id = response.json()['build_id' if path == '/builds' else 'run_id']
+                self.state.setdefault('initiation_receipts', []).append({'path': path, 'request': body, 'resource_id': resource_id, 'observed_at': utc_now()})
+            self.state.pop('pending_initiation', None)
             self.save()
         if response.is_error:
             try:
@@ -375,6 +393,8 @@ def main(argv=None, *, client=None):
                     raise ExperimentError('paid_opt_in_required')
                 if args.command == 'full' and not experiment.state.get('smoke_run_id'):
                     raise ExperimentError('successful_live_smoke_required')
+                if experiment.state.get('pending_initiation'):
+                    raise ExperimentError('initiation_outcome_unknown')
                 if not experiment.state.get('plans'):
                     raise ExperimentError('offline_preparation_required')
                 experiment.require_live_prerequisites()

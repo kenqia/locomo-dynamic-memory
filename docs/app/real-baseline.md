@@ -94,6 +94,8 @@ Run 进度读取使用轻量 `/evaluation-runs/{run_id}/progress`，页面也可
   --allow-paid --retry-failed --retry-unknown
 ```
 
+若创建 Build 或 Run 后 HTTP 响应丢失，`experiment.json` 保留 `pending_initiation` 并返回 `initiation_outcome_unknown`；后续付费命令拒绝自动再次创建。先通过公开构建列表或已知 Run ID 核对服务器实际状态，保留旧目录并人工复核，不直接清空该记录重试。成功返回的身份立即存入 initiation receipt；即使客户端尚未更新阶段字段，再次执行也读取同一资源。
+
 保留首次失败、所有尝试和最终采用结果，成功项跳过。读取、导出不启动生成。输入、Prompt/schema、配置、固定版本或实现身份变化时，运行 API 拒绝原地恢复。不要手工改写旧记录或拷分拼接。外部模型调用可能已计费但结果尚未提交，未知结果重试可能再次计费，不承诺恰好一次调用。
 
 ## 全量运行与导出

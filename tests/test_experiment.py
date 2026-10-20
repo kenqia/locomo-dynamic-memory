@@ -267,3 +267,25 @@ def test_resume_requires_explicit_failure_retry_and_preserves_attempts(settings,
         assert all([a['status'] for a in i['attempts']] == ['failed', 'succeeded'] for i in run['items'])
         assert main(['export', *arguments], client=client) == 0
         assert 'private-provider-body-not-retained' not in (tmp_path / 'runs' / run_id / 'run.json').read_text()
+
+
+def test_lost_build_creation_response_is_preserved_as_unknown_without_automatic_duplicate(settings, tmp_path, monkeypatch, capsys):
+    from locomo_memory.experiment import main
+    monkeypatch.setenv('DEEPSEEK_API_KEY', 'synthetic-protected-key')
+    model = DeepSeekModel(settings, transport=httpx.MockTransport(controlled_experiment_provider))
+    with TestClient(create_app(settings, model=model, embedder=LengthCheckedEmbedder())) as api:
+        def transport(request):
+            response = api.request(request.method, str(request.url), content=request.content, headers=request.headers)
+            if request.method == 'POST' and request.url.path == '/builds':
+                raise httpx.ReadTimeout('Response lost after server accepted build')
+            return httpx.Response(response.status_code, content=response.content, headers=response.headers)
+        with httpx.Client(base_url='http://localhost', transport=httpx.MockTransport(transport)) as client:
+            args = ['--directory', str(tmp_path)]
+            assert main(['prepare', *args], client=client) == 0
+            assert main(['probe', *args, '--allow-paid', '--contract-record', str(contract_record(tmp_path))], client=client) == 2
+            assert api.get('/builds').json()['total'] == 1
+            assert main(['probe', *args, '--allow-paid'], client=client) == 2
+            assert api.get('/builds').json()['total'] == 1
+    assert 'initiation_outcome_unknown' in capsys.readouterr().out
+    state = json.loads((tmp_path / 'experiment.json').read_text())
+    assert state['pending_initiation']['path'] == '/builds'
