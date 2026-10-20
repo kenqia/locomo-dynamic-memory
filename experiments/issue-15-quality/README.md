@@ -37,3 +37,25 @@
 
 停止C的真实尝试，不继续堆Prompt、硬编码ID或强改标签。后续D/E可以独立完成受控工程验证，
 完整conv-26 Build、发布和25项smoke保持阻塞；没有冻结新完整身份。
+
+## D：有界原文兜底
+
+新策略 `dynamic_raw_fallback` 与原 dynamic 分开，含子问覆盖、最多一次 BM25 窗口检索、
+最多一次联合解析、共同证据预算、完整 messages 预算和实际联合来源指标。
+新 smoke 开关可生成25项计划，默认20项及完整开发集3028项不变，未执行真实 smoke。
+
+公开 API 回归覆盖遗漏恢复、无缺口不兜底、子问不足、部分回答、双原文与 Memory—原文冲突、
+越界来源拒绝、输入/原文/交付预算、超长轮次、去重及不同对话和导入隔离。
+定向命令 `.venv/bin/python -m pytest tests/test_raw_queries.py tests/test_queries.py tests/test_evaluation.py tests/test_evaluation_plans.py tests/test_full_text.py -q --tb=short`，37 passed。
+一次命令误引用不存在的 `test_evaluation_execution.py`，收集前退出；随后用实际文件名执行上述命令。
+
+真实探针使用固定合成来源，未启动完整 Build。初次输出未留正文，仅有安全错误码，
+`raw-real.json` 记录首次拒绝。`raw-diagnosis-real.json` 复现模型将 Memory 来源放入独立原文 ID，
+说明第一次失败的可能原因，但不能倒推两次输出相同。明确 raw_sources 独立引用范围后，
+`raw-source-scope-real.json` 首次解析通过，联合解析却选中已拒绝的 Memory，被校验拒绝。
+针对这两个具体契约歧义补充说明与字段描述，未放松校验；
+`raw-selection-scope-real.json` 完成两次解析和一次回答，任职 Larch 有原文引用，日期未知。
+
+D共7次真实请求，原Campaign累计354/1000，剩余646；四份记录保留各自身份与失败。
+该合成控制器探针不验证真实 conv-26 兜底质量，不替代独立语义复核。
+C的172仍失败，完整构建、发布及25项smoke继续阻塞。

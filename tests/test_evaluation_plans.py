@@ -106,3 +106,17 @@ def test_plan_requires_explicit_artifact_and_survives_restart(settings):
         assert inputs['source_identity']['artifact_sha256'] == imported['artifact_sha256']
         assert inputs['source_identity']['source_sha256'] == imported['source_sha256']
         assert inputs['plan_id'] == plan['plan_id']
+
+
+def test_raw_fallback_is_opt_in_for_five_question_smoke_only(client):
+    imported = client.post('/imports/official').json()
+    body = {'dataset_id': imported['dataset_id'], 'artifact_sha256': imported['artifact_sha256'], 'scope': 'smoke'}
+    old = client.post('/evaluation-plans', json=body).json()
+    new = client.post('/evaluation-plans', json={**body, 'include_raw_fallback': True})
+    assert new.status_code == 201, new.text
+    plan = new.json()
+    assert plan['combination_count'] == 25
+    assert plan['questions'] == old['questions']
+    assert plan['strategies'] == old['strategies'] + ['dynamic_raw_fallback']
+    assert plan['plan_id'] != old['plan_id']
+    assert client.post('/evaluation-plans', json={**body, 'scope': 'development', 'include_raw_fallback': True}).status_code == 422

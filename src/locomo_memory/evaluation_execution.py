@@ -85,7 +85,11 @@ class EvaluationExecution:
         q = self.service.queries
         with self.database.connect() as db:
             source = dict(db.execute('SELECT * FROM datasets WHERE dataset_id=?', (inputs['dataset_id'],)).fetchone())
+        from .raw_schemas import MixedResolution, RAW_RESOLUTION_PROMPT, RAW_ANSWER_PROMPT, RAW_RESOLUTION_VERSION, RAW_ANSWER_VERSION
         return {
+            'raw_fallback': {'resolution_prompt':RAW_RESOLUTION_PROMPT, 'answer_prompt':RAW_ANSWER_PROMPT,
+                'resolution_schema':MixedResolution.model_json_schema(), 'resolution_version':RAW_RESOLUTION_VERSION,
+                'answer_version':RAW_ANSWER_VERSION, 'evidence_profile':'expanded'},
             'input': inputs, 'plan': plan, 'selected_indices': selected, 'pins': pins,
             'strategies': strategies, 'partition': partition, 'source': source,
             'source_turns_sha256': {sid: digest(self.service.sources(inputs['dataset_id'], sid)) for sid in pins},

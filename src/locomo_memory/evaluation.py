@@ -23,7 +23,7 @@ from .query_schemas import EvidenceAnswer, EffectiveResolution, QueryRequest
 from .retrieval import TOKEN_BUDGET_METHOD, budget_tokens, indexing_text
 from .temporal import conversation_cutoff
 
-Strategy = Literal['dynamic', 'full_text', 'vector', 'hybrid_no_resolution']
+Strategy = Literal['dynamic', 'dynamic_raw_fallback', 'full_text', 'vector', 'hybrid_no_resolution']
 
 
 class RelationTruth(BaseModel):
@@ -90,7 +90,7 @@ class RunRequest(BaseModel):
     model_config = ConfigDict(extra='forbid')
     input_id: str | None = None
     plan_id: str | None = None
-    strategies: list[Strategy] | None = Field(default=None, min_length=1, max_length=4)
+    strategies: list[Strategy] | None = Field(default=None, min_length=1, max_length=5)
     wait: bool = False
     build_ids: dict[str, str] = Field(default_factory=dict)
     partition: Literal['dev', 'test'] | None = None
@@ -240,17 +240,23 @@ class EvaluationService:
         mapping = inputs['mappings'][index]
         item = {'sample_index': index, 'sample_id': sample['sample_id'], 'strategy': strategy, 'mapping': mapping, 'qa': {'value': None, 'reason': 'execution_failed'}, 'source_coverage': {s: None for s in ('initial', 'expanded', 'effective', 'answer_context')}, 'dynamic_metric': {'value': None, 'reason': 'independent_truth_missing'}}
         try:
-            query = QueryRequest(dataset_id=inputs['dataset_id'], sample_id=sample['sample_id'], build_id=build_id, question=sample['question'])
-            trace = self.queries.query(query) if strategy == 'dynamic' else self.baseline(query, strategy)
+            is_dynamic = strategy in ('dynamic', 'dynamic_raw_fallback')
+            query = QueryRequest(strategy=strategy if is_dynamic else 'dynamic', dataset_id=inputs['dataset_id'], sample_id=sample['sample_id'], build_id=build_id, question=sample['question'])
+            trace = self.queries.query(query) if is_dynamic else self.baseline(query, strategy)
             item['trace'] = trace
-            item['ranking_units'] = {'initial': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'expanded': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'effective': 'Memory' if strategy == 'dynamic' else 'not_applicable', 'answer_context': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'source_coverage': 'unique SourceTurn IDs per stage; K is actual delivered rank count'}
+            item['ranking_units'] = {'initial': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'expanded': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'effective': 'Memory + SourceTurn' if strategy == 'dynamic_raw_fallback' else 'Memory' if is_dynamic else 'not_applicable', 'answer_context': 'SourceTurn' if strategy == 'full_text' else 'Memory + SourceTurn' if strategy == 'dynamic_raw_fallback' else 'Memory', 'source_coverage': 'unique SourceTurn IDs per stage; K is actual delivered rank count'}
             item['qa'] = qa_score(trace['answer']['answer'], sample)
-            if strategy == 'dynamic':
+            if is_dynamic:
                 stages = {'initial': [c['memory'] for c in trace['initial']['initial_candidates']], 'expanded': [c['memory'] for c in trace['expanded']['candidates']], 'effective': trace['effective_memories'], 'answer_context': trace['effective_memories']}
             else:
                 stages = {'initial': trace['initial'], 'expanded': trace['expanded'], 'answer_context': trace.get('delivered_memories', [])}
             item['memory_rankings'] = {stage: [m['memory_id'] for m in ms] for stage, ms in stages.items()}
             item['source_sets'] = {stage: list(dict.fromkeys(sid for m in ms for sid in m['source_ids'])) for stage, ms in stages.items()}
+            if strategy == 'dynamic_raw_fallback':
+                item['source_sets']['effective'] = list(dict.fromkeys(item['source_sets']['effective'] + trace['resolution']['effective_source_ids']))
+                item['source_sets']['answer_context'] = [s['source_id'] for s in trace['answer_context_sources']]
+                item['raw_source_stages'] = trace['raw_fallback']
+                item['dynamic_metric']['reason'] = 'independent_mixed_evidence_truth_missing'
             if strategy == 'full_text':
                 item['source_sets'] = {'initial': trace['initial_source_ids'], 'answer_context': trace['answer_context']}
             if strategy == 'vector':
@@ -287,7 +293,7 @@ class EvaluationService:
         trace = item.get('trace', {})
         # A retrieval failure can precede or follow encode; do not claim zero.
         embedding_count = 0 if strategy == 'full_text' else None
-        retrieval_trace = trace.get('initial') if strategy == 'dynamic' else trace.get('retrieval')
+        retrieval_trace = trace.get('initial') if strategy in ('dynamic', 'dynamic_raw_fallback') else trace.get('retrieval')
         if isinstance(retrieval_trace, dict) and 'channels' in retrieval_trace:
             embedding_count = int(bool(retrieval_trace['channels']['dense']))
         item['usage_summary'] = {**provider_usage(calls), 'embedding_calls': embedding_count}

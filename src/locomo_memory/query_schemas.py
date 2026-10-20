@@ -20,6 +20,7 @@ class QueryRequest(BaseModel):
     build_id: StrictStr | None = Field(default=None, min_length=1)
     question: StrictStr = Field(min_length=1, max_length=10000)
     requested_date: date | None = None
+    strategy: Literal["dynamic", "dynamic_raw_fallback"] = "dynamic"
 
     @model_validator(mode="after")
     def english_question(self):
@@ -60,15 +61,18 @@ class EffectiveResolution(BaseModel):
         memories = context["memories"]
         allowed = set(memories)
         selected = set(self.effective_memory_ids)
+        raw_selected = set(getattr(self, "effective_source_ids", []))
+        if not raw_selected <= set(context.get("raw_sources", {})):
+            raise ValueError("Raw evidence outside supplied scope")
         if len(selected) != len(self.effective_memory_ids) or not selected <= allowed:
             raise ValueError("Effective evidence must use unique supplied IDs")
         if {d.memory_id for d in self.decisions} != allowed or len(self.decisions) != len(allowed):
             raise ValueError("Explain every candidate exactly once")
         if {d.memory_id for d in self.decisions if d.selected} != selected:
             raise ValueError("Selection and decisions disagree")
-        if self.status == "sufficient" and not selected:
+        if self.status == "sufficient" and not (selected or raw_selected):
             raise ValueError("Sufficient answer requires evidence")
-        if self.status == "conflict" and len(selected) < 2:
+        if self.status == "conflict" and len(selected) + len(raw_selected) < 2:
             raise ValueError("Conflict requires both evidence sides")
         for judgment in self.supplemental_relations:
             old, new = memories.get(judgment.old_memory_id), memories.get(judgment.new_memory_id)
@@ -110,6 +114,8 @@ class EvidenceAnswer(BaseModel):
             memory = memories.get(citation.memory_id)
             if memory is None or not set(citation.source_ids) <= set(memory["source_ids"]) or len(set(citation.source_ids)) != len(citation.source_ids):
                 raise ValueError("Citation outside delivered effective evidence")
-        if self.status == "conflict" and len({c.memory_id for c in self.citations}) < 2:
+        endpoints = {( "memory", c.memory_id) if c.memory_id is not None else ("source", sid)
+                     for c in self.citations for sid in c.source_ids}
+        if self.status == "conflict" and len(endpoints) < 2:
             raise ValueError("Cite both unresolved conflict sides")
         return self

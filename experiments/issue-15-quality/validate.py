@@ -87,9 +87,37 @@ def stages(model):
                    'metadata':generated.metadata}
 
 
+def raw_fallback(model):
+    """Real resolution/answer with synthetic fixed evidence; no production Build."""
+    from types import SimpleNamespace
+    from locomo_memory.raw_queries import run_raw_query
+    from locomo_memory.query_schemas import QueryRequest
+    from locomo_memory.memory_schemas import Memory
+    sources = [dict(source_id=f'synthetic/conv-probe/D1:{i+1}', dataset_id='synthetic',
+        sample_id='conv-probe', session_id='session_1', dia_id=f'D1:{i+1}', speaker='Riley',
+        session_time='1:00 pm on 1 May, 2023', text=text, position=i) for i,text in enumerate([
+            'I live in Bergen.', 'I work for Larch. I have not said when I started.'])]
+    memory = Memory(memory_id='residence', build_id='synthetic-build', dataset_id='synthetic',
+        sample_id='conv-probe', state_key='conv-probe:Riley:residence', session_times=['1:00 pm on 1 May, 2023'],
+        content='Riley lives in Bergen.', memory_type='state', statement_type='fact', polarity='positive',
+        entity_id='Riley', state_dimension='residence', state_value='Bergen', source_ids=[sources[0]['source_id']]).model_dump(mode='json')
+    request = QueryRequest(dataset_id='synthetic',sample_id='conv-probe',strategy='dynamic_raw_fallback',
+        question='Where does Riley work, and on what date did Riley start that job?')
+    trace = {'prompts':{},'schemas':{},'query_fingerprint':'synthetic-fixed-input',
+        'initial':{'analysis':{'entities':['Riley'],'topic':'employment','keywords':[]},'initial_truncated':False},
+        'expanded':{'truncated':False},'relations':[], 'operations':{},'stage_seconds':{},
+        'time':{'requested_date':None,'anchor_date':'2023-05-01','origin':'conversation_cutoff',
+                'cutoff':'2023-05-01T13:00:00','beyond_cutoff':False}}
+    run_raw_query(SimpleNamespace(settings=model.settings,model=model),request,trace,
+        {memory['memory_id']:memory},{sources[0]['source_id']:sources[0]},
+        (sources,{'scope':'synthetic-controller-probe','pinned_source_ids':[s['source_id'] for s in sources]}))
+    yield {'case':'employment_and_unknown_start','source':sources,'trace':trace,
+           'acceptance':'Recover Larch with raw citation; start date remains unknown; at most two resolves.'}
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('phase', choices=['extraction', 'candidates', 'stages'])
+    parser.add_argument('phase', choices=['extraction', 'candidates', 'stages', 'raw'])
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     if args.output.exists():
@@ -98,13 +126,25 @@ def main():
     with CAMPAIGN.with_suffix('.quality.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         campaign = QualityCampaign(CAMPAIGN, PRIOR)
-        model = DeepSeekModel(Settings(model_retries=0))
-        campaign.bind(model, {'extraction':'quality-A-extraction','candidates':'quality-B-candidates','stages':'quality-C-stages'}[args.phase])
+        synthetic_outputs = []
+        transport = None
+        if args.phase == 'raw':
+            import httpx
+            class SyntheticProbeTransport(httpx.HTTPTransport):
+                def handle_request(self, request):
+                    response = super().handle_request(request)
+                    response.read()
+                    if response.status_code == 200:
+                        synthetic_outputs.append(response.json()['choices'][0]['message']['content'])
+                    return response
+            transport = SyntheticProbeTransport()
+        model = DeepSeekModel(Settings(model_retries=0), transport=transport)
+        campaign.bind(model, {'extraction':'quality-A-extraction','candidates':'quality-B-candidates','stages':'quality-C-stages','raw':'quality-D-raw'}[args.phase])
         result = {'created_at': utc_now(), 'implementation_sha256': implementation_sha256(),
                   'before': campaign.summary(), 'phase': args.phase}
         try:
             result['cases'] = []
-            for case in {'extraction':extraction,'candidates':candidates,'stages':stages}[args.phase](model):
+            for case in {'extraction':extraction,'candidates':candidates,'stages':stages,'raw':raw_fallback}[args.phase](model):
                 result['cases'].append(case)
                 args.output.parent.mkdir(parents=True, exist_ok=True)
                 args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
@@ -113,6 +153,8 @@ def main():
             result['status'] = 'stopped'
             result['error_code'] = error.code if isinstance(error, ModelFailure) else 'campaign_or_provider_stopped'
         finally:
+            if args.phase == 'raw':
+                result['synthetic_provider_outputs'] = synthetic_outputs
             result['after'] = campaign.summary()
             args.output.parent.mkdir(parents=True, exist_ok=True)
             args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')

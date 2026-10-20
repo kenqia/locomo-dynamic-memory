@@ -4,7 +4,7 @@ import json
 from typing import Literal
 
 from fastapi import HTTPException
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
 from .builds import BuildError
 from .evaluation import EvaluationInput
@@ -21,6 +21,13 @@ class PlanRequest(BaseModel):
     dataset_id: str = Field(min_length=1)
     artifact_sha256: str = Field(pattern=r'^[0-9a-f]{64}$')
     scope: Literal['development', 'smoke'] = 'development'
+    include_raw_fallback: bool = False
+
+    @model_validator(mode='after')
+    def limited_raw_comparison(self):
+        if self.include_raw_fallback and self.scope != 'smoke':
+            raise ValueError('Raw fallback is limited to smoke plans')
+        return self
 
 
 class EvaluationPlanService:
@@ -69,6 +76,7 @@ class EvaluationPlanService:
             inputs = EvaluationInput(dataset_id=request.dataset_id, kind='course', course_split=COURSE_SPLIT, samples=samples)
         except ValidationError:
             raise BuildError('invalid_evaluation_annotations', 422) from None
+        strategies = STRATEGIES + (['dynamic_raw_fallback'] if request.include_raw_fallback else [])
         plan = {
             'plan_version': PLAN_VERSION, 'scope': request.scope, 'status': 'preview',
             'dataset_id': request.dataset_id, 'source_sha256': dataset['source_sha256'],
@@ -76,8 +84,8 @@ class EvaluationPlanService:
             'artifact_sha256': request.artifact_sha256, 'checksum_basis': artifact['checksum_basis'],
             'provenance': json.loads(artifact['provenance_json']),
             'course_split': COURSE_SPLIT, 'partition': 'dev', 'grading_set': 'hidden_not_available',
-            'strategies': STRATEGIES, 'questions': questions,
-            'question_count': len(questions), 'combination_count': len(questions) * len(STRATEGIES),
+            'strategies': strategies, 'questions': questions,
+            'question_count': len(questions), 'combination_count': len(questions) * len(strategies),
         }
         plan_id = hashlib.sha256(canonical_json(plan).encode()).hexdigest()
         with self.database.connect() as db:

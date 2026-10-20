@@ -180,3 +180,15 @@ uv run --locked pytest tests/test_evaluation_reports.py tests/test_evaluation_re
 ### 创建响应丢失后的身份发现
 
 `POST /evaluation-runs` 可选接收 32–64 字符的 `creation_token`，原样保存到 Run。同一 Build 或 Run 类型内重复使用非空 token 返回 HTTP 409，SQLite 唯一约束阻止创建第二资源。它用于关联客户端请求与已创建资源，不是认证凭据，也不承诺提供方恰好一次调用。`GET /evaluation-runs` 返回轻量分页列表，支持 `creation_token` 精确筛选、`limit`（1–100）与 `offset`（非负）。列表仅含 Run ID、状态、计划 ID 与关联 token；完整身份继续从 `GET /evaluation-runs/{run_id}` 读取。实验入口的 `recover --resource-id` 在核对完整身份后保存 receipt；发现候选不会自动认领或重建。
+
+## 原文兜底有限对照
+
+`dynamic_raw_fallback` 是独立策略，不替换 `dynamic`，也不自动加入全开发集计划。
+创建 `scope: "smoke"` 的 `/evaluation-plans` 时，显式设置 `include_raw_fallback: true`，
+可在原五题四策略20项之外增加同五题新策略，共25项逻辑 QA。development 范围拒绝该开关。
+所有实际分析、解析、回答和重试分别记账，25项不代表25次 HTTP 请求。
+
+新策略的 initial/expanded 排名单位仍为 Memory，effective/answer_context 标明 Memory + SourceTurn。
+最终来源覆盖使用实际交付的联合来源，原文阶段独立记录。
+Memory 级动态参考不能用作混合证据真值，缺少独立标注时指标保持未评。
+Run 身份包含独立 Prompt、schema、配置及源码摘要，不恢复旧实现身份的 Run。

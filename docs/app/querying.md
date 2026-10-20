@@ -53,3 +53,22 @@ uv run --locked pytest tests/test_queries.py -q
 ```
 
 测试通过公开 API 使用真实 SQLite、BM25、cosine/RRF 和历史扩展，仅控制外部模型与 Embedding。覆盖当前/历史交叉提问、真实初始遗漏后的扩展、全局不改写、冲突、计划、未知关系、证据不足、未来、预算、非法引用和并发版本切换。执行记录见 `experiments/issue-9-query-validation.md`。真实模型与浏览器检查单独记录。
+
+## 有界原文兜底
+
+`POST /queries` 可显式设置 `strategy: "dynamic_raw_fallback"`。默认 `dynamic` 继续只使用 Memory。
+新策略先解析 Memory 并列出每个子问的覆盖。整体或任一子问不足时，仅检索一次原文，
+有命中时再联合解析一次；无缺口不增加操作。整体不足仍可有引用地回答已知部分。
+
+原文只来自已 pin 的完整 Build 的全部输入轮次，包括未抽出 Memory 的轮次。
+查询在读取事务内核对来源清单及规范化正文摘要，不读取 QA、Observation 或 Session Summary。
+BM25 最多取3个中心，同 session 前后各1轮，去重后最多9轮；超长中心跳过，继续尝试后续匹配。
+完整原文及元信息受 `raw_token_budget=2000` 限制，并占共同 `evidence_token_budget=6000`。
+解析和回答的完整 messages 受 `resolution_input_budget=12000` 限制，包含 Prompt、schema 和载荷。
+这些是 `regex-word-punctuation-v1` 近似单位，输出 `model_max_tokens=8192` 另计。
+
+Trace 分开记录首次解析、兜底触发理由、排名、窗口、省略、联合解析、有效来源、最终送达及引用。
+同维度和关系端点作为证据组交付；完整组放不下时省略并报告不足。
+原文独立引用使用 `memory_id: null`，Memory 引用继续绑定其来源。
+混合证据可以保留 Memory 与原文、两条原文之间的冲突。查询不写回 Memory、关系或状态投影。
+原 Full Text 继续使用完整全文契约，不复用本策略的片段预算开关。

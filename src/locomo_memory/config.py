@@ -39,6 +39,11 @@ class Settings(BaseModel):
     relation_fact_fraction: float = Field(default=0.5, ge=0, le=1)
     candidate_token_budget: int = Field(default=12000, gt=0)
     evidence_token_budget: int = Field(default=6000, gt=0)
+    raw_max_hits: int = Field(default=3, gt=0)
+    raw_neighbor_turns: int = Field(default=1, ge=0, le=3)
+    raw_max_turns: int = Field(default=9, gt=0)
+    raw_token_budget: int = Field(default=2000, gt=0)
+    resolution_input_budget: int = Field(default=12000, gt=0)
 
     @model_validator(mode="before")
     @classmethod
