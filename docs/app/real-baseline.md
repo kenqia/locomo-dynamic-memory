@@ -94,7 +94,24 @@ Run 进度读取使用轻量 `/evaluation-runs/{run_id}/progress`，页面也可
   --allow-paid --retry-failed --retry-unknown
 ```
 
-若创建 Build 或 Run 后 HTTP 响应丢失，`experiment.json` 保留 `pending_initiation` 并返回 `initiation_outcome_unknown`；后续付费命令拒绝自动再次创建。先通过公开构建列表或已知 Run ID 核对服务器实际状态，保留旧目录并人工复核，不直接清空该记录重试。成功返回的身份立即存入 initiation receipt；即使客户端尚未更新阶段字段，再次执行也读取同一资源。
+若创建 Build 或 Run 后 HTTP 响应丢失，`experiment.json` 保留 `pending_initiation` 并返回 `initiation_outcome_unknown`；后续付费命令拒绝自动再次创建。创建请求带有随机 `creation_token`，后端将它与资源一起持久保存。先发现与该次请求关联的候选资源：
+
+```sh
+.venv/bin/python -m locomo_memory.experiment recover \
+  --directory "$PWD/var/real-baseline" --api-url http://127.0.0.1:18000
+```
+
+检查输出中的 `recovery_candidates`，再显式接纳一个 ID：
+
+```sh
+.venv/bin/python -m locomo_memory.experiment recover \
+  --directory "$PWD/var/real-baseline" --api-url http://127.0.0.1:18000 \
+  --resource-id '<已核对的 build_id 或 run_id>'
+```
+
+`recover` 只读取后端并更新本地 receipt，不调用生成模型。它核对关联 token、专属数据库、配置与实现身份，再核对 Build 的数据集、对话和来源，或 Run 的计划、输入、策略、原件与固定版本。成功后重新运行原命令，入口接续同一资源。候选不自动接纳；身份不匹配时保留未知记录并拒绝继续。旧版本未知记录没有关联 token 时返回 `legacy_initiation_ownership_unverifiable`，保留旧目录和服务器结果，不能仅凭相同对话或时间认领，也不要手工清空记录重试。公开 `GET /evaluation-runs?creation_token=...&limit=100&offset=0` 返回轻量分页身份列表，可用于独立核对 Run。成功返回的身份也会立即存入 initiation receipt；即使客户端尚未更新阶段字段，再次执行也读取同一资源。
+
+结果提交失败后，执行所有者将仍在运行的项标为 `unknown`，保留未确认尝试。后端启动也会修复中断 Run 中遗留的运行项。只有显式 `--retry-unknown` 才会重新调用这些项。
 
 保留首次失败、所有尝试和最终采用结果，成功项跳过。读取、导出不启动生成。输入、Prompt/schema、配置、固定版本或实现身份变化时，运行 API 拒绝原地恢复。不要手工改写旧记录或拷分拼接。外部模型调用可能已计费但结果尚未提交，未知结果重试可能再次计费，不承诺恰好一次调用。
 

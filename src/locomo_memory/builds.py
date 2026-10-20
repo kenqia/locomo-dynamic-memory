@@ -58,6 +58,7 @@ class BuildService:
                 );
                 CREATE INDEX IF NOT EXISTS memory_build ON memories(build_id, memory_id);
                 CREATE INDEX IF NOT EXISTS memory_state ON memories(build_id, state_key);
+                CREATE UNIQUE INDEX IF NOT EXISTS unique_build_creation_token ON build_versions(json_extract(model_metadata_json,'$.creation_token')) WHERE json_extract(model_metadata_json,'$.creation_token') IS NOT NULL;
             """)
 
     def fingerprint(self, source_sha256: str, sample_id: str) -> str:
@@ -87,7 +88,7 @@ class BuildService:
             db.execute("UPDATE build_fragments SET status='interrupted', error_code='interrupted', error_message='Backend stopped before this fragment completed' WHERE status='running'")
             db.execute("UPDATE build_versions SET status='interrupted', updated_at=? WHERE status IN ('queued', 'running')", (utc_now(),))
 
-    def start(self, dataset_id: str, sample_id: str) -> dict:
+    def start(self, dataset_id: str, sample_id: str, creation_token: str | None = None) -> dict:
         build_id = uuid.uuid4().hex
         now = utc_now()
         with self.database.connect() as db:
@@ -98,6 +99,8 @@ class BuildService:
             snapshot = self.settings.snapshot()
             fingerprint = self.fingerprint(dataset["source_sha256"], sample_id)
             metadata = {"requested_model": self.settings.model_name, "known_service_version": KNOWN_MODEL_VERSION, "run_date": now[:10], "returned_models": [], "calls": [], "artifact_versions": {"relation_prompt_version": model_contract.RELATION_PROMPT_VERSION, "relation_schema_version": relation_contract.RELATION_SCHEMA_VERSION, "projection_version": projection_contract.PROJECTION_VERSION}}
+            if creation_token is not None:
+                metadata["creation_token"] = creation_token
             try:
                 db.execute("INSERT INTO build_versions VALUES (?, ?, ?, 'queued', 'extraction', ?, ?, ?, ?, ?, ?, ?, ?)",
                            (build_id, dataset_id, sample_id, fingerprint, dataset["source_sha256"], canonical_json(snapshot), model_contract.EXTRACTION_PROMPT_VERSION, model_contract.MEMORY_SCHEMA_VERSION, canonical_json(metadata), now, now))

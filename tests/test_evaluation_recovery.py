@@ -272,3 +272,38 @@ def test_plan_only_execution_pins_complete_build_and_rejects_changed_scope(setti
         assert run['query_analysis_schema']
         assert [i['question_id'] for i in run['items'][::4]] == ['conv-26:qa:0', 'conv-26:qa:1', 'conv-26:qa:2', 'conv-26:qa:3', 'conv-26:qa:4']
         assert len(answers) == 20
+
+
+def test_uncommitted_result_becomes_unknown_and_requires_explicit_retry(settings, sample):
+    import sqlite3
+    answers = []
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'answer':
+            answers.append(payload['question'])
+            if len(answers) == 1:
+                # Fault injection at the real SQLite boundary, after the provider
+                # accepts a call. All state assertions use the public Run API.
+                with sqlite3.connect(settings.db_path) as db:
+                    db.execute("CREATE TRIGGER fail_result BEFORE UPDATE ON evaluation_run_items WHEN NEW.status='succeeded' BEGIN SELECT RAISE(FAIL, 'controlled storage failure'); END")
+        return query_provider(request)
+    model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        dataset_id, _ = complete_build(client, sample)
+        input_id = input_for(client, dataset_id, ['Uncommitted answer?'])
+        run = client.post('/evaluation-runs', json={'input_id': input_id, 'strategies': ['dynamic'], 'wait': True}).json()
+        with sqlite3.connect(settings.db_path) as db:
+            db.execute('DROP TRIGGER fail_result')
+        assert run['status'] == 'interrupted'
+        assert run['progress']['unknown'] == 1
+        attempt = run['items'][0]['attempts'][0]
+        assert attempt['status'] == 'unknown'
+        assert attempt['result'] is None
+        untouched = client.post('/evaluation-runs/' + run['run_id'] + '/resume', json={'wait': True}).json()
+        assert untouched['progress']['unknown'] == 1
+        assert len(answers) == 1
+        done = client.post('/evaluation-runs/' + run['run_id'] + '/resume', json={'retry_unknown': True, 'wait': True}).json()
+        assert done['status'] == 'completed'
+        assert done['items'][0]['attempts'][0] == attempt
+        assert [a['status'] for a in done['items'][0]['attempts']] == ['unknown', 'succeeded']
+        assert len(answers) == 2

@@ -286,6 +286,76 @@ def test_lost_build_creation_response_is_preserved_as_unknown_without_automatic_
             assert api.get('/builds').json()['total'] == 1
             assert main(['probe', *args, '--allow-paid'], client=client) == 2
             assert api.get('/builds').json()['total'] == 1
+            build_id = api.get('/builds').json()['items'][0]['build_id']
+            assert main(['recover', *args], client=client) == 0
+            candidates = json.loads((tmp_path / 'experiment.json').read_text())['recovery_candidates']
+            assert [r['resource_id'] for r in candidates] == [build_id]
+            original = api.get('/builds/' + build_id).json()
+            duplicate = api.post('/builds', json={'dataset_id': original['dataset_id'], 'sample_id': original['sample_id'], 'creation_token': original['model_metadata']['creation_token']})
+            assert duplicate.status_code == 409
+            assert api.get('/builds').json()['total'] == 1
+            unrelated = api.post('/builds', json={'dataset_id': original['dataset_id'], 'sample_id': original['sample_id']}).json()['build_id']
+            assert main(['recover', *args, '--resource-id', unrelated], client=client) == 2
+            assert json.loads((tmp_path / 'experiment.json').read_text())['pending_initiation']
+            assert main(['recover', *args, '--resource-id', build_id], client=client) == 0
+            assert main(['probe', *args, '--allow-paid'], client=client) == 0
+            assert api.get('/builds').json()['total'] == 2
     assert 'initiation_outcome_unknown' in capsys.readouterr().out
     state = json.loads((tmp_path / 'experiment.json').read_text())
-    assert state['pending_initiation']['path'] == '/builds'
+    assert 'pending_initiation' not in state
+    assert state['probe']['status'] == 'passed'
+    assert state['initiation_receipts'][0]['resource_id'] == build_id
+
+
+def test_lost_run_response_can_be_discovered_and_explicitly_adopted(settings, tmp_path, monkeypatch):
+    from locomo_memory.experiment import main
+    monkeypatch.setenv('DEEPSEEK_API_KEY', 'synthetic-protected-key')
+    settings = settings.model_copy(update={'fragment_turns': 1000})
+    calls = []
+    def provider(request):
+        calls.append(request)
+        return controlled_experiment_provider(request)
+    model = DeepSeekModel(settings, transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=LengthCheckedEmbedder())) as api:
+        def transport(request):
+            response = api.request(request.method, str(request.url), content=request.content, headers=request.headers)
+            if request.method == 'POST' and request.url.path == '/evaluation-runs':
+                raise httpx.ReadTimeout('Run creation response lost')
+            return httpx.Response(response.status_code, content=response.content, headers=response.headers)
+        with httpx.Client(base_url='http://localhost', transport=httpx.MockTransport(transport)) as client:
+            args = ['--directory', str(tmp_path)]
+            assert main(['prepare', *args], client=client) == 0
+            assert main(['smoke', *args, '--allow-paid', '--contract-record', str(contract_record(tmp_path))], client=client) == 2
+            assert main(['recover', *args], client=client) == 0
+            state = json.loads((tmp_path / 'experiment.json').read_text())
+            assert len(state['recovery_candidates']) == 1
+            run_id = state['recovery_candidates'][0]['resource_id']
+            run = wait_for_run(api, run_id)
+            assert run['progress']['succeeded'] == 20
+            duplicate = api.post('/evaluation-runs', json={'plan_id': run['plan_id'], 'build_ids': run['pins'], 'creation_token': run['creation_token']})
+            assert duplicate.status_code == 409
+            assert api.get('/evaluation-runs').json()['total'] == 1
+            count = len(calls)
+            assert main(['recover', *args, '--resource-id', run_id], client=client) == 0
+            assert main(['smoke', *args, '--allow-paid'], client=client) == 0
+            assert len(calls) == count
+            state = json.loads((tmp_path / 'experiment.json').read_text())
+            assert state['smoke_run_id'] == run_id
+            assert state['live_smoke'] == 'controlled_validation_only'
+            assert 'pending_initiation' not in state
+
+
+def test_legacy_unknown_creation_preserves_evidence_without_claiming_ownership(settings, tmp_path, capsys):
+    from locomo_memory.experiment import main
+    with TestClient(create_app(settings, embedder=ControlledEmbedder())) as client:
+        args = ['--directory', str(tmp_path)]
+        assert main(['prepare', *args], client=client) == 0
+        path = tmp_path / 'experiment.json'
+        state = json.loads(path.read_text())
+        pending = {'path': '/builds', 'request': {'dataset_id': state['imported']['dataset_id'], 'sample_id': 'conv-26'}, 'status': 'unknown_until_identity_saved'}
+        state['pending_initiation'] = pending
+        path.write_text(json.dumps(state))
+        assert main(['recover', *args], client=client) == 2
+        assert json.loads(path.read_text())['pending_initiation'] == pending
+        assert client.get('/builds').json()['total'] == 0
+    assert 'legacy_initiation_ownership_unverifiable' in capsys.readouterr().out

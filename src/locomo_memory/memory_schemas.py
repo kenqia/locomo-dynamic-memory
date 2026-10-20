@@ -87,6 +87,7 @@ class Memory(MemoryDraft):
 
 
 class BuildRequest(BaseModel):
+    creation_token: StrictStr | None = Field(default=None, min_length=32, max_length=64)
     model_config = ConfigDict(extra="forbid")
     dataset_id: StrictStr = Field(min_length=1)
     sample_id: StrictStr = Field(min_length=1)

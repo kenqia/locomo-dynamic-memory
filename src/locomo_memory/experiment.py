@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import sys
 import time
+import uuid
 from urllib.parse import urlsplit
 
 import httpx
@@ -43,7 +44,9 @@ class Experiment:
                     return self.request('GET', path + '/' + receipt['resource_id'])
             if self.state.get('pending_initiation'):
                 raise ExperimentError('initiation_outcome_unknown')
-            self.state['pending_initiation'] = {'path': path, 'request': body, 'requested_at': utc_now(), 'status': 'unknown_until_identity_saved'}
+            current = self.preflight()
+            self.state['pending_initiation'] = {'path': path, 'request': body, 'requested_at': utc_now(), 'status': 'unknown_until_identity_saved', 'creation_token': uuid.uuid4().hex, 'execution_identity': {key: current[key] for key in ('config', 'implementation_sha256', 'generation', 'embedding')}}
+            kwargs['json'] = {**body, 'creation_token': self.state['pending_initiation']['creation_token']}
             self.save()
         started_at, tick = utc_now(), time.perf_counter()
         try:
@@ -68,6 +71,46 @@ class Experiment:
                 code = 'backend_request_failed'
             raise ExperimentError(code)
         return response.json()
+
+    def recover(self, resource_id=None):
+        current = self.preflight()
+        pending = self.state.get('pending_initiation')
+        if not pending:
+            raise ExperimentError('no_pending_initiation')
+        if not pending.get('creation_token') or not pending.get('execution_identity'):
+            # Old receipts have no provable correlation. Keep the evidence and
+            # refuse to assign a matching resource merely by time or sample.
+            raise ExperimentError('legacy_initiation_ownership_unverifiable')
+        if pending['execution_identity'] != {key: current[key] for key in ('config', 'implementation_sha256', 'generation', 'embedding')}:
+            raise ExperimentError('initiation_execution_identity_changed')
+        path, request = pending['path'], pending['request']
+        if resource_id is None:
+            params = {'creation_token': pending['creation_token']} if path == '/evaluation-runs' else {'dataset_id': request['dataset_id'], 'sample_id': request['sample_id']}
+            records = self.page(path, **params)
+            self.state['recovery_candidates'] = [{'resource_id': r['build_id' if path == '/builds' else 'run_id'], 'status': r['status']} for r in records
+                                                if (r.get('model_metadata', {}).get('creation_token') if path == '/builds' else r.get('creation_token')) == pending['creation_token']]
+            self.save()
+            return self.state
+        resource = self.request('GET', path + '/' + resource_id)
+        token = resource.get('model_metadata', {}).get('creation_token') if path == '/builds' else resource.get('creation_token')
+        valid = token == pending['creation_token'] and resource.get('config') == current['config']
+        if path == '/builds':
+            dataset = self.request('GET', '/datasets/' + request['dataset_id'])
+            valid = valid and all(resource.get(key) == request[key] for key in ('dataset_id', 'sample_id')) and resource['source_sha256'] == dataset['source_sha256']
+        else:
+            plan = self.request('GET', '/evaluation-plans/' + request['plan_id'])
+            valid = (valid and resource.get('plan') == plan and resource.get('plan_id') == request['plan_id']
+                     and resource.get('pins') == request['build_ids'] and resource.get('implementation_sha256') == current['implementation_sha256']
+                     and resource.get('input_id') == plan['input_id'] and resource.get('strategies') == plan['strategies']
+                     and resource.get('input', {}).get('source_identity', {}).get('artifact_sha256') == self.state['imported']['artifact_sha256'])
+        if not valid:
+            raise ExperimentError('initiation_resource_identity_mismatch')
+        self.state.setdefault('initiation_receipts', []).append({'path': path, 'request': request, 'resource_id': resource_id, 'observed_at': utc_now(), 'recovery': 'explicit_verified_adoption', 'creation_token': token})
+        self.state.pop('pending_initiation')
+        self.state.pop('recovery_candidates', None)
+        self.state['status'] = 'initiation_recovered'
+        self.save()
+        return self.state
 
     def save(self):
         self.state['updated_at'] = utc_now()
@@ -162,10 +205,10 @@ class Experiment:
         self.save()
         return self.state
 
-    def page(self, path):
+    def page(self, path, **filters):
         items, offset = [], 0
         while True:
-            page = self.request('GET', path, params={'limit': 100, 'offset': offset})
+            page = self.request('GET', path, params={'limit': 100, 'offset': offset, **filters})
             items.extend(page['items'])
             offset += len(page['items'])
             if offset >= page['total'] or not page['items']:
@@ -358,7 +401,7 @@ class Experiment:
 
 def parser():
     result = argparse.ArgumentParser(description=__doc__)
-    result.add_argument('command', choices=['serve', 'prepare', 'probe', 'smoke', 'full', 'status', 'export', 'verify', 'resume'])
+    result.add_argument('command', choices=['serve', 'prepare', 'probe', 'smoke', 'full', 'status', 'export', 'verify', 'resume', 'recover'])
     result.add_argument('--directory', type=Path, required=True, help='Experiment-only SQLite and artifact directory')
     result.add_argument('--api-url', default='http://127.0.0.1:8000')
     result.add_argument('--retry-failed', action='store_true')
@@ -367,6 +410,7 @@ def parser():
     result.add_argument('--scope', choices=['smoke', 'development'], default='smoke')
     result.add_argument('--contract-record', type=Path, help='Dated public service-contract verification JSON')
     result.add_argument('--allow-paid', action='store_true', help='Explicitly allow generation calls for this command')
+    result.add_argument('--resource-id', help='Explicitly adopt a verified resource for the pending creation')
     result.add_argument('--port', type=int, default=8000)
     return result
 
@@ -411,6 +455,8 @@ def main(argv=None, *, client=None):
                     result = experiment.evaluate('smoke', verified)
                 else:
                     result = experiment.evaluate('development', verified)
+            elif args.command == 'recover':
+                result = experiment.recover(args.resource_id)
             elif args.command == 'status':
                 result = experiment.status(args.scope)
             elif args.command == 'export':
@@ -422,7 +468,7 @@ def main(argv=None, *, client=None):
                 result = experiment.prepare()
             experiment.state.setdefault('commands', []).append({'argv': [sys.executable, '-m', 'locomo_memory.experiment', *(list(argv) if argv is not None else sys.argv[1:])], 'completed_at': utc_now(), 'elapsed_seconds': time.perf_counter() - tick, 'elapsed_scope': 'CLI invocation, including HTTP waits; background work may continue'})
             experiment.save()
-            print(json.dumps({'status': result['status'], 'blockers': result.get('blockers', []), 'progress': result.get('last_progress'), 'builds': result.get('last_builds', {})}, ensure_ascii=False))
+            print(json.dumps({'status': result['status'], 'blockers': result.get('blockers', []), 'progress': result.get('last_progress'), 'builds': result.get('last_builds', {}), 'recovery_candidates': result.get('recovery_candidates')}, ensure_ascii=False))
         return 0
     except (ExperimentError, OSError, ValueError) as error:
         code = error.code if isinstance(error, ExperimentError) else 'invalid_local_artifact'
