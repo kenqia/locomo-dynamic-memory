@@ -1,6 +1,7 @@
 import json
 
 import httpx
+import pytest
 from fastapi.testclient import TestClient
 
 from locomo_memory.api import create_app
@@ -73,14 +74,15 @@ def published(client, sample):
     return {'dataset_id': dataset, 'sample_id': 'conv-a', 'build_id': bid, 'strategy': 'dynamic_raw_fallback', 'question': 'Where does Alex work?'}
 
 
-def test_new_evaluation_strategy_reports_mixed_source_coverage_without_memory_truth(settings, sample):
+@pytest.mark.parametrize('profile', ['expanded','focused'])
+def test_new_evaluation_strategy_reports_mixed_source_coverage_without_memory_truth(settings, sample, profile):
     sample[0]['conversation']['session_2'][0]['text'] = 'I work for Cedar.'
     observed = []
     model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(raw_provider(observed)))
     with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
         query = published(client, sample)
         inputs = client.post('/evaluation-inputs', json={'dataset_id': query['dataset_id'], 'samples': [{'sample_id': 'conv-a', 'question': query['question'], 'answer': 'Cedar', 'evidence': ['D2:1'], 'category': 4}]}).json()
-        response = client.post('/evaluation-runs', json={'wait': True, 'input_id': inputs['input_id'], 'strategies': ['dynamic_raw_fallback'], 'build_ids': {'conv-a': query['build_id']}})
+        response = client.post('/evaluation-runs', json={'wait': True, 'input_id': inputs['input_id'], 'strategies': ['dynamic_raw_fallback'], 'evidence_profile':profile, 'build_ids': {'conv-a': query['build_id']}})
         assert response.status_code == 201, response.text
         run = response.json()
         row = run['results'][0]
@@ -90,9 +92,8 @@ def test_new_evaluation_strategy_reports_mixed_source_coverage_without_memory_tr
         assert row['dynamic_metric']['value'] is None
         assert row['usage_summary']['embedding_calls'] == 1
         assert run['raw_fallback']['resolution_prompt']
-
-
-import pytest
+        assert run['raw_fallback']['evidence_profile'] == profile
+        assert row['trace']['evidence_selection']['profile'] == profile
 
 
 @pytest.mark.parametrize('enough,partial,text,expected,rounds,triggered', [
@@ -229,3 +230,28 @@ def test_raw_windows_skip_oversized_centers_deduplicate_and_stay_in_pinned_conve
         assert 'OTHER-CONVERSATION-SECRET' not in json.dumps(requests)
         assert 'NEW-IMPORT-SECRET' not in json.dumps(requests)
         assert all(not any(s['source_id'].endswith('/D2:1') for s in p['raw_sources']) for p in requests)
+
+
+def test_raw_query_keeps_original_pin_when_active_version_changes_during_analysis(settings, sample):
+    sample[0]['conversation']['session_2'][0]['text'] = 'I work for Cedar.'
+    observed, switch = [], {}
+    base = raw_provider(observed)
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if switch.get('armed') and payload.get('operation') is None and 'sources' not in payload:
+            switch['armed'] = False
+            assert switch['client'].post(f"/builds/{switch['new']}/publish").status_code == 200
+        return base(request)
+    model = DeepSeekModel(settings,api_key='synthetic-test-key',transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings,model=model,embedder=ControlledEmbedder())) as client:
+        query = published(client,sample)
+        newer = build(client,sample)
+        assert client.post(f'/builds/{newer}/index').status_code == 201
+        assert client.post(f'/builds/{newer}/relations').status_code == 202
+        switch.update(client=client,new=newer,armed=True)
+        response = client.post('/queries',json={k:v for k,v in query.items() if k!='build_id'})
+        assert response.status_code == 201, response.text
+        assert response.json()['build_id'] == query['build_id']
+        pin = client.get('/versions/pin',params={'dataset_id':query['dataset_id'],'sample_id':'conv-a'}).json()
+        assert pin['build_id'] == newer
+        assert response.json()['raw_fallback']['pinned_source_ids']

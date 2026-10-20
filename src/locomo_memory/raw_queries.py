@@ -22,7 +22,7 @@ def record_delivery(delivery, metadata, *, accepted):
                     provider_accepted=True if accepted else None)
 
 
-def evidence_groups(memories, raw, relations, coverage):
+def evidence_groups(memories, raw, relations, coverage, *, include_undetermined=False):
     nodes = [('raw',s['source_id']) for s in raw] + [('memory',m['memory_id']) for m in memories]
     parent = {n:n for n in nodes}
 
@@ -42,7 +42,7 @@ def evidence_groups(memories, raw, relations, coverage):
     for group in by_key.values():
         link(group)
     for r in relations:
-        if r['label'] != 'undetermined':
+        if include_undetermined or r['label'] != 'undetermined':
             link([('memory',r['old_memory_id']),('memory',r['new_memory_id'])])
     for item in coverage:
         link([('memory',m) for m in item['memory_ids']] + [('raw',s) for s in item['source_ids']])
@@ -69,7 +69,7 @@ def pack_payload(base, memories, raw, sources, settings, *, final=False):
     if request_token_estimate(operation, empty, schema) > settings.resolution_input_budget:
         raise BuildError('fixed_query_input_budget_exceeded', 422)
     by_memory, by_source = {m['memory_id']:m for m in memories}, {s['source_id']:s for s in raw}
-    groups = evidence_groups(memories,raw,base.get('relations',[]),base.get('coverage',[]))
+    groups = evidence_groups(memories,raw,base.get('relations',[]),base.get('coverage',[]),include_undetermined=base.get('evidence_profile')=='focused')
     for group in groups:
         candidate_m = selected_m + [by_memory[n] for kind,n in group if kind=='memory']
         candidate_s = selected_s + [by_source[n] for kind,n in group if kind=='raw']
@@ -95,25 +95,37 @@ def evidence_status(resolution):
 def run_raw_query(service, request, trace, memories, sources, snapshot):
     settings = service.settings
     all_raw, snapshot_audit = snapshot
+    from .evidence_selection import FOCUS_VERSION, focus_memories
+    profile = request.evidence_profile
     trace['strategy'] = 'dynamic_raw_fallback'
+    trace['evidence_selection'] = {'profile':profile, 'algorithm_version':FOCUS_VERSION,
+                                  'retained_memory_ids':list(memories), 'omitted':[]}
+    if profile == 'focused':
+        grouped = evidence_groups(list(memories.values()),[],trace['relations'],[],include_undetermined=True)
+        selected,trace['evidence_selection'] = focus_memories(request.question,list(memories.values()),sources,grouped)
+        memories = {m['memory_id']:m for m in selected}
+
     trace['prompts'].update(resolve=RAW_RESOLUTION_VERSION,answer=RAW_ANSWER_VERSION)
     trace['schemas'].update(resolve=RAW_RESOLUTION_VERSION,answer=RAW_ANSWER_VERSION)
     trace['query_fingerprint'] = hashlib.sha256(canonical_json({'legacy_fingerprint':trace['query_fingerprint'],
         'raw_retrieval':RAW_RETRIEVAL_VERSION,'resolve_schema':MixedResolution.model_json_schema(),
         'source_snapshot':snapshot_audit,'strategy':trace['strategy'],
+        'evidence_profile':profile,'selection_version':FOCUS_VERSION,
         'answer_schema':EvidenceAnswer.model_json_schema()}).encode()).hexdigest()
     from .raw_schemas import RAW_RESOLUTION_PROMPT, RAW_ANSWER_PROMPT
     trace['query_fingerprint'] = hashlib.sha256(canonical_json({'fingerprint':trace['query_fingerprint'],
         'resolve_prompt':RAW_RESOLUTION_PROMPT,'answer_prompt':RAW_ANSWER_PROMPT}).encode()).hexdigest()
     trace['raw_fallback'] = {**snapshot_audit,'triggered':False,'source_ids':[], 'token_count':0}
     base = {'operation':'resolve_raw','question':request.question,'time':trace['time'],
-            'analysis':trace['initial']['analysis'], 'relations':trace['relations'],
+            'analysis':trace['initial']['analysis'], 'relations':trace['relations'], 'evidence_profile':profile,
             'candidates_truncated':trace['initial']['initial_truncated'] or trace['expanded']['truncated']}
 
     def resolve(stage, raw, previous=None):
         trace['_active_stage'] = stage
         started = time.perf_counter()
         current_base = {**base, **({'previous_coverage':previous} if previous is not None else {})}
+        if raw:
+            current_base['raw_retrieval_limitations'] = {k:trace['raw_fallback'][k] for k in ('truncated','omitted','unselected_match_ids')}
         payload,audit = pack_payload(current_base,list(memories.values()),raw,sources,settings)
         payload['candidates_truncated'] |= audit['truncated']
         mids = {m['memory_id']:m for m in payload['memories']}
@@ -148,10 +160,10 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
     trace['resolution'] = resolution.model_dump(mode='json')
     selected = [m for m in resolved_payload['memories'] if m['memory_id'] in resolution.effective_memory_ids]
     raw_selected = [s for s in resolved_payload['raw_sources'] if s['source_id'] in resolution.effective_source_ids]
-    status = 'insufficient' if trace['time']['beyond_cutoff'] or trace['resolution_budgets'][trace['_active_stage']]['truncated'] else evidence_status(resolution)
+    status = 'insufficient' if trace['time']['beyond_cutoff'] or trace['resolution_budgets'][trace['_active_stage']]['truncated'] or trace['raw_fallback'].get('truncated',False) else evidence_status(resolution)
     coverage = [c.model_dump(mode='json') for c in resolution.coverage]
     answer_base = {'operation':'answer_raw','question':request.question,'time':trace['time'], 'status':status,
-                   'coverage':coverage, 'relations':base['relations'] + [r.model_dump(mode='json') for r in resolution.supplemental_relations],
+                   'coverage':coverage, 'evidence_profile':profile, 'relations':base['relations'] + [r.model_dump(mode='json') for r in resolution.supplemental_relations],
                    'resolution_explanation':resolution.explanation, 'evidence_truncated':False}
     payload,audit = pack_payload(answer_base,selected,raw_selected,sources,settings,final=True)
     delivered_mids = {m['memory_id'] for m in payload['memories']}

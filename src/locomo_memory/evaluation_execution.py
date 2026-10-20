@@ -81,15 +81,16 @@ class EvaluationExecution:
             counts = {r[0]: r[1] for r in db.execute('SELECT status,COUNT(*) FROM evaluation_run_items WHERE run_id=? GROUP BY status', (run_id,))}
         return {key: row[key] for key in ('run_id', 'status', 'completed_at', 'elapsed_seconds')} | {'progress': {'total': sum(counts.values()), **{state: counts.get(state, 0) for state in STATES}}}
 
-    def identity(self, inputs, plan, selected, pins, strategies, partition):
+    def identity(self, inputs, plan, selected, pins, strategies, partition, evidence_profile="expanded"):
         q = self.service.queries
         with self.database.connect() as db:
             source = dict(db.execute('SELECT * FROM datasets WHERE dataset_id=?', (inputs['dataset_id'],)).fetchone())
+        from .evidence_selection import FOCUS_VERSION
         from .raw_schemas import MixedResolution, RAW_RESOLUTION_PROMPT, RAW_ANSWER_PROMPT, RAW_RESOLUTION_VERSION, RAW_ANSWER_VERSION
         return {
             'raw_fallback': {'resolution_prompt':RAW_RESOLUTION_PROMPT, 'answer_prompt':RAW_ANSWER_PROMPT,
                 'resolution_schema':MixedResolution.model_json_schema(), 'resolution_version':RAW_RESOLUTION_VERSION,
-                'answer_version':RAW_ANSWER_VERSION, 'evidence_profile':'expanded'},
+                'answer_version':RAW_ANSWER_VERSION, 'evidence_profile':evidence_profile, 'selection_version':FOCUS_VERSION},
             'input': inputs, 'plan': plan, 'selected_indices': selected, 'pins': pins,
             'strategies': strategies, 'partition': partition, 'source': source,
             'source_turns_sha256': {sid: digest(self.service.sources(inputs['dataset_id'], sid)) for sid in pins},
@@ -134,6 +135,8 @@ class EvaluationExecution:
             partition = plan['partition'] if plan else request.partition
             if not strategies:
                 raise BuildError('evaluation_strategies_required', 422)
+            if request.evidence_profile == 'focused' and 'dynamic_raw_fallback' not in strategies:
+                raise BuildError('focused_strategy_required', 422)
             if inputs['kind'] == 'official_structure_only':
                 raise BuildError('official_structure_only_no_generation', 422)
             if inputs['kind'] == 'course' and (not inputs['course_split'] or not partition):
@@ -142,7 +145,7 @@ class EvaluationExecution:
             if not selected:
                 raise BuildError('empty_evaluation_partition', 422)
             pins = {inputs['samples'][i]['sample_id']: self.service.queries.versions.pin(inputs['dataset_id'], inputs['samples'][i]['sample_id'], request.build_ids.get(inputs['samples'][i]['sample_id'])) for i in selected}
-            identity = self.identity(inputs, plan, selected, pins, strategies, partition)
+            identity = self.identity(inputs, plan, selected, pins, strategies, partition, request.evidence_profile)
             run = {**identity, 'run_id': uuid.uuid4().hex, 'creation_token': request.creation_token, 'input_id': input_id,
                    'plan_id': plan['plan_id'] if plan else None, 'execution_version': 1,
                    'fingerprint': digest(identity), 'kind': inputs['kind'], 'status': 'running',
@@ -173,7 +176,7 @@ class EvaluationExecution:
             raise BuildError('legacy_evaluation_not_resumable')
         inputs = self.service.get('evaluation_inputs', run['input_id'])
         try:
-            current = self.identity(inputs, self.plan(run.get('plan_id')), run['selected_indices'], run['pins'], run['strategies'], run['partition'])
+            current = self.identity(inputs, self.plan(run.get('plan_id')), run['selected_indices'], run['pins'], run['strategies'], run['partition'], run['raw_fallback']['evidence_profile'])
         except BuildError:
             raise BuildError('evaluation_identity_changed') from None
         if digest(current) != run['fingerprint']:
@@ -236,7 +239,7 @@ class EvaluationExecution:
                 tick = time.perf_counter()
                 try:
                     index = item['sample_index']
-                    result = self.service.execute_item(run['input'], index, run['input']['samples'][index], item['strategy'], run['pins'][item['sample_id']])
+                    result = self.service.execute_item(run['input'], index, run['input']['samples'][index], item['strategy'], run['pins'][item['sample_id']], run['raw_fallback']['evidence_profile'])
                     status = 'failed' if result.get('error') else 'succeeded'
                 except Exception:
                     # An unexpected exit can follow a billed call. Never assert a safe retry.

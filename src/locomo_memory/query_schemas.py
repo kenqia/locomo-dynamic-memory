@@ -20,10 +20,13 @@ class QueryRequest(BaseModel):
     build_id: StrictStr | None = Field(default=None, min_length=1)
     question: StrictStr = Field(min_length=1, max_length=10000)
     requested_date: date | None = None
+    evidence_profile: Literal["expanded", "focused"] = "expanded"
     strategy: Literal["dynamic", "dynamic_raw_fallback"] = "dynamic"
 
     @model_validator(mode="after")
     def english_question(self):
+        if self.evidence_profile == "focused" and self.strategy != "dynamic_raw_fallback":
+            raise ValueError("Focused evidence is scoped to dynamic_raw_fallback")
         CandidateQueryRequest(build_id="validation", question=self.question)
         return self
 

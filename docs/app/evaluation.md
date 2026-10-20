@@ -192,3 +192,7 @@ uv run --locked pytest tests/test_evaluation_reports.py tests/test_evaluation_re
 最终来源覆盖使用实际交付的联合来源，原文阶段独立记录。
 Memory 级动态参考不能用作混合证据真值，缺少独立标注时指标保持未评。
 Run 身份包含独立 Prompt、schema、配置及源码摘要，不恢复旧实现身份的 Run。
+
+对包含新策略的有限 Run，可设置 `evidence_profile: "focused"` 与默认 `expanded` 对照。
+该字段仅影响新策略，写入 Run 身份和 QueryTrace；同一 Run 的旧四策略继续使用各自既有路径。
+恢复执行时核对保存的模式及源码身份，不将两种输入的结果混成同一策略运行。

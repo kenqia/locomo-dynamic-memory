@@ -92,6 +92,7 @@ class RunRequest(BaseModel):
     plan_id: str | None = None
     strategies: list[Strategy] | None = Field(default=None, min_length=1, max_length=5)
     wait: bool = False
+    evidence_profile: Literal['expanded', 'focused'] = 'expanded'
     build_ids: dict[str, str] = Field(default_factory=dict)
     partition: Literal['dev', 'test'] | None = None
 
@@ -236,12 +237,12 @@ class EvaluationService:
     def run(self, request):
         return self.execution.create(request)
 
-    def execute_item(self, inputs, index, sample, strategy, build_id):
+    def execute_item(self, inputs, index, sample, strategy, build_id, evidence_profile="expanded"):
         mapping = inputs['mappings'][index]
         item = {'sample_index': index, 'sample_id': sample['sample_id'], 'strategy': strategy, 'mapping': mapping, 'qa': {'value': None, 'reason': 'execution_failed'}, 'source_coverage': {s: None for s in ('initial', 'expanded', 'effective', 'answer_context')}, 'dynamic_metric': {'value': None, 'reason': 'independent_truth_missing'}}
         try:
             is_dynamic = strategy in ('dynamic', 'dynamic_raw_fallback')
-            query = QueryRequest(strategy=strategy if is_dynamic else 'dynamic', dataset_id=inputs['dataset_id'], sample_id=sample['sample_id'], build_id=build_id, question=sample['question'])
+            query = QueryRequest(evidence_profile=evidence_profile if strategy=='dynamic_raw_fallback' else 'expanded', strategy=strategy if is_dynamic else 'dynamic', dataset_id=inputs['dataset_id'], sample_id=sample['sample_id'], build_id=build_id, question=sample['question'])
             trace = self.queries.query(query) if is_dynamic else self.baseline(query, strategy)
             item['trace'] = trace
             item['ranking_units'] = {'initial': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'expanded': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'effective': 'Memory + SourceTurn' if strategy == 'dynamic_raw_fallback' else 'Memory' if is_dynamic else 'not_applicable', 'answer_context': 'SourceTurn' if strategy == 'full_text' else 'Memory + SourceTurn' if strategy == 'dynamic_raw_fallback' else 'Memory', 'source_coverage': 'unique SourceTurn IDs per stage; K is actual delivered rank count'}

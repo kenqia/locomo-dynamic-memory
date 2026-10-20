@@ -75,3 +75,7 @@ LOCOMO_LOCAL_EMBEDDING=1 HF_HUB_OFFLINE=1 uv run --locked --extra embedding pyte
 该检查加载真实固定 revision，检查 384 维归一化向量、组合文本越界拒绝，并通过实际 MiniLM、SQLite、BM25/cosine/RRF API 路径检索；只替换外部生成模型。独立 DeepSeek 付费检查仍默认跳过。实验结果见 `experiments/issue-7-retrieval-validation.md`。
 
 实现依据：[MiniLM 模型卡](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)、[SentenceTransformer API](https://sbert.net/docs/package_reference/sentence_transformer/model.html)、[rank_bm25 上游](https://github.com/dorianbrown/rank_bm25)。模型缓存与 revision 的核查不代表正式课程检索效果已达标。
+
+原文片段兜底只在显式 `dynamic_raw_fallback` 查询中运行，详见[有界原文兜底](querying.md#有界原文兜底)。
+它使用同一 pin 的完整抽取输入清单，不以 Memory 已引用的轮次代替完整原文范围。
+当检索窗口或解析证据组因预算被省略时，Trace 保留原因，最终状态保守降为不足。

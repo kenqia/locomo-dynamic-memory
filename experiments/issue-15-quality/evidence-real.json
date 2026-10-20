@@ -1,0 +1,1200 @@
+{
+  "created_at": "2026-10-20T13:43:47.829979+00:00",
+  "implementation_sha256": "40797fc39d22096bb4e69044dcb17791929b98b8abe84fc879f518de39eb4840",
+  "before": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 41,
+    "reserved_total_calls": 354,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2,
+      "quality-C-stages": 3,
+      "quality-D-raw": 7
+    },
+    "operations": {
+      "relate": 30,
+      "extract": 4,
+      "resolve_raw": 6,
+      "answer_raw": 1
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 37,
+      "invalid_output": 3
+    },
+    "usage": {
+      "generation_calls": 41,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 285178,
+        "completion_tokens": 72729,
+        "total_tokens": 357907
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 285178,
+          "calls_with_reported_usage": 40,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 72729,
+          "calls_with_reported_usage": 40,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 357907,
+          "calls_with_reported_usage": 40,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 221.50422911099486
+    }
+  },
+  "phase": "evidence",
+  "cases": [
+    {
+      "case": "employment_and_unknown_start",
+      "profile": "expanded",
+      "input_memories": [
+        {
+          "content": "Riley lives in Bergen.",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Riley",
+          "state_dimension": "residence",
+          "state_value": "Bergen",
+          "source_ids": [
+            "synthetic/conv-probe/D1:1"
+          ],
+          "time": {
+            "original_expression": null,
+            "anchor_source_id": null,
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": null
+          },
+          "memory_id": "residence",
+          "build_id": "synthetic-build",
+          "dataset_id": "synthetic",
+          "sample_id": "conv-probe",
+          "state_key": "conv-probe:Riley:residence",
+          "session_times": [
+            "1:00 pm on 1 May, 2023"
+          ]
+        },
+        {
+          "content": "Riley works for Larch.",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Riley",
+          "state_dimension": "employment",
+          "state_value": "Larch",
+          "source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "time": {
+            "original_expression": null,
+            "anchor_source_id": null,
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": null
+          },
+          "memory_id": "employment",
+          "build_id": "synthetic-build",
+          "dataset_id": "synthetic",
+          "sample_id": "conv-probe",
+          "state_key": "conv-probe:Riley:employment",
+          "session_times": [
+            "1:00 pm on 1 May, 2023"
+          ]
+        }
+      ],
+      "source": [
+        {
+          "source_id": "synthetic/conv-probe/D1:1",
+          "dataset_id": "synthetic",
+          "sample_id": "conv-probe",
+          "session_id": "session_1",
+          "dia_id": "D1:1",
+          "speaker": "Riley",
+          "session_time": "1:00 pm on 1 May, 2023",
+          "text": "I live in Bergen.",
+          "position": 0
+        },
+        {
+          "source_id": "synthetic/conv-probe/D1:2",
+          "dataset_id": "synthetic",
+          "sample_id": "conv-probe",
+          "session_id": "session_1",
+          "dia_id": "D1:2",
+          "speaker": "Riley",
+          "session_time": "1:00 pm on 1 May, 2023",
+          "text": "I work for Larch. I have not said when I started.",
+          "position": 1
+        }
+      ],
+      "trace": {
+        "prompts": {
+          "resolve": "mixed-resolution-v1.2-selection-scope",
+          "answer": "mixed-answer-v1"
+        },
+        "schemas": {
+          "resolve": "mixed-resolution-v1.2-selection-scope",
+          "answer": "mixed-answer-v1"
+        },
+        "query_fingerprint": "66c6b951c747afec3798526d1b969457c384c1cbaa751574267c73be852d2381",
+        "initial": {
+          "analysis": {
+            "entities": [
+              "Riley"
+            ],
+            "topic": "employment",
+            "keywords": []
+          },
+          "initial_truncated": false
+        },
+        "expanded": {
+          "truncated": false
+        },
+        "relations": [],
+        "operations": {
+          "resolve": {
+            "calls": [
+              {
+                "attempt": 1,
+                "timestamp": "2026-10-20T13:43:50.569044+00:00",
+                "requested_model": "deepseek-flash",
+                "returned_model": "deepseek-flash",
+                "usage": {
+                  "prompt_tokens": 2552,
+                  "completion_tokens": 229,
+                  "total_tokens": 2781
+                },
+                "response_received": true,
+                "diagnostic_version": 1,
+                "status": "succeeded",
+                "finish_reason": "stop",
+                "finish_reason_status": "reported",
+                "failure_stage": null,
+                "error_code": null,
+                "field_path": null,
+                "http_status": 200,
+                "http_error_category": null,
+                "http_retryable": null,
+                "elapsed_seconds": 1.5211440829989442,
+                "outcome": "succeeded",
+                "completed_at": "2026-10-20T13:43:52.090192+00:00"
+              }
+            ],
+            "request_context_estimate": {
+              "token_count": 3922,
+              "method": "regex-word-punctuation-v1",
+              "scope": "serialized_messages_including_prompt_schema_and_payload",
+              "is_provider_token_count": false,
+              "reserved_output_tokens": 8192
+            }
+          },
+          "joint_resolve": {
+            "calls": [
+              {
+                "attempt": 1,
+                "timestamp": "2026-10-20T13:43:52.138859+00:00",
+                "requested_model": "deepseek-flash",
+                "returned_model": "deepseek-flash",
+                "usage": {
+                  "prompt_tokens": 2677,
+                  "completion_tokens": 272,
+                  "total_tokens": 2949
+                },
+                "response_received": true,
+                "diagnostic_version": 1,
+                "status": "succeeded",
+                "finish_reason": "stop",
+                "finish_reason_status": "reported",
+                "failure_stage": null,
+                "error_code": null,
+                "field_path": null,
+                "http_status": 200,
+                "http_error_category": null,
+                "http_retryable": null,
+                "elapsed_seconds": 1.7754430679997313,
+                "outcome": "succeeded",
+                "completed_at": "2026-10-20T13:43:53.914307+00:00"
+              }
+            ],
+            "request_context_estimate": {
+              "token_count": 4107,
+              "method": "regex-word-punctuation-v1",
+              "scope": "serialized_messages_including_prompt_schema_and_payload",
+              "is_provider_token_count": false,
+              "reserved_output_tokens": 8192
+            }
+          },
+          "answer": {
+            "calls": [
+              {
+                "attempt": 1,
+                "timestamp": "2026-10-20T13:43:53.928359+00:00",
+                "requested_model": "deepseek-flash",
+                "returned_model": "deepseek-flash",
+                "usage": {
+                  "prompt_tokens": 996,
+                  "completion_tokens": 112,
+                  "total_tokens": 1108
+                },
+                "response_received": true,
+                "diagnostic_version": 1,
+                "status": "succeeded",
+                "finish_reason": "stop",
+                "finish_reason_status": "reported",
+                "failure_stage": null,
+                "error_code": null,
+                "field_path": null,
+                "http_status": 200,
+                "http_error_category": null,
+                "http_retryable": null,
+                "elapsed_seconds": 1.0657178840010602,
+                "outcome": "succeeded",
+                "completed_at": "2026-10-20T13:43:54.994080+00:00"
+              }
+            ],
+            "request_context_estimate": {
+              "token_count": 1424,
+              "method": "regex-word-punctuation-v1",
+              "scope": "serialized_messages_including_prompt_schema_and_payload",
+              "is_provider_token_count": false,
+              "reserved_output_tokens": 8192
+            }
+          }
+        },
+        "stage_seconds": {
+          "resolve": 1.5530337860000145,
+          "joint_resolve": 1.8162436789971252,
+          "answer": 1.0797995409993746
+        },
+        "time": {
+          "requested_date": null,
+          "anchor_date": "2023-05-01",
+          "origin": "conversation_cutoff",
+          "cutoff": "2023-05-01T13:00:00",
+          "beyond_cutoff": false
+        },
+        "strategy": "dynamic_raw_fallback",
+        "evidence_selection": {
+          "profile": "expanded",
+          "algorithm_version": "original-question-components-v1",
+          "retained_memory_ids": [
+            "residence",
+            "employment"
+          ],
+          "omitted": []
+        },
+        "raw_fallback": {
+          "scope": "synthetic-controller-probe",
+          "pinned_source_ids": [
+            "synthetic/conv-probe/D1:1",
+            "synthetic/conv-probe/D1:2"
+          ],
+          "triggered": true,
+          "source_ids": [
+            "synthetic/conv-probe/D1:1",
+            "synthetic/conv-probe/D1:2"
+          ],
+          "token_count": 207,
+          "retrieval_version": "pinned-turn-bm25-windows-v1",
+          "centers": 1,
+          "matched_source_count": 1,
+          "origins": [
+            {
+              "source_id": "synthetic/conv-probe/D1:2",
+              "center_source_id": "synthetic/conv-probe/D1:2",
+              "kind": "center"
+            },
+            {
+              "source_id": "synthetic/conv-probe/D1:1",
+              "center_source_id": "synthetic/conv-probe/D1:2",
+              "kind": "neighbor"
+            }
+          ],
+          "omitted": [],
+          "token_budget_method": "regex-word-punctuation-v1",
+          "budget": 2000,
+          "truncated": false,
+          "ranked_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "unselected_match_ids": [],
+          "trigger_reasons": [
+            "No start date is provided; the source explicitly says Riley has not said when the job started."
+          ],
+          "delivered_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "effective_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "cited_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ]
+        },
+        "resolution_budgets": {
+          "resolve": {
+            "omitted_groups": [],
+            "truncated": false,
+            "input_token_count": 3922,
+            "input_budget": 12000,
+            "token_budget_method": "regex-word-punctuation-v1",
+            "source_delivery": {
+              "expected_source_ids": [
+                "synthetic/conv-probe/D1:1",
+                "synthetic/conv-probe/D1:2"
+              ],
+              "attempted_source_ids": [
+                "synthetic/conv-probe/D1:1",
+                "synthetic/conv-probe/D1:2"
+              ],
+              "delivered_source_ids": [
+                "synthetic/conv-probe/D1:1",
+                "synthetic/conv-probe/D1:2"
+              ],
+              "status": "accepted",
+              "provider_accepted": true
+            }
+          },
+          "joint_resolve": {
+            "omitted_groups": [],
+            "truncated": false,
+            "input_token_count": 4107,
+            "input_budget": 12000,
+            "token_budget_method": "regex-word-punctuation-v1",
+            "source_delivery": {
+              "expected_source_ids": [
+                "synthetic/conv-probe/D1:1",
+                "synthetic/conv-probe/D1:2"
+              ],
+              "attempted_source_ids": [
+                "synthetic/conv-probe/D1:1",
+                "synthetic/conv-probe/D1:2"
+              ],
+              "delivered_source_ids": [
+                "synthetic/conv-probe/D1:1",
+                "synthetic/conv-probe/D1:2"
+              ],
+              "status": "accepted",
+              "provider_accepted": true
+            }
+          }
+        },
+        "initial_resolution": {
+          "status": "insufficient",
+          "effective_memory_ids": [
+            "employment"
+          ],
+          "decisions": [
+            {
+              "memory_id": "employment",
+              "selected": true,
+              "reason": "Directly answers where Riley works: Larch."
+            },
+            {
+              "memory_id": "residence",
+              "selected": false,
+              "reason": "Concerns residence in Bergen, not employment or start date."
+            }
+          ],
+          "supplemental_relations": [],
+          "explanation": "The employment memory establishes Riley works for Larch, answering the workplace subquestion. No memory or source provides the job start date; the source explicitly states the start date was not given, so the date subquestion is a gap.",
+          "effective_source_ids": [],
+          "coverage": [
+            {
+              "question": "Where does Riley work?",
+              "status": "sufficient",
+              "memory_ids": [
+                "employment"
+              ],
+              "source_ids": [],
+              "gap": null
+            },
+            {
+              "question": "On what date did Riley start that job?",
+              "status": "insufficient",
+              "memory_ids": [],
+              "source_ids": [],
+              "gap": "No start date is provided; the source explicitly says Riley has not said when the job started."
+            }
+          ]
+        },
+        "resolution": {
+          "status": "insufficient",
+          "effective_memory_ids": [
+            "employment"
+          ],
+          "decisions": [
+            {
+              "memory_id": "residence",
+              "selected": false,
+              "reason": "Riley's residence in Bergen is unrelated to the employment question."
+            },
+            {
+              "memory_id": "employment",
+              "selected": true,
+              "reason": "Directly states Riley works for Larch, answering the employer subquestion."
+            }
+          ],
+          "supplemental_relations": [],
+          "explanation": "The employer is established as Larch from memory 'employment' and corroborated by raw source D1:2. The start date is not provided; the source explicitly states Riley has not said when the job started, so that subquestion remains insufficient.",
+          "effective_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "coverage": [
+            {
+              "question": "Where does Riley work?",
+              "status": "sufficient",
+              "memory_ids": [
+                "employment"
+              ],
+              "source_ids": [
+                "synthetic/conv-probe/D1:2"
+              ],
+              "gap": null
+            },
+            {
+              "question": "On what date did Riley start that job?",
+              "status": "insufficient",
+              "memory_ids": [],
+              "source_ids": [
+                "synthetic/conv-probe/D1:2"
+              ],
+              "gap": "No start date is provided; the source explicitly says Riley has not said when the job started."
+            }
+          ]
+        },
+        "evidence_budget": {
+          "omitted_groups": [],
+          "truncated": false,
+          "input_token_count": 1424,
+          "input_budget": 12000,
+          "token_budget_method": "regex-word-punctuation-v1",
+          "token_count": 320,
+          "budget": 6000,
+          "scope": "mixed_memory_raw_evidence"
+        },
+        "effective_memories": [
+          {
+            "content": "Riley works for Larch.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "entity_id": "Riley",
+            "state_dimension": "employment",
+            "state_value": "Larch",
+            "source_ids": [
+              "synthetic/conv-probe/D1:2"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            },
+            "memory_id": "employment",
+            "build_id": "synthetic-build",
+            "dataset_id": "synthetic",
+            "sample_id": "conv-probe",
+            "state_key": "conv-probe:Riley:employment",
+            "session_times": [
+              "1:00 pm on 1 May, 2023"
+            ]
+          }
+        ],
+        "answer_context_sources": [
+          {
+            "source_id": "synthetic/conv-probe/D1:2",
+            "dataset_id": "synthetic",
+            "sample_id": "conv-probe",
+            "session_id": "session_1",
+            "dia_id": "D1:2",
+            "speaker": "Riley",
+            "session_time": "1:00 pm on 1 May, 2023",
+            "text": "I work for Larch. I have not said when I started.",
+            "position": 1
+          }
+        ],
+        "delivered_coverage": [
+          {
+            "question": "Where does Riley work?",
+            "status": "sufficient",
+            "memory_ids": [
+              "employment"
+            ],
+            "source_ids": [
+              "synthetic/conv-probe/D1:2"
+            ],
+            "gap": null
+          },
+          {
+            "question": "On what date did Riley start that job?",
+            "status": "insufficient",
+            "memory_ids": [],
+            "source_ids": [
+              "synthetic/conv-probe/D1:2"
+            ],
+            "gap": "No start date is provided; the source explicitly says Riley has not said when the job started."
+          }
+        ],
+        "source_delivery": {
+          "expected_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "attempted_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "delivered_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "status": "accepted",
+          "provider_accepted": true
+        },
+        "answer": {
+          "status": "insufficient",
+          "answer": "Riley works for Larch. However, the date Riley started that job is not provided: the source explicitly states Riley has not said when the job started. This answer reflects information available as of the conversation cutoff (2023-05-01T13:00:00).",
+          "citations": [
+            {
+              "memory_id": "employment",
+              "source_ids": [
+                "synthetic/conv-probe/D1:2"
+              ]
+            },
+            {
+              "memory_id": null,
+              "source_ids": [
+                "synthetic/conv-probe/D1:2"
+              ]
+            }
+          ]
+        }
+      },
+      "acceptance": "Recover Larch with raw citation; start date remains unknown; at most two resolves."
+    },
+    {
+      "case": "employment_and_unknown_start",
+      "profile": "focused",
+      "input_memories": [
+        {
+          "content": "Riley lives in Bergen.",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Riley",
+          "state_dimension": "residence",
+          "state_value": "Bergen",
+          "source_ids": [
+            "synthetic/conv-probe/D1:1"
+          ],
+          "time": {
+            "original_expression": null,
+            "anchor_source_id": null,
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": null
+          },
+          "memory_id": "residence",
+          "build_id": "synthetic-build",
+          "dataset_id": "synthetic",
+          "sample_id": "conv-probe",
+          "state_key": "conv-probe:Riley:residence",
+          "session_times": [
+            "1:00 pm on 1 May, 2023"
+          ]
+        },
+        {
+          "content": "Riley works for Larch.",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Riley",
+          "state_dimension": "employment",
+          "state_value": "Larch",
+          "source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "time": {
+            "original_expression": null,
+            "anchor_source_id": null,
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": null
+          },
+          "memory_id": "employment",
+          "build_id": "synthetic-build",
+          "dataset_id": "synthetic",
+          "sample_id": "conv-probe",
+          "state_key": "conv-probe:Riley:employment",
+          "session_times": [
+            "1:00 pm on 1 May, 2023"
+          ]
+        }
+      ],
+      "source": [
+        {
+          "source_id": "synthetic/conv-probe/D1:1",
+          "dataset_id": "synthetic",
+          "sample_id": "conv-probe",
+          "session_id": "session_1",
+          "dia_id": "D1:1",
+          "speaker": "Riley",
+          "session_time": "1:00 pm on 1 May, 2023",
+          "text": "I live in Bergen.",
+          "position": 0
+        },
+        {
+          "source_id": "synthetic/conv-probe/D1:2",
+          "dataset_id": "synthetic",
+          "sample_id": "conv-probe",
+          "session_id": "session_1",
+          "dia_id": "D1:2",
+          "speaker": "Riley",
+          "session_time": "1:00 pm on 1 May, 2023",
+          "text": "I work for Larch. I have not said when I started.",
+          "position": 1
+        }
+      ],
+      "trace": {
+        "prompts": {
+          "resolve": "mixed-resolution-v1.2-selection-scope",
+          "answer": "mixed-answer-v1"
+        },
+        "schemas": {
+          "resolve": "mixed-resolution-v1.2-selection-scope",
+          "answer": "mixed-answer-v1"
+        },
+        "query_fingerprint": "44deaf7b38d2b1ea1dc93637561cd1c4d418aecf13f84356aa5b6fd613bf14dc",
+        "initial": {
+          "analysis": {
+            "entities": [
+              "Riley"
+            ],
+            "topic": "employment",
+            "keywords": []
+          },
+          "initial_truncated": false
+        },
+        "expanded": {
+          "truncated": false
+        },
+        "relations": [],
+        "operations": {
+          "resolve": {
+            "calls": [
+              {
+                "attempt": 1,
+                "timestamp": "2026-10-20T13:43:55.022220+00:00",
+                "requested_model": "deepseek-flash",
+                "returned_model": "deepseek-flash",
+                "usage": {
+                  "prompt_tokens": 2273,
+                  "completion_tokens": 200,
+                  "total_tokens": 2473
+                },
+                "response_received": true,
+                "diagnostic_version": 1,
+                "status": "succeeded",
+                "finish_reason": "stop",
+                "finish_reason_status": "reported",
+                "failure_stage": null,
+                "error_code": null,
+                "field_path": null,
+                "http_status": 200,
+                "http_error_category": null,
+                "http_retryable": null,
+                "elapsed_seconds": 1.475134710999555,
+                "outcome": "succeeded",
+                "completed_at": "2026-10-20T13:43:56.497357+00:00"
+              }
+            ],
+            "request_context_estimate": {
+              "token_count": 3524,
+              "method": "regex-word-punctuation-v1",
+              "scope": "serialized_messages_including_prompt_schema_and_payload",
+              "is_provider_token_count": false,
+              "reserved_output_tokens": 8192
+            }
+          },
+          "joint_resolve": {
+            "calls": [
+              {
+                "attempt": 1,
+                "timestamp": "2026-10-20T13:43:56.523311+00:00",
+                "requested_model": "deepseek-flash",
+                "returned_model": "deepseek-flash",
+                "usage": {
+                  "prompt_tokens": 2491,
+                  "completion_tokens": 238,
+                  "total_tokens": 2729
+                },
+                "response_received": true,
+                "diagnostic_version": 1,
+                "status": "succeeded",
+                "finish_reason": "stop",
+                "finish_reason_status": "reported",
+                "failure_stage": null,
+                "error_code": null,
+                "field_path": null,
+                "http_status": 200,
+                "http_error_category": null,
+                "http_retryable": null,
+                "elapsed_seconds": 1.3518362790018728,
+                "outcome": "succeeded",
+                "completed_at": "2026-10-20T13:43:57.875149+00:00"
+              }
+            ],
+            "request_context_estimate": {
+              "token_count": 3839,
+              "method": "regex-word-punctuation-v1",
+              "scope": "serialized_messages_including_prompt_schema_and_payload",
+              "is_provider_token_count": false,
+              "reserved_output_tokens": 8192
+            }
+          },
+          "answer": {
+            "calls": [
+              {
+                "attempt": 1,
+                "timestamp": "2026-10-20T13:43:57.889996+00:00",
+                "requested_model": "deepseek-flash",
+                "returned_model": "deepseek-flash",
+                "usage": {
+                  "prompt_tokens": 987,
+                  "completion_tokens": 109,
+                  "total_tokens": 1096
+                },
+                "response_received": true,
+                "diagnostic_version": 1,
+                "status": "succeeded",
+                "finish_reason": "stop",
+                "finish_reason_status": "reported",
+                "failure_stage": null,
+                "error_code": null,
+                "field_path": null,
+                "http_status": 200,
+                "http_error_category": null,
+                "http_retryable": null,
+                "elapsed_seconds": 0.8526372889973572,
+                "outcome": "succeeded",
+                "completed_at": "2026-10-20T13:43:58.742638+00:00"
+              }
+            ],
+            "request_context_estimate": {
+              "token_count": 1413,
+              "method": "regex-word-punctuation-v1",
+              "scope": "serialized_messages_including_prompt_schema_and_payload",
+              "is_provider_token_count": false,
+              "reserved_output_tokens": 8192
+            }
+          }
+        },
+        "stage_seconds": {
+          "resolve": 1.4956667439982994,
+          "joint_resolve": 1.3784984049998457,
+          "answer": 0.8659741579976981
+        },
+        "time": {
+          "requested_date": null,
+          "anchor_date": "2023-05-01",
+          "origin": "conversation_cutoff",
+          "cutoff": "2023-05-01T13:00:00",
+          "beyond_cutoff": false
+        },
+        "strategy": "dynamic_raw_fallback",
+        "evidence_selection": {
+          "algorithm_version": "original-question-components-v1",
+          "profile": "focused",
+          "fallback_to_expanded": false,
+          "retained": [
+            {
+              "memory_id": "employment",
+              "reason": "direct_original_question_match"
+            }
+          ],
+          "omitted": [
+            {
+              "memory_id": "residence",
+              "reason": "no_original_question_match_or_connected_history"
+            }
+          ]
+        },
+        "raw_fallback": {
+          "scope": "synthetic-controller-probe",
+          "pinned_source_ids": [
+            "synthetic/conv-probe/D1:1",
+            "synthetic/conv-probe/D1:2"
+          ],
+          "triggered": true,
+          "source_ids": [
+            "synthetic/conv-probe/D1:1",
+            "synthetic/conv-probe/D1:2"
+          ],
+          "token_count": 207,
+          "retrieval_version": "pinned-turn-bm25-windows-v1",
+          "centers": 1,
+          "matched_source_count": 1,
+          "origins": [
+            {
+              "source_id": "synthetic/conv-probe/D1:2",
+              "center_source_id": "synthetic/conv-probe/D1:2",
+              "kind": "center"
+            },
+            {
+              "source_id": "synthetic/conv-probe/D1:1",
+              "center_source_id": "synthetic/conv-probe/D1:2",
+              "kind": "neighbor"
+            }
+          ],
+          "omitted": [],
+          "token_budget_method": "regex-word-punctuation-v1",
+          "budget": 2000,
+          "truncated": false,
+          "ranked_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "unselected_match_ids": [],
+          "trigger_reasons": [
+            "No start date is provided; the source explicitly says Riley has not said when the job started."
+          ],
+          "delivered_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "effective_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "cited_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ]
+        },
+        "resolution_budgets": {
+          "resolve": {
+            "omitted_groups": [],
+            "truncated": false,
+            "input_token_count": 3524,
+            "input_budget": 12000,
+            "token_budget_method": "regex-word-punctuation-v1",
+            "source_delivery": {
+              "expected_source_ids": [
+                "synthetic/conv-probe/D1:2"
+              ],
+              "attempted_source_ids": [
+                "synthetic/conv-probe/D1:2"
+              ],
+              "delivered_source_ids": [
+                "synthetic/conv-probe/D1:2"
+              ],
+              "status": "accepted",
+              "provider_accepted": true
+            }
+          },
+          "joint_resolve": {
+            "omitted_groups": [],
+            "truncated": false,
+            "input_token_count": 3839,
+            "input_budget": 12000,
+            "token_budget_method": "regex-word-punctuation-v1",
+            "source_delivery": {
+              "expected_source_ids": [
+                "synthetic/conv-probe/D1:1",
+                "synthetic/conv-probe/D1:2"
+              ],
+              "attempted_source_ids": [
+                "synthetic/conv-probe/D1:1",
+                "synthetic/conv-probe/D1:2"
+              ],
+              "delivered_source_ids": [
+                "synthetic/conv-probe/D1:1",
+                "synthetic/conv-probe/D1:2"
+              ],
+              "status": "accepted",
+              "provider_accepted": true
+            }
+          }
+        },
+        "initial_resolution": {
+          "status": "insufficient",
+          "effective_memory_ids": [
+            "employment"
+          ],
+          "decisions": [
+            {
+              "memory_id": "employment",
+              "selected": true,
+              "reason": "Directly states Riley's employer as Larch, answering the workplace subquestion."
+            }
+          ],
+          "supplemental_relations": [],
+          "explanation": "The memory establishes Riley works for Larch, but the source explicitly states Riley has not said when the job started, so the start date is unknown. The employer subquestion is answered; the start-date subquestion is not.",
+          "effective_source_ids": [],
+          "coverage": [
+            {
+              "question": "Where does Riley work?",
+              "status": "sufficient",
+              "memory_ids": [
+                "employment"
+              ],
+              "source_ids": [],
+              "gap": null
+            },
+            {
+              "question": "On what date did Riley start that job?",
+              "status": "insufficient",
+              "memory_ids": [],
+              "source_ids": [],
+              "gap": "No start date is provided; the source explicitly says Riley has not said when the job started."
+            }
+          ]
+        },
+        "resolution": {
+          "status": "insufficient",
+          "effective_memory_ids": [
+            "employment"
+          ],
+          "decisions": [
+            {
+              "memory_id": "employment",
+              "selected": true,
+              "reason": "Directly states Riley works for Larch, answering the employer subquestion; it contains no start date."
+            }
+          ],
+          "supplemental_relations": [],
+          "explanation": "The employer is established as Larch by memory 'employment', corroborated by raw source D1:2. The start date is not provided anywhere; D1:2 explicitly says Riley has not said when the job started, so that subquestion remains insufficient.",
+          "effective_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "coverage": [
+            {
+              "question": "Where does Riley work?",
+              "status": "sufficient",
+              "memory_ids": [
+                "employment"
+              ],
+              "source_ids": [
+                "synthetic/conv-probe/D1:2"
+              ],
+              "gap": null
+            },
+            {
+              "question": "On what date did Riley start that job?",
+              "status": "insufficient",
+              "memory_ids": [],
+              "source_ids": [],
+              "gap": "No start date is provided; the source explicitly says Riley has not said when the job started."
+            }
+          ]
+        },
+        "evidence_budget": {
+          "omitted_groups": [],
+          "truncated": false,
+          "input_token_count": 1413,
+          "input_budget": 12000,
+          "token_budget_method": "regex-word-punctuation-v1",
+          "token_count": 320,
+          "budget": 6000,
+          "scope": "mixed_memory_raw_evidence"
+        },
+        "effective_memories": [
+          {
+            "content": "Riley works for Larch.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "entity_id": "Riley",
+            "state_dimension": "employment",
+            "state_value": "Larch",
+            "source_ids": [
+              "synthetic/conv-probe/D1:2"
+            ],
+            "time": {
+              "original_expression": null,
+              "anchor_source_id": null,
+              "event_start": null,
+              "event_end": null,
+              "valid_from": null,
+              "valid_to": null,
+              "basis": null
+            },
+            "memory_id": "employment",
+            "build_id": "synthetic-build",
+            "dataset_id": "synthetic",
+            "sample_id": "conv-probe",
+            "state_key": "conv-probe:Riley:employment",
+            "session_times": [
+              "1:00 pm on 1 May, 2023"
+            ]
+          }
+        ],
+        "answer_context_sources": [
+          {
+            "source_id": "synthetic/conv-probe/D1:2",
+            "dataset_id": "synthetic",
+            "sample_id": "conv-probe",
+            "session_id": "session_1",
+            "dia_id": "D1:2",
+            "speaker": "Riley",
+            "session_time": "1:00 pm on 1 May, 2023",
+            "text": "I work for Larch. I have not said when I started.",
+            "position": 1
+          }
+        ],
+        "delivered_coverage": [
+          {
+            "question": "Where does Riley work?",
+            "status": "sufficient",
+            "memory_ids": [
+              "employment"
+            ],
+            "source_ids": [
+              "synthetic/conv-probe/D1:2"
+            ],
+            "gap": null
+          },
+          {
+            "question": "On what date did Riley start that job?",
+            "status": "insufficient",
+            "memory_ids": [],
+            "source_ids": [],
+            "gap": "No start date is provided; the source explicitly says Riley has not said when the job started."
+          }
+        ],
+        "source_delivery": {
+          "expected_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "attempted_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "delivered_source_ids": [
+            "synthetic/conv-probe/D1:2"
+          ],
+          "status": "accepted",
+          "provider_accepted": true
+        },
+        "answer": {
+          "status": "insufficient",
+          "answer": "Riley works for Larch. However, the date Riley started that job is not provided: the source explicitly says Riley has not said when the job started. This answer reflects the conversation cutoff of 2023-05-01T13:00:00.",
+          "citations": [
+            {
+              "memory_id": "employment",
+              "source_ids": [
+                "synthetic/conv-probe/D1:2"
+              ]
+            },
+            {
+              "memory_id": null,
+              "source_ids": [
+                "synthetic/conv-probe/D1:2"
+              ]
+            }
+          ]
+        }
+      },
+      "acceptance": "Recover Larch with raw citation; start date remains unknown; at most two resolves."
+    }
+  ],
+  "status": "requires_semantic_review",
+  "synthetic_provider_outputs": [
+    "{\"status\": \"insufficient\", \"effective_memory_ids\": [\"employment\"], \"decisions\": [{\"memory_id\": \"employment\", \"selected\": true, \"reason\": \"Directly answers where Riley works: Larch.\"}, {\"memory_id\": \"residence\", \"selected\": false, \"reason\": \"Concerns residence in Bergen, not employment or start date.\"}], \"explanation\": \"The employment memory establishes Riley works for Larch, answering the workplace subquestion. No memory or source provides the job start date; the source explicitly states the start date was not given, so the date subquestion is a gap.\", \"effective_source_ids\": [], \"coverage\": [{\"question\": \"Where does Riley work?\", \"status\": \"sufficient\", \"memory_ids\": [\"employment\"], \"source_ids\": [], \"gap\": null}, {\"question\": \"On what date did Riley start that job?\", \"status\": \"insufficient\", \"memory_ids\": [], \"source_ids\": [], \"gap\": \"No start date is provided; the source explicitly says Riley has not said when the job started.\"}]}",
+    "{\"status\": \"insufficient\", \"effective_memory_ids\": [\"employment\"], \"decisions\": [{\"memory_id\": \"residence\", \"selected\": false, \"reason\": \"Riley's residence in Bergen is unrelated to the employment question.\"}, {\"memory_id\": \"employment\", \"selected\": true, \"reason\": \"Directly states Riley works for Larch, answering the employer subquestion.\"}], \"explanation\": \"The employer is established as Larch from memory 'employment' and corroborated by raw source D1:2. The start date is not provided; the source explicitly states Riley has not said when the job started, so that subquestion remains insufficient.\", \"effective_source_ids\": [\"synthetic/conv-probe/D1:2\"], \"coverage\": [{\"question\": \"Where does Riley work?\", \"status\": \"sufficient\", \"memory_ids\": [\"employment\"], \"source_ids\": [\"synthetic/conv-probe/D1:2\"], \"gap\": null}, {\"question\": \"On what date did Riley start that job?\", \"status\": \"insufficient\", \"memory_ids\": [], \"source_ids\": [\"synthetic/conv-probe/D1:2\"], \"gap\": \"No start date is provided; the source explicitly says Riley has not said when the job started.\"}]}",
+    "{\"status\":\"insufficient\",\"answer\":\"Riley works for Larch. However, the date Riley started that job is not provided: the source explicitly states Riley has not said when the job started. This answer reflects information available as of the conversation cutoff (2023-05-01T13:00:00).\",\"citations\":[{\"memory_id\":\"employment\",\"source_ids\":[\"synthetic/conv-probe/D1:2\"]},{\"memory_id\":null,\"source_ids\":[\"synthetic/conv-probe/D1:2\"]}]}",
+    "{\"status\": \"insufficient\", \"effective_memory_ids\": [\"employment\"], \"decisions\": [{\"memory_id\": \"employment\", \"selected\": true, \"reason\": \"Directly states Riley's employer as Larch, answering the workplace subquestion.\"}], \"explanation\": \"The memory establishes Riley works for Larch, but the source explicitly states Riley has not said when the job started, so the start date is unknown. The employer subquestion is answered; the start-date subquestion is not.\", \"effective_source_ids\": [], \"coverage\": [{\"question\": \"Where does Riley work?\", \"status\": \"sufficient\", \"memory_ids\": [\"employment\"], \"source_ids\": []}, {\"question\": \"On what date did Riley start that job?\", \"status\": \"insufficient\", \"memory_ids\": [], \"source_ids\": [], \"gap\": \"No start date is provided; the source explicitly says Riley has not said when the job started.\"}]}",
+    "{\"status\": \"insufficient\", \"effective_memory_ids\": [\"employment\"], \"decisions\": [{\"memory_id\": \"employment\", \"selected\": true, \"reason\": \"Directly states Riley works for Larch, answering the employer subquestion; it contains no start date.\"}], \"explanation\": \"The employer is established as Larch by memory 'employment', corroborated by raw source D1:2. The start date is not provided anywhere; D1:2 explicitly says Riley has not said when the job started, so that subquestion remains insufficient.\", \"effective_source_ids\": [\"synthetic/conv-probe/D1:2\"], \"coverage\": [{\"question\": \"Where does Riley work?\", \"status\": \"sufficient\", \"memory_ids\": [\"employment\"], \"source_ids\": [\"synthetic/conv-probe/D1:2\"], \"gap\": null}, {\"question\": \"On what date did Riley start that job?\", \"status\": \"insufficient\", \"memory_ids\": [], \"source_ids\": [], \"gap\": \"No start date is provided; the source explicitly says Riley has not said when the job started.\"}]}",
+    "{\"status\":\"insufficient\",\"answer\":\"Riley works for Larch. However, the date Riley started that job is not provided: the source explicitly says Riley has not said when the job started. This answer reflects the conversation cutoff of 2023-05-01T13:00:00.\",\"citations\":[{\"memory_id\":\"employment\",\"source_ids\":[\"synthetic/conv-probe/D1:2\"]},{\"memory_id\":null,\"source_ids\":[\"synthetic/conv-probe/D1:2\"]}]}"
+  ],
+  "after": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 47,
+    "reserved_total_calls": 360,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2,
+      "quality-C-stages": 3,
+      "quality-D-raw": 7,
+      "quality-E-evidence": 6
+    },
+    "operations": {
+      "relate": 30,
+      "extract": 4,
+      "resolve_raw": 10,
+      "answer_raw": 3
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 43,
+      "invalid_output": 3
+    },
+    "usage": {
+      "generation_calls": 47,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 297154,
+        "completion_tokens": 73889,
+        "total_tokens": 371043
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 297154,
+          "calls_with_reported_usage": 46,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 73889,
+          "calls_with_reported_usage": 46,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 371043,
+          "calls_with_reported_usage": 46,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 229.54614242499338
+    }
+  }
+}
