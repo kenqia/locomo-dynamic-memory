@@ -1,0 +1,132 @@
+{
+  "format_version": 1,
+  "created_at": "2026-10-20T07:51:12.875667+00:00",
+  "status": "awaiting_budget_approval",
+  "source_database": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15/memory.sqlite3",
+  "source_database_sha256": "13497e43f418275585532d7d8a3a2bb326035662ed6eef67f41a05b6e8f46116",
+  "source_build_id": "91f1f50938064972820e3ab7b390d9dd",
+  "source_build_fingerprint": "7e3fa17be58d079f516c12322332cc33e5053d497a5881a7f3e71108d33abf3b",
+  "implementation_sha256": "5faa21d8963d1b23d5c52c42ff43232f2c6939824537536719114918a49a89d6",
+  "prompt_version": "relations-v4",
+  "schema_version": "relation-v1",
+  "settings": {
+    "model_name": "deepseek-flash",
+    "model_base_url": "https://api.deepseek.com",
+    "model_timeout_seconds": 60.0,
+    "model_temperature": 0.0,
+    "model_max_tokens": 4096,
+    "thinking_enabled": false,
+    "model_retries": 0
+  },
+  "original_model_retries": 2,
+  "proposed_call_limit": 6,
+  "tasks": [
+    {
+      "task_id": "91f1f50938064972820e3ab7b390d9dd:relation:2",
+      "ordinal": 2,
+      "original_status": "failed",
+      "new_memory_id": "0e45538fc6bcc18a98651192",
+      "history_ids": [
+        "fffe5349bcfeae710c3ac929"
+      ],
+      "history_count": 1,
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5"
+      ],
+      "payload_sha256": "e355a56c9b28c90f579b90166c6cf03695621dd1f293caae821478260b17eca8",
+      "request_sha256": "295da4dc3775034f520de7595e33ddeb0257881267a33e41084a3ca3bf98de48",
+      "request_context_estimate": {
+        "token_count": 2469,
+        "method": "regex-word-punctuation-v1",
+        "scope": "serialized_messages_including_prompt_schema_and_payload",
+        "is_provider_token_count": false,
+        "reserved_output_tokens": 4096
+      }
+    },
+    {
+      "task_id": "91f1f50938064972820e3ab7b390d9dd:relation:4",
+      "ordinal": 4,
+      "original_status": "failed",
+      "new_memory_id": "d9d50b08567527f7f8df4ae3",
+      "history_ids": [
+        "fffe5349bcfeae710c3ac929",
+        "0e45538fc6bcc18a98651192",
+        "d57bf567f954b7d6216ec9bb"
+      ],
+      "history_count": 3,
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7"
+      ],
+      "payload_sha256": "b4fd8b697609245e0c46c825fcdbdf1b9f9c2d8d2eda7d9b127fe66814fe1676",
+      "request_sha256": "7fc57ffee7349b9467ef5da19f8b787597f55290738c1b9878822099d8723d2d",
+      "request_context_estimate": {
+        "token_count": 3158,
+        "method": "regex-word-punctuation-v1",
+        "scope": "serialized_messages_including_prompt_schema_and_payload",
+        "is_provider_token_count": false,
+        "reserved_output_tokens": 4096
+      }
+    },
+    {
+      "task_id": "91f1f50938064972820e3ab7b390d9dd:relation:112",
+      "ordinal": 112,
+      "original_status": "failed",
+      "new_memory_id": "1cfe9200d88480f99c33aa82",
+      "history_ids": [
+        "0af7e6e7e7a516d45982962f",
+        "3937829cd651d057fec09cbc",
+        "b922f92f576a68428091467b",
+        "7bad5bf6395d55faab46a446",
+        "1f1edc74dcb1c395494051a7",
+        "69cd9d09df24e847c84dfd9f",
+        "f0a7007cca88f6280eadc7de",
+        "2808c9080d020a7939b661d9",
+        "d3b850be3254da93c34e6891",
+        "3e2b1e9f8d698b032e6b2a2b",
+        "9d7ac4e28376a8e4e4fa82c7",
+        "7bfcf0fafb5bf4fa1bf53ce2",
+        "913a039855279188c675a173",
+        "c6d0c6e3109c493ebea1f97a",
+        "f29b0e1b96c4dda195950dfd",
+        "92b481ac48874b312d1fb3d9",
+        "d2404642b6fb44a7699a491a",
+        "b61a1aaaf2ea2482621e0e00",
+        "1deef6af895bed0bf30fbb7e",
+        "a29d9b3a9cbe8385ffff1371"
+      ],
+      "history_count": 20,
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:8"
+      ],
+      "payload_sha256": "3248461526fd7bd841e573adf74a7d4c87a4fa8a3891f4a347a13f459047d8d4",
+      "request_sha256": "5225cf4c870d8d969c0bd7e1e9be9bec93b8653728a29d8461805f64e4fc6c4c",
+      "request_context_estimate": {
+        "token_count": 10443,
+        "method": "regex-word-punctuation-v1",
+        "scope": "serialized_messages_including_prompt_schema_and_payload",
+        "is_provider_token_count": false,
+        "reserved_output_tokens": 4096
+      }
+    }
+  ]
+}

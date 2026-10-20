@@ -122,31 +122,24 @@ def test_transport_exceptions_are_safe_and_saved_before_propagation(settings, er
     assert 'private-marker' not in json.dumps(failure.value.metadata)
 
 
-def test_relation_request_adds_label_and_unique_source_guidance_only(settings):
-    import hashlib
+def test_relation_prompt_changes_preserve_request_envelope(settings):
     requests = []
     def provider(request):
-        requests.append(request.content)
+        requests.append(json.loads(request.content))
         return httpx.Response(200, json=document())
     model = DeepSeekModel(settings, api_key='synthetic', transport=httpx.MockTransport(provider))
-    model.generate('relate', {'diagnostic_fixture': 'synthetic'}, RelationBatch)
-    body = json.loads(requests[0])
-    gate = ('First compare the supplied state_key values exactly. RETAIN, SUPERSEDE and\n'
-            'CONFLICT are allowed only when old.state_key equals new.state_key. Do not\n'
-            'reinterpret different keys as the same dimension. For different keys, still\n'
-            'assess UPDATE under its same-process evidence rule; otherwise use undetermined.\n')
-    assert gate in body['messages'][0]['content']
-    unique_sources = ("Each judgment's source_ids must be a set-like list with no repeated IDs, including\n"
-                      'when both endpoint memories cite the same source. A shared source_id covers both\n'
-                      'endpoints when it supports both; list it once. Preserve evidence for each endpoint.\n')
-    assert unique_sources in body['messages'][0]['content']
-    # Removing the added instructions must reproduce the independently captured
-    # pre-diagnostics request: same schema, payload, parameters and other guidance.
-    body['messages'][0]['content'] = body['messages'][0]['content'].replace(gate, '', 1)
-    body['messages'][0]['content'] = body['messages'][0]['content'].replace(unique_sources, '', 1)
-    with httpx.Client() as client:
-        previous = client.build_request('POST', 'https://api.deepseek.com/chat/completions', json=body)
-    assert hashlib.sha256(previous.content).hexdigest() == '0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846'
+    payload = {'diagnostic_fixture': 'synthetic'}
+    model.generate('relate', payload, RelationBatch)
+    body = requests[0]
+    # Prompt wording is evaluated by the fixed live semantic probes. Here the
+    # stable contract is the schema, user data and provider parameters.
+    messages = body.pop('messages')
+    assert len(messages) == 2 and messages[0]['role'] == 'system'
+    assert json.loads(messages[0]['content'].split('\nJSON schema:\n', 1)[1]) == RelationBatch.model_json_schema()
+    assert messages[1]['role'] == 'user' and json.loads(messages[1]['content']) == payload
+    assert body == {'model': settings.model_name, 'thinking': {'type': 'disabled'},
+                    'response_format': {'type': 'json_object'},
+                    'temperature': settings.model_temperature, 'max_tokens': settings.model_max_tokens}
 
 
 @pytest.mark.parametrize('label', ['UPDATE', 'undetermined'])
@@ -191,6 +184,82 @@ def test_state_key_gate_preserves_cross_dimension_update_and_undetermined(settin
         with pytest.raises(ModelFailure) as failure:
             model.generate('relate', context, RelationBatch, context=context)
         assert failure.value.metadata['calls'][0]['error_code'] == 'same_state_dimension_required'
+
+
+@pytest.mark.parametrize('label', ['RETAIN', 'UPDATE', 'CONFLICT', 'SUPERSEDE', 'undetermined'])
+@pytest.mark.parametrize('statement_type', ['plan', 'intention', 'uncertain'])
+def test_nonfactual_new_claim_cannot_resolve_old_fact(settings, label, statement_type):
+    common = dict(build_id='b', dataset_id='d', sample_id='s', entity_id='Alex',
+                  memory_type='state', state_key='s:Alex:residence')
+    old = dict(common, memory_id='old', statement_type='fact', source_ids=['s1'])
+    new = dict(common, memory_id='new', statement_type=statement_type, source_ids=['s2'])
+    context = dict(new_memory=new, history=[old], sources={
+        's1': {'text': 'I live in Paris.'},
+        's2': {'text': 'I may live in Rome next year.'},
+    })
+    judgment = dict(old_memory_id='old', new_memory_id='new', label=label,
+                    reason='A future possibility does not establish a factual transition',
+                    source_ids=['s1', 's2'], support_quote='I may live in Rome next year.')
+    model = DeepSeekModel(settings.model_copy(update={'model_retries': 0}), api_key='synthetic',
+                          transport=httpx.MockTransport(lambda _: httpx.Response(200, json=document(json.dumps({'judgments': [judgment]})))))
+    if label == 'undetermined':
+        result = model.generate('relate', context, RelationBatch, context=context)
+        assert result.value.judgments[0].label == 'undetermined'
+    else:
+        with pytest.raises(ModelFailure) as failure:
+            model.generate('relate', context, RelationBatch, context=context)
+        call = failure.value.metadata['calls'][0]
+        assert call['failure_stage'] == 'domain_validation'
+        assert call['field_path'] == 'judgments[0]'
+        assert call['error_code'] == ('factual_states_required' if label == 'SUPERSEDE' else 'factual_resolution_required')
+
+
+@pytest.mark.parametrize('label', ['RETAIN', 'UPDATE', 'SUPERSEDE', 'CONFLICT', 'undetermined'])
+@pytest.mark.parametrize('new_changes,allowed,error_codes', [
+    ({'statement_type': 'intention'}, ['undetermined'],
+     {'RETAIN': 'factual_resolution_required', 'UPDATE': 'factual_resolution_required',
+      'SUPERSEDE': 'factual_states_required', 'CONFLICT': 'factual_resolution_required'}),
+    ({'state_key': 's:Alex:travel'}, ['UPDATE', 'undetermined'],
+     {'RETAIN': 'same_state_dimension_required', 'SUPERSEDE': 'same_state_dimension_required',
+      'CONFLICT': 'same_state_dimension_required'}),
+    ({}, ['RETAIN', 'UPDATE', 'SUPERSEDE', 'CONFLICT', 'undetermined'], {}),
+    ({'memory_type': 'event'}, ['RETAIN', 'UPDATE', 'CONFLICT', 'undetermined'],
+     {'SUPERSEDE': 'factual_states_required'}),
+    ({'state_key': 's:Alex:travel', 'statement_type': 'intention'}, ['undetermined'],
+     {'RETAIN': 'same_state_dimension_required', 'SUPERSEDE': 'same_state_dimension_required',
+      'CONFLICT': 'same_state_dimension_required', 'UPDATE': 'factual_resolution_required'}),
+])
+def test_candidate_label_prerequisites_match_validation_without_mutating_input(settings, label, new_changes, allowed, error_codes):
+    from copy import deepcopy
+    common = dict(build_id='b', dataset_id='d', sample_id='s', entity_id='Alex',
+                  memory_type='state', statement_type='fact', state_key='s:Alex:residence',
+                  source_ids=['s1'])
+    history = [dict(common, memory_id=memory_id) for memory_id in ['z-old', 'a-old']]
+    new = {**common, 'memory_id': 'new', **new_changes}
+    source = {'text': 'I live in Paris and may move to Rome.'}
+    context = dict(new_memory=new, history=history, sources={'s1': source})
+    payload = dict(new_memory=new, history=history, sources=[source])
+    original_payload, original_context = deepcopy(payload), deepcopy(context)
+    judgments = [dict(old_memory_id=old['memory_id'], new_memory_id='new', label=label,
+                      reason='Compare the supplied residence claims', source_ids=['s1'],
+                      support_quote=source['text']) for old in history]
+    requests = []
+    def provider(request):
+        requests.append(json.loads(request.content))
+        return httpx.Response(200, json=document(json.dumps({'judgments': judgments})))
+    model = DeepSeekModel(settings.model_copy(update={'model_retries': 0}), api_key='synthetic',
+                          transport=httpx.MockTransport(provider))
+    if label in allowed:
+        assert model.generate('relate', payload, RelationBatch, context=context).value.judgments[0].label == label
+    else:
+        with pytest.raises(ModelFailure) as failure:
+            model.generate('relate', payload, RelationBatch, context=context)
+        assert failure.value.metadata['calls'][0]['error_code'] == error_codes[label]
+    sent = json.loads(requests[0]['messages'][1]['content'])
+    assert sent['allowed_labels_by_old_memory'] == {'z-old': allowed, 'a-old': allowed}
+    assert list(sent['allowed_labels_by_old_memory']) == ['z-old', 'a-old']
+    assert sent['history'] == history
+    assert payload == original_payload and context == original_context
 
 
 def test_failed_checkpoint_does_not_trigger_another_provider_call(settings):

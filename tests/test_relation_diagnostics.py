@@ -63,7 +63,10 @@ def test_internal_and_logical_retries_keep_history_after_restart(settings, sampl
     with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
         assert client.get(f'/builds/{build_id}/relation-tasks', params={'limit': 1}).json()['items'][0] == before
     assert len(observed_requests) == 4
-    assert all(body == observed_requests[0] for body in observed_requests)
+    assert observed_requests[0] == observed_requests[2] == observed_requests[3]
+    retry = json.loads(observed_requests[1]['messages'][1]['content'])
+    assert retry.pop('retry_feedback')['error_code'] == 'non_stop_finish_reason'
+    assert retry == json.loads(observed_requests[0]['messages'][1]['content'])
 
 
 def two_memory_provider(request):
@@ -71,6 +74,23 @@ def two_memory_provider(request):
     if 'new_memory' not in payload:
         return completion({'memories': [draft([payload['sources'][0]['source_id']]), draft([payload['sources'][2]['source_id']])]})
     return completion({'judgments': [relation(payload['history'][0], payload['new_memory'])]})
+
+
+def test_http_status_is_persisted_in_relation_history_without_provider_body(settings, sample):
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        return httpx.Response(402, text='private-provider-body') if 'new_memory' in payload else two_memory_provider(request)
+    model = DeepSeekModel(settings, api_key='synthetic', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        build_id = build(client, sample)
+        client.post(f'/builds/{build_id}/index')
+        client.post(f'/builds/{build_id}/relations')
+        response = client.get(f'/builds/{build_id}/relation-tasks')
+        calls = response.json()['items'][0]['diagnostic_history'][0]['calls']
+        assert len(calls) == 1
+        assert (calls[0]['failure_stage'], calls[0]['http_status'], calls[0]['http_error_category']) == (
+            'provider_http', 402, 'insufficient_balance')
+        assert 'private-provider-body' not in response.text
 
 
 @pytest.mark.parametrize('crash_point', ['dispatch', 'response', 'failed_then_dispatch', 'success_before_commit'])

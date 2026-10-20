@@ -1,0 +1,201 @@
+{
+  "started_at": "2026-10-20T10:16:44.747305+00:00",
+  "implementation_sha256": "57a3dec2b8fe919beeda53b3b2dd2a95c4096fb30e57400ff079745cbb4ad44b",
+  "prompt_version": "relations-v6.3",
+  "schema_version": "relation-v1.1",
+  "source_sha256": "12410a8a857e91a9e23b97280b4cbcb647278daef83200cb9907c748cd238e2d",
+  "status": "observations_saved",
+  "qualifies_full_build": false,
+  "treatment": "one history endpoint and only endpoint sources; current prompt and schema",
+  "attempts": [
+    {
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+      "candidate_count": 1,
+      "payload_sha256": "4c83daa5aa9df5138bc5104d0daa7528564489c82b633ab2a8a8969fa9dac442",
+      "status": "succeeded",
+      "judgments": [
+        {
+          "old_memory_id": "480d91e2f9e90f04b47fa0af",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "UPDATE",
+          "reason": "Old stage: Melanie signed up for a pottery class. New stage: she made a black and white bowl in that class, showing progression from enrollment to producing work in the same concrete pottery-class process.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": "Yeah, I made this bowl in my class.",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        }
+      ],
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T10:16:44.755637+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 2672,
+              "completion_tokens": 242,
+              "total_tokens": 2914
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+            "elapsed_seconds": 1.6168645459983964,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T10:16:46.372502+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 3159,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      }
+    },
+    {
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+      "candidate_count": 1,
+      "payload_sha256": "e55d9f66702e0e517a854c65ae3bb29e00ac5c55e6dfacb6ff68bc91bcdbc0b3",
+      "status": "succeeded",
+      "judgments": [
+        {
+          "old_memory_id": "32a5b80fcfba6f409b45b842",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "UPDATE",
+          "reason": "Old stage: Melanie finished a pottery project. New stage: she describes making a colorful patterned bowl to catch the eye, which is the produced work of that same pottery process; the later detail describes the completed object's appearance rather than a new stage, so this is the same completion stage and not progression.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": "I finished another pottery project - want to see a pic?",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        }
+      ],
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T10:16:46.393140+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 2484,
+              "completion_tokens": 189,
+              "total_tokens": 2673
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+            "elapsed_seconds": 1.4894246089970693,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T10:16:47.882565+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 2990,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      }
+    }
+  ],
+  "finished_at": "2026-10-20T10:16:47.927218+00:00",
+  "budget": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 25,
+    "reserved_total_calls": 338,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4
+    },
+    "operations": {
+      "relate": 25
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 24
+    },
+    "usage": {
+      "generation_calls": 25,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 209682,
+        "completion_tokens": 56566,
+        "total_tokens": 266248
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 209682,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 56566,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 266248,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 167.7667884259954
+    }
+  }
+}

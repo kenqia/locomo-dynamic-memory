@@ -1,0 +1,216 @@
+{
+  "approved_call_limit": 3,
+  "mode": "live",
+  "plan_sha256": "61d4fc949c32e298037177f6d27bc5eec72d2b8fa674db827833ec51ad02072d",
+  "replay_id": "3485c299591e4c779569cfec5fd706b7",
+  "status": "budget_exhausted",
+  "reserved_calls": 3,
+  "usage": {
+    "generation_calls": 3,
+    "unknown_attempts": 0,
+    "calls_without_reported_usage": 0,
+    "calls_with_partial_usage": 0,
+    "reported_tokens": {
+      "prompt_tokens": 14093,
+      "completion_tokens": 4625,
+      "total_tokens": 18718
+    },
+    "usage_fields": {
+      "prompt_tokens": {
+        "reported": 14093,
+        "calls_with_reported_usage": 3,
+        "calls_missing_usage": 0,
+        "complete": true
+      },
+      "completion_tokens": {
+        "reported": 4625,
+        "calls_with_reported_usage": 3,
+        "calls_missing_usage": 0,
+        "complete": true
+      },
+      "total_tokens": {
+        "reported": 18718,
+        "calls_with_reported_usage": 3,
+        "calls_missing_usage": 0,
+        "complete": true
+      }
+    },
+    "provider_usage_complete": true,
+    "provider_retries": 0,
+    "reported_provider_seconds": 15.331955704000393
+  },
+  "remaining_calls": 0,
+  "attempts": [
+    {
+      "sequence": 1,
+      "phase": "before",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:2",
+      "implementation_sha256": "5faa21d8963d1b23d5c52c42ff43232f2c6939824537536719114918a49a89d6",
+      "prompt_version": "relations-v4",
+      "schema_version": "relation-v1",
+      "request_sha256": "295da4dc3775034f520de7595e33ddeb0257881267a33e41084a3ca3bf98de48",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T07:52:44.788270+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 1.816205379999701,
+        "error_code": null,
+        "failure_stage": null,
+        "field_path": null,
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "succeeded",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:2",
+        "status": "succeeded",
+        "task_id": "3485c299591e4c779569cfec5fd706b7:before:relation:2",
+        "timestamp": "2026-10-20T07:52:42.972062+00:00",
+        "usage": {
+          "completion_tokens": 277,
+          "prompt_tokens": 1953,
+          "total_tokens": 2230
+        }
+      },
+      "result": {
+        "candidate_count": 1,
+        "covered_candidate_count": 1,
+        "judgments": [
+          {
+            "label": "undetermined",
+            "new_memory_id": "0e45538fc6bcc18a98651192",
+            "old_memory_id": "fffe5349bcfeae710c3ac929",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:5"
+            ]
+          }
+        ],
+        "label_counts": {
+          "undetermined": 1
+        },
+        "status": "succeeded"
+      }
+    },
+    {
+      "sequence": 2,
+      "phase": "before",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:4",
+      "implementation_sha256": "5faa21d8963d1b23d5c52c42ff43232f2c6939824537536719114918a49a89d6",
+      "prompt_version": "relations-v4",
+      "schema_version": "relation-v1",
+      "request_sha256": "7fc57ffee7349b9467ef5da19f8b787597f55290738c1b9878822099d8723d2d",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T07:52:47.372626+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 2.5730593050002426,
+        "error_code": null,
+        "failure_stage": null,
+        "field_path": null,
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "succeeded",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:4",
+        "status": "succeeded",
+        "task_id": "3485c299591e4c779569cfec5fd706b7:before:relation:4",
+        "timestamp": "2026-10-20T07:52:44.799565+00:00",
+        "usage": {
+          "completion_tokens": 607,
+          "prompt_tokens": 2597,
+          "total_tokens": 3204
+        }
+      },
+      "result": {
+        "candidate_count": 3,
+        "covered_candidate_count": 3,
+        "judgments": [
+          {
+            "label": "undetermined",
+            "new_memory_id": "d9d50b08567527f7f8df4ae3",
+            "old_memory_id": "fffe5349bcfeae710c3ac929",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:7"
+            ]
+          },
+          {
+            "label": "undetermined",
+            "new_memory_id": "d9d50b08567527f7f8df4ae3",
+            "old_memory_id": "0e45538fc6bcc18a98651192",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:7"
+            ]
+          },
+          {
+            "label": "undetermined",
+            "new_memory_id": "d9d50b08567527f7f8df4ae3",
+            "old_memory_id": "d57bf567f954b7d6216ec9bb",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:7"
+            ]
+          }
+        ],
+        "label_counts": {
+          "undetermined": 3
+        },
+        "status": "succeeded"
+      }
+    },
+    {
+      "sequence": 3,
+      "phase": "before",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:112",
+      "implementation_sha256": "5faa21d8963d1b23d5c52c42ff43232f2c6939824537536719114918a49a89d6",
+      "prompt_version": "relations-v4",
+      "schema_version": "relation-v1",
+      "request_sha256": "5225cf4c870d8d969c0bd7e1e9be9bec93b8653728a29d8461805f64e4fc6c4c",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T07:52:59.186191+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 10.94269101900045,
+        "error_code": "factual_resolution_required",
+        "failure_stage": "domain_validation",
+        "field_path": "judgments[17]",
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "invalid_output",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:112",
+        "status": "invalid_output",
+        "task_id": "3485c299591e4c779569cfec5fd706b7:before:relation:112",
+        "timestamp": "2026-10-20T07:52:47.384645+00:00",
+        "usage": {
+          "completion_tokens": 3741,
+          "prompt_tokens": 9543,
+          "total_tokens": 13284
+        },
+        "validation_errors": [
+          {
+            "error_code": "factual_resolution_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[17]"
+          }
+        ]
+      },
+      "result": {
+        "status": "invalid_output"
+      }
+    }
+  ]
+}

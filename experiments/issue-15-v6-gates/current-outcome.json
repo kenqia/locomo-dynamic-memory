@@ -1,0 +1,69 @@
+{
+  "recorded_at": "2026-10-20T10:17:43.291955+00:00",
+  "status": "stopped_at_semantic_gate",
+  "current_implementation_sha256": "c3207ffd535a6337705377dd413ed35b9f7196bec5a050c493a55b3d52cc6a13",
+  "current_prompt_version": "relations-v6.2",
+  "current_schema_version": "relation-v1",
+  "frozen_for_full_build": false,
+  "budget": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 25,
+    "reserved_total_calls": 338,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4
+    },
+    "operations": {
+      "relate": 25
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 24
+    },
+    "usage": {
+      "generation_calls": 25,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 209682,
+        "completion_tokens": 56566,
+        "total_tokens": 266248
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 209682,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 56566,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 266248,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 167.7667884259954
+    }
+  },
+  "full_build_created": false,
+  "published": false,
+  "qa_smoke_started": false,
+  "speculative_schema_description_rolled_back": true,
+  "remaining_blocker": "relation:172 UPDATE contradicts source-supported same completed event; repeated in batch and isolation",
+  "baseline_database_untouched": true
+}

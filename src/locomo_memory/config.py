@@ -19,7 +19,7 @@ class Settings(BaseModel):
     model_timeout_seconds: float = Field(default=60, gt=0, allow_inf_nan=False)
     model_retries: int = Field(default=2, ge=0, le=10)
     model_temperature: float = Field(default=0, ge=0, le=2)
-    model_max_tokens: int = Field(default=4096, gt=0)
+    model_max_tokens: int = Field(default=8192, gt=0)
     thinking_enabled: Literal[False] = False
     embedding_model: Literal["sentence-transformers/all-MiniLM-L6-v2"] = "sentence-transformers/all-MiniLM-L6-v2"
     embedding_revision: str = Field(default="c9745ed1d9f207416be6d2e6f8de32d1f16199bf", pattern=r"^[a-f0-9]{40}$")

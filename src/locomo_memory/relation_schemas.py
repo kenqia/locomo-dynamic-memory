@@ -10,6 +10,18 @@ from .diagnostics import domain_error
 RELATION_SCHEMA_VERSION = "relation-v1"
 
 
+def relation_label_error(label: str, old: dict, new: dict) -> str | None:
+    """Return the first violated label prerequisite, independent of source evidence."""
+    if label in {"SUPERSEDE", "CONFLICT", "RETAIN"} and old["state_key"] != new["state_key"]:
+        return "same_state_dimension_required"
+    if label == "SUPERSEDE":
+        if any(memory["memory_type"] != "state" or memory["statement_type"] != "fact" for memory in (old, new)):
+            return "factual_states_required"
+    if label in {"RETAIN", "UPDATE", "CONFLICT"} and old["statement_type"] == "fact" and new["statement_type"] != "fact":
+        return "factual_resolution_required"
+    return None
+
+
 class Applicability(BaseModel):
     model_config = ConfigDict(extra="forbid")
     from_date: date | None = None
@@ -67,13 +79,9 @@ class RelationDraft(BaseModel):
             raise domain_error("known_source_required")
         if not set(self.source_ids).intersection(old["source_ids"]) or not set(self.source_ids).intersection(new["source_ids"]):
             raise domain_error("both_endpoints_evidence_required")
-        if self.label in {"SUPERSEDE", "CONFLICT", "RETAIN"} and old["state_key"] != new["state_key"]:
-            raise domain_error("same_state_dimension_required")
-        if self.label == "SUPERSEDE":
-            if any(memory["memory_type"] != "state" or memory["statement_type"] != "fact" for memory in (old, new)):
-                raise domain_error("factual_states_required")
-        if self.label in {"RETAIN", "UPDATE", "CONFLICT"} and old["statement_type"] == "fact" and new["statement_type"] != "fact":
-            raise domain_error("factual_resolution_required")
+        label_error = relation_label_error(self.label, old, new)
+        if label_error:
+            raise domain_error(label_error)
         evidence_texts = [sources[source_id]["text"] for source_id in self.source_ids]
         if self.label != "undetermined":
             if not (self.support_quote or "").strip() or not any(self.support_quote in text for text in evidence_texts):

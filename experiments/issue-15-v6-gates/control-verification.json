@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-10-20T09:48:28.081897+00:00",
+  "implementation_sha256": "787420b34edcb2d12cf2657361c9d064b0363b6f2d298586e9b80a4957194378",
+  "command": ".venv/bin/python -m pytest -m 'not live_model and not local_embedding' -q --tb=short",
+  "passed": 283,
+  "deselected": 4,
+  "elapsed_seconds": 216.83,
+  "new_model_calls_for_tests": 0,
+  "reserved_total_live_calls": 314,
+  "gate2": "blocked_http_402_insufficient_balance",
+  "gates_3_to_6": "not_started"
+}

@@ -30,6 +30,9 @@ uv run --locked streamlit run src/locomo_memory/ui.py --server.address 127.0.0.1
 详细步骤见[运行指南](docs/app/running.md)。
 CI、夹具回归、独立浏览器环境和失败诊断见[检查指南](docs/app/checking.md)。
 
+生成输出上限 `model_max_tokens` 默认 8192 tokens，抽取、关系和 QA 共用该设置。
+已有本地配置显式设置该字段时，以本地值为准；已有构建保留原配置快照。
+
 ```sh
 uv run --locked pytest -q
 LOCOMO_LOCAL_EMBEDDING=1 HF_HUB_OFFLINE=1 uv run --locked --extra embedding pytest -m local_embedding -q

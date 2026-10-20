@@ -1,0 +1,88 @@
+{
+  "created_at": "2026-10-20T10:16:44.358710+00:00",
+  "prompt_version": "relations-v6.3",
+  "schema_version": "relation-v1.1",
+  "campaign_directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v6",
+  "gate1": {
+    "status": "passed",
+    "tests": 140,
+    "new_model_calls": 0,
+    "implementation_sha256": "57a3dec2b8fe919beeda53b3b2dd2a95c4096fb30e57400ff079745cbb4ad44b",
+    "elapsed_seconds": 44.86,
+    "label_description_delivered": true
+  },
+  "bounded_schema_experiment": {
+    "call_limit": 2,
+    "inputs": [
+      "relation:73 single pair",
+      "relation:172 single pair"
+    ],
+    "must_stop_if_any_semantically_wrong": true,
+    "does_not_qualify_full_build": true,
+    "status": "failed",
+    "real_calls": 2,
+    "failed_case": "relation:172",
+    "result": "label_UPDATE_while_reason_explicitly_denies_progression"
+  },
+  "gate5": {
+    "status": "failed",
+    "qualifies_full_build": false,
+    "diagnostic_report": "single-pair.json"
+  },
+  "budget": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 25,
+    "reserved_total_calls": 338,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4
+    },
+    "operations": {
+      "relate": 25
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 24
+    },
+    "usage": {
+      "generation_calls": 25,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 209682,
+        "completion_tokens": 56566,
+        "total_tokens": 266248
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 209682,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 56566,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 266248,
+          "calls_with_reported_usage": 24,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 167.7667884259954
+    }
+  },
+  "finished_at": "2026-10-20T10:17:43.290698+00:00"
+}

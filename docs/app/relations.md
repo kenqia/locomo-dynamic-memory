@@ -97,6 +97,9 @@
 | `finish_reason` | 实际响应中的白名单值，未知值为 `null`；不从 token 数推断 |
 | `finish_reason_status` | `reported`、`missing`、`unrecognized` 或 `not_observed` |
 | `response_received`、`usage` | 是否收到 HTTP 响应及已报告的 token 字段；缺失用量保持 `{}`，不补零 |
+| `http_status` | 实际 HTTP 状态码；没有收到响应时为 `null`，旧记录不回填 |
+| `http_error_category` | HTTP 失败的静态分类，成功响应或无响应时为 `null` |
+| `http_retryable` | HTTP 分类是否允许有限重试；未发生 HTTP 状态错误时为 `null` |
 
 失败阶段及常用代码如下：
 
@@ -121,6 +124,18 @@
 其余情况保持原有失败和有限重试行为。`stop` 也不保证 JSON、Schema 或领域校验通过。
 诊断不保存响应原文、Memory/source 文本、异常字符串或 Pydantic 的 `input`、
 `ctx`、`msg`。恶意额外字段名和未知结束原因不会原样透传。
+
+HTTP 失败始终记为 `provider_http`，不作为 JSON、Schema 或领域校验失败。
+`408/500/502/503/504` 分类为 `temporary_service`，`429` 为 `rate_limit`，沿用配置的
+有限重试次数。`400/422` 为 `invalid_request`，`401` 为 `authentication`，`402` 为
+`insufficient_balance`，`403` 为 `permission`，其他状态为 `other_http`，均不重复请求。
+上下文拒绝优先分类为 `context_limit`，保留 `context_length_exceeded` 错误码并停止。
+网络超时与连接错误仍使用 `transport` 阶段，不能伪造 HTTP 状态。
+
+临时错误的重试也必须逐次占用调用预算。新的有限实验运行器只允许已分类的临时 HTTP
+错误在当前重试上限内继续；额度不足、未知结果、永久错误或临时错误用尽重试时停止。
+不保存错误响应正文、响应头或 provider 任意错误文本；HTTP 错误缺失的 usage 保持未知。
+实际关卡结果见 [v6 关卡记录](../../experiments/issue-15-v6-gates/README.md)。
 
 ### 持久化、中断和旧记录
 
@@ -151,6 +166,51 @@
 `Experiment.snapshot_build` 导出的 `builds/{id}/relation-tasks.json` 同样保留完整历史。
 供检索使用的不可变 `MemoryExport` 仍沿用原有内容白名单，不包含运行时诊断。
 
-此次只增加诊断和存储，不改变 Prompt、JSON Schema、关系标签约束、候选数、
+诊断持久化这一改动只增加诊断和存储，不改变 Prompt、JSON Schema、关系标签约束、候选数、
 输出上限、模型参数或重试规则。回退代码时旧程序会忽略新增诊断表；保留数据库，
 不要为回退删除历史表，也不要对受保护的旧实验数据库启动新版后端。
+
+### 模型可见的标签前提
+
+后续真实回放仍出现 `factual_resolution_required`，因此 `relations-v5` 在关系请求中
+新增 `allowed_labels_by_old_memory`。该映射以历史 Memory ID 为键，列出该候选满足
+类型前提的标签。请求提示与领域校验共用 `relation_label_error()`，覆盖同状态维度、
+SUPERSEDE 的事实状态限制，以及旧 fact 与新非 fact 的判断限制。
+
+映射保留全部候选，不直接建立关系，不替模型改写标签。某个标签在允许集合中，只说明
+通过这些类型前提；模型仍须提供支持该判断的来源，并通过其他证据、时间、条件及候选
+覆盖校验。跨状态维度的 `UPDATE` 和 `undetermined` 仍可用，未无条件过滤跨维度候选。
+关系 JSON Schema 和领域规则保持不变；Prompt 版本变化会改变 Build 指纹，因此应创建
+新构建，不能用新版原地恢复旧 Prompt 的 Build。真实复验与边界见
+[继续实验记录](../../experiments/issue-15-live-continuation/README.md)。
+
+### 紧凑输出与定向纠错
+
+`relations-v6` 要求简短理由，省略无证据的可选字段及全为默认值的 `applicability`。
+已知日期、条件、双方来源与每个候选的判断仍须保留。确定标签的 `support_quote`
+必须逐字复制自某一条引用来源中的连续片段，不能拼接多条来源、加入省略号或改写。
+引用来自一条来源时，`source_ids` 仍须覆盖双方端点。
+
+关系调用收到 `finish_reason=length` 或 `verbatim_support_required` 后，下一次内部重试
+的输入增加 `retry_feedback`，仅含安全错误代码、输出字段路径和静态指导。它要求重新生成
+完整批次，不提交部分结果，不代替模型修正标签。反馈只对应上一次错误，不累积响应或
+异常内容；其他错误沿用原有重试请求。显式逻辑重试从原请求开始，不继承前次反馈。
+
+该改动保持配置的候选上限、输出 token 上限、重试上限及完整领域校验。
+有内部关系重试时，`request_context_estimate` 的 regex 估算覆盖该次逻辑执行中最大的
+请求，包含纠错输入，`scope` 为 `largest_serialized_messages_including_prompt_schema_and_payload`；
+它仍不是 provider token 数。
+
+v5 的中断 Build 及其预算库保留原样。v6 改变 Build 指纹，后续真实验证应使用独立回放或
+新构建。此次修复的受控验证与实际效果边界见
+[小范围修复记录](../../experiments/issue-15-relation-output-fix.md)。
+
+当前工作区使用 `relations-v6.2`、`relation-v1`。Prompt 明确要求跨维度也检查同一具体
+过程的现实阶段，不能因不同 `state_key` 排除 UPDATE；对已完成事件补充外观、动机或名称
+也不代表新阶段。新证据明确支持旧事实继续适用时，可在同键前提下判断 RETAIN。
+
+这些说明尚未解决全部语义误判。固定输入 `relation:172` 在完整20候选及单候选下都曾
+返回 UPDATE，同时理由承认没有新阶段。Schema 的逐字来源与结构校验不能检查这种
+语义一致性。不得据此宣称模型质量通过，或跳过语义关卡冻结完整构建身份。
+`relations-v6.3` / `relation-v1.1` 的字段说明实验同样未通过，已回退；未改变当前Schema。
+定向改善、失败证据及停止条件见 [v6关卡记录](../../experiments/issue-15-v6-gates/README.md)。

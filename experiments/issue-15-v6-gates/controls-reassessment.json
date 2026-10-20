@@ -1,0 +1,102 @@
+{
+  "review_type": "independent_agent_critical_reassessment",
+  "new_model_calls": 0,
+  "human_ground_truth": false,
+  "supersedes": "audit.json/audit.md c01 的 supported_control / UPDATE 结论",
+  "change_reason": "先前把已成立的成员状态及组织活动详述当作加入之后的新阶段，尺度与 c02 不一致；现按统一阶段推进定义更正。",
+  "operation_rule": "UPDATE 必须有来源支持的同一过程、两个可区分的现实阶段及其先后。后说、名称更具体、补充属性、event转state编码、解释已完成作品均不单独建立新阶段。",
+  "acceptable_set_status": "在读取下一轮完整模型结果前写定。当前项目定义未为重复/详述单设标签；集合不是依据待评模型输出来调整。RETAIN 为首选，undetermined 为保守可接受；二者理由均需忠于上述条件。",
+  "revised_initial_audit_summary": {
+    "reasonable_undetermined": 23,
+    "missed_supported_relation": 1,
+    "supported_control": 0,
+    "unsupported_control": 2
+  },
+  "items": [
+    {
+      "case_id": "c01",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:148",
+      "old_memory_id": "feafe311934ed4d80915e79a",
+      "new_memory_id": "20674ca1f268fb05625dedfa",
+      "previous_control_label": "UPDATE",
+      "verdict": "unsupported_control",
+      "update_supported": false,
+      "reason": "D10:3 的加入事件已经建立成员身份，且同一句已描述正在认识成员与参与。D10:5 通过 our group 补充名称和常规活动，未显示其后发生新的阶段。加入事件与成员状态的 event/state 编码差异本身也不是现实过程的新阶段。",
+      "acceptable_label_set": [
+        "RETAIN",
+        "undetermined"
+      ],
+      "preferred_label": "RETAIN",
+      "acceptable_label_conditions": {
+        "RETAIN": "reason 必须明确指出新来源对旧事实在同一活动、成员身份或已完成作品语境的直接重申，不能只凭没有变化或同键。",
+        "undetermined": "reason 必须说明这只是同一已达成状态或事件的详述，不能建立阶段推进等演化关系。此选择反映当前文档未单独规范重复/详述边，不可宣称其来源无关或同键不存在。"
+      },
+      "rejected_labels": [
+        "UPDATE",
+        "SUPERSEDE",
+        "CONFLICT"
+      ],
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+          "quote": "I just joined a new LGBTQ activist group last Tues."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+          "quote": "I'm meeting so many cool people"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+          "quote": "Our group, 'Connected LGBTQ Activists'"
+        }
+      ]
+    },
+    {
+      "case_id": "c02",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+      "old_memory_id": "32a5b80fcfba6f409b45b842",
+      "new_memory_id": "fdd1ba084c0100474dbf66b3",
+      "previous_control_label": "UPDATE",
+      "verdict": "unsupported_control",
+      "update_supported": false,
+      "reason": "D12:2 已完成项目；D12:4 展示同一项目，D12:5 问配色，D12:6 解释制作动机。后说的作品细节没有发生在项目完成之后的新阶段。",
+      "acceptable_label_set": [
+        "RETAIN",
+        "undetermined"
+      ],
+      "preferred_label": "RETAIN",
+      "acceptable_label_conditions": {
+        "RETAIN": "reason 必须明确指出新来源对旧事实在同一活动、成员身份或已完成作品语境的直接重申，不能只凭没有变化或同键。",
+        "undetermined": "reason 必须说明这只是同一已达成状态或事件的详述，不能建立阶段推进等演化关系。此选择反映当前文档未单独规范重复/详述边，不可宣称其来源无关或同键不存在。"
+      },
+      "rejected_labels": [
+        "UPDATE",
+        "SUPERSEDE",
+        "CONFLICT"
+      ],
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+          "quote": "I finished another pottery project"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+          "quote": "I made something to catch the eye and make people smile."
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "独立代理复核，不是人工真值。",
+    "原24项未确定样本全部跨key；两项同键controls为定向样本，不能估计总体准确率。",
+    "尚未读取下一轮30项完整结果，未请求任何真实模型调用。"
+  ]
+}

@@ -1,5 +1,7 @@
 # Issue #15：重复证据 ID 的独立定位与最小修复
 
+后续用户再次授权继续真实实验，`round-2` 至 `round-4` 新增了 9 次独立验证；与下述历史 `round-1` 的 4 次合计 13 次，不重置或修改旧 ledger。后续版本、诊断和独立完整构建见[继续真实实验记录](../issue-15-live-continuation/README.md)。下面的 4/16 和剩余 12 次描述原轮次结束时的历史状态。
+
 2026-10-20，Asia/Shanghai。用户在上一轮 6 次结束后明确批准**新增最多 16 次**真实调用。
 上一轮记录见 [状态键前提实验](../issue-15-relation-contract-replay/README.md)，不重置或修改旧 ledger。
 本轮先分配 4 次给 `round-1`，定位与修复后比较 `relation:44`、`relation:90`。
