@@ -8,7 +8,12 @@
     "failures": 13,
     "errors": 0,
     "skipped": 0,
-    "seconds": 264.857
+    "seconds": 264.857,
+    "report_formatting": {
+      "change": "Removed trailing whitespace from generated traceback lines only",
+      "original_sha256": "7d7d6bd06aae1776687df903e9f8677ece2515e06e0236525b2119877cb1583b",
+      "stored_sha256": "9ec01a86050f72e9788ec62ad13040da3d151808b0bb2503ed527d695777d3da"
+    }
   },
   "diagnostic_fix": {
     "artifact": "diagnostics-regression.xml",
