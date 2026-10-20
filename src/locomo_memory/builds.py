@@ -13,6 +13,7 @@ from .memory_schemas import ExtractionBatch, Memory
 from . import model as model_contract, projection as projection_contract, relation_schemas as relation_contract
 from .model import KNOWN_MODEL_VERSION, ModelFailure, utc_now
 from .relation_schemas import RelationBatch
+from .relation_selection import SELECTION_VERSION
 
 
 class BuildError(Exception):
@@ -72,6 +73,7 @@ class BuildService:
             "relation_prompt_version": model_contract.RELATION_PROMPT_VERSION,
             "relation_schema": RelationBatch.model_json_schema(),
             "relation_schema_version": relation_contract.RELATION_SCHEMA_VERSION,
+            "relation_selection_version": SELECTION_VERSION,
             "projection_version": projection_contract.PROJECTION_VERSION,
         }
         return hashlib.sha256(canonical_json(contract).encode()).hexdigest()

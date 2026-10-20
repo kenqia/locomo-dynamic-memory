@@ -35,6 +35,8 @@ class Settings(BaseModel):
     expansion_depth: Literal[0, 1] = 1
     expansion_scan_limit: int = Field(default=200, gt=0)
     relation_history_limit: int = Field(default=20, gt=0)
+    relation_same_key_fraction: float = Field(default=0.8, gt=0, le=1)
+    relation_fact_fraction: float = Field(default=0.5, ge=0, le=1)
     candidate_token_budget: int = Field(default=12000, gt=0)
     evidence_token_budget: int = Field(default=6000, gt=0)
 

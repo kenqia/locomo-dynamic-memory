@@ -9,6 +9,7 @@ from .imports import canonical_json
 from .model import DiagnosticPersistenceFailure, ModelFailure, RELATION_PROMPT_VERSION, utc_now
 from .relation_schemas import MemoryRelation, RelationBatch, RELATION_SCHEMA_VERSION
 from .relation_diagnostics import RelationAttempts
+from .relation_selection import select_history
 
 
 class RelationService:
@@ -43,6 +44,9 @@ class RelationService:
                 );
             """)
         self.attempts = RelationAttempts(builds)
+        with self.database.connect() as db:
+            if "selection_json" not in {r[1] for r in db.execute("PRAGMA table_info(relation_tasks)")}:
+                db.execute("ALTER TABLE relation_tasks ADD COLUMN selection_json TEXT NOT NULL DEFAULT '{}'")
 
     def recover_interrupted(self):
         with self.database.connect() as db:
@@ -76,9 +80,10 @@ class RelationService:
                 for ordinal, row in enumerate(rows):
                     memory = json.loads(row["memory_json"])
                     previous = histories.setdefault(memory["entity_id"], [])
-                    bounded = previous[-self.settings.relation_history_limit:]
+                    bounded, selection = select_history(memory, previous, self.settings)
                     if bounded:
                         db.execute("INSERT INTO relation_tasks(task_id,build_id,ordinal,new_memory_id,history_ids_json,status,truncated_count) VALUES (?,?,?,?,?,'pending',?)", (f"{build_id}:relation:{ordinal}", build_id, ordinal, memory["memory_id"], canonical_json([item["memory_id"] for item in bounded]), max(0, len(previous) - len(bounded))))
+                        db.execute("UPDATE relation_tasks SET selection_json=? WHERE task_id=?", (canonical_json(selection), f"{build_id}:relation:{ordinal}"))
                     previous.append(memory)
         return self.progress(build_id)
 

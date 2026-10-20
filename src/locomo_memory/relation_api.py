@@ -39,6 +39,7 @@ def register_relation_routes(app: FastAPI, service: RelationService, versions: V
             for row in rows:
                 item = dict(row)
                 item["history_ids"] = json.loads(item.pop("history_ids_json"))
+                item["selection"] = json.loads(item.pop("selection_json"))
                 item["model_metadata"] = json.loads(item.pop("metadata_json"))
                 item.update(service.attempts.history(db, item["task_id"], item["attempts"]))
                 items.append(item)
