@@ -109,6 +109,14 @@ def raw_fallback(model, *, profile="expanded", include_employment=False):
             'state_key':'conv-probe:Riley:employment','state_dimension':'employment','state_value':'Larch',
             'source_ids':[sources[1]['source_id']]}
         memories['employment'] = employment
+        extra = {**sources[0], 'source_id':'synthetic/conv-probe/D1:3', 'dia_id':'D1:3',
+                 'speaker':'Morgan','text':'I collect violet marbles.', 'position':2}
+        sources.append(extra)
+        memories['hobby'] = {**memory, 'memory_id':'hobby', 'entity_id':'Morgan',
+            'content':'Morgan collects violet marbles.', 'state_key':'conv-probe:Morgan:hobby',
+            'state_dimension':'hobby', 'state_value':'marbles', 'source_ids':[extra['source_id']]}
+        request.question = 'Where does Riley work?'
+
     request.evidence_profile = profile
     trace = {'prompts':{},'schemas':{},'query_fingerprint':'synthetic-fixed-input',
         'initial':{'analysis':{'entities':['Riley'],'topic':'employment','keywords':[]},'initial_truncated':False},
@@ -119,7 +127,7 @@ def raw_fallback(model, *, profile="expanded", include_employment=False):
         memories,{s['source_id']:s for s in sources},
         (sources,{'scope':'synthetic-controller-probe','pinned_source_ids':[s['source_id'] for s in sources]}))
     yield {'case':'employment_and_unknown_start','profile':profile,'input_memories':list(memories.values()),'source':sources,'trace':trace,
-           'acceptance':'Recover Larch with raw citation; start date remains unknown; at most two resolves.'}
+           'acceptance':'Larch with source citation, at most two resolves; focused must retain Riley evidence and remove only unrelated Morgan component.' if include_employment else 'Recover Larch with raw citation; start date remains unknown; at most two resolves.'}
 
 
 def evidence(model):

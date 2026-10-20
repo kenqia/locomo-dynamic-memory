@@ -307,3 +307,27 @@ def test_uncommitted_result_becomes_unknown_and_requires_explicit_retry(settings
         assert done['items'][0]['attempts'][0] == attempt
         assert [a['status'] for a in done['items'][0]['attempts']] == ['unknown', 'succeeded']
         assert len(answers) == 2
+
+
+def test_run_from_before_mixed_evidence_remains_readable_but_cannot_resume(settings, sample):
+    import sqlite3
+    calls = []
+    def provider(request):
+        calls.append(request)
+        return query_provider(request)
+    model = DeepSeekModel(settings,api_key='synthetic-test-key',transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings,model=model,embedder=ControlledEmbedder())) as client:
+        dataset_id,_ = complete_build(client,sample)
+        input_id = input_for(client,dataset_id,['Old experiment?'])
+        run = client.post('/evaluation-runs',json={'input_id':input_id,'strategies':['dynamic'],'wait':True}).json()
+        # Load an old-format persistence fixture; assertions stay on the HTTP API.
+        legacy = {k:v for k,v in run.items() if k != 'raw_fallback'}
+        legacy['execution_version'] = 1
+        with sqlite3.connect(settings.db_path) as db:
+            db.execute('UPDATE evaluation_runs SET result_json=? WHERE run_id=?',(json.dumps(legacy),run['run_id']))
+        before = len(calls)
+        response = client.post('/evaluation-runs/' + run['run_id'] + '/resume',json={'wait':True})
+        assert response.status_code == 409, response.text
+        assert response.json()['error']['code'] == 'evaluation_identity_changed'
+        assert client.get('/evaluation-runs/' + run['run_id']).status_code == 200
+        assert len(calls) == before

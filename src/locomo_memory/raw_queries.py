@@ -11,7 +11,7 @@ from .raw_retrieval import retrieve_sources, RAW_RETRIEVAL_VERSION
 from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
 
 
-def record_delivery(delivery, metadata, *, accepted):
+def record_delivery(delivery, metadata, *, accepted, error_code=None):
     calls = metadata.get('calls', [])
     attempted = accepted or bool(calls)
     received = accepted or any(c.get('response_received') for c in calls)
@@ -19,7 +19,7 @@ def record_delivery(delivery, metadata, *, accepted):
     delivery.update(attempted_source_ids=ids if attempted else [],
                     delivered_source_ids=ids if received else [],
                     status='accepted' if accepted else 'request_attempted' if attempted else 'not_sent',
-                    provider_accepted=True if accepted else None)
+                    provider_accepted=True if accepted else False if error_code=='context_length_exceeded' else None)
 
 
 def evidence_groups(memories, raw, relations, coverage, *, include_undetermined=False):
@@ -123,6 +123,7 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
     def resolve(stage, raw, previous=None):
         trace['_active_stage'] = stage
         started = time.perf_counter()
+        trace['_stage_started'] = started
         current_base = {**base, **({'previous_coverage':previous} if previous is not None else {})}
         if raw:
             current_base['raw_retrieval_limitations'] = {k:trace['raw_fallback'][k] for k in ('truncated','omitted','unselected_match_ids')}
@@ -139,7 +140,7 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
         try:
             result = service.model.generate('resolve_raw',payload,MixedResolution,context=context)
         except ModelFailure as error:
-            record_delivery(delivery, error.metadata, accepted=False)
+            record_delivery(delivery, error.metadata, accepted=False, error_code=error.code)
             raise
         record_delivery(delivery, result.metadata, accepted=True)
         resolution = MixedResolution.model_validate(result.value.model_dump(mode='json'), context=context)
@@ -193,10 +194,13 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
                'raw_sources':{s['source_id']:s for s in payload['raw_sources']},'input_budget':settings.resolution_input_budget}
     trace['_active_stage'] = 'answer'
     started = time.perf_counter()
+    trace['_stage_started'] = started
     try:
         result = service.model.generate('answer_raw',payload,EvidenceAnswer,context=context)
     except ModelFailure as error:
-        record_delivery(trace['source_delivery'], error.metadata, accepted=False)
+        record_delivery(trace['source_delivery'], error.metadata, accepted=False, error_code=error.code)
+        if error.code == 'context_length_exceeded':
+            trace['evidence_budget']['context_limit_exceeded'] = True
         raise
     trace['answer'] = EvidenceAnswer.model_validate(result.value.model_dump(mode='json'),context=context).model_dump(mode='json')
     trace['operations']['answer'] = result.metadata
@@ -205,3 +209,4 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
     trace['raw_fallback']['effective_source_ids'] = resolution.effective_source_ids
     trace['raw_fallback']['cited_source_ids'] = sorted({sid for c in trace['answer']['citations'] if c['memory_id'] is None for sid in c['source_ids']})
     trace.pop('_active_stage',None)
+    trace.pop('_stage_started',None)

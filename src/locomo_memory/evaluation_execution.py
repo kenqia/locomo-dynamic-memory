@@ -147,7 +147,7 @@ class EvaluationExecution:
             pins = {inputs['samples'][i]['sample_id']: self.service.queries.versions.pin(inputs['dataset_id'], inputs['samples'][i]['sample_id'], request.build_ids.get(inputs['samples'][i]['sample_id'])) for i in selected}
             identity = self.identity(inputs, plan, selected, pins, strategies, partition, request.evidence_profile)
             run = {**identity, 'run_id': uuid.uuid4().hex, 'creation_token': request.creation_token, 'input_id': input_id,
-                   'plan_id': plan['plan_id'] if plan else None, 'execution_version': 1,
+                   'plan_id': plan['plan_id'] if plan else None, 'execution_version': 2,
                    'fingerprint': digest(identity), 'kind': inputs['kind'], 'status': 'running',
                    'started_at': utc_now(), 'completed_at': None, 'elapsed_seconds': 0,
                    'course_metrics': {'status': 'unavailable', 'reason': 'synthetic_or_structure_data_only' if inputs['kind'] != 'course' else 'independent_dynamic_truth_missing'},
@@ -174,6 +174,8 @@ class EvaluationExecution:
     def compatible(self, run):
         if 'execution_version' not in run:
             raise BuildError('legacy_evaluation_not_resumable')
+        if run['execution_version'] != 2 or not isinstance(run.get('raw_fallback'), dict):
+            raise BuildError('evaluation_identity_changed')
         inputs = self.service.get('evaluation_inputs', run['input_id'])
         try:
             current = self.identity(inputs, self.plan(run.get('plan_id')), run['selected_indices'], run['pins'], run['strategies'], run['partition'], run['raw_fallback']['evidence_profile'])

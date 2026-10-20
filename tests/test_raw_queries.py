@@ -255,3 +255,25 @@ def test_raw_query_keeps_original_pin_when_active_version_changes_during_analysi
         pin = client.get('/versions/pin',params={'dataset_id':query['dataset_id'],'sample_id':'conv-a'}).json()
         assert pin['build_id'] == newer
         assert response.json()['raw_fallback']['pinned_source_ids']
+
+
+def test_explicit_context_rejection_is_recorded_as_provider_refusal(settings,sample):
+    sample[0]['conversation']['session_2'][0]['text'] = 'I work for Cedar.'
+    observed = []
+    base = raw_provider(observed)
+    def provider(request):
+        p = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if p.get('operation') == 'answer_raw':
+            return httpx.Response(400,json={'error':{'code':'context_length_exceeded','message':'synthetic refusal'}})
+        return base(request)
+    settings = settings.model_copy(update={'model_retries':0})
+    model = DeepSeekModel(settings,api_key='synthetic-test-key',transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings,model=model,embedder=ControlledEmbedder())) as client:
+        response = client.post('/queries',json=published(client,sample))
+        assert response.status_code == 502, response.text
+        trace = client.get('/queries/' + response.json()['error']['trace_id']).json()
+        assert trace['error'] == {'code':'context_length_exceeded','stage':'answer'}
+        assert trace['source_delivery']['status'] == 'request_attempted'
+        assert trace['source_delivery']['attempted_source_ids']
+        assert trace['source_delivery']['provider_accepted'] is False
+        assert trace['evidence_budget']['context_limit_exceeded'] is True

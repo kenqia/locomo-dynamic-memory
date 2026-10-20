@@ -188,7 +188,8 @@ class QueryService:
             trace["outcome"] = "succeeded"
         except (ModelFailure, ValidationError, BuildError, EmbeddingFailure) as error:
             stage = trace.pop("_active_stage", stage)
-            trace["stage_seconds"][stage] = time.perf_counter() - tick
+            stage_started = trace.pop("_stage_started", tick)
+            trace["stage_seconds"][stage] = time.perf_counter() - stage_started
             trace["outcome"] = "failed"
             trace["error"] = {"stage": stage, "code": error.code if hasattr(error, "code") else "invalid_output"}
             if isinstance(error, ModelFailure):

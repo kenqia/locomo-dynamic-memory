@@ -90,3 +90,35 @@ def test_focus_without_original_question_anchor_preserves_expanded_candidates(se
 def test_focused_profile_is_explicitly_scoped_to_the_new_strategy(client):
     response = client.post('/queries',json={'dataset_id':'synthetic','sample_id':'conv-a','question':'Where?','strategy':'dynamic','evidence_profile':'focused'})
     assert response.status_code == 422
+
+
+@pytest.mark.parametrize('question', ["What is Alex's occupation and favorite color?", 'Where does Alex work?'])
+def test_partial_lexical_match_never_hides_synonymous_fact_or_named_person(settings,sample,question):
+    sample[0]['conversation']['session_1'][0]['text'] = 'I am employed as a nurse. My favorite color is violet.'
+    sample[0]['conversation']['session_1'][1]['text'] = 'I work as a teacher.'
+    observed = []
+    def provider(request):
+        p = json.loads(json.loads(request.content)['messages'][1]['content'])
+        op = p.get('operation')
+        if 'new_memory' in p:
+            return completion({'judgments':[relation(old,p['new_memory']) for old in p['history']]})
+        if op == 'resolve_raw':
+            observed.append(p)
+            mids = [m['memory_id'] for m in p['memories']]
+            return completion({'status':'sufficient','effective_memory_ids':mids,'effective_source_ids':[],
+                'decisions':[{'memory_id':mid,'selected':True,'reason':'Preserve supplied facts'} for mid in mids],
+                'coverage':[{'question':question,'status':'sufficient','memory_ids':mids,'source_ids':[]}], 'explanation':'Source facts retained'})
+        if op == 'answer_raw':
+            return completion({'status':p['status'],'answer':'Alex is a nurse and likes violet.', 'citations':[{'memory_id':m['memory_id'],'source_ids':m['source_ids']} for m in p['memories']]})
+        if 'sources' in p:
+            return completion({'memories':[
+                draft([p['sources'][0]['source_id']],content='Alex is employed as a nurse.',state_dimension='employment',state_value='nurse'),
+                draft([p['sources'][0]['source_id']],content="Alex's favorite color is violet.",state_dimension='favorite_color',state_value='violet'),
+                draft([p['sources'][1]['source_id']],content='Sam works as a teacher.',entity_id='Sam',state_dimension='employment',state_value='teacher')]})
+        return completion({'entities':['Alex'],'topic':None,'time':None,'keywords':[]})
+    model = DeepSeekModel(settings,api_key='synthetic-test-key',transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings,model=model,embedder=ControlledEmbedder())) as client:
+        response = client.post('/queries',json={**published(client,sample),'question':question,'evidence_profile':'focused'})
+        assert response.status_code == 201, response.text
+        assert {m['state_value'] for m in observed[0]['memories']} == {'nurse','violet','teacher'}
+        assert response.json()['evidence_selection']['fallback_to_expanded']
