@@ -181,6 +181,14 @@ class BuildService:
     @staticmethod
     def _append_metadata(db, build_id: str, metadata: dict):
         existing = json.loads(db.execute("SELECT model_metadata_json FROM build_versions WHERE build_id=?", (build_id,)).fetchone()[0])
-        existing["calls"].extend(metadata.get("calls", []))
+        positions = {call["call_id"]: index for index, call in enumerate(existing["calls"]) if call.get("call_id")}
+        for call in metadata.get("calls", []):
+            call_id = call.get("call_id")
+            if call_id and call_id in positions:
+                existing["calls"][positions[call_id]] = call
+            else:
+                if call_id:
+                    positions[call_id] = len(existing["calls"])
+                existing["calls"].append(call)
         existing["returned_models"] = list(dict.fromkeys(call["returned_model"] for call in existing["calls"] if call.get("returned_model")))
         db.execute("UPDATE build_versions SET model_metadata_json=?,updated_at=? WHERE build_id=?", (canonical_json(existing), utc_now(), build_id))

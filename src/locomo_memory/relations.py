@@ -6,8 +6,9 @@ import sqlite3
 
 from .builds import BuildError, BuildService
 from .imports import canonical_json
-from .model import ModelFailure, RELATION_PROMPT_VERSION, utc_now
+from .model import DiagnosticPersistenceFailure, ModelFailure, RELATION_PROMPT_VERSION, utc_now
 from .relation_schemas import MemoryRelation, RelationBatch, RELATION_SCHEMA_VERSION
+from .relation_diagnostics import RelationAttempts
 
 
 class RelationService:
@@ -41,9 +42,11 @@ class RelationService:
                     cutoff TEXT NOT NULL, projection_json TEXT NOT NULL
                 );
             """)
+        self.attempts = RelationAttempts(builds)
 
     def recover_interrupted(self):
         with self.database.connect() as db:
+            self.attempts.recover(db)
             db.execute("UPDATE relation_tasks SET status='interrupted',error_code='interrupted' WHERE status='running'")
             db.execute("UPDATE relation_phases SET status='interrupted',error_code='interrupted' WHERE status IN ('queued','running')")
 
@@ -112,14 +115,17 @@ class RelationService:
 
     def _judge(self, build_id: str, task: dict):
         with self.database.connect() as db:
-            db.execute("UPDATE relation_tasks SET status='running',attempts=attempts+1 WHERE task_id=?", (task["task_id"],))
+            attempt = self.attempts.start(db, task["task_id"])
             new = json.loads(db.execute("SELECT memory_json FROM memories WHERE memory_id=? AND build_id=?", (task["new_memory_id"], build_id)).fetchone()[0])
             history = [json.loads(db.execute("SELECT memory_json FROM memories WHERE memory_id=? AND build_id=?", (memory_id, build_id)).fetchone()[0]) for memory_id in json.loads(task["history_ids_json"])]
             ids = set(source_id for memory in [new, *history] for source_id in memory["source_ids"])
             sources = {source_id: dict(db.execute("SELECT * FROM source_turns WHERE source_id=?", (source_id,)).fetchone()) for source_id in sorted(ids)}
         context = {"new_memory": new, "history": history, "sources": sources}
+        metadata = {"calls": []}
         try:
-            generated = self.model.generate("relate", {**context, "sources": list(sources.values())}, RelationBatch, context=context)
+            generated = self.model.generate("relate", {**context, "sources": list(sources.values())}, RelationBatch, context=context,
+                                            on_call=self.attempts.observer(build_id, task["task_id"], attempt))
+            metadata = generated.metadata
             validated = RelationBatch.model_validate(generated.value.model_dump(mode="json"), context=context)
             with self.database.connect() as db:
                 for judgment in validated.judgments:
@@ -128,12 +134,17 @@ class RelationService:
                     db.execute("INSERT INTO memory_relations VALUES (?,?,?,?,?,?)", (relation_id, build_id, judgment.old_memory_id, judgment.new_memory_id, judgment.label, relation.model_dump_json()))
                 db.execute("UPDATE relation_tasks SET status='succeeded',metadata_json=? WHERE task_id=?", (canonical_json(generated.metadata), task["task_id"]))
                 self.builds._append_metadata(db, build_id, generated.metadata)
+                self.attempts.finish(db, task["task_id"], attempt, "succeeded")
+        except DiagnosticPersistenceFailure:
+            # Leave the task recoverable; never retry without a durable checkpoint.
+            raise
         except Exception as error:
             code = error.code if isinstance(error, ModelFailure) else "invalid_relation_output"
-            metadata = error.metadata if isinstance(error, ModelFailure) else {"calls": []}
+            metadata = error.metadata if isinstance(error, ModelFailure) else metadata
             with self.database.connect() as db:
                 db.execute("UPDATE relation_tasks SET status='failed',error_code=?,metadata_json=? WHERE task_id=?", (code, canonical_json(metadata), task["task_id"]))
                 self.builds._append_metadata(db, build_id, metadata)
+                self.attempts.finish(db, task["task_id"], attempt, "failed", code)
 
     def current_state(self, build_id: str) -> dict:
         self.builds.get(build_id)

@@ -32,14 +32,16 @@ def register_relation_routes(app: FastAPI, service: RelationService, versions: V
     def tasks(build_id: str, limit: Limit = 20, offset: Offset = 0):
         service.progress(build_id)
         with database.connect() as db:
+            db.execute("BEGIN")
             total = db.execute("SELECT COUNT(*) FROM relation_tasks WHERE build_id=?", (build_id,)).fetchone()[0]
             rows = db.execute("SELECT * FROM relation_tasks WHERE build_id=? ORDER BY ordinal LIMIT ? OFFSET ?", (build_id, limit, offset)).fetchall()
-        items = []
-        for row in rows:
-            item = dict(row)
-            item["history_ids"] = json.loads(item.pop("history_ids_json"))
-            item["model_metadata"] = json.loads(item.pop("metadata_json"))
-            items.append(item)
+            items = []
+            for row in rows:
+                item = dict(row)
+                item["history_ids"] = json.loads(item.pop("history_ids_json"))
+                item["model_metadata"] = json.loads(item.pop("metadata_json"))
+                item.update(service.attempts.history(db, item["task_id"], item["attempts"]))
+                items.append(item)
         return {"items": items, "total": total, "limit": limit, "offset": offset}
 
     @app.get("/builds/{build_id}/relations", response_model=Page[MemoryRelation])

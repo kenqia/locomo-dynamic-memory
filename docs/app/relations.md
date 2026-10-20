@@ -68,3 +68,89 @@
 执行 `uv run --locked pytest -q`。公开 API 使用实际 SQLite、BM25/cosine/RRF 和真实扩展，只控制模型/Embedding 输出。覆盖研究阶段实际未进入初始候选后的恢复、根本未抽取的反例、单跳/同键不再扩展、深度与数量/扫描/文本预算、条件替代、冲突/并存、任务重试和完整版本 pin。实际结果见 `experiments/issue-8-relations-validation.md`。
 
 本票没有真实付费模型调用，也未单独运行浏览器；受控判断不能当作独立动态标注或模型质量证明。
+
+## 安全失败诊断与调用历史
+
+`GET /builds/{id}/relation-tasks` 的每个任务新增 `diagnostic_history`，按
+`logical_attempt` 升序返回所有已记录的逻辑执行及其 `calls`。原有
+`attempts`、`error_code` 和 `model_metadata` 保持兼容，其中 `model_metadata`
+仍表示最近一次逻辑执行。读取完整历史时使用 `diagnostic_history`。
+任务分页沿用 `limit` 和 `offset`，每个任务内的历史完整返回。
+
+每个逻辑执行包含 `task_id`、`logical_attempt`、`status`、`started_at`、
+`completed_at`、`error_code` 和 `calls`。状态为 `running`、`succeeded`、
+`failed` 或 `interrupted`。每个 provider 调用包含以下诊断字段：
+
+| 字段 | 约定 |
+| --- | --- |
+| `diagnostic_version` | 当前为 `1` |
+| `build_id`、`task_id` | 构建和任务的实际标识；任务 ID 包含 Build 前缀 |
+| `logical_attempt` | 显式逻辑执行序号，从 1 开始 |
+| `provider_attempt`、`attempt` | 同一逻辑执行内的调用序号，从 1 开始；`attempt` 保留原接口 |
+| `call_id` | 调用关联标识；检查点更新和 Build 用量按此标识去重 |
+| `timestamp`、`completed_at` | UTC 开始时间与已观察到的结束时间；未观察到结束时没有 `completed_at` |
+| `status` | `started`、`response_observed`、`succeeded`、粗错误类别或 `interrupted` |
+| `outcome` | 结束时保留原粗类别，如 `invalid_output`、`model_timeout`；中断为 `interrupted` |
+| `failure_stage`、`error_code` | 稳定失败阶段与安全错误代码；成功或结果未知时为 `null` |
+| `field_path` | 仅含 Schema 已知字段和数组索引的路径；根级错误为 `null`，额外字段只保留已知父路径 |
+| `validation_errors` | JSON/Pydantic 校验失败时的安全错误列表；每项仅含 `failure_stage`、`error_code` 和 `field_path`，顶层诊断取第一项 |
+| `finish_reason` | 实际响应中的白名单值，未知值为 `null`；不从 token 数推断 |
+| `finish_reason_status` | `reported`、`missing`、`unrecognized` 或 `not_observed` |
+| `response_received`、`usage` | 是否收到 HTTP 响应及已报告的 token 字段；缺失用量保持 `{}`，不补零 |
+
+失败阶段及常用代码如下：
+
+| `failure_stage` | 例子 |
+| --- | --- |
+| `transport` | `model_timeout`、`model_http_error` |
+| `provider_http` | `model_http_error`、`context_length_exceeded` |
+| `provider_response` | `invalid_provider_document`、`invalid_provider_message` |
+| `completion` | `non_stop_finish_reason`；包括 `length`、缺失或未知结束原因 |
+| `content` | `empty_content` |
+| `json_parsing` | `invalid_json` |
+| `schema_validation` | `missing_field`、`extra_field`、`invalid_enum`、`schema_constraint_failed` |
+| `domain_validation` | `same_state_dimension_required`、`every_candidate_required`、`verbatim_support_required` 等；完整静态规则代码见 `src/locomo_memory/diagnostics.py` |
+
+例如，受控测试中的跨维度违规会记录
+`failure_stage="domain_validation"`、`error_code="same_state_dimension_required"`、
+`field_path="judgments[0]"`。数组下标指输出位置，不能据此猜测某个输入候选。
+该示例不表示原始历史失败已获得具体归因。
+
+`finish_reason` 只接受 `stop`、`length`、`content_filter`、`tool_calls`、
+`function_call` 和 `insufficient_system_resource`。只有 `stop` 继续解析，
+其余情况保持原有失败和有限重试行为。`stop` 也不保证 JSON、Schema 或领域校验通过。
+诊断不保存响应原文、Memory/source 文本、异常字符串或 Pydantic 的 `input`、
+`ctx`、`msg`。恶意额外字段名和未知结束原因不会原样透传。
+
+### 持久化、中断和旧记录
+
+新增 SQLite 表 `relation_attempts` 和 `relation_provider_calls`。逻辑执行开始、
+调用发出前、响应用量读取后、结束原因读取后、最终成功或失败时分别提交检查点。
+每个调用仅更新自己的检查点，下一次逻辑重试追加新记录。Build 调用聚合与调用
+检查点在同一事务更新，不重复计数；失败检查点在异常向调用方传播之前保存。
+无法保存检查点时停止执行，不把存储异常当作模型输出错误重新调用 provider。
+
+进程退出可能发生在调用意图保存之后、请求实际发出之前，也可能发生在 provider
+已经计费之后。重启将未结束调用和未提交的逻辑执行标为 `interrupted`，保留已知
+用量与结束原因，未知值保持未知，不补写结束时间，不自动重放。调用记录数量表示
+已记录的调用尝试，不能证明 provider 实际收到请求或未计费。即使 provider 调用
+已成功，任务提交之前的中断也仍需显式重试，可能产生额外费用。
+
+`diagnostic_history_status` 区分记录覆盖范围：
+
+| 值 | 含义 |
+| --- | --- |
+| `not_started` | 任务尚未执行 |
+| `recorded` | 从第 1 次逻辑执行起记录历史 |
+| `legacy_not_recorded` | 旧任务已执行，但当时没有记录诊断历史 |
+| `partial_legacy` | 旧任务后来显式重试，只有新版执行部分有历史 |
+
+旧表和旧 `model_metadata` 不回填。原始 87 次 `invalid_output` 的具体错误、路径和
+结束原因无法恢复。旧离线脚本 `scripts/diagnose_relation_failures.py` 继续只接受其
+原始格式，不应用它强行解释新记录。新诊断通过上述 API 读取；
+`Experiment.snapshot_build` 导出的 `builds/{id}/relation-tasks.json` 同样保留完整历史。
+供检索使用的不可变 `MemoryExport` 仍沿用原有内容白名单，不包含运行时诊断。
+
+此次只增加诊断和存储，不改变 Prompt、JSON Schema、关系标签约束、候选数、
+输出上限、模型参数或重试规则。回退代码时旧程序会忽略新增诊断表；保留数据库，
+不要为回退删除历史表，也不要对受保护的旧实验数据库启动新版后端。

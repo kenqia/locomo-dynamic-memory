@@ -5,6 +5,8 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationInfo, model_validator
 
+from .diagnostics import domain_error
+
 RELATION_SCHEMA_VERSION = "relation-v1"
 
 
@@ -22,14 +24,14 @@ class Applicability(BaseModel):
     @model_validator(mode="after")
     def evidence_for_conditions_and_time(self):
         if self.from_date and self.to_date and self.to_date < self.from_date:
-            raise ValueError("Applicability range reversed")
+            raise domain_error("applicability_range_reversed")
         if self.from_date or self.to_date:
             if not self.time_anchor_source_id or not (self.original_time_expression or "").strip() or not (self.time_basis or "").strip():
-                raise ValueError("Applicability dates need source anchor, original expression and basis")
+                raise domain_error("applicability_time_evidence_required")
         if self.condition and self.condition_satisfied is True and not self.condition_source_ids:
-            raise ValueError("Satisfied condition requires source evidence")
+            raise domain_error("condition_evidence_required")
         if not self.condition and self.condition_satisfied is not None:
-            raise ValueError("Condition status requires an explicit condition")
+            raise domain_error("explicit_condition_required")
         return self
 
 
@@ -46,7 +48,7 @@ class RelationDraft(BaseModel):
     @model_validator(mode="after")
     def validate_evidence(self, info: ValidationInfo):
         if not self.reason.strip() or len(set(self.source_ids)) != len(self.source_ids):
-            raise ValueError("A relation needs a reason and unique evidence")
+            raise domain_error("reason_and_unique_evidence_required")
         context = info.context or {}
         if "new_memory" not in context:
             return self
@@ -54,36 +56,36 @@ class RelationDraft(BaseModel):
         history = {memory["memory_id"]: memory for memory in context["history"]}
         old = history.get(self.old_memory_id)
         if old is None or self.new_memory_id != new["memory_id"] or self.old_memory_id == self.new_memory_id:
-            raise ValueError("Relation endpoints must belong to the supplied historical comparison")
+            raise domain_error("comparison_endpoints_required")
         for field in ("build_id", "dataset_id", "sample_id", "entity_id"):
             if old[field] != new[field]:
-                raise ValueError("Relation endpoints cross version, conversation or entity scope")
+                raise domain_error("same_endpoint_scope_required")
         sources = context["sources"]
         if any(source_id not in sources for source_id in self.source_ids):
-            raise ValueError("Relation cites an unknown source")
+            raise domain_error("known_source_required")
         if not set(self.source_ids).intersection(old["source_ids"]) or not set(self.source_ids).intersection(new["source_ids"]):
-            raise ValueError("Relation evidence must support both endpoints")
+            raise domain_error("both_endpoints_evidence_required")
         if self.label in {"SUPERSEDE", "CONFLICT", "RETAIN"} and old["state_key"] != new["state_key"]:
-            raise ValueError("This judgment requires the same state dimension")
+            raise domain_error("same_state_dimension_required")
         if self.label == "SUPERSEDE":
             if any(memory["memory_type"] != "state" or memory["statement_type"] != "fact" for memory in (old, new)):
-                raise ValueError("Only factual states can supersede factual states; preserve events and plans")
+                raise domain_error("factual_states_required")
         if self.label in {"RETAIN", "UPDATE", "CONFLICT"} and old["statement_type"] == "fact" and new["statement_type"] != "fact":
-            raise ValueError("A plan or uncertain claim cannot resolve an established factual state")
+            raise domain_error("factual_resolution_required")
         evidence_texts = [sources[source_id]["text"] for source_id in self.source_ids]
         if self.label != "undetermined":
             if not (self.support_quote or "").strip() or not any(self.support_quote in text for text in evidence_texts):
-                raise ValueError("A determined judgment requires a verbatim supporting source quote")
+                raise domain_error("verbatim_support_required")
         applicability = self.applicability
         anchor = applicability.time_anchor_source_id
         if anchor is not None:
             if anchor not in self.source_ids:
-                raise ValueError("Applicability anchor must be a relation source")
+                raise domain_error("relation_time_anchor_required")
             expression = applicability.original_time_expression
             if expression and expression.casefold() not in sources[anchor]["text"].casefold():
-                raise ValueError("Applicability expression absent from source")
+                raise domain_error("source_time_expression_required")
         if any(source_id not in self.source_ids for source_id in applicability.condition_source_ids):
-            raise ValueError("Condition proof is not among relation evidence")
+            raise domain_error("relation_condition_evidence_required")
         return self
 
 
@@ -98,7 +100,7 @@ class RelationBatch(BaseModel):
             expected = {memory["memory_id"] for memory in context["history"]}
             actual = [judgment.old_memory_id for judgment in self.judgments]
             if set(actual) != expected or len(actual) != len(expected):
-                raise ValueError("Each supplied historical memory requires one judgment, including undetermined")
+                raise domain_error("every_candidate_required")
         return self
 
 

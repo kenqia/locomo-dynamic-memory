@@ -156,6 +156,20 @@ def test_unsafe_model_relations_fail_then_retry_without_reextracting(settings, s
         assert client.get(f"/builds/{build_id}/relations").json()["total"] == 0
         progress = client.get(f"/builds/{build_id}/relation-progress").json()
         assert progress["progress"]["failed"] == 1
+        task = client.get(f"/builds/{build_id}/relation-tasks").json()["items"][0]
+        call = task["diagnostic_history"][0]["calls"][0]
+        expected_codes = {
+            "foreign_endpoint": "comparison_endpoints_required",
+            "unknown_source": "known_source_required",
+            "unrelated_source": "both_endpoints_evidence_required",
+            "cross_dimension": "same_state_dimension_required",
+            "plan": "factual_states_required", "event": "factual_states_required",
+            "invented_quote": "verbatim_support_required",
+            "reversed_dates": "applicability_range_reversed",
+        }
+        assert call["failure_stage"] == "domain_validation"
+        assert call["error_code"] == expected_codes[invalid]
+        assert call["field_path"] == ("judgments[0].applicability" if invalid == "reversed_dates" else "judgments[0]")
         assert client.post(f"/builds/{build_id}/publish").status_code == 409
         fixed = True
         assert client.post(f"/builds/{build_id}/relations").status_code == 202
