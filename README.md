@@ -30,8 +30,9 @@ uv run --locked streamlit run src/locomo_memory/ui.py --server.address 127.0.0.1
 详细步骤见[运行指南](docs/app/running.md)。
 CI、夹具回归、独立浏览器环境和失败诊断见[检查指南](docs/app/checking.md)。
 
-生成输出上限 `model_max_tokens` 默认 8192 tokens，抽取、关系和 QA 共用该设置。
-已有本地配置显式设置该字段时，以本地值为准；已有构建保留原配置快照。
+生成输出上限 `model_max_tokens` 默认 8192 tokens；可用 `relation_max_tokens` 单独覆盖关系阶段。
+默认关系判断使用 `high` 思考、有效证据解析使用 `low`，抽取、查询分析和答案生成关闭思考。
+字段、回滚和版本规则见[分阶段配置](docs/app/building.md#分阶段思考配置)；已有构建保留原配置快照。
 
 ```sh
 uv run --locked pytest -q

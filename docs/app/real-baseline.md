@@ -45,7 +45,9 @@ uv sync --locked --extra embedding
 
 首次付费请求前，核对 DeepSeek 官方服务表和请求契约，将人工核对结果保存为独立 JSON。字段示例见 [模型契约示例](../../experiments/deepseek-contract.example.json)。这个记录是公开文档核对，不是真实调用成功证明。应保留核对范围与未能核对的限制；服务别名不保证固定权重，实际返回模型由每次调用记录。
 
-2026-10-20 核对的公开模型表说明 `deepseek-flash` 对应 `DeepSeek-V4.1-Flash-1017`、1M context 并支持 JSON。请求继续显式关闭思考、使用 JSON object、Pydantic 校验和有限重试。当天 thinking、JSON 和 Chat API 指南重新获取失败，沿用 ADR 0001 中 2026-10-19 的指南核对，不将重新获取失败写成验证通过。Full Text 的 regex 计数只是文本近似，不是提供方 tokenizer 或账单 token。
+早期 2026-10-20 预检使用全部关闭思考的请求。当时 thinking、JSON 和 Chat API 指南重新获取失败，历史预检记录保留该限制。后续分阶段实验重新读取了官方 thinking 和 Chat API 指南，默认改为关系判断 `high`、有效证据解析 `low`，其余阶段关闭；字段和输出覆盖规则见[构建配置](building.md#分阶段思考配置)。该实验使用独立构建和运行身份，不恢复早期全关闭协议下的 Run。
+
+`deepseek-flash` 的已知服务别名仍记为 `DeepSeek-V4.1-Flash-1017`，实际返回模型逐次记录。Full Text 的 regex 计数只是文本近似，不是提供方 tokenizer 或账单 token。
 
 ## 小型抽取和五题预检
 

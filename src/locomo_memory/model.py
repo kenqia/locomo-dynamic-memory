@@ -247,16 +247,17 @@ class DeepSeekModel:
                 for old in context["history"]
             }}
         messages = request_messages(operation, payload, schema)
+        max_tokens = self.settings.relation_max_tokens if operation == "relate" and self.settings.relation_max_tokens is not None else self.settings.model_max_tokens
         body = {"model": self.settings.model_name, "thinking": thinking,
                 "response_format": {"type": "json_object"}, "messages": messages,
-                "max_tokens": self.settings.model_max_tokens}
+                "max_tokens": max_tokens}
         if effort == "disabled":
             body["temperature"] = self.settings.model_temperature
         else:
             body["reasoning_effort"] = effort
         request_context_estimate = {"token_count": len(re.findall(r"\w+|[^\w\s]", json.dumps(messages, ensure_ascii=False))),
             "method": "regex-word-punctuation-v1", "scope": "serialized_messages_including_prompt_schema_and_payload",
-            "is_provider_token_count": False, "reserved_output_tokens": self.settings.model_max_tokens}
+            "is_provider_token_count": False, "reserved_output_tokens": max_tokens}
         if context and context.get("input_budget") is not None and request_context_estimate["token_count"] > context["input_budget"]:
             raise ModelFailure("input_budget_exceeded", {"calls": [], "request_context_estimate": request_context_estimate})
         calls = []
@@ -289,6 +290,7 @@ class DeepSeekModel:
             call_started = time.perf_counter()
             call = {"attempt": attempt, "timestamp": utc_now(), "requested_model": self.settings.model_name,
                     "thinking": thinking, "reasoning_effort": None if effort == "disabled" else effort,
+                    "max_tokens": max_tokens,
                     "returned_model": None, "usage": {}, "response_received": False,
                     "diagnostic_version": 1, "status": "started", "finish_reason": None,
                     "finish_reason_status": "not_observed", "failure_stage": None,

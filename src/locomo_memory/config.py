@@ -20,6 +20,7 @@ class Settings(BaseModel):
     model_retries: int = Field(default=2, ge=0, le=10)
     model_temperature: float = Field(default=0, ge=0, le=2)
     model_max_tokens: int = Field(default=8192, gt=0)
+    relation_max_tokens: int | None = Field(default=None, gt=0)
     thinking_enabled: Literal[False] = False
     extraction_thinking_effort: Literal["disabled", "low", "high"] = "disabled"
     relation_thinking_effort: Literal["disabled", "low", "high"] = "high"

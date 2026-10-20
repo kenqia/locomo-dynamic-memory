@@ -1,15 +1,15 @@
 {
   "offline_regression": {
-    "command": ".venv/bin/python -m pytest -m 'not live_model and not local_embedding' -q --tb=short",
-    "passed": 340,
+    "command": "HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 .venv/bin/python -m pytest -q -m 'not live_model and not local_embedding'",
+    "passed": 349,
     "deselected": 4,
-    "elapsed_seconds": 240.66,
+    "elapsed_seconds": 242.59,
     "warnings": [
       "Existing Starlette/httpx deprecation warning"
-    ]
+    ],
+    "output_directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/regression-tests.txt"
   },
-  "implementation_sha256": "0b5b7135c0dd3893b680aad1e1f9de6c6fb715596382272357cc1610fbac0f1c",
-  "implementation_commit": "a5957680e92ef2a20845dbf3450933f91903f9b8",
+  "implementation_sha256": "839b4daaa71ff5a47d9f122775416e181fc09cce39ac4dd7620833d1cbce1255",
   "embedding_smoke": {
     "offline": true,
     "model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -22,7 +22,18 @@
   "report_smoke": {
     "planned_items": 40,
     "known_failed_items": 1,
-    "failure_zero_score_checked": true
+    "failure_zero_score_checked": true,
+    "complete_full_text_delivery_check": true
   },
-  "static_typecheck": "no_repository_entrypoint"
+  "static_typecheck": "no_repository_entrypoint",
+  "previous_offline_regression": {
+    "command": ".venv/bin/python -m pytest -m 'not live_model and not local_embedding' -q --tb=short",
+    "passed": 340,
+    "deselected": 4,
+    "elapsed_seconds": 240.66,
+    "warnings": [
+      "Existing Starlette/httpx deprecation warning"
+    ]
+  },
+  "previous_implementation_sha256": "0b5b7135c0dd3893b680aad1e1f9de6c6fb715596382272357cc1610fbac0f1c"
 }

@@ -25,6 +25,11 @@
 `disabled`。修改阶段字段后新建 Build，不能继续旧指纹的未完成构建或恢复旧评测。
 回放工具对未保存阶段字段的历史构建仍使用关闭思考的关系请求。
 
+`relation_max_tokens` 可单独覆盖历史关系判断的输出上限，未设置时沿用
+`model_max_tokens`。例如，本轮实验的 `high` 在 8192 上限下连续截断后，
+新构建使用 `relation_max_tokens=16384`，抽取与查询仍为 8192。覆盖值进入构建指纹，
+每次调用也记录实际 `max_tokens`；删除覆盖项即可恢复共用上限，需要另建 Build。
+
 `extract-v3-output-constraints` 明确时间锚点也必须出现在该条 Memory 的来源中，
 并要求实体、维度名称遵守原有字符格式。抽取返回不合规或不完整 JSON 后的有限重试会附带安全错误代码、
 字段位置及相同约束，不改变校验规则。既有 `extract-v2-examples` 构建保留原指纹。
@@ -61,7 +66,7 @@
 
 ## 模型协议与有限重试
 
-模型适配器通过现有 `httpx` 依赖直接请求官方 `/chat/completions`，不增加 SDK 或供应商插件框架。请求明确携带 `deepseek-flash`（可配置模型名）、`thinking={"type":"disabled"}`、`response_format={"type":"json_object"}`、JSON 提示和输出 schema。普通 JSON 模式不等于 schema 约束，响应仍须经过 Pydantic 和来源校验。
+模型适配器通过现有 `httpx` 依赖直接请求官方 `/chat/completions`，不增加 SDK 或供应商插件框架。请求明确携带 `deepseek-flash`（可配置模型名）、按阶段确定的 `thinking` 与 `reasoning_effort`、`response_format={"type":"json_object"}`、JSON 提示和输出 schema。普通 JSON 模式不等于 schema 约束，响应仍须经过 Pydantic 和来源校验。
 
 `model_retries` 表示首次请求之外的重试次数，默认 2，即每片段最多 3 次；`model_timeout_seconds` 默认 60 秒。没有额外 SDK 重试层。超时、HTTP 错误、空内容、截断、无效 JSON、无效 schema 或来源会有限重试，耗尽后失败。有效 `{"memories":[]}` 必须带非空 `no_facts_reason`，区别于提供方返回空内容。
 

@@ -79,6 +79,23 @@ def test_stage_effort_can_be_disabled_for_a_control_run(settings):
     assert requests[0]['temperature'] == settings.model_temperature
 
 
+@pytest.mark.parametrize('operation', ['extract', 'relate', 'query_analysis', 'resolve', 'resolve_raw', 'answer', 'answer_raw'])
+def test_relation_output_override_changes_only_relation_requests(settings, operation):
+    from pydantic import BaseModel
+    class EmptyOutput(BaseModel):
+        pass
+    requests = []
+    def provider(request):
+        requests.append(json.loads(request.content))
+        return httpx.Response(200, json=document('{}'))
+    settings = settings.model_copy(update={'relation_max_tokens': 16384})
+    generated = DeepSeekModel(settings, api_key='synthetic', transport=httpx.MockTransport(provider)).generate(operation, {}, EmptyOutput)
+    expected = 16384 if operation == 'relate' else 8192
+    assert requests[0]['max_tokens'] == expected
+    assert generated.metadata['request_context_estimate']['reserved_output_tokens'] == expected
+    assert generated.metadata['calls'][0]['max_tokens'] == expected
+
+
 @pytest.mark.parametrize('response,stage,code,finish,finish_status', [
     ([], 'provider_response', 'invalid_provider_document', None, 'not_observed'),
     ({'choices': []}, 'provider_response', 'invalid_provider_document', None, 'not_observed'),

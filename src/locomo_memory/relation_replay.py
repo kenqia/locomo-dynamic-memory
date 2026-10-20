@@ -104,7 +104,7 @@ def prepare_plan(source: Path, build_id: str, ordinals: list[int], directory: Pa
         original = Settings.model_validate({**saved_config,
             'relation_thinking_effort': saved_config.get('relation_thinking_effort', 'disabled')})
         fields = ('model_name', 'model_base_url', 'model_timeout_seconds', 'model_temperature',
-                  'model_max_tokens', 'thinking_enabled', 'relation_thinking_effort')
+                  'model_max_tokens', 'relation_max_tokens', 'thinking_enabled', 'relation_thinking_effort')
         settings = Settings(**{key: getattr(original, key) for key in fields}, model_retries=0)
         tasks = []
         for ordinal in ordinals:

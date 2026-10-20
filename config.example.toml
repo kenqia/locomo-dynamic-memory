@@ -7,6 +7,8 @@ model_timeout_seconds = 60
 model_retries = 2
 model_temperature = 0
 model_max_tokens = 8192
+# Optional relation-only override, recorded in the build fingerprint.
+# relation_max_tokens = 16384
 thinking_enabled = false
 # Legacy global field remains false; each operation uses its own effort below.
 extraction_thinking_effort = "disabled"
