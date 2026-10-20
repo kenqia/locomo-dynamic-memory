@@ -1,0 +1,28 @@
+{
+  "offline_regression": {
+    "command": ".venv/bin/python -m pytest -m 'not live_model and not local_embedding' -q --tb=short",
+    "passed": 340,
+    "deselected": 4,
+    "elapsed_seconds": 240.66,
+    "warnings": [
+      "Existing Starlette/httpx deprecation warning"
+    ]
+  },
+  "implementation_sha256": "0b5b7135c0dd3893b680aad1e1f9de6c6fb715596382272357cc1610fbac0f1c",
+  "implementation_commit": "a5957680e92ef2a20845dbf3450933f91903f9b8",
+  "embedding_smoke": {
+    "offline": true,
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "encoded_shape": [
+      1,
+      384
+    ]
+  },
+  "report_smoke": {
+    "planned_items": 40,
+    "known_failed_items": 1,
+    "failure_zero_score_checked": true
+  },
+  "static_typecheck": "no_repository_entrypoint"
+}
