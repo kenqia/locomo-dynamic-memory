@@ -130,4 +130,3 @@ Full Text 完整来源并获得 HTTP 200 的项目为 10/10；预期来源轮次
 - `dynamic_raw_fallback`，succeeded / insufficient，QA=1.000，来源覆盖=1.000。No information available.
 - `hybrid_no_resolution`，succeeded / insufficient，QA=1.000，来源覆盖=1.000。No information available.
 - `full_text`，succeeded / insufficient，QA=1.000，来源覆盖=1.000。No information available.
-
