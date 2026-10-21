@@ -1,5 +1,7 @@
 # 真实开发集基线与独立本地测试协议
 
+2026-10-21状态修订：用户决定停止扩展原Issue #15，课程项目转向增量质量迭代。原定757题、四策略3,028项全量评测未执行，#21本轮实验取消；#20固定预检低优先级延期，不再自动安排全量。此前“质量关卡后继续完整基线”的阶段安排由本决定取代，历史协议、数据隔离与报告口径保留。详见[范围结案记录](../../experiments/issue-15-closure/README.md)。
+
 2026-10-19。用户在 `grill-with-docs` 访谈中确认 Q1–Q6 的推荐方案。本条记录已确认的评测协议，实际实现与运行状态见[访谈和执行清单](../decisions/real-deepseek-evaluation-interview.md)，不代表实验已经完成。
 
 用户随后调用 `to-spec`，完整规格已发布为 [Issue #15](https://github.com/kenqia/locomo-dynamic-memory/issues/15)，正文原样保存在[本地副本](../specs/issue-15-real-deepseek-baseline.md)。标签 `ready-for-agent` 表示可开始实现，不表示真实评测已完成。
