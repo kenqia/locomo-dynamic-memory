@@ -139,6 +139,13 @@ def render_evaluation(request, dataset_id):
     st.dataframe(contexts, hide_index=True)
     for row in run['results']:
         with st.expander(f"样本 {row['sample_index']} · {LABELS[row['strategy']]} · 结果与失败检查"):
+            trace = row.get('trace', {})
+            if trace.get('answer'):
+                st.text(trace['answer']['answer'])
+                if trace['answer'].get('explanation'):
+                    st.caption(trace['answer']['explanation'])
+                if trace.get('time'):
+                    st.caption(f"已知证据截止：{trace['time']['cutoff']}；不能确认之后的现实状态。")
             st.json(row)
     with st.expander('固定版本、实际配置、共享 Prompt 与完整记录'):
         st.json(run)

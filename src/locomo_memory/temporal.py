@@ -53,3 +53,11 @@ def explicit_question_date(question):
                     continue
     unique = set(matches)
     return matches[0] if len(unique) == 1 else None
+
+
+RELATIVE_TIME_GUIDANCE = """Resolve relative time against the cited source session time,
+not the query cutoff or host clock. "this week" is the week containing that source
+date, never the previous week. Keep an interval or the anchored original expression
+when the day is unknown; do not invent an exact date. Prefer original source text
+and its anchor when a derived Memory date contradicts that expression.
+"""

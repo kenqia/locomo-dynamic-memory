@@ -96,6 +96,7 @@ class EvidenceAnswer(BaseModel):
     status: EvidenceStatus
     answer: StrictStr = Field(min_length=1)
     citations: list[Citation]
+    explanation: StrictStr | None = Field(default=None, description="Evidence explanation, missing parts and scope; separate from the direct answer")
 
     @model_validator(mode="after")
     def citations_are_delivered_evidence(self, info: ValidationInfo):

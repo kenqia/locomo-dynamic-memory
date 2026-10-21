@@ -27,6 +27,10 @@ def render_queries(request, dataset_id, sample_id, build):
         labels = {"sufficient": "证据支持", "conflict": "证据冲突", "insufficient": "证据不足"}
         st.write(labels[trace["answer"]["status"]])
         st.text(trace["answer"]["answer"])
+        if trace["answer"].get("explanation"):
+            st.caption(trace["answer"]["explanation"])
+        if trace.get("answer_boundary"):
+            st.caption(trace["answer_boundary"]["text"])
         st.caption(f"已知证据截止：{trace['time']['cutoff_source_time']}；不能确认之后的现实状态。")
         for citation in trace["answer"]["citations"]:
             with st.expander(f"回答引用：{citation['memory_id']}"):

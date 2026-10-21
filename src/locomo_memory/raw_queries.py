@@ -207,7 +207,6 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
         scope = 'The requested date exceeds the known conversation cutoff' if trace['time']['beyond_cutoff'] else 'Known only as of the conversation cutoff'
         boundary = f"{scope} ({trace['time']['cutoff']}); later reality is unknown."
         trace['answer_boundary'] = {'version':ANSWER_BOUNDARY_VERSION, 'applied_by':'controller', 'text':boundary}
-        trace['answer']['answer'] += '\n\n' + boundary
     trace['operations']['answer'] = result.metadata
     trace['stage_seconds']['answer'] = time.perf_counter()-started
     record_delivery(trace['source_delivery'], result.metadata, accepted=True)

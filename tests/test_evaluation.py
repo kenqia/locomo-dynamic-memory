@@ -180,3 +180,31 @@ def test_failed_embedding_reports_unknown_call_count_and_preserves_run(settings,
         assert run['usage_summary']['generation_calls'] == 0
         assert all(r['usage_summary']['embedding_calls'] is None for r in run['results'])
         assert client.get('/evaluation-runs/' + run['run_id']).json() == run
+
+
+def test_scoring_uses_only_direct_answer_while_explanation_and_scope_survive_export(settings, sample):
+    from test_builds import completion
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'answer':
+            assert 'ANNOTATION ONLY' not in json.dumps(payload)
+            memory = payload['memories'][0]
+            return completion({'status': 'sufficient', 'answer': 'Rome.',
+                'explanation': 'Supported by the move record; later reality is unknown.',
+                'citations': [{'memory_id': memory['memory_id'], 'source_ids': memory['source_ids']}]})
+        return query_provider(request)
+    model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        dataset_id, bid = complete_build(client, sample)
+        inputs = client.post('/evaluation-inputs', json={'dataset_id': dataset_id, 'samples': [
+            {'sample_id': 'conv-a', 'question': 'Where does Alex live?', 'answer': 'Rome', 'category': 4}]}).json()
+        response = client.post('/evaluation-runs', json={'wait': True, 'input_id': inputs['input_id'],
+            'strategies': ['dynamic'], 'build_ids': {'conv-a': bid}})
+        assert response.status_code == 201, response.text
+        run = response.json()
+        row = run['results'][0]
+        assert row['qa']['value'] == 1
+        assert row['trace']['answer']['answer'] == 'Rome.'
+        assert row['trace']['answer']['explanation'].startswith('Supported by')
+        assert row['trace']['time']['cutoff'] == '2023-05-02T13:00:00'
+        assert client.get(f"/evaluation-runs/{run['run_id']}").json() == run

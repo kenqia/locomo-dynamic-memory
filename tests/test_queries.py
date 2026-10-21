@@ -328,3 +328,19 @@ def test_answer_can_report_missing_subquestion_without_losing_supported_part(set
         assert trace['answer']['status'] == 'insufficient'
         assert trace['answer']['citations']
         assert trace['answer']['answer'] == 'Rome; move-in hour unknown.'
+
+
+def test_relative_week_guidance_reaches_extraction_resolution_and_answers():
+    # QA 53 source anchor: this week on 2023-08-23 includes that date.
+    # This verifies the delivered instruction, not a live model's interpretation.
+    from locomo_memory.model import request_messages
+    from locomo_memory.memory_schemas import ExtractionBatch
+    from locomo_memory.query_schemas import EffectiveResolution, EvidenceAnswer
+    from locomo_memory.raw_schemas import MixedResolution
+    for operation, schema in [('extract', ExtractionBatch), ('resolve', EffectiveResolution),
+                              ('resolve_raw', MixedResolution), ('answer', EvidenceAnswer),
+                              ('answer_raw', EvidenceAnswer)]:
+        prompt = request_messages(operation, {}, schema)[0]['content']
+        assert 'this week' in prompt
+        assert 'containing' in prompt
+        assert 'previous week' in prompt

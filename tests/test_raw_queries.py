@@ -287,8 +287,9 @@ def test_controller_always_exposes_known_time_boundary_even_when_model_omits_it(
         response = client.post('/queries',json={**published(client,sample),'requested_date':requested_date})
         assert response.status_code == 201, response.text
         trace = response.json()
-        assert trace['time']['cutoff'] in trace['answer']['answer']
-        assert 'later reality is unknown' in trace['answer']['answer'].lower()
+        assert trace['answer']['answer'] == 'Alex lives in Paris.'
+        assert trace['time']['cutoff'] in trace['answer_boundary']['text']
+        assert 'later reality is unknown' in trace['answer_boundary']['text'].lower()
         assert trace['answer_boundary']['applied_by'] == 'controller'
         if requested_date:
             assert trace['answer']['status'] == 'insufficient'
