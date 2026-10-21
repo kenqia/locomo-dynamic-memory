@@ -17,7 +17,7 @@ from .temporal import conversation_cutoff, explicit_question_date
 from .usage import provider_usage
 
 RESOLUTION_PROMPT_VERSION = "effective-resolution-v4-enumeration-coverage"
-ANSWER_PROMPT_VERSION = "evidence-answer-v4-concise-scope"
+ANSWER_PROMPT_VERSION = "evidence-answer-v5-requested-support"
 
 
 class QueryFailure(BuildError):

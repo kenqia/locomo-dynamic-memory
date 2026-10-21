@@ -12,6 +12,17 @@ RESOLUTION_SCHEMA_VERSION = "effective-resolution-v2-stage-evidence"
 ANSWER_SCHEMA_VERSION = "evidence-answer-v4-separate-explanation"
 EvidenceStatus = Literal["sufficient", "conflict", "insufficient"]
 
+ANSWERABILITY_GUIDANCE = """
+Judge support against the question's person, time and requested fact, separately for each
+requested part. Related background alone is not a partial answer. An intention expressed
+in another season does not establish a plan during the requested season.
+If no requested part has answerable information, use exactly "No information available."
+as the entire answer. Put related background and the reason for the gap in explanation.
+If any requested part is supported, put those direct facts in answer with citations and
+explain the unanswered parts separately. Do not replace all insufficient answers with abstention.
+Never invent missing items or use background to imply an unsupported answer.
+"""
+
 
 class QueryRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")

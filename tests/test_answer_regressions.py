@@ -122,3 +122,62 @@ def test_public_source_answer_regressions(settings, case_id):
             assert trace['answer']['citations'][0]['memory_id'] == trace['initial_resolution']['effective_memory_ids'][0]
         for op, payload in observed:
             assert 'gold' not in payload and 'qa' not in payload and 'answer' not in payload
+
+
+@pytest.mark.parametrize('strategy', ['dynamic', 'dynamic_raw_fallback'])
+@pytest.mark.parametrize('support', ['none', 'background_only', 'partial'])
+def test_answer_prompt_distinguishes_requested_support_from_related_background(settings, sample, strategy, support):
+    sample[0]['conversation']['session_2'][0]['text'] = 'Maybe I will adopt in October.'
+    question = 'Where does Alex live and what adoption plans did Alex have in summer?' if support == 'partial' else 'What adoption plans did Alex have in summer?'
+    answer_prompts = []
+
+    def provider(request):
+        body = json.loads(request.content)
+        payload = json.loads(body['messages'][1]['content'])
+        op = payload.get('operation')
+        if op is None and 'sources' in payload and 'new_memory' not in payload:
+            sources = payload['sources']
+            return completion({'memories': [draft([sources[0]['source_id']]),
+                draft([sources[-1]['source_id']], content='Alex might adopt in October.',
+                      statement_type='uncertain', state_dimension='adoption_plan', state_value='October')]})
+        if 'new_memory' in payload:
+            from test_relations import relation
+            return completion({'judgments': [relation(old, payload['new_memory']) for old in payload['history']]})
+        if op in ('resolve', 'resolve_raw'):
+            # Background may be selected by resolution, but does not answer summer plans.
+            selected = [m for m in payload['memories'] if support != 'none' and
+                        (support == 'partial' or m['state_dimension'] == 'adoption_plan')]
+            mids = [m['memory_id'] for m in selected]
+            result = {'status': 'insufficient', 'effective_memory_ids': mids,
+                'decisions': [{'memory_id': m['memory_id'], 'selected': m['memory_id'] in mids,
+                               'reason': 'Partial evidence or related background'} for m in payload['memories']],
+                'explanation': 'No supported summer plans', 'supplemental_relations': []}
+            if op == 'resolve_raw':
+                result.update(effective_source_ids=[], coverage=[{'question': question, 'status': 'insufficient',
+                    'memory_ids': mids, 'source_ids': [], 'gap': 'Summer plans unsupported'}])
+            return completion(result)
+        if op in ('answer', 'answer_raw'):
+            prompt = body['messages'][0]['content']
+            answer_prompts.append(prompt)
+            assert 'Related background alone is not a partial answer' in prompt
+            assert 'person, time and requested fact' in prompt
+            assert 'Do not replace all insufficient answers with abstention' in prompt
+            residence = [m for m in payload['memories'] if m['state_dimension'] == 'residence']
+            citations = [{'memory_id': m['memory_id'], 'source_ids': m['source_ids']} for m in residence]
+            return completion({'status': 'insufficient', 'answer': 'Paris.' if residence else 'No information available.',
+                'explanation': 'October intent does not establish summer plans.', 'citations': citations})
+        return completion({'entities': [], 'topic': None, 'time': None, 'keywords': []})
+
+    local = settings.model_copy(update={'model_retries': 0})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        query = {**published(client, sample), 'strategy': strategy, 'question': question}
+        response = client.post('/queries', json=query)
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert len(answer_prompts) == 1
+        assert trace['answer']['answer'] == ('Paris.' if support == 'partial' else 'No information available.')
+        assert bool(trace['answer']['citations']) is (support == 'partial')
+        assert trace['answer']['explanation'] == 'October intent does not establish summer plans.'
+        if support == 'background_only':
+            assert trace['effective_memories']  # Topic relevance must not count as a supported subanswer.

@@ -111,8 +111,12 @@ Trace 的预算审计记录 `packing_version`；依赖未交付组的覆盖项�
 当前采用显式对照，不改变旧 dynamic 或新策略的默认模式。
 
 主答案 `answer.answer` 仅用于直接回答问题；依据、未覆盖部分和适用范围放在可选的
-`answer.explanation`，引用保存在 `citations`。无可支持信息时，提示模型使用
-`No information available.`；部分可回答时仍保留已知事实。
+`answer.explanation`，引用保存在 `citations`。两个回答 Prompt 共享可回答性规则，
+逐个子问核对人物、时间与所问事实。整个问题没有可回答信息时，提示模型将主答案完整写为
+`No information available.`，原因及相关背景放在 explanation。仅主题相关的背景不算部分答案，
+其他季节的意愿不能回答指定季节的计划。确有子问获得支持时，保留直接事实及引用并另述缺口，
+不能按 `insufficient` 状态统一替换主答案。此规则由 Prompt 约束，没有新增语义判别器或改写评分规则；
+受控回归不证明真实模型始终遵循。
 查询页面和评测结果页面分别展示主答案、说明和截止时间，JSON 导出保留完整 Trace；评分只读取主答案。
 新策略的当前问题及超出截止日期的问题，控制器在 `answer_boundary` 单独记录会话截止和“后续现实未知”。
 `answer_boundary` 标明控制器补充及版本，不追加到主答案，也不把边界冒称模型输出。
