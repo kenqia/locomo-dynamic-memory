@@ -56,6 +56,7 @@ def prepare(directory):
         immutable_build_artifacts_sha256=build_digest, official_artifact_sha256=digest(raw),
         implementation_sha256=implementation_sha256(), settings=settings.snapshot(), evidence_profile='expanded',
         previous_calls=used, previous_ceiling=header['limit'], call_limit=CALL_LIMIT,
+        campaign_phase=f'query-reliability-frozen-{sum(len(indices) for _, indices in GROUPS.values())}',
         cumulative_ceiling=used + CALL_LIMIT,
         authorization='Pending explicit confirmation of this frozen plan and call ceiling; prepare makes no model calls.',
         policy='One pass, no question reselection, no answer-driven tuning, no rebuild, no automatic run recovery. Retries count toward the same hard ceiling.',
@@ -88,7 +89,7 @@ def execute(directory, authorized_call_limit):
         audit.operation, audit.schema, audit.context = operation, schema, context
         return generate(operation, payload, schema, context=context, on_call=on_call)
     model.generate = observed
-    campaign.bind(model, 'query-reliability-frozen-14')
+    campaign.bind(model, plan.get('campaign_phase', 'query-reliability-frozen-14'))
     outcome = dict(started_at=utc_now(), status='running', runs={}, authorized_call_limit=authorized_call_limit)
     save(directory / 'outcome.json', outcome)
     try:

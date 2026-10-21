@@ -7,10 +7,11 @@ from statistics import mean
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def render(directory, output):
+def render(directory, output, baseline_path=None):
     plan = json.loads((directory / 'plan.json').read_text())
     outcome = json.loads((directory / 'outcome.json').read_text())
-    baseline = json.loads((ROOT / 'experiments/issue-15-evidence-coverage-live/results/results.json').read_text())
+    baseline_path = baseline_path or ROOT / 'experiments/issue-15-evidence-coverage-live/results/results.json'
+    baseline = json.loads(baseline_path.read_text())
     rows = []
     for label, group in plan['experiments'].items():
         run_path = directory / f'{label}-run.json'
@@ -22,7 +23,7 @@ def render(directory, output):
             result = item.get('result') or {}
             trace = result.get('trace') or {}
             answer = trace.get('answer') or {}
-            old = next((r for r in baseline['rows'] if r['question_id'] == q['question_id']
+            old = next((r for r in baseline['rows'] if (r.get('question_id') == q['question_id'] or r.get('qa_index') == q['qa_index'])
                         and r['strategy'] == item['strategy']), None)
             budgets = trace.get('resolution_budgets', {})
             raw = trace.get('raw_fallback', {})
@@ -33,12 +34,14 @@ def render(directory, output):
                 strategy=item['strategy'], status=item['status'], answer=answer.get('answer'),
                 explanation=answer.get('explanation'), answer_status=answer.get('status'),
                 citations=answer.get('citations', []), score=result.get('qa', {}).get('value'),
-                baseline_answer=old['answer'] if old else None, baseline_score=old['run_score'] if old else None,
+                baseline_answer=old['answer'] if old else None,
+                baseline_score=(0 if old.get('status') == 'failed' else old.get('run_score', old.get('score'))) if old else None,
                 first_delivered_source_ids=budgets.get('resolve', {}).get('source_delivery', {}).get('delivered_source_ids'),
                 joint_delivered_source_ids=budgets.get('joint_resolve', {}).get('source_delivery', {}).get('delivered_source_ids'),
                 resolution_budgets=budgets, source_sets=result.get('source_sets'),
                 source_coverage=result.get('source_coverage'), memory_rankings=result.get('memory_rankings'),
                 raw_triggered=raw.get('triggered'), recovery=raw.get('recovery'),
+                strategy_recovery=trace.get('strategy_recovery'),
                 initial_supported_memory_ids=sorted(prior_ids),
                 final_effective_memory_ids=[m['memory_id'] for m in trace.get('effective_memories', [])],
                 initial_resolution=trace.get('initial_resolution'), final_resolution=trace.get('resolution'),
@@ -58,7 +61,7 @@ def render(directory, output):
             successful_answerable_f1=score([r for r in answerable if r['status'] == 'succeeded']),
             matched_questions=len(matched), matched_before=mean(r['baseline_score'] for r in matched) if matched else None,
             matched_after=score(matched))
-    report = dict(status=outcome['status'], summaries=summaries, rows=rows,
+    report = dict(status=outcome['status'], baseline=str(baseline_path), summaries=summaries, rows=rows,
         budget_after=outcome['budget_after'],
         source_build_unchanged=outcome['source_build_unchanged'], snapshot_build_unchanged=outcome['snapshot_build_unchanged'])
     output.mkdir(parents=True, exist_ok=True)
@@ -84,5 +87,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--directory', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--baseline', type=Path)
     args = parser.parse_args()
-    render(args.directory.resolve(), args.output.resolve())
+    render(args.directory.resolve(), args.output.resolve(), args.baseline)

@@ -27,6 +27,8 @@ def render_queries(request, dataset_id, sample_id, build):
         return
     st.caption(f"Trace {trace['trace_id']} · 固定构建 {trace['build_id']}")
     st.caption("此记录的策略：" + trace.get("strategy", "dynamic"))
+    if trace.get("strategy_recovery"):
+        st.caption("动态解析输出校验失败，已尝试有界原文备用策略；原失败与调用用量保留在 Trace。")
     if trace["outcome"] == "failed":
         st.error(f"问答执行失败：{trace['error']['code']}。失败不代表没有证据。")
     else:

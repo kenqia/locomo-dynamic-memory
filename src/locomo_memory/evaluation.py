@@ -245,7 +245,8 @@ class EvaluationService:
             query = QueryRequest(evidence_profile=evidence_profile if strategy=='dynamic_raw_fallback' else 'expanded', strategy=strategy if is_dynamic else 'dynamic', dataset_id=inputs['dataset_id'], sample_id=sample['sample_id'], build_id=build_id, question=sample['question'])
             trace = self.queries.query(query) if is_dynamic else self.baseline(query, strategy)
             item['trace'] = trace
-            item['ranking_units'] = {'initial': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'expanded': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'effective': 'Memory + SourceTurn' if strategy == 'dynamic_raw_fallback' else 'Memory' if is_dynamic else 'not_applicable', 'answer_context': 'SourceTurn' if strategy == 'full_text' else 'Memory + SourceTurn' if strategy == 'dynamic_raw_fallback' else 'Memory', 'source_coverage': 'unique SourceTurn IDs per stage; K is actual delivered rank count'}
+            mixed = strategy == 'dynamic_raw_fallback' or bool(trace.get('strategy_recovery'))
+            item['ranking_units'] = {'initial': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'expanded': 'SourceTurn' if strategy == 'full_text' else 'Memory', 'effective': 'Memory + SourceTurn' if mixed else 'Memory' if is_dynamic else 'not_applicable', 'answer_context': 'SourceTurn' if strategy == 'full_text' else 'Memory + SourceTurn' if mixed else 'Memory', 'source_coverage': 'unique SourceTurn IDs per stage; K is actual delivered rank count'}
             item['qa'] = qa_score(trace['answer']['answer'], sample)
             if is_dynamic:
                 stages = {'initial': [c['memory'] for c in trace['initial']['initial_candidates']], 'expanded': [c['memory'] for c in trace['expanded']['candidates']], 'effective': trace['effective_memories'], 'answer_context': trace['effective_memories']}
@@ -253,7 +254,7 @@ class EvaluationService:
                 stages = {'initial': trace['initial'], 'expanded': trace['expanded'], 'answer_context': trace.get('delivered_memories', [])}
             item['memory_rankings'] = {stage: [m['memory_id'] for m in ms] for stage, ms in stages.items()}
             item['source_sets'] = {stage: list(dict.fromkeys(sid for m in ms for sid in m['source_ids'])) for stage, ms in stages.items()}
-            if strategy == 'dynamic_raw_fallback':
+            if mixed:
                 item['source_sets']['effective'] = list(dict.fromkeys(item['source_sets']['effective'] + trace['resolution']['effective_source_ids']))
                 item['source_sets']['answer_context'] = [s['source_id'] for s in trace['answer_context_sources']]
                 item['raw_source_stages'] = trace['raw_fallback']
@@ -267,7 +268,7 @@ class EvaluationService:
             item['rank_counts'] = {stage: len(ids) for stage, ids in item['memory_rankings'].items()}
             item['source_counts'] = {stage: len(ids) for stage, ids in item['source_sets'].items()}
             truth = sample.get('dynamic_truth')
-            if strategy == 'dynamic' and truth and truth.get('effective_memory_ids') is not None:
+            if strategy == 'dynamic' and not mixed and truth and truth.get('effective_memory_ids') is not None:
                 expected = set(truth['effective_memory_ids'])
                 with self.database.connect() as db:
                     allowed = {r[0] for r in db.execute('SELECT memory_id FROM memories WHERE build_id=?', (query.build_id,))}

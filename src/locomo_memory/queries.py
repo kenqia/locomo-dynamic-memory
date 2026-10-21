@@ -16,8 +16,9 @@ from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
 from .temporal import conversation_cutoff, explicit_question_date
 from .usage import provider_usage
 
-RESOLUTION_PROMPT_VERSION = "effective-resolution-v4-item-source-time"
-ANSWER_PROMPT_VERSION = "evidence-answer-v6-item-source-time"
+RESOLUTION_PROMPT_VERSION = "effective-resolution-v5-brief-decisions"
+ANSWER_PROMPT_VERSION = "evidence-answer-v7-short-item-list"
+QUERY_RECOVERY_VERSION = "bounded-raw-on-invalid-resolution-v1"
 
 
 class QueryFailure(BuildError):
@@ -120,6 +121,7 @@ class QueryService:
                  "schemas": {"resolve": RESOLUTION_SCHEMA_VERSION, "answer": ANSWER_SCHEMA_VERSION},
                  "known_service_version": KNOWN_MODEL_VERSION,
                  "query_fingerprint": hashlib.sha256(canonical_json({"settings": self.settings.snapshot(),
+                     "query_recovery_version": QUERY_RECOVERY_VERSION,
                      "resolve_prompt": RESOLUTION_PROMPT, "answer_prompt": ANSWER_PROMPT,
                      "resolve_schema": EffectiveResolution.model_json_schema(), "answer_schema": EvidenceAnswer.model_json_schema()}).encode()).hexdigest()}
         stage, tick = "retrieval", started
@@ -133,10 +135,8 @@ class QueryService:
                              "origin": origin, "cutoff": cutoff.isoformat(), "cutoff_source_time": cutoff_raw,
                              "beyond_cutoff": bool(requested and requested > cutoff.date())}
             trace["projection_fingerprint"] = projection[0]
-            snapshot = None
-            if request.strategy == "dynamic_raw_fallback":
-                from .raw_retrieval import pinned_sources
-                snapshot = pinned_sources(self.database, build_id)
+            from .raw_retrieval import pinned_sources
+            snapshot = pinned_sources(self.database, build_id)
             tick = time.perf_counter()
             initial = self.retrieval.query(build_id, request.question)
             trace["initial"] = initial
@@ -179,20 +179,42 @@ class QueryService:
                 payload = {"operation": "resolve", "question": request.question, "time": trace["time"], "analysis": initial["analysis"],
                            "memories": list(memories.values()), "sources": list(sources.values()), "relations": trace["relations"],
                            "candidates_truncated": initial["initial_truncated"] or expanded["truncated"]}
-                generation = self.model.generate("resolve", payload, EffectiveResolution, context=context)
-                trace["operations"][stage] = generation.metadata
-                resolution = EffectiveResolution.model_validate(generation.value.model_dump(mode="json"), context=context)
-                trace["resolution"] = resolution.model_dump(mode="json")
-                trace["stage_seconds"][stage] = time.perf_counter() - tick
-                selected = [memory for mid, memory in memories.items() if mid in resolution.effective_memory_ids]
-                status = "insufficient" if trace["time"]["beyond_cutoff"] else resolution.status
-                if trace["time"]["beyond_cutoff"]:
-                    trace["time"]["limitation"] = "Requested date exceeds known conversation evidence; plans do not establish future reality"
-                stage, tick = "answer", time.perf_counter()
-                answer, delivered, budget = self.generate_answer(request.question, trace["time"], selected, sources, status, audit=trace)
-                trace["answer"], trace["effective_memories"], trace["evidence_budget"] = answer, delivered, budget
-                trace["operations"][stage] = budget["model_metadata"]
-                trace["stage_seconds"][stage] = time.perf_counter() - tick
+                try:
+                    generation = self.model.generate("resolve", payload, EffectiveResolution, context=context)
+                    trace["operations"][stage] = generation.metadata
+                    resolution = EffectiveResolution.model_validate(generation.value.model_dump(mode="json"), context=context)
+                except (ModelFailure, ValidationError) as error:
+                    if isinstance(error, ModelFailure) and error.code != "invalid_output":
+                        raise
+                    from .raw_queries import run_raw_query
+                    prior_metadata = trace["operations"].pop("resolve", {})
+                    trace["operations"]["failed_dynamic_resolve"] = getattr(error, "metadata", prior_metadata)
+                    trace["stage_seconds"]["failed_dynamic_resolve"] = time.perf_counter() - tick
+                    trace["strategy_recovery"] = {"version":QUERY_RECOVERY_VERSION,
+                        "requested_strategy":"dynamic", "executed_strategy":"dynamic_raw_fallback",
+                        "reason":"invalid_output"}
+                    trace["relations"] = [r for r in relations
+                        if {r["old_memory_id"], r["new_memory_id"]} & memories.keys()]
+                    trace["relation_fingerprint"] = hashlib.sha256(canonical_json(trace["relations"]).encode()).hexdigest()
+                    try:
+                        run_raw_query(self, request, trace, memories, sources, snapshot)
+                    finally:
+                        trace["strategy"] = "dynamic"
+                        trace["query_fingerprint"] = hashlib.sha256(canonical_json({
+                            "fingerprint":trace["query_fingerprint"],
+                            "strategy_recovery":trace["strategy_recovery"]}).encode()).hexdigest()
+                else:
+                    trace["resolution"] = resolution.model_dump(mode="json")
+                    trace["stage_seconds"][stage] = time.perf_counter() - tick
+                    selected = [memory for mid, memory in memories.items() if mid in resolution.effective_memory_ids]
+                    status = "insufficient" if trace["time"]["beyond_cutoff"] else resolution.status
+                    if trace["time"]["beyond_cutoff"]:
+                        trace["time"]["limitation"] = "Requested date exceeds known conversation evidence; plans do not establish future reality"
+                    stage, tick = "answer", time.perf_counter()
+                    answer, delivered, budget = self.generate_answer(request.question, trace["time"], selected, sources, status, audit=trace)
+                    trace["answer"], trace["effective_memories"], trace["evidence_budget"] = answer, delivered, budget
+                    trace["operations"][stage] = budget["model_metadata"]
+                    trace["stage_seconds"][stage] = time.perf_counter() - tick
             trace["outcome"] = "succeeded"
         except (ModelFailure, ValidationError, BuildError, EmbeddingFailure) as error:
             stage = trace.pop("_active_stage", stage)

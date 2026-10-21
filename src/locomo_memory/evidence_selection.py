@@ -1,4 +1,4 @@
-"""Conservative question focus, preserving whole state/relationship components."""
+"""Question focus and distinct-item ordering before safety groups are packed."""
 import re
 
 from nltk.stem import PorterStemmer
@@ -70,9 +70,40 @@ def rank_core_memories(question, memories):
     anchors = terms(question)
     question_tokens = {t.removesuffix("'s") for t in tokenize(question)}
 
+    # Broad list nouns rarely occur in individual facts. Expand intent verbs and
+    # dimensions, never answer items; use the existing retrieval order for ties.
+    multi_item = bool(question_tokens & {'activities', 'events', 'instruments', 'locations', 'places', 'hobbies'})
+    if question_tokens & {'activities', 'hobbies'}:
+        anchors |= terms('hobby activity play enjoy practice')
+    if 'events' in question_tokens:
+        anchors |= terms('attend attendance participate join visit volunteer event')
+
     def relevance(memory):
         text = memory['content'] + ' ' + memory['state_dimension'].replace('_', ' ')
         overlap = len(anchors & terms(text))
         named = any(t in question_tokens for t in tokenize(memory['entity_id'].replace('_', ' ')))
         return named, overlap
-    return sorted(memories, key=relevance, reverse=True)
+    if not multi_item:
+        return sorted(memories, key=relevance, reverse=True)
+    pending = list(memories)
+    ordered, seen_terms, dimensions = [], [], {}
+    participation = 'events' in question_tokens and bool(question_tokens & {'participated', 'attended', 'joined'})
+    asks_plans = bool(question_tokens & {'plans', 'planned', 'planning', 'will', 'future'})
+    while pending:
+        def coverage_score(memory):
+            named, overlap = relevance(memory)
+            dimension = memory['state_dimension']
+            claim = terms(memory.get('state_value') or memory['content'])
+            similarity = max((len(claim & old) / max(1, len(claim | old)) for old in seen_terms), default=0)
+            # Saturate lexical overlap so repeated generic words cannot dominate
+            # distinct supported categories; safety groups are constructed later.
+            fact = memory.get('statement_type', 'fact') == 'fact' or asks_plans
+            direct = bool(re.search(r'\b(went|joined|attended|participated|volunteered|spoke)\b', memory['content'], re.I))
+            return named, bool(overlap), fact, direct if participation else False, 1 / (1 + dimensions.get(dimension, 0)) - similarity
+        chosen = max(pending, key=coverage_score)
+        pending.remove(chosen)
+        ordered.append(chosen)
+        seen_terms.append(terms(chosen.get('state_value') or chosen['content']))
+        dimension = chosen['state_dimension']
+        dimensions[dimension] = dimensions.get(dimension, 0) + 1
+    return ordered

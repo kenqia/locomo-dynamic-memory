@@ -28,6 +28,22 @@ def test_core_fact_survives_large_same_state_history_at_fixed_budget(settings):
     assert audit['truncated']
 
 
+@pytest.mark.parametrize('question,dimension,values', [
+    ('What activities does Alex partake in?', 'hobby', ['walking', 'knitting']),
+    ('What community events has Alex participated in?', 'attendance', ['community meeting', 'community festival']),
+])
+def test_multi_item_budget_prefers_distinct_facts_over_repeated_details(settings, question, dimension, values):
+    memories, sources = evidence(5)
+    for i, m in enumerate(memories):
+        value = values[0] if i < 4 else values[1]
+        m.update(content=f'Alex participated in {value} activities.', state_dimension=dimension, state_value=value)
+        sources[f's{i}']['text'] = f'I enjoyed {value}. ' + 'Background detail. ' * 450
+    payload, audit = pack_payload(dict(question=question, relations=[]), memories, [], sources,
+                                  settings.model_copy(update={'resolution_input_budget': 7000}))
+    assert {m['state_value'] for m in payload['memories']} == set(values)
+    assert audit['truncated']
+
+
 @pytest.mark.parametrize('label', ['CONFLICT', 'SUPERSEDE'])
 def test_required_relation_sides_are_kept_together(settings, label):
     memories, sources = evidence(3)

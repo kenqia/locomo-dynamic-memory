@@ -25,7 +25,7 @@ def record_delivery(delivery, metadata, *, accepted, error_code=None):
                     provider_accepted=True if accepted else False if error_code=='context_length_exceeded' else None)
 
 
-PACKING_VERSION = "core-source-required-relations-v1"
+PACKING_VERSION = "core-source-distinct-items-v2"
 
 
 def required_relation_labels(question):

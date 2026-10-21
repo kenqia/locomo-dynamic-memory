@@ -74,6 +74,81 @@ def published(client, sample):
     return {'dataset_id': dataset, 'sample_id': 'conv-a', 'build_id': bid, 'strategy': 'dynamic_raw_fallback', 'question': 'Where does Alex work?'}
 
 
+def test_dynamic_invalid_resolution_uses_audited_bounded_backup(settings, sample):
+    base = raw_provider([], enough=True)
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'resolve':
+            return completion({'invalid': 'truncated decisions'})
+        return base(request)
+    local = settings.model_copy(update={'model_retries': 0})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        query = {**published(client, sample), 'strategy': 'dynamic', 'question': 'Where does Alex live?'}
+        state = client.get(f"/builds/{query['build_id']}/current-state").json()
+        response = client.post('/queries', json=query)
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['strategy'] == 'dynamic'
+        assert trace['strategy_recovery']['executed_strategy'] == 'dynamic_raw_fallback'
+        assert trace['strategy_recovery']['reason'] == 'invalid_output'
+        assert trace['operations']['failed_dynamic_resolve']['calls']
+        assert trace['answer']['answer'] == 'Alex lives in Paris.'
+        assert trace['answer']['citations'][0]['source_ids'] == [f"{query['dataset_id']}/conv-a/D1:1"]
+        assert trace['resolution_budgets']['resolve']['input_token_count'] <= local.resolution_input_budget
+        assert client.get(f"/builds/{query['build_id']}/current-state").json() == state
+        assert client.get(f"/queries/{trace['trace_id']}").json() == trace
+
+
+@pytest.mark.parametrize('failure', ['invalid_backup', 'provider_unavailable'])
+def test_dynamic_backup_does_not_accept_invalid_evidence_or_hide_provider_errors(settings, sample, failure):
+    base = raw_provider([])
+    attempted = []
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        op = payload.get('operation')
+        if op in ('resolve', 'resolve_raw'):
+            attempted.append(op)
+            if failure == 'provider_unavailable':
+                return httpx.Response(503, json={'error': {'message': 'Synthetic unavailable'}})
+            return completion({'status':'sufficient', 'effective_memory_ids':['foreign-memory'],
+                'decisions':[], 'explanation':'Unsafe external evidence'})
+        return base(request)
+    local = settings.model_copy(update={'model_retries':0})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        query = {**published(client, sample), 'strategy':'dynamic'}
+        response = client.post('/queries', json=query)
+        assert response.status_code == 502
+        trace = client.get('/queries/' + response.json()['error']['trace_id']).json()
+        assert trace['outcome'] == 'failed'
+        assert 'answer' not in trace
+        assert attempted == (['resolve', 'resolve_raw'] if failure == 'invalid_backup' else ['resolve'])
+        assert trace['usage_summary']['generation_calls'] == len(attempted) + 1
+
+
+def test_evaluation_reports_raw_evidence_and_failed_calls_used_by_dynamic_backup(settings, sample):
+    sample[0]['conversation']['session_2'][0]['text'] = 'I work for Cedar.'
+    base = raw_provider([])
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        return completion({'invalid':'broken resolution'}) if payload.get('operation') == 'resolve' else base(request)
+    local = settings.model_copy(update={'model_retries':0})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        query = published(client, sample)
+        inputs = client.post('/evaluation-inputs', json={'dataset_id':query['dataset_id'], 'samples':[
+            {'sample_id':'conv-a', 'question':'Where does Alex work?', 'answer':'Cedar', 'category':4, 'evidence':['D2:1']}]}).json()
+        response = client.post('/evaluation-runs', json={'wait':True, 'input_id':inputs['input_id'],
+            'strategies':['dynamic'], 'build_ids':{'conv-a':query['build_id']}})
+        assert response.status_code == 201, response.text
+        row = response.json()['results'][0]
+        assert row['source_sets']['answer_context'] == [f"{query['dataset_id']}/conv-a/D2:1"]
+        assert row['source_coverage']['answer_context'] == 1
+        assert row['ranking_units']['answer_context'] == 'Memory + SourceTurn'
+        assert row['usage_summary']['generation_calls'] == 5
+
+
 @pytest.mark.parametrize('profile', ['expanded','focused'])
 def test_new_evaluation_strategy_reports_mixed_source_coverage_without_memory_truth(settings, sample, profile):
     sample[0]['conversation']['session_2'][0]['text'] = 'I work for Cedar.'

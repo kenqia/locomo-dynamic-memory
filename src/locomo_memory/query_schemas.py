@@ -29,6 +29,15 @@ Synthetic example: Dana kayaks and knits, Lee skis, Dana hopes to box.
 Dana's activities: kayaking and knitting; skiing belongs to Lee, boxing is planned.
 """
 
+SHORT_ANSWER_GUIDANCE = """
+For a list question, answer with a compact, deduplicated list of item names, not one narrative
+per source. Include every supported distinct item before adding detail. Unless the question
+asks when, omit dates, relative-time calculations and trip chronology from answer; put any
+necessary qualifications in explanation. Preserve uncertainty or negation that changes an item.
+Synthetic example: Dana practiced chess on Monday and Friday and baked bread on Sunday.
+Question: What activities does Dana do? Answer: Chess and baking.
+"""
+
 
 class QueryRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")

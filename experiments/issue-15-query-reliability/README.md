@@ -1,5 +1,7 @@
 # 查询质量与证据可靠性修复
 
+对真实复验剩余问题的后续修复见[多项目覆盖与解析备用策略](followup.md)。
+
 后续离线、展示与固定题真实复验见[复验记录](recheck.md)。逐题结果见
 [live-results/report.md](live-results/report.md)，原文与引用审计见
 [source-audit.json](live-results/source-audit.json)。
