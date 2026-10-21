@@ -59,6 +59,12 @@ uv sync --locked --extra embedding
 Dynamic 的官方拒答匹配仍为 1/2，Raw Fallback 的研究对象题仍有遗漏。
 见[目标核对与限制](../../experiments/issue-15-answer-output-live/results/analysis.md)。
 
+其后的[证据覆盖 A/B 实验](../../experiments/issue-15-evidence-coverage-live/results/analysis.md)
+固定 5 道定向题及 10 道同对话的新问题，仅选两种策略分别比较。
+30 项均执行成功，但 QA 3 的关键证据仍未交付，QA 15 的补查丢掉已支持活动，
+Dynamic 的 QA 53 也出现时间退化；不能将受控回归通过当作真实质量提升。
+B 是 conv-26 内的问题级留出，不能外推为跨新对话泛化。
+
 ## 小型抽取和五题预检
 
 显式授权付费后运行小型原始对话抽取检查：

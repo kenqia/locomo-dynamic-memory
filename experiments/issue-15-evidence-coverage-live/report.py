@@ -73,6 +73,10 @@ def render(directory, output):
                 'refusal_questions': len(refusal), 'all_qa_mean': score(selected),
                 'generation_calls': sum(r['usage'].get('generation_calls', 0) for r in selected),
                 'usage': run['summary'][strategy]['usage_summary']}
+            if label == 'A':
+                old_scores = [r['previous_score'] for r in answerable]
+                summaries[label][strategy]['previous_matched_answerable_f1'] = (
+                    mean(old_scores) if old_scores and all(s is not None for s in old_scores) else None)
         for index, question in enumerate(group['questions']):
             items = [i for i in run['items'] if i['sample_index'] == index]
             left, right = [paired.candidate_rankings(i.get('result') or {}) for i in items]
@@ -101,6 +105,9 @@ def render(directory, output):
     for label, values in summaries.items():
         for strategy, summary in values.items():
             lines.append(f"| {label} | {strategy} | {summary['successful']}/{summary['planned']} | {fmt(summary['answerable_f1'])} | {summary['official_refusal_matches']}/{summary['refusal_questions']} | {summary['generation_calls']} |")
+    lines += ['', 'A 只与前轮同样 4 道可回答题比较，不使用前轮 8 题总均值作基点：']
+    for strategy, summary in summaries['A'].items():
+        lines.append(f"- `{strategy}`：{fmt(summary['previous_matched_answerable_f1'])} → {fmt(summary['answerable_f1'])}。")
     lines += ['', '适用参考规则的已知执行失败在计划均值中记 0。F1 不是语义正确率；标注来源送达也不等于完整答案。',
               '两组题目和策略不同，不能直接用 A 与 B 的均值作泛化差值；没有预设分数保证。',
               '同题初始和扩展候选比较保存在 results.json。没有独立动态真值，动态准确率仍未评。', '',

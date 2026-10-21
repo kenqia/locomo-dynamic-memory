@@ -3,6 +3,17 @@
 2026-10-21，Asia/Shanghai。实现基点 `b0a7d06`，源码身份在 `plan.json` 中冻结。
 两组共 30 项，仅追加评测和查询，不重建 Memory、关系或索引，不读取本地测试集成绩。
 
+两组已完成，30 项全部执行成功，但未验证到稳定质量提升。A 的 Raw Fallback 仍漏答 QA 3，
+QA 15 因联合预算省略旧支持而退化，Dynamic 的 QA 53 再次误解 this week；QA 153 标准拒答改善。
+B 的可回答题 F1 为 Raw Fallback 0.225、Hybrid 0.342。
+详见[逐题与来源报告](results/report.md)、[结论与限制](results/analysis.md)及
+[定向诊断](results/targeted-diagnostics.json)。
+
+本轮使用 88/102 次请求，历史累计 1097/1111，无提供方失败、重试或未知调用。
+原库及快照构建产物摘要未变，没有为改善成绩修改方案或补跑取优。
+新鲜非 live 回归 392 passed、4 deselected，265.88 秒；新增实验测试另有 2 项通过。
+编译与差异检查通过，详见 [verification.json](verification.json)。
+
 ## 事前选择
 
 A 使用 QA 3、15、153 和 QA 0、53 两道已正确的时间问题，比较 `dynamic` 与

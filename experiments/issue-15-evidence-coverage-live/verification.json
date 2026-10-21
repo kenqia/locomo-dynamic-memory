@@ -1,0 +1,28 @@
+{
+  "implementation_commit": "b0a7d06",
+  "implementation_sha256": "61f7d8a0d8cec821e3c4ded7c0a5c1ac36cceb2706e34c800c24424d94a8c8cf",
+  "offline_regression": {
+    "command": "HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 .venv/bin/python -m pytest -q -m 'not live_model and not local_embedding'",
+    "passed": 392,
+    "deselected": 4,
+    "elapsed_seconds": 265.88,
+    "note": "Collected before adding the two experiment-only tests; those were run separately."
+  },
+  "experiment_tests": {
+    "command": ".venv/bin/python -m pytest -q tests/test_evidence_coverage_experiment.py",
+    "passed": 2
+  },
+  "compileall": "passed",
+  "git_diff_check": "passed",
+  "new_paid_calls": 88,
+  "cumulative_calls": 1097,
+  "cumulative_limit": 1111,
+  "provider_outcomes": {
+    "succeeded": 88
+  },
+  "unknown_reservations": 0,
+  "original_and_snapshot_artifacts_unchanged": true,
+  "business_behavior_changed": false,
+  "browser_e2e": "not_run",
+  "local_test_set": "not_run"
+}

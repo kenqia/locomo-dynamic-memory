@@ -1,0 +1,2297 @@
+{
+  "scope": "Assistant source/Trace review, not independent dynamic truth",
+  "qa3_raw": {
+    "required_memory_id": "c29d9f9836d5c49d48f6d49b",
+    "required_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+    "initial_resolution": {
+      "coverage": [
+        {
+          "gap": "No supplied memory or raw source identifies a research topic, field, project, or subject that Caroline researched.",
+          "memory_ids": [],
+          "question": "What did Caroline research?",
+          "revision_reason": null,
+          "source_ids": [],
+          "status": "insufficient"
+        }
+      ],
+      "decisions": [
+        {
+          "memory_id": "d6e9c99ff085a28d09313fc9",
+          "reason": "States Caroline is an artist, but does not identify any research topic or activity.",
+          "selected": false
+        },
+        {
+          "memory_id": "8e5fd562caf75df696399a41",
+          "reason": "States Caroline might try pottery, which is a possible art activity, not research.",
+          "selected": false
+        },
+        {
+          "memory_id": "009c21959766c5b534afcaf8",
+          "reason": "States Caroline has not tried pottery; unrelated to what she researched.",
+          "selected": false
+        },
+        {
+          "memory_id": "64db540fdb11f1013ce0c6a8",
+          "reason": "States Caroline has not done pottery; unrelated to research.",
+          "selected": false
+        },
+        {
+          "memory_id": "819e4905a08ccf025291d0b7",
+          "reason": "States Caroline is a trans woman; does not describe research.",
+          "selected": false
+        },
+        {
+          "memory_id": "87dc7fae09c589f68fc357a8",
+          "reason": "Describes how Caroline's transition changed relationships, not her research.",
+          "selected": false
+        },
+        {
+          "memory_id": "08bd3fdd2d2afe49e4ea0199",
+          "reason": "Describes support from friends and family during transition; not a research topic.",
+          "selected": false
+        },
+        {
+          "memory_id": "41eceb70983189049494a2a7",
+          "reason": "States Caroline's transition was difficult; does not mention research.",
+          "selected": false
+        },
+        {
+          "memory_id": "2f68c6af3a2ab6f48746c85c",
+          "reason": "States Caroline creates art, but gives no research subject or project.",
+          "selected": false
+        },
+        {
+          "memory_id": "8e08017bf7e25b66e1e59587",
+          "reason": "States Caroline has a mentee, not what she researched.",
+          "selected": false
+        }
+      ],
+      "effective_memory_ids": [],
+      "effective_source_ids": [],
+      "explanation": "All supplied memories were checked. They cover Caroline's identity, art-making, pottery interest, mentorship, and transition relationships/support, but none states what Caroline researched. The raw_sources array is empty, so no raw evidence can fill that gap.",
+      "status": "insufficient",
+      "supplemental_relations": []
+    },
+    "first_resolution_budget": {
+      "input_budget": 12000,
+      "input_token_count": 11516,
+      "omitted_groups": [
+        {
+          "endpoints": [
+            [
+              "memory",
+              "c29d9f9836d5c49d48f6d49b"
+            ],
+            [
+              "memory",
+              "31d452af0431e55c3ebfb59f"
+            ],
+            [
+              "memory",
+              "2b7b411aca4d8f777d3a726b"
+            ],
+            [
+              "memory",
+              "0954710d2cdbad5f6456adb6"
+            ],
+            [
+              "memory",
+              "f129106c71948dbf6c652071"
+            ],
+            [
+              "memory",
+              "30b7c2fe26350ed64a276cb2"
+            ],
+            [
+              "memory",
+              "1e1788733926f83841518dc1"
+            ],
+            [
+              "memory",
+              "ff6beba22ed4d40eb0beb12d"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "4432640ac0d206c4b5e73dc9"
+            ],
+            [
+              "memory",
+              "bdbd5262ede13d6d0cabd57a"
+            ],
+            [
+              "memory",
+              "66184f4ba6e3b9edea9b210f"
+            ],
+            [
+              "memory",
+              "99ff162c4f2eb2d6a0680e0e"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "edf0ad6dfb5ddf068bbe2225"
+            ],
+            [
+              "memory",
+              "ab5f9130290ce528637215d1"
+            ],
+            [
+              "memory",
+              "376676a70336006ce30b797e"
+            ],
+            [
+              "memory",
+              "11b8e5b1c4598d451378d4e1"
+            ],
+            [
+              "memory",
+              "f78fb9042f436973ce7bd177"
+            ],
+            [
+              "memory",
+              "b48a241d0644ef8309ef12cb"
+            ],
+            [
+              "memory",
+              "d744e00a235c5eccfcb43f73"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "710c1236d48a31302c628218"
+            ],
+            [
+              "memory",
+              "66f4369fbdc89a75cfbf1813"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "823ba891090bb4a4bad5775f"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "07f332e38d5c51723cf51227"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "b61930075a7518c86047518b"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "1bd0dc950a72d4aa40ec6e95"
+            ],
+            [
+              "memory",
+              "21301a30408df7ba29407309"
+            ],
+            [
+              "memory",
+              "b9a9011de84e4bbd7d52ae3d"
+            ],
+            [
+              "memory",
+              "48981a97b7c240dc2a1377d9"
+            ],
+            [
+              "memory",
+              "488e21b483101e953887a94d"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "cf20ca008c10cd79816dba6e"
+            ],
+            [
+              "memory",
+              "7ed5e6554c01d85740df077a"
+            ],
+            [
+              "memory",
+              "5ef5b0462b050b51ccdca1ec"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "a5024258a9e1c57f2c6919a8"
+            ],
+            [
+              "memory",
+              "1727fee9cb63d0e3461c3dcb"
+            ],
+            [
+              "memory",
+              "f4d9ccdebd7cbc9f2ac2114f"
+            ],
+            [
+              "memory",
+              "1bdfae29d84ec904411b664a"
+            ],
+            [
+              "memory",
+              "2cb517b0dccd4d83bce9eabc"
+            ],
+            [
+              "memory",
+              "e3a2e6585ad03929929abf29"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        }
+      ],
+      "packing_version": "original-question-whole-group-v1",
+      "source_delivery": {
+        "attempted_source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+          "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+          "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+          "f69a07a79a2d5f4c8188300a/conv-26/D9:10"
+        ],
+        "delivered_source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+          "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+          "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+          "f69a07a79a2d5f4c8188300a/conv-26/D9:10"
+        ],
+        "expected_source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+          "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+          "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+          "f69a07a79a2d5f4c8188300a/conv-26/D9:10"
+        ],
+        "provider_accepted": true,
+        "status": "accepted"
+      },
+      "token_budget_method": "regex-word-punctuation-v1",
+      "truncated": true
+    },
+    "required_group_omitted": [
+      {
+        "endpoints": [
+          [
+            "memory",
+            "c29d9f9836d5c49d48f6d49b"
+          ],
+          [
+            "memory",
+            "31d452af0431e55c3ebfb59f"
+          ],
+          [
+            "memory",
+            "2b7b411aca4d8f777d3a726b"
+          ],
+          [
+            "memory",
+            "0954710d2cdbad5f6456adb6"
+          ],
+          [
+            "memory",
+            "f129106c71948dbf6c652071"
+          ],
+          [
+            "memory",
+            "30b7c2fe26350ed64a276cb2"
+          ],
+          [
+            "memory",
+            "1e1788733926f83841518dc1"
+          ],
+          [
+            "memory",
+            "ff6beba22ed4d40eb0beb12d"
+          ]
+        ],
+        "reason": "resolution_input_budget"
+      }
+    ],
+    "required_source_delivered": false,
+    "answer": {
+      "answer": "No information available.",
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:17"
+          ]
+        }
+      ],
+      "explanation": "The only supplied evidence shows Caroline saying she is off to do some research, but it does not identify the topic, field, project, or subject of that research.",
+      "status": "insufficient"
+    }
+  },
+  "qa15_raw": {
+    "first_resolution": {
+      "coverage": [
+        {
+          "gap": "The conversation supports several activities, but it does not establish a complete list of all activities Melanie partakes in. Planned family-outing evidence also does not identify specific activities.",
+          "memory_ids": [
+            "831f646db1fb093105c2ecd6",
+            "6534d081d8a862191bc19fec",
+            "36276da9b3e7f0a96342e7d0",
+            "08d952527a6b81e9f2fbe9e1"
+          ],
+          "question": "What activities does Melanie partake in?",
+          "revision_reason": null,
+          "source_ids": [],
+          "status": "insufficient"
+        }
+      ],
+      "decisions": [
+        {
+          "memory_id": "cf20ca008c10cd79816dba6e",
+          "reason": "Only an intention to think about possible outing activities; it does not establish an activity Melanie actually partakes in.",
+          "selected": false
+        },
+        {
+          "memory_id": "7ed5e6554c01d85740df077a",
+          "reason": "A proposed future family outing, not a specific activity Melanie already does or partakes in.",
+          "selected": false
+        },
+        {
+          "memory_id": "5ef5b0462b050b51ccdca1ec",
+          "reason": "An agreement to plan something special; no concrete activity is identified.",
+          "selected": false
+        },
+        {
+          "memory_id": "831f646db1fb093105c2ecd6",
+          "reason": "Directly lists Melanie's me-time activities: running, reading, and playing the violin.",
+          "selected": true
+        },
+        {
+          "memory_id": "6534d081d8a862191bc19fec",
+          "reason": "Directly supports Melanie's running activity and notes she has been running longer.",
+          "selected": true
+        },
+        {
+          "memory_id": "36276da9b3e7f0a96342e7d0",
+          "reason": "Directly supports Melanie's painting activity with her partner, especially nature-inspired paintings.",
+          "selected": true
+        },
+        {
+          "memory_id": "08d952527a6b81e9f2fbe9e1",
+          "reason": "Directly supports camping activities attributed to Melanie's family during their camping trip: roasting marshmallows, telling stories around the campfire, and enjoying company.",
+          "selected": true
+        },
+        {
+          "memory_id": "f7b3964319acc13440f39ee7",
+          "reason": "About Caroline's favorite activity, not Melanie's.",
+          "selected": false
+        },
+        {
+          "memory_id": "30c3a1d5139ac388c9b03f87",
+          "reason": "About Caroline's activist group activities, not Melanie's activities.",
+          "selected": false
+        },
+        {
+          "memory_id": "4bb2a18f1fe2a792762450ba",
+          "reason": "Describes family as a motivation source, not an activity Melanie partakes in.",
+          "selected": false
+        }
+      ],
+      "effective_memory_ids": [
+        "831f646db1fb093105c2ecd6",
+        "6534d081d8a862191bc19fec",
+        "36276da9b3e7f0a96342e7d0",
+        "08d952527a6b81e9f2fbe9e1"
+      ],
+      "effective_source_ids": [],
+      "explanation": "Supported activities for Melanie are: running, reading, and playing the violin as me-time activities; running longer distances as an ongoing running activity; painting with her partner, especially nature-inspired paintings; and family camping activities including roasting marshmallows, telling stories around the campfire, and enjoying each other's company. The family-outing evidence is only a plan or intention and does not specify concrete activities, so it is not counted as an activity she partakes in. The supplied conversation does not provide an exhaustive inventory of all of Melanie's activities, so an explicit coverage gap remains.",
+      "status": "insufficient",
+      "supplemental_relations": []
+    },
+    "initial_supported_memories": [
+      {
+        "build_id": "5c7699dd6543407697ae232633154036",
+        "content": "Melanie's me-time activities include running, reading, and playing the violin.",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "entity_id": "Melanie",
+        "memory_id": "831f646db1fb093105c2ecd6",
+        "memory_type": "state",
+        "polarity": "positive",
+        "sample_id": "conv-26",
+        "session_times": [
+          "1:14 pm on 25 May, 2023"
+        ],
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+        ],
+        "state_dimension": "hobby",
+        "state_key": "conv-26:Melanie:hobby",
+        "state_value": "running, reading, playing violin",
+        "statement_type": "fact",
+        "time": {
+          "anchor_source_id": null,
+          "basis": null,
+          "event_end": null,
+          "event_start": null,
+          "original_expression": null,
+          "valid_from": null,
+          "valid_to": null
+        }
+      },
+      {
+        "build_id": "5c7699dd6543407697ae232633154036",
+        "content": "Melanie has been running longer since the last chat.",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "entity_id": "Melanie",
+        "memory_id": "6534d081d8a862191bc19fec",
+        "memory_type": "state",
+        "polarity": "positive",
+        "sample_id": "conv-26",
+        "session_times": [
+          "4:33 pm on 12 July, 2023"
+        ],
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D7:20"
+        ],
+        "state_dimension": "running",
+        "state_key": "conv-26:Melanie:running",
+        "state_value": "longer distances",
+        "statement_type": "fact",
+        "time": {
+          "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+          "basis": "relative to prior conversation; no exact date given",
+          "event_end": null,
+          "event_start": null,
+          "original_expression": "since our last chat",
+          "valid_from": null,
+          "valid_to": null
+        }
+      },
+      {
+        "build_id": "5c7699dd6543407697ae232633154036",
+        "content": "Melanie and her partner love painting together lately, especially nature-inspired paintings.",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "entity_id": "Melanie",
+        "memory_id": "36276da9b3e7f0a96342e7d0",
+        "memory_type": "state",
+        "polarity": "positive",
+        "sample_id": "conv-26",
+        "session_times": [
+          "1:51 pm on 15 July, 2023"
+        ],
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+        ],
+        "state_dimension": "hobby",
+        "state_key": "conv-26:Melanie:hobby",
+        "state_value": "painting",
+        "statement_type": "fact",
+        "time": {
+          "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+          "basis": "Vague time expression 'lately' indicates an ongoing recent state; no exact dates given.",
+          "event_end": null,
+          "event_start": null,
+          "original_expression": "lately",
+          "valid_from": null,
+          "valid_to": null
+        }
+      },
+      {
+        "build_id": "5c7699dd6543407697ae232633154036",
+        "content": "Melanie's family roasts marshmallows, tells stories around the campfire, and enjoys each other's company on their camping trip.",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "entity_id": "Melanie",
+        "memory_id": "08d952527a6b81e9f2fbe9e1",
+        "memory_type": "state",
+        "polarity": "positive",
+        "sample_id": "conv-26",
+        "session_times": [
+          "8:56 pm on 20 July, 2023"
+        ],
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D10:12"
+        ],
+        "state_dimension": "camping_activities",
+        "state_key": "conv-26:Melanie:camping_activities",
+        "state_value": "roast marshmallows, tell stories around campfire",
+        "statement_type": "fact",
+        "time": {
+          "anchor_source_id": null,
+          "basis": null,
+          "event_end": null,
+          "event_start": null,
+          "original_expression": null,
+          "valid_from": null,
+          "valid_to": null
+        }
+      }
+    ],
+    "raw_lookup": {
+      "budget": 2000,
+      "centers": 3,
+      "cited_source_ids": [],
+      "coverage_policy_version": "explicit-enumeration-requests-v2",
+      "delivered_source_ids": [],
+      "effective_source_ids": [],
+      "matched_source_count": 395,
+      "omitted": [],
+      "origins": [
+        {
+          "center_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:10",
+          "kind": "center",
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:10"
+        },
+        {
+          "center_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:10",
+          "kind": "neighbor",
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:9"
+        },
+        {
+          "center_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:10",
+          "kind": "neighbor",
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:11"
+        },
+        {
+          "center_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:2",
+          "kind": "center",
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:2"
+        },
+        {
+          "center_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:2",
+          "kind": "neighbor",
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+        },
+        {
+          "center_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:2",
+          "kind": "neighbor",
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:3"
+        },
+        {
+          "center_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:22",
+          "kind": "center",
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:22"
+        },
+        {
+          "center_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:22",
+          "kind": "neighbor",
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:21"
+        },
+        {
+          "center_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:22",
+          "kind": "neighbor",
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:23"
+        }
+      ],
+      "pinned_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:29",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:31",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:35",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:36",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:37",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:38",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:39",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:29",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:31",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:35",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:15"
+      ],
+      "ranked_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:36",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:29",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:29",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:31",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:38",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:37",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:35",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:35",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:17"
+      ],
+      "retrieval_version": "pinned-turn-bm25-windows-v3-enumeration-possessives",
+      "source_count": 419,
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:23"
+      ],
+      "source_sha256": "6b0e114d7f462334ec99acf34a2f38074a27411d21022df4f3d3737e8839a3b0",
+      "source_snapshot_sha256": "4eee9331ec3411fb1c92fa24a563d6e3d61102b2c246a19e3e27aeabdc612f3b",
+      "speaker_matching": true,
+      "token_budget_method": "regex-word-punctuation-v1",
+      "token_count": 1166,
+      "trigger_reasons": [
+        "The conversation supports several activities, but it does not establish a complete list of all activities Melanie partakes in. Planned family-outing evidence also does not identify specific activities.",
+        "enumeration_coverage_check"
+      ],
+      "triggered": true,
+      "truncated": true,
+      "unselected_match_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:36",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:29",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:29",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:31",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:38",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:37",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:35",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:35",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:17"
+      ]
+    },
+    "joint_resolution_budget": {
+      "input_budget": 12000,
+      "input_token_count": 11993,
+      "omitted_groups": [
+        {
+          "endpoints": [
+            [
+              "memory",
+              "831f646db1fb093105c2ecd6"
+            ],
+            [
+              "memory",
+              "6534d081d8a862191bc19fec"
+            ],
+            [
+              "memory",
+              "36276da9b3e7f0a96342e7d0"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "f4d9ccdebd7cbc9f2ac2114f"
+            ],
+            [
+              "memory",
+              "1727fee9cb63d0e3461c3dcb"
+            ],
+            [
+              "memory",
+              "2cb517b0dccd4d83bce9eabc"
+            ],
+            [
+              "memory",
+              "a5024258a9e1c57f2c6919a8"
+            ],
+            [
+              "memory",
+              "e3a2e6585ad03929929abf29"
+            ],
+            [
+              "memory",
+              "b56272f2400d5bf7ab86e8c6"
+            ],
+            [
+              "memory",
+              "e28dae4e15b737df9593ad0d"
+            ],
+            [
+              "memory",
+              "d3dae5c6947596177bbb4dbb"
+            ],
+            [
+              "memory",
+              "1bdfae29d84ec904411b664a"
+            ],
+            [
+              "memory",
+              "8f9e24cca3dbc9c375401e23"
+            ],
+            [
+              "memory",
+              "9244df64a02401a5aa610b6d"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "08d952527a6b81e9f2fbe9e1"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "48981a97b7c240dc2a1377d9"
+            ],
+            [
+              "memory",
+              "8af2ffcad4b7c2cc004d3ed1"
+            ],
+            [
+              "memory",
+              "bc0c987112d83fee8236bbb4"
+            ],
+            [
+              "memory",
+              "84713399b8856b32289d625e"
+            ],
+            [
+              "memory",
+              "21301a30408df7ba29407309"
+            ],
+            [
+              "memory",
+              "b9a9011de84e4bbd7d52ae3d"
+            ],
+            [
+              "memory",
+              "1bd0dc950a72d4aa40ec6e95"
+            ],
+            [
+              "memory",
+              "488e21b483101e953887a94d"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "f7b3964319acc13440f39ee7"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "30c3a1d5139ac388c9b03f87"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "raw",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:2"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "raw",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:22"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "f7dc5f80d0bd262e64a8f605"
+            ],
+            [
+              "memory",
+              "6319012a17441f4eb602f046"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "4bb2a18f1fe2a792762450ba"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "5b45610ccabdb4df708e6a68"
+            ],
+            [
+              "memory",
+              "20eb29adb2155e25475046dd"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "e6716b385dbde36d51f25d07"
+            ],
+            [
+              "memory",
+              "44105418e5ab87babd983088"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "raw",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "raw",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:3"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "raw",
+              "f69a07a79a2d5f4c8188300a/conv-26/D15:9"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "raw",
+              "f69a07a79a2d5f4c8188300a/conv-26/D15:11"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "raw",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:21"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "raw",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:23"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "8ecd78f1bef0bb848ac29377"
+            ],
+            [
+              "memory",
+              "ed2e9ba1185f14a945cd3b41"
+            ],
+            [
+              "memory",
+              "7b597b714d21eed7176aba52"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        },
+        {
+          "endpoints": [
+            [
+              "memory",
+              "528b76a1cece49e27bfb60c8"
+            ]
+          ],
+          "reason": "resolution_input_budget"
+        }
+      ],
+      "omitted_previous_evidence": [
+        {
+          "memory_ids": [
+            "831f646db1fb093105c2ecd6",
+            "6534d081d8a862191bc19fec",
+            "36276da9b3e7f0a96342e7d0",
+            "08d952527a6b81e9f2fbe9e1"
+          ],
+          "question": "What activities does Melanie partake in?",
+          "source_ids": []
+        }
+      ],
+      "packing_version": "original-question-whole-group-v1",
+      "source_delivery": {
+        "attempted_source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+          "f69a07a79a2d5f4c8188300a/conv-26/D15:10"
+        ],
+        "delivered_source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+          "f69a07a79a2d5f4c8188300a/conv-26/D15:10"
+        ],
+        "expected_source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+          "f69a07a79a2d5f4c8188300a/conv-26/D15:10"
+        ],
+        "provider_accepted": true,
+        "status": "accepted"
+      },
+      "token_budget_method": "regex-word-punctuation-v1",
+      "truncated": true
+    },
+    "joint_resolution": {
+      "coverage": [
+        {
+          "gap": "No delivered evidence lists specific activities Melanie actually partakes in; only intended outing planning is present, and the raw source refers to Caroline's activities, not Melanie's. A complete list of Melanie's activities is therefore missing.",
+          "memory_ids": [],
+          "question": "What activities does Melanie partake in?",
+          "revision_reason": "Prior coverage cited memory IDs that are not delivered in the current memory candidate set, so those earlier activity facts cannot be verified or retained; the current evidence only contains Melanie's outing-planning intentions.",
+          "source_ids": [],
+          "status": "insufficient"
+        }
+      ],
+      "decisions": [
+        {
+          "memory_id": "cf20ca008c10cd79816dba6e",
+          "reason": "This records Melanie's intention to think about possible outing activities, not an actual activity she partakes in.",
+          "selected": false
+        },
+        {
+          "memory_id": "7ed5e6554c01d85740df077a",
+          "reason": "This is a proposal for a family outing and does not identify a specific activity Melanie partakes in.",
+          "selected": false
+        },
+        {
+          "memory_id": "5ef5b0462b050b51ccdca1ec",
+          "reason": "This is an agreement to plan something special, not evidence of a specific activity Melanie actually partakes in.",
+          "selected": false
+        }
+      ],
+      "effective_memory_ids": [],
+      "effective_source_ids": [],
+      "explanation": "No delivered memory identifies a specific activity Melanie actually partakes in. The supplied memories only concern future or intended outing planning: proposing a family outing, agreeing to plan something special, and intending to think about possible activities. The supplied raw source is Melanie asking Caroline about Caroline's projects or activities, so it does not support an activity for Melanie. Prior coverage cited memories that are not delivered in the current memory set, so those earlier facts cannot be retained here.",
+      "status": "insufficient",
+      "supplemental_relations": []
+    },
+    "final_memory_count": 0,
+    "final_source_count": 0,
+    "answer": {
+      "answer": "No information available.",
+      "citations": [],
+      "explanation": "No delivered memories or raw sources identify specific activities Melanie actually partakes in. The only related evidence concerns intended outing planning (proposing a family outing, agreeing to plan something special, intending to think about possible activities), which does not establish accomplished activities. The raw source refers to Caroline's projects/activities, not Melanie's. A complete list of Melanie's activities is therefore missing.",
+      "status": "insufficient"
+    }
+  },
+  "qa53": {
+    "saved_memory_time": [
+      {
+        "content": "Caroline applied to adoption agencies.",
+        "time": {
+          "original_expression": "this week",
+          "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": "Speaker says she applied 'this week'; session time is 23 August 2023, so the event falls in the week preceding that session."
+        }
+      },
+      {
+        "content": "Caroline attended an adoption advice/assistance group.",
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        }
+      }
+    ],
+    "answers": {
+      "dynamic": {
+        "answer": "Caroline applied to adoption agencies \"this week,\" as stated in her message on 23 August 2023 — i.e., during the week preceding that date.",
+        "citations": [
+          {
+            "memory_id": "30b7c2fe26350ed64a276cb2",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+            ]
+          }
+        ],
+        "explanation": "The source gives only the relative expression \"this week\" anchored to the 23 August 2023 session, so the exact day is not specified.",
+        "status": "sufficient"
+      },
+      "dynamic_raw_fallback": {
+        "answer": "Caroline applied to adoption agencies \"this week,\" in a message sent at 3:31 pm on 23 August 2023; the exact day within that week is not stated.",
+        "citations": [
+          {
+            "memory_id": null,
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+            ]
+          }
+        ],
+        "explanation": "The raw source contains Caroline's direct statement that she applied to adoption agencies \"this week,\" anchored to the week containing 23 August 2023. The exact day is unspecified, so the original anchored expression is retained.",
+        "status": "sufficient"
+      }
+    },
+    "source": {
+      "dia_id": "D13:1",
+      "session_time": "3:31 pm on 23 August, 2023",
+      "speaker": "Caroline",
+      "text": "Hi Melanie! Hope you're doing good. Guess what I did this week? I took the first step towards becoming a mom - I applied to adoption agencies! It's a big decision, but I think I'm ready to give all my love to a child. I got lots of help from this adoption advice/assistance group I attended. It was great!"
+    }
+  },
+  "B_refusal_scoring": {
+    "qa178_category": 5,
+    "qa178_original_answer": "No",
+    "note": "Original category-5 scorer matches refusal phrases even when this original answer is No; do not call grounded negative answers hallucinations."
+  }
+}
