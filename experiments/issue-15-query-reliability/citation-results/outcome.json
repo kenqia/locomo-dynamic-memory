@@ -1,0 +1,77 @@
+{
+  "started_at": "2026-10-21T13:13:24.498865+00:00",
+  "status": "completed",
+  "runs": {
+    "primary": {
+      "run_id": "eadaa41f909d43ff9a54e795cd0ea60f",
+      "status": "completed",
+      "progress": {
+        "total": 1,
+        "pending": 0,
+        "running": 0,
+        "succeeded": 1,
+        "failed": 0,
+        "interrupted": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "authorized_call_limit": 6,
+  "completed_at": "2026-10-21T13:14:10.910231+00:00",
+  "budget_after": {
+    "limit": 1170,
+    "previous_calls": 1164,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-query-followup-frozen/campaign.sqlite3",
+    "prior_sha256": "a2ce7f2dcf4c9f65036501b644c2b71865986dd0045506469fbfbda119e6d25b",
+    "reserved_new_calls": 5,
+    "reserved_total_calls": 1169,
+    "phases": {
+      "query-reliability-frozen-1": 5
+    },
+    "operations": {
+      "query_analysis": 1,
+      "resolve_raw": 2,
+      "answer_raw": 2
+    },
+    "outcomes": {
+      "succeeded": 4,
+      "invalid_output": 1
+    },
+    "usage": {
+      "generation_calls": 5,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 0,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 27180,
+        "completion_tokens": 7946,
+        "total_tokens": 35126
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 27180,
+          "calls_with_reported_usage": 5,
+          "calls_missing_usage": 0,
+          "complete": true
+        },
+        "completion_tokens": {
+          "reported": 7946,
+          "calls_with_reported_usage": 5,
+          "calls_missing_usage": 0,
+          "complete": true
+        },
+        "total_tokens": {
+          "reported": 35126,
+          "calls_with_reported_usage": 5,
+          "calls_missing_usage": 0,
+          "complete": true
+        }
+      },
+      "provider_usage_complete": true,
+      "provider_retries": 1,
+      "reported_provider_seconds": 38.75718530199083
+    }
+  },
+  "source_build_unchanged": true,
+  "snapshot_build_unchanged": true
+}

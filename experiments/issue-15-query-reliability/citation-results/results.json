@@ -1,0 +1,1095 @@
+{
+  "status": "completed",
+  "baseline": "experiments/issue-15-query-reliability/followup-results/results.json",
+  "summaries": {
+    "primary": {
+      "planned": 1,
+      "observed": 1,
+      "succeeded": 1,
+      "answerable_f1": 0.75,
+      "failed": 0,
+      "successful_answerable_f1": 0.75,
+      "matched_questions": 1,
+      "matched_before": 0,
+      "matched_after": 0.75
+    }
+  },
+  "rows": [
+    {
+      "group": "primary",
+      "qa_index": 136,
+      "question": "What does Melanie do to keep herself busy during her pottery break?",
+      "reference_answer": "Read a book and paint.",
+      "category": 4,
+      "strategy": "dynamic_raw_fallback",
+      "status": "succeeded",
+      "answer": "Reading the book Caroline recommended and painting.",
+      "explanation": "Melanie says she had to take a break from pottery after an injury and has been reading the recommended book and painting to keep busy. The pottery break is context; the busy activities are reading and painting.",
+      "answer_status": "sufficient",
+      "citations": [
+        {
+          "memory_id": "eef2de7a1146b7880239b699",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+          ]
+        },
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+          ]
+        },
+        {
+          "memory_id": "bc0c987112d83fee8236bbb4",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+          ]
+        }
+      ],
+      "score": 0.75,
+      "baseline_answer": null,
+      "baseline_score": 0,
+      "first_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:2"
+      ],
+      "joint_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:11"
+      ],
+      "resolution_budgets": {
+        "joint_resolve": {
+          "incomplete_relations": [
+            {
+              "label": "UPDATE",
+              "missing_memory_ids": [
+                "84713399b8856b32289d625e"
+              ],
+              "new_memory_id": "bc0c987112d83fee8236bbb4",
+              "old_memory_id": "84713399b8856b32289d625e"
+            },
+            {
+              "label": "UPDATE",
+              "missing_memory_ids": [
+                "84713399b8856b32289d625e"
+              ],
+              "new_memory_id": "8af2ffcad4b7c2cc004d3ed1",
+              "old_memory_id": "84713399b8856b32289d625e"
+            },
+            {
+              "label": "UPDATE",
+              "missing_memory_ids": [
+                "48981a97b7c240dc2a1377d9"
+              ],
+              "new_memory_id": "bc0c987112d83fee8236bbb4",
+              "old_memory_id": "48981a97b7c240dc2a1377d9"
+            },
+            {
+              "label": "UPDATE",
+              "missing_memory_ids": [
+                "43e4c0bc36df6dd690cfdc9a"
+              ],
+              "new_memory_id": "bc0c987112d83fee8236bbb4",
+              "old_memory_id": "43e4c0bc36df6dd690cfdc9a"
+            }
+          ],
+          "input_budget": 12000,
+          "input_token_count": 11587,
+          "omitted_groups": [
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "43e4c0bc36df6dd690cfdc9a"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "ab6d302c8ec19df34df48bdb"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "6319012a17441f4eb602f046"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "2e841c2209c95b07aa165bee"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "84713399b8856b32289d625e"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "248c91bf208897034bc744d7"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "3534a1344291fe87100f398d"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "48981a97b7c240dc2a1377d9"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "21301a30408df7ba29407309"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "cf20ca008c10cd79816dba6e"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "20eb29adb2155e25475046dd"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "e20178f9a103e8fc8f8965bb"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "7ed5e6554c01d85740df077a"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "5ef5b0462b050b51ccdca1ec"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "5b45610ccabdb4df708e6a68"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "35359e989f7932d1968e902a"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "6534d081d8a862191bc19fec"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "a823f90d2c00c3d98a6e197c"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "b9a9011de84e4bbd7d52ae3d"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "1bd0dc950a72d4aa40ec6e95"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "488e21b483101e953887a94d"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "009c21959766c5b534afcaf8"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "64db540fdb11f1013ce0c6a8"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "8e5fd562caf75df696399a41"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            }
+          ],
+          "omitted_previous_evidence": [],
+          "packing_version": "core-source-distinct-items-v2",
+          "source_delivery": {
+            "attempted_source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:14",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:15",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:16",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:7",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:9",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:11"
+            ],
+            "delivered_source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:14",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:15",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:16",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:7",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:9",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:11"
+            ],
+            "expected_source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:14",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:15",
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:16",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:7",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:9",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:11"
+            ],
+            "provider_accepted": true,
+            "status": "accepted"
+          },
+          "token_budget_method": "regex-word-punctuation-v1",
+          "truncated": true
+        },
+        "resolve": {
+          "incomplete_relations": [
+            {
+              "label": "UPDATE",
+              "missing_memory_ids": [
+                "84713399b8856b32289d625e"
+              ],
+              "new_memory_id": "bc0c987112d83fee8236bbb4",
+              "old_memory_id": "84713399b8856b32289d625e"
+            },
+            {
+              "label": "UPDATE",
+              "missing_memory_ids": [
+                "84713399b8856b32289d625e"
+              ],
+              "new_memory_id": "8af2ffcad4b7c2cc004d3ed1",
+              "old_memory_id": "84713399b8856b32289d625e"
+            },
+            {
+              "label": "UPDATE",
+              "missing_memory_ids": [
+                "48981a97b7c240dc2a1377d9"
+              ],
+              "new_memory_id": "bc0c987112d83fee8236bbb4",
+              "old_memory_id": "48981a97b7c240dc2a1377d9"
+            },
+            {
+              "label": "UPDATE",
+              "missing_memory_ids": [
+                "43e4c0bc36df6dd690cfdc9a"
+              ],
+              "new_memory_id": "bc0c987112d83fee8236bbb4",
+              "old_memory_id": "43e4c0bc36df6dd690cfdc9a"
+            }
+          ],
+          "input_budget": 12000,
+          "input_token_count": 11657,
+          "omitted_groups": [
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "43e4c0bc36df6dd690cfdc9a"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "ab6d302c8ec19df34df48bdb"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "2e841c2209c95b07aa165bee"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "84713399b8856b32289d625e"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "248c91bf208897034bc744d7"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "3534a1344291fe87100f398d"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "48981a97b7c240dc2a1377d9"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "21301a30408df7ba29407309"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "cf20ca008c10cd79816dba6e"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "20eb29adb2155e25475046dd"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "e20178f9a103e8fc8f8965bb"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "7ed5e6554c01d85740df077a"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "5ef5b0462b050b51ccdca1ec"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "5b45610ccabdb4df708e6a68"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "35359e989f7932d1968e902a"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "6534d081d8a862191bc19fec"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "a823f90d2c00c3d98a6e197c"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "b9a9011de84e4bbd7d52ae3d"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "1bd0dc950a72d4aa40ec6e95"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "488e21b483101e953887a94d"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "009c21959766c5b534afcaf8"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "64db540fdb11f1013ce0c6a8"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            },
+            {
+              "endpoints": [
+                [
+                  "memory",
+                  "8e5fd562caf75df696399a41"
+                ]
+              ],
+              "reason": "resolution_input_budget"
+            }
+          ],
+          "packing_version": "core-source-distinct-items-v2",
+          "source_delivery": {
+            "attempted_source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:2"
+            ],
+            "delivered_source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:2"
+            ],
+            "expected_source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:2"
+            ],
+            "provider_accepted": true,
+            "status": "accepted"
+          },
+          "token_budget_method": "regex-word-punctuation-v1",
+          "truncated": true
+        }
+      },
+      "source_sets": {
+        "answer_context": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+        ],
+        "effective": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+        ],
+        "expanded": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+          "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+          "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+          "f69a07a79a2d5f4c8188300a/conv-26/D8:4",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+          "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+          "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+          "f69a07a79a2d5f4c8188300a/conv-26/D7:24",
+          "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+          "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+          "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+          "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+          "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+          "f69a07a79a2d5f4c8188300a/conv-26/D7:22",
+          "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+          "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+          "f69a07a79a2d5f4c8188300a/conv-26/D14:32"
+        ],
+        "initial": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+          "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+          "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+          "f69a07a79a2d5f4c8188300a/conv-26/D8:4",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+          "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+          "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+          "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+          "f69a07a79a2d5f4c8188300a/conv-26/D7:24",
+          "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+          "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+        ]
+      },
+      "source_coverage": {
+        "answer_context": 1.0,
+        "effective": 1.0,
+        "expanded": 1.0,
+        "initial": 1.0
+      },
+      "memory_rankings": {
+        "answer_context": [
+          "bc0c987112d83fee8236bbb4",
+          "eef2de7a1146b7880239b699"
+        ],
+        "effective": [
+          "bc0c987112d83fee8236bbb4",
+          "eef2de7a1146b7880239b699"
+        ],
+        "expanded": [
+          "bc0c987112d83fee8236bbb4",
+          "6e0a899cb0a4c553a939fce3",
+          "eef2de7a1146b7880239b699",
+          "a393d7fcd7db15da9df52fab",
+          "43e4c0bc36df6dd690cfdc9a",
+          "f7dc5f80d0bd262e64a8f605",
+          "ab6d302c8ec19df34df48bdb",
+          "6319012a17441f4eb602f046",
+          "2e841c2209c95b07aa165bee",
+          "12b66a85602fad1ff4864a4e",
+          "8af2ffcad4b7c2cc004d3ed1",
+          "84713399b8856b32289d625e",
+          "cf20ca008c10cd79816dba6e",
+          "248c91bf208897034bc744d7",
+          "009c21959766c5b534afcaf8",
+          "64db540fdb11f1013ce0c6a8",
+          "8e5fd562caf75df696399a41",
+          "3534a1344291fe87100f398d",
+          "48981a97b7c240dc2a1377d9",
+          "20eb29adb2155e25475046dd",
+          "e20178f9a103e8fc8f8965bb",
+          "7ed5e6554c01d85740df077a",
+          "5ef5b0462b050b51ccdca1ec",
+          "5b45610ccabdb4df708e6a68",
+          "35359e989f7932d1968e902a",
+          "6534d081d8a862191bc19fec",
+          "a823f90d2c00c3d98a6e197c",
+          "21301a30408df7ba29407309",
+          "b9a9011de84e4bbd7d52ae3d",
+          "1bd0dc950a72d4aa40ec6e95",
+          "488e21b483101e953887a94d"
+        ],
+        "initial": [
+          "bc0c987112d83fee8236bbb4",
+          "6e0a899cb0a4c553a939fce3",
+          "eef2de7a1146b7880239b699",
+          "a393d7fcd7db15da9df52fab",
+          "43e4c0bc36df6dd690cfdc9a",
+          "f7dc5f80d0bd262e64a8f605",
+          "ab6d302c8ec19df34df48bdb",
+          "6319012a17441f4eb602f046",
+          "2e841c2209c95b07aa165bee",
+          "12b66a85602fad1ff4864a4e",
+          "8af2ffcad4b7c2cc004d3ed1",
+          "84713399b8856b32289d625e",
+          "cf20ca008c10cd79816dba6e",
+          "248c91bf208897034bc744d7",
+          "009c21959766c5b534afcaf8",
+          "64db540fdb11f1013ce0c6a8",
+          "8e5fd562caf75df696399a41",
+          "3534a1344291fe87100f398d",
+          "48981a97b7c240dc2a1377d9",
+          "20eb29adb2155e25475046dd"
+        ]
+      },
+      "raw_triggered": true,
+      "recovery": null,
+      "strategy_recovery": null,
+      "initial_supported_memory_ids": [
+        "bc0c987112d83fee8236bbb4",
+        "eef2de7a1146b7880239b699"
+      ],
+      "final_effective_memory_ids": [
+        "bc0c987112d83fee8236bbb4",
+        "eef2de7a1146b7880239b699"
+      ],
+      "initial_resolution": {
+        "coverage": [
+          {
+            "gap": "Memory supports painting to keep busy and the pottery break, but it does not capture the source's additional mention of reading the recommended book; no memory or raw_source ID supports that item.",
+            "memory_ids": [
+              "bc0c987112d83fee8236bbb4",
+              "eef2de7a1146b7880239b699"
+            ],
+            "question": "What does Melanie do to keep herself busy during her pottery break?",
+            "revision_reason": null,
+            "source_ids": [],
+            "status": "insufficient"
+          }
+        ],
+        "decisions": [
+          {
+            "memory_id": "bc0c987112d83fee8236bbb4",
+            "reason": "States Melanie had to take a break from pottery, establishing the pottery-break context needed by the question.",
+            "selected": true
+          },
+          {
+            "memory_id": "eef2de7a1146b7880239b699",
+            "reason": "Directly states Melanie has been painting to keep busy, which answers the requested keep-busy activity.",
+            "selected": true
+          },
+          {
+            "memory_id": "6e0a899cb0a4c553a939fce3",
+            "reason": "Records a past pottery workshop with her kids, not an activity she used to keep busy during the pottery break.",
+            "selected": false
+          },
+          {
+            "memory_id": "f7dc5f80d0bd262e64a8f605",
+            "reason": "Describes pottery as a huge part of her life, but does not name any keep-busy activity during the break.",
+            "selected": false
+          },
+          {
+            "memory_id": "12b66a85602fad1ff4864a4e",
+            "reason": "Records pot-making at a past workshop, not a current or break-time keep-busy activity.",
+            "selected": false
+          },
+          {
+            "memory_id": "8af2ffcad4b7c2cc004d3ed1",
+            "reason": "Records making a bowl in pottery class, which is not the activity she used to keep busy during the break.",
+            "selected": false
+          },
+          {
+            "memory_id": "a393d7fcd7db15da9df52fab",
+            "reason": "General interest in pottery does not answer what she did to keep busy during the pottery break.",
+            "selected": false
+          },
+          {
+            "memory_id": "6319012a17441f4eb602f046",
+            "reason": "Describes pottery as self-expression and peace, but does not name the keep-busy activity during the break.",
+            "selected": false
+          }
+        ],
+        "effective_memory_ids": [
+          "bc0c987112d83fee8236bbb4",
+          "eef2de7a1146b7880239b699"
+        ],
+        "effective_source_ids": [],
+        "explanation": "The selected memories support the pottery-break context and that Melanie has been painting to keep busy. The supplied source text also mentions reading a recommended book to keep busy, but there is no memory candidate or raw_source ID for that detail, so the full list of keep-busy activities is not completely evidenced.",
+        "status": "insufficient",
+        "supplemental_relations": []
+      },
+      "final_resolution": {
+        "coverage": [
+          {
+            "gap": null,
+            "memory_ids": [
+              "bc0c987112d83fee8236bbb4",
+              "eef2de7a1146b7880239b699"
+            ],
+            "question": "What does Melanie do to keep herself busy during her pottery break?",
+            "revision_reason": "New raw evidence D17:10 supplies the previously missing reading activity: Melanie says she has been reading the recommended book and painting to keep busy. The earlier pottery-break support and painting activity remain supported, and the prior gap about reading is resolved.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+            ],
+            "status": "sufficient"
+          }
+        ],
+        "decisions": [
+          {
+            "memory_id": "bc0c987112d83fee8236bbb4",
+            "reason": "Supports the pottery-break context: Melanie says she had to take a break from pottery.",
+            "selected": true
+          },
+          {
+            "memory_id": "eef2de7a1146b7880239b699",
+            "reason": "Directly supports one busy activity during the break: Melanie has been painting to keep busy.",
+            "selected": true
+          },
+          {
+            "memory_id": "f7dc5f80d0bd262e64a8f605",
+            "reason": "Describes pottery as important in her life, not an activity she is doing during the break.",
+            "selected": false
+          },
+          {
+            "memory_id": "6e0a899cb0a4c553a939fce3",
+            "reason": "Describes an earlier pottery workshop with her kids, not what she does during the later break.",
+            "selected": false
+          },
+          {
+            "memory_id": "12b66a85602fad1ff4864a4e",
+            "reason": "Adds workshop detail about making pots, not an activity during the pottery break.",
+            "selected": false
+          },
+          {
+            "memory_id": "8af2ffcad4b7c2cc004d3ed1",
+            "reason": "Describes an earlier bowl made in pottery class, not a busy activity during the break.",
+            "selected": false
+          },
+          {
+            "memory_id": "a393d7fcd7db15da9df52fab",
+            "reason": "States a general interest in pottery, not what she does to keep busy during the break.",
+            "selected": false
+          }
+        ],
+        "effective_memory_ids": [
+          "bc0c987112d83fee8236bbb4",
+          "eef2de7a1146b7880239b699"
+        ],
+        "effective_source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+        ],
+        "explanation": "Melanie says she had to take a break from pottery and, when asked how she is doing, says she has been reading the book Caroline recommended and painting to keep busy. The painting activity is captured by memory eef2de7a1146b7880239b699, and raw source D17:10 also supplies the previously missing reading activity. Raw source D17:8 supports the pottery break context.",
+        "status": "sufficient",
+        "supplemental_relations": []
+      },
+      "delivered_coverage": [
+        {
+          "gap": null,
+          "memory_ids": [
+            "bc0c987112d83fee8236bbb4",
+            "eef2de7a1146b7880239b699"
+          ],
+          "question": "What does Melanie do to keep herself busy during her pottery break?",
+          "revision_reason": "New raw evidence D17:10 supplies the previously missing reading activity: Melanie says she has been reading the recommended book and painting to keep busy. The earlier pottery-break support and painting activity remain supported, and the prior gap about reading is resolved.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+          ],
+          "status": "sufficient"
+        }
+      ],
+      "time_diagnostics": [
+        {
+          "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+          "derived_time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+            "basis": "relative to session time 3 July 2023",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "yesterday",
+            "valid_from": null,
+            "valid_to": null
+          },
+          "memory_id": "84713399b8856b32289d625e",
+          "original_expression": "yesterday",
+          "query_time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+            "basis": "Source expression \"yesterday\" anchored to 2023-07-03; 2023-07-02",
+            "event_end": "2023-07-02",
+            "event_start": "2023-07-02",
+            "original_expression": "yesterday",
+            "valid_from": null,
+            "valid_to": null
+          },
+          "reason": "source_relative_time_overrides_derived_time",
+          "session_time": "1:36 pm on 3 July, 2023"
+        },
+        {
+          "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+          "derived_time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+            "basis": "relative to session time 25 August 2023; day before",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "yesterday",
+            "valid_from": null,
+            "valid_to": null
+          },
+          "memory_id": "48981a97b7c240dc2a1377d9",
+          "original_expression": "yesterday",
+          "query_time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+            "basis": "Source expression \"yesterday\" anchored to 2023-08-25; 2023-08-24",
+            "event_end": "2023-08-24",
+            "event_start": "2023-08-24",
+            "original_expression": "yesterday",
+            "valid_from": null,
+            "valid_to": null
+          },
+          "reason": "source_relative_time_overrides_derived_time",
+          "session_time": "1:33 pm on 25 August, 2023"
+        }
+      ],
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 5,
+        "provider_retries": 1,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 38.75718530199083,
+        "reported_tokens": {
+          "completion_tokens": 7946,
+          "prompt_tokens": 27180,
+          "total_tokens": 35126
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 5,
+            "complete": true,
+            "reported": 7946
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 5,
+            "complete": true,
+            "reported": 27180
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 5,
+            "complete": true,
+            "reported": 35126
+          }
+        }
+      },
+      "trace_id": "d6d65446f8a14d53afd275aba9ed43fd"
+    }
+  ],
+  "budget_after": {
+    "limit": 1170,
+    "previous_calls": 1164,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-query-followup-frozen/campaign.sqlite3",
+    "prior_sha256": "a2ce7f2dcf4c9f65036501b644c2b71865986dd0045506469fbfbda119e6d25b",
+    "reserved_new_calls": 5,
+    "reserved_total_calls": 1169,
+    "phases": {
+      "query-reliability-frozen-1": 5
+    },
+    "operations": {
+      "query_analysis": 1,
+      "resolve_raw": 2,
+      "answer_raw": 2
+    },
+    "outcomes": {
+      "succeeded": 4,
+      "invalid_output": 1
+    },
+    "usage": {
+      "generation_calls": 5,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 0,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 27180,
+        "completion_tokens": 7946,
+        "total_tokens": 35126
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 27180,
+          "calls_with_reported_usage": 5,
+          "calls_missing_usage": 0,
+          "complete": true
+        },
+        "completion_tokens": {
+          "reported": 7946,
+          "calls_with_reported_usage": 5,
+          "calls_missing_usage": 0,
+          "complete": true
+        },
+        "total_tokens": {
+          "reported": 35126,
+          "calls_with_reported_usage": 5,
+          "calls_missing_usage": 0,
+          "complete": true
+        }
+      },
+      "provider_usage_complete": true,
+      "provider_retries": 1,
+      "reported_provider_seconds": 38.75718530199083
+    }
+  },
+  "source_build_unchanged": true,
+  "snapshot_build_unchanged": true
+}

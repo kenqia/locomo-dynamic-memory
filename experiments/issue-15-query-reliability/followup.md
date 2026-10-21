@@ -140,5 +140,27 @@ Schema、冲突双方、人物与来源合法性规则没有放松，也没有�
 单题计划冻结于
 `/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-citation-followup-frozen`，
 副本为 [citation-plan.json](citation-plan.json) 和 [citation-plan.sha256](citation-plan.sha256)。
-状态 frozen_pending_authorization；需确认的是超出原“每项单轮”的额外QA 136复查范围，
-不是提高原32次总额度。执行时使用 followup.py execute --citation-only --authorized-call-limit 6。
+用户随后明确批准该额外单题范围，保持原32次总额度不变。
+执行时使用 followup.py execute --citation-only --authorized-call-limit 6。
+
+## 引用修复后的单题真实结果
+
+2026-10-21 21:13–21:14 Asia/Shanghai，QA 136 单题完成，实际5/6次调用，历史合计1169次。
+本轮合计23+5=28次，低于原32次上限；两轮失败和重试均计入账本。
+单题输入27,180、输出7,946，共35,126 tokens；一条Answer响应为无效JSON，有限重试后成功。
+两轮合计239,897 tokens，未出现未知用量。来源与快照Build摘要不变。
+
+答案为 “Reading the book Caroline recommended and painting.”，F1 0.750。
+这次初判insufficient，但已经选择painting及陶艺休息背景的两条Memory；
+原文补查后两条原支持均保留，补充D17:10的reading，转为sufficient。
+joint_resolve 的 omitted_previous_evidence 为空，输入11,587/12,000。
+最终Memory与独立原文的引用均合法。原7项中的失败结果仍保留，不覆盖为成功。
+
+最终产物为 [citation-results/report.md](citation-results/report.md) 与
+[source-audit.json](citation-results/source-audit.json)。这次走的是实际增量原文路径；
+它验证最终答案、来源合法性和部分支持保留，不足以证明不触发补查时的引用失败率已归零。
+源文本直引的合法格式表由受控回归验证。Dynamic本次直接成功，备用故障路径也只在离线
+受控测试中验证。没有额外重复采样或扩大题单，不宣称统计稳定性或所有未知活动已穷尽。
+
+最终作者复核保留上述验证边界。仅新增实验结果与记录后再次运行编译及diff检查；
+生产代码的最终全量回归仍为405 passed、4 skipped。
