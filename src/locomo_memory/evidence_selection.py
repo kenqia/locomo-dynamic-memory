@@ -54,3 +54,32 @@ def focus_memories(question, memories, sources, groups):
                      'direct_original_question_match' if m['memory_id'] in direct else 'named_entity_or_connected_history'} for m in selected],
         'omitted':[{'memory_id':m['memory_id'],'reason':'no_original_question_match_or_connected_history'}
                    for m in memories if m['memory_id'] not in keep]}
+
+
+PACKING_VERSION = 'original-question-whole-group-v1'
+
+
+def rank_evidence_groups(question, memories, raw, sources, groups):
+    """Order whole groups by their best lexical match, keeping stable ties.
+
+    This only changes delivery priority. It does not filter candidates or decide
+    whether evidence answers the question. Reuse English stemming and stop words.
+    """
+    stemmer = PorterStemmer()
+
+    def terms(text):
+        return {stemmer.stem(t) for t in tokenize(text) if t not in STOP_WORDS}
+
+    names = set().union(*(terms(m['entity_id'].replace('_', ' ')) for m in memories))
+    question_terms = terms(question)
+    anchors = question_terms - names
+    scores = {}
+    for m in memories:
+        text = ' '.join([m['content'], m['state_dimension'].replace('_', ' '), m.get('state_value') or '',
+                         *[sources[sid]['text'] for sid in m['source_ids']]])
+        scores[('memory', m['memory_id'])] = (len(anchors & terms(text)),
+                                              len(question_terms & terms(m['entity_id'].replace('_', ' '))))
+    for source in raw:
+        scores[('raw', source['source_id'])] = (len(anchors & terms(source['text'])),
+                                               len(question_terms & names & terms(source.get('speaker', ''))))
+    return sorted(groups, key=lambda group: max(scores[n] for n in group), reverse=True)

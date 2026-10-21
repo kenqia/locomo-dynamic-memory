@@ -443,3 +443,53 @@ def test_joint_resolution_budget_loss_cannot_erase_still_delivered_support():
     result = MixedResolution.model_validate(response, context=context)
     assert result.effective_memory_ids == ['m1']
     assert result.coverage[0].status == 'insufficient'
+
+
+@pytest.mark.parametrize('final', [False, True])
+def test_packing_prioritizes_relevant_whole_group_before_unrelated_evidence(settings, final):
+    from locomo_memory.raw_queries import pack_payload
+
+    sources = {f's{i}': {'source_id': f's{i}', 'text': text} for i, text in enumerate([
+        'Alex enjoys gardening. ' + 'soil ' * 450,
+        'Alex enjoys painting. ' + 'paint ' * 450,
+        'Alex researched adoption agencies.',
+        'Alex denies researching adoption agencies.',
+    ])}
+    memories = [dict(draft([f's{i}'], content=text, state_dimension=f'dimension{i}'),
+                     memory_id=f'm{i}', state_key=f'key{i}')
+                for i, text in enumerate(['Alex enjoys gardening.', 'Alex enjoys painting.',
+                                          'Alex researched adoption agencies.', 'Alex denies that research.'])]
+    base = {'question': 'What did Alex research?', 'relations': [
+        {'old_memory_id': 'm2', 'new_memory_id': 'm3', 'label': 'CONFLICT'}]}
+    # Each irrelevant group fits alone, but leaves no room for the relevant pair.
+    from locomo_memory.model import request_token_estimate
+    from locomo_memory.query_schemas import EvidenceAnswer
+    from locomo_memory.raw_schemas import MixedResolution
+    operation, schema = ('answer_raw', EvidenceAnswer) if final else ('resolve_raw', MixedResolution)
+    fixed_cost = request_token_estimate(operation, {**base, 'relations': [], 'memories': [], 'sources': [], 'raw_sources': []}, schema)
+    local = settings.model_copy(update={'resolution_input_budget': fixed_cost + 700, 'evidence_token_budget': 650})
+    payload, audit = pack_payload(base, memories, [], sources, local, final=final)
+    assert [m['memory_id'] for m in payload['memories']][:2] == ['m2', 'm3']
+    assert payload['relations'] == base['relations']
+    assert {s['source_id'] for s in payload['sources']} >= {'s2', 's3'}
+    assert audit['truncated']
+    assert audit['input_token_count'] <= local.resolution_input_budget
+    omitted = {identity for g in audit['omitted_groups'] for kind, identity in g['endpoints']}
+    assert not omitted.intersection({'m2', 'm3'})
+
+
+def test_packing_keeps_ties_stable_and_audits_oversized_connected_raw_group(settings):
+    from locomo_memory.raw_queries import pack_payload
+
+    memories = [dict(draft(['s0'], content='Alex researched agencies.'), memory_id='m0', state_key='k0')]
+    sources = {'s0': {'source_id': 's0', 'text': 'Alex researched agencies.'}}
+    raw = [{'source_id': 'r0', 'text': 'Alex researched agencies. ' + 'context ' * 1000},
+           {'source_id': 'r1', 'text': 'Alex cooks.'}, {'source_id': 'r2', 'text': 'Alex paints.'}]
+    base = {'question': 'What did Alex research?', 'coverage': [
+        {'question': 'Research?', 'memory_ids': ['m0'], 'source_ids': ['r0']}]}
+    payload, audit = pack_payload(base, memories, raw, sources,
+                                  settings.model_copy(update={'evidence_token_budget': 200}), final=True)
+    assert payload['memories'] == []
+    assert [s['source_id'] for s in payload['raw_sources']] == ['r1', 'r2']
+    assert audit['omitted_groups'] == [{'endpoints': [['raw', 'r0'], ['memory', 'm0']],
+                                       'reason': 'shared_evidence_budget'}]
