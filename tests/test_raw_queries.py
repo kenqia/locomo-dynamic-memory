@@ -499,7 +499,9 @@ def test_packing_keeps_ties_stable_and_audits_oversized_connected_raw_group(sett
     ('What activities does Alex partake in?', True),
     ('Which hobbies does Alex have?', True),
     ('List Alex\'s activities.', True),
-    ('Where does Alex live?', False),
+    ("Can you list Alex's hobbies?", True),
+    ("Could you enumerate Alex's activities?", True),
+    ('Which activity does Alex enjoy?', False),
 ])
 @pytest.mark.parametrize('extra_activity', [True, False])
 def test_enumeration_supplements_sufficient_partial_list_once_without_losing_support(settings, sample, question, enumeration, extra_activity):

@@ -13,6 +13,9 @@ from .raw_retrieval import retrieve_sources, RAW_RETRIEVAL_VERSION
 from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
 
 
+ENUMERATION_VERSION = 'explicit-enumeration-requests-v2'
+
+
 def record_delivery(delivery, metadata, *, accepted, error_code=None):
     calls = metadata.get('calls', [])
     attempted = accepted or bool(calls)
@@ -98,7 +101,8 @@ def evidence_status(resolution):
 def is_enumeration_question(question):
     """Recognize explicit English list requests without model or QA annotations."""
     return bool(re.search(r'\b(?:what|which)\b[^?;.]*\b(?:activities|hobbies)\b', question, re.I)
-                or re.search(r'(?:^|[?;.]\s*)(?:please\s+)?(?:list|enumerate)\b', question, re.I))
+                or re.search(r'(?:^|[?;.]\s*)(?:please\s+)?(?:(?:can|could|would|will)\s+you\s+)?'
+                             r'(?:please\s+)?(?:list|enumerate)\b', question.strip(), re.I))
 
 
 def run_raw_query(service, request, trace, memories, sources, snapshot):
@@ -120,11 +124,12 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
         'raw_retrieval':RAW_RETRIEVAL_VERSION,'resolve_schema':MixedResolution.model_json_schema(),
         'source_snapshot':snapshot_audit,'strategy':trace['strategy'],
         'evidence_profile':profile,'selection_version':FOCUS_VERSION,'packing_version':PACKING_VERSION,
+        'enumeration_version':ENUMERATION_VERSION,
         'answer_schema':EvidenceAnswer.model_json_schema(), 'answer_boundary_version':ANSWER_BOUNDARY_VERSION}).encode()).hexdigest()
     from .raw_schemas import RAW_RESOLUTION_PROMPT, RAW_ANSWER_PROMPT
     trace['query_fingerprint'] = hashlib.sha256(canonical_json({'fingerprint':trace['query_fingerprint'],
         'resolve_prompt':RAW_RESOLUTION_PROMPT,'answer_prompt':RAW_ANSWER_PROMPT}).encode()).hexdigest()
-    trace['raw_fallback'] = {**snapshot_audit,'triggered':False,'source_ids':[], 'token_count':0}
+    trace['raw_fallback'] = {**snapshot_audit,'coverage_policy_version':ENUMERATION_VERSION,'triggered':False,'source_ids':[], 'token_count':0}
     enumeration = is_enumeration_question(request.question)
     base = {'operation':'resolve_raw','question':request.question,'time':trace['time'],
             'analysis':trace['initial']['analysis'], 'relations':trace['relations'], 'evidence_profile':profile,

@@ -8,7 +8,7 @@ from .builds import BuildError
 from .imports import canonical_json
 from .retrieval import budget_tokens, tokenize, TOKEN_BUDGET_METHOD
 
-RAW_RETRIEVAL_VERSION = 'pinned-turn-bm25-windows-v2-enumeration-speakers'
+RAW_RETRIEVAL_VERSION = 'pinned-turn-bm25-windows-v3-enumeration-possessives'
 
 
 def pinned_sources(database, build_id):
@@ -42,6 +42,8 @@ def pinned_sources(database, build_id):
 
 def retrieve_sources(sources, question, gaps, settings, *, enumeration=False):
     terms = tokenize(question + ' ' + ' '.join(gaps))
+    if enumeration:
+        terms += [t[:-2] for t in tokenize(question) if t.endswith("'s")]
     # List questions often name a speaker whose own turns only say 'I'. Include
     # that real source field for broader matching, within the same hit/window limits.
     corpus = [tokenize((s['speaker'] + ' ' if enumeration else '') + s['text']) for s in sources]
