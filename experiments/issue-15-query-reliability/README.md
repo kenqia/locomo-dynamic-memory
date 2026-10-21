@@ -1,5 +1,9 @@
 # 查询质量与证据可靠性修复
 
+后续离线、展示与固定题真实复验见[复验记录](recheck.md)。逐题结果见
+[live-results/report.md](live-results/report.md)，原文与引用审计见
+[source-audit.json](live-results/source-audit.json)。
+
 2026-10-21，Asia/Shanghai。实现基线为 `5c1e23e`，工作区为
 `/home/kenqia/my_folder/locomo-worktrees/issue15`，分支为 `codex/issue-15-integration`。
 本轮不恢复已撤回的完整组排序或枚举强制补查，不重建 Memory，不改模型参数。
