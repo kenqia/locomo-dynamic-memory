@@ -1,5 +1,7 @@
 # 当前系统的五策略展示实验
 
+本轮已完成。20题五策略共100项均运行成功；40题Recall、10个真实动态查询、20条来源审阅和5个真实Trace只读Web回放均已保存。新增调用307/420次，历史累计1,476。结果见 [展示分析与截图](results/analysis.md)、[分题与指标](results/report.md)、[最终审计](results/final-audit.json)。本组原文兜底F1未胜出，不能据此宣称总体质量更优。
+
 本轮是课程项目的增量质量展示，不恢复已取消的Issue #15/#21全量实验。固定使用 `conv-26` 已有完整Build，保留历史实验，禁止重抽Memory或重跑关系构建。全部生成沿用现有评测、查询与候选检查API，不新增LLM评估器。
 
 ## 固定范围
@@ -44,6 +46,14 @@ HF_HUB_OFFLINE=1 python scripts/with_deepseek_env.py -- .venv/bin/python experim
 .venv/bin/python experiments/current-showcase/report.py --directory /absolute/completed-showcase-directory --output experiments/current-showcase/results
 ```
 
+对本轮已保存的真实结果运行只读Web检查：
+
+```sh
+.venv/bin/python experiments/current-showcase/web_run.py --directory /absolute/completed-showcase-directory --output experiments/current-showcase/web-recorded --browser-python /home/kenqia/my_folder/locomo-worktrees/browser-env/bin/python
+```
+
+该入口只在回环地址启动独立API与Streamlit，临时配置仅写入实验目录，不改全局配置。API拒绝所有非GET请求，模型适配器禁止生成，进程环境移除DeepSeek凭据；完成后停止本次启动的两个进程。浏览器按功能从已保存结果选例，不作为额外随机QA样本。
+
 ## 审阅边界
 
 [调用前来源审阅](dynamic-source-review.json)在本轮生成前完成。审阅者为当前开发助手，不是独立人类标注或课程动态真值；两处存储关系存在来源语义异议，保留异议，不把模型存储标签当成正确答案。当前Build没有真实SUPERSEDE/CONFLICT，不能用此样本估计这两类关系质量。
@@ -67,3 +77,14 @@ bash tests/browser/run.sh /home/kenqia/my_folder/locomo-worktrees/browser-env/bi
 退出0，Chromium156.0.8078.4，无pageerror/console error。五张合成截图和机器结果保存在 [web-controlled](web-controlled/issue-12-result.json)。截图包括当前问答、历史问答、冲突、证据不足和评测结果；同次还验证构建失败后显式重试及Memory导出。
 
 本轮未获远端任务写入请求，不更新Issue/Notion或推送代码。
+
+完成结果后的只读审阅及审计入口：
+
+```sh
+.venv/bin/python experiments/current-showcase/review.py --results experiments/current-showcase/results
+.venv/bin/python experiments/current-showcase/audit.py --directory /absolute/completed-showcase-directory --results experiments/current-showcase/results
+.venv/bin/python -m compileall -q experiments/current-showcase tests/browser/smoke.py
+git diff --check
+```
+
+审阅决定以作者判断JSON保存，绑定实际答案摘要与Trace；脚本不自动判断语义，不调用模型。真实Web前两次自动化超时记录保留，当前五场景已通过；详见结果分析。

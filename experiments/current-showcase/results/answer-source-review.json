@@ -1,0 +1,324 @@
+{
+  "summary": {
+    "planned": 20,
+    "reviewed": 20,
+    "citation_identity_valid": 20,
+    "source_support": {
+      "supported": 12,
+      "no_positive_claim": 6,
+      "qualified_inference": 1,
+      "partially_supported": 1
+    },
+    "adequacy": {
+      "answers_question": 8,
+      "answers_question_verbose": 1,
+      "conservative_refusal_gold_mismatch": 2,
+      "answers_question_with_uncertainty": 1,
+      "incomplete": 2,
+      "answers_question_lexical_mismatch": 1,
+      "off_target": 1,
+      "appropriate_refusal": 4
+    },
+    "reviewer": "Codex developer source inspection; not independent human gold or an LLM evaluator call",
+    "limitation": "Developer source inspection, not independent course ground truth. No-positive-claim refusals are separate from supported positive answers. Citation identity is distinct from entailment and completeness."
+  },
+  "records": [
+    {
+      "qa_index": 0,
+      "trace_id": "269cf1149a364f25a95556f71f3c7f49",
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "answer": "2023-05-07",
+      "answer_status": "sufficient",
+      "answer_sha256": "f975ab62ab85f3e724549b3d5219de573d522b2a397ec2ba48fb9e150a6f8a76",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "answers_question",
+      "reason": "D1:3 says yesterday, anchored to 8 May 2023; 7 May 2023 is supported."
+    },
+    {
+      "qa_index": 1,
+      "trace_id": "68151ebb21db4317a46fdb0c92a9cbc0",
+      "question": "When did Melanie paint a sunrise?",
+      "answer": "Last year (2022), relative to the 8 May 2023 conversation; the exact day or month is not stated.",
+      "answer_status": "sufficient",
+      "answer_sha256": "de428eea5b4492bb84ae83e1aea92da34a9bb79530ba232d3cba0d543d5cf001",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "answers_question_verbose",
+      "reason": "D1:14 explicitly says painted the lake sunrise last year; session is 8 May 2023, supporting 2022. The answer adds unnecessary date explanation, lowering lexical F1."
+    },
+    {
+      "qa_index": 3,
+      "trace_id": "753f32fcc4fc41269253353eadad7ebe",
+      "question": "What did Caroline research?",
+      "answer": "Caroline researched adoption agencies.",
+      "answer_status": "sufficient",
+      "answer_sha256": "e0b63152f1f4d457fc548bf22769075bc97dae3c0525cdb7d62025dfd14ce9f6",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "answers_question",
+      "reason": "D2:8 explicitly states researching adoption agencies, spoken by Caroline."
+    },
+    {
+      "qa_index": 11,
+      "trace_id": "1801b8296f3a4bca8cff777d95ea1e05",
+      "question": "Where did Caroline move from 4 years ago?",
+      "answer": "Sweden",
+      "answer_status": "sufficient",
+      "answer_sha256": "853637136575897a73cba3c5fb085e8c8a2627df22983d2bbe9ff158d11351b4",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "answers_question",
+      "reason": "D3:13 connects four years to moving from her home country; D4:3 identifies that country as Sweden. Both sources concern Caroline."
+    },
+    {
+      "qa_index": 14,
+      "trace_id": "8c36b1b83d6c487184ff34420baeff24",
+      "question": "Would Caroline still want to pursue counseling as a career if she hadn't received support growing up?",
+      "answer": "No information available.",
+      "answer_status": "insufficient",
+      "answer_sha256": "fcc38e69f67c04b0877c88bbb257e21f5711fe31d261e197a67c154baa6bfa2d",
+      "source_ids": [],
+      "citation_identity_valid": true,
+      "source_support": "no_positive_claim",
+      "adequacy": "conservative_refusal_gold_mismatch",
+      "reason": "No unsupported positive assertion. The counterfactual is not directly established; official gold permits a likely inference. Refusal therefore scores zero and is not counted as successful factual answering."
+    },
+    {
+      "qa_index": 22,
+      "trace_id": "a5bb5202dd6d438e81957340ee8b15a4",
+      "question": "Would Caroline likely have Dr. Seuss books on her bookshelf?",
+      "answer": "Likely yes — Caroline has lots of kids' books, including classics, which would plausibly include Dr. Seuss, though no specific Dr. Seuss title is named.",
+      "answer_status": "sufficient",
+      "answer_sha256": "d03d665e24d94654240063696345677cffb88d2abaa5018e9bb0f83de1759dc4",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "qualified_inference",
+      "adequacy": "answers_question_with_uncertainty",
+      "reason": "D6:9 supports owning children's classics, not actual Dr. Seuss possession. Answer says likely/plausibly and explicitly notes no title is named; preserve this as qualified inference rather than a directly verified fact."
+    },
+    {
+      "qa_index": 45,
+      "trace_id": "2c08ba6f387c4fe0ba0678800685a9b5",
+      "question": "When did Caroline attend a pride parade in August?",
+      "answer": "Friday 11 August 2023",
+      "answer_status": "sufficient",
+      "answer_sha256": "f68373b6bc45615c26947533c09cbdd525442caa5daf87be02c2f4e364d2cf25",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:4"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "answers_question",
+      "reason": "D11:4 says last Friday, relative to Monday 14 August 2023, yielding Friday 11 August."
+    },
+    {
+      "qa_index": 51,
+      "trace_id": "ffb4addc8c604738b13836ac52430889",
+      "question": "What has Melanie painted?",
+      "answer": "A horse painting; a landscape/still-life nature painting; a sunset-inspired painting; a nature-inspired painting made together with her partner; and an abstract painting.",
+      "answer_status": "sufficient",
+      "answer_sha256": "bc341855da39034296b89cbde90b52e66bcce428de6cce65eacdbdc5b67f70d4",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "partially_supported",
+      "adequacy": "incomplete",
+      "reason": "Horse, sunset inspiration, joint nature painting and abstract work have explicit cited support. The singular landscape/still-life nature painting combines favorite painting genres with a displayed work rather than an explicit textual description of that particular work. Sunrise from D1:14 is omitted. Do not label the whole list fully supported and complete."
+    },
+    {
+      "qa_index": 59,
+      "trace_id": "5fbf0afab3cb4c2ca2e0d164303443d0",
+      "question": "Would Caroline be considered religious?",
+      "answer": "No information available.",
+      "answer_status": "insufficient",
+      "answer_sha256": "fcc38e69f67c04b0877c88bbb257e21f5711fe31d261e197a67c154baa6bfa2d",
+      "source_ids": [],
+      "citation_identity_valid": true,
+      "source_support": "no_positive_claim",
+      "adequacy": "conservative_refusal_gold_mismatch",
+      "reason": "No unsupported assertion of religious identity. Religious symbols and destiny-related remarks permit the official tentative gold but do not state a definite identity. Record the refusal and lost QA coverage separately."
+    },
+    {
+      "qa_index": 60,
+      "trace_id": "6ac8041f8c4e4b12a4dc3a44555cd2f1",
+      "question": "What instruments does Melanie play?",
+      "answer": "Clarinet and violin.",
+      "answer_status": "sufficient",
+      "answer_sha256": "f4dca25804c1475c51a2d54c2484ba4458060367b08c913d671845a757363b09",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "answers_question",
+      "reason": "Melanie explicitly plays clarinet in D15:26 and her violin in D2:5; both items are present."
+    },
+    {
+      "qa_index": 68,
+      "trace_id": "38c84d1dd4ad481eb5353c0e781eddbc",
+      "question": "How long has Melanie been practicing art?",
+      "answer": "Seven years.",
+      "answer_status": "sufficient",
+      "answer_sha256": "d8f79dd3c78863d70f93f7827818f06fc3598f4c1154e6f5af69a971e58b34af",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "answers_question_lexical_mismatch",
+      "reason": "D16:8 states Seven years now on 13 September 2023. Seven years answers duration directly; official gold Since 2016 is lexically different. No exact start day should be invented."
+    },
+    {
+      "qa_index": 69,
+      "trace_id": "b353ddf15c544122b60a609bf423309f",
+      "question": "What personality traits might Melanie say Caroline has?",
+      "answer": "Melanie might say Caroline has the courage to be herself.",
+      "answer_status": "sufficient",
+      "answer_sha256": "ff502f66d19eac382e7bdf9dbfbaaf120343cf19cfbbfa83a2b9d0efcb851142",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "incomplete",
+      "reason": "D8:26 is Melanie explicitly praising Caroline's courage to be herself. The selected trait is supported, but the answer does not cover the broader thoughtful/authentic/driven reference set."
+    },
+    {
+      "qa_index": 102,
+      "trace_id": "d5ffd7997c274761b1a3f29c34d1859f",
+      "question": "What kind of books does Caroline have in her library?",
+      "answer": "Children's books, including classics, stories from different cultures, and educational books.",
+      "answer_status": "sufficient",
+      "answer_sha256": "5d35567898dac34baf3608313c5f6d68c0a9599a9c4ac7ed1df4c2fe3adc0656",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "answers_question",
+      "reason": "D6:9 explicitly lists children's classics, stories from different cultures and educational books. D6:7 gives future-library context; answer does not claim completed parenthood."
+    },
+    {
+      "qa_index": 130,
+      "trace_id": "481c067e2e574b40a6a842967b3034d3",
+      "question": "Which  classical musicians does Melanie enjoy listening to?",
+      "answer": "Bach and Mozart",
+      "answer_status": "sufficient",
+      "answer_sha256": "28ec0190beb1b87a6fec8877b5081b7916c6a1cd0feaf6d7bba87a5716bff631",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "answers_question",
+      "reason": "D15:28 names Bach and Mozart as classical music Melanie likes."
+    },
+    {
+      "qa_index": 144,
+      "trace_id": "b8c9980f178449a0affdc911949dbeda",
+      "question": "How did Melanie's son handle the accident?",
+      "answer": "He was in an accident during the roadtrip but was okay afterward.",
+      "answer_status": "sufficient",
+      "answer_sha256": "1b442edd2249c42ea5ea18469ad0b4ed2fc04b929fd8eb5cd57f3812412b2c69",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "off_target",
+      "reason": "D18:1 and D18:3 support the son being okay after the accident, but the answer reports outcome rather than how he handled it. It misses fear and family reassurance. Legal, factually grounded citations do not make this a complete answer."
+    },
+    {
+      "qa_index": 148,
+      "trace_id": "25fd8361c91e4b15a3fad6e065cec0ea",
+      "question": "What was Melanie's reaction to her children enjoying the Grand Canyon?",
+      "answer": "Melanie was thankful/relieved that her children enjoyed the Grand Canyon a lot.",
+      "answer_status": "sufficient",
+      "answer_sha256": "be3d2b7cdb1966705912ef8a7bba9fb8b368d8b961f7b6401dd3e1fa12d97d09",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:5"
+      ],
+      "citation_identity_valid": true,
+      "source_support": "supported",
+      "adequacy": "answers_question",
+      "reason": "D18:5 explicitly says Thankfully, they enjoyed the Grand Canyon a lot. Thankful/relieved is a reasonable contextual paraphrase; do not infer additional reactions."
+    },
+    {
+      "qa_index": 152,
+      "trace_id": "33e2b39cd021480182d37981bab337c3",
+      "question": "What did Caroline realize after her charity race?",
+      "answer": "No information available.",
+      "answer_status": "insufficient",
+      "answer_sha256": "fcc38e69f67c04b0877c88bbb257e21f5711fe31d261e197a67c154baa6bfa2d",
+      "source_ids": [],
+      "citation_identity_valid": true,
+      "source_support": "no_positive_claim",
+      "adequacy": "appropriate_refusal",
+      "reason": "The charity race realization belongs to Melanie, not Caroline. Refusal preserves speaker identity."
+    },
+    {
+      "qa_index": 176,
+      "trace_id": "21621f4e9f404918a18dc13c28f11dab",
+      "question": "How did Caroline feel while watching the meteor shower?",
+      "answer": "No information available.",
+      "answer_status": "insufficient",
+      "answer_sha256": "fcc38e69f67c04b0877c88bbb257e21f5711fe31d261e197a67c154baa6bfa2d",
+      "source_ids": [],
+      "citation_identity_valid": true,
+      "source_support": "no_positive_claim",
+      "adequacy": "appropriate_refusal",
+      "reason": "The meteor-shower experience is Melanie's. Caroline's reaction to the story is not her own experience while watching."
+    },
+    {
+      "qa_index": 182,
+      "trace_id": "f1403b317fb242a8b4b88121d34d5c9f",
+      "question": "What did Melanie find in her neighborhood during her walk?",
+      "answer": "No information available.",
+      "answer_status": "insufficient",
+      "answer_sha256": "fcc38e69f67c04b0877c88bbb257e21f5711fe31d261e197a67c154baa6bfa2d",
+      "source_ids": [],
+      "citation_identity_valid": true,
+      "source_support": "no_positive_claim",
+      "adequacy": "appropriate_refusal",
+      "reason": "No text supports Melanie finding something in her neighborhood on a walk; do not transfer Caroline's source claim."
+    },
+    {
+      "qa_index": 187,
+      "trace_id": "f9af3821aec74794b1cc53b37961ddb4",
+      "question": "What precautionary sign did Caroline see at the café?",
+      "answer": "No information available.",
+      "answer_status": "insufficient",
+      "answer_sha256": "fcc38e69f67c04b0877c88bbb257e21f5711fe31d261e197a67c154baa6bfa2d",
+      "source_ids": [],
+      "citation_identity_valid": true,
+      "source_support": "no_positive_claim",
+      "adequacy": "appropriate_refusal",
+      "reason": "Sources mention a serious cafe sign and call it a precaution, but its actual contents are not described in available text. The answer does not invent image content."
+    }
+  ]
+}

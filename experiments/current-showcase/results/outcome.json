@@ -1,0 +1,79 @@
+{
+  "started_at": "2026-10-21T13:57:43.006625+00:00",
+  "status": "completed",
+  "runs": {
+    "paired": {
+      "run_id": "f70a226d05c7409186884ceb8e5f9177",
+      "status": "completed",
+      "progress": {
+        "total": 100,
+        "pending": 0,
+        "running": 0,
+        "succeeded": 100,
+        "failed": 0,
+        "interrupted": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "authorized_call_limit": 420,
+  "completed_at": "2026-10-21T14:22:58.189857+00:00",
+  "budget_after": {
+    "limit": 1589,
+    "previous_calls": 1169,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-citation-followup-frozen/campaign.sqlite3",
+    "prior_sha256": "0d123f4a49db2529d1083cf089afe92406c88182919479027643130ae1cb39c0",
+    "reserved_new_calls": 307,
+    "reserved_total_calls": 1476,
+    "phases": {
+      "current-showcase-five-strategies": 307
+    },
+    "operations": {
+      "answer": 89,
+      "query_analysis": 130,
+      "resolve": 37,
+      "resolve_raw": 29,
+      "answer_raw": 22
+    },
+    "outcomes": {
+      "succeeded": 297,
+      "invalid_output": 10
+    },
+    "usage": {
+      "generation_calls": 307,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 0,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 3940678,
+        "completion_tokens": 269056,
+        "total_tokens": 4209734
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 3940678,
+          "calls_with_reported_usage": 307,
+          "calls_missing_usage": 0,
+          "complete": true
+        },
+        "completion_tokens": {
+          "reported": 269056,
+          "calls_with_reported_usage": 307,
+          "calls_missing_usage": 0,
+          "complete": true
+        },
+        "total_tokens": {
+          "reported": 4209734,
+          "calls_with_reported_usage": 307,
+          "calls_missing_usage": 0,
+          "complete": true
+        }
+      },
+      "provider_usage_complete": true,
+      "provider_retries": 8,
+      "reported_provider_seconds": 1395.8360271290294
+    }
+  },
+  "source_build_unchanged": true,
+  "snapshot_build_unchanged": true
+}

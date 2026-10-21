@@ -23,8 +23,13 @@ raw = [i['result']['trace'] for i in run['items'] if i['strategy'] == 'dynamic_r
        and i['status'] == 'succeeded']
 assert raw
 short = raw[0]
-fallback = next((t for t in raw if t.get('raw_fallback', {}).get('triggered')), short)
-insufficient = next((t for t in raw if t['answer']['status'] == 'insufficient'), short)
+fallback = next((t for t in raw if t.get('raw_fallback', {}).get('triggered')
+                 and t['answer']['status'] == 'sufficient'),
+                next((t for t in raw if t.get('raw_fallback', {}).get('triggered')), short))
+negative_questions = {q['official_qa']['question'] for q in plan['experiments']['paired']['questions']
+                      if q['official_qa']['category'] == 5}
+insufficient = next((t for t in raw if t['question'] in negative_questions
+                    and t['answer']['status'] == 'insufficient'), short)
 history = next((r['trace'] for r in dynamic if r['status'] == 'succeeded'), short)
 scenarios = [('answer-and-source', short), ('history-and-effective-memory', history),
              ('incremental-raw-trace', fallback), ('insufficient-evidence', insufficient),
@@ -45,12 +50,20 @@ with sync_playwright() as playwright:
     page.on('console', lambda message: console_errors.append(message.text) if message.type == 'error' else None)
 
     def settle():
+        page.wait_for_timeout(300)
         expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=60000)
 
     def choose(label, value):
         control = page.get_by_label(label, exact=True)
+        if control.input_value() == value:
+            return
         control.click()
-        page.get_by_role('option', name=value, exact=True).click()
+        try:
+            page.get_by_role('option', name=value, exact=True).click()
+        except Exception:
+            page.screenshot(path=str(args.output / 'failure.png'))
+            (args.output / 'failure-page.txt').write_text(page.locator('body').inner_text())
+            raise
         settle()
 
     page.goto(args.ui)
@@ -98,5 +111,6 @@ with sync_playwright() as playwright:
 assert not errors and not console_errors, (errors, console_errors)
 (args.output / 'results.json').write_text(json.dumps(dict(browser=version,
     mode='Unchanged Streamlit app with read-only API and saved real current-experiment traces; not new live generation',
+    selection='Qualitative feature examples from frozen results; first successful raw supplement when available, first insufficient adversarial answer, first dynamic scene. Not a new random evaluation sample.',
     scenarios=results, pageerrors=errors, console_errors=console_errors), ensure_ascii=False, indent=2)+'\n')
 print(json.dumps({'passed': len(results), 'browser': version, 'pageerrors': errors, 'console_errors': console_errors}))

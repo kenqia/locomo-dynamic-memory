@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "completed": true,
+    "plan_digest": true,
+    "frozen_runner": true,
+    "frozen_helpers": true,
+    "frozen_implementation": true,
+    "prior_ledger_unchanged": true,
+    "source_build_unchanged": true,
+    "snapshot_build_unchanged": true,
+    "source_turns_unchanged": true,
+    "all_calls_completed": true,
+    "ledger_matches_outcome": true,
+    "within_authorization": true,
+    "within_cumulative_limit": true,
+    "paired_100_unique": true,
+    "paired_success": true,
+    "recall_40_completed": true,
+    "csv_20_questions": true,
+    "answer-source-review_complete": true,
+    "answer-source-review_answer_binding": true,
+    "dynamic-review_complete": true,
+    "dynamic-review_answer_binding": true,
+    "web_five_passed": true,
+    "web_no_errors": true
+  },
+  "all_passed": true,
+  "new_calls": 307,
+  "cumulative_calls": 1476,
+  "call_outcomes": {
+    "succeeded": 297,
+    "invalid_output": 10
+  },
+  "usage": {
+    "generation_calls": 307,
+    "unknown_attempts": 0,
+    "calls_without_reported_usage": 0,
+    "calls_with_partial_usage": 0,
+    "reported_tokens": {
+      "prompt_tokens": 3940678,
+      "completion_tokens": 269056,
+      "total_tokens": 4209734
+    },
+    "usage_fields": {
+      "prompt_tokens": {
+        "reported": 3940678,
+        "calls_with_reported_usage": 307,
+        "calls_missing_usage": 0,
+        "complete": true
+      },
+      "completion_tokens": {
+        "reported": 269056,
+        "calls_with_reported_usage": 307,
+        "calls_missing_usage": 0,
+        "complete": true
+      },
+      "total_tokens": {
+        "reported": 4209734,
+        "calls_with_reported_usage": 307,
+        "calls_missing_usage": 0,
+        "complete": true
+      }
+    },
+    "provider_usage_complete": true,
+    "provider_retries": 8,
+    "reported_provider_seconds": 1395.8360271290294
+  },
+  "limitation": "Checks read saved results, identities and the ledger; they do not judge answer semantics or issue new provider calls."
+}

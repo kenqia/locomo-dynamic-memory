@@ -36,6 +36,7 @@ def render(directory, output):
             error=result.get('error') or item.get('error'), source_coverage=result.get('source_coverage'),
             source_sets=result.get('source_sets'), raw_triggered=trace.get('raw_fallback', {}).get('triggered'),
             strategy_recovery=trace.get('strategy_recovery'), usage=result.get('usage_summary'))
+        row['executed_strategy'] = (trace.get('strategy_recovery') or {}).get('executed_strategy', item['strategy'])
         rows.append(row)
         if item['strategy'] == 'dynamic_raw_fallback':
             delivered = set(result.get('source_sets', {}).get('answer_context', []))
@@ -63,6 +64,7 @@ def render(directory, output):
             answerable_planned=len(answerable), answerable_f1_failures_zero=mean(values) if values and all(v is not None for v in values) else None,
             success_only_answerable_f1=mean(r['score'] for r in scored if r['category'] != 5) if any(r['category'] != 5 for r in scored) else None,
             adversarial_planned=len(refusals), adversarial_official_refusal=mean(rv) if rv and all(v is not None for v in rv) else None,
+            recovery_count=sum(bool(r['strategy_recovery']) for r in rs),
             evaluator_summary=run.get('summary', {}).get(strategy))
     recall_path = directory / 'recall-results.json'
     recall = json.loads(recall_path.read_text()) if recall_path.exists() else []
@@ -93,7 +95,7 @@ def render(directory, output):
     save(output / 'paired-results.json', dict(summary=summary, rows=rows, evaluator_run_id=run['run_id']))
     with (output / 'paired-differences.csv').open('w', newline='') as stream:
         strategies = list(summary)
-        writer = csv.DictWriter(stream, fieldnames=['qa_index', 'category', 'question', *strategies,
+        writer = csv.DictWriter(stream, lineterminator='\n', fieldnames=['qa_index', 'category', 'question', *strategies,
             'raw_minus_dynamic', 'raw_minus_hybrid'])
         writer.writeheader()
         for q in questions:
@@ -118,6 +120,7 @@ def render(directory, output):
         '| --- | --- | --- | --- | --- |']
     for strategy, s in summary.items():
         lines.append(f"| {strategy} | {s['states'].get('succeeded',0)}/20 | {s['answerable_f1_failures_zero']} | {s['success_only_answerable_f1']} | {s['adversarial_official_refusal']} |")
+    lines += ['', f"Dynamic请求中 {summary['dynamic']['recovery_count']} 题实际走结构化输出失败后的既有原文备用策略；按用户请求策略汇总，同时保留executed_strategy。该组不是关闭备用路径的纯动态消融。"]
     lines += ['', '## 分题配对', '', '| QA | 类别 | '+ ' | '.join(summary)+' |', '| --- | --- | '+' | '.join('---' for _ in summary)+' |']
     for q in questions:
         values = []
@@ -125,11 +128,18 @@ def render(directory, output):
             r = next(r for r in rows if r['qa_index'] == q['qa_index'] and r['strategy'] == strategy)
             values.append('失败' if r['status'] == 'failed' else str(r['score']))
         lines.append(f"| {q['qa_index']} | {q['official_qa']['category']} | "+' | '.join(values)+' |')
+    lines += ['', '## 配对查询用量', '',
+        '沿用既有评测器的全部尝试用量，失败和重试不剔除。构建被复用，不计入本轮新增调用；不据此估算账单金额。', '',
+        '| 策略 | 提供方调用 | 输入tokens | 输出tokens | 用量完整 |', '| --- | --- | --- | --- | --- |']
+    for strategy, s in summary.items():
+        usage = s['evaluator_summary']['usage_summary']
+        tokens = usage['reported_tokens']
+        lines.append(f"| {strategy} | {usage['generation_calls']} | {tokens['prompt_tokens']} | {tokens['completion_tokens']} | {usage['provider_usage_complete']} |")
     lines += ['', '## 来源Recall@K', '', f"完成 {len(recall)}/40。K为Memory排名数，分子是映射后命中的去重gold Source Turns，先逐题计算再平均。", '',
         '主指标为实际初始RRF；Dense与BM25诊断从同40次候选请求保存的通道排序计算，不另跑模型。', '',
         '| K | 初始RRF | Dense通道 | BM25通道 |', '| --- | --- | --- | --- |']
     lines += [f"| {k} | {v} | {recall_summary['channel_diagnostics']['dense'][k]} | {recall_summary['channel_diagnostics']['bm25'][k]} |" for k,v in recall_summary['recall_at'].items()]
-    lines += ['', '语义核验和动态场景结论见独立审阅记录；引用合法不等于语义支持。未以模型自标作为独立真值。', '',
+    lines += ['', '语义核验和动态场景结论见 [来源审阅](answer-source-review.md)、[动态审阅](dynamic-review.md) 与 [展示分析及Web截图](analysis.md)。引用合法不等于语义支持，作者审阅不作为独立真值。', '',
         f"调用 {outcome['budget_after']['reserved_new_calls']}/{plan['call_limit']}，历史累计 {outcome['budget_after']['reserved_total_calls']}。",
         f"原Build未改变：{outcome['source_build_unchanged']}；快照Build未改变：{outcome['snapshot_build_unchanged']}。"]
     (output / 'report.md').write_text('\n'.join(lines)+'\n')

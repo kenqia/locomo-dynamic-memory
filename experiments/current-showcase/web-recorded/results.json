@@ -1,0 +1,178 @@
+{
+  "browser": "156.0.8078.4",
+  "mode": "Unchanged Streamlit app with read-only API and saved real current-experiment traces; not new live generation",
+  "selection": "Qualitative feature examples from frozen results; first successful raw supplement when available, first insufficient adversarial answer, first dynamic scene. Not a new random evaluation sample.",
+  "scenarios": [
+    {
+      "scenario": "answer-and-source",
+      "trace_id": "269cf1149a364f25a95556f71f3c7f49",
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "answer": {
+        "answer": "2023-05-07",
+        "citations": [
+          {
+            "memory_id": "7b29fbb3088ff54b1d95727f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+            ]
+          }
+        ],
+        "explanation": "Caroline said she went to an LGBTQ support group \"yesterday\" in a source session dated 8 May 2023, so the visit was on 2023-05-07.",
+        "status": "sufficient"
+      },
+      "raw_triggered": false,
+      "status": "passed",
+      "screenshot": "answer-and-source.png",
+      "mode": "recorded_real_trace_no_provider_calls"
+    },
+    {
+      "scenario": "history-and-effective-memory",
+      "trace_id": "fb0b30cf8e254441be9d4830319b1634",
+      "question": "As of the end of the conversation, what is known about Caroline's career exploration?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Caroline is exploring a career in counseling and mental health, with a particular interest in working with trans people to help them accept themselves and support their mental health. She wants to help people who have gone through similar experiences and create a safe, inviting place for people to grow. She attended an LGBTQ+ counseling workshop and plans to continue her education and check out career options.",
+        "citations": [
+          {
+            "memory_id": "ab5f9130290ce528637215d1",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:9"
+            ]
+          },
+          {
+            "memory_id": "edf0ad6dfb5ddf068bbe2225",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+            ]
+          },
+          {
+            "memory_id": "376676a70336006ce30b797e",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+            ]
+          },
+          {
+            "memory_id": "b48a241d0644ef8309ef12cb",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+            ]
+          },
+          {
+            "memory_id": "26a585ed015a3f82b3dfda6f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+            ]
+          },
+          {
+            "memory_id": "f78fb9042f436973ce7bd177",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:3"
+            ]
+          },
+          {
+            "memory_id": "4432640ac0d206c4b5e73dc9",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+            ]
+          },
+          {
+            "memory_id": "bdbd5262ede13d6d0cabd57a",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+            ]
+          },
+          {
+            "memory_id": "66184f4ba6e3b9edea9b210f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:15"
+            ]
+          },
+          {
+            "memory_id": "11b8e5b1c4598d451378d4e1",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+            ]
+          },
+          {
+            "memory_id": "d744e00a235c5eccfcb43f73",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+            ]
+          }
+        ],
+        "explanation": "All evidence is from conversations between May and July 2023, before the cutoff. Caroline's career exploration is consistently described as counseling/mental health, with a specific interest in working with trans people. The workshop attendance is a completed event; the education/career-options check is a stated plan, not a completed fact."
+      },
+      "raw_triggered": null,
+      "status": "passed",
+      "screenshot": "history-and-effective-memory.png",
+      "mode": "recorded_real_trace_no_provider_calls"
+    },
+    {
+      "scenario": "incremental-raw-trace",
+      "trace_id": "25fd8361c91e4b15a3fad6e065cec0ea",
+      "question": "What was Melanie's reaction to her children enjoying the Grand Canyon?",
+      "answer": {
+        "answer": "Melanie was thankful/relieved that her children enjoyed the Grand Canyon a lot.",
+        "citations": [
+          {
+            "memory_id": "bf2a27a1986afb1459ae77b4",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D18:5"
+            ]
+          },
+          {
+            "memory_id": null,
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D18:5"
+            ]
+          }
+        ],
+        "explanation": "The memory supports that Melanie's family/children enjoyed the Grand Canyon a lot; the raw source quote (\"Thankfully, they enjoyed the Grand Canyon a lot!\") supplies her thankful reaction.",
+        "status": "sufficient"
+      },
+      "raw_triggered": true,
+      "status": "passed",
+      "screenshot": "incremental-raw-trace.png",
+      "mode": "recorded_real_trace_no_provider_calls"
+    },
+    {
+      "scenario": "insufficient-evidence",
+      "trace_id": "33e2b39cd021480182d37981bab337c3",
+      "question": "What did Caroline realize after her charity race?",
+      "answer": {
+        "answer": "No information available.",
+        "citations": [],
+        "explanation": "The charity race and the realization that self-care is important are attributed to Melanie, not Caroline. Caroline only responds supportively, so no Caroline-specific realization after a charity race is supported.",
+        "status": "insufficient"
+      },
+      "raw_triggered": true,
+      "status": "passed",
+      "screenshot": "insufficient-evidence.png",
+      "mode": "recorded_real_trace_no_provider_calls"
+    },
+    {
+      "scenario": "strategy-switch-keeps-answer",
+      "trace_id": "269cf1149a364f25a95556f71f3c7f49",
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "answer": {
+        "answer": "2023-05-07",
+        "citations": [
+          {
+            "memory_id": "7b29fbb3088ff54b1d95727f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+            ]
+          }
+        ],
+        "explanation": "Caroline said she went to an LGBTQ support group \"yesterday\" in a source session dated 8 May 2023, so the visit was on 2023-05-07.",
+        "status": "sufficient"
+      },
+      "raw_triggered": false,
+      "status": "passed",
+      "screenshot": "strategy-switch-keeps-answer.png",
+      "mode": "recorded_real_trace_no_provider_calls"
+    }
+  ],
+  "pageerrors": [],
+  "console_errors": []
+}
