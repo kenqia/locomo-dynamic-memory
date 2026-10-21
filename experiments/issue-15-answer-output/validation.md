@@ -39,7 +39,18 @@
 独立 code-review 以 `31c7def...4fd2a30` 为范围：Standards 0 项，Spec 1 项 P2。
 Spec 复核发现，旧 coverage 的任一引用因预算遗漏时，例外分支允许一并清空仍已交付的引用。
 新增 schema 边界回归先复现未抛校验错误，修复后要求保留仍交付的全部旧引用；
-真正撤回这些引用仍须提供新增原文和修订理由。相关 4 项回归通过，后续复核与最终全量结果另补。
+真正撤回这些引用仍须提供新增原文和修订理由。相关 4 项回归通过；原 Spec 复核代理独立重跑新增回归并确认 P2 关闭，无新增发现。
+后续 Standards 复核 `4fd2a30...0db8861` 也无新增发现。
+
+首轮全量结果为 364 passed、1 failed、4 deselected。失败来自抽取示例 JSON 的既有区块检查：
+时间提示追加在 JSON 后使其无法解析。将提示移到示例前后，抽取与相对时间 4 项定向检查通过。
+最终全量结果：**366 passed、4 deselected**，耗时 229.16 秒。编译与 `git diff --check` 通过。
+仅有既有 Starlette/httpx 弃用警告；未安装新依赖，未运行真实模型、本地 Embedding 模型或浏览器端到端检查。
+
+代码提交依次为 `3cd1f2d`、`10e7256`、`4fd2a30`、`2ac718a`、`0db8861`。
+最终源码实现身份为 `534641d28f088b57cc054864f8419c28cf41855e2b3598fc2d417ea7d7eacc42`。
+该身份不包含后续验证文档提交，不能用于恢复旧实验。
+公开来源夹具的 8 条记录已逐字段与原导出比对一致。
 
 ```sh
 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 .venv/bin/python -m pytest -q -m 'not live_model and not local_embedding'
