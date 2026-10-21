@@ -47,13 +47,32 @@ def render(directory, output):
             'canonical_refusal_count': sum(r['execution_status'] == 'succeeded' and r['answer'] == 'No information available.' for r in group if r['category'] == 5),
             'mean_answer_words_before': mean(len(r['answer'].split()) for r in previous['rows'] if r['strategy'] == strategy and r['answer']),
             'mean_answer_words_after': mean(len(r['answer'].split()) for r in group if r['answer'])}
+    cross_round = {}
+    reference_path = Path(plan['source_directory']) / 'evaluation-run.json'
+    if reference_path.exists():
+        reference_run = json.loads(reference_path.read_text())
+        for strategy in ['dynamic', 'dynamic_raw_fallback', 'hybrid_no_resolution']:
+            counts = {'initial_same_set': 0, 'expanded_same_set': 0, 'planned': 10}
+            for item in run['items']:
+                if item['strategy'] != strategy:
+                    continue
+                old_item = next(i for i in reference_run['items']
+                                if i['sample_index'] == item['sample_index'] and i['strategy'] == strategy)
+                current_ranks = paired.candidate_rankings(item.get('result') or {})
+                previous_ranks = paired.candidate_rankings(old_item.get('result') or {})
+                for stage in ['initial', 'expanded']:
+                    counts[stage + '_same_set'] += int(
+                        stage in current_ranks and stage in previous_ranks
+                        and set(current_ranks[stage]) == set(previous_ranks[stage]))
+            cross_round[strategy] = counts
     saved = {'run_id': current['run_id'], 'reference_run_id': previous['run_id'],
              'comparison': comparisons, 'rows': rows,
              'source_build_reused': plan['source_build_id'],
              'build_artifacts_unchanged': outcome['snapshot_build_unchanged'] and outcome['original_build_unchanged'],
              'new_paid_calls': outcome['budget_after']['reserved_total_calls'] - plan['budget_before']['reserved_total_calls'],
              'cumulative_calls': outcome['budget_after']['reserved_total_calls'],
-             'candidate_audit': current['candidate_audit'], 'full_text_delivery': current['full_text_delivery']}
+             'candidate_audit': current['candidate_audit'], 'cross_round_candidate_audit': cross_round,
+             'full_text_delivery': current['full_text_delivery']}
     (output / 'comparison.json').write_text(json.dumps(saved, ensure_ascii=False, indent=2) + '\n')
     lines = ['# 答案优化后的 conv-26 真实复验', '',
              f"新 Run `{current['run_id']}`；前轮 `{previous['run_id']}`。",
@@ -79,6 +98,7 @@ def render(directory, output):
               f"构建及原库产物保持相同：`{saved['build_artifacts_unchanged']}`。本轮实际付费调用 {saved['new_paid_calls']}/200，历史累计 {saved['cumulative_calls']}。",
               f"Full Text 完整 419 轮且 HTTP 200：{current['full_text_delivery']['complete_sources_with_http_200_items']}/10；通过答案校验：{current['full_text_delivery']['accepted_complete_items']}/10。",
               '初始与扩展候选的逐题比较保存在 results.json，失败原因仅依据本轮安全诊断，不假定与前轮全部同因。',
+              '跨轮候选集合核对见 comparison.json 的 cross_round_candidate_audit；不将候选变化隐去。',
               '完整逐题答案、引用和用量见 [report.md](report.md)；结构化前后对比见 [comparison.json](comparison.json)。',
               'UI 的策略切换与来源读取使用本地 Streamlit 交互测试验证，浏览器端到端情况另行记录。', '']
     (output / 'comparison.md').write_text('\n'.join(lines))

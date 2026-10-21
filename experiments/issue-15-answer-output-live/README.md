@@ -2,7 +2,18 @@
 
 2026-10-21，Asia/Shanghai。在 `codex/issue-15-integration` 上复验三项答案与原文兜底优化，
 并检查策略切换及来源展示。主实验固定为上一轮同样 10 道原题、四策略、40 项，
-不依据本轮答案换题或调整参数。结果生成后见 `results/comparison.md`。
+不依据本轮答案换题或调整参数。四策略共 40 项已全部执行成功，见
+[前后成绩](results/comparison.md)及[目标与遗漏分析](results/analysis.md)。
+
+Dynamic 和 Raw Fallback 均为 10/10，8 道可回答题 F1 分别从 0.154、0.039
+升至 0.334、0.340。QA 53 四策略均修正为包含来源日期的一周。
+拒答匹配仍部分未达标，Dynamic、Hybrid 各 1/2，Raw Fallback、Full Text 各 2/2。
+全部查询使用 98 次真实请求，历史累计 1009；剩余额度未自动用于挑选或补跑答案。
+新 Run `70f6545c0de94cdabf5507be050a26da`，原库和快照的构建产物摘要均未变化。
+
+本轮最终非 live 回归为 371 passed、4 deselected，222.07 秒。
+补充跨轮报告检查后的定向 5 项通过；编译和差异检查通过。
+验证细节见 [verification.json](verification.json)，完整产物清单见 [artifacts.json](results/artifacts.json)。
 
 ## 固定条件与历史保留
 

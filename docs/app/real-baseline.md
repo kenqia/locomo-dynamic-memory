@@ -54,6 +54,11 @@ uv sync --locked --extra embedding
 与[失败诊断及解释](../../experiments/issue-15-thinking-qa/results/analysis.md)分别保存。
 该实验使用 `expanded` 证据配置，未运行全关闭思考对照、开发集全量或本地测试集。
 
+2026-10-21 的[答案优化复验](../../experiments/issue-15-answer-output-live/results/comparison.md)
+复用同一构建和 10 题，40 项全部执行成功。Dynamic F1 为 0.334，Raw Fallback 为 0.340；
+Dynamic 的官方拒答匹配仍为 1/2，Raw Fallback 的研究对象题仍有遗漏。
+见[目标核对与限制](../../experiments/issue-15-answer-output-live/results/analysis.md)。
+
 ## 小型抽取和五题预检
 
 显式授权付费后运行小型原始对话抽取检查：
