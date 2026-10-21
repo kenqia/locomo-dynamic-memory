@@ -3,7 +3,45 @@ import json
 import streamlit as st
 
 
-LABELS = {'dynamic': '完整动态系统', 'full_text': 'Full Text 原始轮次', 'vector': 'Vector RAG（无状态解析）', 'hybrid_no_resolution': 'Hybrid + 扩展（无状态解析）'}
+LABELS = {'dynamic': '完整动态系统', 'dynamic_raw_fallback': 'Dynamic + 原文兜底', 'full_text': 'Full Text 原始轮次', 'vector': 'Vector RAG（无状态解析）', 'hybrid_no_resolution': 'Hybrid + 扩展（无状态解析）'}
+
+
+def render_saved_comparison(request, run):
+    """Switch saved answers without launching or retrying any model operation."""
+    st.subheader('同题策略切换与引用原文')
+    rows = run.get('results', [])
+    indices = list(dict.fromkeys(row['sample_index'] for row in rows))
+    if not indices:
+        st.caption('尚无已保存结果。')
+        return
+    samples = run['input']['samples']
+    index = st.selectbox('查看题目', indices, format_func=lambda i: samples[i]['question'], key='comparison_question')
+    strategies = [s for s in run['strategies'] if any(r['sample_index'] == index and r['strategy'] == s for r in rows)]
+    strategy = st.radio('查看策略', strategies, format_func=LABELS.get, horizontal=True, key='comparison_strategy')
+    st.caption('切换只读取本次 Run 的已保存结果，不会调用模型。引用原文按需读取。')
+    row = next(r for r in rows if r['sample_index'] == index and r['strategy'] == strategy)
+    trace = row.get('trace', {})
+    answer = trace.get('answer')
+    if not answer:
+        st.error('该项执行失败：' + str(row.get('error', {}).get('code', 'unknown')))
+    else:
+        st.write({'sufficient': '证据支持', 'insufficient': '证据不足', 'conflict': '证据冲突'}[answer['status']])
+        st.text(answer['answer'])
+        if answer.get('explanation'):
+            st.caption(answer['explanation'])
+        if trace.get('time'):
+            st.caption('已知证据截止：' + trace['time']['cutoff'])
+        ids = list(dict.fromkeys(sid for citation in answer['citations'] for sid in citation['source_ids']))
+        with st.expander('回答引用原文'):
+            st.write(ids)
+            if ids and st.button('读取引用原文', key='comparison_sources'):
+                for source_id in ids:
+                    ds, sample, dia = source_id.split('/')
+                    source = request('GET', f'/datasets/{ds}/conversations/{sample}/turns/{dia}')
+                    st.caption(f"{source_id} · {source['speaker']} · {source['session_time']}")
+                    st.text(source['text'])
+    with st.expander('此项完整证据和失败记录'):
+        st.json(row)
 
 
 def render_development_plan(request, dataset_id):
@@ -54,7 +92,7 @@ def render_evaluation(request, dataset_id):
                 st.session_state['evaluation_input_id'] = value['input_id']
                 st.json(value)
     input_id = st.text_input('评测 Input ID', key='evaluation_input_id')
-    strategies = st.multiselect('对照策略', list(LABELS), default=list(LABELS), format_func=LABELS.get)
+    strategies = st.multiselect('对照策略', list(LABELS), default=[s for s in LABELS if s != 'dynamic_raw_fallback'], format_func=LABELS.get)
     partition = st.selectbox('课程划分（合成案例选择不适用）', ['不适用', 'dev', 'test'])
     if st.button('运行所选对照', disabled=not input_id or not strategies):
         created = request('POST', '/evaluation-runs', json={'input_id': input_id, 'strategies': strategies, 'partition': None if partition == '不适用' else partition})
@@ -85,6 +123,7 @@ def render_evaluation(request, dataset_id):
 
     if run['course_metrics']['status'] == 'unavailable':
         st.info('课程正式指标未评：' + str(run['course_metrics']['reason']))
+    render_saved_comparison(request, run)
     columns = st.columns(max(1, len(run.get('summary', {}))))
     for column, (strategy, summary) in zip(columns, run['summary'].items()):
         with column:
