@@ -17,7 +17,7 @@ from .temporal import conversation_cutoff, explicit_question_date
 from .usage import provider_usage
 
 RESOLUTION_PROMPT_VERSION = "effective-resolution-v2-stage-evidence"
-ANSWER_PROMPT_VERSION = "evidence-answer-v2-raw-sources"
+ANSWER_PROMPT_VERSION = "evidence-answer-v3-delivered-sufficiency"
 
 
 class QueryFailure(BuildError):
@@ -68,7 +68,7 @@ class QueryService:
                 cost = budget_tokens(canonical_json(source))
                 used += cost
                 raw_delivered.append(source)
-        effective_status = "insufficient" if omitted or not (delivered or raw_delivered) else status
+        effective_status = "insufficient" if not (delivered or raw_delivered) else status
         delivered_sources = {sid: sources[sid] for memory in delivered for sid in memory["source_ids"]}
         if raw_sources is not None:
             delivered_sources = {s["source_id"]: s for s in raw_delivered}

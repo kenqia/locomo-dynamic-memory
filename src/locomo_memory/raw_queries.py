@@ -161,7 +161,7 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
     trace['resolution'] = resolution.model_dump(mode='json')
     selected = [m for m in resolved_payload['memories'] if m['memory_id'] in resolution.effective_memory_ids]
     raw_selected = [s for s in resolved_payload['raw_sources'] if s['source_id'] in resolution.effective_source_ids]
-    status = 'insufficient' if trace['time']['beyond_cutoff'] or trace['resolution_budgets'][trace['_active_stage']]['truncated'] or trace['raw_fallback'].get('truncated',False) else evidence_status(resolution)
+    status = 'insufficient' if trace['time']['beyond_cutoff'] else evidence_status(resolution)
     coverage = [c.model_dump(mode='json') for c in resolution.coverage]
     answer_base = {'operation':'answer_raw','question':request.question,'time':trace['time'], 'status':status,
                    'coverage':coverage, 'evidence_profile':profile, 'relations':base['relations'] + [r.model_dump(mode='json') for r in resolution.supplemental_relations],
@@ -175,7 +175,7 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
                         memory_ids=[m for m in item['memory_ids'] if m in delivered_mids],
                         source_ids=[s for s in item['source_ids'] if s in delivered_sids])
             status = 'insufficient'
-    if audit['truncated']:
+    if not (payload['memories'] or payload['raw_sources']):
         status = 'insufficient'
     payload.update(status=status,coverage=coverage,evidence_truncated=audit['truncated'])
     audit['input_token_count'] = request_token_estimate('answer_raw',payload,EvidenceAnswer)

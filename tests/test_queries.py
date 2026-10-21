@@ -282,3 +282,49 @@ def test_capped_history_uses_the_same_date_for_request_english_and_iso_questions
             assert [item["memory"]["state_value"] for item in trace["initial"]["initial_candidates"]] == ["Paris"]
             assert [item["memory"]["state_value"] for item in trace["expanded"]["candidates"]] == ["Paris", "Rome"]
             assert trace["answer"]["answer"] == "Rome"
+
+
+def test_budget_omission_does_not_reject_a_supported_answer(settings, sample):
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'resolve':
+            return completion({'status': 'sufficient',
+                'effective_memory_ids': [m['memory_id'] for m in payload['memories']],
+                'decisions': [{'memory_id': m['memory_id'], 'selected': True, 'reason': 'Candidate evidence'} for m in payload['memories']],
+                'explanation': 'Both candidates are available', 'supplemental_relations': []})
+        if payload.get('operation') == 'answer':
+            memory = payload['memories'][0]
+            return completion({'status': 'sufficient', 'answer': memory['state_value'] + '.',
+                'citations': [{'memory_id': memory['memory_id'], 'source_ids': memory['source_ids']}]})
+        return query_provider(request)
+    local = settings.model_copy(update={'evidence_token_budget': 400, 'model_retries': 0})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        dataset_id, _ = complete_build(client, sample)
+        response = client.post('/queries', json={'dataset_id': dataset_id, 'sample_id': 'conv-a', 'question': 'Name one city Alex has lived in.'})
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['evidence_budget']['truncated'] is True
+        assert len(trace['effective_memories']) == 1
+        assert trace['answer']['status'] == 'sufficient'
+        assert trace['answer']['citations'][0]['memory_id'] == trace['effective_memories'][0]['memory_id']
+
+
+def test_answer_can_report_missing_subquestion_without_losing_supported_part(settings, sample):
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'answer':
+            memory = payload['memories'][0]
+            return completion({'status': 'insufficient', 'answer': 'Rome; move-in hour unknown.',
+                'citations': [{'memory_id': memory['memory_id'], 'source_ids': memory['source_ids']}]})
+        return query_provider(request)
+    model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        dataset_id, _ = complete_build(client, sample)
+        response = client.post('/queries', json={'dataset_id': dataset_id, 'sample_id': 'conv-a', 'question': 'Where does Alex live and at what hour did Alex move in?'})
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['resolution']['status'] == 'sufficient'
+        assert trace['answer']['status'] == 'insufficient'
+        assert trace['answer']['citations']
+        assert trace['answer']['answer'] == 'Rome; move-in hour unknown.'

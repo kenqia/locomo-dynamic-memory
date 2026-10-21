@@ -292,3 +292,19 @@ def test_controller_always_exposes_known_time_boundary_even_when_model_omits_it(
         assert trace['answer_boundary']['applied_by'] == 'controller'
         if requested_date:
             assert trace['answer']['status'] == 'insufficient'
+
+
+def test_raw_search_truncation_can_still_deliver_a_complete_answer(settings, sample):
+    sample[0]['conversation']['session_2'][0]['text'] = 'I work for Cedar.'
+    sample[0]['conversation']['session_1'][1]['text'] = 'I work near Cedar office.'
+    observed = []
+    local = settings.model_copy(update={'raw_max_hits': 1, 'raw_neighbor_turns': 0})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(raw_provider(observed)))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        response = client.post('/queries', json=published(client, sample))
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['raw_fallback']['truncated'] is True
+        assert trace['resolution']['status'] == 'sufficient'
+        assert trace['answer']['status'] == 'sufficient'
+        assert trace['answer']['citations']

@@ -9,7 +9,7 @@ from .relation_schemas import RelationDraft
 from .retrieval_schemas import CandidateQueryRequest
 
 RESOLUTION_SCHEMA_VERSION = "effective-resolution-v2-stage-evidence"
-ANSWER_SCHEMA_VERSION = "evidence-answer-v2-raw-sources"
+ANSWER_SCHEMA_VERSION = "evidence-answer-v3-delivered-sufficiency"
 EvidenceStatus = Literal["sufficient", "conflict", "insufficient"]
 
 
@@ -104,7 +104,7 @@ class EvidenceAnswer(BaseModel):
         context = info.context or {}
         if "memories" not in context:
             return self
-        if self.status != context["status"]:
+        if self.status != context["status"] and not (context["status"] == "sufficient" and self.status == "insufficient"):
             raise ValueError("Answer must preserve evidence uncertainty")
         if self.status in {"sufficient", "conflict"} and not self.citations:
             raise ValueError("Evidence-backed answer needs citations")
