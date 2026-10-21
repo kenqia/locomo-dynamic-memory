@@ -106,8 +106,11 @@ class MixedResolution(EffectiveResolution):
                     continue
                 if not (item.revision_reason or "").strip():
                     raise ValueError("Changed supported coverage requires a revision reason")
-                omitted = not old_mids <= set(context.get("memories", {})) or not old_sids <= set(context.get("raw_sources", {}))
-                if omitted and item.status == "insufficient":
+                available_mids = old_mids & set(context.get("memories", {}))
+                available_sids = old_sids & set(context.get("raw_sources", {}))
+                omitted = available_mids != old_mids or available_sids != old_sids
+                kept_available = available_mids <= set(item.memory_ids) and available_sids <= set(item.source_ids)
+                if omitted and kept_available and item.status == "insufficient":
                     continue
                 if not set(item.source_ids) - old_sids:
                     raise ValueError("Changed supported coverage requires newly cited raw evidence")

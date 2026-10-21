@@ -36,7 +36,10 @@
 ## 检查命令和结果
 
 项目未配置静态类型检查器，复用既有编译和 pytest 入口，没有新增依赖。
-最终验证结果在检查完成后追加。
+独立 code-review 以 `31c7def...4fd2a30` 为范围：Standards 0 项，Spec 1 项 P2。
+Spec 复核发现，旧 coverage 的任一引用因预算遗漏时，例外分支允许一并清空仍已交付的引用。
+新增 schema 边界回归先复现未抛校验错误，修复后要求保留仍交付的全部旧引用；
+真正撤回这些引用仍须提供新增原文和修订理由。相关 4 项回归通过，后续复核与最终全量结果另补。
 
 ```sh
 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 .venv/bin/python -m pytest -q -m 'not live_model and not local_embedding'

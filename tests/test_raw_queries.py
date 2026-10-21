@@ -419,3 +419,27 @@ def test_final_budget_omission_of_unneeded_group_keeps_supported_coverage(settin
         assert trace['delivered_coverage'][0]['status'] == 'sufficient'
         assert trace['answer']['status'] == 'sufficient'
         assert len(trace['effective_memories']) == 1
+
+
+def test_joint_resolution_budget_loss_cannot_erase_still_delivered_support():
+    from pydantic import ValidationError
+    from locomo_memory.raw_schemas import MixedResolution
+    previous = [{'question': 'Which facts are known?', 'status': 'sufficient',
+                 'memory_ids': ['m1', 'm2'], 'source_ids': [], 'gap': None}]
+    context = {'memories': {'m1': {'source_ids': ['s1']}}, 'raw_sources': {}, 'sources': {},
+               'previous_coverage': previous}
+    response = {'status': 'insufficient', 'effective_memory_ids': [], 'effective_source_ids': [],
+                'decisions': [{'memory_id': 'm1', 'selected': False, 'reason': 'm2 was omitted'}],
+                'coverage': [{'question': 'Which facts are known?', 'status': 'insufficient',
+                              'memory_ids': [], 'source_ids': [], 'gap': 'm2 was omitted',
+                              'revision_reason': 'm2 was omitted by the delivery budget'}],
+                'explanation': 'Partial delivery', 'supplemental_relations': []}
+    with pytest.raises(ValidationError, match='newly cited raw evidence'):
+        MixedResolution.model_validate(response, context=context)
+    # The missing half may stay insufficient while delivered support is retained.
+    response['effective_memory_ids'] = ['m1']
+    response['decisions'][0]['selected'] = True
+    response['coverage'][0]['memory_ids'] = ['m1']
+    result = MixedResolution.model_validate(response, context=context)
+    assert result.effective_memory_ids == ['m1']
+    assert result.coverage[0].status == 'insufficient'
