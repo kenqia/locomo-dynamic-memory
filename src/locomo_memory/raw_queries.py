@@ -132,7 +132,15 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
         mids = {m['memory_id']:m for m in payload['memories']}
         raw_map = {s['source_id']:s for s in payload['raw_sources']}
         delivered_sources = {s['source_id']:s for s in payload['sources'] + payload['raw_sources']}
-        context = {'memories':mids,'sources':delivered_sources,'raw_sources':raw_map,'input_budget':settings.resolution_input_budget}
+        context = {'memories':mids,'sources':delivered_sources,'raw_sources':raw_map,
+                   'previous_coverage':previous or [], 'input_budget':settings.resolution_input_budget}
+        if previous is not None:
+            audit['omitted_previous_evidence'] = [
+                {'question':item['question'],
+                 'memory_ids':[mid for mid in item['memory_ids'] if mid not in mids],
+                 'source_ids':[sid for sid in item['source_ids'] if sid not in raw_map]}
+                for item in previous
+                if not set(item['memory_ids']) <= set(mids) or not set(item['source_ids']) <= set(raw_map)]
         delivery = {'expected_source_ids':list(delivered_sources), 'attempted_source_ids':[],
                     'delivered_source_ids':[], 'status':'not_sent'}
         audit['source_delivery'] = delivery

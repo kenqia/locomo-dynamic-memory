@@ -344,3 +344,23 @@ def test_relative_week_guidance_reaches_extraction_resolution_and_answers():
         assert 'this week' in prompt
         assert 'containing' in prompt
         assert 'previous week' in prompt
+
+
+def test_answer_cannot_upgrade_beyond_cutoff_constraint(settings, sample):
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'answer':
+            memory = payload['memories'][0]
+            return completion({'status': 'sufficient', 'answer': 'Rome.',
+                'citations': [{'memory_id': memory['memory_id'], 'source_ids': memory['source_ids']}]})
+        return query_provider(request)
+    local = settings.model_copy(update={'model_retries': 0})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        dataset_id, _ = complete_build(client, sample)
+        response = client.post('/queries', json={'dataset_id': dataset_id, 'sample_id': 'conv-a',
+                                                'question': 'Where will Alex live?', 'requested_date': '2099-01-01'})
+        assert response.status_code == 502
+        trace = client.get('/queries/' + response.json()['error']['trace_id']).json()
+        assert trace['error'] == {'stage': 'answer', 'code': 'invalid_output'}
+        assert 'answer' not in trace

@@ -309,3 +309,113 @@ def test_raw_search_truncation_can_still_deliver_a_complete_answer(settings, sam
         assert trace['resolution']['status'] == 'sufficient'
         assert trace['answer']['status'] == 'sufficient'
         assert trace['answer']['citations']
+
+
+def test_fallback_retries_unjustified_loss_of_supported_memory(settings, sample):
+    sample[0]['conversation']['session_2'][0]['text'] = 'I work for Cedar.'
+    observed, joint_attempts = [], []
+    base = raw_provider(observed)
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'resolve_raw':
+            memory = payload['memories'][0]
+            mid = memory['memory_id']
+            raw = payload['raw_sources']
+            if raw:
+                joint_attempts.append(payload)
+            retain = not raw or len(joint_attempts) > 1
+            return completion({'status': 'insufficient', 'effective_memory_ids': [mid] if retain else [],
+                'effective_source_ids': [], 'decisions': [{'memory_id': mid, 'selected': retain, 'reason': 'Supported residence' if retain else 'Raw text lacks a city'}],
+                'coverage': [{'question': 'Residence?', 'status': 'sufficient' if retain else 'insufficient',
+                              'memory_ids': [mid] if retain else [], 'source_ids': [], 'gap': None if retain else 'City unknown'},
+                             {'question': 'Employment start date?', 'status': 'insufficient', 'memory_ids': [], 'source_ids': [], 'gap': 'Missing employment start date'}],
+                'explanation': 'Preserve supported parts', 'supplemental_relations': []})
+        return base(request)
+    local = settings.model_copy(update={'model_retries': 1})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        query = {**published(client, sample), 'question': 'Where does Alex live and when did employment start?'}
+        response = client.post('/queries', json=query)
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['answer']['status'] == 'insufficient'
+        assert trace['resolution']['coverage'][0]['status'] == 'sufficient'
+        assert trace['answer']['citations'][0]['memory_id'] == trace['initial_resolution']['effective_memory_ids'][0]
+        assert len(joint_attempts) == 2
+        assert trace['operations']['joint_resolve']['calls'][0]['outcome'] == 'invalid_output'
+
+
+@pytest.mark.parametrize('revision_reason,expected_status', [
+    ('The later source explicitly corrects residence from Paris to Rome.', 201),
+    (None, 502),
+])
+def test_fallback_can_correct_prior_fact_with_new_cited_evidence(settings, sample, revision_reason, expected_status):
+    sample[0]['conversation']['session_2'][0]['text'] = 'I do not live in Paris; I now live in Rome.'
+    observed = []
+    base = raw_provider(observed)
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'resolve_raw':
+            mid = payload['memories'][0]['memory_id']
+            raw = [s for s in payload['raw_sources'] if s['dia_id'] == 'D2:1']
+            mids, sids = ([] if raw else [mid]), [s['source_id'] for s in raw]
+            return completion({'status': 'insufficient', 'effective_memory_ids': mids, 'effective_source_ids': sids,
+                'decisions': [{'memory_id': mid, 'selected': not raw, 'reason': 'Explicit later correction' if raw else 'Original residence'}],
+                'coverage': [{'question': 'Residence?', 'status': 'sufficient', 'memory_ids': mids, 'source_ids': sids,
+                              'gap': None, 'revision_reason': revision_reason if raw else None},
+                             {'question': 'Employment start date?', 'status': 'insufficient', 'memory_ids': [], 'source_ids': [], 'gap': 'Missing employment start date'}],
+                'explanation': 'Correction is supported by new original source', 'supplemental_relations': []})
+        if payload.get('operation') == 'answer_raw':
+            return completion({'status': payload['status'], 'answer': 'Rome.', 'explanation': 'Employment start date is unknown.',
+                'citations': [{'memory_id': None, 'source_ids': [s['source_id']]} for s in payload['raw_sources']]})
+        return base(request)
+    local = settings.model_copy(update={'model_retries': 0})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        query = {**published(client, sample), 'question': 'Where does Alex live and when did employment start?'}
+        response = client.post('/queries', json=query)
+        assert response.status_code == expected_status, response.text
+        if expected_status == 201:
+            trace = response.json()
+            assert trace['initial_resolution']['effective_memory_ids']
+            assert not trace['resolution']['effective_memory_ids']
+            assert trace['answer']['answer'] == 'Rome.'
+            assert trace['answer']['status'] == 'insufficient'
+            assert trace['answer']['citations'][0]['source_ids'] == [f"{query['dataset_id']}/conv-a/D2:1"]
+        else:
+            trace = client.get('/queries/' + response.json()['error']['trace_id']).json()
+            assert trace['error'] == {'stage': 'joint_resolve', 'code': 'invalid_output'}
+
+
+def test_final_budget_omission_of_unneeded_group_keeps_supported_coverage(settings, sample):
+    sample[0]['conversation']['session_2'][0]['text'] = 'I enjoy gardening. ' + 'gardening ' * 500
+    observed = []
+    base = raw_provider(observed, enough=True)
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if 'sources' in payload and 'operation' not in payload and 'new_memory' not in payload:
+            sources = payload['sources']
+            return completion({'memories': [draft([sources[0]['source_id']]),
+                draft([sources[-1]['source_id']], content='Alex enjoys gardening.',
+                      state_dimension='hobby', state_value='gardening')]})
+        if 'new_memory' in payload:
+            from test_relations import relation
+            return completion({'judgments': [relation(old, payload['new_memory']) for old in payload['history']]})
+        if payload.get('operation') == 'resolve_raw':
+            mids = [m['memory_id'] for m in payload['memories']]
+            residence = [m['memory_id'] for m in payload['memories'] if m['state_dimension'] == 'residence']
+            return completion({'status': 'sufficient', 'effective_memory_ids': mids, 'effective_source_ids': [],
+                'decisions': [{'memory_id': mid, 'selected': True, 'reason': 'Candidate context'} for mid in mids],
+                'coverage': [{'question': payload['question'], 'status': 'sufficient', 'memory_ids': residence, 'source_ids': [], 'gap': None}],
+                'explanation': 'Residence supported; hobby is extra context', 'supplemental_relations': []})
+        return base(request)
+    local = settings.model_copy(update={'evidence_token_budget': 500})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        response = client.post('/queries', json={**published(client, sample), 'question': 'Where does Alex live?'})
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['evidence_budget']['truncated'] is True
+        assert trace['delivered_coverage'][0]['status'] == 'sufficient'
+        assert trace['answer']['status'] == 'sufficient'
+        assert len(trace['effective_memories']) == 1

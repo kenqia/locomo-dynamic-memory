@@ -59,6 +59,12 @@ uv run --locked pytest tests/test_queries.py -q
 `POST /queries` 可显式设置 `strategy: "dynamic_raw_fallback"`。默认 `dynamic` 继续只使用 Memory。
 新策略先解析 Memory 并列出每个子问的覆盖。整体或任一子问不足时，仅检索一次原文，
 有命中时再联合解析一次；无缺口不增加操作。整体不足仍可有引用地回答已知部分。
+联合解析保留前次 coverage 的问题标识和已支持引用，包括部分不足项中的已知事实。
+更改已支持项时，必须填写 `revision_reason` 并在该项引用新增原文；未说明的撤回或整项遗漏
+触发既有有限重试，耗尽后返回执行失败，不静默恢复或覆盖模型结果。
+真实矛盾、人物错配及适用时间变化可以修正初判；新原文缺少细节本身不能推翻已有支持。
+若输入预算使旧证据未再交付，该项可明确降为不足并说明原因，Trace 记录
+`omitted_previous_evidence`。这些结构约束不能自动证明修订理由的语义正确性。
 
 原文只来自已 pin 的完整 Build 的全部输入轮次，包括未抽出 Memory 的轮次。
 查询在读取事务内核对来源清单及规范化正文摘要，不读取 QA、Observation 或 Session Summary。

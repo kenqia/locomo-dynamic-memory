@@ -16,8 +16,8 @@ from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
 from .temporal import conversation_cutoff, explicit_question_date
 from .usage import provider_usage
 
-RESOLUTION_PROMPT_VERSION = "effective-resolution-v2-stage-evidence"
-ANSWER_PROMPT_VERSION = "evidence-answer-v3-delivered-sufficiency"
+RESOLUTION_PROMPT_VERSION = "effective-resolution-v3-relative-time"
+ANSWER_PROMPT_VERSION = "evidence-answer-v4-concise-scope"
 
 
 class QueryFailure(BuildError):

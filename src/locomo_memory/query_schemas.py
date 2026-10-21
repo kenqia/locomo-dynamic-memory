@@ -9,7 +9,7 @@ from .relation_schemas import RelationDraft
 from .retrieval_schemas import CandidateQueryRequest
 
 RESOLUTION_SCHEMA_VERSION = "effective-resolution-v2-stage-evidence"
-ANSWER_SCHEMA_VERSION = "evidence-answer-v3-delivered-sufficiency"
+ANSWER_SCHEMA_VERSION = "evidence-answer-v4-separate-explanation"
 EvidenceStatus = Literal["sufficient", "conflict", "insufficient"]
 
 
