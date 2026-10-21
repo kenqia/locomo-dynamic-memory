@@ -3,7 +3,6 @@ import hashlib
 import time
 
 from .builds import BuildError
-from .evidence_selection import PACKING_VERSION, rank_evidence_groups
 from .imports import canonical_json
 from .model import ModelFailure, request_token_estimate
 from .query_schemas import EvidenceAnswer
@@ -71,7 +70,6 @@ def pack_payload(base, memories, raw, sources, settings, *, final=False):
         raise BuildError('fixed_query_input_budget_exceeded', 422)
     by_memory, by_source = {m['memory_id']:m for m in memories}, {s['source_id']:s for s in raw}
     groups = evidence_groups(memories,raw,base.get('relations',[]),base.get('coverage',[]),include_undetermined=base.get('evidence_profile')=='focused')
-    groups = rank_evidence_groups(base['question'], memories, raw, sources, groups)
     for group in groups:
         candidate_m = selected_m + [by_memory[n] for kind,n in group if kind=='memory']
         candidate_s = selected_s + [by_source[n] for kind,n in group if kind=='raw']
@@ -83,7 +81,7 @@ def pack_payload(base, memories, raw, sources, settings, *, final=False):
         else:
             selected_m,selected_s = candidate_m,candidate_s
     payload = evidence_payload(base,selected_m,selected_s,sources)
-    return payload, {'packing_version':PACKING_VERSION, 'omitted_groups':omitted, 'truncated':bool(omitted),
+    return payload, {'omitted_groups':omitted, 'truncated':bool(omitted),
         'input_token_count':request_token_estimate(operation,payload,schema), 'input_budget':settings.resolution_input_budget,
         'token_budget_method':TOKEN_BUDGET_METHOD}
 
@@ -112,7 +110,7 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
     trace['query_fingerprint'] = hashlib.sha256(canonical_json({'legacy_fingerprint':trace['query_fingerprint'],
         'raw_retrieval':RAW_RETRIEVAL_VERSION,'resolve_schema':MixedResolution.model_json_schema(),
         'source_snapshot':snapshot_audit,'strategy':trace['strategy'],
-        'evidence_profile':profile,'selection_version':FOCUS_VERSION,'packing_version':PACKING_VERSION,
+        'evidence_profile':profile,'selection_version':FOCUS_VERSION,
         'answer_schema':EvidenceAnswer.model_json_schema(), 'answer_boundary_version':ANSWER_BOUNDARY_VERSION}).encode()).hexdigest()
     from .raw_schemas import RAW_RESOLUTION_PROMPT, RAW_ANSWER_PROMPT
     trace['query_fingerprint'] = hashlib.sha256(canonical_json({'fingerprint':trace['query_fingerprint'],
