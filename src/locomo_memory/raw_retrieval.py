@@ -8,7 +8,7 @@ from .builds import BuildError
 from .imports import canonical_json
 from .retrieval import budget_tokens, tokenize, TOKEN_BUDGET_METHOD
 
-RAW_RETRIEVAL_VERSION = 'pinned-turn-bm25-windows-v1'
+RAW_RETRIEVAL_VERSION = 'pinned-turn-bm25-windows-v2-enumeration-speakers'
 
 
 def pinned_sources(database, build_id):
@@ -40,9 +40,11 @@ def pinned_sources(database, build_id):
                      'pinned_source_ids': ids, 'source_sha256': digest, 'source_count': len(sources)}
 
 
-def retrieve_sources(sources, question, gaps, settings):
+def retrieve_sources(sources, question, gaps, settings, *, enumeration=False):
     terms = tokenize(question + ' ' + ' '.join(gaps))
-    corpus = [tokenize(s['text']) for s in sources]
+    # List questions often name a speaker whose own turns only say 'I'. Include
+    # that real source field for broader matching, within the same hit/window limits.
+    corpus = [tokenize((s['speaker'] + ' ' if enumeration else '') + s['text']) for s in sources]
     scores = BM25Okapi(corpus).get_scores(terms) if any(corpus) else [0.0] * len(sources)
     matches = [i for i,tokens in enumerate(corpus) if set(tokens).intersection(terms)]
     order = sorted(matches, key=lambda i: (-float(scores[i]), sources[i]['position'], sources[i]['source_id']))
@@ -76,7 +78,7 @@ def retrieve_sources(sources, question, gaps, settings):
             if j != i and sources[j]['session_id'] == sources[i]['session_id']:
                 append(j, center, 'neighbor')
     delivered = sorted(selected.values(), key=lambda s: (s['position'],s['source_id']))
-    return delivered, {'retrieval_version': RAW_RETRIEVAL_VERSION, 'centers':centers,
+    return delivered, {'speaker_matching':enumeration, 'retrieval_version': RAW_RETRIEVAL_VERSION, 'centers':centers,
         'matched_source_count':len(matches), 'source_ids':[s['source_id'] for s in delivered],
         'origins':origins, 'omitted':omitted, 'token_budget_method':TOKEN_BUDGET_METHOD,
         'token_count':budget_tokens(canonical_json({'raw_sources':delivered})) if delivered else 0,

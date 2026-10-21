@@ -493,3 +493,59 @@ def test_packing_keeps_ties_stable_and_audits_oversized_connected_raw_group(sett
     assert [s['source_id'] for s in payload['raw_sources']] == ['r1', 'r2']
     assert audit['omitted_groups'] == [{'endpoints': [['raw', 'r0'], ['memory', 'm0']],
                                        'reason': 'shared_evidence_budget'}]
+
+
+@pytest.mark.parametrize('question,enumeration', [
+    ('What activities does Alex partake in?', True),
+    ('Which hobbies does Alex have?', True),
+    ('List Alex\'s activities.', True),
+    ('Where does Alex live?', False),
+])
+@pytest.mark.parametrize('extra_activity', [True, False])
+def test_enumeration_supplements_sufficient_partial_list_once_without_losing_support(settings, sample, question, enumeration, extra_activity):
+    sample[0]['conversation']['session_1'][0]['text'] = 'I enjoy running.'
+    sample[0]['conversation']['session_1'][1]['text'] = 'My activities include surfing.'
+    sample[0]['conversation']['session_2'][0]['text'] = 'My activities include camping and swimming.' if extra_activity else 'My activities include running.'
+    observed = []
+    base = raw_provider(observed)
+
+    def provider(request):
+        body = json.loads(request.content)
+        payload = json.loads(body['messages'][1]['content'])
+        op = payload.get('operation')
+        if op is None and 'sources' in payload and 'new_memory' not in payload:
+            return completion({'memories': [draft([payload['sources'][0]['source_id']],
+                content='Alex enjoys running.', state_dimension='hobby', state_value='running')]})
+        if op in ('resolve_raw', 'answer_raw'):
+            observed.append((op, payload, body['messages']))
+            mids = [m['memory_id'] for m in payload['memories']]
+            # External provider is controlled; only a delivered, attributed turn adds items.
+            additions = [s for s in payload['raw_sources'] if s['speaker'] == 'Alex' and 'camping' in s['text']]
+            sids = [s['source_id'] for s in additions]
+            if op == 'resolve_raw':
+                return completion({'status': 'sufficient', 'effective_memory_ids': mids,
+                    'effective_source_ids': sids, 'supplemental_relations': [],
+                    'decisions': [{'memory_id': mid, 'selected': True, 'reason': 'Running is supported'} for mid in mids],
+                    'coverage': [{'question': question, 'status': 'sufficient', 'memory_ids': mids, 'source_ids': sids, 'gap': None}],
+                    'explanation': 'Known activities supported; no claim of exhaustive real-world coverage'})
+            citations = [{'memory_id': m['memory_id'], 'source_ids': m['source_ids']} for m in payload['memories']]
+            if sids:
+                citations.append({'memory_id': None, 'source_ids': sids})
+            return completion({'status': payload['status'], 'answer': 'Running, camping and swimming.' if additions else 'Running.',
+                               'citations': citations})
+        return base(request)
+
+    model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        response = client.post('/queries', json={**published(client, sample), 'question': question})
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['initial_resolution']['status'] == 'sufficient'
+        assert trace['raw_fallback']['triggered'] is enumeration
+        assert len([op for op, _, _ in observed if op == 'resolve_raw']) == (2 if enumeration else 1)
+        assert trace['answer']['answer'] == ('Running, camping and swimming.' if enumeration and extra_activity else 'Running.')
+        assert trace['answer']['citations'][0]['memory_id'] == trace['initial_resolution']['effective_memory_ids'][0]
+        if enumeration:
+            assert 'enumeration_coverage_check' in trace['raw_fallback']['trigger_reasons']
+        assert all(b['input_token_count'] <= settings.resolution_input_budget for b in trace['resolution_budgets'].values())
+        assert trace['raw_fallback']['token_count'] <= settings.raw_token_budget

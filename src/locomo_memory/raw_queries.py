@@ -1,5 +1,6 @@
 """One bounded raw fallback and joint resolution; never updates the memory store."""
 import hashlib
+import re
 import time
 
 from .builds import BuildError
@@ -94,6 +95,12 @@ def evidence_status(resolution):
     return 'conflict' if resolution.status=='conflict' or any(c.status=='conflict' for c in resolution.coverage) else 'sufficient'
 
 
+def is_enumeration_question(question):
+    """Recognize explicit English list requests without model or QA annotations."""
+    return bool(re.search(r'\b(?:what|which)\b[^?;.]*\b(?:activities|hobbies)\b', question, re.I)
+                or re.search(r'(?:^|[?;.]\s*)(?:please\s+)?(?:list|enumerate)\b', question, re.I))
+
+
 def run_raw_query(service, request, trace, memories, sources, snapshot):
     settings = service.settings
     all_raw, snapshot_audit = snapshot
@@ -118,8 +125,10 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
     trace['query_fingerprint'] = hashlib.sha256(canonical_json({'fingerprint':trace['query_fingerprint'],
         'resolve_prompt':RAW_RESOLUTION_PROMPT,'answer_prompt':RAW_ANSWER_PROMPT}).encode()).hexdigest()
     trace['raw_fallback'] = {**snapshot_audit,'triggered':False,'source_ids':[], 'token_count':0}
+    enumeration = is_enumeration_question(request.question)
     base = {'operation':'resolve_raw','question':request.question,'time':trace['time'],
             'analysis':trace['initial']['analysis'], 'relations':trace['relations'], 'evidence_profile':profile,
+            'coverage_goal':'enumerate_supported_items' if enumeration else 'specific_facts',
             'candidates_truncated':trace['initial']['initial_truncated'] or trace['expanded']['truncated']}
 
     def resolve(stage, raw, previous=None):
@@ -161,10 +170,13 @@ def run_raw_query(service, request, trace, memories, sources, snapshot):
 
     resolution, resolved_payload = resolve('resolve', [])
     trace['initial_resolution'] = resolution.model_dump(mode='json')
-    if evidence_status(resolution)=='insufficient':
+    if evidence_status(resolution)=='insufficient' or enumeration:
         gaps = [c.gap for c in resolution.coverage if c.status=='insufficient' and c.gap]
-        raw,audit = retrieve_sources(all_raw,request.question,gaps,settings)
-        trace['raw_fallback'].update(audit,triggered=True,trigger_reasons=gaps or ['overall_insufficient'])
+        raw,audit = retrieve_sources(all_raw,request.question,gaps,settings,enumeration=enumeration)
+        reasons = gaps or (['overall_insufficient'] if evidence_status(resolution)=='insufficient' else [])
+        if enumeration:
+            reasons.append('enumeration_coverage_check')
+        trace['raw_fallback'].update(audit,triggered=True,trigger_reasons=reasons)
         if raw:
             sources.update({s['source_id']:s for s in raw})
             resolution,resolved_payload = resolve('joint_resolve',raw,[c.model_dump(mode='json') for c in resolution.coverage])

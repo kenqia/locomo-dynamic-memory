@@ -131,6 +131,9 @@ history. Plans/intentions are not accomplished facts; negation stays negative.
 Compatible jobs/states may coexist. Missing change does not prove RETAIN. Unknown
 relations are not CONFLICT. Preserve both sides of unresolved contradictory evidence
 as conflict. No relevant evidence means insufficient, not an invented fact.
+When/where/who usually seek specific facts. For what activities, which hobbies or list
+questions, select all relevant supported items with correct person attribution; a few
+examples do not prove full coverage. Explain missing coverage without inventing items.
 Beyond-cutoff dates cannot establish later reality. Supplemental relations need
 source-supported endpoints and applicability; they remain query-only judgments.
 Supplemental UPDATE requires update_evidence with same_process and real_stage_changed true,
