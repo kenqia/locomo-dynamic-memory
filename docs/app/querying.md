@@ -60,6 +60,10 @@ uv run --locked pytest tests/test_queries.py -q
 
 ## 有界原文兜底
 
+2026-10-21 根据真实复验结果暂时回退 P0/P1：证据组恢复原顺序装入预算，
+枚举题不再仅因问法额外补查。P2 的拒答与部分答案约定继续保留。
+范围和验证见[回退记录](../../experiments/issue-15-evidence-coverage/rollback-p0-p1.md)。
+
 `POST /queries` 可显式设置 `strategy: "dynamic_raw_fallback"`。默认 `dynamic` 继续只使用 Memory。
 新策略先解析 Memory 并列出每个子问的覆盖。整体或任一子问不足时，仅检索一次原文，
 有命中时再联合解析一次；无缺口不增加操作。整体不足仍可有引用地回答已知部分。

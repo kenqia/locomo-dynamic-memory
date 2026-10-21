@@ -27,7 +27,7 @@ uv run --locked streamlit run src/locomo_memory/ui.py --server.address 127.0.0.1
 `uv sync --locked` 不包含本地 Embedding 模型运行依赖。构建索引前，运行
 `uv sync --locked --extra embedding` 并准备固定 revision 的 MiniLM 本地缓存；
 真实生成还需要进程环境中的 `DEEPSEEK_API_KEY`。配置文件不接受凭据。
-证据覆盖优化后的 [A/B 真实实验](experiments/issue-15-evidence-coverage-live/results/analysis.md)已执行 30 项，全部运行成功，但仍有证据遗漏、枚举退化和时间错误；新问题组的 Raw Fallback F1 低于 Hybrid，尚不支持切换默认策略。
+证据覆盖优化后的 [A/B 真实实验](experiments/issue-15-evidence-coverage-live/results/analysis.md)已执行 30 项，全部运行成功，但仍有证据遗漏、枚举退化和时间错误；新问题组的 Raw Fallback F1 低于 Hybrid，尚不支持切换默认策略。现已按用户要求[暂时回退 P0/P1](experiments/issue-15-evidence-coverage/rollback-p0-p1.md)，保留 P2 的拒答与部分答案约定。
 
 详细步骤见[运行指南](docs/app/running.md)。
 CI、夹具回归、独立浏览器环境和失败诊断见[检查指南](docs/app/checking.md)。
