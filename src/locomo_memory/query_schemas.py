@@ -13,14 +13,20 @@ ANSWER_SCHEMA_VERSION = "evidence-answer-v4-separate-explanation"
 EvidenceStatus = Literal["sufficient", "conflict", "insufficient"]
 
 ANSWERABILITY_GUIDANCE = """
-Judge support against the question's person, time and requested fact, separately for each
-requested part. Related background alone is not a partial answer. An intention expressed
-in another season does not establish a plan during the requested season.
-If no requested part has answerable information, use exactly "No information available."
-as the entire answer. Put related background and the reason for the gap in explanation.
-If any requested part is supported, put those direct facts in answer with citations and
-explain the unanswered parts separately. Do not replace all insufficient answers with abstention.
-Never invent missing items or use background to imply an unsupported answer.
+Check the question's person, time and requested fact for each requested part.
+Related background alone is not a partial answer. Another season's intention cannot establish
+a plan in the requested season. If no requested part is supported, answer exactly
+"No information available."; put background and gaps in explanation.
+Otherwise answer every supported part with citations; explain missing parts separately.
+Do not replace all insufficient answers with abstention. Never invent missing items.
+"""
+
+MULTI_ITEM_GUIDANCE = """
+List ALL distinct supported items for multi-item requests, including activities, locations,
+instruments and events, and multiple items in one source. Keep people separate, plans separate
+from participation, and known partial lists answerable.
+Synthetic example: Dana kayaks and knits, Lee skis, Dana hopes to box.
+Dana's activities: kayaking and knitting; skiing belongs to Lee, boxing is planned.
 """
 
 

@@ -16,8 +16,8 @@ from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
 from .temporal import conversation_cutoff, explicit_question_date
 from .usage import provider_usage
 
-RESOLUTION_PROMPT_VERSION = "effective-resolution-v3-relative-time"
-ANSWER_PROMPT_VERSION = "evidence-answer-v5-requested-support"
+RESOLUTION_PROMPT_VERSION = "effective-resolution-v4-item-source-time"
+ANSWER_PROMPT_VERSION = "evidence-answer-v6-item-source-time"
 
 
 class QueryFailure(BuildError):
@@ -159,7 +159,15 @@ class QueryService:
                             raise BuildError("invalid_query_scope", 422)
                         sources[sid] = dict(source)
                 relations = [json.loads(row[0]) for row in db.execute("SELECT relation_json FROM memory_relations WHERE build_id=? ORDER BY relation_id", (build_id,))]
-            trace["relations"] = [r for r in relations if r["old_memory_id"] in memories and r["new_memory_id"] in memories]
+            from .temporal import query_memory_times, TIME_AUTHORITY_VERSION
+            memories, trace["time_diagnostics"] = query_memory_times(memories, sources)
+            trace["time_authority_version"] = TIME_AUTHORITY_VERSION
+            trace["query_fingerprint"] = hashlib.sha256(canonical_json({
+                "fingerprint":trace["query_fingerprint"], "time_authority":TIME_AUTHORITY_VERSION}).encode()).hexdigest()
+            trace["relations"] = [r for r in relations
+                if ({r["old_memory_id"], r["new_memory_id"]} & memories.keys()
+                    if request.strategy == "dynamic_raw_fallback" else
+                    {r["old_memory_id"], r["new_memory_id"]} <= memories.keys())]
             trace["relation_fingerprint"] = hashlib.sha256(canonical_json(trace["relations"]).encode()).hexdigest()
             if request.strategy == "dynamic_raw_fallback":
                 from .raw_queries import run_raw_query

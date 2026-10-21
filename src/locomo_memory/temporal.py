@@ -1,6 +1,6 @@
 """Parse original session timestamps without substituting the host clock."""
 
-from datetime import datetime
+from datetime import datetime, timedelta
 import re
 
 
@@ -61,3 +61,61 @@ date, never the previous week. Keep an interval or the anchored original express
 when the day is unknown; do not invent an exact date. Prefer original source text
 and its anchor when a derived Memory date contradicts that expression.
 """
+
+QUERY_TIME_GUIDANCE = """Anchor relative time to the cited source session_time, never cutoff or host clock.
+SourceTurn text and original_expression outrank derived time.basis and relation time descriptions.
+"this week" is the week containing that source date, never the previous week.
+Keep ranges and unknown precision; never invent a day.
+Synthetic example: a 2024-04-10 source saying "this week" means 2024-04-08 through 2024-04-14.
+"""
+
+
+TIME_AUTHORITY_VERSION = "source-relative-time-v1"
+
+
+def query_memory_times(memories, sources):
+    """Normalize known relative forms on query copies, leaving persisted history intact.
+
+    Weeks use Monday through Sunday. A weekday qualified by last is strictly
+    earlier than the source date. Unknown expressions retain their precision.
+    """
+    normalized, diagnostics = {}, []
+    weekdays = {name.lower(): i for i, name in enumerate(
+        ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'))}
+    for mid, memory in memories.items():
+        timing = memory.get('time', {})
+        expression = (timing.get('original_expression') or '').strip()
+        source = sources.get(timing.get('anchor_source_id'))
+        if (not source or source['source_id'] not in memory['source_ids']
+                or not expression or not re.search(r'(?<!\w)' + re.escape(expression) + r'(?!\w)',
+                                                   source['text'], re.I)):
+            normalized[mid] = memory
+            continue
+        anchor = session_datetime(source['session_time']).date()
+        relative = expression.casefold()
+        start = end = None
+        if relative in ('this week', 'last week'):
+            start = anchor - timedelta(days=anchor.weekday() + (7 if relative == 'last week' else 0))
+            end = start + timedelta(days=6)
+        elif relative == 'yesterday':
+            start = end = anchor - timedelta(days=1)
+        elif relative.startswith('last ') and relative[5:] in weekdays:
+            offset = (anchor.weekday() - weekdays[relative[5:]]) % 7 or 7
+            start = end = anchor - timedelta(days=offset)
+        if start is None:
+            normalized[mid] = memory
+            continue
+        basis = f'Source expression "{expression}" anchored to {anchor.isoformat()}; {start.isoformat()}'
+        if start != end:
+            basis += f' through {end.isoformat()}; calendar weeks run Monday through Sunday; exact day unknown'
+        corrected = {**timing, 'event_start':start.isoformat(), 'event_end':end.isoformat(), 'basis':basis}
+        # An event's week does not establish how long a state remains valid.
+        if any(timing.get(k) for k in ('valid_from', 'valid_to')):
+            corrected.update(valid_from=None, valid_to=None)
+        normalized[mid] = {**memory, 'time':corrected}
+        if any(timing.get(k) != corrected.get(k) for k in ('event_start', 'event_end', 'basis', 'valid_from', 'valid_to')):
+            diagnostics.append({'memory_id':mid, 'anchor_source_id':source['source_id'],
+                'original_expression':expression, 'session_time':source['session_time'],
+                'reason':'source_relative_time_overrides_derived_time',
+                'derived_time':timing, 'query_time':corrected})
+    return normalized, diagnostics

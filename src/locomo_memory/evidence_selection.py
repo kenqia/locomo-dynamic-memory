@@ -54,3 +54,25 @@ def focus_memories(question, memories, sources, groups):
                      'direct_original_question_match' if m['memory_id'] in direct else 'named_entity_or_connected_history'} for m in selected],
         'omitted':[{'memory_id':m['memory_id'],'reason':'no_original_question_match_or_connected_history'}
                    for m in memories if m['memory_id'] not in keep]}
+
+
+def rank_core_memories(question, memories):
+    """Original-question lexical focus; existing hybrid/expansion order breaks ties.
+
+    Score atomic claims, not whole relation components or long source windows.
+    Stemming connects research/researching without another model call.
+    """
+    stemmer = PorterStemmer()
+    names = {t for m in memories for t in tokenize(m['entity_id'].replace('_', ' '))}
+    def terms(text):
+        return {stemmer.stem(t) for t in tokenize(text)
+                if t not in STOP_WORDS and t not in names and not t.isdigit()}
+    anchors = terms(question)
+    question_tokens = {t.removesuffix("'s") for t in tokenize(question)}
+
+    def relevance(memory):
+        text = memory['content'] + ' ' + memory['state_dimension'].replace('_', ' ')
+        overlap = len(anchors & terms(text))
+        named = any(t in question_tokens for t in tokenize(memory['entity_id'].replace('_', ' ')))
+        return named, overlap
+    return sorted(memories, key=relevance, reverse=True)

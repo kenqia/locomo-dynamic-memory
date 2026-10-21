@@ -347,7 +347,7 @@ def test_fallback_retries_unjustified_loss_of_supported_memory(settings, sample)
 
 @pytest.mark.parametrize('revision_reason,expected_status', [
     ('The later source explicitly corrects residence from Paris to Rome.', 201),
-    (None, 502),
+    (None, 201),
 ])
 def test_fallback_can_correct_prior_fact_with_new_cited_evidence(settings, sample, revision_reason, expected_status):
     sample[0]['conversation']['session_2'][0]['text'] = 'I do not live in Paris; I now live in Rome.'
@@ -375,7 +375,7 @@ def test_fallback_can_correct_prior_fact_with_new_cited_evidence(settings, sampl
         query = {**published(client, sample), 'question': 'Where does Alex live and when did employment start?'}
         response = client.post('/queries', json=query)
         assert response.status_code == expected_status, response.text
-        if expected_status == 201:
+        if revision_reason:
             trace = response.json()
             assert trace['initial_resolution']['effective_memory_ids']
             assert not trace['resolution']['effective_memory_ids']
@@ -383,8 +383,10 @@ def test_fallback_can_correct_prior_fact_with_new_cited_evidence(settings, sampl
             assert trace['answer']['status'] == 'insufficient'
             assert trace['answer']['citations'][0]['source_ids'] == [f"{query['dataset_id']}/conv-a/D2:1"]
         else:
-            trace = client.get('/queries/' + response.json()['error']['trace_id']).json()
-            assert trace['error'] == {'stage': 'joint_resolve', 'code': 'invalid_output'}
+            trace = response.json()
+            assert trace['raw_fallback']['recovery']['code'] == 'invalid_output'
+            assert trace['resolution']['effective_memory_ids'] == trace['initial_resolution']['effective_memory_ids']
+            assert trace['answer']['status'] == 'insufficient'
 
 
 def test_final_budget_omission_of_unneeded_group_keeps_supported_coverage(settings, sample):
@@ -443,3 +445,29 @@ def test_joint_resolution_budget_loss_cannot_erase_still_delivered_support():
     result = MixedResolution.model_validate(response, context=context)
     assert result.effective_memory_ids == ['m1']
     assert result.coverage[0].status == 'insufficient'
+
+
+def test_unsafe_joint_resolution_returns_supported_partial_evidence(settings, sample):
+    observed = []
+    base = raw_provider(observed, enough=True, partial=True)
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'resolve_raw' and payload['raw_sources']:
+            return completion({'status': 'insufficient', 'effective_memory_ids': [],
+                'effective_source_ids': [], 'decisions': [dict(memory_id=m['memory_id'], selected=False,
+                reason='New window says nothing about the city') for m in payload['memories']],
+                'coverage': [dict(question=payload['question'], status='insufficient', memory_ids=[],
+                source_ids=[], gap='Unknown')], 'explanation': 'Lost prior evidence'})
+        return base(request)
+    local = settings.model_copy(update={'model_retries': 0})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        response = client.post('/queries', json=published(client, sample))
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['initial_resolution']['coverage'][0]['status'] == 'insufficient'
+        assert trace['answer']['citations']
+        assert trace['resolution']['effective_memory_ids'] == trace['initial_resolution']['effective_memory_ids']
+        assert trace['raw_fallback']['recovery']['code'] == 'invalid_output'
+        assert trace['answer']['status'] == 'insufficient'
+        assert 'unassessed' in trace['delivered_coverage'][0]['gap']

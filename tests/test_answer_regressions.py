@@ -181,3 +181,52 @@ def test_answer_prompt_distinguishes_requested_support_from_related_background(s
         assert trace['answer']['explanation'] == 'October intent does not establish summer plans.'
         if support == 'background_only':
             assert trace['effective_memories']  # Topic relevance must not count as a supported subanswer.
+
+
+@pytest.mark.parametrize('strategy', ['dynamic', 'dynamic_raw_fallback'])
+@pytest.mark.parametrize('expression,anchor,start,end', [
+    ('this week', '23 August, 2023', '2023-08-21', '2023-08-27'),
+    ('last week', '23 August, 2023', '2023-08-14', '2023-08-20'),
+    ('yesterday', '8 May, 2023', '2023-05-07', '2023-05-07'),
+    ('last Friday', '14 August, 2023', '2023-08-11', '2023-08-11'),
+])
+def test_query_uses_source_anchor_over_wrong_legacy_time(settings, sample, strategy, expression, anchor, start, end):
+    sample[0]['conversation']['session_1_date_time'] = '1:00 pm on ' + anchor
+    sample[0]['conversation']['session_2_date_time'] = '1:00 pm on ' + anchor
+    sample[0]['conversation']['session_1'][0]['text'] = 'I applied ' + expression + '.'
+    observed = []
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        op = payload.get('operation')
+        if op is None and 'sources' in payload and 'new_memory' not in payload:
+            sid = payload['sources'][0]['source_id']
+            return completion({'memories': [draft([sid], content='Alex applied ' + expression + '.',
+                time=dict(original_expression=expression, anchor_source_id=sid, event_start='2000-01-01',
+                          event_end='2000-01-02', basis='the week preceding that session'))]})
+        if op in ('resolve', 'resolve_raw', 'answer', 'answer_raw'):
+            observed.append(op)
+            memory = payload['memories'][0]
+            assert memory['time']['event_start'] == start
+            assert memory['time']['event_end'] == end
+            assert 'preceding' not in memory['time']['basis']
+            if op in ('resolve', 'resolve_raw'):
+                result = dict(status='sufficient', effective_memory_ids=[memory['memory_id']],
+                    decisions=[dict(memory_id=memory['memory_id'], selected=True, reason='Anchored source')],
+                    explanation='Original relative expression')
+                if op == 'resolve_raw':
+                    result.update(effective_source_ids=[], coverage=[dict(question=payload['question'], status='sufficient',
+                        memory_ids=[memory['memory_id']], source_ids=[])])
+                return completion(result)
+            return completion(dict(status=payload['status'], answer=start, citations=[
+                dict(memory_id=memory['memory_id'], source_ids=memory['source_ids'])]))
+        return completion(dict(entities=[], topic=None, time=None, keywords=[]))
+    model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        query = {**published(client, sample), 'strategy':strategy, 'question':'When did Alex apply?'}
+        response = client.post('/queries', json=query)
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['time_diagnostics'][0]['reason'] == 'source_relative_time_overrides_derived_time'
+        assert len(observed) == 2
+        original = client.get(f"/builds/{query['build_id']}/memories").json()['items'][0]
+        assert original['time']['event_start'] == '2000-01-01'
