@@ -69,6 +69,12 @@ def evidence_payload(base, memories, raw, sources):
     mids = {m['memory_id'] for m in memories}
     ids = sorted({sid for m in memories for sid in m['source_ids']} - raw_ids)
     payload = {**base, 'memories':memories, 'raw_sources':raw, 'sources':[sources[sid] for sid in ids]}
+    if base.get('operation') == 'answer_raw':
+        # Legal reference forms, derived only from evidence in this exact packet.
+        # A SourceTurn attached to a Memory is not an independent raw citation.
+        payload['citation_options'] = [
+            {'memory_id':m['memory_id'], 'source_ids':m['source_ids']} for m in memories
+        ] + [{'memory_id':None, 'source_ids':[s['source_id']]} for s in raw]
     if 'relations' in base:
         payload['relations'] = [r for r in base['relations'] if {r['old_memory_id'],r['new_memory_id']} <= mids]
         payload['incomplete_relations'] = [

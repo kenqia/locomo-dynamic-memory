@@ -1,0 +1,227 @@
+[
+  {
+    "qa_index": 15,
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "citation_errors": [],
+    "sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "speaker": "Melanie",
+        "session_time": "8:56 pm on 20 July, 2023",
+        "text": "We always look forward to our family camping trip. We roast marshmallows, tell stories around the campfire and just enjoy each other's company. It's the highlight of our summer!"
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "speaker": "Melanie",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "Yeah, it's tough. So I'm carving out some me-time each day - running, reading, or playing my violin - which refreshes me and helps me stay present for my fam!"
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "speaker": "Melanie",
+        "session_time": "10:37 am on 27 June, 2023",
+        "text": "It was an awesome time, Caroline! We explored nature, roasted marshmallows around the campfire and even went on a hike. The view from the top was amazing! The 2 younger kids love nature. It was so special having these moments together as a family - I'll never forget it!"
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "speaker": "Melanie",
+        "session_time": "1:36 pm on 3 July, 2023",
+        "text": "Thanks, Caroline! Your kind words mean a lot. Pottery is a huge part of my life, not just a hobby - it helps me express my emotions. Clay is incredible, it brings me so much joy!"
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "speaker": "Melanie",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "We enjoy hiking in the mountains and exploring forests. It's a cool way to connect with nature and each other."
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "speaker": "Melanie",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "We love painting together lately, especially nature-inspired ones. Here's our latest work from last weekend."
+      }
+    ],
+    "before_words": 66,
+    "after_words": 21
+  },
+  {
+    "qa_index": 32,
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "citation_errors": [],
+    "sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "speaker": "Caroline",
+        "session_time": "8:56 pm on 20 July, 2023",
+        "text": "Hey Mel! A lot's happened since we last chatted - I just joined a new LGBTQ activist group last Tues. I'm meeting so many cool people who are as passionate as I am about rights and community support. I'm giving my voice and making a real difference, plus it's fulfilling in so many ways. It's just great, you know?"
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "speaker": "Caroline",
+        "session_time": "3:19 pm on 28 August, 2023",
+        "text": "Wow, your kids had so much fun at the park! Being outdoors can be really enjoyable. A lot happened since our last chat. I've been chasing my ambitions and had the chance to volunteer at an LGBTQ+ youth center. It was so gratifying to talk to similar young people. It made me remember how essential it is to be kind and show support."
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "speaker": "Caroline",
+        "session_time": "1:56 pm on 8 May, 2023",
+        "text": "I went to a LGBTQ support group yesterday and it was so powerful."
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "speaker": "Caroline",
+        "session_time": "7:55 pm on 9 June, 2023",
+        "text": "Hey Melanie! How's it going? I wanted to tell you about my school event last week. It was awesome! I talked about my transgender journey and encouraged students to get involved in the LGBTQ community. It was great to see their reactions. It made me reflect on how far I've come since I started transitioning three years ago."
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "speaker": "Caroline",
+        "session_time": "10:37 am on 27 June, 2023",
+        "text": "I'm still figuring out the details, but I'm thinking of working with trans people, helping them accept themselves and supporting their mental health. Last Friday, I went to an LGBTQ+ counseling workshop and it was really enlightening. They talked about different therapeutic methods and how to best work with trans people. Seeing how passionate these pros were about making a safe space for people like me was amazing."
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "speaker": "Caroline",
+        "session_time": "1:36 pm on 3 July, 2023",
+        "text": "Since we last spoke, some big things have happened. Last week I went to an LGBTQ+ pride parade. Everyone was so happy and it made me feel like I belonged. It showed me how much our community has grown, it was amazing!"
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "speaker": "Caroline",
+        "session_time": "4:33 pm on 12 July, 2023",
+        "text": "Hey Mel, great to chat with you again! So much has happened since we last spoke - I went to an LGBTQ conference two days ago and it was really special. I got the chance to meet and connect with people who've gone through similar journeys. It was such a welcoming environment and I felt totally accepted. I'm really thankful for this amazing community - it's shown me how important it is to fight for trans rights and spread awareness."
+      }
+    ],
+    "before_words": 72,
+    "after_words": 30
+  },
+  {
+    "qa_index": 18,
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "citation_errors": [],
+    "sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+        "speaker": "Melanie",
+        "session_time": "12:09 am on 13 September, 2023",
+        "text": "Hey Caroline! It's so good to hear from you! That pic is so beautiful, the colors really pop. Biking sounds like a great way to get out in nature. We went camping with the kids a few weeks ago, had a blast exploring the forest and hiking. Nature can be so refreshing for your soul. Any plans coming up?"
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "speaker": "Melanie",
+        "session_time": "10:37 am on 27 June, 2023",
+        "text": "That sounds great, Caroline! It's awesome having stuff around that make us think of good connections and times. Actually, I just took my fam camping in the mountains last week - it was a really nice time together!"
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "speaker": "Melanie",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "Glad you have support, Caroline! Unconditional love is so important. Here's a pic of my family camping at the beach. We love it, it brings us closer!"
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "speaker": "Melanie",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "Yeah, Caroline, my family's been great - their love and support really helped me through tough times. It's awesome! We even went on another camping trip in the forest."
+      }
+    ],
+    "before_words": 28,
+    "after_words": 7
+  },
+  {
+    "qa_index": 53,
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "citation_errors": [],
+    "sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "speaker": "Caroline",
+        "session_time": "3:31 pm on 23 August, 2023",
+        "text": "Hi Melanie! Hope you're doing good. Guess what I did this week? I took the first step towards becoming a mom - I applied to adoption agencies! It's a big decision, but I think I'm ready to give all my love to a child. I got lots of help from this adoption advice/assistance group I attended. It was great!"
+      }
+    ],
+    "before_words": 32,
+    "after_words": 10
+  },
+  {
+    "qa_index": 60,
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "citation_errors": [],
+    "sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "speaker": "Melanie",
+        "session_time": "3:19 pm on 28 August, 2023",
+        "text": "Yeah, I play clarinet! Started when I was young and it's been great. Expression of myself and a way to relax."
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "speaker": "Melanie",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "Yeah, it's tough. So I'm carving out some me-time each day - running, reading, or playing my violin - which refreshes me and helps me stay present for my fam!"
+      }
+    ],
+    "before_words": 7,
+    "after_words": 3
+  },
+  {
+    "qa_index": 136,
+    "strategy": "dynamic_raw_fallback",
+    "status": "failed",
+    "citation_errors": [],
+    "sources": [
+      {
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "dia_id": "D17:10",
+        "position": 363,
+        "sample_id": "conv-26",
+        "session_id": "session_17",
+        "session_time": "10:31 am on 13 October, 2023",
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "speaker": "Melanie",
+        "text": "Thanks, Caroline. It was tough, but I'm doing ok. Been reading that book you recommended a while ago and painting to keep busy."
+      },
+      {
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "dia_id": "D17:8",
+        "position": 361,
+        "sample_id": "conv-26",
+        "session_id": "session_17",
+        "session_time": "10:31 am on 13 October, 2023",
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "speaker": "Melanie",
+        "text": "Thanks for the tip, Caroline. Doing research and readying myself emotionally makes sense. I'll do that. BTW, recently I had a setback. Last month I got hurt and had to take a break from pottery, which I use for self-expression and peace."
+      }
+    ],
+    "before_words": 17,
+    "after_words": 0,
+    "failure_reason": "Raw citation outside delivered sources; no invalid response accepted"
+  },
+  {
+    "qa_index": 3,
+    "strategy": "dynamic",
+    "status": "succeeded",
+    "citation_errors": [],
+    "sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "speaker": "Caroline",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "Thanks, Mel! My goal is to give kids a loving home. I'm truly grateful for all the support I've got from friends and mentors. Now the hard work starts to turn my dream into a reality. And here's one of the adoption agencies I'm looking into. It's a lot to take in, but I'm feeling hopeful and optimistic."
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "speaker": "Caroline",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it."
+      }
+    ],
+    "before_words": 0,
+    "after_words": 2
+  }
+]

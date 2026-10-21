@@ -149,6 +149,35 @@ def test_evaluation_reports_raw_evidence_and_failed_calls_used_by_dynamic_backup
         assert row['usage_summary']['generation_calls'] == 5
 
 
+def test_source_only_list_items_have_unambiguous_legal_memory_citations(settings, sample):
+    sample[0]['conversation']['session_1'][0]['text'] = 'I knit and sketch to keep busy during my music break.'
+    base = raw_provider([], enough=True)
+    def provider(request):
+        payload = json.loads(json.loads(request.content)['messages'][1]['content'])
+        if payload.get('operation') == 'answer_raw':
+            options = payload.get('citation_options')
+            # Reproduce the live confusion: source text was treated as standalone
+            # raw evidence unless an explicit legal citation form was supplied.
+            citations = options if options else [{'memory_id':None,
+                'source_ids':[payload['sources'][0]['source_id']]}]
+            return completion({'status':'sufficient', 'answer':'Knitting and sketching.', 'citations':citations})
+        if payload.get('operation') is None and 'sources' in payload:
+            return completion({'memories':[draft([payload['sources'][0]['source_id']],
+                content='Alex sketches to keep busy.', state_dimension='hobby', state_value='sketching')]})
+        return base(request)
+    local = settings.model_copy(update={'model_retries':0})
+    model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
+    with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
+        query = {**published(client, sample), 'question':'What does Alex do during the music break?'}
+        response = client.post('/queries', json=query)
+        assert response.status_code == 201, response.text
+        trace = response.json()
+        assert trace['answer']['answer'] == 'Knitting and sketching.'
+        assert trace['answer']['citations'][0]['memory_id'] == trace['effective_memories'][0]['memory_id']
+        assert trace['answer']['citations'][0]['source_ids'] == [f"{query['dataset_id']}/conv-a/D1:1"]
+        assert trace['raw_fallback']['triggered'] is False
+
+
 @pytest.mark.parametrize('profile', ['expanded','focused'])
 def test_new_evaluation_strategy_reports_mixed_source_coverage_without_memory_truth(settings, sample, profile):
     sample[0]['conversation']['session_2'][0]['text'] = 'I work for Cedar.'

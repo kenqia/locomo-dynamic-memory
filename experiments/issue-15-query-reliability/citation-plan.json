@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-10-21T13:06:02.589960+00:00",
+  "sample_id": "conv-26",
+  "source_directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-query-followup-frozen",
+  "prior_ledger_sha256": "a2ce7f2dcf4c9f65036501b644c2b71865986dd0045506469fbfbda119e6d25b",
+  "source_build_id": "5c7699dd6543407697ae232633154036",
+  "source_dataset_id": "f69a07a79a2d5f4c8188300a",
+  "immutable_build_artifacts_sha256": "5e4b912b1978994cd73804291686195441bc28630e25e56dd1d2990fb225e22a",
+  "official_artifact_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "implementation_sha256": "4083fd57e9be1ce5983e8c93d4dc07d046226772e1a559c885e98665fcd08ced",
+  "settings": {
+    "db_path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-citation-followup-frozen/memory.sqlite3",
+    "api_url": "http://127.0.0.1:8000",
+    "model_name": "deepseek-flash",
+    "model_base_url": "https://api.deepseek.com",
+    "model_timeout_seconds": 120.0,
+    "model_retries": 2,
+    "model_temperature": 0.0,
+    "model_max_tokens": 8192,
+    "relation_max_tokens": 16384,
+    "thinking_enabled": false,
+    "extraction_thinking_effort": "disabled",
+    "relation_thinking_effort": "high",
+    "query_analysis_thinking_effort": "disabled",
+    "resolution_thinking_effort": "low",
+    "answer_thinking_effort": "disabled",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "embedding_dimensions": 384,
+    "embedding_local_files_only": true,
+    "embedding_max_tokens": 256,
+    "fragment_turns": 20,
+    "bm25_k": 20,
+    "dense_k": 20,
+    "initial_k": 20,
+    "rrf_constant": 60,
+    "expansion_max_candidates": 60,
+    "expansion_depth": 1,
+    "expansion_scan_limit": 200,
+    "relation_history_limit": 20,
+    "relation_same_key_fraction": 0.8,
+    "relation_fact_fraction": 0.5,
+    "candidate_token_budget": 12000,
+    "evidence_token_budget": 6000,
+    "raw_max_hits": 3,
+    "raw_neighbor_turns": 1,
+    "raw_max_turns": 9,
+    "raw_token_budget": 2000,
+    "resolution_input_budget": 12000
+  },
+  "evidence_profile": "expanded",
+  "previous_calls": 1164,
+  "previous_ceiling": 1173,
+  "call_limit": 6,
+  "campaign_phase": "query-reliability-frozen-1",
+  "cumulative_ceiling": 1170,
+  "authorization": "Pending explicit confirmation of this frozen plan and call ceiling; prepare makes no model calls.",
+  "policy": "One pass, no question reselection, no answer-driven tuning, no rebuild, no automatic run recovery. Retries count toward the same hard ceiling.",
+  "experiments": {
+    "primary": {
+      "strategies": [
+        "dynamic_raw_fallback"
+      ],
+      "logical_items": 1,
+      "questions": [
+        {
+          "question_id": "conv-26:qa:136",
+          "qa_index": 136,
+          "official_qa": {
+            "question": "What does Melanie do to keep herself busy during her pottery break?",
+            "answer": "Read a book and paint.",
+            "evidence": [
+              "D17:10"
+            ],
+            "category": 4
+          }
+        }
+      ]
+    }
+  }
+}

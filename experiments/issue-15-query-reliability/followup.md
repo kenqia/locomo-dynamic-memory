@@ -73,9 +73,9 @@ Build。浏览器结果见 [followup-browser-result.json](followup-browser-resul
 已执行 prepare，冻结目录为
 `/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-query-followup-frozen`，
 计划及校验和副本为 [followup-plan.json](followup-plan.json) 与
-[followup-plan.sha256](followup-plan.sha256)。状态 `frozen_pending_authorization`，尚未真实调用。
+[followup-plan.sha256](followup-plan.sha256)。用户随后批准32次新调用，已按冻结方案执行。
 
-获得这轮32次授权后执行以下固定命令；不能自动继承旧轮64次授权。
+这轮32次授权对应以下固定命令，没有继承旧轮64次授权。
 
 ```sh
 python3 scripts/with_deepseek_env.py -- .venv/bin/python \
@@ -94,3 +94,51 @@ Spec：本地实现覆盖三项缺口，安全与展示回归通过；真实生�
 实际表现仍待获授权的固定题复验，不宣称模型语义验收完成。
 本轮可通过回滚本地提交移除；不改持久化 Memory、关系或全局 CurrentState。
 尚未推送远端、创建 PR 或变更任务完成状态。
+
+## 7项真实复验与引用问题修复
+
+实现 `9cd3aa1` 的固定7项复验于 2026-10-21 20:55–20:58 Asia/Shanghai 执行。
+实际23/32次调用，包含3次无效输出及重试；历史合计1164/1173次。
+输入175,995、输出28,776，共204,771 tokens，所有调用用量完整，来源与快照 Build 摘要不变。
+原始结果为 completed_with_errors，6/7成功，不能把失败记为正确。
+
+| QA / 策略 | 上轮 F1 | 本轮 F1 | 来源及语义核对 |
+| --- | ---: | ---: | --- |
+| 15 / raw_fallback | 0.0505 | 0.7500 | 回答含 painting，主答案66词减为21词，无日期计算 |
+| 32 / raw_fallback | 0.0800 | 0.5939 | 回答含 support group 等7类参与活动，72词减为30词 |
+| 18 / raw_fallback | 0.3026 | 1.0000 | mountains、beach、forest 均保留，28词减为7词 |
+| 53 / raw_fallback | 0.2941 | 0.5714 | 仍是包含8月23日的8月21至27日周区间，未猜具体某天 |
+| 60 / raw_fallback | 0.6667 | 1.0000 | clarinet、violin 均保留 |
+| 136 / raw_fallback | 0.3333 | 失败 | reading/painting原文已交付，三次回答均误用独立原文引用，被校验拒绝 |
+| 3 / dynamic | 失败 | 1.0000 | 直接解析成功，短答 Adoption agencies.；没有触发备用路径 |
+
+raw_fallback 仅成功5题的平均F1为0.7831；6题失败计0的补充分数为0.6526，
+相同6题的历史结果为0.2879。该固定小样本结果不证明普遍提升或失败率已稳定。
+Dynamic备用路径这轮未实际触发，由离线受控故障回归验证，不能声称真实故障已恢复。
+成功6项引用均在交付上下文和对应Memory来源内；人物归属已核对。
+
+完整结果见 [followup-results/report.md](followup-results/report.md)，引用和长度核对见
+[source-audit.json](followup-results/source-audit.json)，安全失败诊断见
+[validation-causes.json](followup-results/validation-causes.json)。这里的词数为英文空白分词，
+不是模型 token 数。原失败结果保留，不依据后续修复覆盖或重算。
+
+QA 136 暴露了 sources 与 raw_sources 的引用路径歧义。后续仅在 answer_raw 的预算打包内
+生成 citation_options，列出本包 Memory ID 与其来源、独立raw_sources的合法引用形式。
+该表不包含未交付证据，不参与事实选择，完整请求预算包含它的开销。
+Answer Prompt 说明来源原文中的额外事实仍沿用其Memory引用；只有raw_sources允许null。
+Schema、冲突双方、人物与来源合法性规则没有放松，也没有自动重写非法引用。
+新增合成案例原文同时支持两个活动、Memory只概括一个活动，复现引用失败后验证修复。
+
+7项冻结实验已经结束，剩余额度不自动授权重复题目。引用修复后拟仅复查QA 136，
+最多6次调用，保留1141+23的历史账本，新累计上限1170，低于已批准总上限1173。
+单题作为新实验保留单独实现摘要、冻结计划及结果，不改变已保存的7项结果。
+
+引用修复后的最终非live回归为405 passed、4 skipped，292.42秒，既有弃用警告1项。
+编译与diff检查通过。新增引用格式表的回归先复现502，再验证两个有来源的项目都能引用
+正确Memory；既有非法来源和冲突校验用例仍通过。作者自审未发现需放宽Schema的理由。
+
+单题计划冻结于
+`/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-citation-followup-frozen`，
+副本为 [citation-plan.json](citation-plan.json) 和 [citation-plan.sha256](citation-plan.sha256)。
+状态 frozen_pending_authorization；需确认的是超出原“每项单轮”的额外QA 136复查范围，
+不是提高原32次总额度。执行时使用 followup.py execute --citation-only --authorized-call-limit 6。
