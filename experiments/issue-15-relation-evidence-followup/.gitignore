@@ -1,0 +1,4 @@
+**/calls.sqlite3
+**/calls.sqlite3-*
+**/run.lock
+/campaign.lock

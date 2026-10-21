@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-10-20T09:41:32.705842+00:00",
+  "implementation_sha256": "787420b34edcb2d12cf2657361c9d064b0363b6f2d298586e9b80a4957194378",
+  "source_sha256": "12410a8a857e91a9e23b97280b4cbcb647278daef83200cb9907c748cd238e2d",
+  "only_treatment": "max_tokens: 4096 versus 8192",
+  "model_retries": 0,
+  "status": "blocked",
+  "attempts": [],
+  "error_code": "length_gate_requires_review",
+  "finished_at": "2026-10-20T09:41:33.198473+00:00",
+  "budget": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 1,
+    "reserved_total_calls": 314,
+    "phases": {
+      "gate2-lengths": 1
+    },
+    "operations": {
+      "relate": 1
+    },
+    "outcomes": {
+      "model_http_error": 1
+    },
+    "usage": {
+      "generation_calls": 1,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": null,
+          "calls_with_reported_usage": 0,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": null,
+          "calls_with_reported_usage": 0,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": null,
+          "calls_with_reported_usage": 0,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 0.47217711499979487
+    }
+  }
+}

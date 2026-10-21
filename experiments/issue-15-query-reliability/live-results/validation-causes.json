@@ -1,0 +1,35 @@
+[
+  {
+    "at": "2026-10-21T09:57:35.385573+00:00",
+    "operation": "resolve",
+    "errors": [
+      {
+        "type": "value_error",
+        "field_path": null,
+        "cause": "Explain every candidate exactly once"
+      }
+    ]
+  },
+  {
+    "at": "2026-10-21T09:58:11.056669+00:00",
+    "operation": "resolve",
+    "errors": [
+      {
+        "type": "json_invalid",
+        "field_path": null,
+        "cause": "other_validation_error"
+      }
+    ]
+  },
+  {
+    "at": "2026-10-21T09:58:44.413502+00:00",
+    "operation": "resolve",
+    "errors": [
+      {
+        "type": "json_invalid",
+        "field_path": null,
+        "cause": "other_validation_error"
+      }
+    ]
+  }
+]

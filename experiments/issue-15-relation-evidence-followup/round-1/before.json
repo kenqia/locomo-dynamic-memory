@@ -1,0 +1,140 @@
+{
+  "approved_call_limit": 4,
+  "mode": "live",
+  "plan_sha256": "b64a4bd603974cc8c56b046565ebbbd803fe5a2bd7328705e8dd428dd9615d42",
+  "replay_id": "62c3c90019884561b9268701386a4a25",
+  "status": "observations_saved",
+  "reserved_calls": 2,
+  "usage": {
+    "generation_calls": 2,
+    "unknown_attempts": 0,
+    "calls_without_reported_usage": 0,
+    "calls_with_partial_usage": 0,
+    "reported_tokens": {
+      "prompt_tokens": 17601,
+      "completion_tokens": 7393,
+      "total_tokens": 24994
+    },
+    "usage_fields": {
+      "prompt_tokens": {
+        "reported": 17601,
+        "calls_with_reported_usage": 2,
+        "calls_missing_usage": 0,
+        "complete": true
+      },
+      "completion_tokens": {
+        "reported": 7393,
+        "calls_with_reported_usage": 2,
+        "calls_missing_usage": 0,
+        "complete": true
+      },
+      "total_tokens": {
+        "reported": 24994,
+        "calls_with_reported_usage": 2,
+        "calls_missing_usage": 0,
+        "complete": true
+      }
+    },
+    "provider_usage_complete": true,
+    "provider_retries": 0,
+    "reported_provider_seconds": 21.7454131329996
+  },
+  "remaining_calls": 2,
+  "attempts": [
+    {
+      "sequence": 1,
+      "phase": "before",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:44",
+      "implementation_sha256": "338fed9dfec3e30a0074cf17f9e799aaa3197b95448e758483497ce285963624",
+      "prompt_version": "relations-v2",
+      "schema_version": "relation-v1",
+      "request_sha256": "f4aaef785613ecddadbbd071c407e7f405b3c02cfb01eb5c290d7981ccd5b346",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T06:44:52.914509+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 11.061738831000184,
+        "error_code": "unique_evidence_required",
+        "failure_stage": "domain_validation",
+        "field_path": "judgments[18]",
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "invalid_output",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:44",
+        "status": "invalid_output",
+        "task_id": "62c3c90019884561b9268701386a4a25:before:relation:44",
+        "timestamp": "2026-10-20T06:44:41.185597+00:00",
+        "usage": {
+          "completion_tokens": 3741,
+          "prompt_tokens": 8460,
+          "total_tokens": 12201
+        },
+        "validation_errors": [
+          {
+            "error_code": "unique_evidence_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[18]"
+          },
+          {
+            "error_code": "unique_evidence_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[19]"
+          }
+        ]
+      },
+      "result": {
+        "status": "invalid_output"
+      }
+    },
+    {
+      "sequence": 2,
+      "phase": "before",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:90",
+      "implementation_sha256": "338fed9dfec3e30a0074cf17f9e799aaa3197b95448e758483497ce285963624",
+      "prompt_version": "relations-v2",
+      "schema_version": "relation-v1",
+      "request_sha256": "6166f94fdbf5987f400bb657f1b3fdec2202f3c2d4a9e4640deba558d737e849",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T06:45:03.620186+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 10.683674301999417,
+        "error_code": "unique_evidence_required",
+        "failure_stage": "domain_validation",
+        "field_path": "judgments[19]",
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "invalid_output",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:90",
+        "status": "invalid_output",
+        "task_id": "62c3c90019884561b9268701386a4a25:before:relation:90",
+        "timestamp": "2026-10-20T06:44:52.936514+00:00",
+        "usage": {
+          "completion_tokens": 3652,
+          "prompt_tokens": 9141,
+          "total_tokens": 12793
+        },
+        "validation_errors": [
+          {
+            "error_code": "unique_evidence_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[19]"
+          }
+        ]
+      },
+      "result": {
+        "status": "invalid_output"
+      }
+    }
+  ]
+}

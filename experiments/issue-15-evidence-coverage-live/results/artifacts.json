@@ -1,0 +1,66 @@
+{
+  "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab",
+  "implementation_sha256": "61f7d8a0d8cec821e3c4ded7c0a5c1ac36cceb2706e34c800c24424d94a8c8cf",
+  "files": [
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab/plan.json",
+      "bytes": 10489,
+      "sha256": "bdacd6b19ac3b8214367b92a192fb1714746685422c05e1be72f7420d44869ba"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab/outcome.json",
+      "bytes": 2460,
+      "sha256": "c10547269dbbe51d26c58ea7d4fff9ea3c8f2df5ef2dca3607948389d7e651c3"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab/A-run.json",
+      "bytes": 15977738,
+      "sha256": "131b761926593ccf8a7f67e11b7edaade73068c57953425590e719f9f68e1402"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab/B-run.json",
+      "bytes": 23168553,
+      "sha256": "53055d41327c712de24699bab29e57f01762f16c79fac5093fb53003ed75aced"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab/A-input.json",
+      "bytes": 2836,
+      "sha256": "fc4201d253286907bd86fde58a47b41c680c0c3288c9e1d6a9fab750ecfcc8a4"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab/B-input.json",
+      "bytes": 5546,
+      "sha256": "994620883a74dabd8ee627a4aa87075ec5e01b760f40be8009274c91b4a3f432"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab/campaign.sqlite3",
+      "bytes": 86016,
+      "sha256": "a5d70c1372830721de872f9bf7e814f33e69f6b513f5ea4c275d47a07ecaa08c"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab/question-usage-audit.json",
+      "bytes": 4199,
+      "sha256": "2eda508fbcbd3aab0e912060b1386f6c1a20e97777bc49644afba86490ab6bbf"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab/regression-tests.txt",
+      "bytes": 1042,
+      "sha256": "163f363858f1c857f3d5cd6d9f316c5ae3dac3b85b3c809259db26caa67eb0c0"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab/experiment-tests.txt",
+      "bytes": 614,
+      "sha256": "ab0ab1bb065767d1a7bcfbc203d7983a1d1f873e6e4fa057882f5de5c1c2fcf5"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/issue15/experiments/issue-15-evidence-coverage-live/run.py",
+      "bytes": 9210,
+      "sha256": "d4003a8625b5bb4393f79640c9ed8129bdfb7f20264ad56337f337724597525d"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/issue15/experiments/issue-15-evidence-coverage-live/report.py",
+      "bytes": 10971,
+      "sha256": "625dd047ea7c4643ebbb344b1489574b1d1aa48da67155c97c278013bfe2696d"
+    }
+  ]
+}

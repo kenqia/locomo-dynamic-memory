@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-10-20T10:39:07.177078+00:00",
+  "change": "default_and_example_model_max_tokens_4096_to_8192",
+  "scope": "shared_generation_output_cap_extract_relate_query_analysis_resolve_answer",
+  "implementation_sha256": "5176f353c972320d58b3060870eaa6fb2788232635c551f7556267e7e75f37b1",
+  "new_live_calls": 0,
+  "cumulative_live_calls": 338,
+  "full_build_started": false,
+  "semantic_gate5": "still_failed",
+  "verification": {
+    "command": ".venv/bin/python -m pytest tests/test_config.py tests/test_model_diagnostics.py tests/test_relation_output_recovery.py tests/test_full_text.py -q --tb=short",
+    "passed": 89,
+    "elapsed_seconds": 3.6,
+    "synthetic_provider_request_max_tokens": 8192,
+    "context_reserved_output_tokens": 8192,
+    "example_config_matches_default": true,
+    "explicit_4096_override_still_supported": true,
+    "diff_check": "passed"
+  },
+  "backup_directory": "/tmp/issue15-before-8192-su8x0nzr",
+  "rollback": "restore config.py and config.example.toml from backup; preserve historical databases and budget"
+}

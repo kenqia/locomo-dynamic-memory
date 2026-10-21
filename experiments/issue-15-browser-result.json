@@ -1,0 +1,19 @@
+{
+  "browser": "Chromium",
+  "pageerrors": [],
+  "console_errors": [],
+  "build_id": "6b3395ac889a4aa6a46fe0fc07b820c0",
+  "download_schema": "memory-export-v1",
+  "scenarios": [
+    "current",
+    "historical",
+    "conflict",
+    "insufficient",
+    "build failure/retry",
+    "evaluation failure"
+  ],
+  "evaluation_rows": 8,
+  "failed_rows": 4,
+  "adapters": "controlled LLM and Embedding only",
+  "browser_version": "156.0.8078.4"
+}

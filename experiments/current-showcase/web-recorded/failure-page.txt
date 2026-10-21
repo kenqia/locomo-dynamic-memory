@@ -1,0 +1,563 @@
+Skip to main content
+Deploy
+动态对话记忆 · 原始来源
+
+导入原始英文对话、核对来源并检查原子 Memory 抽取。完整版本支持英文有效证据问答。
+
+keyboard_arrow_down
+
+导入 LoCoMo 数据
+
+导入仓库官方数据（校验版本与许可证）
+
+选择本地 LoCoMo JSON
+
+upload
+
+Upload
+
+200MB per file • JSON
+
+数据版本
+
+许可证
+
+导入选择的文件
+
+数据集页
+
+共 1 个数据集
+
+数据集
+
+{
+"dataset_id":"f69a07a79a2d5f4c8188300a"
+"source_sha256":"6b0e114d7f462334ec99acf34a2f38074a27411d21022df4f3d3737e8839a3b0"
+"version":"3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376"
+"license":"CC-BY-NC-4.0"
+"conversation_count":10
+"turn_count":5882
+}
+keyboard_arrow_right
+
+原始数据校验与来源版本
+
+对话页
+
+共 10 段对话
+
+对话 sample_id
+
+会话页
+
+共 19 个会话
+
+会话
+
+精确定位 dia_id（可选，如 D1:1）
+
+轮次页
+
+当前会话共 18 轮；保留原始会话时间与英文文本
+
+D1:1 · Caroline
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:1
+
+Hey Mel! Good to see you! How have you been?
+D1:2 · Melanie
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:2
+
+Hey Caroline! Good to see you! I'm swamped with the kids & work. What's up with you? Anything new?
+D1:3 · Caroline
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:3
+
+I went to a LGBTQ support group yesterday and it was so powerful.
+D1:4 · Melanie
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:4
+
+Wow, that's cool, Caroline! What happened that was so awesome? Did you hear any inspiring stories?
+D1:5 · Caroline
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:5
+
+The transgender stories were so inspiring! I was so happy and thankful for all the support.
+D1:6 · Melanie
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:6
+
+Wow, love that painting! So cool you found such a helpful group. What's it done for you?
+D1:7 · Caroline
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:7
+
+The support group has made me feel accepted and given me courage to embrace myself.
+D1:8 · Melanie
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:8
+
+That's really cool. You've got guts. What now?
+D1:9 · Caroline
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:9
+
+Gonna continue my edu and check out career options, which is pretty exciting!
+D1:10 · Melanie
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:10
+
+Wow, Caroline! What kinda jobs are you thinkin' of? Anything that stands out?
+D1:11 · Caroline
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:11
+
+I'm keen on counseling or working in mental health - I'd love to support those with similar issues.
+D1:12 · Melanie
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:12
+
+You'd be a great counselor! Your empathy and understanding will really help the people you work with. By the way, take a look at this.
+D1:13 · Caroline
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:13
+
+Thanks, Melanie! That's really sweet. Is this your own painting?
+D1:14 · Melanie
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:14
+
+Yeah, I painted that lake sunrise last year! It's special to me.
+D1:15 · Caroline
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:15
+
+Wow, Melanie! The colors really blend nicely. Painting looks like a great outlet for expressing yourself.
+D1:16 · Melanie
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:16
+
+Thanks, Caroline! Painting's a fun way to express my feelings and get creative. It's a great way to relax after a long day.
+D1:17 · Caroline
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:17
+
+Totally agree, Mel. Relaxing and expressing ourselves is key. Well, I'm off to go do some research.
+D1:18 · Melanie
+
+1:56 pm on 8 May, 2023 · f69a07a79a2d5f4c8188300a/conv-26/D1:18
+
+Yep, Caroline. Taking care of ourselves is vital. I'm off to go swimming with the kids. Talk to you soon!
+原子 Memory 构建与检查
+
+抽取产物可检查；索引、关系和完整版本发布由后续阶段处理。
+
+构建所选对话的 Memory
+
+刷新构建进度
+
+构建版本页
+
+当前对话共 1 个构建版本
+
+构建版本
+
+状态：完整版本 · 阶段 complete
+
+片段 21，成功 21，失败/中断 0，待处理 0
+
+keyboard_arrow_right
+
+版本、配置与模型调用记录
+
+片段页
+
+Memory 页
+
+已保存 272 条原子 Memory（含部分成功产物）
+
+Caroline went to an LGBTQ support group the day before the conversation.
+
+7b29fbb3088ff54b1d95727f · event · fact · positive · conv-26:Caroline:support_group_attendance
+
+keyboard_arrow_right
+
+Memory 时间与来源：7b29fbb3088ff54b1d95727f
+
+Caroline found the transgender stories at the support group inspiring.
+
+b50cb1c451a8e918e5965d76 · state · fact · positive · conv-26:Caroline:support_group_experience
+
+keyboard_arrow_right
+
+Memory 时间与来源：b50cb1c451a8e918e5965d76
+
+Caroline felt happy and thankful for all the support.
+
+0b59da4babd38428fd2d8cc0 · state · fact · positive · conv-26:Caroline:emotional_state
+
+keyboard_arrow_right
+
+Memory 时间与来源：0b59da4babd38428fd2d8cc0
+
+The support group has made Caroline feel accepted.
+
+2d52e33e7c7d7d50e5bfa3da · state · fact · positive · conv-26:Caroline:support_group_effect
+
+keyboard_arrow_right
+
+Memory 时间与来源：2d52e33e7c7d7d50e5bfa3da
+
+The support group has given Caroline courage to embrace herself.
+
+9632f2128fac4eb2513ac798 · state · fact · positive · conv-26:Caroline:support_group_effect
+
+keyboard_arrow_right
+
+Memory 时间与来源：9632f2128fac4eb2513ac798
+
+Caroline plans to continue her education.
+
+99ff162c4f2eb2d6a0680e0e · event · plan · positive · conv-26:Caroline:education
+
+keyboard_arrow_right
+
+Memory 时间与来源：99ff162c4f2eb2d6a0680e0e
+
+Caroline plans to check out career options.
+
+ab5f9130290ce528637215d1 · event · plan · positive · conv-26:Caroline:career_exploration
+
+keyboard_arrow_right
+
+Memory 时间与来源：ab5f9130290ce528637215d1
+
+Caroline is keen on counseling or working in mental health.
+
+11b8e5b1c4598d451378d4e1 · state · fact · positive · conv-26:Caroline:career_interest
+
+keyboard_arrow_right
+
+Memory 时间与来源：11b8e5b1c4598d451378d4e1
+
+Caroline would love to support those with similar issues.
+
+bdbd5262ede13d6d0cabd57a · state · intention · positive · conv-26:Caroline:career_motivation
+
+keyboard_arrow_right
+
+Memory 时间与来源：bdbd5262ede13d6d0cabd57a
+
+Melanie painted a lake sunrise last year.
+
+35359e989f7932d1968e902a · event · fact · positive · conv-26:Melanie:painting
+
+keyboard_arrow_right
+
+Memory 时间与来源：35359e989f7932d1968e902a
+
+Melanie finds painting a fun way to express her feelings and get creative.
+
+a97f972ae51b6b064ad58aa7 · state · fact · positive · conv-26:Melanie:painting_meaning
+
+keyboard_arrow_right
+
+Memory 时间与来源：a97f972ae51b6b064ad58aa7
+
+Melanie finds painting a great way to relax after a long day.
+
+512e2df84cf65464d29e8dac · state · fact · positive · conv-26:Melanie:painting_meaning
+
+keyboard_arrow_right
+
+Memory 时间与来源：512e2df84cf65464d29e8dac
+
+Melanie ran a charity race for mental health last Saturday.
+
+ebcd173d6d2c71670d251a59 · event · fact · positive · conv-26:Melanie:charity_race
+
+keyboard_arrow_right
+
+Memory 时间与来源：ebcd173d6d2c71670d251a59
+
+Melanie found the charity race really rewarding.
+
+01683704ee40f6d74b5139cf · state · fact · positive · conv-26:Melanie:charity_race_experience
+
+keyboard_arrow_right
+
+Memory 时间与来源：01683704ee40f6d74b5139cf
+
+Melanie is realizing that self-care is really important.
+
+5b45610ccabdb4df708e6a68 · state · fact · positive · conv-26:Melanie:self_care_attitude
+
+keyboard_arrow_right
+
+Memory 时间与来源：5b45610ccabdb4df708e6a68
+
+Melanie is carving out some me-time each day.
+
+20eb29adb2155e25475046dd · state · fact · positive · conv-26:Melanie:self_care_practice
+
+keyboard_arrow_right
+
+Memory 时间与来源：20eb29adb2155e25475046dd
+
+Melanie's me-time activities include running, reading, and playing the violin.
+
+831f646db1fb093105c2ecd6 · state · fact · positive · conv-26:Melanie:hobby
+
+keyboard_arrow_right
+
+Memory 时间与来源：831f646db1fb093105c2ecd6
+
+Melanie's kids are excited about summer break.
+
+248c91bf208897034bc744d7 · state · fact · positive · conv-26:Melanie:family_children_emotion
+
+keyboard_arrow_right
+
+Memory 时间与来源：248c91bf208897034bc744d7
+
+Melanie and her family are thinking about going camping next month.
+
+e28dae4e15b737df9593ad0d · event · intention · positive · conv-26:Melanie:travel_plan
+
+keyboard_arrow_right
+
+Memory 时间与来源：e28dae4e15b737df9593ad0d
+
+Caroline is researching adoption agencies.
+
+c29d9f9836d5c49d48f6d49b · event · fact · positive · conv-26:Caroline:adoption_status
+
+keyboard_arrow_right
+
+Memory 时间与来源：c29d9f9836d5c49d48f6d49b
+
+初始混合检索候选检查
+
+英文检索；当前仅展示候选、通道排名与分析回退，不生成最终答案。
+
+建立或重试混合检索索引
+
+英文问题（候选检查）
+
+检查 BM25 / Dense / RRF 候选
+
+历史关系与 Current State
+
+构建或重试历史关系
+
+{
+"build_id":"5c7699dd6543407697ae232633154036"
+"status":"succeeded"
+"prompt_version":"relations-v7-stage-evidence"
+"schema_version":"relation-v2-stage-evidence"
+"error_code":NULL
+"progress":{
+"total":266
+"succeeded":266
+"failed":0
+"pending":0
+}
+"history_comparisons_truncated":13440
+"history_limit":20
+}
+
+关系任务页
+
+已知状态截止：9:55 am on 22 October, 2023（不代表此后的现实变化）
+
+keyboard_arrow_right
+
+当前候选、历史、事件、计划及条件/冲突说明
+
+完整版本已固定，问答始终使用所选版本。
+
+{
+"build_id":"5c7699dd6543407697ae232633154036"
+"dataset_id":"f69a07a79a2d5f4c8188300a"
+"sample_id":"conv-26"
+"cutoff":"2023-10-22T09:55:00"
+"index_fingerprint":"0ce51ca2f36c7d7f932788f8d552f9a4a3122a851cfe69855a4effcdc0bbb495"
+}
+
+历史关系页
+
+共 4902 条判断（含明确未确定）
+
+关系来源检查
+
+{
+"old_memory_id":"7b29fbb3088ff54b1d95727f"
+"new_memory_id":"fea4f3eaafe359d48ee5f277"
+"label":"undetermined"
+"reason":"Different state dimensions; gratitude about sharing her story is not a stage in support-group attendance."
+"source_ids":[
+0:"f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+1:"f69a07a79a2d5f4c8188300a/conv-26/D3:7"
+]
+"support_quote":NULL
+"applicability":{
+"from_date":NULL
+"to_date":NULL
+"condition":NULL
+"condition_satisfied":NULL
+"condition_source_ids":[]
+"time_anchor_source_id":NULL
+"original_time_expression":NULL
+"time_basis":NULL
+}
+"update_evidence":NULL
+"relation_id":"000718c1bfb59d12c4704a59"
+"build_id":"5c7699dd6543407697ae232633154036"
+}
+{
+"content":"Caroline went to an LGBTQ support group the day before the conversation."
+"memory_type":"event"
+"statement_type":"fact"
+"polarity":"positive"
+"entity_id":"Caroline"
+"state_dimension":"support_group_attendance"
+"state_value":"LGBTQ support group"
+"source_ids":[
+0:"f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+]
+"time":{
+"original_expression":"yesterday"
+"anchor_source_id":"f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+"event_start":"2023-05-07"
+"event_end":"2023-05-07"
+"valid_from":NULL
+"valid_to":NULL
+"basis":"Explicit 'yesterday' relative to session date 8 May 2023."
+}
+"memory_id":"7b29fbb3088ff54b1d95727f"
+"build_id":"5c7699dd6543407697ae232633154036"
+"dataset_id":"f69a07a79a2d5f4c8188300a"
+"sample_id":"conv-26"
+"state_key":"conv-26:Caroline:support_group_attendance"
+"session_times":[
+0:"1:56 pm on 8 May, 2023"
+]
+}
+{
+"content":"Caroline is grateful for the chance to share her story and give others hope."
+"memory_type":"state"
+"statement_type":"fact"
+"polarity":"positive"
+"entity_id":"Caroline"
+"state_dimension":"gratitude"
+"state_value":"sharing her story"
+"source_ids":[
+0:"f69a07a79a2d5f4c8188300a/conv-26/D3:7"
+]
+"time":{
+"original_expression":NULL
+"anchor_source_id":NULL
+"event_start":NULL
+"event_end":NULL
+"valid_from":NULL
+"valid_to":NULL
+"basis":NULL
+}
+"memory_id":"fea4f3eaafe359d48ee5f277"
+"build_id":"5c7699dd6543407697ae232633154036"
+"dataset_id":"f69a07a79a2d5f4c8188300a"
+"sample_id":"conv-26"
+"state_key":"conv-26:Caroline:gratitude"
+"session_times":[
+0:"7:55 pm on 9 June, 2023"
+]
+}
+keyboard_arrow_right
+
+双方原始证据
+
+恢复与完整版本导出
+
+下载当前选择的完整版本 5c7699dd6543407697ae232633154036，包含全部 Memory、原始来源、关系、投影和索引身份。
+
+准备所选版本 JSON
+
+有效证据问答
+
+仅支持英文问题；默认现在指对话截止时间。历史问答不会修改全局状态。
+
+问答策略
+
+Dynamic
+
+Dynamic + 原文兜底
+
+切换策略不会请求模型；点击回答按钮才会执行新查询。
+
+英文问题
+
+指定历史或未来日期
+
+问题日期
+
+2026
+/
+10
+/
+21
+
+解析有效证据并回答
+
+查看已有 Trace ID（含失败记录）
+
+读取问答 Trace
+
+独立评测与基线比较
+keyboard_arrow_down
+
+开发集评测计划预览
+
+开发集：conv-26、conv-30、conv-41、conv-42。本地测试：conv-43、conv-44，系统冻结后再测；教师隐藏评分集另行保密。
+
+预览只读取已导入的来源和独立 QA，不需要完整构建，不调用生成模型，也不运行本地测试。预览数量不代表已完成模型评测。
+
+评测原件 artifact SHA256
+
+开发计划范围
+
+生成开发集计划预览
+
+读取已保存 Plan ID
+
+读取计划预览
+
+独立动态真值缺失时动态指标未评；原文来源覆盖不能证明语义事实已被抽取。运行对照前需发布完整构建版本。
+
+独立评测 JSON（samples、kind、可选 course_split）
+
+upload
+
+Upload
+
+200MB per file • JSON
+
+保存独立评测输入
+
+评测 Input ID
+
+对照策略
+
+完整动态系统
+Full Text 原始轮次
+Vector RAG（无状态解析）
+Hybrid + 扩展（无状态解析）
+
+课程划分（合成案例选择不适用）
+
+运行所选对照
+
+读取已保存 Run ID
+
+读取评测记录

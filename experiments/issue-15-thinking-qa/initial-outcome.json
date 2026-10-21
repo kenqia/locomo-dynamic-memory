@@ -1,0 +1,75 @@
+{
+  "started_at": "2026-10-20T14:44:04.676057+00:00",
+  "status": "extraction_incomplete",
+  "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26",
+  "dataset_id": "f69a07a79a2d5f4c8188300a",
+  "build_id": "3d3204d2588042e2b97f03b035f4ad4e",
+  "resumed_at": "2026-10-20T14:44:04.676308+00:00",
+  "error_type": "ValueError",
+  "completed_at": "2026-10-20T14:44:41.278409+00:00",
+  "budget_after": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 84,
+    "reserved_total_calls": 397,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2,
+      "quality-C-stages": 3,
+      "quality-D-raw": 7,
+      "quality-E-evidence": 10,
+      "thinking-conv26-build-qa": 33
+    },
+    "operations": {
+      "relate": 30,
+      "extract": 37,
+      "resolve_raw": 12,
+      "answer_raw": 5
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 66,
+      "invalid_output": 17
+    },
+    "usage": {
+      "generation_calls": 84,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 466816,
+        "completion_tokens": 132367,
+        "total_tokens": 599183
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 466816,
+          "calls_with_reported_usage": 83,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 132367,
+          "calls_with_reported_usage": 83,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 599183,
+          "calls_with_reported_usage": 83,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 10,
+      "reported_provider_seconds": 401.0142119949978
+    }
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "recorded_at": "2026-10-20T17:29:44.330126+00:00",
+  "reason": "Publication rejected one relation whose source union exceeds its two endpoints; rerun the complete affected task under the unchanged model protocol. No source IDs are silently removed.",
+  "previous_outcome": {
+    "started_at": "2026-10-20T16:25:13.028840+00:00",
+    "status": "experiment_stopped",
+    "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3",
+    "dataset_id": "f69a07a79a2d5f4c8188300a",
+    "build_id": "5c7699dd6543407697ae232633154036",
+    "resumed_at": "2026-10-20T16:25:13.029757+00:00",
+    "error_type": "BuildError",
+    "completed_at": "2026-10-20T17:25:58.099365+00:00",
+    "budget_after": {
+      "limit": 1000,
+      "previous_calls": 313,
+      "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+      "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+      "reserved_new_calls": 461,
+      "reserved_total_calls": 774,
+      "phases": {
+        "gate2-lengths": 13,
+        "gate4-evidence": 6,
+        "gate5-same-key": 2,
+        "gate5-single-pair-diagnosis": 4,
+        "quality-A-extraction": 4,
+        "quality-B-candidates": 2,
+        "quality-C-stages": 3,
+        "quality-D-raw": 7,
+        "quality-E-evidence": 10,
+        "thinking-conv26-build-qa": 410
+      },
+      "operations": {
+        "relate": 364,
+        "extract": 80,
+        "resolve_raw": 12,
+        "answer_raw": 5
+      },
+      "outcomes": {
+        "model_http_error": 1,
+        "succeeded": 426,
+        "invalid_output": 32,
+        "interrupted_unknown": 2
+      },
+      "usage": {
+        "generation_calls": 461,
+        "unknown_attempts": 0,
+        "calls_without_reported_usage": 3,
+        "calls_with_partial_usage": 0,
+        "reported_tokens": {
+          "prompt_tokens": 3893414,
+          "completion_tokens": 1973239,
+          "total_tokens": 5866653
+        },
+        "usage_fields": {
+          "prompt_tokens": {
+            "reported": 3893414,
+            "calls_with_reported_usage": 458,
+            "calls_missing_usage": 3,
+            "complete": false
+          },
+          "completion_tokens": {
+            "reported": 1973239,
+            "calls_with_reported_usage": 458,
+            "calls_missing_usage": 3,
+            "complete": false
+          },
+          "total_tokens": {
+            "reported": 5866653,
+            "calls_with_reported_usage": 458,
+            "calls_missing_usage": 3,
+            "complete": false
+          }
+        },
+        "provider_usage_complete": false,
+        "provider_retries": 23,
+        "reported_provider_seconds": 7321.031453840982
+      }
+    }
+  },
+  "task": {
+    "task_id": "5c7699dd6543407697ae232633154036:relation:132",
+    "build_id": "5c7699dd6543407697ae232633154036",
+    "ordinal": 132,
+    "new_memory_id": "e01038e26bdefa5d050bcfed",
+    "history_ids_json": "[\"e059d2dd6c8418d842c17dc4\",\"7b29fbb3088ff54b1d95727f\",\"b6db40e4fa413b0b6763173e\",\"96b4d58809db63dccf241a6c\",\"d744e00a235c5eccfcb43f73\",\"dc98bdc227c2f00e2703469b\",\"0954710d2cdbad5f6456adb6\",\"675698f4952bf9c9393ca5ee\",\"b1e758b6119155026ff3f594\",\"8ecd78f1bef0bb848ac29377\",\"6c800b37dd2afa0094091f8d\",\"2b7b411aca4d8f777d3a726b\",\"98ae1ac24798246848cd63cd\",\"f78fb9042f436973ce7bd177\",\"72f408ea768e651f6684c5c1\",\"d5a7d408c915bdcefc88342c\",\"553c4718886e69460dd924ad\",\"3cc4b37c1f0c61b8e6845155\",\"a3b61dc77e0dc603d4772762\",\"b50cb1c451a8e918e5965d76\"]",
+    "status": "succeeded",
+    "attempts": 1,
+    "truncated_count": 60,
+    "error_code": null,
+    "metadata_json": "{\"calls\":[{\"attempt\":1,\"build_id\":\"5c7699dd6543407697ae232633154036\",\"call_id\":\"5c7699dd6543407697ae232633154036:relation:132:1:1\",\"completed_at\":\"2026-10-20T16:32:41.382675+00:00\",\"diagnostic_version\":1,\"elapsed_seconds\":36.748423642000034,\"error_code\":null,\"failure_stage\":null,\"field_path\":null,\"finish_reason\":\"stop\",\"finish_reason_status\":\"reported\",\"http_error_category\":null,\"http_retryable\":null,\"http_status\":200,\"logical_attempt\":1,\"max_tokens\":16384,\"outcome\":\"succeeded\",\"provider_attempt\":1,\"reasoning_effort\":\"high\",\"requested_model\":\"deepseek-flash\",\"response_received\":true,\"returned_model\":\"deepseek-flash\",\"status\":\"succeeded\",\"task_id\":\"5c7699dd6543407697ae232633154036:relation:132\",\"thinking\":{\"type\":\"enabled\"},\"timestamp\":\"2026-10-20T16:32:02.968362+00:00\",\"usage\":{\"completion_tokens\":9005,\"prompt_tokens\":11384,\"total_tokens\":20389}}],\"request_context_estimate\":{\"is_provider_token_count\":false,\"method\":\"regex-word-punctuation-v1\",\"reserved_output_tokens\":16384,\"scope\":\"serialized_messages_including_prompt_schema_and_payload\",\"token_count\":12482}}",
+    "selection_json": "{\"algorithm_version\":\"same-key-factual-and-cross-key-v1\",\"borrowed_cross_key_seats\":16,\"borrowed_same_key_seats\":0,\"cross_key_available\":80,\"cross_key_quota\":4,\"cross_key_selected\":20,\"input_count\":80,\"omitted_count\":60,\"same_key_available\":0,\"same_key_quota\":16,\"same_key_selected\":0,\"selected\":[{\"memory_id\":\"e059d2dd6c8418d842c17dc4\",\"pool\":\"cross_key_lexical_candidate\",\"score\":10.570497748942987},{\"memory_id\":\"7b29fbb3088ff54b1d95727f\",\"pool\":\"cross_key_lexical_candidate\",\"score\":9.111140481505174},{\"memory_id\":\"b6db40e4fa413b0b6763173e\",\"pool\":\"cross_key_lexical_candidate\",\"score\":8.984181056936375},{\"memory_id\":\"96b4d58809db63dccf241a6c\",\"pool\":\"cross_key_lexical_candidate\",\"score\":8.722102395911072},{\"memory_id\":\"d744e00a235c5eccfcb43f73\",\"pool\":\"cross_key_lexical_candidate\",\"score\":8.722102395911072},{\"memory_id\":\"dc98bdc227c2f00e2703469b\",\"pool\":\"cross_key_lexical_candidate\",\"score\":7.250465418388933},{\"memory_id\":\"0954710d2cdbad5f6456adb6\",\"pool\":\"cross_key_lexical_candidate\",\"score\":6.102102776651471},{\"memory_id\":\"675698f4952bf9c9393ca5ee\",\"pool\":\"cross_key_lexical_candidate\",\"score\":6.088390877935818},{\"memory_id\":\"b1e758b6119155026ff3f594\",\"pool\":\"cross_key_lexical_candidate\",\"score\":6.088390877935818},{\"memory_id\":\"8ecd78f1bef0bb848ac29377\",\"pool\":\"cross_key_lexical_candidate\",\"score\":5.772978292397315},{\"memory_id\":\"6c800b37dd2afa0094091f8d\",\"pool\":\"cross_key_lexical_candidate\",\"score\":4.50211022574337},{\"memory_id\":\"2b7b411aca4d8f777d3a726b\",\"pool\":\"cross_key_lexical_candidate\",\"score\":3.775886774364789},{\"memory_id\":\"98ae1ac24798246848cd63cd\",\"pool\":\"cross_key_lexical_candidate\",\"score\":2.9749079655085207},{\"memory_id\":\"f78fb9042f436973ce7bd177\",\"pool\":\"cross_key_lexical_candidate\",\"score\":2.625817188477818},{\"memory_id\":\"72f408ea768e651f6684c5c1\",\"pool\":\"cross_key_lexical_candidate\",\"score\":2.480292162445102},{\"memory_id\":\"d5a7d408c915bdcefc88342c\",\"pool\":\"cross_key_lexical_candidate\",\"score\":2.464593808252455},{\"memory_id\":\"553c4718886e69460dd924ad\",\"pool\":\"cross_key_lexical_candidate\",\"score\":2.464593808252455},{\"memory_id\":\"3cc4b37c1f0c61b8e6845155\",\"pool\":\"cross_key_lexical_candidate\",\"score\":2.2328043258431585},{\"memory_id\":\"a3b61dc77e0dc603d4772762\",\"pool\":\"cross_key_lexical_candidate\",\"score\":2.0176708660684057},{\"memory_id\":\"b50cb1c451a8e918e5965d76\",\"pool\":\"cross_key_lexical_candidate\",\"score\":1.115432847377223}]}"
+  },
+  "relations": [
+    {
+      "relation_id": "8f92891c88e795d4a902f088",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "e059d2dd6c8418d842c17dc4",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"e059d2dd6c8418d842c17dc4\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old describes painting for the art show; new gives background detail that the same painting was made after an LGBTQ center visit. No real stage transition is shown.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D9:14\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"8f92891c88e795d4a902f088\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "8a3fa1956daf2dbfa8197b7e",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "7b29fbb3088ff54b1d95727f",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"7b29fbb3088ff54b1d95727f\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is LGBTQ support-group attendance; new is a painting made after an LGBTQ center visit. These are distinct activities with no source-supported same-process progression.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D1:3\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"8a3fa1956daf2dbfa8197b7e\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "0af67025d6c02efbc356a40e",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "b6db40e4fa413b0b6763173e",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"b6db40e4fa413b0b6763173e\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is conference attendance; new is painting after visiting an LGBTQ center. Different events, with no evidence of one concrete process changing stage.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D7:1\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"0af67025d6c02efbc356a40e\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "8981205e360a5c232bb68273",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "96b4d58809db63dccf241a6c",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"96b4d58809db63dccf241a6c\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is pride-parade attendance; new is painting after an LGBTQ center visit. No source links them as stages of the same concrete undertaking.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D5:1\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"8981205e360a5c232bb68273\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "25f9d64871e80ec636090a9d",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "d744e00a235c5eccfcb43f73",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"d744e00a235c5eccfcb43f73\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is counseling-workshop attendance; new is painting after an LGBTQ center visit. No same-process stage transition is supported.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D4:13\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"25f9d64871e80ec636090a9d\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "831818aa7ab2447994727153",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "dc98bdc227c2f00e2703469b",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "UPDATE",
+      "relation_json": "{\"old_memory_id\":\"dc98bdc227c2f00e2703469b\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"UPDATE\",\"reason\":\"Old stage is planning an LGBTQ art show with her paintings; D9:14 identifies the shown painting as for that show, and D9:16 says she painted it. This supports producing artwork for the same planned show.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D9:12\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:14\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":\"I painted this after I visited a LGBTQ center.\",\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":{\"same_process\":true,\"real_stage_changed\":true,\"old_stage\":{\"description\":\"Caroline planned an LGBTQ art show with her paintings for next month.\",\"source_id\":\"f69a07a79a2d5f4c8188300a/conv-26/D9:12\",\"quote\":\"Next month I'm having an LGBTQ art show with my paintings - can't wait!\"},\"new_stage\":{\"description\":\"Caroline painted the painting after visiting an LGBTQ center.\",\"source_id\":\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\",\"quote\":\"I painted this after I visited a LGBTQ center.\"}},\"relation_id\":\"831818aa7ab2447994727153\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "8e1cccd81bcc3c3aa067f6b9",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "0954710d2cdbad5f6456adb6",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"0954710d2cdbad5f6456adb6\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is the reason for choosing an adoption agency; new is painting after an LGBTQ center visit. Unrelated dimensions and no same-process stage change.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D2:12\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"8e1cccd81bcc3c3aa067f6b9\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "b46d683f0776b3c5b862dde1",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "675698f4952bf9c9393ca5ee",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"675698f4952bf9c9393ca5ee\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is joining an LGBTQ youth mentorship program; new is painting after a center visit. No source-supported progression in the same concrete process.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D9:2\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"b46d683f0776b3c5b862dde1\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "4038f869e82fd3ab21f4dbcf",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "b1e758b6119155026ff3f594",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"b1e758b6119155026ff3f594\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is an advocacy intention; new is a painting activity after a center visit. Different dimensions, with no stage transition evidence.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D7:3\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"4038f869e82fd3ab21f4dbcf\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "0452486d2ed3911d4008a6ce",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "8ecd78f1bef0bb848ac29377",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"8ecd78f1bef0bb848ac29377\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is a school event where Caroline encouraged LGBTQ involvement; new is painting after visiting an LGBTQ center. Distinct events without a same-process link.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D3:1\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"0452486d2ed3911d4008a6ce\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "92694c55059709557c60e4b9",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "6c800b37dd2afa0094091f8d",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"6c800b37dd2afa0094091f8d\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is receiving a hand-painted bowl as a gift; new is Caroline painting after visiting an LGBTQ center. No same concrete process.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D4:5\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"92694c55059709557c60e4b9\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "fe203c54d3de045307886a77",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "2b7b411aca4d8f777d3a726b",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"2b7b411aca4d8f777d3a726b\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is looking into an adoption agency; new is painting after an LGBTQ center visit. Different processes and no transition evidence.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D2:10\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"fe203c54d3de045307886a77\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "fbb9502b72cbb2fd85508bf4",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "98ae1ac24798246848cd63cd",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"98ae1ac24798246848cd63cd\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is Caroline's transition realization and courage; new is painting after a center visit. No source-supported same-process stage change.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D8:25\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"fbb9502b72cbb2fd85508bf4\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "1e77c4ed5ed206d513369455",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "f78fb9042f436973ce7bd177",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"f78fb9042f436973ce7bd177\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is a career plan in counseling and mental health; new is a painting activity after an LGBTQ center visit. Different dimensions with no stage transition.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D5:3\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"1e77c4ed5ed206d513369455\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "fd63de47463bed9d4abe246a",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "72f408ea768e651f6684c5c1",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"72f408ea768e651f6684c5c1\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is a general personal-experience state about support making a difference; new is painting after a center visit. No same-process progression.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D4:15\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"fd63de47463bed9d4abe246a\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "916e960f4ff095101b5a26e1",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "d5a7d408c915bdcefc88342c",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"d5a7d408c915bdcefc88342c\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is self-pride about progress; new is painting after an LGBTQ center visit. Different dimensions without stage transition evidence.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D8:27\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"916e960f4ff095101b5a26e1\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "e13b4117f21916ace6d5ceb2",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "553c4718886e69460dd924ad",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"553c4718886e69460dd924ad\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is creating a children's library; new is painting after an LGBTQ center visit. Distinct undertakings with no same-process link.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D6:7\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"e13b4117f21916ace6d5ceb2\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "0d4841534192c9e0599db704",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "3cc4b37c1f0c61b8e6845155",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"3cc4b37c1f0c61b8e6845155\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is a proud/grateful emotional experience at a pride parade; new is painting after visiting an LGBTQ center. No evidence of the same process changing stage.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D8:21\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"0d4841534192c9e0599db704\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "53d611e402b7d89f303ddbaa",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "a3b61dc77e0dc603d4772762",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"a3b61dc77e0dc603d4772762\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is attendance at a pride event; new is painting after an LGBTQ center visit. They are separate events with no source-supported stage progression.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D9:8\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"53d611e402b7d89f303ddbaa\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    },
+    {
+      "relation_id": "ed2df5be6d9b9aa48b2975bc",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "old_memory_id": "b50cb1c451a8e918e5965d76",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "undetermined",
+      "relation_json": "{\"old_memory_id\":\"b50cb1c451a8e918e5965d76\",\"new_memory_id\":\"e01038e26bdefa5d050bcfed\",\"label\":\"undetermined\",\"reason\":\"Old is inspiration from transgender stories at a support group; new is painting after an LGBTQ center visit. Different experiences without same-process evidence.\",\"source_ids\":[\"f69a07a79a2d5f4c8188300a/conv-26/D1:5\",\"f69a07a79a2d5f4c8188300a/conv-26/D9:16\"],\"support_quote\":null,\"applicability\":{\"from_date\":null,\"to_date\":null,\"condition\":null,\"condition_satisfied\":null,\"condition_source_ids\":[],\"time_anchor_source_id\":null,\"original_time_expression\":null,\"time_basis\":null},\"update_evidence\":null,\"relation_id\":\"ed2df5be6d9b9aa48b2975bc\",\"build_id\":\"5c7699dd6543407697ae232633154036\"}"
+    }
+  ]
+}

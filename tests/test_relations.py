@@ -13,6 +13,45 @@ def relation(old, new, **changes):
     return {"old_memory_id": old["memory_id"], "new_memory_id": new["memory_id"], "label": "undetermined", "reason": "The evidence does not establish a transition", "source_ids": list(dict.fromkeys(old["source_ids"] + new["source_ids"])), "support_quote": None, "applicability": {}, **changes}
 
 
+def stage_evidence(old, new, sources):
+    by_id = {s["source_id"]: s for s in sources}
+    return {"same_process": True, "real_stage_changed": True,
+            "old_stage": {"description": old["content"], "source_id": old["source_ids"][0], "quote": by_id[old["source_ids"][0]]["text"]},
+            "new_stage": {"description": new["content"], "source_id": new["source_ids"][0], "quote": by_id[new["source_ids"][0]]["text"]}}
+
+
+def test_third_history_evidence_is_rejected_before_publication(settings, sample):
+    settings = settings.model_copy(update={"model_retries": 0})
+    fixed = False
+
+    def provider(request):
+        payload = json.loads(json.loads(request.content)["messages"][1]["content"])
+        if "new_memory" not in payload:
+            return completion({"memories": [draft([source["source_id"]], content=f"Alex lives in {city}.", state_value=city)
+                for source, city in zip(payload["sources"][:3], ["Paris", "Rome", "Berlin"])]})
+        new, history = payload["new_memory"], payload["history"]
+        judgments = [relation(old, new) for old in history]
+        if len(history) > 1 and not fixed:
+            # This source is known to the batch, but belongs to a different comparison.
+            judgments[0]["source_ids"] += history[1]["source_ids"]
+        return completion({"judgments": judgments})
+
+    model = DeepSeekModel(settings, api_key="synthetic-test-key", transport=httpx.MockTransport(provider))
+    with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
+        build_id = build(client, sample)
+        client.post(f"/builds/{build_id}/index")
+        client.post(f"/builds/{build_id}/relations")
+        assert client.get(f"/builds/{build_id}").json()["status"] == "relations_failed"
+        tasks = client.get(f"/builds/{build_id}/relation-tasks").json()["items"]
+        failed = next(task for task in tasks if task["status"] == "failed")
+        assert failed["diagnostic_history"][0]["calls"][0]["error_code"] == "endpoint_evidence_required"
+        assert client.post(f"/builds/{build_id}/publish").status_code == 409
+        fixed = True
+        assert client.post(f"/builds/{build_id}/relations").status_code == 202
+        assert client.post(f"/builds/{build_id}/publish").status_code == 200
+        assert client.get(f"/builds/{build_id}/export").status_code == 200
+
+
 def test_source_supported_supersession_preserves_history_and_publishes_complete_version(settings, sample):
     sample[0]["conversation"]["session_2"][0]["text"] = "I moved from Paris to Rome on 2 May 2023."
 
@@ -68,7 +107,7 @@ def adoption_provider(omit_research=False):
         if "new_memory" in payload:
             new = payload["new_memory"]
             quote = next(source["text"] for source in payload["sources"] if source["source_id"] == new["source_ids"][0])
-            return completion({"judgments": [relation(old, new, label="UPDATE", reason="These are documented stages of the same adoption process", support_quote=quote) for old in payload["history"]]})
+            return completion({"judgments": [relation(old, new, label="UPDATE", reason="These are documented stages of the same adoption process", support_quote=quote, update_evidence=stage_evidence(old, new, payload["sources"])) for old in payload["history"]]})
         return completion({"entities": ["Alex"], "topic": "adoption", "time": None, "keywords": []})
     return provider
 
@@ -156,6 +195,20 @@ def test_unsafe_model_relations_fail_then_retry_without_reextracting(settings, s
         assert client.get(f"/builds/{build_id}/relations").json()["total"] == 0
         progress = client.get(f"/builds/{build_id}/relation-progress").json()
         assert progress["progress"]["failed"] == 1
+        task = client.get(f"/builds/{build_id}/relation-tasks").json()["items"][0]
+        call = task["diagnostic_history"][0]["calls"][0]
+        expected_codes = {
+            "foreign_endpoint": "comparison_endpoints_required",
+            "unknown_source": "known_source_required",
+            "unrelated_source": "both_endpoints_evidence_required",
+            "cross_dimension": "same_state_dimension_required",
+            "plan": "factual_states_required", "event": "factual_states_required",
+            "invented_quote": "verbatim_support_required",
+            "reversed_dates": "applicability_range_reversed",
+        }
+        assert call["failure_stage"] == "domain_validation"
+        assert call["error_code"] == expected_codes[invalid]
+        assert call["field_path"] == ("judgments[0].applicability" if invalid == "reversed_dates" else "judgments[0]")
         assert client.post(f"/builds/{build_id}/publish").status_code == 409
         fixed = True
         assert client.post(f"/builds/{build_id}/relations").status_code == 202
@@ -260,7 +313,7 @@ def graph_provider(request):
             output = relation(old, new)
             if (old["state_value"], new["state_value"]) in {("A", "B"), ("B", "C"), ("D", "E")}:
                 quote = next(source["text"] for source in payload["sources"] if source["source_id"] == new["source_ids"][0])
-                output.update(label="UPDATE", reason="Explicitly supported progression in the same application process", support_quote=quote)
+                output.update(label="UPDATE", reason="Explicitly supported progression in the same application process", support_quote=quote, update_evidence=stage_evidence(old, new, payload["sources"]))
             judgments.append(output)
         return completion({"judgments": judgments})
     return completion({"entities": ["Alex"], "topic": None, "time": None, "keywords": []})

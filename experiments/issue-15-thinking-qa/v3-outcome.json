@@ -1,0 +1,87 @@
+{
+  "started_at": "2026-10-20T17:33:34.059262+00:00",
+  "status": "completed_with_errors",
+  "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3",
+  "dataset_id": "f69a07a79a2d5f4c8188300a",
+  "build_id": "5c7699dd6543407697ae232633154036",
+  "run_id": "1e6e9dac610b4491b1362a151022af05",
+  "progress": {
+    "total": 40,
+    "pending": 0,
+    "running": 0,
+    "succeeded": 24,
+    "failed": 16,
+    "interrupted": 0,
+    "unknown": 0
+  },
+  "completed_at": "2026-10-20T17:44:02.846136+00:00",
+  "budget_after": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 594,
+    "reserved_total_calls": 907,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2,
+      "quality-C-stages": 3,
+      "quality-D-raw": 7,
+      "quality-E-evidence": 10,
+      "thinking-conv26-build-qa": 543
+    },
+    "operations": {
+      "relate": 365,
+      "extract": 80,
+      "resolve_raw": 29,
+      "answer_raw": 27,
+      "query_analysis": 30,
+      "resolve": 13,
+      "answer": 50
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 508,
+      "invalid_output": 83,
+      "interrupted_unknown": 2
+    },
+    "usage": {
+      "generation_calls": 594,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 3,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 6070521,
+        "completion_tokens": 2101861,
+        "total_tokens": 8172382
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 6070521,
+          "calls_with_reported_usage": 591,
+          "calls_missing_usage": 3,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 2101861,
+          "calls_with_reported_usage": 591,
+          "calls_missing_usage": 3,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 8172382,
+          "calls_with_reported_usage": 591,
+          "calls_missing_usage": 3,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 58,
+      "reported_provider_seconds": 7925.962783972984
+    }
+  }
+}

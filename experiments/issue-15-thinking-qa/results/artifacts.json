@@ -1,0 +1,95 @@
+{
+  "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3",
+  "experiment_implementation_sha256": "839b4daaa71ff5a47d9f122775416e181fc09cce39ac4dd7620833d1cbce1255",
+  "post_experiment_fix_implementation_sha256": "0030145b3c277edea88e81da5f33ef4e5113444075fdef52ff3065d3a89b10a1",
+  "original_run_budget": 907,
+  "after_separate_diagnostic_budget": 911,
+  "call_ceiling": 1000,
+  "files": [
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/plan.json",
+      "bytes": 7343,
+      "sha256": "8683351eff4f71c925b9d792be73370fe93b04cd7ab574e3666d5b119bc02eba"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/outcome.json",
+      "bytes": 2530,
+      "sha256": "2caa269b4ff15f38e7a137a53bfaceb2a5d8843373a8a62e9e234e68ff9d802c"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/memory-export.json",
+      "bytes": 5209600,
+      "sha256": "a80db22b30b427c2bc1c209306768eede42b58155308dd77833dac5453a1a5ef"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/evaluation-input.json",
+      "bytes": 5140,
+      "sha256": "9af2297c983eacca7ebab0321f89853181b06cbe37139766bbb22870c045551f"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/evaluation-run.json",
+      "bytes": 56400899,
+      "sha256": "e2437091a32b2b79d94278a335345136b656b04a72c1cf33feb3809218973250"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/interruption-review.json",
+      "bytes": 3219,
+      "sha256": "14df5cac463705dc6be3bf38ecf1e0fc3924731b05699cb97b0c9de1cbee7ac2"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/second-interruption-review.json",
+      "bytes": 3830,
+      "sha256": "d7e505099e2b0f5a70c3183ced239162852d3c211ce9b1985073677a39825bc7"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/endpoint-evidence-diagnosis.json",
+      "bytes": 550,
+      "sha256": "391ecbe3b9c70e781d08d2d7232c9b626f25ec5dd4c64eba997a3b4fbd54436d"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/endpoint-evidence-repair.json",
+      "bytes": 28621,
+      "sha256": "92615b0c8e8f89e67fe4c667c478211245c9e38a0bb48706386aeb25f9c45da3"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/answer-validation-diagnosis.json",
+      "bytes": 684,
+      "sha256": "666c1c08d91c63e2145e3eb64f31073447420f0dd7e158bc2ff2bd4df854fb3d"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/answer-diagnostic-result.json",
+      "bytes": 296406,
+      "sha256": "9a89b294f9d3437770f575960db3f70288c9e2f6d4a82e6c081b8b8f86ae8af2"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/answer-diagnostic-budget.json",
+      "bytes": 1880,
+      "sha256": "1f240f7836e46dd8a731f8e5409fcd56431ebee7e9f5be7e90d8aecfb74142f8"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/diagnose-answer.py",
+      "bytes": 3522,
+      "sha256": "8073fa2c2db186abc20592517fc15d2acc9de638227f4de4eecbdb250b78e04b"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/regression-tests.txt",
+      "bytes": 962,
+      "sha256": "77108373e8de304ff4415ff659f1fa8493cb83bc09feb63fa7a54369e9c1b677"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/endpoint-regression-red.txt",
+      "bytes": 3071,
+      "sha256": "c84e78433f8c6f194c5e78a3865cf75dd8dacf322d3eccb7832dd4c5257bde6c"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/endpoint-regression-green.txt",
+      "bytes": 614,
+      "sha256": "e80fde89cbc43b06b4b0fde0e89d7424c3194e2e2ef4cb33e50e40d34c14230c"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/final-regression-tests.txt",
+      "bytes": 962,
+      "sha256": "891bf114cc81c0e505cb53d2d4e336c84355e5fdeb44f8febe706a8e3f61e9d0"
+    }
+  ]
+}

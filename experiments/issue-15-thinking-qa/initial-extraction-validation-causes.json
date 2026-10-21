@@ -1,0 +1,39 @@
+[
+  {
+    "at": "2026-10-20T14:44:10.829824+00:00",
+    "causes": [
+      "Time anchor must be one of the cited sources"
+    ]
+  },
+  {
+    "at": "2026-10-20T14:44:16.277719+00:00",
+    "causes": [
+      "Time anchor must be one of the cited sources"
+    ]
+  },
+  {
+    "at": "2026-10-20T14:44:24.438556+00:00",
+    "causes": [
+      "Time anchor must be one of the cited sources"
+    ]
+  },
+  {
+    "at": "2026-10-20T14:44:30.177127+00:00",
+    "causes": [
+      "other_validation_error"
+    ]
+  },
+  {
+    "at": "2026-10-20T14:44:35.731323+00:00",
+    "causes": [
+      "other_validation_error",
+      "other_validation_error"
+    ]
+  },
+  {
+    "at": "2026-10-20T14:44:41.200347+00:00",
+    "causes": [
+      "other_validation_error"
+    ]
+  }
+]

@@ -19,8 +19,14 @@ class Settings(BaseModel):
     model_timeout_seconds: float = Field(default=60, gt=0, allow_inf_nan=False)
     model_retries: int = Field(default=2, ge=0, le=10)
     model_temperature: float = Field(default=0, ge=0, le=2)
-    model_max_tokens: int = Field(default=4096, gt=0)
+    model_max_tokens: int = Field(default=8192, gt=0)
+    relation_max_tokens: int | None = Field(default=None, gt=0)
     thinking_enabled: Literal[False] = False
+    extraction_thinking_effort: Literal["disabled", "low", "high"] = "disabled"
+    relation_thinking_effort: Literal["disabled", "low", "high"] = "high"
+    query_analysis_thinking_effort: Literal["disabled", "low", "high"] = "disabled"
+    resolution_thinking_effort: Literal["disabled", "low", "high"] = "low"
+    answer_thinking_effort: Literal["disabled", "low", "high"] = "disabled"
     embedding_model: Literal["sentence-transformers/all-MiniLM-L6-v2"] = "sentence-transformers/all-MiniLM-L6-v2"
     embedding_revision: str = Field(default="c9745ed1d9f207416be6d2e6f8de32d1f16199bf", pattern=r"^[a-f0-9]{40}$")
     embedding_dimensions: Literal[384] = 384
@@ -35,8 +41,15 @@ class Settings(BaseModel):
     expansion_depth: Literal[0, 1] = 1
     expansion_scan_limit: int = Field(default=200, gt=0)
     relation_history_limit: int = Field(default=20, gt=0)
+    relation_same_key_fraction: float = Field(default=0.8, gt=0, le=1)
+    relation_fact_fraction: float = Field(default=0.5, ge=0, le=1)
     candidate_token_budget: int = Field(default=12000, gt=0)
     evidence_token_budget: int = Field(default=6000, gt=0)
+    raw_max_hits: int = Field(default=3, gt=0)
+    raw_neighbor_turns: int = Field(default=1, ge=0, le=3)
+    raw_max_turns: int = Field(default=9, gt=0)
+    raw_token_budget: int = Field(default=2000, gt=0)
+    resolution_input_budget: int = Field(default=12000, gt=0)
 
     @model_validator(mode="before")
     @classmethod

@@ -1,0 +1,9 @@
+{
+  "implementation_sha256": "c3207ffd535a6337705377dd413ed35b9f7196bec5a050c493a55b3d52cc6a13",
+  "command": ".venv/bin/python -m pytest -m 'not live_model and not local_embedding' -q --tb=short",
+  "passed": 283,
+  "deselected": 4,
+  "elapsed_seconds": 231.6,
+  "new_model_calls_for_tests": 0,
+  "semantic_gate": "failed"
+}

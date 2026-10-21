@@ -27,6 +27,8 @@ from .version_api import register_version_routes
 from .expansion import ExpansionService
 from .queries import QueryService
 from .evaluation import register_evaluation_routes
+from .evaluation_plans import register_evaluation_plan_routes
+from .experiment_api import register_experiment_routes
 from .query_api import register_query_routes
 from .imports import import_dataset
 from .schemas import Conversation, Dataset, ErrorResponse, ImportRequest, ImportResult, Page, Session, SourceTurn
@@ -52,7 +54,11 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
         with backend_ownership(settings.db_path):
             builds.recover_interrupted()
             relations.recover_interrupted()
-            yield
+            app.state.evaluation.execution.recover_interrupted()
+            try:
+                yield
+            finally:
+                app.state.evaluation.execution.shutdown()
 
     app = FastAPI(title="LoCoMo dynamic memory", lifespan=lifespan, responses={400: {"model": ErrorResponse}, 404: {"model": ErrorResponse}, 422: {"model": ErrorResponse}})
     app.state.settings = settings
@@ -71,6 +77,8 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
     app.state.queries = QueryService(versions, retrieval, expansion, model)
     register_query_routes(app, app.state.queries)
     register_evaluation_routes(app, app.state.queries)
+    register_evaluation_plan_routes(app, app.state.evaluation)
+    register_experiment_routes(app)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, exc: RequestValidationError):

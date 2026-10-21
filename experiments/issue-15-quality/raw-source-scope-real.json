@@ -1,0 +1,136 @@
+{
+  "created_at": "2026-10-20T13:17:51.888154+00:00",
+  "implementation_sha256": "e47d085507a83807ab14e2e10d147e797aad0d32c4032bde290c26428355b103",
+  "before": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 36,
+    "reserved_total_calls": 349,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2,
+      "quality-C-stages": 3,
+      "quality-D-raw": 2
+    },
+    "operations": {
+      "relate": 30,
+      "extract": 4,
+      "resolve_raw": 2
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 33,
+      "invalid_output": 2
+    },
+    "usage": {
+      "generation_calls": 36,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 274962,
+        "completion_tokens": 71654,
+        "total_tokens": 346616
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 274962,
+          "calls_with_reported_usage": 35,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 71654,
+          "calls_with_reported_usage": 35,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 346616,
+          "calls_with_reported_usage": 35,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 214.26430392599832
+    }
+  },
+  "phase": "raw",
+  "cases": [],
+  "status": "stopped",
+  "error_code": "invalid_output",
+  "synthetic_provider_outputs": [
+    "{\"status\": \"insufficient\", \"effective_memory_ids\": [], \"decisions\": [{\"memory_id\": \"residence\", \"selected\": false, \"reason\": \"This memory states Riley's residence (Bergen), not where Riley works or the job start date; it is unrelated to the employment question.\"}], \"supplemental_relations\": [], \"explanation\": \"The only supplied memory concerns Riley's residence in Bergen and does not address employment. No raw sources are available (raw_sources is empty), and the listed source text only confirms residence. Therefore neither the employer/workplace nor the job start date can be determined.\", \"effective_source_ids\": [], \"coverage\": [{\"question\": \"Where does Riley work?\", \"status\": \"insufficient\", \"memory_ids\": [], \"source_ids\": [], \"gap\": \"No information about Riley's employer or workplace is present in the supplied memories or sources; only residence (Bergen) is known.\"}, {\"question\": \"On what date did Riley start that job?\", \"status\": \"insufficient\", \"memory_ids\": [], \"source_ids\": [], \"gap\": \"No information about Riley's job start date is present in the supplied memories or sources.\"}]}",
+    "{\"status\": \"sufficient\", \"effective_memory_ids\": [\"residence\"], \"decisions\": [{\"memory_id\": \"residence\", \"selected\": false, \"reason\": \"Residence in Bergen is unrelated to Riley's employer or job start date.\"}], \"explanation\": \"Raw source D1:2 states Riley works for Larch, answering the employer subquestion. The same source explicitly says Riley has not said when the job started, so the start date is unknown. The residence memory is unrelated to employment.\", \"effective_source_ids\": [\"synthetic/conv-probe/D1:2\"], \"coverage\": [{\"question\": \"Where does Riley work?\", \"status\": \"sufficient\", \"memory_ids\": [], \"source_ids\": [\"synthetic/conv-probe/D1:2\"], \"gap\": null}, {\"question\": \"On what date did Riley start that job?\", \"status\": \"insufficient\", \"memory_ids\": [], \"source_ids\": [\"synthetic/conv-probe/D1:2\"], \"gap\": \"Riley explicitly states she has not said when she started the job; no start date is provided in any supplied memory or source.\"}]}"
+  ],
+  "after": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 38,
+    "reserved_total_calls": 351,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2,
+      "quality-C-stages": 3,
+      "quality-D-raw": 4
+    },
+    "operations": {
+      "relate": 30,
+      "extract": 4,
+      "resolve_raw": 4
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 34,
+      "invalid_output": 3
+    },
+    "usage": {
+      "generation_calls": 38,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 279637,
+        "completion_tokens": 72152,
+        "total_tokens": 351789
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 279637,
+          "calls_with_reported_usage": 37,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 72152,
+          "calls_with_reported_usage": 37,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 351789,
+          "calls_with_reported_usage": 37,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 217.36117834399738
+    }
+  }
+}

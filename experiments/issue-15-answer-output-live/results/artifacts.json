@@ -1,0 +1,57 @@
+{
+  "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26",
+  "implementation_sha256": "b6d05ee02cf29d5df3c7bab0dcef855bdba317061c187febc49eaa5222ddf4b1",
+  "source_directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3",
+  "files": [
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26/plan.json",
+      "bytes": 7763,
+      "sha256": "bd5d9dafc01822437f050b44f7378c426537a23b323b4ac30ff8d6f35e085eab"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26/outcome.json",
+      "bytes": 2191,
+      "sha256": "0ee6f41d33882252d41444aa6c4634e82aaaf9516d984af5c00aa9e53718d796"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26/evaluation-run.json",
+      "bytes": 58155524,
+      "sha256": "fd005af7f83643fbba4bf7941883707835d469445e9573b6dde4ff074fe9def5"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26/evaluation-input.json",
+      "bytes": 5140,
+      "sha256": "03232cf99da891bde6290af0d26ae924dfbfc24ee8f46e690a720687449b69cf"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26/campaign.sqlite3",
+      "bytes": 94208,
+      "sha256": "dd7a4ab5796e18eafe9f505988da1f101922932173a01649ff03506f4198201e"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26/validation-causes.json",
+      "bytes": 226,
+      "sha256": "d7dd70eda7b24047b19a5335e0219da46107cc56a327a7f06e8e8a8233259943"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26/regression-tests.txt",
+      "bytes": 1042,
+      "sha256": "7a6ceeb9c7458fa4ba83670a417d22425368e2d0e47a50440179c8036c82db1a"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26/report-and-ui-tests.txt",
+      "bytes": 614,
+      "sha256": "2b7896762956b085e4a1d7e14c49fafcd24c79b8d92b7608ab445e58f592bc47"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/issue15/experiments/issue-15-answer-output-live/run.py",
+      "bytes": 9121,
+      "sha256": "f0c974ae73a22c892a52a7559bc8cbf75e69284714373541a907b55379f11ad9"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/issue15/experiments/issue-15-answer-output-live/report.py",
+      "bytes": 9273,
+      "sha256": "e67f04d7d35d5fd5d23b67e81cce35b364fd9c8aa5b9b42b68f75685cbde8a7f"
+    }
+  ]
+}

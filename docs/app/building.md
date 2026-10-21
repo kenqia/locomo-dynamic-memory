@@ -2,10 +2,47 @@
 
 你可以从已导入的原始对话抽取 Memory，检查每条陈述及其来源，并显式重试失败片段。抽取结束的版本标记为 `extracted`，`query_ready=false`；它还没有完成索引、关系与完整版本发布。[候选检查指南](retrieval.md) 说明显式索引阶段，成功后标记为 `indexed`，仍不能当作完整版本回答。[历史状态指南](relations.md) 说明后续关系、投影和显式发布流程。
 
+## 分阶段思考配置
+
+当前默认按调用阶段设置思考强度。每项接受 `disabled`、`low`、`high`，
+实际值进入构建指纹、评测配置及每次模型调用的安全 metadata。
+
+| TOML 字段 | 默认值 | 阶段 |
+| --- | --- | --- |
+| `extraction_thinking_effort` | `disabled` | 原子 Memory 抽取 |
+| `relation_thinking_effort` | `high` | 历史关系判断 |
+| `query_analysis_thinking_effort` | `disabled` | 查询分析 |
+| `resolution_thinking_effort` | `low` | 有效证据解析，含原文兜底 |
+| `answer_thinking_effort` | `disabled` | 答案生成，含原文兜底与 Full Text |
+
+`thinking_enabled=false` 只保留为旧配置兼容字段；阶段字段决定实际请求。
+开启时发送 `thinking.type=enabled` 与 `reasoning_effort`，不发送无效的 `temperature`；
+关闭时发送 `thinking.type=disabled` 与既有温度。仅解析最终 JSON，不保存或展示
+`reasoning_content`。参数依据 [DeepSeek 思考模式文档](https://api-docs.deepseek.com/guides/thinking_mode/)，
+核查日期为 2026-10-20。
+
+修改前备份本地 TOML。恢复备份即可回滚配置；旧版全关闭对照需要显式将五项均设为
+`disabled`。修改阶段字段后新建 Build，不能继续旧指纹的未完成构建或恢复旧评测。
+回放工具对未保存阶段字段的历史构建仍使用关闭思考的关系请求。
+
+`relation_max_tokens` 可单独覆盖历史关系判断的输出上限，未设置时沿用
+`model_max_tokens`。例如，本轮实验的 `high` 在 8192 上限下连续截断后，
+新构建使用 `relation_max_tokens=16384`，抽取与查询仍为 8192。覆盖值进入构建指纹，
+每次调用也记录实际 `max_tokens`；删除覆盖项即可恢复共用上限，需要另建 Build。
+
+每条关系只能引用其两个端点 Memory 的来源，且须同时覆盖双方。
+同批次其他历史 Memory 的来源即使存在，也不能作为这条关系的额外证据。
+入口校验使用 `endpoint_evidence_required` 拒绝这种输出，与完整版本导出的既有校验保持一致。
+
+`extract-v3-output-constraints` 明确时间锚点也必须出现在该条 Memory 的来源中，
+并要求实体、维度名称遵守原有字符格式。抽取返回不合规或不完整 JSON 后的有限重试会附带安全错误代码、
+字段位置及相同约束，不改变校验规则。既有 `extract-v2-examples` 构建保留原指纹。
+
 ## 前提
 
 - 按 [运行指南](running.md) 启动 FastAPI 与 Streamlit，并导入一个数据集。
 - 由你已有的受保护本地凭据方式向**后端进程**提供 `DEEPSEEK_API_KEY`。应用只在显式生成请求时读取该环境变量，不读取凭据文件，不加载 `.env`，不要求在聊天或配置文件中填写密钥。不要把真实值写进命令正文、仓库或实验记录。
+- 查找已有凭据或为获授权的命令注入凭据时，先读[本地凭据导航](../agents/local-credentials.md)。
 - 本地只运行一个后端进程。SQLite 旁的 `.runtime.lock` 使用 Linux 内核文件锁防止第二个进程错误地把正在工作的构建判为中断；适用环境是项目当前的 WSL Ubuntu。
 
 缺少凭据时，构建记录显示 `missing_credentials`，不会发送模型请求。补齐受保护凭据后需要重启后端使其获得环境，并点击显式重试；系统不自动无限重试。
@@ -33,7 +70,7 @@
 
 ## 模型协议与有限重试
 
-模型适配器通过现有 `httpx` 依赖直接请求官方 `/chat/completions`，不增加 SDK 或供应商插件框架。请求明确携带 `deepseek-flash`（可配置模型名）、`thinking={"type":"disabled"}`、`response_format={"type":"json_object"}`、JSON 提示和输出 schema。普通 JSON 模式不等于 schema 约束，响应仍须经过 Pydantic 和来源校验。
+模型适配器通过现有 `httpx` 依赖直接请求官方 `/chat/completions`，不增加 SDK 或供应商插件框架。请求明确携带 `deepseek-flash`（可配置模型名）、按阶段确定的 `thinking` 与 `reasoning_effort`、`response_format={"type":"json_object"}`、JSON 提示和输出 schema。普通 JSON 模式不等于 schema 约束，响应仍须经过 Pydantic 和来源校验。
 
 `model_retries` 表示首次请求之外的重试次数，默认 2，即每片段最多 3 次；`model_timeout_seconds` 默认 60 秒。没有额外 SDK 重试层。超时、HTTP 错误、空内容、截断、无效 JSON、无效 schema 或来源会有限重试，耗尽后失败。有效 `{"memories":[]}` 必须带非空 `no_facts_reason`，区别于提供方返回空内容。
 
@@ -76,3 +113,9 @@ LOCOMO_LIVE_MODEL=1 uv run pytest -m live_model -q
 该检查只有一个小型合成构建，模型重试为 0，超时 30 秒。默认测试报告将它标记为跳过。它只检查真实提供方到来源映射的集成，不证明正式课程指标或整体抽取质量。实际执行状态见 `experiments/issue-6-extraction-validation.md`。
 
 跨阶段恢复、完整版本固定及 JSON 下载见 [恢复构建与导出完整版本](versions.md)。
+
+## 抽取示例版本
+
+`extract-v2-examples` 在原有严格 JSON Schema 和来源校验上增加合成示例，覆盖计划、
+已发生事实、引语中的人物、否定及事件阶段。示例不属于构建来源；跨片段未提供的
+人物上下文仍可能无法消歧。Prompt 改变构建指纹，需要创建新 Build，不能恢复旧契约。

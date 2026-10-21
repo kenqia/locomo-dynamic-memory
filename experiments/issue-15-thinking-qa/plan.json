@@ -1,0 +1,256 @@
+{
+  "created_at": "2026-10-20T15:08:33.906273+00:00",
+  "sample_id": "conv-26",
+  "settings": {
+    "db_path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/memory.sqlite3",
+    "api_url": "http://127.0.0.1:8000",
+    "model_name": "deepseek-flash",
+    "model_base_url": "https://api.deepseek.com",
+    "model_timeout_seconds": 120.0,
+    "model_retries": 2,
+    "model_temperature": 0.0,
+    "model_max_tokens": 8192,
+    "relation_max_tokens": 16384,
+    "thinking_enabled": false,
+    "extraction_thinking_effort": "disabled",
+    "relation_thinking_effort": "high",
+    "query_analysis_thinking_effort": "disabled",
+    "resolution_thinking_effort": "low",
+    "answer_thinking_effort": "disabled",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "embedding_dimensions": 384,
+    "embedding_local_files_only": true,
+    "embedding_max_tokens": 256,
+    "fragment_turns": 20,
+    "bm25_k": 20,
+    "dense_k": 20,
+    "initial_k": 20,
+    "rrf_constant": 60,
+    "expansion_max_candidates": 60,
+    "expansion_depth": 1,
+    "expansion_scan_limit": 200,
+    "relation_history_limit": 20,
+    "relation_same_key_fraction": 0.8,
+    "relation_fact_fraction": 0.5,
+    "candidate_token_budget": 12000,
+    "evidence_token_budget": 6000,
+    "raw_max_hits": 3,
+    "raw_neighbor_turns": 1,
+    "raw_max_turns": 9,
+    "raw_token_budget": 2000,
+    "resolution_input_budget": 12000
+  },
+  "implementation_sha256": "839b4daaa71ff5a47d9f122775416e181fc09cce39ac4dd7620833d1cbce1255",
+  "questions": [
+    {
+      "question_id": "conv-26:qa:3",
+      "qa_index": 3,
+      "purpose": "fact",
+      "official_qa": {
+        "question": "What did Caroline research?",
+        "answer": "Adoption agencies",
+        "evidence": [
+          "D2:8"
+        ],
+        "category": 1
+      }
+    },
+    {
+      "question_id": "conv-26:qa:4",
+      "qa_index": 4,
+      "purpose": "fact",
+      "official_qa": {
+        "question": "What is Caroline's identity?",
+        "answer": "Transgender woman",
+        "evidence": [
+          "D1:5"
+        ],
+        "category": 1
+      }
+    },
+    {
+      "question_id": "conv-26:qa:13",
+      "qa_index": 13,
+      "purpose": "cross_session",
+      "official_qa": {
+        "question": "What career path has Caroline decided to persue?",
+        "answer": "counseling or mental health for Transgender people",
+        "evidence": [
+          "D4:13",
+          "D1:11"
+        ],
+        "category": 1
+      }
+    },
+    {
+      "question_id": "conv-26:qa:15",
+      "qa_index": 15,
+      "purpose": "cross_session",
+      "official_qa": {
+        "question": "What activities does Melanie partake in?",
+        "answer": "pottery, camping, painting, swimming",
+        "evidence": [
+          "D5:4",
+          "D9:1",
+          "D1:12",
+          "D1:18"
+        ],
+        "category": 1
+      }
+    },
+    {
+      "question_id": "conv-26:qa:0",
+      "qa_index": 0,
+      "purpose": "time",
+      "official_qa": {
+        "question": "When did Caroline go to the LGBTQ support group?",
+        "answer": "7 May 2023",
+        "evidence": [
+          "D1:3"
+        ],
+        "category": 2
+      }
+    },
+    {
+      "question_id": "conv-26:qa:16",
+      "qa_index": 16,
+      "purpose": "time",
+      "official_qa": {
+        "question": "When did Melanie sign up for a pottery class?",
+        "answer": "2 July 2023",
+        "evidence": [
+          "D5:4"
+        ],
+        "category": 2
+      }
+    },
+    {
+      "question_id": "conv-26:qa:53",
+      "qa_index": 53,
+      "purpose": "state_progression",
+      "official_qa": {
+        "question": "When did Caroline apply to adoption agencies?",
+        "answer": "The week of 23 August 2023",
+        "evidence": [
+          "D13:1"
+        ],
+        "category": 2
+      }
+    },
+    {
+      "question_id": "conv-26:qa:79",
+      "qa_index": 79,
+      "purpose": "state_progression",
+      "official_qa": {
+        "question": "When did Caroline pass the adoption interview?",
+        "answer": "The Friday before 22 October 2023",
+        "evidence": [
+          "D19:1"
+        ],
+        "category": 2
+      }
+    },
+    {
+      "question_id": "conv-26:qa:153",
+      "qa_index": 153,
+      "purpose": "insufficient",
+      "official_qa": {
+        "question": "What are Melanie's plans for the summer with respect to adoption?",
+        "evidence": [
+          "D2:8"
+        ],
+        "category": 5,
+        "adversarial_answer": "researching adoption agencies"
+      }
+    },
+    {
+      "question_id": "conv-26:qa:157",
+      "qa_index": 157,
+      "purpose": "insufficient",
+      "official_qa": {
+        "question": "What does Melanie's necklace symbolize?",
+        "evidence": [
+          "D4:3"
+        ],
+        "category": 5,
+        "adversarial_answer": "love, faith, and strength"
+      }
+    }
+  ],
+  "strategies": [
+    "dynamic",
+    "dynamic_raw_fallback",
+    "hybrid_no_resolution",
+    "full_text"
+  ],
+  "evidence_profile": "expanded",
+  "official_artifact_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "budget_before": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 166,
+    "reserved_total_calls": 479,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2,
+      "quality-C-stages": 3,
+      "quality-D-raw": 7,
+      "quality-E-evidence": 10,
+      "thinking-conv26-build-qa": 115
+    },
+    "operations": {
+      "relate": 91,
+      "extract": 58,
+      "resolve_raw": 12,
+      "answer_raw": 5
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 139,
+      "invalid_output": 26
+    },
+    "usage": {
+      "generation_calls": 166,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 1039017,
+        "completion_tokens": 425472,
+        "total_tokens": 1464489
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 1039017,
+          "calls_with_reported_usage": 165,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 425472,
+          "calls_with_reported_usage": 165,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 1464489,
+          "calls_with_reported_usage": 165,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 17,
+      "reported_provider_seconds": 1520.0236278179927
+    }
+  },
+  "logical_items": 40,
+  "selection_note": "Two original QA per purpose, fixed before model results. State questions probe application and interview stages; no rewritten current-state questions. Category 5 has no reference answer; report refusal behavior separately."
+}

@@ -1,0 +1,334 @@
+{
+  "approved_call_limit": 6,
+  "mode": "live",
+  "plan_sha256": "4daf33cac869da8894cc5475ec66e3752610a0cefa502bdfc1ac63f52c794f5f",
+  "replay_id": "ec886d1d99c142ab9efb3cc944e6cb16",
+  "status": "budget_exhausted",
+  "reserved_calls": 6,
+  "usage": {
+    "generation_calls": 6,
+    "unknown_attempts": 0,
+    "calls_without_reported_usage": 0,
+    "calls_with_partial_usage": 0,
+    "reported_tokens": {
+      "prompt_tokens": 38699,
+      "completion_tokens": 15776,
+      "total_tokens": 54475
+    },
+    "usage_fields": {
+      "prompt_tokens": {
+        "reported": 38699,
+        "calls_with_reported_usage": 6,
+        "calls_missing_usage": 0,
+        "complete": true
+      },
+      "completion_tokens": {
+        "reported": 15776,
+        "calls_with_reported_usage": 6,
+        "calls_missing_usage": 0,
+        "complete": true
+      },
+      "total_tokens": {
+        "reported": 54475,
+        "calls_with_reported_usage": 6,
+        "calls_missing_usage": 0,
+        "complete": true
+      }
+    },
+    "provider_usage_complete": true,
+    "provider_retries": 0,
+    "reported_provider_seconds": 50.01055686599966
+  },
+  "remaining_calls": 0,
+  "attempts": [
+    {
+      "sequence": 1,
+      "phase": "before",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:2",
+      "implementation_sha256": "aa6e036c9003d68b126e80046d83792cac438cb4559110dff1d12843ecd12c1e",
+      "prompt_version": "relations-v1",
+      "schema_version": "relation-v1",
+      "request_sha256": "ae9e06e4fd2ee920d866dde60d55942494bdae9c511afb89fc7a27d152eb07c9",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T06:30:50.572250+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 1.93245637300015,
+        "error_code": "same_state_dimension_required",
+        "failure_stage": "domain_validation",
+        "field_path": "judgments[0]",
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "invalid_output",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:2",
+        "status": "invalid_output",
+        "task_id": "ec886d1d99c142ab9efb3cc944e6cb16:before:relation:2",
+        "timestamp": "2026-10-20T06:30:48.639793+00:00",
+        "usage": {
+          "completion_tokens": 272,
+          "prompt_tokens": 1782,
+          "total_tokens": 2054
+        },
+        "validation_errors": [
+          {
+            "error_code": "same_state_dimension_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[0]"
+          }
+        ]
+      },
+      "result": {
+        "status": "invalid_output"
+      }
+    },
+    {
+      "sequence": 2,
+      "phase": "before",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:44",
+      "implementation_sha256": "aa6e036c9003d68b126e80046d83792cac438cb4559110dff1d12843ecd12c1e",
+      "prompt_version": "relations-v1",
+      "schema_version": "relation-v1",
+      "request_sha256": "c220fddf7b9282718d26e41cea79ffe2a972fb46794a532eaab4b4658df62b17",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T06:31:02.093658+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 10.807756228000017,
+        "error_code": "reason_and_unique_evidence_required",
+        "failure_stage": "domain_validation",
+        "field_path": "judgments[18]",
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "invalid_output",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:44",
+        "status": "invalid_output",
+        "task_id": "ec886d1d99c142ab9efb3cc944e6cb16:before:relation:44",
+        "timestamp": "2026-10-20T06:30:50.591151+00:00",
+        "usage": {
+          "completion_tokens": 3625,
+          "prompt_tokens": 8393,
+          "total_tokens": 12018
+        },
+        "validation_errors": [
+          {
+            "error_code": "reason_and_unique_evidence_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[18]"
+          },
+          {
+            "error_code": "reason_and_unique_evidence_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[19]"
+          }
+        ]
+      },
+      "result": {
+        "status": "invalid_output"
+      }
+    },
+    {
+      "sequence": 3,
+      "phase": "before",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:90",
+      "implementation_sha256": "aa6e036c9003d68b126e80046d83792cac438cb4559110dff1d12843ecd12c1e",
+      "prompt_version": "relations-v1",
+      "schema_version": "relation-v1",
+      "request_sha256": "a8b2b070c5bd53a75d7913d9d519a7ac76f805734826a63266cf2e06993f49b9",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T06:31:14.352593+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 12.24244977599983,
+        "error_code": "same_state_dimension_required",
+        "failure_stage": "domain_validation",
+        "field_path": "judgments[19]",
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "invalid_output",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:90",
+        "status": "invalid_output",
+        "task_id": "ec886d1d99c142ab9efb3cc944e6cb16:before:relation:90",
+        "timestamp": "2026-10-20T06:31:02.110124+00:00",
+        "usage": {
+          "completion_tokens": 3895,
+          "prompt_tokens": 9074,
+          "total_tokens": 12969
+        },
+        "validation_errors": [
+          {
+            "error_code": "same_state_dimension_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[19]"
+          }
+        ]
+      },
+      "result": {
+        "status": "invalid_output"
+      }
+    },
+    {
+      "sequence": 4,
+      "phase": "after",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:2",
+      "implementation_sha256": "f22b45e588cbcb2ee481b0a2bffef2270e264db89f3ca5a2126738099660e3b2",
+      "prompt_version": "relations-v2",
+      "schema_version": "relation-v1",
+      "request_sha256": "5a6622c7b69ecedcd29d8ea69eb93eead6fb9061d4089c009d514bd01d62bf48",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T06:33:58.925383+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 2.030811679999715,
+        "error_code": null,
+        "failure_stage": null,
+        "field_path": null,
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "succeeded",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:2",
+        "status": "succeeded",
+        "task_id": "ec886d1d99c142ab9efb3cc944e6cb16:after:relation:2",
+        "timestamp": "2026-10-20T06:33:56.894569+00:00",
+        "usage": {
+          "completion_tokens": 239,
+          "prompt_tokens": 1849,
+          "total_tokens": 2088
+        }
+      },
+      "result": {
+        "candidate_count": 1,
+        "covered_candidate_count": 1,
+        "judgments": [
+          {
+            "label": "undetermined",
+            "new_memory_id": "0e45538fc6bcc18a98651192",
+            "old_memory_id": "fffe5349bcfeae710c3ac929",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:5"
+            ]
+          }
+        ],
+        "label_counts": {
+          "undetermined": 1
+        },
+        "status": "succeeded"
+      }
+    },
+    {
+      "sequence": 5,
+      "phase": "after",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:44",
+      "implementation_sha256": "f22b45e588cbcb2ee481b0a2bffef2270e264db89f3ca5a2126738099660e3b2",
+      "prompt_version": "relations-v2",
+      "schema_version": "relation-v1",
+      "request_sha256": "f4aaef785613ecddadbbd071c407e7f405b3c02cfb01eb5c290d7981ccd5b346",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T06:34:10.168241+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 11.22990111199988,
+        "error_code": "reason_and_unique_evidence_required",
+        "failure_stage": "domain_validation",
+        "field_path": "judgments[18]",
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "invalid_output",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:44",
+        "status": "invalid_output",
+        "task_id": "ec886d1d99c142ab9efb3cc944e6cb16:after:relation:44",
+        "timestamp": "2026-10-20T06:33:58.938338+00:00",
+        "usage": {
+          "completion_tokens": 3729,
+          "prompt_tokens": 8460,
+          "total_tokens": 12189
+        },
+        "validation_errors": [
+          {
+            "error_code": "reason_and_unique_evidence_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[18]"
+          },
+          {
+            "error_code": "reason_and_unique_evidence_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[19]"
+          }
+        ]
+      },
+      "result": {
+        "status": "invalid_output"
+      }
+    },
+    {
+      "sequence": 6,
+      "phase": "after",
+      "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:90",
+      "implementation_sha256": "f22b45e588cbcb2ee481b0a2bffef2270e264db89f3ca5a2126738099660e3b2",
+      "prompt_version": "relations-v2",
+      "schema_version": "relation-v1",
+      "request_sha256": "6166f94fdbf5987f400bb657f1b3fdec2202f3c2d4a9e4640deba558d737e849",
+      "diagnostics": {
+        "attempt": 1,
+        "completed_at": "2026-10-20T06:34:22.573956+00:00",
+        "diagnostic_version": 1,
+        "elapsed_seconds": 11.767181697000069,
+        "error_code": "reason_and_unique_evidence_required",
+        "failure_stage": "domain_validation",
+        "field_path": "judgments[19]",
+        "finish_reason": "stop",
+        "finish_reason_status": "reported",
+        "logical_attempt": 1,
+        "outcome": "invalid_output",
+        "provider_attempt": 1,
+        "requested_model": "deepseek-flash",
+        "response_received": true,
+        "returned_model": "deepseek-flash",
+        "source_task_id": "91f1f50938064972820e3ab7b390d9dd:relation:90",
+        "status": "invalid_output",
+        "task_id": "ec886d1d99c142ab9efb3cc944e6cb16:after:relation:90",
+        "timestamp": "2026-10-20T06:34:10.180398+00:00",
+        "usage": {
+          "completion_tokens": 4016,
+          "prompt_tokens": 9141,
+          "total_tokens": 13157
+        },
+        "validation_errors": [
+          {
+            "error_code": "reason_and_unique_evidence_required",
+            "failure_stage": "domain_validation",
+            "field_path": "judgments[19]"
+          }
+        ]
+      },
+      "result": {
+        "status": "invalid_output"
+      }
+    }
+  ]
+}

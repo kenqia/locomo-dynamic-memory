@@ -1,0 +1,15 @@
+{
+  "build_id": "5c7699dd6543407697ae232633154036",
+  "status": "succeeded",
+  "prompt_version": "relations-v7-stage-evidence",
+  "schema_version": "relation-v2-stage-evidence",
+  "error_code": null,
+  "progress": {
+    "total": 266,
+    "succeeded": 266,
+    "failed": 0,
+    "pending": 0
+  },
+  "history_comparisons_truncated": 13440,
+  "history_limit": 20
+}

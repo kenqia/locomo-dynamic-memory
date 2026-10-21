@@ -8,9 +8,35 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationInfo, fi
 from .relation_schemas import RelationDraft
 from .retrieval_schemas import CandidateQueryRequest
 
-RESOLUTION_SCHEMA_VERSION = "effective-resolution-v1"
-ANSWER_SCHEMA_VERSION = "evidence-answer-v2-raw-sources"
+RESOLUTION_SCHEMA_VERSION = "effective-resolution-v2-stage-evidence"
+ANSWER_SCHEMA_VERSION = "evidence-answer-v4-separate-explanation"
 EvidenceStatus = Literal["sufficient", "conflict", "insufficient"]
+
+ANSWERABILITY_GUIDANCE = """
+Check the question's person, time and requested fact for each requested part.
+Related background alone is not a partial answer. Another season's intention cannot establish
+a plan in the requested season. If no requested part is supported, answer exactly
+"No information available."; put background and gaps in explanation.
+Otherwise answer every supported part with citations; explain missing parts separately.
+Do not replace all insufficient answers with abstention. Never invent missing items.
+"""
+
+MULTI_ITEM_GUIDANCE = """
+List ALL distinct supported items for multi-item requests, including activities, locations,
+instruments and events, and multiple items in one source. Keep people separate, plans separate
+from participation, and known partial lists answerable.
+Synthetic example: Dana kayaks and knits, Lee skis, Dana hopes to box.
+Dana's activities: kayaking and knitting; skiing belongs to Lee, boxing is planned.
+"""
+
+SHORT_ANSWER_GUIDANCE = """
+For a list question, answer with a compact, deduplicated list of item names, not one narrative
+per source. Include every supported distinct item before adding detail. Unless the question
+asks when, omit dates, relative-time calculations and trip chronology from answer; put any
+necessary qualifications in explanation. Preserve uncertainty or negation that changes an item.
+Synthetic example: Dana practiced chess on Monday and Friday and baked bread on Sunday.
+Question: What activities does Dana do? Answer: Chess and baking.
+"""
 
 
 class QueryRequest(BaseModel):
@@ -20,9 +46,13 @@ class QueryRequest(BaseModel):
     build_id: StrictStr | None = Field(default=None, min_length=1)
     question: StrictStr = Field(min_length=1, max_length=10000)
     requested_date: date | None = None
+    evidence_profile: Literal["expanded", "focused"] = "expanded"
+    strategy: Literal["dynamic", "dynamic_raw_fallback"] = "dynamic"
 
     @model_validator(mode="after")
     def english_question(self):
+        if self.evidence_profile == "focused" and self.strategy != "dynamic_raw_fallback":
+            raise ValueError("Focused evidence is scoped to dynamic_raw_fallback")
         CandidateQueryRequest(build_id="validation", question=self.question)
         return self
 
@@ -60,15 +90,18 @@ class EffectiveResolution(BaseModel):
         memories = context["memories"]
         allowed = set(memories)
         selected = set(self.effective_memory_ids)
+        raw_selected = set(getattr(self, "effective_source_ids", []))
+        if not raw_selected <= set(context.get("raw_sources", {})):
+            raise ValueError("Raw evidence outside supplied scope")
         if len(selected) != len(self.effective_memory_ids) or not selected <= allowed:
             raise ValueError("Effective evidence must use unique supplied IDs")
         if {d.memory_id for d in self.decisions} != allowed or len(self.decisions) != len(allowed):
             raise ValueError("Explain every candidate exactly once")
         if {d.memory_id for d in self.decisions if d.selected} != selected:
             raise ValueError("Selection and decisions disagree")
-        if self.status == "sufficient" and not selected:
+        if self.status == "sufficient" and not (selected or raw_selected):
             raise ValueError("Sufficient answer requires evidence")
-        if self.status == "conflict" and len(selected) < 2:
+        if self.status == "conflict" and len(selected) + len(raw_selected) < 2:
             raise ValueError("Conflict requires both evidence sides")
         for judgment in self.supplemental_relations:
             old, new = memories.get(judgment.old_memory_id), memories.get(judgment.new_memory_id)
@@ -89,6 +122,7 @@ class EvidenceAnswer(BaseModel):
     status: EvidenceStatus
     answer: StrictStr = Field(min_length=1)
     citations: list[Citation]
+    explanation: StrictStr | None = Field(default=None, description="Evidence explanation, missing parts and scope; separate from the direct answer")
 
     @model_validator(mode="after")
     def citations_are_delivered_evidence(self, info: ValidationInfo):
@@ -97,7 +131,7 @@ class EvidenceAnswer(BaseModel):
         context = info.context or {}
         if "memories" not in context:
             return self
-        if self.status != context["status"]:
+        if self.status != context["status"] and not (context["status"] == "sufficient" and self.status == "insufficient"):
             raise ValueError("Answer must preserve evidence uncertainty")
         if self.status in {"sufficient", "conflict"} and not self.citations:
             raise ValueError("Evidence-backed answer needs citations")
@@ -110,6 +144,8 @@ class EvidenceAnswer(BaseModel):
             memory = memories.get(citation.memory_id)
             if memory is None or not set(citation.source_ids) <= set(memory["source_ids"]) or len(set(citation.source_ids)) != len(citation.source_ids):
                 raise ValueError("Citation outside delivered effective evidence")
-        if self.status == "conflict" and len({c.memory_id for c in self.citations}) < 2:
+        endpoints = {( "memory", c.memory_id) if c.memory_id is not None else ("source", sid)
+                     for c in self.citations for sid in c.source_ids}
+        if self.status == "conflict" and len(endpoints) < 2:
             raise ValueError("Cite both unresolved conflict sides")
         return self

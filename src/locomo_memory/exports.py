@@ -18,8 +18,9 @@ def read_bundle(db, build: dict) -> MemoryExport:
         projection = json.loads(db.execute("SELECT projection_json FROM current_state_projections WHERE build_id=?", (fixed,)).fetchone()[0])
         index = dict(db.execute("SELECT * FROM build_indexes WHERE build_id=?", (fixed,)).fetchone())
         index.update(json.loads(index.pop("metadata_json")))
+        relation_version = db.execute("SELECT schema_version FROM relation_phases WHERE build_id=?", (fixed,)).fetchone()[0]
         # Runtime/provider dictionaries never become export metadata.
-        return MemoryExport.model_validate({"dataset": dataset,
+        return MemoryExport.model_validate({"dataset": dataset, "relation_contract_version": relation_version,
             "build": {field: build[field] for field in ExportBuild.model_fields},
             "memories": memories, "sources": sources, "relations": relations,
             "projection": projection, "index": {field: index[field] for field in ExportIndex.model_fields}})

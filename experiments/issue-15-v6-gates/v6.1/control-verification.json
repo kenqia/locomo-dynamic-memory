@@ -1,0 +1,19 @@
+{
+  "implementation_sha256": "76ca85f3ca9b03e3e63cf7780c93d54f1a740cf95399e39b7fb215e229e25eba",
+  "full_command": ".venv/bin/python -m pytest -m 'not live_model and not local_embedding' -q --tb=short",
+  "full_initial_result": {
+    "passed": 282,
+    "failed": 1,
+    "deselected": 4,
+    "elapsed_seconds": 187.19,
+    "failure": "obsolete_whole_prompt_snapshot"
+  },
+  "repair": "replace_obsolete_prompt_snapshot_with_stable_request_schema_payload_and_parameters_contract",
+  "targeted_command": ".venv/bin/python -m pytest tests/test_model_diagnostics.py -q --tb=short",
+  "targeted_result": {
+    "passed": 75,
+    "failed": 0,
+    "elapsed_seconds": 0.53
+  },
+  "new_model_calls_for_tests": 0
+}

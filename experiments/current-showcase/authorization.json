@@ -1,0 +1,8 @@
+{
+  "authorized": true,
+  "new_call_limit": 420,
+  "previous_calls": 1169,
+  "cumulative_ceiling": 1589,
+  "scope": "20 questions x five strategies; 40 retrieval questions; 10 real dynamic queries; no rebuild; one pass with finite retries counted; 20 source reviews and five browser scenarios without extra provider calls",
+  "plan_sha256": "c2474e1b2a30104196a2f36f8b737a372256706fe343eaa024f622a877ec66cd"
+}

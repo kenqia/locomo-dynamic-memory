@@ -39,7 +39,7 @@ def test_explicit_complete_export_preserves_multisources_relations_and_old_versi
         response = client.get(f"/builds/{first}/export")
         assert response.status_code == 200
         exported = response.json()
-        assert exported["schema_version"] == "memory-export-v1"
+        assert exported["schema_version"] == "memory-export-v2"
         assert exported["build"]["build_id"] == first
         assert exported["build"]["status"] == "complete"
         assert len(exported["memories"]) == 2

@@ -1,0 +1,98 @@
+{
+  "baseline": "d65e380bc949497f8f095dfea1ed0062beacabd4",
+  "new_live_calls": 0,
+  "schema_equal": true,
+  "cases": [
+    {
+      "case": "success",
+      "equivalent": true,
+      "provider_attempts": 1,
+      "outcome": "succeeded",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "json",
+      "equivalent": true,
+      "provider_attempts": 3,
+      "outcome": "invalid_output",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "schema",
+      "equivalent": true,
+      "provider_attempts": 3,
+      "outcome": "invalid_output",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "enum",
+      "equivalent": true,
+      "provider_attempts": 3,
+      "outcome": "invalid_output",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "domain",
+      "equivalent": true,
+      "provider_attempts": 3,
+      "outcome": "invalid_output",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "length",
+      "equivalent": true,
+      "provider_attempts": 3,
+      "outcome": "invalid_output",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "missing_finish",
+      "equivalent": true,
+      "provider_attempts": 3,
+      "outcome": "invalid_output",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "empty",
+      "equivalent": true,
+      "provider_attempts": 3,
+      "outcome": "invalid_output",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "malformed",
+      "equivalent": true,
+      "provider_attempts": 3,
+      "outcome": "invalid_output",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "http",
+      "equivalent": true,
+      "provider_attempts": 3,
+      "outcome": "model_http_error",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "timeout",
+      "equivalent": true,
+      "provider_attempts": 3,
+      "outcome": "model_timeout",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "context_limit",
+      "equivalent": true,
+      "provider_attempts": 1,
+      "outcome": "context_length_exceeded",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    },
+    {
+      "case": "failure_then_success",
+      "equivalent": true,
+      "provider_attempts": 2,
+      "outcome": "succeeded",
+      "request_sha256": "0b048493bd7e67c7abd18b392d33c9563cb1c269d1897033774c3b0394b80846"
+    }
+  ]
+}

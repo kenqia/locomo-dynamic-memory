@@ -1,0 +1,2117 @@
+{
+  "status": "completed_with_errors",
+  "build_id": "5c7699dd6543407697ae232633154036",
+  "run_id": "1e6e9dac610b4491b1362a151022af05",
+  "strategies": {
+    "dynamic": {
+      "successful": 9,
+      "planned": 10,
+      "answerable_qa_mean": 0.15368599884568704,
+      "official_refusal_mean": 0.0,
+      "all_qa_mean": 0.12294879907654964,
+      "raw_fallback_triggered_items": 0,
+      "mean_attempt_seconds": 28.694964551300018,
+      "usage": {
+        "generation_calls": 35,
+        "unknown_attempts": 0,
+        "calls_without_reported_usage": 0,
+        "calls_with_partial_usage": 0,
+        "reported_tokens": {
+          "prompt_tokens": 856429,
+          "completion_tokens": 67061,
+          "total_tokens": 923490
+        },
+        "usage_fields": {
+          "prompt_tokens": {
+            "reported": 856429,
+            "calls_with_reported_usage": 35,
+            "calls_missing_usage": 0,
+            "complete": true
+          },
+          "completion_tokens": {
+            "reported": 67061,
+            "calls_with_reported_usage": 35,
+            "calls_missing_usage": 0,
+            "complete": true
+          },
+          "total_tokens": {
+            "reported": 923490,
+            "calls_with_reported_usage": 35,
+            "calls_missing_usage": 0,
+            "complete": true
+          }
+        },
+        "provider_usage_complete": true,
+        "provider_retries": 5,
+        "reported_provider_seconds": 280.3371633400029,
+        "logical_attempts": 10,
+        "logical_retries": 0,
+        "running_attempts": 0,
+        "failed_attempts": 1,
+        "first_attempt_failures": 1,
+        "reported_embedding_calls": 10,
+        "samples_with_unknown_embedding_call_count": 0,
+        "reported_attempt_seconds": 286.9496455130002,
+        "attempts_without_elapsed_seconds": 0,
+        "reported_stage_seconds": {
+          "answer": 19.93173545499849,
+          "expansion": 0.5206364019986722,
+          "resolve": 253.50382919200183,
+          "retrieval": 12.144084142001702
+        },
+        "scope": "all_saved_query_attempts"
+      }
+    },
+    "dynamic_raw_fallback": {
+      "successful": 4,
+      "planned": 10,
+      "answerable_qa_mean": 0.039473684210526314,
+      "official_refusal_mean": 0.0,
+      "all_qa_mean": 0.031578947368421054,
+      "raw_fallback_triggered_items": 7,
+      "mean_attempt_seconds": 22.68490865850008,
+      "usage": {
+        "generation_calls": 49,
+        "unknown_attempts": 0,
+        "calls_without_reported_usage": 0,
+        "calls_with_partial_usage": 0,
+        "reported_tokens": {
+          "prompt_tokens": 251206,
+          "completion_tokens": 44525,
+          "total_tokens": 295731
+        },
+        "usage_fields": {
+          "prompt_tokens": {
+            "reported": 251206,
+            "calls_with_reported_usage": 49,
+            "calls_missing_usage": 0,
+            "complete": true
+          },
+          "completion_tokens": {
+            "reported": 44525,
+            "calls_with_reported_usage": 49,
+            "calls_missing_usage": 0,
+            "complete": true
+          },
+          "total_tokens": {
+            "reported": 295731,
+            "calls_with_reported_usage": 49,
+            "calls_missing_usage": 0,
+            "complete": true
+          }
+        },
+        "provider_usage_complete": true,
+        "provider_retries": 12,
+        "reported_provider_seconds": 222.27544890599984,
+        "logical_attempts": 10,
+        "logical_retries": 0,
+        "running_attempts": 0,
+        "failed_attempts": 6,
+        "first_attempt_failures": 6,
+        "reported_embedding_calls": 10,
+        "samples_with_unknown_embedding_call_count": 0,
+        "reported_attempt_seconds": 226.8490865850008,
+        "attempts_without_elapsed_seconds": 0,
+        "reported_stage_seconds": {
+          "answer": 26.34190687100181,
+          "expansion": 0.4944119249985306,
+          "joint_resolve": 70.73390934700001,
+          "resolve": 119.74932124600036,
+          "retrieval": 8.043480021002324
+        },
+        "scope": "all_saved_query_attempts"
+      }
+    },
+    "hybrid_no_resolution": {
+      "successful": 3,
+      "planned": 10,
+      "answerable_qa_mean": 0.02040816326530612,
+      "official_refusal_mean": 0.0,
+      "all_qa_mean": 0.016326530612244896,
+      "raw_fallback_triggered_items": 0,
+      "mean_attempt_seconds": 4.836519938899892,
+      "usage": {
+        "generation_calls": 34,
+        "unknown_attempts": 0,
+        "calls_without_reported_usage": 0,
+        "calls_with_partial_usage": 0,
+        "reported_tokens": {
+          "prompt_tokens": 175712,
+          "completion_tokens": 6992,
+          "total_tokens": 182704
+        },
+        "usage_fields": {
+          "prompt_tokens": {
+            "reported": 175712,
+            "calls_with_reported_usage": 34,
+            "calls_missing_usage": 0,
+            "complete": true
+          },
+          "completion_tokens": {
+            "reported": 6992,
+            "calls_with_reported_usage": 34,
+            "calls_missing_usage": 0,
+            "complete": true
+          },
+          "total_tokens": {
+            "reported": 182704,
+            "calls_with_reported_usage": 34,
+            "calls_missing_usage": 0,
+            "complete": true
+          }
+        },
+        "provider_usage_complete": true,
+        "provider_retries": 14,
+        "reported_provider_seconds": 46.808698452999124,
+        "logical_attempts": 10,
+        "logical_retries": 0,
+        "running_attempts": 0,
+        "failed_attempts": 7,
+        "first_attempt_failures": 7,
+        "reported_embedding_calls": 10,
+        "samples_with_unknown_embedding_call_count": 0,
+        "reported_attempt_seconds": 48.36519938899892,
+        "attempts_without_elapsed_seconds": 0,
+        "reported_stage_seconds": {
+          "expansion": 0.489573707001,
+          "retrieval": 7.89598556799956,
+          "answer": 3.9957200660001035
+        },
+        "scope": "all_saved_query_attempts"
+      }
+    },
+    "full_text": {
+      "successful": 8,
+      "planned": 10,
+      "answerable_qa_mean": 0.17915115079848365,
+      "official_refusal_mean": 0,
+      "all_qa_mean": 0.14332092063878693,
+      "raw_fallback_triggered_items": 0,
+      "mean_attempt_seconds": 3.086781879800037,
+      "usage": {
+        "generation_calls": 14,
+        "unknown_attempts": 0,
+        "calls_without_reported_usage": 0,
+        "calls_with_partial_usage": 0,
+        "reported_tokens": {
+          "prompt_tokens": 882376,
+          "completion_tokens": 3595,
+          "total_tokens": 885971
+        },
+        "usage_fields": {
+          "prompt_tokens": {
+            "reported": 882376,
+            "calls_with_reported_usage": 14,
+            "calls_missing_usage": 0,
+            "complete": true
+          },
+          "completion_tokens": {
+            "reported": 3595,
+            "calls_with_reported_usage": 14,
+            "calls_missing_usage": 0,
+            "complete": true
+          },
+          "total_tokens": {
+            "reported": 885971,
+            "calls_with_reported_usage": 14,
+            "calls_missing_usage": 0,
+            "complete": true
+          }
+        },
+        "provider_usage_complete": true,
+        "provider_retries": 4,
+        "reported_provider_seconds": 30.354188227999657,
+        "logical_attempts": 10,
+        "logical_retries": 0,
+        "running_attempts": 0,
+        "failed_attempts": 2,
+        "first_attempt_failures": 2,
+        "reported_embedding_calls": 0,
+        "samples_with_unknown_embedding_call_count": 0,
+        "reported_attempt_seconds": 30.86781879800037,
+        "attempts_without_elapsed_seconds": 0,
+        "reported_stage_seconds": {
+          "answer": 20.6027333539987
+        },
+        "scope": "all_saved_query_attempts"
+      }
+    }
+  },
+  "rows": [
+    {
+      "question_id": "conv-26:qa:3",
+      "purpose": "fact",
+      "question": "What did Caroline research?",
+      "gold": "Adoption agencies",
+      "category": 1,
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline researched two areas: adoption agencies (she was looking into an adoption agency as part of her dream to give kids a loving home), and counseling/mental health work as a career (she had been looking into counseling or mental health work and started exploring counseling and mental health career options). This is based on evidence available as of the conversation cutoff (9:55 am on 22 October, 2023); later developments are not known.",
+      "qa_score": 0.16666666666666666,
+      "run_qa_score": 0.16666666666666666,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 46.011295158000394,
+      "generation_calls": 4,
+      "total_tokens": 161221,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "c29d9f9836d5c49d48f6d49b",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+          ]
+        },
+        {
+          "memory_id": "2b7b411aca4d8f777d3a726b",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+          ]
+        },
+        {
+          "memory_id": "edf0ad6dfb5ddf068bbe2225",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+          ]
+        },
+        {
+          "memory_id": "376676a70336006ce30b797e",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+          ]
+        },
+        {
+          "memory_id": "b48a241d0644ef8309ef12cb",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:3",
+      "purpose": "fact",
+      "question": "What did Caroline research?",
+      "gold": "Adoption agencies",
+      "category": 1,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "The supplied evidence does not identify what Caroline researched. The only raw source where Caroline refers to her own research is her statement that she was \"off to go do some research,\" which does not state the subject or topic. Other mentions of research in the evidence concern advice to Melanie or Melanie's own research, not Caroline's. Therefore, the topic of Caroline's research is unknown from the delivered evidence.\n\nKnown only as of the conversation cutoff (2023-10-22T09:55:00); later reality is unknown.",
+      "qa_score": 0.0,
+      "run_qa_score": 0.0,
+      "answer_source_coverage": 0.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 18.666526341999997,
+      "generation_calls": 4,
+      "total_tokens": 29031,
+      "full_text_expected_sources": 1,
+      "full_text_delivered_sources": 1,
+      "provider_accepted": true,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": true,
+      "raw_fallback_selected_sources": 9,
+      "raw_fallback_effective_sources": 1,
+      "raw_fallback_cited_sources": 1,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:17"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:3",
+      "purpose": "fact",
+      "question": "What did Caroline research?",
+      "gold": "Adoption agencies",
+      "category": 1,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 4.366749329999948,
+      "generation_calls": 4,
+      "total_tokens": 23106,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:3",
+      "purpose": "fact",
+      "question": "What did Caroline research?",
+      "gold": "Adoption agencies",
+      "category": 1,
+      "strategy": "full_text",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline researched adoption agencies — she described it as a dream to have a family and give a loving home to kids who need it, and she chose an agency that helps LGBTQ+ folks with adoption because of its inclusivity and support. She also mentioned doing research more generally before heading off (\"off to go do some research\"), but the specific research she described was into adoption agencies. This is based on the conversation as of the cutoff of 9:55 am on 22 October, 2023; I cannot speak to anything after that time.",
+      "qa_score": 0.17391304347826086,
+      "run_qa_score": 0.17391304347826086,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 2.2619445979999,
+      "generation_calls": 1,
+      "total_tokens": 63243,
+      "full_text_expected_sources": 419,
+      "full_text_delivered_sources": 419,
+      "provider_accepted": true,
+      "full_text_http_accepted": true,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:17"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:4",
+      "purpose": "fact",
+      "question": "What is Caroline's identity?",
+      "gold": "Transgender woman",
+      "category": 1,
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline identifies as a trans woman. In her own words, she made a painting to show her path as a trans woman, describing it as a reminder to love her authentic self. This is as of the conversation cutoff on 22 October, 2023; later changes are not known.",
+      "qa_score": 0.18181818181818182,
+      "run_qa_score": 0.18181818181818182,
+      "answer_source_coverage": 0.0,
+      "initial_source_coverage": 0.0,
+      "expanded_source_coverage": 0.0,
+      "elapsed_seconds": 16.51998315899982,
+      "generation_calls": 3,
+      "total_tokens": 61763,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "819e4905a08ccf025291d0b7",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:13"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:4",
+      "purpose": "fact",
+      "question": "What is Caroline's identity?",
+      "gold": "Transgender woman",
+      "category": 1,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 17.228863338999872,
+      "generation_calls": 5,
+      "total_tokens": 19470,
+      "full_text_expected_sources": 2,
+      "full_text_delivered_sources": 2,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": false,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:4",
+      "purpose": "fact",
+      "question": "What is Caroline's identity?",
+      "gold": "Transgender woman",
+      "category": 1,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 6.460074822000024,
+      "generation_calls": 4,
+      "total_tokens": 23966,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:4",
+      "purpose": "fact",
+      "question": "What is Caroline's identity?",
+      "gold": "Transgender woman",
+      "category": 1,
+      "strategy": "full_text",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline is a transgender woman. She describes her \"transgender journey\" and transitioning (she began transitioning about three years before June 2023), speaks of sharing her story as a trans woman, and is active in the LGBTQ+ community—attending support groups, pride parades, conferences, and advocacy/mentoring work. She is originally from Sweden (she moved from her home country and has a grandmother there), is a single person pursuing adoption to become a parent, and is interested in a career in counseling/mental health. She is also an artist who paints about her trans experience. (This reflects only what was stated up to the conversation cutoff of 9:55 am on 22 October, 2023.)",
+      "qa_score": 0.2,
+      "run_qa_score": 0.2,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 2.970224761999816,
+      "generation_calls": 1,
+      "total_tokens": 63443,
+      "full_text_expected_sources": 419,
+      "full_text_delivered_sources": 419,
+      "provider_accepted": true,
+      "full_text_http_accepted": true,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:19",
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:10"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:13",
+      "purpose": "cross_session",
+      "question": "What career path has Caroline decided to persue?",
+      "gold": "counseling or mental health for Transgender people",
+      "category": 1,
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline has decided to pursue a career in counseling and mental health. She has been looking into counseling and mental health career options, and as of 3 July 2023 she still considered counseling and mental health the path she wants to pursue. She has also expressed interest in working specifically with trans people, helping them accept themselves and supporting their mental health, though she noted she was still figuring out the details. This reflects the evidence available as of the conversation cutoff on 22 October 2023; later developments are not known.",
+      "qa_score": 0.26666666666666666,
+      "run_qa_score": 0.26666666666666666,
+      "answer_source_coverage": 0.5,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 35.321090123999966,
+      "generation_calls": 3,
+      "total_tokens": 52911,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "f78fb9042f436973ce7bd177",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:3"
+          ]
+        },
+        {
+          "memory_id": "376676a70336006ce30b797e",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+          ]
+        },
+        {
+          "memory_id": "b48a241d0644ef8309ef12cb",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ]
+        },
+        {
+          "memory_id": "edf0ad6dfb5ddf068bbe2225",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+          ]
+        },
+        {
+          "memory_id": "26a585ed015a3f82b3dfda6f",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:13",
+      "purpose": "cross_session",
+      "question": "What career path has Caroline decided to persue?",
+      "gold": "counseling or mental health for Transgender people",
+      "category": 1,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "The supplied evidence does not show that Caroline has firmly decided on or committed to a specific career path. She said she would continue her education and check out career options (D1:9), and later said she had been looking into counseling and mental health as a career, motivated by wanting to help people who went through similar experiences (D4:11; D7:7). These statements indicate exploration of counseling and mental health career options, not a confirmed decision. This answer reflects the conversation cutoff of 9:55 am on 22 October, 2023; anything beyond that cutoff is unknown.\n\nKnown only as of the conversation cutoff (2023-10-22T09:55:00); later reality is unknown.",
+      "qa_score": 0.3157894736842105,
+      "run_qa_score": 0.3157894736842105,
+      "answer_source_coverage": 0.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 34.40466644099979,
+      "generation_calls": 4,
+      "total_tokens": 34123,
+      "full_text_expected_sources": 3,
+      "full_text_delivered_sources": 3,
+      "provider_accepted": true,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": true,
+      "raw_fallback_selected_sources": 9,
+      "raw_fallback_effective_sources": 3,
+      "raw_fallback_cited_sources": 3,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:9"
+          ]
+        },
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ]
+        },
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:13",
+      "purpose": "cross_session",
+      "question": "What career path has Caroline decided to persue?",
+      "gold": "counseling or mental health for Transgender people",
+      "category": 1,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 6.359862987999804,
+      "generation_calls": 4,
+      "total_tokens": 23154,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:13",
+      "purpose": "cross_session",
+      "question": "What career path has Caroline decided to persue?",
+      "gold": "counseling or mental health for Transgender people",
+      "category": 1,
+      "strategy": "full_text",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline has decided to pursue a career in counseling and mental health work. She is keen on counseling or working in mental health, wanting to support people (particularly trans people) who have gone through similar experiences to hers, helping them accept themselves and supporting their mental health. She has been researching this path and attended an LGBTQ+ counseling workshop. As of the conversation cutoff (9:55 am on 22 October, 2023), this is her stated career direction; I cannot speak to any developments after that time.",
+      "qa_score": 0.2857142857142857,
+      "run_qa_score": 0.2857142857142857,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 2.8773444799999197,
+      "generation_calls": 1,
+      "total_tokens": 63349,
+      "full_text_expected_sources": 419,
+      "full_text_delivered_sources": 419,
+      "provider_accepted": true,
+      "full_text_http_accepted": true,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:5",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:15",
+      "purpose": "cross_session",
+      "question": "What activities does Melanie partake in?",
+      "gold": "pottery, camping, painting, swimming",
+      "category": 1,
+      "strategy": "dynamic",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 68.60847882000053,
+      "generation_calls": 6,
+      "total_tokens": 195644,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:15",
+      "purpose": "cross_session",
+      "question": "What activities does Melanie partake in?",
+      "gold": "pottery, camping, painting, swimming",
+      "category": 1,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 27.79919245200017,
+      "generation_calls": 5,
+      "total_tokens": 32473,
+      "full_text_expected_sources": 6,
+      "full_text_delivered_sources": 6,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": false,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:15",
+      "purpose": "cross_session",
+      "question": "What activities does Melanie partake in?",
+      "gold": "pottery, camping, painting, swimming",
+      "category": 1,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 8.655205009999918,
+      "generation_calls": 4,
+      "total_tokens": 24165,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:15",
+      "purpose": "cross_session",
+      "question": "What activities does Melanie partake in?",
+      "gold": "pottery, camping, painting, swimming",
+      "category": 1,
+      "strategy": "full_text",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie partakes in a variety of activities, especially creative and family-oriented ones. She paints (including a lake sunrise painting and nature-inspired paintings with her kids) and describes painting as a way to express feelings and relax. She does pottery, having signed up for a pottery class and made bowls, plates, and pots, and she took her kids to a pottery workshop. She also plays the violin and clarinet, runs (including a charity race for mental health and running to de-stress), reads, swims with her kids, and enjoys family activities such as camping (including roasting marshmallows, hiking, and exploring nature), going to the beach, visiting museums, going to parks, attending concerts, and volunteering at a homeless shelter with her family. She also cares for pets (a dog and cats). This is based on conversations up to the cutoff of 9:55 am on 22 October, 2023; I cannot speak to anything after that time.",
+      "qa_score": 0.2240740740740741,
+      "run_qa_score": 0.2240740740740741,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 4.61660949599991,
+      "generation_calls": 1,
+      "total_tokens": 63921,
+      "full_text_expected_sources": 419,
+      "full_text_delivered_sources": 419,
+      "provider_accepted": true,
+      "full_text_http_accepted": true,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:16"
+          ]
+        },
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:10"
+          ]
+        },
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+          ]
+        },
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:1"
+          ]
+        },
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:22"
+          ]
+        },
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:18",
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:4",
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:10"
+          ]
+        },
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:16",
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:4"
+          ]
+        },
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:28"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:0",
+      "purpose": "time",
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "gold": "7 May 2023",
+      "category": 2,
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline said she went to an LGBTQ support group \"yesterday\" relative to her statement on 8 May 2023, so the visit was on 7 May 2023. This is only as of the supplied conversation cutoff (9:55 am on 22 October 2023); no later information is known.",
+      "qa_score": 0.13043478260869565,
+      "run_qa_score": 0.13043478260869565,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 15.08844329800013,
+      "generation_calls": 3,
+      "total_tokens": 67159,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "7b29fbb3088ff54b1d95727f",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:0",
+      "purpose": "time",
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "gold": "7 May 2023",
+      "category": 2,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 8.44065691600008,
+      "generation_calls": 5,
+      "total_tokens": 15377,
+      "full_text_expected_sources": 1,
+      "full_text_delivered_sources": 1,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": false,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:0",
+      "purpose": "time",
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "gold": "7 May 2023",
+      "category": 2,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 6.316565811999681,
+      "generation_calls": 4,
+      "total_tokens": 22911,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:0",
+      "purpose": "time",
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "gold": "7 May 2023",
+      "category": 2,
+      "strategy": "full_text",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline said she went to an LGBTQ support group \"yesterday\" during a conversation on 8 May 2023, which places the visit on 7 May 2023. (This is based on the conversation record as of the cutoff of 9:55 am on 22 October 2023; I cannot speak to anything after that time.)",
+      "qa_score": 0.12244897959183673,
+      "run_qa_score": 0.12244897959183673,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 1.7914712370002235,
+      "generation_calls": 1,
+      "total_tokens": 63156,
+      "full_text_expected_sources": 419,
+      "full_text_delivered_sources": 419,
+      "provider_accepted": true,
+      "full_text_http_accepted": true,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:16",
+      "purpose": "time",
+      "question": "When did Melanie sign up for a pottery class?",
+      "gold": "2 July 2023",
+      "category": 2,
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie said she signed up for a pottery class \"yesterday\" relative to her message on 3 July 2023, so she signed up on 2 July 2023. This is only as of the supplied conversation cutoff (9:55 am on 22 October 2023); later reality is not known.",
+      "qa_score": 0.1276595744680851,
+      "run_qa_score": 0.1276595744680851,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 13.208225082999888,
+      "generation_calls": 3,
+      "total_tokens": 45874,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "84713399b8856b32289d625e",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:4"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:16",
+      "purpose": "time",
+      "question": "When did Melanie sign up for a pottery class?",
+      "gold": "2 July 2023",
+      "category": 2,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 23.593025737000062,
+      "generation_calls": 6,
+      "total_tokens": 33440,
+      "full_text_expected_sources": 1,
+      "full_text_delivered_sources": 1,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": true,
+      "raw_fallback_selected_sources": 8,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:16",
+      "purpose": "time",
+      "question": "When did Melanie sign up for a pottery class?",
+      "gold": "2 July 2023",
+      "category": 2,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 4.361566753999796,
+      "generation_calls": 4,
+      "total_tokens": 22183,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:16",
+      "purpose": "time",
+      "question": "When did Melanie sign up for a pottery class?",
+      "gold": "2 July 2023",
+      "category": 2,
+      "strategy": "full_text",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie said she signed up for a pottery class \"yesterday\" relative to her message on 3 July, 2023, so she signed up on 2 July, 2023. (This is based on the conversation up to the cutoff of 9:55 am on 22 October, 2023; I cannot speak to anything after that.)",
+      "qa_score": 0.12,
+      "run_qa_score": 0.12,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 2.2614675109998643,
+      "generation_calls": 1,
+      "total_tokens": 63158,
+      "full_text_expected_sources": 419,
+      "full_text_delivered_sources": 419,
+      "provider_accepted": true,
+      "full_text_http_accepted": true,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:4"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:53",
+      "purpose": "state_progression",
+      "question": "When did Caroline apply to adoption agencies?",
+      "gold": "The week of 23 August 2023",
+      "category": 2,
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline said she applied to adoption agencies \"this week\" in a message sent at 3:31 pm on 23 August 2023, so the application occurred during the week preceding that session (around mid-to-late August 2023). This is only as of the supplied conversation cutoff (22 October 2023); later reality is not known.",
+      "qa_score": 0.19230769230769232,
+      "run_qa_score": 0.19230769230769232,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 17.860738462999507,
+      "generation_calls": 3,
+      "total_tokens": 54949,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "30b7c2fe26350ed64a276cb2",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:53",
+      "purpose": "state_progression",
+      "question": "When did Caroline apply to adoption agencies?",
+      "gold": "The week of 23 August 2023",
+      "category": 2,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 24.060235820000344,
+      "generation_calls": 6,
+      "total_tokens": 33437,
+      "full_text_expected_sources": 1,
+      "full_text_delivered_sources": 1,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": true,
+      "raw_fallback_selected_sources": 7,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:53",
+      "purpose": "state_progression",
+      "question": "When did Caroline apply to adoption agencies?",
+      "gold": "The week of 23 August 2023",
+      "category": 2,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 5.0989175130007425,
+      "generation_calls": 4,
+      "total_tokens": 21023,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:53",
+      "purpose": "state_progression",
+      "question": "When did Caroline apply to adoption agencies?",
+      "gold": "The week of 23 August 2023",
+      "category": 2,
+      "strategy": "full_text",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline applied to adoption agencies during the week before 23 August 2023. In her message on 23 August 2023 she said, \"Guess what I did this week? I took the first step towards becoming a mom - I applied to adoption agencies!\" (Note: this is based on the conversation record up to the cutoff of 9:55 am on 22 October 2023; I cannot speak to anything after that time.)",
+      "qa_score": 0.14705882352941177,
+      "run_qa_score": 0.14705882352941177,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 1.9226452230004725,
+      "generation_calls": 1,
+      "total_tokens": 63174,
+      "full_text_expected_sources": 419,
+      "full_text_delivered_sources": 419,
+      "provider_accepted": true,
+      "full_text_http_accepted": true,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:79",
+      "purpose": "state_progression",
+      "question": "When did Caroline pass the adoption interview?",
+      "gold": "The Friday before 22 October 2023",
+      "category": 2,
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline passed the adoption agency interviews \"last Friday\" relative to the session time of 9:55 am on 22 October 2023. The exact calendar date is not stated in the source, but it would be the Friday before 22 October 2023 (i.e., 20 October 2023). This is only as of the supplied conversation cutoff of 22 October 2023; later reality is not known.",
+      "qa_score": 0.16393442622950818,
+      "run_qa_score": 0.16393442622950818,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 15.691333219000626,
+      "generation_calls": 3,
+      "total_tokens": 49658,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "31d452af0431e55c3ebfb59f",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:1"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:79",
+      "purpose": "state_progression",
+      "question": "When did Caroline pass the adoption interview?",
+      "gold": "The Friday before 22 October 2023",
+      "category": 2,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 16.67364053199981,
+      "generation_calls": 6,
+      "total_tokens": 32028,
+      "full_text_expected_sources": 1,
+      "full_text_delivered_sources": 1,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": true,
+      "raw_fallback_selected_sources": 8,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:79",
+      "purpose": "state_progression",
+      "question": "When did Caroline pass the adoption interview?",
+      "gold": "The Friday before 22 October 2023",
+      "category": 2,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "The exact date Caroline passed the adoption interview is not stated. She reported on 22 October 2023 that she passed the adoption agency interviews \"last Friday,\" which places the event relative to that session but does not give a precise calendar date. Evidence is insufficient to state an exact date.",
+      "qa_score": 0.16326530612244897,
+      "run_qa_score": 0.16326530612244897,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 2.0381965770002353,
+      "generation_calls": 2,
+      "total_tokens": 7122,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "31d452af0431e55c3ebfb59f",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:1"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:79",
+      "purpose": "state_progression",
+      "question": "When did Caroline pass the adoption interview?",
+      "gold": "The Friday before 22 October 2023",
+      "category": 2,
+      "strategy": "full_text",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline passed the adoption agency interviews on Friday, 20 October 2023 — she announced it on 22 October 2023, saying she had passed them \"last Friday.\" (This is only as of the supplied conversation cutoff of 9:55 am on 22 October 2023; later developments are not known.)",
+      "qa_score": 0.16,
+      "run_qa_score": 0.16,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 1.951859446000526,
+      "generation_calls": 1,
+      "total_tokens": 63150,
+      "full_text_expected_sources": 419,
+      "full_text_delivered_sources": 419,
+      "provider_accepted": true,
+      "full_text_http_accepted": true,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:1"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:153",
+      "purpose": "insufficient",
+      "question": "What are Melanie's plans for the summer with respect to adoption?",
+      "gold": null,
+      "category": 5,
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "The available evidence is insufficient to describe Melanie's plans for the summer regarding adoption. The only relevant evidence is that on 13 October 2023 she said a friend's adoption made her feel like maybe she should adopt too, which indicates tentative consideration rather than a concrete plan, and it says nothing about summer plans. This is only as of the conversation cutoff of 9:55 am on 22 October 2023; no later information is available.",
+      "qa_score": 0.0,
+      "run_qa_score": 0.0,
+      "answer_source_coverage": 0.0,
+      "initial_source_coverage": 0.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 38.406352177999906,
+      "generation_calls": 4,
+      "total_tokens": 145281,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "7a9548c9ffb7cac80e5a5039",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:4"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:153",
+      "purpose": "insufficient",
+      "question": "What are Melanie's plans for the summer with respect to adoption?",
+      "gold": null,
+      "category": 5,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "The available evidence does not establish any summer adoption plans for Melanie. The only adoption-related evidence is a tentative statement from 13 October 2023 in which Melanie says a friend's adoption makes her feel like maybe she should do it too — a vague consideration, not a plan, and not tied to summer. The summer-related evidence from 25 May 2023 concerns her kids being excited about summer break and a possible camping trip, not adoption. No supplied source connects Melanie's adoption consideration to summer, so this remains unknown as of the conversation cutoff (9:55 am on 22 October, 2023).\n\nKnown only as of the conversation cutoff (2023-10-22T09:55:00); later reality is unknown.",
+      "qa_score": 0.0,
+      "run_qa_score": 0.0,
+      "answer_source_coverage": 0.0,
+      "initial_source_coverage": 0.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 33.47071335000055,
+      "generation_calls": 4,
+      "total_tokens": 34585,
+      "full_text_expected_sources": 2,
+      "full_text_delivered_sources": 2,
+      "provider_accepted": true,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": true,
+      "raw_fallback_selected_sources": 9,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "7a9548c9ffb7cac80e5a5039",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:4"
+          ]
+        },
+        {
+          "memory_id": "248c91bf208897034bc744d7",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:7"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:153",
+      "purpose": "insufficient",
+      "question": "What are Melanie's plans for the summer with respect to adoption?",
+      "gold": null,
+      "category": 5,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "The supplied evidence is insufficient to state Melanie's plans for the summer regarding adoption. The only adoption-related evidence about Melanie is that on 13 October 2023 she said a buddy adopted last year and that it makes her feel like maybe she should do it too — an uncertain consideration, not a summer plan. Her summer-related evidence concerns a family outing and camping, not adoption. No evidence describes an adoption plan for the summer. This is only as of the conversation cutoff of 9:55 am on 22 October 2023; later developments are unknown.",
+      "qa_score": 0.0,
+      "run_qa_score": 0.0,
+      "answer_source_coverage": 0.0,
+      "initial_source_coverage": 0.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 2.2045495169995775,
+      "generation_calls": 2,
+      "total_tokens": 7719,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "7a9548c9ffb7cac80e5a5039",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:4"
+          ]
+        },
+        {
+          "memory_id": "7ed5e6554c01d85740df077a",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:16"
+          ]
+        },
+        {
+          "memory_id": "e28dae4e15b737df9593ad0d",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:7"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:153",
+      "purpose": "insufficient",
+      "question": "What are Melanie's plans for the summer with respect to adoption?",
+      "gold": null,
+      "category": 5,
+      "strategy": "full_text",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 5.60641736999969,
+      "generation_calls": 3,
+      "total_tokens": 189837,
+      "full_text_expected_sources": 419,
+      "full_text_delivered_sources": 419,
+      "provider_accepted": null,
+      "full_text_http_accepted": true,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:157",
+      "purpose": "insufficient",
+      "question": "What does Melanie's necklace symbolize?",
+      "gold": null,
+      "category": 5,
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "The available evidence is insufficient to answer what Melanie's necklace symbolizes. No memories or sources were supplied, so no symbolic meaning can be stated.",
+      "qa_score": 0.0,
+      "run_qa_score": 0.0,
+      "answer_source_coverage": 0.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 20.233706010999413,
+      "generation_calls": 3,
+      "total_tokens": 89030,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": []
+    },
+    {
+      "question_id": "conv-26:qa:157",
+      "purpose": "insufficient",
+      "question": "What does Melanie's necklace symbolize?",
+      "gold": null,
+      "category": 5,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "The supplied evidence does not identify a necklace belonging to Melanie or describe what her necklace symbolizes. The only necklace discussed is Caroline's: Melanie compliments it and asks about its meaning, and Caroline says it stands for love, faith, and strength and reminds her of her roots and family support. No supplied evidence establishes a necklace of Melanie's or its symbolism.\n\nKnown only as of the conversation cutoff (2023-10-22T09:55:00); later reality is unknown.",
+      "qa_score": 0.0,
+      "run_qa_score": 0.0,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 22.51156565600013,
+      "generation_calls": 4,
+      "total_tokens": 31767,
+      "full_text_expected_sources": 2,
+      "full_text_delivered_sources": 2,
+      "provider_accepted": true,
+      "full_text_http_accepted": null,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": true,
+      "raw_fallback_selected_sources": 8,
+      "raw_fallback_effective_sources": 2,
+      "raw_fallback_cited_sources": 2,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:2",
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:3"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:157",
+      "purpose": "insufficient",
+      "question": "What does Melanie's necklace symbolize?",
+      "gold": null,
+      "category": 5,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "The supplied evidence does not describe any necklace belonging to Melanie or what it might symbolize. The only necklace mentioned belongs to Caroline, whose grandmother gave it to her and which she says stands for love, faith, and strength. There is no evidence about a necklace of Melanie's, so its symbolism cannot be determined from the available sources. This answer is limited to the conversation cutoff of 9:55 am on 22 October, 2023.",
+      "qa_score": 0.0,
+      "run_qa_score": 0.0,
+      "answer_source_coverage": 1.0,
+      "initial_source_coverage": 1.0,
+      "expanded_source_coverage": 1.0,
+      "elapsed_seconds": 2.5035110659991915,
+      "generation_calls": 2,
+      "total_tokens": 7355,
+      "full_text_expected_sources": null,
+      "full_text_delivered_sources": null,
+      "provider_accepted": null,
+      "full_text_http_accepted": null,
+      "evidence_truncated": true,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": null,
+      "citations": [
+        {
+          "memory_id": "76127db9ac3f8a2cbc842fff",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:3"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:157",
+      "purpose": "insufficient",
+      "question": "What does Melanie's necklace symbolize?",
+      "gold": null,
+      "category": 5,
+      "strategy": "full_text",
+      "execution_status": "failed",
+      "answer_status": null,
+      "answer": null,
+      "qa_score": null,
+      "run_qa_score": 0,
+      "answer_source_coverage": null,
+      "initial_source_coverage": null,
+      "expanded_source_coverage": null,
+      "elapsed_seconds": 4.607834675000049,
+      "generation_calls": 3,
+      "total_tokens": 189540,
+      "full_text_expected_sources": 419,
+      "full_text_delivered_sources": 419,
+      "provider_accepted": null,
+      "full_text_http_accepted": true,
+      "evidence_truncated": false,
+      "context_limit_exceeded": false,
+      "raw_fallback_triggered": null,
+      "raw_fallback_selected_sources": 0,
+      "raw_fallback_effective_sources": 0,
+      "raw_fallback_cited_sources": 0,
+      "error": {
+        "code": "invalid_output"
+      },
+      "citations": []
+    }
+  ],
+  "budget": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 594,
+    "reserved_total_calls": 907,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2,
+      "quality-C-stages": 3,
+      "quality-D-raw": 7,
+      "quality-E-evidence": 10,
+      "thinking-conv26-build-qa": 543
+    },
+    "operations": {
+      "relate": 365,
+      "extract": 80,
+      "resolve_raw": 29,
+      "answer_raw": 27,
+      "query_analysis": 30,
+      "resolve": 13,
+      "answer": 50
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 508,
+      "invalid_output": 83,
+      "interrupted_unknown": 2
+    },
+    "usage": {
+      "generation_calls": 594,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 3,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 6070521,
+        "completion_tokens": 2101861,
+        "total_tokens": 8172382
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 6070521,
+          "calls_with_reported_usage": 591,
+          "calls_missing_usage": 3,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 2101861,
+          "calls_with_reported_usage": 591,
+          "calls_missing_usage": 3,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 8172382,
+          "calls_with_reported_usage": 591,
+          "calls_missing_usage": 3,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 58,
+      "reported_provider_seconds": 7925.962783972984
+    }
+  },
+  "candidate_comparisons": [
+    {
+      "question_id": "conv-26:qa:3",
+      "comparison": "dynamic vs dynamic_raw_fallback",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:3",
+      "comparison": "dynamic vs hybrid_no_resolution",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:4",
+      "comparison": "dynamic vs dynamic_raw_fallback",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:4",
+      "comparison": "dynamic vs hybrid_no_resolution",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:13",
+      "comparison": "dynamic vs dynamic_raw_fallback",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:13",
+      "comparison": "dynamic vs hybrid_no_resolution",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:15",
+      "comparison": "dynamic vs dynamic_raw_fallback",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:15",
+      "comparison": "dynamic vs hybrid_no_resolution",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:0",
+      "comparison": "dynamic vs dynamic_raw_fallback",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:0",
+      "comparison": "dynamic vs hybrid_no_resolution",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:16",
+      "comparison": "dynamic vs dynamic_raw_fallback",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:16",
+      "comparison": "dynamic vs hybrid_no_resolution",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:53",
+      "comparison": "dynamic vs dynamic_raw_fallback",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:53",
+      "comparison": "dynamic vs hybrid_no_resolution",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:79",
+      "comparison": "dynamic vs dynamic_raw_fallback",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:79",
+      "comparison": "dynamic vs hybrid_no_resolution",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:153",
+      "comparison": "dynamic vs dynamic_raw_fallback",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:153",
+      "comparison": "dynamic vs hybrid_no_resolution",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:157",
+      "comparison": "dynamic vs dynamic_raw_fallback",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "question_id": "conv-26:qa:157",
+      "comparison": "dynamic vs hybrid_no_resolution",
+      "initial_same_order": true,
+      "expanded_same_order": true,
+      "initial_same_set": true,
+      "expanded_same_set": true
+    }
+  ],
+  "implementation_sha256": "839b4daaa71ff5a47d9f122775416e181fc09cce39ac4dd7620833d1cbce1255",
+  "config": {
+    "db_path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/memory.sqlite3",
+    "api_url": "http://127.0.0.1:8000",
+    "model_name": "deepseek-flash",
+    "model_base_url": "https://api.deepseek.com",
+    "model_timeout_seconds": 120.0,
+    "model_retries": 2,
+    "model_temperature": 0.0,
+    "model_max_tokens": 8192,
+    "relation_max_tokens": 16384,
+    "thinking_enabled": false,
+    "extraction_thinking_effort": "disabled",
+    "relation_thinking_effort": "high",
+    "query_analysis_thinking_effort": "disabled",
+    "resolution_thinking_effort": "low",
+    "answer_thinking_effort": "disabled",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "embedding_dimensions": 384,
+    "embedding_local_files_only": true,
+    "embedding_max_tokens": 256,
+    "fragment_turns": 20,
+    "bm25_k": 20,
+    "dense_k": 20,
+    "initial_k": 20,
+    "rrf_constant": 60,
+    "expansion_max_candidates": 60,
+    "expansion_depth": 1,
+    "expansion_scan_limit": 200,
+    "relation_history_limit": 20,
+    "relation_same_key_fraction": 0.8,
+    "relation_fact_fraction": 0.5,
+    "candidate_token_budget": 12000,
+    "evidence_token_budget": 6000,
+    "raw_max_hits": 3,
+    "raw_neighbor_turns": 1,
+    "raw_max_turns": 9,
+    "raw_token_budget": 2000,
+    "resolution_input_budget": 12000
+  },
+  "dynamic_accuracy": "unavailable_without_independent_truth",
+  "candidate_audit": {
+    "dynamic_raw_fallback": {
+      "initial_same_set_items": 10,
+      "expanded_same_set_items": 10
+    },
+    "hybrid_no_resolution": {
+      "initial_same_set_items": 10,
+      "expanded_same_set_items": 10
+    }
+  },
+  "full_text_delivery": {
+    "planned": 10,
+    "complete_sources_with_http_200_items": 10,
+    "accepted_complete_items": 8,
+    "expected_source_counts": [
+      419
+    ]
+  }
+}

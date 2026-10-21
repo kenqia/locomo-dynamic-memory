@@ -1,0 +1,256 @@
+{
+  "created_at": "2026-10-21T09:41:06.910947+00:00",
+  "sample_id": "conv-26",
+  "source_directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab",
+  "prior_ledger_sha256": "a5d70c1372830721de872f9bf7e814f33e69f6b513f5ea4c275d47a07ecaa08c",
+  "source_build_id": "5c7699dd6543407697ae232633154036",
+  "source_dataset_id": "f69a07a79a2d5f4c8188300a",
+  "immutable_build_artifacts_sha256": "5e4b912b1978994cd73804291686195441bc28630e25e56dd1d2990fb225e22a",
+  "official_artifact_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "implementation_sha256": "b0b9be911f0866435f4b6d445a0e1314e30ab9ca5a65dc7f5c2e9f84f61d43ee",
+  "settings": {
+    "db_path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-query-reliability-frozen/memory.sqlite3",
+    "api_url": "http://127.0.0.1:8000",
+    "model_name": "deepseek-flash",
+    "model_base_url": "https://api.deepseek.com",
+    "model_timeout_seconds": 120.0,
+    "model_retries": 2,
+    "model_temperature": 0.0,
+    "model_max_tokens": 8192,
+    "relation_max_tokens": 16384,
+    "thinking_enabled": false,
+    "extraction_thinking_effort": "disabled",
+    "relation_thinking_effort": "high",
+    "query_analysis_thinking_effort": "disabled",
+    "resolution_thinking_effort": "low",
+    "answer_thinking_effort": "disabled",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "embedding_dimensions": 384,
+    "embedding_local_files_only": true,
+    "embedding_max_tokens": 256,
+    "fragment_turns": 20,
+    "bm25_k": 20,
+    "dense_k": 20,
+    "initial_k": 20,
+    "rrf_constant": 60,
+    "expansion_max_candidates": 60,
+    "expansion_depth": 1,
+    "expansion_scan_limit": 200,
+    "relation_history_limit": 20,
+    "relation_same_key_fraction": 0.8,
+    "relation_fact_fraction": 0.5,
+    "candidate_token_budget": 12000,
+    "evidence_token_budget": 6000,
+    "raw_max_hits": 3,
+    "raw_neighbor_turns": 1,
+    "raw_max_turns": 9,
+    "raw_token_budget": 2000,
+    "resolution_input_budget": 12000
+  },
+  "evidence_profile": "expanded",
+  "previous_calls": 1097,
+  "previous_ceiling": 1111,
+  "call_limit": 64,
+  "cumulative_ceiling": 1161,
+  "authorization": "Pending explicit confirmation of this frozen plan and call ceiling; prepare makes no model calls.",
+  "policy": "One pass, no question reselection, no answer-driven tuning, no rebuild, no automatic run recovery. Retries count toward the same hard ceiling.",
+  "experiments": {
+    "primary": {
+      "strategies": [
+        "dynamic_raw_fallback"
+      ],
+      "logical_items": 11,
+      "questions": [
+        {
+          "question_id": "conv-26:qa:0",
+          "qa_index": 0,
+          "official_qa": {
+            "question": "When did Caroline go to the LGBTQ support group?",
+            "answer": "7 May 2023",
+            "evidence": [
+              "D1:3"
+            ],
+            "category": 2
+          }
+        },
+        {
+          "question_id": "conv-26:qa:3",
+          "qa_index": 3,
+          "official_qa": {
+            "question": "What did Caroline research?",
+            "answer": "Adoption agencies",
+            "evidence": [
+              "D2:8"
+            ],
+            "category": 1
+          }
+        },
+        {
+          "question_id": "conv-26:qa:15",
+          "qa_index": 15,
+          "official_qa": {
+            "question": "What activities does Melanie partake in?",
+            "answer": "pottery, camping, painting, swimming",
+            "evidence": [
+              "D5:4",
+              "D9:1",
+              "D1:12",
+              "D1:18"
+            ],
+            "category": 1
+          }
+        },
+        {
+          "question_id": "conv-26:qa:18",
+          "qa_index": 18,
+          "official_qa": {
+            "question": "Where has Melanie camped?",
+            "answer": "beach, mountains, forest",
+            "evidence": [
+              "D6:16",
+              "D4:6",
+              "D8:32"
+            ],
+            "category": 1
+          }
+        },
+        {
+          "question_id": "conv-26:qa:32",
+          "qa_index": 32,
+          "official_qa": {
+            "question": "What LGBTQ+ events has Caroline participated in?",
+            "answer": "Pride parade, school speech, support group",
+            "evidence": [
+              "D5:1",
+              "D8:17",
+              "D3:1",
+              "D1:3"
+            ],
+            "category": 1
+          }
+        },
+        {
+          "question_id": "conv-26:qa:36",
+          "qa_index": 36,
+          "official_qa": {
+            "question": "When did Caroline join a mentorship program?",
+            "answer": "The weekend before 17 July 2023",
+            "evidence": [
+              "D9:2"
+            ],
+            "category": 2
+          }
+        },
+        {
+          "question_id": "conv-26:qa:53",
+          "qa_index": 53,
+          "official_qa": {
+            "question": "When did Caroline apply to adoption agencies?",
+            "answer": "The week of 23 August 2023",
+            "evidence": [
+              "D13:1"
+            ],
+            "category": 2
+          }
+        },
+        {
+          "question_id": "conv-26:qa:60",
+          "qa_index": 60,
+          "official_qa": {
+            "question": "What instruments does Melanie play?",
+            "answer": "clarinet and violin",
+            "evidence": [
+              "D15:26",
+              "D2:5"
+            ],
+            "category": 1
+          }
+        },
+        {
+          "question_id": "conv-26:qa:74",
+          "qa_index": 74,
+          "official_qa": {
+            "question": "When did Melanie's family go on a roadtrip?",
+            "answer": "The weekend before 20 October 2023",
+            "evidence": [
+              "D18:1"
+            ],
+            "category": 2
+          }
+        },
+        {
+          "question_id": "conv-26:qa:136",
+          "qa_index": 136,
+          "official_qa": {
+            "question": "What does Melanie do to keep herself busy during her pottery break?",
+            "answer": "Read a book and paint.",
+            "evidence": [
+              "D17:10"
+            ],
+            "category": 4
+          }
+        },
+        {
+          "question_id": "conv-26:qa:153",
+          "qa_index": 153,
+          "official_qa": {
+            "question": "What are Melanie's plans for the summer with respect to adoption?",
+            "evidence": [
+              "D2:8"
+            ],
+            "category": 5,
+            "adversarial_answer": "researching adoption agencies"
+          }
+        }
+      ]
+    },
+    "dynamic_nonregression": {
+      "strategies": [
+        "dynamic"
+      ],
+      "logical_items": 3,
+      "questions": [
+        {
+          "question_id": "conv-26:qa:3",
+          "qa_index": 3,
+          "official_qa": {
+            "question": "What did Caroline research?",
+            "answer": "Adoption agencies",
+            "evidence": [
+              "D2:8"
+            ],
+            "category": 1
+          }
+        },
+        {
+          "question_id": "conv-26:qa:15",
+          "qa_index": 15,
+          "official_qa": {
+            "question": "What activities does Melanie partake in?",
+            "answer": "pottery, camping, painting, swimming",
+            "evidence": [
+              "D5:4",
+              "D9:1",
+              "D1:12",
+              "D1:18"
+            ],
+            "category": 1
+          }
+        },
+        {
+          "question_id": "conv-26:qa:53",
+          "qa_index": 53,
+          "official_qa": {
+            "question": "When did Caroline apply to adoption agencies?",
+            "answer": "The week of 23 August 2023",
+            "evidence": [
+              "D13:1"
+            ],
+            "category": 2
+          }
+        }
+      ]
+    }
+  }
+}

@@ -6,11 +6,16 @@ import streamlit as st
 def render_queries(request, dataset_id, sample_id, build):
     st.subheader("有效证据问答")
     st.caption("仅支持英文问题；默认现在指对话截止时间。历史问答不会修改全局状态。")
+    strategy = st.radio("问答策略", ["dynamic", "dynamic_raw_fallback"],
+                        format_func=lambda value: "Dynamic" if value == "dynamic" else "Dynamic + 原文兜底",
+                        horizontal=True, key="query_strategy")
+    st.caption("切换策略不会请求模型；点击回答按钮才会执行新查询。")
     question = st.text_area("英文问题", key="effective_question")
     dated = st.checkbox("指定历史或未来日期", key="query_dated")
     requested_date = st.date_input("问题日期", key="query_date", disabled=not dated)
     if st.button("解析有效证据并回答", disabled=not build["query_ready"]):
-        payload = {"dataset_id": dataset_id, "sample_id": sample_id, "build_id": build["build_id"], "question": question}
+        payload = {"dataset_id": dataset_id, "sample_id": sample_id, "build_id": build["build_id"], "question": question,
+                   "strategy": strategy}
         if dated:
             payload["requested_date"] = requested_date.isoformat()
         st.session_state["effective_result"] = request("POST", "/queries", json=payload)
@@ -21,15 +26,22 @@ def render_queries(request, dataset_id, sample_id, build):
     if not trace or trace["build_id"] != build["build_id"]:
         return
     st.caption(f"Trace {trace['trace_id']} · 固定构建 {trace['build_id']}")
+    st.caption("此记录的策略：" + trace.get("strategy", "dynamic"))
+    if trace.get("strategy_recovery"):
+        st.caption("动态解析输出校验失败，已尝试有界原文备用策略；原失败与调用用量保留在 Trace。")
     if trace["outcome"] == "failed":
         st.error(f"问答执行失败：{trace['error']['code']}。失败不代表没有证据。")
     else:
         labels = {"sufficient": "证据支持", "conflict": "证据冲突", "insufficient": "证据不足"}
         st.write(labels[trace["answer"]["status"]])
         st.text(trace["answer"]["answer"])
+        if trace["answer"].get("explanation"):
+            st.caption(trace["answer"]["explanation"])
+        if trace.get("answer_boundary"):
+            st.caption(trace["answer_boundary"]["text"])
         st.caption(f"已知证据截止：{trace['time']['cutoff_source_time']}；不能确认之后的现实状态。")
         for citation in trace["answer"]["citations"]:
-            with st.expander(f"回答引用：{citation['memory_id']}"):
+            with st.expander(f"回答引用：{citation['memory_id'] or '原始对话'}"):
                 for source_id in citation["source_ids"]:
                     ds, sample, dia_id = source_id.split("/")
                     source = request("GET", f"/datasets/{ds}/conversations/{sample}/turns/{dia_id}")

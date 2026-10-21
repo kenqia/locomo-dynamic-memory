@@ -1,0 +1,9 @@
+独立工程验收后关闭，本票不再等待父规格 #15 的全量实验。
+
+已核对固定开发/本地测试划分、官方输入隔离与身份、757 题/3,028 项只读计划预览、按原顺序取类别首题的五题/20项 smoke 计划，以及公开 API/页面说明。预览无模型调用，不代表真实实验完成。
+
+逐项证据：experiments/issue-16-development-plan-validation.md；tests/test_evaluation_plans.py；docs/app/real-baseline.md。
+
+2026-10-21 对 #16–#19 独立工程范围进行新鲜联合回归：LOCOMO_LIVE_MODEL=0 LOCOMO_LOCAL_EMBEDDING=0 .venv/bin/python -m pytest tests/test_evaluation_plans.py tests/test_evaluation_recovery.py tests/test_full_text.py tests/test_evaluation_reports.py -q --tb=short。结果18 passed，22.97秒，1条既有Starlette/httpx弃用警告；无付费调用。此前全量非live回归405 passed、4 skipped及浏览器检查记录另行保留。
+
+本次依据用户于 2026-10-21 的明确范围与关票决定执行。不追加付费模型调用；保留原始规格、代码、Build、失败记录、实验及报告。本说明不新增非作者复核通过、合并完成或课程验收完成的声明。Notion 未同步：未找到这些 Issue 的明确任务关联，当前无可用 Notion 工具，由负责人补录状态及 Issue 链接。

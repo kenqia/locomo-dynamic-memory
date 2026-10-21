@@ -17,6 +17,11 @@ This is a single-context repo. Read the root `CONTEXT.md` and relevant `docs/adr
 The workflow skills are bundled under `.agents/skills/`. Use `docs/agents/local-skills.md` for the supported commands, dependency
 notes, and client setup.
 
+### Local model credentials
+
+For credential discovery or authorized live model calls, first read `docs/agents/local-credentials.md`.
+A missing process variable does not establish that no local credential exists.
+
 ## rules
 
 ### skills

@@ -1,0 +1,44 @@
+{
+  "qa_index": 136,
+  "status": "succeeded",
+  "citation_errors": [],
+  "sources": [
+    {
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "dia_id": "D17:8",
+      "position": 361,
+      "sample_id": "conv-26",
+      "session_id": "session_17",
+      "session_time": "10:31 am on 13 October, 2023",
+      "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+      "speaker": "Melanie",
+      "text": "Thanks for the tip, Caroline. Doing research and readying myself emotionally makes sense. I'll do that. BTW, recently I had a setback. Last month I got hurt and had to take a break from pottery, which I use for self-expression and peace."
+    },
+    {
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "dia_id": "D17:10",
+      "position": 363,
+      "sample_id": "conv-26",
+      "session_id": "session_17",
+      "session_time": "10:31 am on 13 October, 2023",
+      "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+      "speaker": "Melanie",
+      "text": "Thanks, Caroline. It was tough, but I'm doing ok. Been reading that book you recommended a while ago and painting to keep busy."
+    }
+  ],
+  "raw_delivered_source_ids": [
+    "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+    "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+  ],
+  "initial_supported_memory_ids": [
+    "bc0c987112d83fee8236bbb4",
+    "eef2de7a1146b7880239b699"
+  ],
+  "final_effective_memory_ids": [
+    "bc0c987112d83fee8236bbb4",
+    "eef2de7a1146b7880239b699"
+  ],
+  "retained_all_prior_support": true,
+  "raw_triggered": true,
+  "note": "Single post-fix replay took the incremental raw path; this is not repeated reliability measurement of the source-only path."
+}

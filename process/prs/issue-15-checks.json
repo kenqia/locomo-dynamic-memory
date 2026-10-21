@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-21",
+  "base": "3d9d37cb9f35d4ea656a217a55e9a8dafa4ec5a3",
+  "implementation_head": "b17ae18",
+  "scope": "main...codex/issue-15-integration; 85 existing commits, all child branch tips included; subsequent preparation changes are formatting and PR documentation only",
+  "checks": [
+    {
+      "command": "LOCOMO_LIVE_MODEL=0 LOCOMO_LOCAL_EMBEDDING=0 .venv/bin/python -m pytest -q --tb=short",
+      "passed": 405,
+      "skipped": 4,
+      "warnings": 1,
+      "seconds": 361.51,
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python -m compileall -q src tests experiments scripts",
+      "exit_code": 0
+    },
+    {
+      "command": "bash -n tests/browser/run.sh",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --check origin/main",
+      "exit_code": 0
+    },
+    {
+      "command": "bash tests/browser/run.sh /home/kenqia/my_folder/locomo-worktrees/browser-env/bin/python",
+      "exit_code": 0,
+      "artifacts_directory": "/tmp/locomo-browser-smoke.J6N2H3/artifacts",
+      "result": {
+        "browser": "Chromium",
+        "pageerrors": [],
+        "console_errors": [],
+        "build_id": "ef83aedbb63946b092c390070ca7bf6f",
+        "download_schema": "memory-export-v2",
+        "scenarios": [
+          "current",
+          "historical",
+          "conflict",
+          "insufficient",
+          "build failure/retry",
+          "evaluation failure"
+        ],
+        "evaluation_rows": 8,
+        "failed_rows": 4,
+        "adapters": "controlled LLM and Embedding only",
+        "browser_version": "156.0.8078.4"
+      }
+    },
+    {
+      "command": ".venv/bin/python experiments/current-showcase/audit.py --directory /home/kenqia/my_folder/locomo-worktrees/current-showcase-five-strategies-frozen-20261021 --results experiments/current-showcase/results",
+      "all_passed": true,
+      "exit_code": 0,
+      "provider_calls_added": 0
+    }
+  ],
+  "formatting_only": {
+    "csv_line_endings": [
+      "experiments/issue-15-answer-output-live/results/paired-qa.csv",
+      "experiments/issue-15-evidence-coverage-live/results/paired-qa.csv",
+      "experiments/issue-15-thinking-qa/results/paired-qa.csv"
+    ],
+    "report_eof_blank_lines": [
+      "experiments/issue-15-answer-output-live/results/report.md",
+      "experiments/issue-15-thinking-qa/results/report.md"
+    ],
+    "csv_cell_values_unchanged": true,
+    "exact_byte_transform_verified": true
+  },
+  "review": "Author pre-merge inspection of recovery, evidence packing, raw fallback, time, schema boundaries, diagnostics and existing review reports. Not independent non-author approval.",
+  "pending": [
+    "Explicit remote-write confirmation before push and Draft PR creation",
+    "Remote CI after PR publication",
+    "Non-author review before merge",
+    "Notion association/tool unavailable; no synchronization"
+  ],
+  "issues": {
+    "15": "closed not planned; superseded",
+    "16-19": "closed completed, engineering scope only",
+    "20": "open, lower priority deferred; not auto-closed",
+    "21": "closed not planned; 3028-item experiment not performed"
+  },
+  "paid_calls_this_turn": 0
+}
