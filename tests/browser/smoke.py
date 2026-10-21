@@ -137,6 +137,9 @@ with sync_playwright() as playwright:
                 page.get_by_text('完整 Trace、实际配置、模型调用及用量', exact=True).click()
                 page.get_by_text('初始候选、历史扩展、有效集合与排除理由', exact=True).click()
                 page.screenshot(path=str(args.output / 'issue-12-history-trace.png'), full_page=True)
+            scenario = {'Rome': 'current', 'Paris': 'historical', '证据冲突': 'conflict', '证据不足': 'insufficient'}[expected]
+            page.get_by_text(re.compile(r'^Trace [a-f0-9]+ · 固定构建')).scroll_into_view_if_needed()
+            page.screenshot(path=str(args.output / f'query-{scenario}.png'), full_page=True)
         assert get(f'/builds/{build}/current-state') == state
         assert get(f'/builds/{build}/relations') == relations
         assert get(f'/datasets/{dataset}/conversations/conv-a/turns') == original

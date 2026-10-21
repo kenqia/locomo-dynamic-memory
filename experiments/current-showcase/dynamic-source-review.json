@@ -1,0 +1,86 @@
+{
+  "kind": "pre_execution_author_source_review_not_independent_human_gold",
+  "selection_seed": "showcase-20261021",
+  "records": [
+    {
+      "case_id": "state-01",
+      "stored_label": "UPDATE",
+      "expected_label": "UPDATE",
+      "stored_relation_source_judgment": "supported",
+      "reason": "D1:9 announces exploring career options; D7:7 reports starting exploration of counseling and mental health. A plan becomes an actual exploration stage.",
+      "answer_boundary": "Counseling and mental health exploration is actual; do not claim certified counselor."
+    },
+    {
+      "case_id": "state-02",
+      "stored_label": "UPDATE",
+      "expected_label": "UPDATE",
+      "stored_relation_source_judgment": "supported",
+      "reason": "D2:10 researching an agency progresses to D19:1 passing interviews in the same adoption process.",
+      "answer_boundary": "Passed interviews, not completed adoption or parenthood; preserve research as historical."
+    },
+    {
+      "case_id": "state-03",
+      "stored_label": "UPDATE",
+      "expected_label": "UPDATE",
+      "stored_relation_source_judgment": "supported",
+      "reason": "D2:7 planned camping is followed by D4:8 description of a completed family trip.",
+      "answer_boundary": "Camping, nature exploration, campfire marshmallows and hiking are actual; future camping plans are separate."
+    },
+    {
+      "case_id": "state-04",
+      "stored_label": "UPDATE",
+      "expected_label": "undetermined",
+      "stored_relation_source_judgment": "not_supported",
+      "reason": "D7:3 is a broad intention to make a difference; D11:8 describes art advocacy. Shared activism topic alone does not establish a stage change in one concrete undertaking under the project UPDATE definition.",
+      "answer_boundary": "Art advocacy is actual; any broader participation must have its own source. Do not treat the broad old intention as a disproved fact."
+    },
+    {
+      "case_id": "state-05",
+      "stored_label": "RETAIN",
+      "expected_label": "RETAIN",
+      "stored_relation_source_judgment": "supported",
+      "reason": "D2:10 and D19:3 repeat the goal of a loving home/family for children; the latter corroborates rather than completes the goal.",
+      "answer_boundary": "The goal is an intention; no completed adoption is established."
+    },
+    {
+      "case_id": "state-06",
+      "stored_label": "RETAIN",
+      "expected_label": "RETAIN",
+      "stored_relation_source_judgment": "supported",
+      "reason": "D14:4 asks whether Caroline has tried pottery; D14:5 says no. D16:11 explicitly says she has not done it yet.",
+      "answer_boundary": "Has not tried pottery; willingness to try does not mean actual participation."
+    },
+    {
+      "case_id": "state-07",
+      "stored_label": "RETAIN",
+      "expected_label": "RETAIN",
+      "stored_relation_source_judgment": "supported",
+      "reason": "D1:11 interest in counseling/mental health is reaffirmed in D4:11 career exploration.",
+      "answer_boundary": "Interested in counseling/mental health; not established employment or qualification."
+    },
+    {
+      "case_id": "state-08",
+      "stored_label": "undetermined",
+      "expected_label": "undetermined",
+      "stored_relation_source_judgment": "supported",
+      "reason": "D8:6 and D8:8 jointly made painting; D14:4 pottery plate. These are distinct completed artwork events that can coexist.",
+      "answer_boundary": "Painting and pottery can coexist; a later artwork does not supersede the earlier painting."
+    },
+    {
+      "case_id": "state-09",
+      "stored_label": "undetermined",
+      "expected_label": "undetermined",
+      "stored_relation_source_judgment": "supported",
+      "reason": "Hopefulness about adoption in D2:10 and empowerment about a talk in D3:3 have different contexts. They do not contradict or replace each other.",
+      "answer_boundary": "Emotions require their contexts; do not assert a single permanent emotion."
+    },
+    {
+      "case_id": "state-10",
+      "stored_label": "undetermined",
+      "expected_label": "RETAIN",
+      "stored_relation_source_judgment": "not_supported",
+      "reason": "D8:29 asks family support during the move; D8:30 answers with help and love. D8:31-32 immediately reaffirm that family support helped through tough times, supplying positive corroboration. Stored undetermined misses this contextual RETAIN.",
+      "answer_boundary": "Family support is positively corroborated, not replaced; preserve the move-specific historical context."
+    }
+  ]
+}
