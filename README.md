@@ -103,10 +103,11 @@ M1 源稿修改后运行 `python scripts/build_m1_report.py` 重建 Word，PDF �
 
 M2 联网调研依据见 [现实系统与基准调研](docs/sources/m2-real-world-memory-research.md)。报告采用一手资料修订问题、可行性与评测边界；调研前快照保存在 `process/m2/iterations/vision-and-scope-before-research.md`。两者均进入过程 ZIP，不代表已运行系统实验。
 
-## M4 中期报告初版
+## M4 中期报告
 
-- [设计、实现与初步测试报告 v0.1](docs/design/m4-midterm-report.md)，以 `main@3d9d37c` 为实现基准，单列未合入的真实实验进展，待成员复核。
-- [编写依据、证据索引与定稿检查](process/m4/draft-evidence.md)。当前提供 Markdown，尚未导出 PDF 或正式提交。
+- [报告 Markdown v0.2](docs/design/m4-midterm-report.md)、[可编辑 Word](docs/design/m4-midterm-report.docx)和[报告 PDF](deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-报告.pdf)，依据 `main@ffb2657`，覆盖需求规格、系统设计、核心实现与真实展示结果，待成员复核。
+- PDF 含结果索引共 **5 页**，见[页数与校验值](process/m4/pdf-validation.json)。Word 保留编辑能力，其分页未独立渲染，页数上限以 PDF 为准。
+- [版本同步、证据索引与定稿检查](process/m4/draft-evidence.md)。构建脚本为 `scripts/build_m4_report.py`，文档工具独立安装，不修改应用依赖；正式提交及成员验收按实际进度完成。
 
 ## 过程材料同步与打包
 

@@ -1,60 +1,71 @@
-# M4 报告初版编写与证据索引
+# M4 报告修订与证据索引
 
-日期：2026-10-21（Asia/Shanghai）。对应[报告 v0.1](../../docs/design/m4-midterm-report.md)。本记录保存编写依据和待核对项，不代表成员已复核或课程已验收。
+日期：2026-10-22（Asia/Shanghai）。对应[报告 v0.2](../../docs/design/m4-midterm-report.md)和[5 页 PDF](../../deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-报告.pdf)。本文保存本轮文档工作，不代替成员非作者复核或课程验收。
 
-## 版本范围
+## 用户要求与版本保存
 
-- 主线实现：`3d9d37cb9f35d4ea656a217a55e9a8dafa4ec5a3`，2026-10-19，当前工作区 `main`；其中包含 PR #13、#14 的合并提交。
-- 实验分支快照：`7893f04d97a8deea6a9134c1a148aa5ea68a6b08`，2026-10-20，本地缓存的 `origin/codex/issue-15-integration`。仅通过 Git 读取，未切换分支、联网刷新或运行真实实验。
-- 文稿不回写历史规格、ticket、M1/M2 包或旧验证记录。报告是本轮新编写文件，尚未分配正式交付 tag、作者签字或成员复核结论。
+用户明确要求：按 Team Workflow 建分支保存已有进度、获取最新主线、据最新进度修订 M4 文档，并将报告限制为小于等于 5 页。用户转述的助教说明为：
 
-## 主线来源与核对内容
+> Mid-term 主要展示需求规格说明书，以及系统设计、已实现的功能、初步测试结果。建议届时已有可以运行的核心功能，不只是计划或界面截图；尚未完成的部分如实说明即可。
 
-| 报告内容 | 来源 | 核对要点 |
+本轮据此将需求规格摘要、架构及数据设计、可运行核心、真实测试结果和剩余问题作为五页正文，未替代或改写单独的 M3/M4 原始 spec。
+
+- 原主线：`3d9d37cb9f35d4ea656a217a55e9a8dafa4ec5a3`。
+- 文档分支：`docs/m4-midterm-report`。
+- 旧稿保存提交：`7a1da75`，保存 README、报告 v0.1 和证据索引。
+- 本轮已执行 `git fetch origin`，获取的主线为 `ffb2657741a535c27cc7d38d6f20d7aede94013a`，包含 PR #22。
+- 合入文档分支的提交：`f466a9e`。README 自动合并，无冲突；原始初稿仍可从保存提交读取。
+- 本地 main 分支不作阶段验收合并；文档在上述任务分支继续修订，不推送、不创建 PR、不加正式交付 tag。
+
+## 本次内容修订
+
+| 项目 | v0.1 | v0.2 |
 | --- | --- | --- |
-| F01–F06 和阶段范围 | [Vision & Scope](../../docs/requirements/vision-and-scope.md)、[Team Workflow](../../docs/requirements/team-workflow.md) | M4 核心链路，JSON 与评测为已接入进展 |
-| 术语、状态与历史边界 | [CONTEXT](../../CONTEXT.md)、[ADR 0001](../../docs/adr/0001-memory-architecture.md) | 查询不回写状态；关系未确定与冲突分开 |
-| 架构、数据对象、配置 | [配置](../../src/locomo_memory/config.py)、[Memory schema](../../src/locomo_memory/memory_schemas.py)、[关系 schema](../../src/locomo_memory/relation_schemas.py)、[数据库](../../src/locomo_memory/database.py) | 默认检索参数、来源、时间、版本、Linux 文件锁 |
-| 接口与操作流程 | [运行](../../docs/app/running.md)、[构建](../../docs/app/building.md)、[问答](../../docs/app/querying.md)、[版本](../../docs/app/versions.md)及对应 API 路由 | 字段与端点存在；适用环境为 WSL Ubuntu |
-| 默认回归 112 passed、4 skipped | [复盘验证](../../experiments/retro-validation-guardrails.md) | 2026-10-19 历史执行结果；编写本稿未重跑 |
-| 真实 MiniLM 3 passed | [实现总记录末段](../../experiments/issue-4-implementation.md)、[集成验证](../../experiments/issue-12-integration-validation.md) | 独立 opt-in 运行，不能并入默认回归数量 |
-| 当前、历史、冲突与不足案例 | [合成原件](../../tests/browser/sample.json)、[集成验证](../../experiments/issue-12-integration-validation.md)、[后续浏览器结果](../../experiments/retro-browser-result.json) | 真实页面与业务实现，生成模型及 Embedding 响应受控 |
-| 修复与验证局限 | [修复记录](../../experiments/issue-4-review-fixes.md)、[评测说明](../../docs/app/evaluation.md) | 日期优先级、契约恢复；主线 Full Text 有共享预算；失败项不伪造分数 |
+| 实现基准 | 10 月 19 日主线，实验分支尚未合入 | 10 月 21 日最新主线 ffb2657 |
+| 需求与设计 | 功能和架构概述 | 明确 F01–F06 行为、验收依据、共同约束及可编辑架构图 |
+| 关系与构建 | 早期失败构建未完成 | 复用已发布 conv-26 完整 Build，272 条 Memory、4,902 条关系 |
+| 配置 | 全阶段关闭思考、4096 输出 | 当前默认输出 8192；关系 high、解析 low，其余关闭，历史配置不覆盖 |
+| 对照与结果 | 无完整真实问答成绩 | 20 题五策略 100 项、40 题 Recall、10 个动态案例与来源审阅 |
+| 阶段范围 | 计划继续原全量基线 | 原 757 题／3,028 项取消；当前展示完成，留出和隐藏评分未评 |
+| 报告交付 | Markdown，未核页数 | Markdown、Word、PDF；PDF 含索引共 5 页，逐页预览检查 |
 
-报告只链接已有截图，没有重新截图。`issue-4-final-history-trace.png` 是历史浏览器合成案例，不是官方数据上的真实模型成绩。
+## 来源与统计口径
 
-## 实验分支来源
+| 内容 | 依据 | 核对边界 |
+| --- | --- | --- |
+| 术语与需求 | [CONTEXT](../../CONTEXT.md)、[Issue #4 规格](../../docs/specs/issue-4-m3-m4-dynamic-memory.md)、[ADR 0001](../../docs/adr/0001-memory-architecture.md) | 源规格保留历史正文，当前阶段变更引用 ADR 及执行记录 |
+| 数据、范围变更 | [原始数据](../../data/raw/locomo/README.md)、[ADR 0002](../../docs/adr/0002-real-model-baseline-protocol.md)、[范围结案](../../experiments/issue-15-closure/README.md) | 开发、留出、隐藏评分不同；取消原全量不等于完成原验收 |
+| 当前功能与模型配置 | [配置代码](../../src/locomo_memory/config.py)、[构建](../../docs/app/building.md)、[问答](../../docs/app/querying.md)、[版本](../../docs/app/versions.md) | 在线两策略与实验五策略分开，原文补查不产生新 Memory |
+| 五策略 F1 与 Recall | [分题报告](../../experiments/current-showcase/results/report.md)、[配对机器记录](../../experiments/current-showcase/results/paired-results.json)、[Recall 机器记录](../../experiments/current-showcase/results/recall-results.json) | F1 仅类别 1–4 的 16 题；类别 5 拒答另计；K 计 Memory、覆盖计去重 Source Turn |
+| 结果局限与案例 | [展示分析](../../experiments/current-showcase/results/analysis.md)、[动态审阅](../../experiments/current-showcase/results/dynamic-review.md) | 同一开发对话单轮；作者审阅不是独立动态准确率；Dynamic 两题实际触发备用 |
+| 构建与调用身份 | [固定计划](../../experiments/current-showcase/plan.json)、[审计](../../experiments/current-showcase/results/final-audit.json) | 本轮展示复用 Build，100 项合法结果不等于提供方每次调用均成功 |
+| 测试与浏览器 | [合并前验证](../prs/issue-15-integration.md)、[原始检查 JSON](../prs/issue-15-checks.json)、[浏览器回放](../../experiments/current-showcase/web-recorded/results.json)、[受控浏览器](../../experiments/current-showcase/web-controlled/issue-12-result.json) | 405 passed／4 skipped 为既有回归，24 passed 为展示前相关检查，本轮文档修订未重跑 |
+| 真实 MiniLM | [实现总记录](../../experiments/issue-4-implementation.md) | 早期独立 3 passed，不混作本轮生成模型质量结果 |
 
-以下文件不在当前主线目录中。固定提交为 `7893f04d97a8deea6a9134c1a148aa5ea68a6b08`，可在仓库根目录使用 `git show <commit>:<path>` 读取。没有将原始实验正文复制到本目录。
+## 导出与验证
 
-| 分支内路径 | 报告采用的信息 |
-| --- | --- |
-| `docs/adr/0002-real-model-baseline-protocol.md` | 固定开发／留出对话、隐藏评分集、完整全文基线协议 |
-| `experiments/issue-15-live-outcome.json` | conv-26 抽取 21/21、295 条 Memory、真实索引通过；关系 89 成功、29 失败、1 中断、173 待执行；QA 预检与全量未执行 |
-| `experiments/issue-15-live-validation.md` | 真实运行、停止与独立回放背景，不能把局部抽取通过扩展为问答通过 |
-| `experiments/issue-15-relation-evidence-followup/README.md` | 去重证据指令修订；两个多候选批次通过但均为 undetermined；未恢复完整构建；202 passed、4 deselected |
+报告源文件使用四处明确分页标记，共五个正文单元，参考索引包含在第 5 页内，无额外封面或附录。A4、正文字号 10.5 pt；输出 PDF 使用嵌入的宋体／黑体，架构图由代码生成 PNG 和 SVG。已查看全部五页预览，未见溢出、乱码、截断或空白页。
 
-例如：
+[构建脚本](../../scripts/build_m4_report.py)从同一 Markdown 生成 PDF 和可编辑 Word，PDF 页数若不为 5 即报错，保存[机器检查结果](pdf-validation.json)、来源与 PDF SHA-256。Word 分页未独立渲染，用户修改 Word 后需重新导出并核页数；可提交页数依据为已验证 PDF。
+
+文档工具依赖为 Pillow、python-docx、ReportLab 和 PyMuPDF；本机新增工具仅装入本轮临时目录，没有修改全局 Python、应用 pyproject.toml 或 uv.lock。可在独立文档环境安装后运行：
 
 ```sh
-git show 7893f04d97a8deea6a9134c1a148aa5ea68a6b08:experiments/issue-15-live-outcome.json
+python scripts/build_m4_report.py --font C:/Windows/Fonts/simsun.ttc --bold-font C:/Windows/Fonts/simhei.ttf
 ```
 
-该分支的新数据划分、Full Text 策略和恢复机制属于后续版本，报告已与主线能力分开。最终采用哪个版本演示，需在定稿时统一，不能混用两个版本的测试数字、配置或实验结果。
+其他系统可通过两个参数指定已安装的中文 TrueType 字体；需要支持相应字形。预览图与提取正文由本目录 .gitignore 忽略，可按脚本在本机重建；正式 PDF、Word、架构图及检查 JSON 留档。
 
-## 定稿前待核对
+本轮只检查文档、来源指标、导出与格式，不调用真实模型、不读取凭据、不重跑业务系统。现有实验结果均引用来源，不宣称在本机新执行。
 
-- [ ] 文档负责人确认作者信息；各模块负责人核对模块、接口和实现状态。
-- [ ] 明确拟演示的 commit、数据及配置；若改用实验分支，更新报告和对应证据。
-- [ ] 在实际展示环境复测核心链路，保存本轮结果；已有记录不能代替本轮复测。
-- [ ] 核对独立动态标注、真实构建及评测的最新状态，保留未执行和失败项。
-- [ ] 根据最新课程通知确认报告、演示和过程包要求；课件总表列报告 PDF 不超过 5 页、演示 PDF 不超过 10 页，尚未检查本稿导出页数。
-- [ ] 导出 PDF 后检查图、表、分页和链接；M4 演示及过程 ZIP 尚未由本轮生成。
-- [ ] 完成真实非作者成员复核，记录意见和修订；AI 辅助起草不代替成员验收。
-- [ ] 按团队授权补充关联任务、Issue/PR 和提交记录，再进行相应状态更新。
+已从 100 条已保存配对记录重新计算五策略类别 1–4 的均值，并从 40 条检索记录重算初始 RRF Recall，均与报告四舍五入值一致；85 个本地链接目标检查通过，正文含 2,731 个汉字，分为五个正文单元。详见[来源指标校验](source-validation.json)。该检查只读已有结果，不新增模型请求。
 
-## 本轮验证范围
+## 复核与交付待办
 
-本轮仅编写 Markdown、检查相对链接和 Git 差异格式，未安装依赖、调用模型或重跑应用测试。没有发布、提交或合并代码，没有创建、领取或送审外部任务，也没有更改 Notion 状态。
+- [ ] 文档负责人和相关模块负责人核对架构、需求对应和当前功能。
+- [ ] 指定非作者成员，记录真实复核意见及修订。
+- [ ] 展示环境实际复测，保存本次运行版本、数据和配置。
+- [ ] 按最新课程通知准备独立演示文件与过程包；本轮仅完成报告文件。
+- [ ] 经授权再推送、创建 PR、合并或正式提交；当前均未执行。
 
-报告、编写记录及 README 共 3 份 Markdown 的 69 个本地链接目标存在；逐行尾随空白和代码块闭合检查通过，`git diff --check` 通过。Mermaid 图保留可编辑源码，尚未做图形渲染或 PDF 排版检查。
+目前未识别明确关联本次 M4 文档的 Notion 记录，本轮没有创建、领取、送审或验收外部任务，不宣称更新了任务状态。若后续流转该任务，负责人应补齐 Notion 关联及 Issue/PR 链接；未标记“完成”。

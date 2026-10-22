@@ -1,0 +1,23 @@
+{
+  "source_metrics_checked_from_saved_rows": true,
+  "paired_logical_items": 100,
+  "answerable_questions_per_strategy": 16,
+  "f1": {
+    "full_text": 0.3490463849016481,
+    "vector": 0.4910918394471026,
+    "hybrid_no_resolution": 0.512371607437397,
+    "dynamic": 0.510038517768781,
+    "dynamic_raw_fallback": 0.39974948861123394
+  },
+  "recall_questions": 40,
+  "initial_rrf_recall": {
+    "5": 0.6416666666666667,
+    "10": 0.7291666666666667,
+    "20": 0.7791666666666667
+  },
+  "local_link_targets_checked": 85,
+  "markdown_page_sections": 5,
+  "cjk_characters": 2731,
+  "source_sha256": "318d54599893ef547049e136920d74215f4cfa0dfb1831bb3aef0bf5bf54bfc1",
+  "fresh_model_calls": 0
+}
