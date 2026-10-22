@@ -1,0 +1,2 @@
+# Preserve PDF offsets and hashes across Windows and Linux checkouts.
+deliverables/m4/*.pdf binary
