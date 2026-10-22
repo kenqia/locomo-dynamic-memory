@@ -174,6 +174,8 @@ class RetrievalService:
             used += cost
             candidates.append({"memory": memories[memory_id], "channel_ranks": ranks[memory_id], "rrf_score": fused[memory_id]})
         result = {"query_id": uuid.uuid4().hex, "build_id": build_id, "index_fingerprint": info["fingerprint"], "question": question,
+                  "executed_components": {"query_embedding": bool(rows), "query_analysis": True,
+                                          "bm25": bool(rows), "dense": bool(rows), "rrf": True},
                   "created_at": utc_now(), "analysis": analysis, "channels": channels, "initial_candidates": candidates,
                   "initial_truncated": bool(reasons), "truncation_reasons": reasons, "candidate_token_count": used,
                   "token_budget_method": TOKEN_BUDGET_METHOD, "config": self.settings.snapshot()}

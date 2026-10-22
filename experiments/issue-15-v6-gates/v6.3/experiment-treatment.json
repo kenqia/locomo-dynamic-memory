@@ -1,0 +1,23 @@
+{
+  "status": "failed_then_rolled_back",
+  "implementation_sha256": "57a3dec2b8fe919beeda53b3b2dd2a95c4096fb30e57400ff079745cbb4ad44b",
+  "prompt_version": "relations-v6.3",
+  "schema_version": "relation-v1.1",
+  "baseline_implementation_sha256": "c3207ffd535a6337705377dd413ed35b9f7196bec5a050c493a55b3d52cc6a13",
+  "label_field_description": "Choose by the project's operational meaning, not generic database update semantics. RETAIN: new evidence positively confirms the old claim still applies in its context. UPDATE: two distinct real-world stages of the same concrete process; requires actual progression beyond the old stage, never just later narration, added attributes, a name or a more specific description of an already completed event. SUPERSEDE: explicit replacement of factual states in the same dimension. CONFLICT: incompatible claims under the same applicability that evidence cannot resolve. undetermined: evidence insufficient for an allowed relation. RETAIN, SUPERSEDE and CONFLICT require identical state_key; UPDATE may cross keys.",
+  "other_runtime_rules_changed": false,
+  "max_tokens": 8192,
+  "model_retries": 0,
+  "real_call_ceiling_for_treatment": 2,
+  "actual_real_calls": 2,
+  "outcomes": {
+    "relation:73": "supported_UPDATE",
+    "relation:172": "unsupported_UPDATE_while_reason_denies_progression"
+  },
+  "controlled_tests": {
+    "passed": 140,
+    "elapsed_seconds": 44.86,
+    "schema_description_delivered_in_actual_serialized_schema": true
+  },
+  "qualifies_full_build": false
+}

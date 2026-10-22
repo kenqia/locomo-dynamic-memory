@@ -1,0 +1,405 @@
+{
+  "build_id": "5c7699dd6543407697ae232633154036",
+  "memory_count": 272,
+  "note": "Annotation-source linkage only; absence of a link does not establish that answer information is missing. Some official evidence relies on images or neighboring turns.",
+  "questions": [
+    {
+      "question_id": "conv-26:qa:3",
+      "official_qa": {
+        "question": "What did Caroline research?",
+        "answer": "Adoption agencies",
+        "evidence": [
+          "D2:8"
+        ],
+        "category": 1
+      },
+      "sources": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_2",
+          "dia_id": "D2:8",
+          "speaker": "Caroline",
+          "session_time": "1:14 pm on 25 May, 2023",
+          "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+          "position": 25,
+          "memory_source_links": [
+            {
+              "memory_id": "c29d9f9836d5c49d48f6d49b",
+              "content": "Caroline is researching adoption agencies."
+            },
+            {
+              "memory_id": "41c5f3ef3d7a340e6c24236e",
+              "content": "Caroline's dream is to have a family and give a loving home to kids who need it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:4",
+      "official_qa": {
+        "question": "What is Caroline's identity?",
+        "answer": "Transgender woman",
+        "evidence": [
+          "D1:5"
+        ],
+        "category": 1
+      },
+      "sources": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_1",
+          "dia_id": "D1:5",
+          "speaker": "Caroline",
+          "session_time": "1:56 pm on 8 May, 2023",
+          "text": "The transgender stories were so inspiring! I was so happy and thankful for all the support.",
+          "position": 4,
+          "memory_source_links": [
+            {
+              "memory_id": "0b59da4babd38428fd2d8cc0",
+              "content": "Caroline felt happy and thankful for all the support."
+            },
+            {
+              "memory_id": "b50cb1c451a8e918e5965d76",
+              "content": "Caroline found the transgender stories at the support group inspiring."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:13",
+      "official_qa": {
+        "question": "What career path has Caroline decided to persue?",
+        "answer": "counseling or mental health for Transgender people",
+        "evidence": [
+          "D4:13",
+          "D1:11"
+        ],
+        "category": 1
+      },
+      "sources": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_4",
+          "dia_id": "D4:13",
+          "speaker": "Caroline",
+          "session_time": "10:37 am on 27 June, 2023",
+          "text": "I'm still figuring out the details, but I'm thinking of working with trans people, helping them accept themselves and supporting their mental health. Last Friday, I went to an LGBTQ+ counseling workshop and it was really enlightening. They talked about different therapeutic methods and how to best work with trans people. Seeing how passionate these pros were about making a safe space for people like me was amazing.",
+          "position": 70,
+          "memory_source_links": [
+            {
+              "memory_id": "26a585ed015a3f82b3dfda6f",
+              "content": "Caroline is thinking of working with trans people, helping them accept themselves and supporting their mental health."
+            },
+            {
+              "memory_id": "d744e00a235c5eccfcb43f73",
+              "content": "Caroline went to an LGBTQ+ counseling workshop last Friday."
+            }
+          ]
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_1",
+          "dia_id": "D1:11",
+          "speaker": "Caroline",
+          "session_time": "1:56 pm on 8 May, 2023",
+          "text": "I'm keen on counseling or working in mental health - I'd love to support those with similar issues.",
+          "position": 10,
+          "memory_source_links": [
+            {
+              "memory_id": "11b8e5b1c4598d451378d4e1",
+              "content": "Caroline is keen on counseling or working in mental health."
+            },
+            {
+              "memory_id": "bdbd5262ede13d6d0cabd57a",
+              "content": "Caroline would love to support those with similar issues."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:15",
+      "official_qa": {
+        "question": "What activities does Melanie partake in?",
+        "answer": "pottery, camping, painting, swimming",
+        "evidence": [
+          "D5:4",
+          "D9:1",
+          "D1:12",
+          "D1:18"
+        ],
+        "category": 1
+      },
+      "sources": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_5",
+          "dia_id": "D5:4",
+          "speaker": "Melanie",
+          "session_time": "1:36 pm on 3 July, 2023",
+          "text": "Wow, Caroline! That's great! I just signed up for a pottery class yesterday. It's like therapy for me, letting me express myself and get creative. Have you found any activities that make you feel the same way?",
+          "position": 79,
+          "memory_source_links": [
+            {
+              "memory_id": "84713399b8856b32289d625e",
+              "content": "Melanie signed up for a pottery class yesterday."
+            }
+          ]
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_9",
+          "dia_id": "D9:1",
+          "speaker": "Melanie",
+          "session_time": "2:31 pm on 17 July, 2023",
+          "text": "Hey Caroline, hope all's good! I had a quiet weekend after we went camping with my fam two weekends ago. It was great to unplug and hang with the kids. What've you been up to? Anything fun over the weekend?",
+          "position": 174,
+          "memory_source_links": [
+            {
+              "memory_id": "d3dae5c6947596177bbb4dbb",
+              "content": "Melanie went camping with her family two weekends before 17 July 2023."
+            },
+            {
+              "memory_id": "2f694679936e575626b01002",
+              "content": "Melanie had a quiet weekend."
+            }
+          ]
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:12",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_1",
+          "dia_id": "D1:12",
+          "speaker": "Melanie",
+          "session_time": "1:56 pm on 8 May, 2023",
+          "text": "You'd be a great counselor! Your empathy and understanding will really help the people you work with. By the way, take a look at this.",
+          "position": 11,
+          "memory_source_links": []
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:18",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_1",
+          "dia_id": "D1:18",
+          "speaker": "Melanie",
+          "session_time": "1:56 pm on 8 May, 2023",
+          "text": "Yep, Caroline. Taking care of ourselves is vital. I'm off to go swimming with the kids. Talk to you soon!",
+          "position": 17,
+          "memory_source_links": []
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:0",
+      "official_qa": {
+        "question": "When did Caroline go to the LGBTQ support group?",
+        "answer": "7 May 2023",
+        "evidence": [
+          "D1:3"
+        ],
+        "category": 2
+      },
+      "sources": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_1",
+          "dia_id": "D1:3",
+          "speaker": "Caroline",
+          "session_time": "1:56 pm on 8 May, 2023",
+          "text": "I went to a LGBTQ support group yesterday and it was so powerful.",
+          "position": 2,
+          "memory_source_links": [
+            {
+              "memory_id": "7b29fbb3088ff54b1d95727f",
+              "content": "Caroline went to an LGBTQ support group the day before the conversation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:16",
+      "official_qa": {
+        "question": "When did Melanie sign up for a pottery class?",
+        "answer": "2 July 2023",
+        "evidence": [
+          "D5:4"
+        ],
+        "category": 2
+      },
+      "sources": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_5",
+          "dia_id": "D5:4",
+          "speaker": "Melanie",
+          "session_time": "1:36 pm on 3 July, 2023",
+          "text": "Wow, Caroline! That's great! I just signed up for a pottery class yesterday. It's like therapy for me, letting me express myself and get creative. Have you found any activities that make you feel the same way?",
+          "position": 79,
+          "memory_source_links": [
+            {
+              "memory_id": "84713399b8856b32289d625e",
+              "content": "Melanie signed up for a pottery class yesterday."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:53",
+      "official_qa": {
+        "question": "When did Caroline apply to adoption agencies?",
+        "answer": "The week of 23 August 2023",
+        "evidence": [
+          "D13:1"
+        ],
+        "category": 2
+      },
+      "sources": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_13",
+          "dia_id": "D13:1",
+          "speaker": "Caroline",
+          "session_time": "3:31 pm on 23 August, 2023",
+          "text": "Hi Melanie! Hope you're doing good. Guess what I did this week? I took the first step towards becoming a mom - I applied to adoption agencies! It's a big decision, but I think I'm ready to give all my love to a child. I got lots of help from this adoption advice/assistance group I attended. It was great!",
+          "position": 253,
+          "memory_source_links": [
+            {
+              "memory_id": "30b7c2fe26350ed64a276cb2",
+              "content": "Caroline applied to adoption agencies."
+            },
+            {
+              "memory_id": "db67113a4e69018163495668",
+              "content": "Caroline attended an adoption advice/assistance group."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:79",
+      "official_qa": {
+        "question": "When did Caroline pass the adoption interview?",
+        "answer": "The Friday before 22 October 2023",
+        "evidence": [
+          "D19:1"
+        ],
+        "category": 2
+      },
+      "sources": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_19",
+          "dia_id": "D19:1",
+          "speaker": "Caroline",
+          "session_time": "9:55 am on 22 October, 2023",
+          "text": "Woohoo Melanie! I passed the adoption agency interviews last Friday! I'm so excited and thankful. This is a big move towards my goal of having a family.",
+          "position": 404,
+          "memory_source_links": [
+            {
+              "memory_id": "31d452af0431e55c3ebfb59f",
+              "content": "Caroline passed the adoption agency interviews last Friday."
+            },
+            {
+              "memory_id": "e7c44971fdbf4e9f538b50d7",
+              "content": "Caroline has a goal of having a family."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:153",
+      "official_qa": {
+        "question": "What are Melanie's plans for the summer with respect to adoption?",
+        "evidence": [
+          "D2:8"
+        ],
+        "category": 5,
+        "adversarial_answer": "researching adoption agencies"
+      },
+      "sources": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_2",
+          "dia_id": "D2:8",
+          "speaker": "Caroline",
+          "session_time": "1:14 pm on 25 May, 2023",
+          "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+          "position": 25,
+          "memory_source_links": [
+            {
+              "memory_id": "c29d9f9836d5c49d48f6d49b",
+              "content": "Caroline is researching adoption agencies."
+            },
+            {
+              "memory_id": "41c5f3ef3d7a340e6c24236e",
+              "content": "Caroline's dream is to have a family and give a loving home to kids who need it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "conv-26:qa:157",
+      "official_qa": {
+        "question": "What does Melanie's necklace symbolize?",
+        "evidence": [
+          "D4:3"
+        ],
+        "category": 5,
+        "adversarial_answer": "love, faith, and strength"
+      },
+      "sources": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "session_id": "session_4",
+          "dia_id": "D4:3",
+          "speaker": "Caroline",
+          "session_time": "10:37 am on 27 June, 2023",
+          "text": "Thanks, Melanie! This necklace is super special to me - a gift from my grandma in my home country, Sweden. She gave it to me when I was young, and it stands for love, faith and strength. It's like a reminder of my roots and all the love and support I get from my family.",
+          "position": 60,
+          "memory_source_links": [
+            {
+              "memory_id": "76127db9ac3f8a2cbc842fff",
+              "content": "Caroline's grandmother gave Caroline a necklace when Caroline was young."
+            },
+            {
+              "memory_id": "823ba891090bb4a4bad5775f",
+              "content": "Caroline is from Sweden."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

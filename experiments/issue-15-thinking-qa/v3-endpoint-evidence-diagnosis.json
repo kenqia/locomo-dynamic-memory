@@ -1,0 +1,23 @@
+{
+  "build_id": "5c7699dd6543407697ae232633154036",
+  "invalid_relation_count": 1,
+  "affected_task_count": 1,
+  "relations": [
+    {
+      "relation_id": "831818aa7ab2447994727153",
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "label": "UPDATE",
+      "extra_sources": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:14"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "5c7699dd6543407697ae232633154036:relation:132",
+      "ordinal": 132,
+      "new_memory_id": "e01038e26bdefa5d050bcfed",
+      "status": "succeeded"
+    }
+  ]
+}

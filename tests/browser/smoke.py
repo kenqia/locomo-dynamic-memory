@@ -7,6 +7,7 @@ import argparse
 import json
 import re
 import subprocess
+import time
 from pathlib import Path
 from urllib.request import urlopen
 from playwright.sync_api import sync_playwright, expect
@@ -136,6 +137,9 @@ with sync_playwright() as playwright:
                 page.get_by_text('完整 Trace、实际配置、模型调用及用量', exact=True).click()
                 page.get_by_text('初始候选、历史扩展、有效集合与排除理由', exact=True).click()
                 page.screenshot(path=str(args.output / 'issue-12-history-trace.png'), full_page=True)
+            scenario = {'Rome': 'current', 'Paris': 'historical', '证据冲突': 'conflict', '证据不足': 'insufficient'}[expected]
+            page.get_by_text(re.compile(r'^Trace [a-f0-9]+ · 固定构建')).scroll_into_view_if_needed()
+            page.screenshot(path=str(args.output / f'query-{scenario}.png'), full_page=True)
         assert get(f'/builds/{build}/current-state') == state
         assert get(f'/builds/{build}/relations') == relations
         assert get(f'/datasets/{dataset}/conversations/conv-a/turns') == original
@@ -147,12 +151,19 @@ with sync_playwright() as playwright:
         subprocess.run([args.app_python, '-c',
                         'import sys; from pathlib import Path; from locomo_memory.export_schemas import MemoryExport; MemoryExport.model_validate_json(Path(sys.argv[1]).read_text())',
                         str(args.output / 'issue-12-memory.json')], check=True)
-        assert bundle['schema_version'] == 'memory-export-v1'
+        assert bundle['schema_version'] == 'memory-export-v2'
         assert bundle['build']['build_id'] == bundle['index']['build_id'] == bundle['projection']['build_id'] == build
         evaluation = {'kind': 'synthetic', 'samples': [{'sample_id': 'conv-a', 'question': q, 'answer': 'Rome', 'category': 4, 'evidence': ['D2:1']} for q in ['Where does Alex live?', 'Trigger failure.']]}
         page.get_by_test_id('stFileUploader').last.locator('input[type=file]').set_input_files({'name': 'evaluation.json', 'mimeType': 'application/json', 'buffer': json.dumps(evaluation).encode()})
         click('保存独立评测输入')
         click('运行所选对照')
+        expect(page.get_by_text(re.compile(r'^Run [a-f0-9]+ ·'))).to_be_visible(timeout=30000)
+        run_id = page.get_by_text(re.compile(r'^Run [a-f0-9]+ ·')).inner_text().split()[1]
+        deadline = time.monotonic() + 30
+        while get('/evaluation-runs/' + run_id + '/progress')['status'] == 'running':
+            assert time.monotonic() < deadline, 'evaluation did not finish'
+            time.sleep(.1)
+        click('刷新评测进度')
         expect(page.get_by_text('课程正式指标未评：', exact=False)).to_be_visible(timeout=30000)
         for name in ['完整动态系统', 'Full Text 原始轮次', 'Vector RAG（无状态解析）', 'Hybrid + 扩展（无状态解析）']:
             expect(page.get_by_test_id('stMarkdownContainer').get_by_text(name, exact=True).filter(visible=True).first).to_be_visible()

@@ -1,0 +1,3739 @@
+[
+  {
+    "qa_index": 0,
+    "question": "When did Caroline go to the LGBTQ support group?",
+    "category": 2,
+    "reference": "7 May 2023",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.0,
+    "score_rule": "official_category_f1",
+    "trace_id": "269cf1149a364f25a95556f71f3c7f49",
+    "answer": "2023-05-07",
+    "answer_status": "sufficient",
+    "explanation": "Caroline said she went to an LGBTQ support group \"yesterday\" in a source session dated 8 May 2023, so the visit was on 2023-05-07.",
+    "citations": [
+      {
+        "memory_id": "7b29fbb3088ff54b1d95727f",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 8.900806677003857,
+      "reported_tokens": {
+        "completion_tokens": 1521,
+        "prompt_tokens": 13196,
+        "total_tokens": 14717
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 1521
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 13196
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 14717
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_1",
+        "dia_id": "D1:3",
+        "speaker": "Caroline",
+        "session_time": "1:56 pm on 8 May, 2023",
+        "text": "I went to a LGBTQ support group yesterday and it was so powerful.",
+        "position": 2
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:2",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_1",
+        "dia_id": "D1:2",
+        "speaker": "Melanie",
+        "session_time": "1:56 pm on 8 May, 2023",
+        "text": "Hey Caroline! Good to see you! I'm swamped with the kids & work. What's up with you? Anything new?",
+        "position": 1
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_1",
+        "dia_id": "D1:3",
+        "speaker": "Caroline",
+        "session_time": "1:56 pm on 8 May, 2023",
+        "text": "I went to a LGBTQ support group yesterday and it was so powerful.",
+        "position": 2
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:4",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_1",
+        "dia_id": "D1:4",
+        "speaker": "Melanie",
+        "session_time": "1:56 pm on 8 May, 2023",
+        "text": "Wow, that's cool, Caroline! What happened that was so awesome? Did you hear any inspiring stories?",
+        "position": 3
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 1,
+    "question": "When did Melanie paint a sunrise?",
+    "category": 2,
+    "reference": 2022,
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.11764705882352941,
+    "score_rule": "official_category_f1",
+    "trace_id": "68151ebb21db4317a46fdb0c92a9cbc0",
+    "answer": "Last year (2022), relative to the 8 May 2023 conversation; the exact day or month is not stated.",
+    "answer_status": "sufficient",
+    "explanation": "Melanie said she painted the lake sunrise 'last year' in a source dated 8 May 2023, placing it in 2022. Only the year is supported; no specific date is given.",
+    "citations": [
+      {
+        "memory_id": "35359e989f7932d1968e902a",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D1:14"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 0.0,
+      "effective": 0.0,
+      "expanded": 0.0,
+      "initial": 0.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:6"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 12.807100577003439,
+      "reported_tokens": {
+        "completion_tokens": 2519,
+        "prompt_tokens": 13267,
+        "total_tokens": 15786
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 2519
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 13267
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 15786
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_1",
+        "dia_id": "D1:14",
+        "speaker": "Melanie",
+        "session_time": "1:56 pm on 8 May, 2023",
+        "text": "Yeah, I painted that lake sunrise last year! It's special to me.",
+        "position": 13
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:13",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_1",
+        "dia_id": "D1:13",
+        "speaker": "Caroline",
+        "session_time": "1:56 pm on 8 May, 2023",
+        "text": "Thanks, Melanie! That's really sweet. Is this your own painting?",
+        "position": 12
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_1",
+        "dia_id": "D1:14",
+        "speaker": "Melanie",
+        "session_time": "1:56 pm on 8 May, 2023",
+        "text": "Yeah, I painted that lake sunrise last year! It's special to me.",
+        "position": 13
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:15",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_1",
+        "dia_id": "D1:15",
+        "speaker": "Caroline",
+        "session_time": "1:56 pm on 8 May, 2023",
+        "text": "Wow, Melanie! The colors really blend nicely. Painting looks like a great outlet for expressing yourself.",
+        "position": 14
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 3,
+    "question": "What did Caroline research?",
+    "category": 1,
+    "reference": "Adoption agencies",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.6666666666666666,
+    "score_rule": "official_category_f1",
+    "trace_id": "753f32fcc4fc41269253353eadad7ebe",
+    "answer": "Caroline researched adoption agencies.",
+    "answer_status": "sufficient",
+    "explanation": "Memory c29d9f9836d5c49d48f6d49b states Caroline is researching adoption agencies, supported by her own statement in the source. No other research topics are supported.",
+    "citations": [
+      {
+        "memory_id": "c29d9f9836d5c49d48f6d49b",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:3"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 17.606271101001767,
+      "reported_tokens": {
+        "completion_tokens": 3459,
+        "prompt_tokens": 12840,
+        "total_tokens": 16299
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 3459
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 12840
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 16299
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_2",
+        "dia_id": "D2:8",
+        "speaker": "Caroline",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+        "position": 25
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_2",
+        "dia_id": "D2:7",
+        "speaker": "Melanie",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "Thanks, Caroline. It's still a work in progress, but I'm doing my best. My kids are so excited about summer break! We're thinking about going camping next month. Any fun plans for the summer?",
+        "position": 24
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_2",
+        "dia_id": "D2:8",
+        "speaker": "Caroline",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it.",
+        "position": 25
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:9",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_2",
+        "dia_id": "D2:9",
+        "speaker": "Melanie",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "Wow, Caroline! That's awesome! Taking in kids in need - you're so kind. Your future family is gonna be so lucky to have you!",
+        "position": 26
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 11,
+    "question": "Where did Caroline move from 4 years ago?",
+    "category": 1,
+    "reference": "Sweden",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 1.0,
+    "score_rule": "official_category_f1",
+    "trace_id": "1801b8296f3a4bca8cff777d95ea1e05",
+    "answer": "Sweden",
+    "answer_status": "sufficient",
+    "explanation": "Caroline said she moved from her home country four years before the 9 June 2023 session, and she later identified her home country as Sweden.",
+    "citations": [
+      {
+        "memory_id": "19cd746fe22231018ae1338c",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D3:13"
+        ]
+      },
+      {
+        "memory_id": "823ba891090bb4a4bad5775f",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D4:3"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:4"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 14.386184379007318,
+      "reported_tokens": {
+        "completion_tokens": 2739,
+        "prompt_tokens": 13737,
+        "total_tokens": 16476
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 2739
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 13737
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 16476
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_3",
+        "dia_id": "D3:13",
+        "speaker": "Caroline",
+        "session_time": "7:55 pm on 9 June, 2023",
+        "text": "Yeah, I'm really lucky to have them. They've been there through everything, I've known these friends for 4 years, since I moved from my home country. Their love and help have been so important especially after that tough breakup. I'm super thankful. Who supports you, Mel?",
+        "position": 47
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_4",
+        "dia_id": "D4:3",
+        "speaker": "Caroline",
+        "session_time": "10:37 am on 27 June, 2023",
+        "text": "Thanks, Melanie! This necklace is super special to me - a gift from my grandma in my home country, Sweden. She gave it to me when I was young, and it stands for love, faith and strength. It's like a reminder of my roots and all the love and support I get from my family.",
+        "position": 60
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:12",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_3",
+        "dia_id": "D3:12",
+        "speaker": "Melanie",
+        "session_time": "7:55 pm on 9 June, 2023",
+        "text": "Wow, that photo is great! How long have you had such a great support system?",
+        "position": 46
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_3",
+        "dia_id": "D3:13",
+        "speaker": "Caroline",
+        "session_time": "7:55 pm on 9 June, 2023",
+        "text": "Yeah, I'm really lucky to have them. They've been there through everything, I've known these friends for 4 years, since I moved from my home country. Their love and help have been so important especially after that tough breakup. I'm super thankful. Who supports you, Mel?",
+        "position": 47
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:14",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_3",
+        "dia_id": "D3:14",
+        "speaker": "Melanie",
+        "session_time": "7:55 pm on 9 June, 2023",
+        "text": "I'm lucky to have my husband and kids; they keep me motivated.",
+        "position": 48
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:2",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_4",
+        "dia_id": "D4:2",
+        "speaker": "Melanie",
+        "session_time": "10:37 am on 27 June, 2023",
+        "text": "Hey, Caroline! Nice to hear from you! Love the necklace, any special meaning to it?",
+        "position": 59
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_4",
+        "dia_id": "D4:3",
+        "speaker": "Caroline",
+        "session_time": "10:37 am on 27 June, 2023",
+        "text": "Thanks, Melanie! This necklace is super special to me - a gift from my grandma in my home country, Sweden. She gave it to me when I was young, and it stands for love, faith and strength. It's like a reminder of my roots and all the love and support I get from my family.",
+        "position": 60
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:4",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_4",
+        "dia_id": "D4:4",
+        "speaker": "Melanie",
+        "session_time": "10:37 am on 27 June, 2023",
+        "text": "That's gorgeous, Caroline! It's awesome what items can mean so much to us, right? Got any other objects that you treasure, like that necklace?",
+        "position": 61
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 14,
+    "question": "Would Caroline still want to pursue counseling as a career if she hadn't received support growing up?",
+    "category": 3,
+    "reference": "Likely no",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.4,
+    "score_rule": "official_category_f1",
+    "trace_id": "8c36b1b83d6c487184ff34420baeff24",
+    "answer": "No information available.",
+    "answer_status": "insufficient",
+    "explanation": "The supplied memories establish that Caroline actually wants and has explored a counseling/mental-health career and that she received meaningful support from friends, family, and people she looked up to, which she says made a difference and shaped who she is. However, no memory states the counterfactual of whether she would still want to pursue counseling if she had not received support growing up; support is described as influential but not shown to be a necessary condition for her career desire.",
+    "citations": [],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 0.5,
+      "effective": 0.5,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14"
+      ]
+    },
+    "raw_triggered": true,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 20.830338130996097,
+      "reported_tokens": {
+        "completion_tokens": 3536,
+        "prompt_tokens": 21605,
+        "total_tokens": 25141
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 3536
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 21605
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 25141
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [],
+    "neighboring_context": [],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 22,
+    "question": "Would Caroline likely have Dr. Seuss books on her bookshelf?",
+    "category": 3,
+    "reference": "Yes, since she collects classic children's books",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.1875,
+    "score_rule": "official_category_f1",
+    "trace_id": "a5bb5202dd6d438e81957340ee8b15a4",
+    "answer": "Likely yes — Caroline has lots of kids' books, including classics, which would plausibly include Dr. Seuss, though no specific Dr. Seuss title is named.",
+    "answer_status": "sufficient",
+    "explanation": "Caroline states she has many children's books, including classics. Dr. Seuss is a classic children's author, so ownership is likely but not explicitly confirmed.",
+    "citations": [
+      {
+        "memory_id": "ed2895cc14d2cb8a17a45c0a",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:9"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:16"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 14.37475740199443,
+      "reported_tokens": {
+        "completion_tokens": 2763,
+        "prompt_tokens": 13052,
+        "total_tokens": 15815
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 2763
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 13052
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 15815
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:9",
+        "speaker": "Caroline",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "I've got lots of kids' books- classics, stories from different cultures, educational books, all of that. What's a favorite book you remember from your childhood?",
+        "position": 100
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:8",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:8",
+        "speaker": "Melanie",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "Sounds great! What kind of books you got in your library?",
+        "position": 99
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:9",
+        "speaker": "Caroline",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "I've got lots of kids' books- classics, stories from different cultures, educational books, all of that. What's a favorite book you remember from your childhood?",
+        "position": 100
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:10",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:10",
+        "speaker": "Melanie",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "I loved reading \"Charlotte's Web\" as a kid. It was so cool seeing how friendship and compassion can make a difference.",
+        "position": 101
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 45,
+    "question": "When did Caroline attend a pride parade in August?",
+    "category": 2,
+    "reference": "The Friday before 14 August 2023",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.6666666666666666,
+    "score_rule": "official_category_f1",
+    "trace_id": "2c08ba6f387c4fe0ba0678800685a9b5",
+    "answer": "Friday 11 August 2023",
+    "answer_status": "sufficient",
+    "explanation": "Caroline said on 14 August 2023 that she went to a pride parade 'last Friday'; anchored to that session date, this is 11 August 2023.",
+    "citations": [
+      {
+        "memory_id": "24e9a50ecceba6c68bf3adc9",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D11:4"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:4"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:4"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:5"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 11.698435494006844,
+      "reported_tokens": {
+        "completion_tokens": 2221,
+        "prompt_tokens": 13318,
+        "total_tokens": 15539
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 2221
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 13318
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 15539
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D11:4",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_11",
+        "dia_id": "D11:4",
+        "speaker": "Caroline",
+        "session_time": "2:24 pm on 14 August, 2023",
+        "text": "Wow, Mel, glad you had a blast at the concert. A lot's happened since we talked. I went to a pride parade last Friday and it was awesome - so much energy and love everywhere. Really made me proud and reminded me how important it is to keep standing up for equality.",
+        "position": 218
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_11",
+        "dia_id": "D11:3",
+        "speaker": "Melanie",
+        "session_time": "2:24 pm on 14 August, 2023",
+        "text": "Thanks, Caroline! It was Matt Patterson, he is so talented! His voice and songs were amazing. What's up with you? Anything interesting going on?",
+        "position": 217
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D11:4",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_11",
+        "dia_id": "D11:4",
+        "speaker": "Caroline",
+        "session_time": "2:24 pm on 14 August, 2023",
+        "text": "Wow, Mel, glad you had a blast at the concert. A lot's happened since we talked. I went to a pride parade last Friday and it was awesome - so much energy and love everywhere. Really made me proud and reminded me how important it is to keep standing up for equality.",
+        "position": 218
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D11:5",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_11",
+        "dia_id": "D11:5",
+        "speaker": "Melanie",
+        "session_time": "2:24 pm on 14 August, 2023",
+        "text": "Wow, that's awesome! How did it feel being part of that community?",
+        "position": 219
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 51,
+    "question": "What has Melanie painted?",
+    "category": 1,
+    "reference": "Horse, sunset, sunrise",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.0392156862745098,
+    "score_rule": "official_category_f1",
+    "trace_id": "ffb4addc8c604738b13836ac52430889",
+    "answer": "A horse painting; a landscape/still-life nature painting; a sunset-inspired painting; a nature-inspired painting made together with her partner; and an abstract painting.",
+    "answer_status": "sufficient",
+    "explanation": "All listed works are completed paintings. The nature-inspired painting was made jointly with her partner. Autumn-inspired paintings were only planned and are excluded.",
+    "citations": [
+      {
+        "memory_id": "b9a9011de84e4bbd7d52ae3d",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D13:8"
+        ]
+      },
+      {
+        "memory_id": "1bd0dc950a72d4aa40ec6e95",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D14:30"
+        ]
+      },
+      {
+        "memory_id": "0c1f196cbd4e38b9eda0e816",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:12"
+        ]
+      },
+      {
+        "memory_id": "21301a30408df7ba29407309",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+          "f69a07a79a2d5f4c8188300a/conv-26/D8:8"
+        ]
+      },
+      {
+        "memory_id": "c2602308eef544a039793ccc",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D17:14"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 0.6666666666666666,
+      "effective": 0.6666666666666666,
+      "expanded": 0.6666666666666666,
+      "initial": 0.6666666666666666
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 17.448153632998583,
+      "reported_tokens": {
+        "completion_tokens": 3523,
+        "prompt_tokens": 18162,
+        "total_tokens": 21685
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 3523
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 18162
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 21685
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_13",
+        "dia_id": "D13:8",
+        "speaker": "Melanie",
+        "session_time": "3:31 pm on 23 August, 2023",
+        "text": "Wow, that sounds great - I agree, they're awesome. Here's a photo of my horse painting I did recently.",
+        "position": 260
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_14",
+        "dia_id": "D14:30",
+        "speaker": "Melanie",
+        "session_time": "1:33 pm on 25 August, 2023",
+        "text": "Painting landscapes and still life is my favorite! Nature's amazing, here's a painting I did recently.",
+        "position": 300
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_17",
+        "dia_id": "D17:12",
+        "speaker": "Melanie",
+        "session_time": "10:31 am on 13 October, 2023",
+        "text": "Yeah, Here's one I did last week. It's inspired by the sunsets. The colors make me feel calm. What have you been up to lately, artistically?",
+        "position": 365
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:6",
+        "speaker": "Melanie",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "We love painting together lately, especially nature-inspired ones. Here's our latest work from last weekend.",
+        "position": 140
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:8",
+        "speaker": "Melanie",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "Thanks, Caroline! We both helped with the painting - it was great bonding over it and chatting about nature. We found these lovely flowers. Appreciating the small things in life, too.",
+        "position": 142
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_17",
+        "dia_id": "D17:14",
+        "speaker": "Melanie",
+        "session_time": "10:31 am on 13 October, 2023",
+        "text": "Thanks, Caroline! I painted it because it was calming. I've done an abstract painting too, take a look! I love how art lets us get our emotions out.",
+        "position": 367
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:5",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:5",
+        "speaker": "Caroline",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "Aww, that's so sweet! That cup is so cute. It's awesome to see how kids show their personalities through art. What other creative projects do you do with them, besides pottery?",
+        "position": 139
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:6",
+        "speaker": "Melanie",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "We love painting together lately, especially nature-inspired ones. Here's our latest work from last weekend.",
+        "position": 140
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:7",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:7",
+        "speaker": "Caroline",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "Wow Mel, that painting's amazing! The colors are so bold and it really highlights the beauty of nature. Y'all work on it together?",
+        "position": 141
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:8",
+        "speaker": "Melanie",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "Thanks, Caroline! We both helped with the painting - it was great bonding over it and chatting about nature. We found these lovely flowers. Appreciating the small things in life, too.",
+        "position": 142
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:9",
+        "speaker": "Caroline",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "That photo is stunning! So glad you bonded over our love of nature. Last Friday I went to a council meeting for adoption. It was inspiring and emotional - so many people wanted to create loving homes for children in need. It made me even more determined to adopt.",
+        "position": 143
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_13",
+        "dia_id": "D13:7",
+        "speaker": "Caroline",
+        "session_time": "3:31 pm on 23 August, 2023",
+        "text": "That's so funny! I used to go horseback riding with my dad when I was a kid, we'd go through the fields, feeling the wind. It was so special. I've always had a love for horses!",
+        "position": 259
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_13",
+        "dia_id": "D13:8",
+        "speaker": "Melanie",
+        "session_time": "3:31 pm on 23 August, 2023",
+        "text": "Wow, that sounds great - I agree, they're awesome. Here's a photo of my horse painting I did recently.",
+        "position": 260
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:9",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_13",
+        "dia_id": "D13:9",
+        "speaker": "Caroline",
+        "session_time": "3:31 pm on 23 August, 2023",
+        "text": "Wow, Melanie, that's amazing! Love all the details and how you got the horse's grace and strength. Do you like painting animals?",
+        "position": 261
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D14:29",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_14",
+        "dia_id": "D14:29",
+        "speaker": "Caroline",
+        "session_time": "1:33 pm on 25 August, 2023",
+        "text": "Yeah, definitely! Drawing flowers is one of my faves. Appreciating nature and sharing it is great. What about you, Mel? What type of art do you love?",
+        "position": 299
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_14",
+        "dia_id": "D14:30",
+        "speaker": "Melanie",
+        "session_time": "1:33 pm on 25 August, 2023",
+        "text": "Painting landscapes and still life is my favorite! Nature's amazing, here's a painting I did recently.",
+        "position": 300
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D14:31",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_14",
+        "dia_id": "D14:31",
+        "speaker": "Caroline",
+        "session_time": "1:33 pm on 25 August, 2023",
+        "text": "Wow, Mel! Any more paintings coming up?",
+        "position": 301
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:11",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_17",
+        "dia_id": "D17:11",
+        "speaker": "Caroline",
+        "session_time": "10:31 am on 13 October, 2023",
+        "text": "Cool that you have creative outlets. Got any paintings to show? I'd love to check them out.",
+        "position": 364
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_17",
+        "dia_id": "D17:12",
+        "speaker": "Melanie",
+        "session_time": "10:31 am on 13 October, 2023",
+        "text": "Yeah, Here's one I did last week. It's inspired by the sunsets. The colors make me feel calm. What have you been up to lately, artistically?",
+        "position": 365
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:13",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_17",
+        "dia_id": "D17:13",
+        "speaker": "Caroline",
+        "session_time": "10:31 am on 13 October, 2023",
+        "text": "Wow Mel, that's stunning! Love the colors and the chilled-out sunset vibe. What made you paint it? I've been trying out abstract stuff recently. It's kinda freeing, just putting my feelings on the canvas without too much of a plan. It's like a cool form of self-expression.",
+        "position": 366
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_17",
+        "dia_id": "D17:14",
+        "speaker": "Melanie",
+        "session_time": "10:31 am on 13 October, 2023",
+        "text": "Thanks, Caroline! I painted it because it was calming. I've done an abstract painting too, take a look! I love how art lets us get our emotions out.",
+        "position": 367
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:15",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_17",
+        "dia_id": "D17:15",
+        "speaker": "Caroline",
+        "session_time": "10:31 am on 13 October, 2023",
+        "text": "Wow, that looks great! The blue adds so much to it. What feelings were you hoping to portray?",
+        "position": 368
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 59,
+    "question": "Would Caroline be considered religious?",
+    "category": 3,
+    "reference": "Somewhat, but not extremely religious",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.0,
+    "score_rule": "official_category_f1",
+    "trace_id": "5fbf0afab3cb4c2ca2e0d164303443d0",
+    "answer": "No information available.",
+    "answer_status": "insufficient",
+    "explanation": "No supplied memory or source states Caroline's religious beliefs, affiliation, or practice. Her upsetting encounter with religious conservatives and her stained-glass window made for a local church depicting her transgender journey do not establish personal religiosity.",
+    "citations": [],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:1"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:19"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:10"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5"
+      ]
+    },
+    "raw_triggered": true,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 4,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 39.03336536602001,
+      "reported_tokens": {
+        "completion_tokens": 8184,
+        "prompt_tokens": 24506,
+        "total_tokens": 32690
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 8184
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 24506
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 32690
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [],
+    "neighboring_context": [],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 60,
+    "question": "What instruments does Melanie play?",
+    "category": 1,
+    "reference": "clarinet and violin",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 1.0,
+    "score_rule": "official_category_f1",
+    "trace_id": "6ac8041f8c4e4b12a4dc3a44555cd2f1",
+    "answer": "Clarinet and violin.",
+    "answer_status": "sufficient",
+    "explanation": "Melanie states she plays clarinet (started when young) and lists playing violin among her me-time activities. The violin hobby memory has an incomplete update endpoint, so later continuation of violin playing is uncertain, but both instruments are directly supported.",
+    "citations": [
+      {
+        "memory_id": "ad50d1035de8bd6dfcf596a2",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D15:26"
+        ]
+      },
+      {
+        "memory_id": "831f646db1fb093105c2ecd6",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:3"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 28.927475416014204,
+      "reported_tokens": {
+        "completion_tokens": 5696,
+        "prompt_tokens": 13805,
+        "total_tokens": 19501
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 5696
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 13805
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 19501
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_15",
+        "dia_id": "D15:26",
+        "speaker": "Melanie",
+        "session_time": "3:19 pm on 28 August, 2023",
+        "text": "Yeah, I play clarinet! Started when I was young and it's been great. Expression of myself and a way to relax.",
+        "position": 331
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_2",
+        "dia_id": "D2:5",
+        "speaker": "Melanie",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "Yeah, it's tough. So I'm carving out some me-time each day - running, reading, or playing my violin - which refreshes me and helps me stay present for my fam!",
+        "position": 22
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:4",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_2",
+        "dia_id": "D2:4",
+        "speaker": "Caroline",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "I totally agree, Melanie. Taking care of ourselves is so important - even if it's not always easy. Great that you're prioritizing self-care.",
+        "position": 21
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_2",
+        "dia_id": "D2:5",
+        "speaker": "Melanie",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "Yeah, it's tough. So I'm carving out some me-time each day - running, reading, or playing my violin - which refreshes me and helps me stay present for my fam!",
+        "position": 22
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:6",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_2",
+        "dia_id": "D2:6",
+        "speaker": "Caroline",
+        "session_time": "1:14 pm on 25 May, 2023",
+        "text": "That's great, Mel! Taking time for yourself is so important. You're doing an awesome job looking after yourself and your family!",
+        "position": 23
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:25",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_15",
+        "dia_id": "D15:25",
+        "speaker": "Caroline",
+        "session_time": "3:19 pm on 28 August, 2023",
+        "text": "Thanks, Melanie! Appreciate it. You play any instruments?",
+        "position": 330
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_15",
+        "dia_id": "D15:26",
+        "speaker": "Melanie",
+        "session_time": "3:19 pm on 28 August, 2023",
+        "text": "Yeah, I play clarinet! Started when I was young and it's been great. Expression of myself and a way to relax.",
+        "position": 331
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:27",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_15",
+        "dia_id": "D15:27",
+        "speaker": "Caroline",
+        "session_time": "3:19 pm on 28 August, 2023",
+        "text": "Cool! Got any fav tunes?",
+        "position": 332
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 68,
+    "question": "How long has Melanie been practicing art?",
+    "category": 2,
+    "reference": "Since 2016",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.0,
+    "score_rule": "official_category_f1",
+    "trace_id": "38c84d1dd4ad481eb5353c0e781eddbc",
+    "answer": "Seven years.",
+    "answer_status": "sufficient",
+    "explanation": "Melanie stated she has been into art for seven years as of the cited September 2023 session; no exact start date is given.",
+    "citations": [
+      {
+        "memory_id": "e20178f9a103e8fc8f8965bb",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D16:8"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:33"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 10.871191726997495,
+      "reported_tokens": {
+        "completion_tokens": 2297,
+        "prompt_tokens": 13028,
+        "total_tokens": 15325
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 2297
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 13028
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 15325
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_16",
+        "dia_id": "D16:8",
+        "speaker": "Melanie",
+        "session_time": "12:09 am on 13 September, 2023",
+        "text": "Seven years now, and I've finally found my real muses: painting and pottery. It's so calming and satisfying. Check out my pottery creation in the pic!",
+        "position": 341
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D16:7",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_16",
+        "dia_id": "D16:7",
+        "speaker": "Caroline",
+        "session_time": "12:09 am on 13 September, 2023",
+        "text": "Since I was 17 or so. I find it soempowering and cathartic. It's amazing how art can show things that are hard to put into words. How long have you been into art?",
+        "position": 340
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_16",
+        "dia_id": "D16:8",
+        "speaker": "Melanie",
+        "session_time": "12:09 am on 13 September, 2023",
+        "text": "Seven years now, and I've finally found my real muses: painting and pottery. It's so calming and satisfying. Check out my pottery creation in the pic!",
+        "position": 341
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D16:9",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_16",
+        "dia_id": "D16:9",
+        "speaker": "Caroline",
+        "session_time": "12:09 am on 13 September, 2023",
+        "text": "Melanie, those bowls are amazing! They each have such cool designs. I love that you chose pottery for your art. Painting and drawing have helped me express my feelings and explore my gender identity. Creating art was really important to me during my transition - it helped me understand and accept myself. I'm so grateful.",
+        "position": 342
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 69,
+    "question": "What personality traits might Melanie say Caroline has?",
+    "category": 3,
+    "reference": "Thoughtful, authentic, driven",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.0,
+    "score_rule": "official_category_f1",
+    "trace_id": "b353ddf15c544122b60a609bf423309f",
+    "answer": "Melanie might say Caroline has the courage to be herself.",
+    "answer_status": "sufficient",
+    "explanation": "Melanie directly attributes to Caroline the courage to be herself, framed as important for mental health and peace. No other personality traits are supported by Melanie's statements.",
+    "citations": [
+      {
+        "memory_id": "edbba4ed423b2c4a90809678",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D8:26"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 0.0,
+      "effective": 0.0,
+      "expanded": 0.0,
+      "initial": 0.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:21"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 27.359591265005292,
+      "reported_tokens": {
+        "completion_tokens": 5499,
+        "prompt_tokens": 12430,
+        "total_tokens": 17929
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 5499
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 12430
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 17929
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:26",
+        "speaker": "Melanie",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "That's awesome, Caro! You've found the courage to be yourself - that's important for our mental health and finding peace.",
+        "position": 160
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:25",
+        "speaker": "Caroline",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "Realizing I can be me without fear and having the courage to transition was the best part. It's so freeing to express myself authentically and have people back me up.",
+        "position": 159
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:26",
+        "speaker": "Melanie",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "That's awesome, Caro! You've found the courage to be yourself - that's important for our mental health and finding peace.",
+        "position": 160
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_8",
+        "dia_id": "D8:27",
+        "speaker": "Caroline",
+        "session_time": "1:51 pm on 15 July, 2023",
+        "text": "Thanks, Melanie! Been a long road, but I'm proud of how far I've come. How're you doing finding peace?",
+        "position": 161
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 102,
+    "question": "What kind of books does Caroline have in her library?",
+    "category": 4,
+    "reference": "kids' books - classics, stories from different cultures, educational books",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.8421052631578947,
+    "score_rule": "official_category_f1",
+    "trace_id": "d5ffd7997c274761b1a3f29c34d1859f",
+    "answer": "Children's books, including classics, stories from different cultures, and educational books.",
+    "answer_status": "sufficient",
+    "explanation": "Caroline states she has lots of kids' books: classics, stories from different cultures, and educational books. She is building this library for when she has kids.",
+    "citations": [
+      {
+        "memory_id": "ed2895cc14d2cb8a17a45c0a",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:9"
+        ]
+      },
+      {
+        "memory_id": "553c4718886e69460dd924ad",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D6:7"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:10"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 9.612133691014606,
+      "reported_tokens": {
+        "completion_tokens": 1868,
+        "prompt_tokens": 13758,
+        "total_tokens": 15626
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 1868
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 13758
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 15626
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:9",
+        "speaker": "Caroline",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "I've got lots of kids' books- classics, stories from different cultures, educational books, all of that. What's a favorite book you remember from your childhood?",
+        "position": 100
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:7",
+        "speaker": "Caroline",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "Being a mom is awesome. I'm creating a library for when I have kids. I'm really looking forward to reading to them and opening up their minds.",
+        "position": 98
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:6",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:6",
+        "speaker": "Melanie",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "They were stoked for the dinosaur exhibit! They love learning about animals and the bones were so cool. It reminds me why I love being a mom.",
+        "position": 97
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:7",
+        "speaker": "Caroline",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "Being a mom is awesome. I'm creating a library for when I have kids. I'm really looking forward to reading to them and opening up their minds.",
+        "position": 98
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:8",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:8",
+        "speaker": "Melanie",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "Sounds great! What kind of books you got in your library?",
+        "position": 99
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:9",
+        "speaker": "Caroline",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "I've got lots of kids' books- classics, stories from different cultures, educational books, all of that. What's a favorite book you remember from your childhood?",
+        "position": 100
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:10",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_6",
+        "dia_id": "D6:10",
+        "speaker": "Melanie",
+        "session_time": "8:18 pm on 6 July, 2023",
+        "text": "I loved reading \"Charlotte's Web\" as a kid. It was so cool seeing how friendship and compassion can make a difference.",
+        "position": 101
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 130,
+    "question": "Which  classical musicians does Melanie enjoy listening to?",
+    "category": 4,
+    "reference": "Bach and Mozart",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 1.0,
+    "score_rule": "official_category_f1",
+    "trace_id": "481c067e2e574b40a6a842967b3034d3",
+    "answer": "Bach and Mozart",
+    "answer_status": "sufficient",
+    "explanation": "Melanie said she is a fan of classical music such as Bach and Mozart. Ed Sheeran is modern music, not classical, so is excluded.",
+    "citations": [
+      {
+        "memory_id": "3581335eb4c3cc72333cd170",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D15:28"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:22",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:10"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:24",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 10.38130151599762,
+      "reported_tokens": {
+        "completion_tokens": 1891,
+        "prompt_tokens": 12841,
+        "total_tokens": 14732
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 1891
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 12841
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 14732
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:28",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_15",
+        "dia_id": "D15:28",
+        "speaker": "Melanie",
+        "session_time": "3:19 pm on 28 August, 2023",
+        "text": "I'm a fan of both classical like Bach and Mozart, as well as modern music like Ed Sheeran's \"Perfect\".",
+        "position": 333
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:27",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_15",
+        "dia_id": "D15:27",
+        "speaker": "Caroline",
+        "session_time": "3:19 pm on 28 August, 2023",
+        "text": "Cool! Got any fav tunes?",
+        "position": 332
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D15:28",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_15",
+        "dia_id": "D15:28",
+        "speaker": "Melanie",
+        "session_time": "3:19 pm on 28 August, 2023",
+        "text": "I'm a fan of both classical like Bach and Mozart, as well as modern music like Ed Sheeran's \"Perfect\".",
+        "position": 333
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D16:1",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_16",
+        "dia_id": "D16:1",
+        "speaker": "Caroline",
+        "session_time": "12:09 am on 13 September, 2023",
+        "text": "Hey Mel, long time no chat! I had a wicked day out with the gang last weekend - we went biking and saw some pretty cool stuff. It was so refreshing, and the pic I'm sending is just stunning, eh?",
+        "position": 334
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 144,
+    "question": "How did Melanie's son handle the accident?",
+    "category": 4,
+    "reference": "He was scared but reassured by his family",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.3333333333333333,
+    "score_rule": "official_category_f1",
+    "trace_id": "b8c9980f178449a0affdc911949dbeda",
+    "answer": "He was in an accident during the roadtrip but was okay afterward.",
+    "answer_status": "sufficient",
+    "explanation": "Melanie said her son got into an accident during the roadtrip and that he was okay afterward; the accident occurred 'this past weekend' relative to the 20 October 2023 session.",
+    "citations": [
+      {
+        "memory_id": "957768d959215a4d96168564",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+          "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+        ]
+      },
+      {
+        "memory_id": "710227ea7706b407b1688fe9",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+          "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 0.0,
+      "effective": 0.0,
+      "expanded": 0.5,
+      "initial": 0.5
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+      ]
+    },
+    "raw_triggered": false,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 3,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 16.470327550996444,
+      "reported_tokens": {
+        "completion_tokens": 3375,
+        "prompt_tokens": 13626,
+        "total_tokens": 17001
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 3375
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 13626
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 3,
+          "complete": true,
+          "reported": 17001
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_18",
+        "dia_id": "D18:1",
+        "speaker": "Melanie",
+        "session_time": "6:55 pm on 20 October, 2023",
+        "text": "Hey Caroline, that roadtrip this past weekend was insane! We were all freaked when my son got into an accident. We were so lucky he was okay. It was a real scary experience. Thankfully it's over now. What's been up since we last talked?",
+        "position": 380
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_18",
+        "dia_id": "D18:3",
+        "speaker": "Melanie",
+        "session_time": "6:55 pm on 20 October, 2023",
+        "text": "Yeah, our trip got off to a bad start. I was really scared when we got into the accident. Thankfully, my son's ok and that was a reminder that life is precious and to cherish our family.",
+        "position": 382
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:26",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_17",
+        "dia_id": "D17:26",
+        "speaker": "Melanie",
+        "session_time": "10:31 am on 13 October, 2023",
+        "text": "Yep, Caroline. Life's about learning and exploring. Glad we can be on this trip together.",
+        "position": 379
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_18",
+        "dia_id": "D18:1",
+        "speaker": "Melanie",
+        "session_time": "6:55 pm on 20 October, 2023",
+        "text": "Hey Caroline, that roadtrip this past weekend was insane! We were all freaked when my son got into an accident. We were so lucky he was okay. It was a real scary experience. Thankfully it's over now. What's been up since we last talked?",
+        "position": 380
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:2",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_18",
+        "dia_id": "D18:2",
+        "speaker": "Caroline",
+        "session_time": "6:55 pm on 20 October, 2023",
+        "text": "Oops, sorry 'bout the accident! Must have been traumatizing for you guys. Thank goodness your son's okay. Life sure can be a roller coaster.",
+        "position": 381
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_18",
+        "dia_id": "D18:3",
+        "speaker": "Melanie",
+        "session_time": "6:55 pm on 20 October, 2023",
+        "text": "Yeah, our trip got off to a bad start. I was really scared when we got into the accident. Thankfully, my son's ok and that was a reminder that life is precious and to cherish our family.",
+        "position": 382
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:4",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_18",
+        "dia_id": "D18:4",
+        "speaker": "Caroline",
+        "session_time": "6:55 pm on 20 October, 2023",
+        "text": "Glad your son is okay, Melanie. Life's unpredictable, but moments like these remind us how important our loved ones are. Family's everything.",
+        "position": 383
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 148,
+    "question": "What was Melanie's reaction to her children enjoying the Grand Canyon?",
+    "category": 4,
+    "reference": "She was happy and thankful",
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 0.14285714285714285,
+    "score_rule": "official_category_f1",
+    "trace_id": "25fd8361c91e4b15a3fad6e065cec0ea",
+    "answer": "Melanie was thankful/relieved that her children enjoyed the Grand Canyon a lot.",
+    "answer_status": "sufficient",
+    "explanation": "The memory supports that Melanie's family/children enjoyed the Grand Canyon a lot; the raw source quote (\"Thankfully, they enjoyed the Grand Canyon a lot!\") supplies her thankful reaction.",
+    "citations": [
+      {
+        "memory_id": "bf2a27a1986afb1459ae77b4",
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D18:5"
+        ]
+      },
+      {
+        "memory_id": null,
+        "source_ids": [
+          "f69a07a79a2d5f4c8188300a/conv-26/D18:5"
+        ]
+      }
+    ],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:5"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:5"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1"
+      ]
+    },
+    "raw_triggered": true,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 4,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 32.958777027990436,
+      "reported_tokens": {
+        "completion_tokens": 7172,
+        "prompt_tokens": 23861,
+        "total_tokens": 31033
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 7172
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 23861
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 31033
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:5",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_18",
+        "dia_id": "D18:5",
+        "speaker": "Melanie",
+        "session_time": "6:55 pm on 20 October, 2023",
+        "text": "Yeah, you're right, Caroline. Family's super important to me. Especially after the accident, I've thought a lot about how much I need them. They mean the world to me and I'm so thankful to have them. Thankfully, they enjoyed the Grand Canyon a lot!",
+        "position": 384
+      }
+    ],
+    "neighboring_context": [
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:4",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_18",
+        "dia_id": "D18:4",
+        "speaker": "Caroline",
+        "session_time": "6:55 pm on 20 October, 2023",
+        "text": "Glad your son is okay, Melanie. Life's unpredictable, but moments like these remind us how important our loved ones are. Family's everything.",
+        "position": 383
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:5",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_18",
+        "dia_id": "D18:5",
+        "speaker": "Melanie",
+        "session_time": "6:55 pm on 20 October, 2023",
+        "text": "Yeah, you're right, Caroline. Family's super important to me. Especially after the accident, I've thought a lot about how much I need them. They mean the world to me and I'm so thankful to have them. Thankfully, they enjoyed the Grand Canyon a lot!",
+        "position": 384
+      },
+      {
+        "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:6",
+        "dataset_id": "f69a07a79a2d5f4c8188300a",
+        "sample_id": "conv-26",
+        "session_id": "session_18",
+        "dia_id": "D18:6",
+        "speaker": "Caroline",
+        "session_time": "6:55 pm on 20 October, 2023",
+        "text": "The kids look so cute, Mel! I bet they bring lots of joy. How did they handle the accident?",
+        "position": 385
+      }
+    ],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 152,
+    "question": "What did Caroline realize after her charity race?",
+    "category": 5,
+    "reference": null,
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 1.0,
+    "score_rule": "official_adversarial_refusal",
+    "trace_id": "33e2b39cd021480182d37981bab337c3",
+    "answer": "No information available.",
+    "answer_status": "insufficient",
+    "explanation": "The charity race and the realization that self-care is important are attributed to Melanie, not Caroline. Caroline only responds supportively, so no Caroline-specific realization after a charity race is supported.",
+    "citations": [],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 0.0,
+      "initial": 0.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:3"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:3"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+      ]
+    },
+    "raw_triggered": true,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 4,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 27.45841260900488,
+      "reported_tokens": {
+        "completion_tokens": 5612,
+        "prompt_tokens": 23550,
+        "total_tokens": 29162
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 5612
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 23550
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 29162
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [],
+    "neighboring_context": [],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 176,
+    "question": "How did Caroline feel while watching the meteor shower?",
+    "category": 5,
+    "reference": null,
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 1.0,
+    "score_rule": "official_adversarial_refusal",
+    "trace_id": "21621f4e9f404918a18dc13c28f11dab",
+    "answer": "No information available.",
+    "answer_status": "insufficient",
+    "explanation": "No supplied memory or raw source states that Caroline watched a meteor shower. The Perseid meteor-shower account is Melanie's (D10:14); Caroline's remark that it 'must've been breathtaking' (D10:17) is a reaction to Melanie's story, not evidence of Caroline's own feeling while watching.",
+    "citations": [],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 0.0,
+      "effective": 0.0,
+      "expanded": 0.0,
+      "initial": 0.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:17"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:17"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:1"
+      ]
+    },
+    "raw_triggered": true,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 4,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 23.498237241990864,
+      "reported_tokens": {
+        "completion_tokens": 4939,
+        "prompt_tokens": 23715,
+        "total_tokens": 28654
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 4939
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 23715
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 28654
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [],
+    "neighboring_context": [],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 182,
+    "question": "What did Melanie find in her neighborhood during her walk?",
+    "category": 5,
+    "reference": null,
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 1.0,
+    "score_rule": "official_adversarial_refusal",
+    "trace_id": "f1403b317fb242a8b4b88121d34d5c9f",
+    "answer": "No information available.",
+    "answer_status": "insufficient",
+    "explanation": "The supplied memories and raw sources do not mention Melanie's neighborhood, a walk, or anything she found during such a walk.",
+    "citations": [],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 0.0,
+      "effective": 0.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [],
+      "effective": [],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:10"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16"
+      ]
+    },
+    "raw_triggered": true,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 4,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 17.555363880004734,
+      "reported_tokens": {
+        "completion_tokens": 3204,
+        "prompt_tokens": 23567,
+        "total_tokens": 26771
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 3204
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 23567
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 26771
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [],
+    "neighboring_context": [],
+    "semantic_judgment": "pending_author_source_review"
+  },
+  {
+    "qa_index": 187,
+    "question": "What precautionary sign did Caroline see at the café?",
+    "category": 5,
+    "reference": null,
+    "strategy": "dynamic_raw_fallback",
+    "status": "succeeded",
+    "score": 1.0,
+    "score_rule": "official_adversarial_refusal",
+    "trace_id": "f9af3821aec74794b1cc53b37961ddb4",
+    "answer": "No information available.",
+    "answer_status": "insufficient",
+    "explanation": "The sources show Caroline saw a café sign she called 'serious' and Melanie said it was 'just a precaution,' but the sign's content, wording, or image is never described, so the specific precautionary sign cannot be identified.",
+    "citations": [],
+    "error": null,
+    "source_coverage": {
+      "answer_context": 1.0,
+      "effective": 1.0,
+      "expanded": 1.0,
+      "initial": 1.0
+    },
+    "source_sets": {
+      "answer_context": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:18"
+      ],
+      "effective": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:18"
+      ],
+      "expanded": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14"
+      ],
+      "initial": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+      ]
+    },
+    "raw_triggered": true,
+    "strategy_recovery": null,
+    "usage": {
+      "calls_with_partial_usage": 0,
+      "calls_without_reported_usage": 0,
+      "embedding_calls": 1,
+      "generation_calls": 4,
+      "provider_retries": 0,
+      "provider_usage_complete": true,
+      "reported_provider_seconds": 18.458671882021008,
+      "reported_tokens": {
+        "completion_tokens": 3882,
+        "prompt_tokens": 23233,
+        "total_tokens": 27115
+      },
+      "unknown_attempts": 0,
+      "usage_fields": {
+        "completion_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 3882
+        },
+        "prompt_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 23233
+        },
+        "total_tokens": {
+          "calls_missing_usage": 0,
+          "calls_with_reported_usage": 4,
+          "complete": true,
+          "reported": 27115
+        }
+      }
+    },
+    "executed_strategy": "dynamic_raw_fallback",
+    "citation_identity_valid": true,
+    "cited_sources": [],
+    "neighboring_context": [],
+    "semantic_judgment": "pending_author_source_review"
+  }
+]

@@ -1,0 +1,104 @@
+{
+  "recorded_at": "2026-10-20T03:53:43.218294+00:00",
+  "implementation_commit": "6a2918383aa10c906a2e3d350a9ccb495fe7bd1f",
+  "implementation_sha256": "543cb6e3f768c60a8dff1cec56437e3d5d87ac0cd77a3aa560ccc8cb6c9bb40a",
+  "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15",
+  "build_id": "91f1f50938064972820e3ab7b390d9dd",
+  "build_status": "interrupted",
+  "extraction": {
+    "total": 21,
+    "succeeded": 21,
+    "failed": 0,
+    "pending": 0
+  },
+  "memories": 295,
+  "real_minilm_index": "passed",
+  "relation_task_states": {
+    "failed": 29,
+    "succeeded": 89,
+    "interrupted": 1,
+    "pending": 173
+  },
+  "failed_relation_error_codes": {
+    "invalid_output": 29
+  },
+  "interrupted_task_ids": [
+    "91f1f50938064972820e3ab7b390d9dd:relation:120"
+  ],
+  "interrupted_task_usage": "Unknown; up to 3 provider attempts for the interrupted logical task can lack persisted metadata. Not zero and not an exact bill. No automatic retry.",
+  "conv26_build_recorded_usage": {
+    "recorded_calls": 220,
+    "outcomes": {
+      "succeeded": 110,
+      "invalid_output": 110
+    },
+    "known_prompt_tokens": 1592801,
+    "known_completion_tokens": 689406,
+    "known_total_tokens": 2282207,
+    "calls_missing_any_token_field": 0,
+    "recorded_provider_elapsed_seconds": 2004.593947681009
+  },
+  "runner_probe_recorded_usage": {
+    "recorded_calls": 1,
+    "outcomes": {
+      "succeeded": 1
+    },
+    "known_prompt_tokens": 1335,
+    "known_completion_tokens": 319,
+    "known_total_tokens": 1654,
+    "calls_missing_any_token_field": 0,
+    "recorded_provider_elapsed_seconds": 1.659162853997259
+  },
+  "independent_live_test": {
+    "passed": 1,
+    "provider_calls": 1,
+    "usage": "not retained in this report"
+  },
+  "smoke_qa": {
+    "planned_combinations": 20,
+    "executed": 0,
+    "status": "blocked_by_incomplete_build"
+  },
+  "full_development": {
+    "planned_combinations": 3028,
+    "executed": 0,
+    "status": "blocked_by_real_smoke_gate"
+  },
+  "held_out_model_scores": "not_generated",
+  "stop_reason": "29 relationship tasks exhausted finite output validation retries, preventing publication. Stopped remaining paid tasks, preserved partial evidence; graceful wait8s then forced backend stop; restarted without credential only for public recovery/export.",
+  "post_recovery_credential_present": false,
+  "provider_configuration": {
+    "model_name": "deepseek-flash",
+    "model_temperature": 0.0,
+    "model_max_tokens": 4096,
+    "model_timeout_seconds": 60.0,
+    "model_retries": 2,
+    "thinking_enabled": false
+  },
+  "remote_writes": false,
+  "notion_synced": false,
+  "independent_diagnostic_replay": {
+    "task_id": "91f1f50938064972820e3ab7b390d9dd:relation:2",
+    "outcome": "invalid_output",
+    "validation_errors": [
+      {
+        "location": [
+          "judgments",
+          0
+        ],
+        "type": "value_error",
+        "rule": "Value error, This judgment requires the same state dimension"
+      }
+    ],
+    "comparison": {
+      "history_count": 1,
+      "same_entity": true,
+      "same_state_key": false,
+      "old_state_dimension": "support_group_attendance",
+      "new_state_dimension": "emotional_response"
+    },
+    "calls": 1,
+    "known_total_tokens": 2048,
+    "scope": "separate replay, baseline results unchanged; one confirmed failing rule, not a claim about all 29 failures"
+  }
+}

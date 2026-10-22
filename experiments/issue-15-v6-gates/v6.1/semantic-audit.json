@@ -1,0 +1,1049 @@
+{
+  "input_path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v6/v6.1/semantic-inputs.json",
+  "input_sha256": "44e4fd268891c3c8a35e44f645f4e14781e65a2075714698d7fad626d942bc22",
+  "implementation_sha256": "76ca85f3ca9b03e3e63cf7780c93d54f1a740cf95399e39b7fb215e229e25eba",
+  "source_sha256": "12410a8a857e91a9e23b97280b4cbcb647278daef83200cb9907c748cd238e2d",
+  "audit_type": "independent_agent_source_review_against_predeclared_semantic_assessments",
+  "source_memory_identity_check": "All 30 source and Memory pairs exactly equal independent pre-reviewed inputs.",
+  "new_model_calls": 0,
+  "human_ground_truth": false,
+  "summary": {
+    "reasonable_undetermined": 25,
+    "supported_relation": 3,
+    "unsupported_relation": 2
+  },
+  "acceptable_count": 28,
+  "total": 30,
+  "gate5_pass": false,
+  "gate5_reason": "relation:148 与 relation:172 把成员身份具名、完成作品详述错误标为 UPDATE；现实阶段推进仍未获得支持。",
+  "correction_history": [
+    {
+      "case": "original c01 / relation:148",
+      "prior": "supported_control / UPDATE",
+      "corrected": "unsupported_control / UPDATE not supported",
+      "reason": "先前把已成立的成员状态及组织活动详述当作加入之后的新阶段，尺度与 c02 不一致；现按统一阶段推进定义更正。",
+      "record": "/tmp/issue15-v6-semantic-audit/controls-reassessment.json",
+      "preserves_original_report": true
+    }
+  ],
+  "operation_rule": "UPDATE 必须有来源支持的同一过程、两个可区分的现实阶段及其先后。后说、名称更具体、补充属性、event转state编码、解释已完成作品均不单独建立新阶段。",
+  "limitations": [
+    "样本为定向风险抽样，24项原未确定对照均跨key，另加2项control及4项同键对照；不能估计全库准确率。",
+    "独立代理复核不是人工真值或课程评分。",
+    "两项重复/详述control预设可接受集合为RETAIN或undetermined，首选RETAIN；本次模型输出UPDATE不在集合内。",
+    "同键样本没有充分覆盖真实SUPERSEDE或CONFLICT场景。",
+    "新增真实调用0次；未改源码或数据库。"
+  ],
+  "items": [
+    {
+      "case_id": "v61-01",
+      "pre_review_case_id": "u04",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+      "old_memory_id": "efc2acb8ae95893ddf1e112a",
+      "new_memory_id": "6238c781aa4e813acfed882f",
+      "old_content": "Melanie wants to be courageous for her family.",
+      "new_content": "Melanie made a black and white bowl in her pottery class.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (courage intention vs pottery creation); no progression link.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "希望为家人勇敢与在陶艺课做碗没有明确过程联系，原文未把陶艺作品视为该意愿的实现。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+          "quote": "I want to be couragous for my family"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+          "quote": "Yeah, I made this bowl in my class."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-02",
+      "pre_review_case_id": "u06",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+      "old_memory_id": "25cb2f95868ef76695e0f0c1",
+      "new_memory_id": "6238c781aa4e813acfed882f",
+      "old_content": "Melanie has been married for 5 years.",
+      "new_content": "Melanie made a black and white bowl in her pottery class.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (marital status vs pottery creation); unrelated.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "已婚五年与陶艺作品无适用条件或过程联系。作品不确认婚姻状态继续，也不改变婚姻事实。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+          "quote": "5 years already!"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+          "quote": "Yeah, I made this bowl in my class."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-03",
+      "pre_review_case_id": "u05",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+      "old_memory_id": "f59e2e3288e9d9ff2198a25a",
+      "new_memory_id": "6238c781aa4e813acfed882f",
+      "old_content": "Melanie had a wedding day where she wore a dress.",
+      "new_content": "Melanie made a black and white bowl in her pottery class.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (wedding event vs pottery creation); unrelated.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "婚礼事件与陶艺作品是两项独立经历，没有保留、推进、替代或矛盾的证据。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:17",
+          "quote": "You both looked so great on your wedding day!"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+          "quote": "Yeah, I made this bowl in my class."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-04",
+      "pre_review_case_id": "u01",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+      "old_memory_id": "480d91e2f9e90f04b47fa0af",
+      "new_memory_id": "6238c781aa4e813acfed882f",
+      "old_content": "Melanie signed up for a pottery class yesterday.",
+      "new_content": "Melanie made a black and white bowl in her pottery class.",
+      "model_label": "UPDATE",
+      "model_reason": "Old stage: Melanie signed up for a pottery class yesterday. New stage: she made a bowl in that class, a concrete progression in the same pottery process.",
+      "acceptable_labels": [
+        "UPDATE"
+      ],
+      "preferred_label": "UPDATE",
+      "within_acceptable_set": true,
+      "verdict": "supported_relation",
+      "review_reason": "原文先说昨天报名陶艺课，随后对正在展示的碗明确说是在该课做的。报名到上课产出作品是同一学习过程的阶段推进；不同 state_key 不能排除 UPDATE。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+          "quote": "I just signed up for a pottery class yesterday."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+          "quote": "Yeah, I made this bowl in my class."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-05",
+      "pre_review_case_id": "u02",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+      "old_memory_id": "ace77a25a90690ed18490261",
+      "new_memory_id": "6238c781aa4e813acfed882f",
+      "old_content": "Melanie finds pottery class like therapy, letting her express herself and get creative.",
+      "new_content": "Melanie made a black and white bowl in her pottery class.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (activity effect vs pottery creation); no stage transition evidence.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "陶艺带来的疗愈和自我表达是活动效果；做出一个碗是具体成果。后者没有明确重申该效果，也没有将效果本身推进到下一阶段。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+          "quote": "It's like therapy for me, letting me express myself and get creative."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+          "quote": "Yeah, I made this bowl in my class."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-06",
+      "pre_review_case_id": "u03",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+      "old_memory_id": "b9a5ccd804677b0cdee96f2f",
+      "new_memory_id": "6238c781aa4e813acfed882f",
+      "old_content": "Melanie is a big fan of pottery.",
+      "new_content": "Melanie made a black and white bowl in her pottery class.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (interest vs pottery creation); interest alone does not establish progression.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "喜欢陶艺与做出作品可以并存，但喜欢并非该作品制作过程中的一个明确阶段。做碗也不能单独证明先前的兴趣状态继续适用。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+          "quote": "I'm a big fan of pottery"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+          "quote": "Yeah, I made this bowl in my class."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-07",
+      "pre_review_case_id": "u09",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:91",
+      "old_memory_id": "e0782e983de28fbcbaf84d47",
+      "new_memory_id": "1a4534c2816be2a913dd5d0a",
+      "old_content": "Caroline is thinking of working with trans people, helping them accept themselves and supporting their mental health.",
+      "new_content": "Caroline wants to help make a difference in fighting for trans rights and spreading awareness.",
+      "model_label": "undetermined",
+      "model_reason": "Old is a career plan to work with trans people; new is an advocacy intention to fight for trans rights. Different dimensions and no evidence of a stage transition in one concrete process.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "考虑为跨性别人群提供心理支持与权益倡导具有主题联系，但后文未报告求职、训练或开展咨询等职业过程的进展。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+          "quote": "I'm thinking of working with trans people, helping them accept themselves and supporting their mental health."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+          "quote": "I wanna help make a difference."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-08",
+      "pre_review_case_id": "u11",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:91",
+      "old_memory_id": "98e7a1f4e17629630d19c154",
+      "new_memory_id": "1a4534c2816be2a913dd5d0a",
+      "old_content": "Caroline's own journey and the support she received made a huge difference in her life.",
+      "new_content": "Caroline wants to help make a difference in fighting for trans rights and spreading awareness.",
+      "model_label": "undetermined",
+      "model_reason": "Old describes past personal experience of support; new is a forward-looking advocacy intention. No supported relation.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "两处都涉及获得支持后的助人动机，模型所写“no evidence linking them”过强。不过受支持的个人经历到新的宽泛倡导意愿之间，没有明确同一过程的后续阶段证据，未确定仍可接受。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+          "quote": "My own journey and the support I got made a huge difference. Now I want to help people go through it too."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+          "quote": "I wanna help make a difference."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-09",
+      "pre_review_case_id": "u10",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:91",
+      "old_memory_id": "40fa459584311ebc9c3a2681",
+      "new_memory_id": "1a4534c2816be2a913dd5d0a",
+      "old_content": "Caroline is passionate about creating a safe, inviting place for people to grow.",
+      "new_content": "Caroline wants to help make a difference in fighting for trans rights and spreading awareness.",
+      "model_label": "undetermined",
+      "model_reason": "Old is passion for creating safe spaces; new is intention to fight for trans rights. Related theme but no evidence of a stage transition or replacement.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "营造安全成长环境的热情与权益倡导意愿可并存；后文仍是宽泛意愿，没有同一具体项目的阶段推进。不能将话题相近直接记 UPDATE。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+          "quote": "Now I'm passionate about creating a safe, inviting place for people to grow."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+          "quote": "I wanna help make a difference."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-10",
+      "pre_review_case_id": "u12",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:91",
+      "old_memory_id": "ea75978f077ae0cd1dc3b611",
+      "new_memory_id": "1a4534c2816be2a913dd5d0a",
+      "old_content": "Caroline went to an LGBTQ+ pride parade last week.",
+      "new_content": "Caroline wants to help make a difference in fighting for trans rights and spreading awareness.",
+      "model_label": "undetermined",
+      "model_reason": "Old is a past pride parade attendance event; new is an advocacy intention. No supported relation.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "游行经历与后来的倡导意愿主题相关，但后文明确归因于新近会议和社群，未将早先游行标成同一倡导项目的前阶段。未发现足够的特定过程联系。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+          "quote": "Last week I went to an LGBTQ+ pride parade."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+          "quote": "I went to an LGBTQ conference two days ago"
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-11",
+      "pre_review_case_id": "u08",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:91",
+      "old_memory_id": "a8cec9be91860db3646ee08f",
+      "new_memory_id": "1a4534c2816be2a913dd5d0a",
+      "old_content": "Caroline still thinks counseling and mental health is the career path for her.",
+      "new_content": "Caroline wants to help make a difference in fighting for trans rights and spreading awareness.",
+      "model_label": "undetermined",
+      "model_reason": "Old is career interest in counseling and mental health; new is advocacy intention. Different dimensions with no stage-transition evidence.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "咨询与心理健康职业意向和倡导权益可以共享助人动机；后文没有说已进入该职业的下一阶段，也未确认仍选择该职业。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+          "quote": "I'm still thinking that counseling and mental health is the way to go."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+          "quote": "it's shown me how important it is to fight for trans rights and spread awareness."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-12",
+      "pre_review_case_id": "u07",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:91",
+      "old_memory_id": "d3e99b6d906b72fff7257d73",
+      "new_memory_id": "1a4534c2816be2a913dd5d0a",
+      "old_content": "Caroline is creating a library for when she has kids.",
+      "new_content": "Caroline wants to help make a difference in fighting for trans rights and spreading awareness.",
+      "model_label": "undetermined",
+      "model_reason": "Old is creating a children's library; new is an advocacy intention. Unrelated.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "为未来孩子建书库与争取跨性别权益的意愿不同；会议后的发言没有推进或取消育儿准备。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+          "quote": "I'm creating a library for when I have kids."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+          "quote": "I wanna help make a difference."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-13",
+      "pre_review_case_id": "u16",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:148",
+      "old_memory_id": "c1d17d188491340b6ea4016a",
+      "new_memory_id": "20674ca1f268fb05625dedfa",
+      "old_content": "Caroline is determined to adopt a child.",
+      "new_content": "Caroline is a member of the group 'Connected LGBTQ Activists'.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (adoption intention vs group membership); no progression evidence.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "收养意愿与权益组织成员身份未建立过程或适用条件联系，组织活动也不证明收养意愿实现。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:9"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+          "quote": "It made me even more determined to adopt."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+          "quote": "Our group, 'Connected LGBTQ Activists'"
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-14",
+      "pre_review_case_id": "u18",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:148",
+      "old_memory_id": "30dea0d02066415795e4e04c",
+      "new_memory_id": "20674ca1f268fb05625dedfa",
+      "old_content": "Caroline attended a pride parade a few weeks ago.",
+      "new_content": "Caroline is a member of the group 'Connected LGBTQ Activists'.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (pride parade attendance vs group membership); no stage transition evidence.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "早先参加游行与后来的活动组织身份可能属于更广泛参与经历，但现有来源没有将其连成同一具体过程。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:19"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:17",
+          "quote": "this pride parade I went to a few weeks ago."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+          "quote": "Our group, 'Connected LGBTQ Activists'"
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-15",
+      "pre_review_case_id": "u13",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:148",
+      "old_memory_id": "792b3a6ea07e1cc0f6da9f2b",
+      "new_memory_id": "20674ca1f268fb05625dedfa",
+      "old_content": "Caroline joined a mentorship program for LGBTQ youth last weekend.",
+      "new_content": "Caroline is a member of the group 'Connected LGBTQ Activists'.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (mentorship program vs activist group); no stage transition evidence.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "青年导师项目与新加入的活动组织都服务 LGBTQ 社群，但没有证据证明两者是同一组织、同一计划或前后阶段。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:2"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D9:2",
+          "quote": "Last weekend I joined a mentorship program for LGBTQ youth"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+          "quote": "Our group, 'Connected LGBTQ Activists'"
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-16",
+      "pre_review_case_id": "u17",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:148",
+      "old_memory_id": "810bba509064a824962cff4c",
+      "new_memory_id": "20674ca1f268fb05625dedfa",
+      "old_content": "Caroline and her mentee had a great time at the LGBT pride event last month.",
+      "new_content": "Caroline is a member of the group 'Connected LGBTQ Activists'.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (pride event attendance vs group membership); no stage transition evidence.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "与受辅导者参加骄傲活动和组织成员身份没有明确同组织或阶段联系。不能因都属于 LGBTQ 活动而建立 UPDATE。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+          "quote": "We had a great time at the LGBT pride event last month."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+          "quote": "Our group, 'Connected LGBTQ Activists'"
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-17",
+      "pre_review_case_id": "u15",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:148",
+      "old_memory_id": "03ac8ae7cc9b795267494740",
+      "new_memory_id": "20674ca1f268fb05625dedfa",
+      "old_content": "Caroline plans to have an LGBTQ art show with her paintings next month.",
+      "new_content": "Caroline is a member of the group 'Connected LGBTQ Activists'.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (art show plan vs group membership); no stage transition evidence.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "计划举办画展与组织成员身份主题相近。原文没有说该组织负责画展，或加入组织代表画展准备进入下一阶段。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:12"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D9:12",
+          "quote": "Next month I'm having an LGBTQ art show with my paintings"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+          "quote": "We have regular meetings, plan events and campaigns"
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-18",
+      "pre_review_case_id": "u14",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:148",
+      "old_memory_id": "1dd8915638d3bc4ff814518c",
+      "new_memory_id": "20674ca1f268fb05625dedfa",
+      "old_content": "Caroline painted the painting after visiting an LGBTQ center, wanting to capture everyone's unity and strength.",
+      "new_content": "Caroline is a member of the group 'Connected LGBTQ Activists'.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (painting inspiration vs group membership); no progression evidence.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "参观中心后绘画与活动组织成员身份是不同活动，没有表明作品由该组织计划或加入组织推进了该绘画过程。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+          "quote": "I painted this after I visited a LGBTQ center."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+          "quote": "Our group, 'Connected LGBTQ Activists'"
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-19",
+      "pre_review_case_id": "c01",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:148",
+      "old_memory_id": "feafe311934ed4d80915e79a",
+      "new_memory_id": "20674ca1f268fb05625dedfa",
+      "old_content": "Caroline joined a new LGBTQ activist group last Tuesday.",
+      "new_content": "Caroline is a member of the group 'Connected LGBTQ Activists'.",
+      "model_label": "UPDATE",
+      "model_reason": "Old records joining a new LGBTQ activist group; new records the same membership now named 'Connected LGBTQ Activists', a later stage in the same process.",
+      "acceptable_labels": [
+        "RETAIN",
+        "undetermined"
+      ],
+      "preferred_label": "RETAIN",
+      "within_acceptable_set": false,
+      "verdict": "unsupported_relation",
+      "review_reason": "D10:3 的加入事件已经建立成员身份，且同一句已描述正在认识成员与参与。D10:5 通过 our group 补充名称和常规活动，未显示其后发生新的阶段。加入事件与成员状态的 event/state 编码差异本身也不是现实过程的新阶段。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+          "quote": "I just joined a new LGBTQ activist group last Tues."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+          "quote": "I'm meeting so many cool people"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+          "quote": "Our group, 'Connected LGBTQ Activists'"
+        }
+      ],
+      "same_state_key": true
+    },
+    {
+      "case_id": "v61-20",
+      "pre_review_case_id": "u20",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+      "old_memory_id": "6b664bf5b3931f434fa840d1",
+      "new_memory_id": "fdd1ba084c0100474dbf66b3",
+      "old_content": "Melanie's wedding day was full of love and joy, with everyone she loves present to celebrate.",
+      "new_content": "Melanie made a bowl with colors and patterns to catch the eye and make people smile.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (wedding event vs pottery project); no supported relation.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "婚礼庆祝的感受与做陶艺作品的动机独立。共同出现快乐、表达等词不足以建立状态关系。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:14"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:14",
+          "quote": "The day was full of love and joy."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+          "quote": "I made something to catch the eye and make people smile."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-21",
+      "pre_review_case_id": "u22",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+      "old_memory_id": "aff1cf8b21974105565d7fc0",
+      "new_memory_id": "fdd1ba084c0100474dbf66b3",
+      "old_content": "Melanie went on another camping trip in the forest with her family.",
+      "new_content": "Melanie made a bowl with colors and patterns to catch the eye and make people smile.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (camping trip vs pottery project); no supported relation.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "另一次森林露营与陶艺制作无明确联系，既不证明延续，也不推进或替代。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+          "quote": "We even went on another camping trip in the forest."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+          "quote": "I made something to catch the eye and make people smile."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-22",
+      "pre_review_case_id": "u23",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+      "old_memory_id": "d3d5ae3b3f3f8410718157cb",
+      "new_memory_id": "fdd1ba084c0100474dbf66b3",
+      "old_content": "Melanie had a quiet weekend after going camping with her family two weekends ago.",
+      "new_content": "Melanie made a bowl with colors and patterns to catch the eye and make people smile.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (weekend activity vs pottery project); no supported relation.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "露营后的安静周末与后来的陶艺作品无过程或适用条件联系。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+          "quote": "I had a quiet weekend after we went camping with my fam two weekends ago."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+          "quote": "I made something to catch the eye and make people smile."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-23",
+      "pre_review_case_id": "u19",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+      "old_memory_id": "b76696c30018cca918a160a9",
+      "new_memory_id": "fdd1ba084c0100474dbf66b3",
+      "old_content": "Melanie went camping with her family two weekends before 17 July 2023.",
+      "new_content": "Melanie made a bowl with colors and patterns to catch the eye and make people smile.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (camping trip vs pottery project); no supported relation.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "家庭露营与陶艺作品没有具体过程、状态延续或矛盾联系。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+          "quote": "we went camping with my fam two weekends ago."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+          "quote": "I made something to catch the eye and make people smile."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-24",
+      "pre_review_case_id": "u21",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+      "old_memory_id": "49e43e04899bc8e967037bd8",
+      "new_memory_id": "fdd1ba084c0100474dbf66b3",
+      "old_content": "Melanie celebrated her daughter's birthday with a concert the night before 14 August 2023.",
+      "new_content": "Melanie made a bowl with colors and patterns to catch the eye and make people smile.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (birthday celebration vs pottery project); no supported relation.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "为女儿庆生的音乐会与制作陶艺作品是不同活动。让孩子微笑与让观众微笑不是同一具体过程。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+          "quote": "We celebrated my daughter's birthday with a concert"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+          "quote": "I made something to catch the eye and make people smile."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-25",
+      "pre_review_case_id": "u24",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+      "old_memory_id": "3402011625a483f97bc40d3e",
+      "new_memory_id": "fdd1ba084c0100474dbf66b3",
+      "old_content": "The concert Melanie attended was by Matt Patterson.",
+      "new_content": "Melanie made a bowl with colors and patterns to catch the eye and make people smile.",
+      "model_label": "undetermined",
+      "model_reason": "Different dimensions (concert attended vs pottery project); no supported relation.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "音乐会表演者的身份与陶艺作品是两项独立事实，后文不修改或验证表演者身份。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+          "quote": "It was Matt Patterson"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+          "quote": "I made something to catch the eye and make people smile."
+        }
+      ],
+      "same_state_key": false
+    },
+    {
+      "case_id": "v61-26",
+      "pre_review_case_id": "c02",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+      "old_memory_id": "32a5b80fcfba6f409b45b842",
+      "new_memory_id": "fdd1ba084c0100474dbf66b3",
+      "old_content": "Melanie finished another pottery project.",
+      "new_content": "Melanie made a bowl with colors and patterns to catch the eye and make people smile.",
+      "model_label": "UPDATE",
+      "model_reason": "Same pottery_project dimension: old records completing another pottery project; new describes the bowl made in that project, a later stage of the same concrete process.",
+      "acceptable_labels": [
+        "RETAIN",
+        "undetermined"
+      ],
+      "preferred_label": "RETAIN",
+      "within_acceptable_set": false,
+      "verdict": "unsupported_relation",
+      "review_reason": "D12:2 已完成项目；D12:4 展示同一项目，D12:5 问配色，D12:6 解释制作动机。后说的作品细节没有发生在项目完成之后的新阶段。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+          "quote": "I finished another pottery project"
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+          "quote": "I made something to catch the eye and make people smile."
+        }
+      ],
+      "same_state_key": true
+    },
+    {
+      "case_id": "v61-27",
+      "pre_review_case_id": "sk01",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:31",
+      "old_memory_id": "04d691cc6e211e79cc0700fc",
+      "new_memory_id": "421e00bab892b9e79dd9b35a",
+      "old_content": "Caroline is feeling hopeful and optimistic about the adoption process.",
+      "new_content": "Caroline felt super powerful giving her talk.",
+      "model_label": "undetermined",
+      "model_reason": "Same dimension but different occasions; no evidence the hopeful/optimistic state still applies or was replaced.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "收养过程中的希望、乐观与演讲时的强大感属于不同事件条件下的感受。两者能并存；没有证据说明后者替代前者、保持前者，或构成同一过程的新阶段。同键 emotional_state 过于宽泛，不能据此制造关系。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+          "quote": "I'm feeling hopeful and optimistic."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+          "quote": "I felt super powerful giving my talk."
+        }
+      ],
+      "same_state_key": true
+    },
+    {
+      "case_id": "v61-28",
+      "pre_review_case_id": "sk02",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:31",
+      "old_memory_id": "7140560fa6eac1c93cd6d4b9",
+      "new_memory_id": "421e00bab892b9e79dd9b35a",
+      "old_content": "Caroline is thrilled to make a family for kids who need one.",
+      "new_content": "Caroline felt super powerful giving her talk.",
+      "model_label": "undetermined",
+      "model_reason": "Same dimension but different occasions; no evidence of retention or replacement of thrilled state.",
+      "acceptable_labels": [
+        "undetermined"
+      ],
+      "preferred_label": "undetermined",
+      "within_acceptable_set": true,
+      "verdict": "reasonable_undetermined",
+      "review_reason": "为需要家庭的孩子组建家庭而兴奋，与演讲时的强大感有不同诱因。后文未提收养，没有延续、替代或冲突证据；不能仅依后说的情绪替换先前情绪。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+          "quote": "I'm thrilled to make a family for kids who need one."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+          "quote": "I felt super powerful giving my talk."
+        }
+      ],
+      "same_state_key": true
+    },
+    {
+      "case_id": "v61-29",
+      "pre_review_case_id": "sk03",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:76",
+      "old_memory_id": "69299a7bd9cfc5dcb916dc38",
+      "new_memory_id": "8c3fb2d3e5167026633668ca",
+      "old_content": "Caroline has been looking into counseling and mental health as a career.",
+      "new_content": "Caroline has been looking into counseling or mental health work.",
+      "model_label": "RETAIN",
+      "model_reason": "Same career_interest dimension; new statement confirms Caroline is still looking into counseling or mental health work, so the prior interest still applies.",
+      "acceptable_labels": [
+        "RETAIN"
+      ],
+      "preferred_label": "RETAIN",
+      "within_acceptable_set": true,
+      "verdict": "supported_relation",
+      "review_reason": "新来源明确说自上次交流后还在进一步了解咨询或心理健康工作，为此前职业探索持续提供正面证据。more 表示继续探索，未陈述申请、培训、入职等可区分的新阶段，因此首选 RETAIN。and/or 的措辞变化不证明旧值遭替代或矛盾。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+          "quote": "I've been looking into counseling and mental health as a career."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+          "quote": "Since our last chat, I've been looking into counseling or mental health work more."
+        }
+      ],
+      "same_state_key": true
+    },
+    {
+      "case_id": "v61-30",
+      "pre_review_case_id": "sk04",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:76",
+      "old_memory_id": "a8cec9be91860db3646ee08f",
+      "new_memory_id": "8c3fb2d3e5167026633668ca",
+      "old_content": "Caroline still thinks counseling and mental health is the career path for her.",
+      "new_content": "Caroline has been looking into counseling or mental health work.",
+      "model_label": "RETAIN",
+      "model_reason": "Same career_interest dimension; new statement confirms she is still looking into counseling or mental health work, so the prior claim still applies.",
+      "acceptable_labels": [
+        "RETAIN"
+      ],
+      "preferred_label": "RETAIN",
+      "within_acceptable_set": true,
+      "verdict": "supported_relation",
+      "review_reason": "旧来源说仍认为咨询与心理健康是职业方向，新来源明确在继续探索这一工作方向，支持该兴趣在当前职业探索语境继续适用。未声称职业已实现，也未进入明确下一阶段，故首选 RETAIN，不因 more 就记 UPDATE。",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+          "quote": "I'm still thinking that counseling and mental health is the way to go."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+          "quote": "Since our last chat, I've been looking into counseling or mental health work more."
+        }
+      ],
+      "same_state_key": true
+    }
+  ]
+}

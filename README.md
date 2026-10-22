@@ -7,10 +7,12 @@
 - [核心课程课件](docs/sources/0%20-%20Project%20%282026%29.pdf)
 - [M3/M4 实现决策与待定项](docs/adr/0001-memory-architecture.md)
 - [M3/M4 代码实现 spec](docs/specs/issue-4-m3-m4-dynamic-memory.md)，已发布为 [GitHub Issue #4](https://github.com/kenqia/locomo-dynamic-memory/issues/4)，标签为 `ready-for-agent`
+- [真实 DeepSeek 开发集基线评测 spec](docs/specs/issue-15-real-deepseek-baseline.md)，已发布为 [GitHub Issue #15](https://github.com/kenqia/locomo-dynamic-memory/issues/15)，标签为 `ready-for-agent`；开发集计划、完整全文、可恢复评测与失败报告已实现并完成离线验证，真实模型运行待执行
+- [真实基线 tickets 与依赖](docs/decisions/real-deepseek-evaluation-interview.md#实现-tickets-发布记录)，对应 GitHub Issues #16–#21；原 T2、T3 已合并为 #17，正文副本位于 `process/tickets/`
 - [实现 tickets 原样副本](process/tickets/)，对应 GitHub Issues #5–#12；每张票声明阻塞关系，并建立 GitHub 原生阻塞链接
 - [本地 LoCoMo 原始数据与版本校验](data/raw/locomo/README.md)
 
-本地 FastAPI、Streamlit、SQLite 应用已支持来源导入、原子 Memory 抽取、混合检索、历史关系和完整版本问答。启动见 [本地应用运行指南](docs/app/running.md)，抽取、失败重试与来源检查见 [构建指南](docs/app/building.md)。初始混合检索已提供 [候选检查](docs/app/retrieval.md)，[历史关系、状态、扩展与完整版本发布](docs/app/relations.md) 已接入；[有效证据问答](docs/app/querying.md)、[完整版本与导出](docs/app/versions.md) 和 [独立评测与基线比较](docs/app/evaluation.md) 已接入。数据未划分为课程开发集和测试集，spec 的准备标签不代表实现或验收完成。
+本地 FastAPI、Streamlit、SQLite 应用已支持来源导入、原子 Memory 抽取、混合检索、历史关系和完整版本问答。启动见 [本地应用运行指南](docs/app/running.md)，抽取、失败重试与来源检查见 [构建指南](docs/app/building.md)。初始混合检索已提供 [候选检查](docs/app/retrieval.md)，[历史关系、状态、扩展与完整版本发布](docs/app/relations.md) 已接入；[有效证据问答](docs/app/querying.md)、[完整版本与导出](docs/app/versions.md) 和 [独立评测与基线比较](docs/app/evaluation.md) 已接入。根据用户转述的教师新说明，开发集为 `conv-26`、`conv-30`、`conv-41`、`conv-42`，最终评分集不公开；本组预先固定本地测试集为 `conv-43`、`conv-44`，系统冻结后再查看其模型成绩。公开 API 与页面可预览开发集全量和五题 smoke 计划，无需完整构建或模型调用。隔离准备、真实预检和全量入口见[真实基线运行指南](docs/app/real-baseline.md)。`conv-26` 前轮[答案优化复验](experiments/issue-15-answer-output-live/results/comparison.md)的 40 项全部执行成功，Dynamic 可回答题 F1 为 0.334；[拒答短语与原文遗漏仍需改进](experiments/issue-15-answer-output-live/results/analysis.md)。前轮 16 项输出校验失败的[历史结果](experiments/issue-15-thinking-qa/results/report.md)保留。开发集全量运行尚未完成，原始约束见[本次访谈](docs/decisions/real-deepseek-evaluation-interview.md)。spec 的准备标签不代表实现或验收完成。
 
 ## 本地启动与验证
 
@@ -25,8 +27,14 @@ uv run --locked streamlit run src/locomo_memory/ui.py --server.address 127.0.0.1
 `uv sync --locked` 不包含本地 Embedding 模型运行依赖。构建索引前，运行
 `uv sync --locked --extra embedding` 并准备固定 revision 的 MiniLM 本地缓存；
 真实生成还需要进程环境中的 `DEEPSEEK_API_KEY`。配置文件不接受凭据。
+证据覆盖优化后的 [A/B 真实实验](experiments/issue-15-evidence-coverage-live/results/analysis.md)已执行 30 项，全部运行成功，但仍有证据遗漏、枚举退化和时间错误；新问题组的 Raw Fallback F1 低于 Hybrid，尚不支持切换默认策略。现已按用户要求[暂时回退 P0/P1](experiments/issue-15-evidence-coverage/rollback-p0-p1.md)，保留 P2 的拒答与部分答案约定。
+
 详细步骤见[运行指南](docs/app/running.md)。
 CI、夹具回归、独立浏览器环境和失败诊断见[检查指南](docs/app/checking.md)。
+
+生成输出上限 `model_max_tokens` 默认 8192 tokens；可用 `relation_max_tokens` 单独覆盖关系阶段。
+默认关系判断使用 `high` 思考、有效证据解析使用 `low`，抽取、查询分析和答案生成关闭思考。
+字段、回滚和版本规则见[分阶段配置](docs/app/building.md#分阶段思考配置)；已有构建保留原配置快照。
 
 ```sh
 uv run --locked pytest -q

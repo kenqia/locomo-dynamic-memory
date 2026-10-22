@@ -1,0 +1,144 @@
+{
+  "created_at": "2026-10-20T10:10:09.828317+00:00",
+  "prompt_version": "relations-v6.2",
+  "campaign_directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v6",
+  "gate1": {
+    "status": "passed",
+    "tests": 117,
+    "new_model_calls": 0,
+    "implementation_sha256": "c3207ffd535a6337705377dd413ed35b9f7196bec5a050c493a55b3d52cc6a13",
+    "elapsed_seconds": 17.57,
+    "command": ".venv/bin/python -m pytest tests/test_http_diagnostics.py tests/test_v6_campaign.py tests/test_model_diagnostics.py tests/test_relation_output_recovery.py tests/test_relation_diagnostics.py -q --tb=short"
+  },
+  "gate2": {
+    "status": "passed",
+    "implementation_sha256": "c3207ffd535a6337705377dd413ed35b9f7196bec5a050c493a55b3d52cc6a13",
+    "budget": {
+      "limit": 1000,
+      "previous_calls": 313,
+      "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+      "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+      "reserved_new_calls": 19,
+      "reserved_total_calls": 332,
+      "phases": {
+        "gate2-lengths": 13,
+        "gate4-evidence": 4,
+        "gate5-same-key": 2
+      },
+      "operations": {
+        "relate": 19
+      },
+      "outcomes": {
+        "model_http_error": 1,
+        "succeeded": 18
+      },
+      "usage": {
+        "generation_calls": 19,
+        "unknown_attempts": 0,
+        "calls_without_reported_usage": 1,
+        "calls_with_partial_usage": 0,
+        "reported_tokens": {
+          "prompt_tokens": 178634,
+          "completion_tokens": 50723,
+          "total_tokens": 229357
+        },
+        "usage_fields": {
+          "prompt_tokens": {
+            "reported": 178634,
+            "calls_with_reported_usage": 18,
+            "calls_missing_usage": 1,
+            "complete": false
+          },
+          "completion_tokens": {
+            "reported": 50723,
+            "calls_with_reported_usage": 18,
+            "calls_missing_usage": 1,
+            "complete": false
+          },
+          "total_tokens": {
+            "reported": 229357,
+            "calls_with_reported_usage": 18,
+            "calls_missing_usage": 1,
+            "complete": false
+          }
+        },
+        "provider_usage_complete": false,
+        "provider_retries": 0,
+        "reported_provider_seconds": 148.3257906450017
+      }
+    },
+    "report": "lengths.json"
+  },
+  "gate3": {
+    "status": "not_required",
+    "reason": "no_truncation_at_8192_in_fixed_pair"
+  },
+  "gate4": {
+    "status": "passed",
+    "implementation_sha256": "c3207ffd535a6337705377dd413ed35b9f7196bec5a050c493a55b3d52cc6a13",
+    "budget": {
+      "limit": 1000,
+      "previous_calls": 313,
+      "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+      "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+      "reserved_new_calls": 21,
+      "reserved_total_calls": 334,
+      "phases": {
+        "gate2-lengths": 13,
+        "gate4-evidence": 6,
+        "gate5-same-key": 2
+      },
+      "operations": {
+        "relate": 21
+      },
+      "outcomes": {
+        "model_http_error": 1,
+        "succeeded": 20
+      },
+      "usage": {
+        "generation_calls": 21,
+        "unknown_attempts": 0,
+        "calls_without_reported_usage": 1,
+        "calls_with_partial_usage": 0,
+        "reported_tokens": {
+          "prompt_tokens": 199648,
+          "completion_tokens": 55689,
+          "total_tokens": 255337
+        },
+        "usage_fields": {
+          "prompt_tokens": {
+            "reported": 199648,
+            "calls_with_reported_usage": 20,
+            "calls_missing_usage": 1,
+            "complete": false
+          },
+          "completion_tokens": {
+            "reported": 55689,
+            "calls_with_reported_usage": 20,
+            "calls_missing_usage": 1,
+            "complete": false
+          },
+          "total_tokens": {
+            "reported": 255337,
+            "calls_with_reported_usage": 20,
+            "calls_missing_usage": 1,
+            "complete": false
+          }
+        },
+        "provider_usage_complete": false,
+        "provider_retries": 0,
+        "reported_provider_seconds": 161.52932241000235
+      }
+    }
+  },
+  "gate5": {
+    "status": "failed",
+    "confirmed_unsupported_update": 1,
+    "case": "relation:172",
+    "evidence": [
+      "evidence.json",
+      "single-pair.json"
+    ],
+    "scope": "fixed full batch and isolated endpoint; no population quality estimate"
+  }
+}

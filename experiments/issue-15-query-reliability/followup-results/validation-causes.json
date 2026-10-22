@@ -1,0 +1,35 @@
+[
+  {
+    "at": "2026-10-21T12:58:02.213645+00:00",
+    "operation": "answer_raw",
+    "errors": [
+      {
+        "type": "value_error",
+        "field_path": null,
+        "cause": "Raw citation outside delivered sources"
+      }
+    ]
+  },
+  {
+    "at": "2026-10-21T12:58:03.729897+00:00",
+    "operation": "answer_raw",
+    "errors": [
+      {
+        "type": "value_error",
+        "field_path": null,
+        "cause": "Raw citation outside delivered sources"
+      }
+    ]
+  },
+  {
+    "at": "2026-10-21T12:58:05.190104+00:00",
+    "operation": "answer_raw",
+    "errors": [
+      {
+        "type": "value_error",
+        "field_path": null,
+        "cause": "Raw citation outside delivered sources"
+      }
+    ]
+  }
+]

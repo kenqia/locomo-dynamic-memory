@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-10-20T03:56:43.803844+00:00",
+  "task_id": "91f1f50938064972820e3ab7b390d9dd:relation:2",
+  "scope": "independent diagnostic replay; baseline unchanged; one provider attempt; no raw response retained",
+  "request_payload_sha256": "3207b92569fc662a6d3f7a9e3287ca7b7be1faa55bcb9bb360f85b7265416cc6",
+  "prompt_sha256": "8eb7f42bb7f13f4663acff40b9021a6c4b7e02cfc7b104920af9353a01671929",
+  "schema_sha256": "27f9fe6d44dbbd514a398f3c327b192f3f283aec68e59c27ce33dae8e91a163c",
+  "outcome": "invalid_output",
+  "metadata": {
+    "calls": [
+      {
+        "attempt": 1,
+        "timestamp": "2026-10-20T03:56:43.808899+00:00",
+        "requested_model": "deepseek-flash",
+        "returned_model": "deepseek-flash",
+        "usage": {
+          "prompt_tokens": 1782,
+          "completion_tokens": 266,
+          "total_tokens": 2048
+        },
+        "response_received": true,
+        "elapsed_seconds": 1.3407616460026475,
+        "outcome": "invalid_output"
+      }
+    ],
+    "request_context_estimate": {
+      "token_count": 2318,
+      "method": "regex-word-punctuation-v1",
+      "scope": "serialized_messages_including_prompt_schema_and_payload",
+      "is_provider_token_count": false,
+      "reserved_output_tokens": 4096
+    }
+  },
+  "validation_errors": [
+    {
+      "location": [
+        "judgments",
+        0
+      ],
+      "type": "value_error",
+      "rule": "Value error, This judgment requires the same state dimension"
+    }
+  ],
+  "persisted_baseline_task_status_after_replay": "failed",
+  "comparison": {
+    "history_count": 1,
+    "same_entity": true,
+    "same_state_key": false,
+    "old_state_dimension": "support_group_attendance",
+    "new_state_dimension": "emotional_response"
+  }
+}

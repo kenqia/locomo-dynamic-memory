@@ -1,0 +1,2023 @@
+{
+  "started_at": "2026-10-20T09:50:43.528025+00:00",
+  "implementation_sha256": "787420b34edcb2d12cf2657361c9d064b0363b6f2d298586e9b80a4957194378",
+  "source_sha256": "12410a8a857e91a9e23b97280b4cbcb647278daef83200cb9907c748cd238e2d",
+  "only_treatment": "max_tokens: 4096 versus 8192",
+  "model_retries": 0,
+  "status": "passed",
+  "attempts": [
+    {
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+      "max_tokens": 4096,
+      "payload_sha256": "9b4c4386dd9f97f04564c0fbded6dd6bcd695f5787bec35e62a30bd5761d556c",
+      "candidate_count": 20,
+      "status": "succeeded",
+      "covered_candidate_count": 20,
+      "label_counts": {
+        "undetermined": 20
+      },
+      "judgments": [
+        {
+          "old_memory_id": "c1179d60b5da9b3874aec62e",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (event_experience vs pottery_creation); no same-process evidence linking them.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "63a80c6ed90d67bccadf13b8",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (self_care_belief vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "2f32b470aad956d99cfa84c2",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (self_care_effect vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a2da496eefa2e52130886f27",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (self_care_routine vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "8f676aa8bc55b144d2ec15b0",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (self_care_activities vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "b9d964aa30b424b2e03f0a53",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (children_emotional_state vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "2c1cd3e7b4576777dd9a710d",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (family_activity vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "efc2acb8ae95893ddf1e112a",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (courage vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "824895bb6e62cfb97a200228",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (motivation_source vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "8c8408241ea40f242f99a20d",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (family vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:14",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "25cb2f95868ef76695e0f0c1",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (marital_status vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "f59e2e3288e9d9ff2198a25a",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (wedding vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:17",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "03b96b88113ce39e5944194e",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (family_gathering vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:20",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "b031aaa5783bf8426e090849",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (family_time_feeling vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:22",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "adf64b5516b03ab518ca1684",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (camping_trip vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "997ba06e60ec21a9100e6282",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (camping_activities vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "1a12cf669aef10ff96555b00",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (children_interest vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "480d91e2f9e90f04b47fa0af",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (class_enrollment vs pottery_creation); enrollment and making a bowl are distinct dimensions, no same-process advancement evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "ace77a25a90690ed18490261",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (activity_effect vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "b9a5ccd804677b0cdee96f2f",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (interest vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        }
+      ],
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T09:50:43.532060+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 9698,
+              "completion_tokens": 2979,
+              "total_tokens": 12677
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+            "elapsed_seconds": 8.344939497001178,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T09:50:53.048967+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 10521,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 4096
+        }
+      }
+    },
+    {
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:91",
+      "max_tokens": 4096,
+      "payload_sha256": "3e3eedbfe9c446b860d48ad8932b7dacca27b3a8b82bd31872bb1a72b16aac9c",
+      "candidate_count": 20,
+      "status": "succeeded",
+      "covered_candidate_count": 20,
+      "label_counts": {
+        "undetermined": 20
+      },
+      "judgments": [
+        {
+          "old_memory_id": "e0782e983de28fbcbaf84d47",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different state keys (career_focus vs advocacy_intention); new intention to advocate for trans rights does not show advancement of the career plan process.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "337720394eb63859ddc839b4",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (workshop_attendance event vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "98e7a1f4e17629630d19c154",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (personal_experience vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a0bad46c0e9937222c235af1",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (counseling_impact event vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "40fa459584311ebc9c3a2681",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (passion vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "ea75978f077ae0cd1dc3b611",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (pride_parade_attendance event vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "c5f36a3df359b5165ca42fc7",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (pride_parade_impact event vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a8cec9be91860db3646ee08f",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (career_interest vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "fe4ac164737a8ffadb07ed61",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (activity vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:5",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "fc13e5e63869e3754233938f",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (conference_attendance plan vs advocacy_intention); no same-process advancement shown.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "8c3fb2d3e5167026633668ca",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (career_interest vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "d3e99b6d906b72fff7257d73",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (activity vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a5f8100339da42e7f152de19",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (parental_status vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a6a4b502991f505b62870db4",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (book_ownership vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "0dd82cb65f8892f2055a9a93",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (picnic event vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "07251423e1e843df84eff8ab",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (transition_support vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "de2cf49902e133578290cd34",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (support_network_experience vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "e72a531c1adf74054c765e7e",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (conference_attendance event vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "68510a9d7318c755d239705b",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (conference_connection event vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "74f2ffb88b80dc50b7f0a3dd",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (conference_feeling vs advocacy_intention); no relation supported.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        }
+      ],
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T09:50:53.069410+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 9873,
+              "completion_tokens": 2979,
+              "total_tokens": 12852
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:91",
+            "elapsed_seconds": 7.666638314000011,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T09:51:00.736050+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 10610,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 4096
+        }
+      }
+    },
+    {
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+      "max_tokens": 8192,
+      "payload_sha256": "9b4c4386dd9f97f04564c0fbded6dd6bcd695f5787bec35e62a30bd5761d556c",
+      "candidate_count": 20,
+      "status": "succeeded",
+      "covered_candidate_count": 20,
+      "label_counts": {
+        "undetermined": 20
+      },
+      "judgments": [
+        {
+          "old_memory_id": "c1179d60b5da9b3874aec62e",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (event_experience vs pottery_creation); no same-process evidence linking them.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "63a80c6ed90d67bccadf13b8",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (self_care_belief vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "2f32b470aad956d99cfa84c2",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (self_care_effect vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a2da496eefa2e52130886f27",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (self_care_routine vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "8f676aa8bc55b144d2ec15b0",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (self_care_activities vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "b9d964aa30b424b2e03f0a53",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (children_emotional_state vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "2c1cd3e7b4576777dd9a710d",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (family_activity vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "efc2acb8ae95893ddf1e112a",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (courage vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "824895bb6e62cfb97a200228",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (motivation_source vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "8c8408241ea40f242f99a20d",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (family vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:14",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "25cb2f95868ef76695e0f0c1",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (marital_status vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "f59e2e3288e9d9ff2198a25a",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (wedding vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:17",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "03b96b88113ce39e5944194e",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (family_gathering vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:20",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "b031aaa5783bf8426e090849",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (family_time_feeling vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:22",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "adf64b5516b03ab518ca1684",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (camping_trip vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "997ba06e60ec21a9100e6282",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (camping_activities vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "1a12cf669aef10ff96555b00",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (children_interest vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "480d91e2f9e90f04b47fa0af",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (class_enrollment vs pottery_creation); enrollment does not establish the bowl-making event.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "ace77a25a90690ed18490261",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (activity_effect vs pottery_creation); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "b9a5ccd804677b0cdee96f2f",
+          "new_memory_id": "6238c781aa4e813acfed882f",
+          "label": "undetermined",
+          "reason": "Different state keys (interest vs pottery_creation); interest does not establish the bowl-making event.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        }
+      ],
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T09:51:00.755779+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 9698,
+              "completion_tokens": 2977,
+              "total_tokens": 12675
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:73",
+            "elapsed_seconds": 7.96950543300045,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T09:51:08.725285+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 10521,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      }
+    },
+    {
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:91",
+      "max_tokens": 8192,
+      "payload_sha256": "3e3eedbfe9c446b860d48ad8932b7dacca27b3a8b82bd31872bb1a72b16aac9c",
+      "candidate_count": 20,
+      "status": "succeeded",
+      "covered_candidate_count": 20,
+      "label_counts": {
+        "undetermined": 20
+      },
+      "judgments": [
+        {
+          "old_memory_id": "e0782e983de28fbcbaf84d47",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different state keys (career_focus vs advocacy_intention); new advocacy intention does not show the career plan advanced.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "337720394eb63859ddc839b4",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is a past workshop event; new is an advocacy intention, unrelated dimensions.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "98e7a1f4e17629630d19c154",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (personal_experience vs advocacy_intention); no evidence linking them.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a0bad46c0e9937222c235af1",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is a past counseling-impact event; new is an advocacy intention, unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "40fa459584311ebc9c3a2681",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (passion vs advocacy_intention); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "ea75978f077ae0cd1dc3b611",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is a past parade event; new is an advocacy intention, unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "c5f36a3df359b5165ca42fc7",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is a past parade-impact event; new is an advocacy intention, unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a8cec9be91860db3646ee08f",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (career_interest vs advocacy_intention); no evidence of same-process advancement.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "fe4ac164737a8ffadb07ed61",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is piano learning; new is advocacy intention, unrelated dimensions.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:5",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "fc13e5e63869e3754233938f",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is a conference-attendance plan; new is an advocacy intention, different dimensions.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "8c3fb2d3e5167026633668ca",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Different dimensions (career_interest vs advocacy_intention); no same-process evidence.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "d3e99b6d906b72fff7257d73",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is creating a children's library; new is advocacy intention, unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a5f8100339da42e7f152de19",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is parental status; new is advocacy intention, unrelated dimensions.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a6a4b502991f505b62870db4",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is book ownership; new is advocacy intention, unrelated dimensions.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:9",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "0dd82cb65f8892f2055a9a93",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is a past picnic event; new is an advocacy intention, unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "07251423e1e843df84eff8ab",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is transition support; new is advocacy intention, unrelated dimensions.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "de2cf49902e133578290cd34",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is support-network experience; new is advocacy intention, unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "e72a531c1adf74054c765e7e",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is a past conference event; new is an advocacy intention, unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "68510a9d7318c755d239705b",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is a past conference connection event; new is an advocacy intention, unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "74f2ffb88b80dc50b7f0a3dd",
+          "new_memory_id": "1a4534c2816be2a913dd5d0a",
+          "label": "undetermined",
+          "reason": "Old is a conference feeling; new is an advocacy intention, unrelated dimensions.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        }
+      ],
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T09:51:08.748272+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 9873,
+              "completion_tokens": 2947,
+              "total_tokens": 12820
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:91",
+            "elapsed_seconds": 9.807878715999323,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T09:51:18.556154+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 10610,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      }
+    }
+  ],
+  "finished_at": "2026-10-20T09:51:18.592394+00:00",
+  "budget": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 5,
+    "reserved_total_calls": 318,
+    "phases": {
+      "gate2-lengths": 5
+    },
+    "operations": {
+      "relate": 5
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 4
+    },
+    "usage": {
+      "generation_calls": 5,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 39142,
+        "completion_tokens": 11882,
+        "total_tokens": 51024
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 39142,
+          "calls_with_reported_usage": 4,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 11882,
+          "calls_with_reported_usage": 4,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 51024,
+          "calls_with_reported_usage": 4,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 34.261139075000756
+    }
+  }
+}

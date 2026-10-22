@@ -1,0 +1,92 @@
+{
+  "started_at": "2026-10-21T12:55:53.048354+00:00",
+  "status": "completed_with_errors",
+  "runs": {
+    "primary": {
+      "run_id": "8ed28f1323b141c0979351f8cee6e5f4",
+      "status": "completed_with_errors",
+      "progress": {
+        "total": 6,
+        "pending": 0,
+        "running": 0,
+        "succeeded": 5,
+        "failed": 1,
+        "interrupted": 0,
+        "unknown": 0
+      }
+    },
+    "dynamic_nonregression": {
+      "run_id": "c74fe544ddaf409bb0c4887a3fec72f7",
+      "status": "completed",
+      "progress": {
+        "total": 1,
+        "pending": 0,
+        "running": 0,
+        "succeeded": 1,
+        "failed": 0,
+        "interrupted": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "authorized_call_limit": 32,
+  "completed_at": "2026-10-21T12:58:32.380715+00:00",
+  "budget_after": {
+    "limit": 1173,
+    "previous_calls": 1141,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-query-reliability-frozen/campaign.sqlite3",
+    "prior_sha256": "25ad685c3a3a70e896898b1b5047477f53f666d06c3a23b226022d3d538db871",
+    "reserved_new_calls": 23,
+    "reserved_total_calls": 1164,
+    "phases": {
+      "query-reliability-frozen-7": 23
+    },
+    "operations": {
+      "query_analysis": 7,
+      "resolve_raw": 6,
+      "answer_raw": 8,
+      "resolve": 1,
+      "answer": 1
+    },
+    "outcomes": {
+      "succeeded": 20,
+      "invalid_output": 3
+    },
+    "usage": {
+      "generation_calls": 23,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 0,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 175995,
+        "completion_tokens": 28776,
+        "total_tokens": 204771
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 175995,
+          "calls_with_reported_usage": 23,
+          "calls_missing_usage": 0,
+          "complete": true
+        },
+        "completion_tokens": {
+          "reported": 28776,
+          "calls_with_reported_usage": 23,
+          "calls_missing_usage": 0,
+          "complete": true
+        },
+        "total_tokens": {
+          "reported": 204771,
+          "calls_with_reported_usage": 23,
+          "calls_missing_usage": 0,
+          "complete": true
+        }
+      },
+      "provider_usage_complete": true,
+      "provider_retries": 2,
+      "reported_provider_seconds": 138.31396630694508
+    }
+  },
+  "source_build_unchanged": true,
+  "snapshot_build_unchanged": true
+}

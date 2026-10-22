@@ -1,0 +1,15 @@
+{
+  "reviewer": "Codex author source inspection, not independent human ground truth",
+  "records": [
+    {"case_id":"state-01","query_verdict":"correct","reason":"已开始探索咨询与心理健康职业；实际工作坊与继续教育计划分开，未声称已就业或获资格。"},
+    {"case_id":"state-02","query_verdict":"partial","reason":"研究、申请、咨询导师和通过面试均有来源；主答确定地说尚未完成收养，宜限定为现有对话未报告完成。没有报告不能直接证明现实中没有完成。"},
+    {"case_id":"state-03","query_verdict":"correct","reason":"实际活动覆盖海滩、山地、森林露营及徒步等；未把未来计划当作已参与。旧计划不必进入最终有效集。"},
+    {"case_id":"state-04","query_verdict":"correct","reason":"艺术倡导、加入组织和学校演讲各有来源；查询结论可用，但存储UPDATE是否满足同一具体过程仍有语义异议。"},
+    {"case_id":"state-05","query_verdict":"correct","reason":"组建家庭、给孩子温暖家庭被表达为目标，未声称收养完成。"},
+    {"case_id":"state-06","query_verdict":"correct","reason":"保留尚未做过陶艺的否定事实，把未来可能尝试与实际经历分开。"},
+    {"case_id":"state-07","query_verdict":"correct","reason":"咨询和心理健康是职业兴趣，未推成实际职业或资格。"},
+    {"case_id":"state-08","query_verdict":"correct","reason":"绘画与陶艺并存，秋季画作明确为计划。彩色花纹碗需要D12:4–6相邻语境支持，D12:5对方明确称碗，D12:6作者确认创作意图。"},
+    {"case_id":"state-09","query_verdict":"correct","reason":"按收养、演讲、绘画与游行等语境表达曾经的情绪，没有推成唯一永久状态。"},
+    {"case_id":"state-10","query_verdict":"correct","reason":"家庭支持及搬家时帮助有上下文佐证；查询正确与存储undetermined遗漏RETAIN可同时成立。"}
+  ]
+}

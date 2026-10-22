@@ -1,0 +1,3546 @@
+{
+  "summary": {
+    "reviewed": 10,
+    "queries_succeeded": 10,
+    "query_verdict": {
+      "correct": 9,
+      "partial": 1
+    },
+    "stored_relation_source_judgment": {
+      "supported": 8,
+      "not_supported": 2
+    },
+    "reviewer": "Codex author source inspection, not independent human ground truth",
+    "limitation": "Author qualitative source inspection, not independent dynamic accuracy. No real SUPERSEDE/CONFLICT in this Build. Query correctness and stored relation semantics are separate judgments."
+  },
+  "records": [
+    {
+      "case_id": "state-01",
+      "trace_id": "fb0b30cf8e254441be9d4830319b1634",
+      "answer_sha256": "ef76239bd97f6a0b49b3d21d6258b80836c575552ca1f08594c5585523adb6bf",
+      "question": "As of the end of the conversation, what is known about Caroline's career exploration?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Caroline is exploring a career in counseling and mental health, with a particular interest in working with trans people to help them accept themselves and support their mental health. She wants to help people who have gone through similar experiences and create a safe, inviting place for people to grow. She attended an LGBTQ+ counseling workshop and plans to continue her education and check out career options.",
+        "citations": [
+          {
+            "memory_id": "ab5f9130290ce528637215d1",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:9"
+            ]
+          },
+          {
+            "memory_id": "edf0ad6dfb5ddf068bbe2225",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+            ]
+          },
+          {
+            "memory_id": "376676a70336006ce30b797e",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+            ]
+          },
+          {
+            "memory_id": "b48a241d0644ef8309ef12cb",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+            ]
+          },
+          {
+            "memory_id": "26a585ed015a3f82b3dfda6f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+            ]
+          },
+          {
+            "memory_id": "f78fb9042f436973ce7bd177",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:3"
+            ]
+          },
+          {
+            "memory_id": "4432640ac0d206c4b5e73dc9",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+            ]
+          },
+          {
+            "memory_id": "bdbd5262ede13d6d0cabd57a",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+            ]
+          },
+          {
+            "memory_id": "66184f4ba6e3b9edea9b210f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:15"
+            ]
+          },
+          {
+            "memory_id": "11b8e5b1c4598d451378d4e1",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+            ]
+          },
+          {
+            "memory_id": "d744e00a235c5eccfcb43f73",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+            ]
+          }
+        ],
+        "explanation": "All evidence is from conversations between May and July 2023, before the cutoff. Caroline's career exploration is consistently described as counseling/mental health, with a specific interest in working with trans people. The workshop attendance is a completed event; the education/career-options check is a stated plan, not a completed fact."
+      },
+      "source_relation_review": {
+        "case_id": "state-01",
+        "stored_label": "UPDATE",
+        "expected_label": "UPDATE",
+        "stored_relation_source_judgment": "supported",
+        "reason": "D1:9 announces exploring career options; D7:7 reports starting exploration of counseling and mental health. A plan becomes an actual exploration stage.",
+        "answer_boundary": "Counseling and mental health exploration is actual; do not claim certified counselor."
+      },
+      "query_review": {
+        "case_id": "state-01",
+        "query_verdict": "correct",
+        "reason": "已开始探索咨询与心理健康职业；实际工作坊与继续教育计划分开，未声称已就业或获资格。"
+      },
+      "actual_pair_relations": [
+        {
+          "old_memory_id": "ab5f9130290ce528637215d1",
+          "new_memory_id": "376676a70336006ce30b797e",
+          "label": "UPDATE",
+          "reason": "Old plan to check out career options is followed by new action of starting to look into counseling/mental health career options in the same career-exploration process.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+          ],
+          "support_quote": "I started looking into counseling and mental health career options",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          },
+          "update_evidence": {
+            "same_process": true,
+            "real_stage_changed": true,
+            "old_stage": {
+              "description": "Caroline planned to check out career options.",
+              "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+              "quote": "Gonna continue my edu and check out career options"
+            },
+            "new_stage": {
+              "description": "Caroline actually started looking into counseling and mental health career options.",
+              "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+              "quote": "I started looking into counseling and mental health career options"
+            }
+          },
+          "relation_id": "581985a75025501be6d19457",
+          "build_id": "5c7699dd6543407697ae232633154036"
+        }
+      ],
+      "old_memory_effective": true,
+      "new_memory_effective": true,
+      "effective_memories": [
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline plans to check out career options.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "ab5f9130290ce528637215d1",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:56 pm on 8 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:9"
+          ],
+          "state_dimension": "career_exploration",
+          "state_key": "conv-26:Caroline:career_exploration",
+          "state_value": "checking career options",
+          "statement_type": "plan",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline has been looking into counseling or mental health work.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "edf0ad6dfb5ddf068bbe2225",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "8:18 pm on 6 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+          ],
+          "state_dimension": "career_exploration",
+          "state_key": "conv-26:Caroline:career_exploration",
+          "state_value": "counseling or mental health work",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+            "basis": "Explicit relative time expression; no exact date given.",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "Since our last chat",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline started looking into counseling and mental health career options.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "376676a70336006ce30b797e",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "4:33 pm on 12 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+          ],
+          "state_dimension": "career_exploration",
+          "state_key": "conv-26:Caroline:career_exploration",
+          "state_value": "counseling and mental health",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline has been looking into counseling and mental health as a career.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "b48a241d0644ef8309ef12cb",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ],
+          "state_dimension": "career_interest",
+          "state_key": "conv-26:Caroline:career_interest",
+          "state_value": "counseling and mental health",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+            "basis": "vague recent period",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "Lately",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is thinking of working with trans people, helping them accept themselves and supporting their mental health.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "26a585ed015a3f82b3dfda6f",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+          ],
+          "state_dimension": "career_plan",
+          "state_key": "conv-26:Caroline:career_plan",
+          "state_value": "working with trans people",
+          "statement_type": "plan",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline still thinks counseling and mental health is the career path she wants to pursue.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "f78fb9042f436973ce7bd177",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:36 pm on 3 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:3"
+          ],
+          "state_dimension": "career_plan",
+          "state_key": "conv-26:Caroline:career_plan",
+          "state_value": "counseling and mental health",
+          "statement_type": "plan",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline wants to help people who have gone through the same things as her.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "4432640ac0d206c4b5e73dc9",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ],
+          "state_dimension": "career_goal",
+          "state_key": "conv-26:Caroline:career_goal",
+          "state_value": "helping people with similar experiences",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline would love to support those with similar issues.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "bdbd5262ede13d6d0cabd57a",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:56 pm on 8 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+          ],
+          "state_dimension": "career_motivation",
+          "state_key": "conv-26:Caroline:career_motivation",
+          "state_value": "supporting people with similar issues",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is passionate about creating a safe, inviting place for people to grow.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "66184f4ba6e3b9edea9b210f",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:15"
+          ],
+          "state_dimension": "career_goal",
+          "state_key": "conv-26:Caroline:career_goal",
+          "state_value": "creating a safe space for people to grow",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is keen on counseling or working in mental health.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "11b8e5b1c4598d451378d4e1",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:56 pm on 8 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+          ],
+          "state_dimension": "career_interest",
+          "state_key": "conv-26:Caroline:career_interest",
+          "state_value": "counseling or mental health",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "content": "Caroline went to an LGBTQ+ counseling workshop last Friday.",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Caroline",
+          "state_dimension": "workshop_attendance",
+          "state_value": "LGBTQ+ counseling workshop",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+          ],
+          "time": {
+            "original_expression": "Last Friday",
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+            "event_start": "2023-06-23",
+            "event_end": "2023-06-23",
+            "valid_from": null,
+            "valid_to": null,
+            "basis": "Source expression \"Last Friday\" anchored to 2023-06-27; 2023-06-23"
+          },
+          "memory_id": "d744e00a235c5eccfcb43f73",
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "state_key": "conv-26:Caroline:workshop_attendance",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "state-02",
+      "trace_id": "088500cfc21546d3ac03d66987308f36",
+      "answer_sha256": "f4421436a9685d2d88c74afdfcffb83486f4363d8266edd3ee7161671ca7ec94",
+      "question": "As of the end of the conversation, what is known about Caroline's adoption status?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Caroline is pursuing adoption: she researched and applied to adoption agencies, attended a council meeting, contacted her mentor for advice, and passed the adoption agency interviews last Friday. She has not yet completed an adoption.",
+        "citations": [
+          {
+            "memory_id": "c29d9f9836d5c49d48f6d49b",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+            ]
+          },
+          {
+            "memory_id": "2b7b411aca4d8f777d3a726b",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+            ]
+          },
+          {
+            "memory_id": "30b7c2fe26350ed64a276cb2",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+            ]
+          },
+          {
+            "memory_id": "f129106c71948dbf6c652071",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:9"
+            ]
+          },
+          {
+            "memory_id": "1e1788733926f83841518dc1",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:1"
+            ]
+          },
+          {
+            "memory_id": "ff6beba22ed4d40eb0beb12d",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:3"
+            ]
+          },
+          {
+            "memory_id": "31d452af0431e55c3ebfb59f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D19:1"
+            ]
+          }
+        ],
+        "explanation": "As of the 22 October 2023 cutoff, Caroline had applied to adoption agencies and passed the agency interviews on 20 October 2023, but no completed adoption is reported. Her readiness to adopt is an intention, not a completed adoption."
+      },
+      "source_relation_review": {
+        "case_id": "state-02",
+        "stored_label": "UPDATE",
+        "expected_label": "UPDATE",
+        "stored_relation_source_judgment": "supported",
+        "reason": "D2:10 researching an agency progresses to D19:1 passing interviews in the same adoption process.",
+        "answer_boundary": "Passed interviews, not completed adoption or parenthood; preserve research as historical."
+      },
+      "query_review": {
+        "case_id": "state-02",
+        "query_verdict": "partial",
+        "reason": "研究、申请、咨询导师和通过面试均有来源；主答确定地说尚未完成收养，宜限定为现有对话未报告完成。没有报告不能直接证明现实中没有完成。"
+      },
+      "actual_pair_relations": [
+        {
+          "old_memory_id": "2b7b411aca4d8f777d3a726b",
+          "new_memory_id": "31d452af0431e55c3ebfb59f",
+          "label": "UPDATE",
+          "reason": "Old memory records Caroline looking into adoption agencies; new memory records her later stage of passing adoption agency interviews in the same adoption process.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:1"
+          ],
+          "support_quote": "I passed the adoption agency interviews last Friday!",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+            "original_time_expression": "last Friday",
+            "time_basis": "Relative to session time 22 October 2023; exact date not stated."
+          },
+          "update_evidence": {
+            "same_process": true,
+            "real_stage_changed": true,
+            "old_stage": {
+              "description": "Looking into adoption agencies",
+              "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+              "quote": "And here's one of the adoption agencies I'm looking into."
+            },
+            "new_stage": {
+              "description": "Passed adoption agency interviews",
+              "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+              "quote": "I passed the adoption agency interviews last Friday!"
+            }
+          },
+          "relation_id": "1179b3bd7559b3e69a55e589",
+          "build_id": "5c7699dd6543407697ae232633154036"
+        }
+      ],
+      "old_memory_effective": true,
+      "new_memory_effective": true,
+      "effective_memories": [
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline applied to adoption agencies.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "30b7c2fe26350ed64a276cb2",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "3:31 pm on 23 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+          ],
+          "state_dimension": "adoption_status",
+          "state_key": "conv-26:Caroline:adoption_status",
+          "state_value": "application",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+            "basis": "Source expression \"this week\" anchored to 2023-08-23; 2023-08-21 through 2023-08-27; calendar weeks run Monday through Sunday; exact day unknown",
+            "event_end": "2023-08-27",
+            "event_start": "2023-08-21",
+            "original_expression": "this week",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline passed the adoption agency interviews last Friday.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "31d452af0431e55c3ebfb59f",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "9:55 am on 22 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:1"
+          ],
+          "state_dimension": "adoption_status",
+          "state_key": "conv-26:Caroline:adoption_status",
+          "state_value": "interview",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+            "basis": "Source expression \"last Friday\" anchored to 2023-10-22; 2023-10-20",
+            "event_end": "2023-10-20",
+            "event_start": "2023-10-20",
+            "original_expression": "last Friday",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is looking into an adoption agency.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "2b7b411aca4d8f777d3a726b",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:14 pm on 25 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+          ],
+          "state_dimension": "adoption_status",
+          "state_key": "conv-26:Caroline:adoption_status",
+          "state_value": "looking into an agency",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is researching adoption agencies.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "c29d9f9836d5c49d48f6d49b",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:14 pm on 25 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+          ],
+          "state_dimension": "adoption_status",
+          "state_key": "conv-26:Caroline:adoption_status",
+          "state_value": "researching agencies",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is ready to be a mom and adopt.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "ff6beba22ed4d40eb0beb12d",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:31 am on 13 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:3"
+          ],
+          "state_dimension": "adoption_status",
+          "state_key": "conv-26:Caroline:adoption_status",
+          "state_value": "ready to adopt",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline contacted her mentor for adoption advice.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "1e1788733926f83841518dc1",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:31 am on 13 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:1"
+          ],
+          "state_dimension": "adoption_status",
+          "state_key": "conv-26:Caroline:adoption_status",
+          "state_value": "contacted mentor for advice",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline went to a council meeting for adoption last Friday.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "f129106c71948dbf6c652071",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:51 pm on 15 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:9"
+          ],
+          "state_dimension": "adoption_activity",
+          "state_key": "conv-26:Caroline:adoption_activity",
+          "state_value": "council meeting",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+            "basis": "Source expression \"Last Friday\" anchored to 2023-07-15; 2023-07-14",
+            "event_end": "2023-07-14",
+            "event_start": "2023-07-14",
+            "original_expression": "Last Friday",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "content": "Caroline chose the adoption agency because they help LGBTQ+ folks with adoption.",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Caroline",
+          "state_dimension": "adoption_agency_choice_reason",
+          "state_value": "helps LGBTQ+ folks with adoption",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:12"
+          ],
+          "time": {
+            "original_expression": null,
+            "anchor_source_id": null,
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": null
+          },
+          "memory_id": "0954710d2cdbad5f6456adb6",
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "state_key": "conv-26:Caroline:adoption_agency_choice_reason",
+          "session_times": [
+            "1:14 pm on 25 May, 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "state-03",
+      "trace_id": "554e8ae6d455444b80dac98d6e2377ce",
+      "answer_sha256": "02fb4e5b04a2c6ff96a67df28630c9c001d452281f1346d2cdc827646ee43597",
+      "question": "As of the end of the conversation, what is known about Melanie's family activity?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Camping (at the beach, in the mountains, and in the forest), hiking in the mountains, exploring forests, roasting marshmallows around campfires, telling stories, family gatherings with games and food, and seeing the Perseid meteor shower.",
+        "citations": [
+          {
+            "memory_id": "1bdfae29d84ec904411b664a",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+            ]
+          },
+          {
+            "memory_id": "2cb517b0dccd4d83bce9eabc",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:34"
+            ]
+          },
+          {
+            "memory_id": "e3a2e6585ad03929929abf29",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D18:21"
+            ]
+          },
+          {
+            "memory_id": "1727fee9cb63d0e3461c3dcb",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:6"
+            ]
+          },
+          {
+            "memory_id": "f4d9ccdebd7cbc9f2ac2114f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:8"
+            ]
+          },
+          {
+            "memory_id": "cb09cbcb6f8755d5720b03dc",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D10:12"
+            ]
+          },
+          {
+            "memory_id": "141c49db237d948a33757316",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:20"
+            ]
+          },
+          {
+            "memory_id": "b56272f2400d5bf7ab86e8c6",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+            ]
+          },
+          {
+            "memory_id": "8f9e24cca3dbc9c375401e23",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D10:14"
+            ]
+          },
+          {
+            "memory_id": "9244df64a02401a5aa610b6d",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D16:2"
+            ]
+          }
+        ],
+        "explanation": "Supported family activities include camping at the beach, in the mountains, and in the forest; hiking; exploring forests/nature; roasting marshmallows; stories around campfires; a family gathering with games and food; and a past camping trip where they saw the Perseid meteor shower. The specific activity done 'yesterday' (2023-10-19) is not named in the delivered evidence."
+      },
+      "source_relation_review": {
+        "case_id": "state-03",
+        "stored_label": "UPDATE",
+        "expected_label": "UPDATE",
+        "stored_relation_source_judgment": "supported",
+        "reason": "D2:7 planned camping is followed by D4:8 description of a completed family trip.",
+        "answer_boundary": "Camping, nature exploration, campfire marshmallows and hiking are actual; future camping plans are separate."
+      },
+      "query_review": {
+        "case_id": "state-03",
+        "query_verdict": "correct",
+        "reason": "实际活动覆盖海滩、山地、森林露营及徒步等；未把未来计划当作已参与。旧计划不必进入最终有效集。"
+      },
+      "actual_pair_relations": [
+        {
+          "old_memory_id": "e28dae4e15b737df9593ad0d",
+          "new_memory_id": "f4d9ccdebd7cbc9f2ac2114f",
+          "label": "UPDATE",
+          "reason": "The old memory records an intention to go camping next month; the new memory records actual camping activities during the trip, showing the same camping undertaking progressing from plan to real activity.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:8"
+          ],
+          "support_quote": "We explored nature, roasted marshmallows around the campfire and even went on a hike.",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          },
+          "update_evidence": {
+            "same_process": true,
+            "real_stage_changed": true,
+            "old_stage": {
+              "description": "Planning/intending to go camping next month",
+              "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+              "quote": "We're thinking about going camping next month."
+            },
+            "new_stage": {
+              "description": "Actual camping trip activities: explored nature, roasted marshmallows, and hiked",
+              "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+              "quote": "We explored nature, roasted marshmallows around the campfire and even went on a hike."
+            }
+          },
+          "relation_id": "e529d31b60f35a55b5eb87d4",
+          "build_id": "5c7699dd6543407697ae232633154036"
+        }
+      ],
+      "old_memory_effective": false,
+      "new_memory_effective": true,
+      "effective_memories": [
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie and her family did an activity yesterday that the kids loved.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "a5024258a9e1c57f2c6919a8",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "6:55 pm on 20 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:17"
+          ],
+          "state_dimension": "family_activity",
+          "state_key": "conv-26:Melanie:family_activity",
+          "state_value": null,
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+            "basis": "Source expression \"yesterday\" anchored to 2023-10-20; 2023-10-19",
+            "event_end": "2023-10-19",
+            "event_start": "2023-10-19",
+            "original_expression": "yesterday",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie's family goes camping at the beach.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "1bdfae29d84ec904411b664a",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "8:18 pm on 6 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+          ],
+          "state_dimension": "family_activity",
+          "state_key": "conv-26:Melanie:family_activity",
+          "state_value": "camping at the beach",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie and her family enjoy hiking in the mountains and exploring forests.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "2cb517b0dccd4d83bce9eabc",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:51 pm on 15 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:34"
+          ],
+          "state_dimension": "family_activity",
+          "state_key": "conv-26:Melanie:family_activity",
+          "state_value": "hiking and exploring forests",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie bonds with family over stories, campfires and nature.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "e3a2e6585ad03929929abf29",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "6:55 pm on 20 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:21"
+          ],
+          "state_dimension": "family_activity",
+          "state_key": "conv-26:Melanie:family_activity",
+          "state_value": "stories, campfires and nature",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie took her family camping in the mountains last week.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "1727fee9cb63d0e3461c3dcb",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:6"
+          ],
+          "state_dimension": "family_activity",
+          "state_key": "conv-26:Melanie:family_activity",
+          "state_value": "camping trip in the mountains",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+            "basis": "Source expression \"last week\" anchored to 2023-06-27; 2023-06-19 through 2023-06-25; calendar weeks run Monday through Sunday; exact day unknown",
+            "event_end": "2023-06-25",
+            "event_start": "2023-06-19",
+            "original_expression": "last week",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "During the camping trip, Melanie's family explored nature, roasted marshmallows around the campfire, and went on a hike.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "f4d9ccdebd7cbc9f2ac2114f",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:8"
+          ],
+          "state_dimension": "family_activity",
+          "state_key": "conv-26:Melanie:family_activity",
+          "state_value": "camping activities",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie's family always looks forward to their family camping trip.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "cb09cbcb6f8755d5720b03dc",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "8:56 pm on 20 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:12"
+          ],
+          "state_dimension": "family_tradition",
+          "state_key": "conv-26:Melanie:family_tradition",
+          "state_value": "family camping trip",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie went camping with her family two weekends before 17 July 2023.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "d3dae5c6947596177bbb4dbb",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "2:31 pm on 17 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:1"
+          ],
+          "state_dimension": "camping_trip",
+          "state_key": "conv-26:Melanie:camping_trip",
+          "state_value": "with family",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+            "basis": "relative to session time 17 July 2023",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "two weekends ago",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie had a family gathering where they played games, ate good food, and hung out together.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "141c49db237d948a33757316",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "7:55 pm on 9 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:20"
+          ],
+          "state_dimension": "family_gathering",
+          "state_key": "conv-26:Melanie:family_gathering",
+          "state_value": "games, food, and hanging out",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "content": "Melanie and her family went on another camping trip in the forest.",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Melanie",
+          "state_dimension": "camping_trip",
+          "state_value": "forest",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+          ],
+          "time": {
+            "original_expression": null,
+            "anchor_source_id": null,
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": null
+          },
+          "memory_id": "b56272f2400d5bf7ab86e8c6",
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "state_key": "conv-26:Melanie:camping_trip",
+          "session_times": [
+            "1:51 pm on 15 July, 2023"
+          ]
+        },
+        {
+          "content": "Melanie's family saw the Perseid meteor shower on their camping trip last year.",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Melanie",
+          "state_dimension": "camping_trip",
+          "state_value": "Perseid meteor shower",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:14"
+          ],
+          "time": {
+            "original_expression": "last year",
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": "relative to session time of 20 July 2023"
+          },
+          "memory_id": "8f9e24cca3dbc9c375401e23",
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "state_key": "conv-26:Melanie:camping_trip",
+          "session_times": [
+            "8:56 pm on 20 July, 2023"
+          ]
+        },
+        {
+          "content": "Melanie went camping with the kids a few weeks before the conversation.",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Melanie",
+          "state_dimension": "camping_trip",
+          "state_value": "camping with the kids",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:2"
+          ],
+          "time": {
+            "original_expression": "a few weeks ago",
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": "Vague relative expression; no exact date derivable."
+          },
+          "memory_id": "9244df64a02401a5aa610b6d",
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "state_key": "conv-26:Melanie:camping_trip",
+          "session_times": [
+            "12:09 am on 13 September, 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "state-04",
+      "trace_id": "31683f8396524b7985d8276f264c4e4d",
+      "answer_sha256": "489359b464e6be62ea8ca80feac5a92b80c125084489e87837c4b341f3276edb",
+      "question": "As of the end of the conversation, what is known about Caroline's activism?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Caroline advocates for LGBTQ+ rights and acceptance, including through her art; she joined the group 'Connected LGBTQ Activists', which holds regular meetings and plans events and campaigns; she spoke about her transgender journey and encouraged students to get involved in the LGBTQ community at a school event; and she intends to keep using her voice to make change and lift others up.",
+        "citations": [
+          {
+            "memory_id": "3186e88adf0c1ddf0bcc2c98",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D11:8"
+            ]
+          },
+          {
+            "memory_id": "bb82075e38d47b74022d2273",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D11:6"
+            ]
+          },
+          {
+            "memory_id": "5f80ff6f5c996eacb546e9d8",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D10:3"
+            ]
+          },
+          {
+            "memory_id": "f7fc0bd9b8ee1314e8fe7958",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+            ]
+          },
+          {
+            "memory_id": "30c3a1d5139ac388c9b03f87",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+            ]
+          },
+          {
+            "memory_id": "b1e758b6119155026ff3f594",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ]
+          },
+          {
+            "memory_id": "ed2e9ba1185f14a945cd3b41",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:1"
+            ]
+          },
+          {
+            "memory_id": "8ecd78f1bef0bb848ac29377",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:1"
+            ]
+          },
+          {
+            "memory_id": "7b597b714d21eed7176aba52",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+            ]
+          },
+          {
+            "memory_id": "07b934c8d1a2da3548b12f6f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:7"
+            ]
+          }
+        ],
+        "explanation": "Covers Caroline's activism as of the conversation cutoff (22 October 2023): art-based advocacy, group membership and activities, the school event talk, and her stated intention to continue advocacy. The school event occurred in the week of 29 May–4 June 2023 per the source's 'last week' expression."
+      },
+      "source_relation_review": {
+        "case_id": "state-04",
+        "stored_label": "UPDATE",
+        "expected_label": "undetermined",
+        "stored_relation_source_judgment": "not_supported",
+        "reason": "D7:3 is a broad intention to make a difference; D11:8 describes art advocacy. Shared activism topic alone does not establish a stage change in one concrete undertaking under the project UPDATE definition.",
+        "answer_boundary": "Art advocacy is actual; any broader participation must have its own source. Do not treat the broad old intention as a disproved fact."
+      },
+      "query_review": {
+        "case_id": "state-04",
+        "query_verdict": "correct",
+        "reason": "艺术倡导、加入组织和学校演讲各有来源；查询结论可用，但存储UPDATE是否满足同一具体过程仍有语义异议。"
+      },
+      "actual_pair_relations": [
+        {
+          "old_memory_id": "b1e758b6119155026ff3f594",
+          "new_memory_id": "3186e88adf0c1ddf0bcc2c98",
+          "label": "UPDATE",
+          "reason": "Old memory is an intention to help make a difference for LGBTQ rights; new memory reports actually using art to speak up and push acceptance, a later action in the same advocacy process.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:8"
+          ],
+          "support_quote": "I also use it to speak up for the LGBTQ+ community and push for acceptance.",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          },
+          "update_evidence": {
+            "same_process": true,
+            "real_stage_changed": true,
+            "old_stage": {
+              "description": "Caroline states an intention to help make a difference for LGBTQ rights.",
+              "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+              "quote": "I wanna help make a difference."
+            },
+            "new_stage": {
+              "description": "Caroline reports actually using her art to speak up for the LGBTQ+ community and push for acceptance.",
+              "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+              "quote": "I also use it to speak up for the LGBTQ+ community and push for acceptance."
+            }
+          },
+          "relation_id": "4d4ca29a403950f32945e758",
+          "build_id": "5c7699dd6543407697ae232633154036"
+        }
+      ],
+      "old_memory_effective": true,
+      "new_memory_effective": true,
+      "effective_memories": [
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline uses her art to speak up for the LGBTQ+ community and push for acceptance.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "3186e88adf0c1ddf0bcc2c98",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "2:24 pm on 14 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:8"
+          ],
+          "state_dimension": "activism",
+          "state_key": "conv-26:Caroline:activism",
+          "state_value": "LGBTQ+ acceptance through art",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline was inspired by the crowd celebrating love and acceptance, which pushed her to keep fighting for LGBTQ rights.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "bb82075e38d47b74022d2273",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "2:24 pm on 14 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:6"
+          ],
+          "state_dimension": "activism",
+          "state_key": "conv-26:Caroline:activism",
+          "state_value": "LGBTQ rights",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline's group has regular meetings and plans events and campaigns.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "30c3a1d5139ac388c9b03f87",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "8:56 pm on 20 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "state_dimension": "activist_group_activities",
+          "state_key": "conv-26:Caroline:activist_group_activities",
+          "state_value": "regular meetings, events and campaigns",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline wants to help make a difference for LGBTQ rights.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "b1e758b6119155026ff3f594",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "4:33 pm on 12 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+          ],
+          "state_dimension": "advocacy_intention",
+          "state_key": "conv-26:Caroline:advocacy_intention",
+          "state_value": "LGBTQ rights",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline joined a new LGBTQ activist group last Tuesday.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "5f80ff6f5c996eacb546e9d8",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "8:56 pm on 20 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:3"
+          ],
+          "state_dimension": "activist_group_membership",
+          "state_key": "conv-26:Caroline:activist_group_membership",
+          "state_value": "new LGBTQ activist group",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+            "basis": "Relative to session time 20 July 2023; exact date not specified.",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "last Tues",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline's group is named 'Connected LGBTQ Activists'.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "f7fc0bd9b8ee1314e8fe7958",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "8:56 pm on 20 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "state_dimension": "activist_group_name",
+          "state_key": "conv-26:Caroline:activist_group_name",
+          "state_value": "Connected LGBTQ Activists",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline encouraged students to get involved in the LGBTQ community at the school event.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "8ecd78f1bef0bb848ac29377",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "7:55 pm on 9 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:1"
+          ],
+          "state_dimension": "school_event",
+          "state_key": "conv-26:Caroline:school_event",
+          "state_value": "encouraged students to get involved in LGBTQ community",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+            "basis": "Source expression \"last week\" anchored to 2023-06-09; 2023-05-29 through 2023-06-04; calendar weeks run Monday through Sunday; exact day unknown",
+            "event_end": "2023-06-04",
+            "event_start": "2023-05-29",
+            "original_expression": "last week",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline shared her own journey, struggles, and development since coming out at the school event.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "7b597b714d21eed7176aba52",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "7:55 pm on 9 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+          ],
+          "state_dimension": "school_event",
+          "state_key": "conv-26:Caroline:school_event",
+          "state_value": "shared personal journey and struggles",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "content": "Caroline intends to keep using her voice to make a change and lift others up.",
+          "memory_type": "event",
+          "statement_type": "intention",
+          "polarity": "positive",
+          "entity_id": "Caroline",
+          "state_dimension": "advocacy_intention",
+          "state_value": "using her voice to make a change and lift others up",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:7"
+          ],
+          "time": {
+            "original_expression": null,
+            "anchor_source_id": null,
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": null
+          },
+          "memory_id": "07b934c8d1a2da3548b12f6f",
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "state_key": "conv-26:Caroline:advocacy_intention",
+          "session_times": [
+            "7:55 pm on 9 June, 2023"
+          ]
+        },
+        {
+          "content": "Caroline spoke about her transgender journey at a school event last week.",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Caroline",
+          "state_dimension": "school_event",
+          "state_value": "talked about transgender journey",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:1"
+          ],
+          "time": {
+            "original_expression": "last week",
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+            "event_start": "2023-05-29",
+            "event_end": "2023-06-04",
+            "valid_from": null,
+            "valid_to": null,
+            "basis": "Source expression \"last week\" anchored to 2023-06-09; 2023-05-29 through 2023-06-04; calendar weeks run Monday through Sunday; exact day unknown"
+          },
+          "memory_id": "ed2e9ba1185f14a945cd3b41",
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "state_key": "conv-26:Caroline:school_event",
+          "session_times": [
+            "7:55 pm on 9 June, 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "state-05",
+      "trace_id": "faf527012736459cb1ae89bbf2e617ae",
+      "answer_sha256": "583b483ddb11a6f747a98f0892773ba7baf9cc38599a212216d15ab1f76de417",
+      "question": "As of the end of the conversation, what is known about Caroline's family goal?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Caroline's family goal is to have a family and give kids a loving home, including adopting children who need one.",
+        "citations": [
+          {
+            "memory_id": "e7c44971fdbf4e9f538b50d7",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D19:1"
+            ]
+          },
+          {
+            "memory_id": "b2310b6e8b898aabf3e20bf0",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+            ]
+          },
+          {
+            "memory_id": "f83fe04044580d43777be113",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D19:5"
+            ]
+          },
+          {
+            "memory_id": "41c5f3ef3d7a340e6c24236e",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+            ]
+          },
+          {
+            "memory_id": "ae08cc5d266f63db7d7dae7c",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D19:3"
+            ]
+          },
+          {
+            "memory_id": "a532a5a4ed6a3cfa527a9765",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:9"
+            ]
+          }
+        ],
+        "explanation": "Caroline describes her goal as having a family and providing a safe, loving home to kids who need it, and she is determined to adopt. As of the conversation cutoff (22 October 2023), she had passed adoption agency interviews, but the goal remains an intention, not a completed outcome."
+      },
+      "source_relation_review": {
+        "case_id": "state-05",
+        "stored_label": "RETAIN",
+        "expected_label": "RETAIN",
+        "stored_relation_source_judgment": "supported",
+        "reason": "D2:10 and D19:3 repeat the goal of a loving home/family for children; the latter corroborates rather than completes the goal.",
+        "answer_boundary": "The goal is an intention; no completed adoption is established."
+      },
+      "query_review": {
+        "case_id": "state-05",
+        "query_verdict": "correct",
+        "reason": "组建家庭、给孩子温暖家庭被表达为目标，未声称收养完成。"
+      },
+      "actual_pair_relations": [
+        {
+          "old_memory_id": "b2310b6e8b898aabf3e20bf0",
+          "new_memory_id": "ae08cc5d266f63db7d7dae7c",
+          "label": "RETAIN",
+          "reason": "New statement restates the goal of giving kids a home, so the old family goal still applies.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:3"
+          ],
+          "support_quote": "I hope to build my own family and put a roof over kids who haven't had that before.",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          },
+          "update_evidence": null,
+          "relation_id": "69d48138af3475b51bcf9753",
+          "build_id": "5c7699dd6543407697ae232633154036"
+        }
+      ],
+      "old_memory_effective": true,
+      "new_memory_effective": true,
+      "effective_memories": [
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline has a goal of having a family.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "e7c44971fdbf4e9f538b50d7",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "9:55 am on 22 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:1"
+          ],
+          "state_dimension": "family_goal",
+          "state_key": "conv-26:Caroline:family_goal",
+          "state_value": "having a family",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline's goal is to give kids a loving home.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "b2310b6e8b898aabf3e20bf0",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:14 pm on 25 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+          ],
+          "state_dimension": "family_goal",
+          "state_key": "conv-26:Caroline:family_goal",
+          "state_value": "give kids a loving home",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline dreams of creating a safe and loving home for kids.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "f83fe04044580d43777be113",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "9:55 am on 22 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:5"
+          ],
+          "state_dimension": "family_goal",
+          "state_key": "conv-26:Caroline:family_goal",
+          "state_value": "creating a safe and loving home for kids",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline's dream is to have a family and give a loving home to kids who need it.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "41c5f3ef3d7a340e6c24236e",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:14 pm on 25 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+          ],
+          "state_dimension": "family_goal",
+          "state_key": "conv-26:Caroline:family_goal",
+          "state_value": "have a family and give a loving home to kids",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline hopes to build her own family and provide a home for kids who haven't had one.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "ae08cc5d266f63db7d7dae7c",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "9:55 am on 22 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:3"
+          ],
+          "state_dimension": "family_goal",
+          "state_key": "conv-26:Caroline:family_goal",
+          "state_value": "building a family and providing a home for kids",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "content": "Caroline is determined to adopt.",
+          "memory_type": "state",
+          "statement_type": "intention",
+          "polarity": "positive",
+          "entity_id": "Caroline",
+          "state_dimension": "adoption_intention",
+          "state_value": "adopt",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:9"
+          ],
+          "time": {
+            "original_expression": null,
+            "anchor_source_id": null,
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": null
+          },
+          "memory_id": "a532a5a4ed6a3cfa527a9765",
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "state_key": "conv-26:Caroline:adoption_intention",
+          "session_times": [
+            "1:51 pm on 15 July, 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "state-06",
+      "trace_id": "ba6f8ce60f344f77a3cff149890d9fd6",
+      "answer_sha256": "67fea7599ed7451be8643673b7ffa8315900ee67e78ce1022edea216e4bcbaf6",
+      "question": "As of the end of the conversation, what is known about Caroline's pottery experience?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Caroline has not done pottery; she might try it sometime.",
+        "citations": [
+          {
+            "memory_id": "009c21959766c5b534afcaf8",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D14:5"
+            ]
+          },
+          {
+            "memory_id": "64db540fdb11f1013ce0c6a8",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D16:11"
+            ]
+          },
+          {
+            "memory_id": "8e5fd562caf75df696399a41",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D16:11"
+            ]
+          }
+        ],
+        "explanation": "As of the conversation cutoff, Caroline had not tried pottery (25 August 2023) and had not done pottery yet (13 September 2023), though she said she might try it sometime. Trying pottery remains an uncertain future intention, not a completed activity."
+      },
+      "source_relation_review": {
+        "case_id": "state-06",
+        "stored_label": "RETAIN",
+        "expected_label": "RETAIN",
+        "stored_relation_source_judgment": "supported",
+        "reason": "D14:4 asks whether Caroline has tried pottery; D14:5 says no. D16:11 explicitly says she has not done it yet.",
+        "answer_boundary": "Has not tried pottery; willingness to try does not mean actual participation."
+      },
+      "query_review": {
+        "case_id": "state-06",
+        "query_verdict": "correct",
+        "reason": "保留尚未做过陶艺的否定事实，把未来可能尝试与实际经历分开。"
+      },
+      "actual_pair_relations": [
+        {
+          "old_memory_id": "009c21959766c5b534afcaf8",
+          "new_memory_id": "64db540fdb11f1013ce0c6a8",
+          "label": "RETAIN",
+          "reason": "Same state_key; the new statement directly reiterates that Caroline still has not done pottery, so the prior claim remains applicable.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:11"
+          ],
+          "support_quote": "I haven't done pottery yet",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          },
+          "update_evidence": null,
+          "relation_id": "789c0436a39455bb5211e7b9",
+          "build_id": "5c7699dd6543407697ae232633154036"
+        }
+      ],
+      "old_memory_effective": true,
+      "new_memory_effective": true,
+      "effective_memories": [
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline has not tried pottery.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "009c21959766c5b534afcaf8",
+          "memory_type": "state",
+          "polarity": "negative",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:33 pm on 25 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:5"
+          ],
+          "state_dimension": "pottery_experience",
+          "state_key": "conv-26:Caroline:pottery_experience",
+          "state_value": "pottery",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline might try pottery sometime.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "8e5fd562caf75df696399a41",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "12:09 am on 13 September, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:11"
+          ],
+          "state_dimension": "pottery_experience",
+          "state_key": "conv-26:Caroline:pottery_experience",
+          "state_value": "pottery",
+          "statement_type": "uncertain",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+            "basis": "Vague future time; no exact date.",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "sometime",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline has not done pottery.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "64db540fdb11f1013ce0c6a8",
+          "memory_type": "state",
+          "polarity": "negative",
+          "sample_id": "conv-26",
+          "session_times": [
+            "12:09 am on 13 September, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:11"
+          ],
+          "state_dimension": "pottery_experience",
+          "state_key": "conv-26:Caroline:pottery_experience",
+          "state_value": "pottery",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "state-07",
+      "trace_id": "e037fb7242bb450687cfa39aff23ccbc",
+      "answer_sha256": "0cbe1cc199a3d23249a3db3a060c39d7e80496589a27d2c604c77f138744dda8",
+      "question": "As of the end of the conversation, what is known about Caroline's career interest?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Caroline is interested in counseling and mental health as a career, with a particular interest in working with trans people to help them accept themselves and support their mental health.",
+        "citations": [
+          {
+            "memory_id": "b48a241d0644ef8309ef12cb",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+            ]
+          },
+          {
+            "memory_id": "11b8e5b1c4598d451378d4e1",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+            ]
+          },
+          {
+            "memory_id": "26a585ed015a3f82b3dfda6f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+            ]
+          },
+          {
+            "memory_id": "f78fb9042f436973ce7bd177",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:3"
+            ]
+          },
+          {
+            "memory_id": "edf0ad6dfb5ddf068bbe2225",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+            ]
+          },
+          {
+            "memory_id": "376676a70336006ce30b797e",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+            ]
+          }
+        ],
+        "explanation": "Caroline consistently describes counseling and mental health as her intended career path across May–July 2023, and in June 2023 specifies an interest in working with trans people. She also plans to continue her education and check out career options; these are plans, not completed facts."
+      },
+      "source_relation_review": {
+        "case_id": "state-07",
+        "stored_label": "RETAIN",
+        "expected_label": "RETAIN",
+        "stored_relation_source_judgment": "supported",
+        "reason": "D1:11 interest in counseling/mental health is reaffirmed in D4:11 career exploration.",
+        "answer_boundary": "Interested in counseling/mental health; not established employment or qualification."
+      },
+      "query_review": {
+        "case_id": "state-07",
+        "query_verdict": "correct",
+        "reason": "咨询和心理健康是职业兴趣，未推成实际职业或资格。"
+      },
+      "actual_pair_relations": [
+        {
+          "old_memory_id": "11b8e5b1c4598d451378d4e1",
+          "new_memory_id": "b48a241d0644ef8309ef12cb",
+          "label": "RETAIN",
+          "reason": "New statement says Caroline has lately been looking into counseling and mental health as a career, positively corroborating her ongoing interest in that field.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ],
+          "support_quote": "Lately, I've been looking into counseling and mental health as a career.",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+            "original_time_expression": "Lately",
+            "time_basis": "vague recent period"
+          },
+          "update_evidence": null,
+          "relation_id": "ebbea412daa0476e79af2038",
+          "build_id": "5c7699dd6543407697ae232633154036"
+        }
+      ],
+      "old_memory_effective": true,
+      "new_memory_effective": true,
+      "effective_memories": [
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline has been looking into counseling and mental health as a career.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "b48a241d0644ef8309ef12cb",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ],
+          "state_dimension": "career_interest",
+          "state_key": "conv-26:Caroline:career_interest",
+          "state_value": "counseling and mental health",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+            "basis": "vague recent period",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "Lately",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is keen on counseling or working in mental health.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "11b8e5b1c4598d451378d4e1",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:56 pm on 8 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+          ],
+          "state_dimension": "career_interest",
+          "state_key": "conv-26:Caroline:career_interest",
+          "state_value": "counseling or mental health",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline plans to check out career options.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "ab5f9130290ce528637215d1",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:56 pm on 8 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:9"
+          ],
+          "state_dimension": "career_exploration",
+          "state_key": "conv-26:Caroline:career_exploration",
+          "state_value": "checking career options",
+          "statement_type": "plan",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is thinking of working with trans people, helping them accept themselves and supporting their mental health.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "26a585ed015a3f82b3dfda6f",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+          ],
+          "state_dimension": "career_plan",
+          "state_key": "conv-26:Caroline:career_plan",
+          "state_value": "working with trans people",
+          "statement_type": "plan",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline still thinks counseling and mental health is the career path she wants to pursue.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "f78fb9042f436973ce7bd177",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:36 pm on 3 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:3"
+          ],
+          "state_dimension": "career_plan",
+          "state_key": "conv-26:Caroline:career_plan",
+          "state_value": "counseling and mental health",
+          "statement_type": "plan",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline would love to support those with similar issues.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "bdbd5262ede13d6d0cabd57a",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:56 pm on 8 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+          ],
+          "state_dimension": "career_motivation",
+          "state_key": "conv-26:Caroline:career_motivation",
+          "state_value": "supporting people with similar issues",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline wants to help people who have gone through the same things as her.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "4432640ac0d206c4b5e73dc9",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ],
+          "state_dimension": "career_goal",
+          "state_key": "conv-26:Caroline:career_goal",
+          "state_value": "helping people with similar experiences",
+          "statement_type": "intention",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is passionate about creating a safe, inviting place for people to grow.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "66184f4ba6e3b9edea9b210f",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:15"
+          ],
+          "state_dimension": "career_goal",
+          "state_key": "conv-26:Caroline:career_goal",
+          "state_value": "creating a safe space for people to grow",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline has been looking into counseling or mental health work.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "edf0ad6dfb5ddf068bbe2225",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "8:18 pm on 6 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+          ],
+          "state_dimension": "career_exploration",
+          "state_key": "conv-26:Caroline:career_exploration",
+          "state_value": "counseling or mental health work",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+            "basis": "Explicit relative time expression; no exact date given.",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "Since our last chat",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline started looking into counseling and mental health career options.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "376676a70336006ce30b797e",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "4:33 pm on 12 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+          ],
+          "state_dimension": "career_exploration",
+          "state_key": "conv-26:Caroline:career_exploration",
+          "state_value": "counseling and mental health",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "content": "Caroline went to an LGBTQ+ counseling workshop last Friday.",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Caroline",
+          "state_dimension": "workshop_attendance",
+          "state_value": "LGBTQ+ counseling workshop",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+          ],
+          "time": {
+            "original_expression": "Last Friday",
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+            "event_start": "2023-06-23",
+            "event_end": "2023-06-23",
+            "valid_from": null,
+            "valid_to": null,
+            "basis": "Source expression \"Last Friday\" anchored to 2023-06-27; 2023-06-23"
+          },
+          "memory_id": "d744e00a235c5eccfcb43f73",
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "state_key": "conv-26:Caroline:workshop_attendance",
+          "session_times": [
+            "10:37 am on 27 June, 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "state-08",
+      "trace_id": "3706c933a5c941e5a513b94c633d0557",
+      "answer_sha256": "009669a62965671dbf63750b283a6e2f2a7f3b91ad6c65e378ddb877304791a8",
+      "question": "As of the end of the conversation, what is known about Melanie's artwork creation?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Melanie creates paintings and pottery. Her paintings include landscapes, still life, a horse painting, nature-inspired paintings (some made with her partner and kids), a sunset-inspired painting, and an abstract painting. In pottery she has made a plate and a colorful patterned bowl. She is planning a few autumn-inspired paintings.",
+        "citations": [
+          {
+            "memory_id": "1bd0dc950a72d4aa40ec6e95",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D14:30"
+            ]
+          },
+          {
+            "memory_id": "b9a9011de84e4bbd7d52ae3d",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:8"
+            ]
+          },
+          {
+            "memory_id": "488e21b483101e953887a94d",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D14:32"
+            ]
+          },
+          {
+            "memory_id": "21301a30408df7ba29407309",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:8"
+            ]
+          },
+          {
+            "memory_id": "48981a97b7c240dc2a1377d9",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D14:4"
+            ]
+          },
+          {
+            "memory_id": "2e841c2209c95b07aa165bee",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D16:8"
+            ]
+          },
+          {
+            "memory_id": "c2602308eef544a039793ccc",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:14"
+            ]
+          },
+          {
+            "memory_id": "69f7c7492f136b47e0a65062",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D9:17"
+            ]
+          },
+          {
+            "memory_id": "2a9af5c235f4e8803eabb192",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+            ]
+          },
+          {
+            "memory_id": "0c1f196cbd4e38b9eda0e816",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D17:12"
+            ]
+          }
+        ],
+        "explanation": "Covers artwork creation through the conversation cutoff (22 October 2023). Autumn-inspired paintings are a stated plan, not completed work. Melanie also had to take a break from pottery last month due to injury (source D17:8)."
+      },
+      "source_relation_review": {
+        "case_id": "state-08",
+        "stored_label": "undetermined",
+        "expected_label": "undetermined",
+        "stored_relation_source_judgment": "supported",
+        "reason": "D8:6 and D8:8 jointly made painting; D14:4 pottery plate. These are distinct completed artwork events that can coexist.",
+        "answer_boundary": "Painting and pottery can coexist; a later artwork does not supersede the earlier painting."
+      },
+      "query_review": {
+        "case_id": "state-08",
+        "query_verdict": "correct",
+        "reason": "绘画与陶艺并存，秋季画作明确为计划。彩色花纹碗需要D12:4–6相邻语境支持，D12:5对方明确称碗，D12:6作者确认创作意图。"
+      },
+      "actual_pair_relations": [
+        {
+          "old_memory_id": "21301a30408df7ba29407309",
+          "new_memory_id": "48981a97b7c240dc2a1377d9",
+          "label": "undetermined",
+          "reason": "The old nature-inspired painting with her partner and the new pottery plate are separate artworks; there is no evidence of replacement, conflict, or a same-process stage transition.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:4"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          },
+          "update_evidence": null,
+          "relation_id": "a0b4e3414d2ccd17babc9a91",
+          "build_id": "5c7699dd6543407697ae232633154036"
+        }
+      ],
+      "old_memory_effective": true,
+      "new_memory_effective": true,
+      "effective_memories": [
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie did a painting recently.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "1bd0dc950a72d4aa40ec6e95",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:33 pm on 25 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:30"
+          ],
+          "state_dimension": "artwork_creation",
+          "state_key": "conv-26:Melanie:artwork_creation",
+          "state_value": "painting",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+            "basis": "vague relative time expression in source text",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "recently",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie painted a horse painting recently.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "b9a9011de84e4bbd7d52ae3d",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "3:31 pm on 23 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:8"
+          ],
+          "state_dimension": "artwork_creation",
+          "state_key": "conv-26:Melanie:artwork_creation",
+          "state_value": "horse painting",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+            "basis": "vague relative time; no exact date given",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "recently",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie is planning a few paintings inspired by autumn.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "488e21b483101e953887a94d",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:33 pm on 25 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:32"
+          ],
+          "state_dimension": "artwork_creation",
+          "state_key": "conv-26:Melanie:artwork_creation",
+          "state_value": "autumn-inspired paintings",
+          "statement_type": "plan",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie and her partner created a painting last weekend.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "21301a30408df7ba29407309",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:51 pm on 15 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:8"
+          ],
+          "state_dimension": "artwork_creation",
+          "state_key": "conv-26:Melanie:artwork_creation",
+          "state_value": "nature-inspired painting",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+            "basis": "Relative time expression anchored to the session date of 15 July 2023; exact dates not specified.",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "last weekend",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie made a plate in pottery class yesterday.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "48981a97b7c240dc2a1377d9",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:33 pm on 25 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:4"
+          ],
+          "state_dimension": "artwork_creation",
+          "state_key": "conv-26:Melanie:artwork_creation",
+          "state_value": "plate",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+            "basis": "Source expression \"yesterday\" anchored to 2023-08-25; 2023-08-24",
+            "event_end": "2023-08-24",
+            "event_start": "2023-08-24",
+            "original_expression": "yesterday",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie's real muses are painting and pottery.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "2e841c2209c95b07aa165bee",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "12:09 am on 13 September, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:8"
+          ],
+          "state_dimension": "art_forms",
+          "state_key": "conv-26:Melanie:art_forms",
+          "state_value": "painting and pottery",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Painting helps Melanie express her feelings and be creative.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "647cf6e54e16b3eca44839be",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:50 pm on 17 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "state_dimension": "art_role",
+          "state_key": "conv-26:Melanie:art_role",
+          "state_value": "self-expression and creativity",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie has been into art for seven years.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "e20178f9a103e8fc8f8965bb",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "12:09 am on 13 September, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:8"
+          ],
+          "state_dimension": "art_interest",
+          "state_key": "conv-26:Melanie:art_interest",
+          "state_value": "art",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+            "basis": "Duration stated relative to session time; no exact start date given.",
+            "event_end": null,
+            "event_start": null,
+            "original_expression": "Seven years now",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie painted an abstract painting.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "c2602308eef544a039793ccc",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:31 am on 13 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:14"
+          ],
+          "state_dimension": "painting_creation",
+          "state_key": "conv-26:Melanie:painting_creation",
+          "state_value": "abstract painting",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie and her kids just finished another painting like their last one.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "69f7c7492f136b47e0a65062",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "2:31 pm on 17 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:17"
+          ],
+          "state_dimension": "artwork",
+          "state_key": "conv-26:Melanie:artwork",
+          "state_value": "painting like their last one",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie made a bowl with colors and patterns to catch the eye and make people smile.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "2a9af5c235f4e8803eabb192",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:50 pm on 17 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "state_dimension": "artwork",
+          "state_key": "conv-26:Melanie:artwork",
+          "state_value": "colorful patterned bowl",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie painted a sunset-inspired painting last week.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "0c1f196cbd4e38b9eda0e816",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "10:31 am on 13 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:12"
+          ],
+          "state_dimension": "painting_creation",
+          "state_key": "conv-26:Melanie:painting_creation",
+          "state_value": "sunset-inspired painting",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+            "basis": "Source expression \"last week\" anchored to 2023-10-13; 2023-10-02 through 2023-10-08; calendar weeks run Monday through Sunday; exact day unknown",
+            "event_end": "2023-10-08",
+            "event_start": "2023-10-02",
+            "original_expression": "last week",
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "content": "Melanie had to take a break from pottery.",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "entity_id": "Melanie",
+          "state_dimension": "pottery_participation",
+          "state_value": "break",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+          ],
+          "time": {
+            "original_expression": "Last month",
+            "anchor_source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+            "event_start": null,
+            "event_end": null,
+            "valid_from": null,
+            "valid_to": null,
+            "basis": "relative to session time 13 October 2023"
+          },
+          "memory_id": "bc0c987112d83fee8236bbb4",
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "sample_id": "conv-26",
+          "state_key": "conv-26:Melanie:pottery_participation",
+          "session_times": [
+            "10:31 am on 13 October, 2023"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "state-09",
+      "trace_id": "6ceedd7684234eefa72d03314c624a7b",
+      "answer_sha256": "fb079f1fd13a51385a8828ca0c8de5816e6899992a32971d1dd90d2e5c09fb89",
+      "question": "As of the end of the conversation, what is known about Caroline's emotion?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Caroline has felt hopeful and optimistic about the adoption process, thrilled about making a family, powerful giving her talk, happy and thankful for support, proud of her progress, liberated and empowered while painting her self-portrait, and proud and grateful at the pride parade.",
+        "citations": [
+          {
+            "memory_id": "d1477f1f2bc304046b925332",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+            ]
+          },
+          {
+            "memory_id": "39fef729521ce20034e8a88b",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:14"
+            ]
+          },
+          {
+            "memory_id": "29ebb20a46e21a5304e5b0aa",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+            ]
+          },
+          {
+            "memory_id": "0b59da4babd38428fd2d8cc0",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:5"
+            ]
+          },
+          {
+            "memory_id": "d5a7d408c915bdcefc88342c",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:27"
+            ]
+          },
+          {
+            "memory_id": "306bc0621219cb9e4877ba58",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D13:13"
+            ]
+          },
+          {
+            "memory_id": "3cc4b37c1f0c61b8e6845155",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:21"
+            ]
+          }
+        ],
+        "explanation": "All cited emotions are from Caroline's own statements across sessions dated May–August 2023, within the conversation cutoff."
+      },
+      "source_relation_review": {
+        "case_id": "state-09",
+        "stored_label": "undetermined",
+        "expected_label": "undetermined",
+        "stored_relation_source_judgment": "supported",
+        "reason": "Hopefulness about adoption in D2:10 and empowerment about a talk in D3:3 have different contexts. They do not contradict or replace each other.",
+        "answer_boundary": "Emotions require their contexts; do not assert a single permanent emotion."
+      },
+      "query_review": {
+        "case_id": "state-09",
+        "query_verdict": "correct",
+        "reason": "按收养、演讲、绘画与游行等语境表达曾经的情绪，没有推成唯一永久状态。"
+      },
+      "actual_pair_relations": [
+        {
+          "old_memory_id": "d1477f1f2bc304046b925332",
+          "new_memory_id": "29ebb20a46e21a5304e5b0aa",
+          "label": "undetermined",
+          "reason": "Old emotion concerns hopefulness about adoption; new emotion concerns feeling powerful giving a talk. Different emotional contexts do not establish replacement, conflict, or retention.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          },
+          "update_evidence": null,
+          "relation_id": "78c763d949e615da0c640b47",
+          "build_id": "5c7699dd6543407697ae232633154036"
+        }
+      ],
+      "old_memory_effective": true,
+      "new_memory_effective": true,
+      "effective_memories": [
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline feels hopeful and optimistic about the adoption process.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "d1477f1f2bc304046b925332",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:14 pm on 25 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+          ],
+          "state_dimension": "emotion",
+          "state_key": "conv-26:Caroline:emotion",
+          "state_value": "hopeful and optimistic",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is thrilled to make a family for kids who need one.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "39fef729521ce20034e8a88b",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:14 pm on 25 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:14"
+          ],
+          "state_dimension": "emotion",
+          "state_key": "conv-26:Caroline:emotion",
+          "state_value": "thrilled about making a family",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline felt super powerful giving her talk.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "29ebb20a46e21a5304e5b0aa",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "7:55 pm on 9 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+          ],
+          "state_dimension": "emotion",
+          "state_key": "conv-26:Caroline:emotion",
+          "state_value": "felt powerful giving talk",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline felt happy and thankful for all the support.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "0b59da4babd38428fd2d8cc0",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:56 pm on 8 May, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:5"
+          ],
+          "state_dimension": "emotional_state",
+          "state_key": "conv-26:Caroline:emotional_state",
+          "state_value": "happy and thankful",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline is proud of how far she has come.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "d5a7d408c915bdcefc88342c",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:51 pm on 15 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:27"
+          ],
+          "state_dimension": "self_pride",
+          "state_key": "conv-26:Caroline:self_pride",
+          "state_value": "proud of progress",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline felt liberated and empowered while painting the self-portrait.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "306bc0621219cb9e4877ba58",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "3:31 pm on 23 August, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:13"
+          ],
+          "state_dimension": "emotional_experience",
+          "state_key": "conv-26:Caroline:emotional_experience",
+          "state_value": "liberated and empowered",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Caroline felt proud and grateful at the pride parade, comforted knowing she is not alone and has a great community around her.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Caroline",
+          "memory_id": "3cc4b37c1f0c61b8e6845155",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:51 pm on 15 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:21"
+          ],
+          "state_dimension": "emotional_experience",
+          "state_key": "conv-26:Caroline:emotional_experience",
+          "state_value": "proud and grateful",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "state-10",
+      "trace_id": "896070efa31b4895b7bf13eec04c7273",
+      "answer_sha256": "9e6b3309b865aecdfa8f181e37cb2a9719fc0ad15267fa9d747230e004de283a",
+      "question": "As of the end of the conversation, what is known about Melanie's family support?",
+      "answer": {
+        "status": "sufficient",
+        "answer": "Melanie's family is her biggest motivation and support; they helped her during her move, showed love and support, and helped her through tough times.",
+        "citations": [
+          {
+            "memory_id": "79f75600ed1f56df772340ff",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+              "f69a07a79a2d5f4c8188300a/conv-26/D18:13"
+            ]
+          },
+          {
+            "memory_id": "d7faff2728442e1eb59977e4",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:30"
+            ]
+          },
+          {
+            "memory_id": "6a6cb75d0b4246d49576915f",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+            ]
+          },
+          {
+            "memory_id": "4bb2a18f1fe2a792762450ba",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:10"
+            ]
+          }
+        ],
+        "explanation": "All delivered memories describe positive family support: motivation, help during the move, love and support through tough times, and being her biggest support as of the October 2023 conversation."
+      },
+      "source_relation_review": {
+        "case_id": "state-10",
+        "stored_label": "undetermined",
+        "expected_label": "RETAIN",
+        "stored_relation_source_judgment": "not_supported",
+        "reason": "D8:29 asks family support during the move; D8:30 answers with help and love. D8:31-32 immediately reaffirm that family support helped through tough times, supplying positive corroboration. Stored undetermined misses this contextual RETAIN.",
+        "answer_boundary": "Family support is positively corroborated, not replaced; preserve the move-specific historical context."
+      },
+      "query_review": {
+        "case_id": "state-10",
+        "query_verdict": "correct",
+        "reason": "家庭支持及搬家时帮助有上下文佐证；查询正确与存储undetermined遗漏RETAIN可同时成立。"
+      },
+      "actual_pair_relations": [
+        {
+          "old_memory_id": "d7faff2728442e1eb59977e4",
+          "new_memory_id": "6a6cb75d0b4246d49576915f",
+          "label": "undetermined",
+          "reason": "Same family_support key, but the new broad statement about love/support through tough times does not confirm the old move-specific event or establish a real stage transition.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          },
+          "update_evidence": null,
+          "relation_id": "8e75b49b69f74d39148e11d9",
+          "build_id": "5c7699dd6543407697ae232633154036"
+        }
+      ],
+      "old_memory_effective": true,
+      "new_memory_effective": true,
+      "effective_memories": [
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie's family is her biggest motivation and support.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "79f75600ed1f56df772340ff",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "6:55 pm on 20 October, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:13"
+          ],
+          "state_dimension": "family_support",
+          "state_key": "conv-26:Melanie:family_support",
+          "state_value": "biggest motivation and support",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie's family helped out and showed love and support during her move.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "d7faff2728442e1eb59977e4",
+          "memory_type": "event",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:51 pm on 15 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:30"
+          ],
+          "state_dimension": "family_support",
+          "state_key": "conv-26:Melanie:family_support",
+          "state_value": "helped during move",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie's family's love and support helped her through tough times.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "6a6cb75d0b4246d49576915f",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "1:51 pm on 15 July, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+          ],
+          "state_dimension": "family_support",
+          "state_key": "conv-26:Melanie:family_support",
+          "state_value": "helped through tough times",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "5c7699dd6543407697ae232633154036",
+          "content": "Melanie's family motivates her and gives her love.",
+          "dataset_id": "f69a07a79a2d5f4c8188300a",
+          "entity_id": "Melanie",
+          "memory_id": "4bb2a18f1fe2a792762450ba",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-26",
+          "session_times": [
+            "7:55 pm on 9 June, 2023"
+          ],
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:10"
+          ],
+          "state_dimension": "motivation_source",
+          "state_key": "conv-26:Melanie:motivation_source",
+          "state_value": "family",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        }
+      ]
+    }
+  ]
+}

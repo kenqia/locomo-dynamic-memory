@@ -24,7 +24,7 @@ def register_build_routes(app: FastAPI, service: BuildService):
 
     @app.post("/builds", response_model=BuildVersion, status_code=202)
     def start_build(request: BuildRequest, tasks: BackgroundTasks):
-        build = service.start(request.dataset_id, request.sample_id)
+        build = service.start(request.dataset_id, request.sample_id, request.creation_token)
         tasks.add_task(service.run, build["build_id"])
         return build
 

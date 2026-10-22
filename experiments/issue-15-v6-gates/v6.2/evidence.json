@@ -1,0 +1,1493 @@
+{
+  "started_at": "2026-10-20T10:11:16.983645+00:00",
+  "implementation_sha256": "c3207ffd535a6337705377dd413ed35b9f7196bec5a050c493a55b3d52cc6a13",
+  "source_sha256": "12410a8a857e91a9e23b97280b4cbcb647278daef83200cb9907c748cd238e2d",
+  "max_tokens": 8192,
+  "model_retries": 0,
+  "status": "passed",
+  "attempts": [
+    {
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:148",
+      "payload_sha256": "4e91c39d290b2c7ecdf6dee844e5794cbc3fda1ac34bff150d57f8477a68f000",
+      "candidate_count": 20,
+      "status": "succeeded",
+      "covered_candidate_count": 20,
+      "judgments": [
+        {
+          "old_memory_id": "686d6b42589fa76a7d768fca",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (life lesson vs activist group membership); no evidence the new fact updates or conflicts with the old lesson.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "4e45f78e72dfbb587c002bbc",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (belief about pets vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "05300631bea57d15f8d19e33",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (adoption council meeting vs activist group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "c1d17d188491340b6ea4016a",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (adoption intention vs activist group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "c42feb64bea881ca3fd147de",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (color preference vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "30dea0d02066415795e4e04c",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (pride parade attendance vs activist group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:17",
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:19",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "176104d4ffd9286dcfb0b7f2",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (emotional state vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:21",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "6342116bb9c4027264de3dff",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (gender transition vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "6edcb11633c9ad8b6230cb7b",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (self-acceptance vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:26",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a357631c96a4b2e0c6546097",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (self-pride vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:27",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "792b3a6ea07e1cc0f6da9f2b",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (mentorship program vs activist group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:2",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "6fbe3f56c439c0d0ff750887",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (mentoring vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "810bba509064a824962cff4c",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (pride event attendance vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "5a9450e73bb81e6d1b68be57",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (pride event attendance vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "03077468c729669ff7cb3cf4",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (pride event experience vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "f3c8f9950c10091ff919b043",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (mentorship vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "03ac8ae7cc9b795267494740",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (art show plan vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "3894eb5aecbcc1647f2f4f5d",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (painting creation vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:14",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "1dd8915638d3bc4ff814518c",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "undetermined",
+          "reason": "Different dimensions (painting inspiration vs group membership); no supported relation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "feafe311934ed4d80915e79a",
+          "new_memory_id": "20674ca1f268fb05625dedfa",
+          "label": "RETAIN",
+          "reason": "Same state_key; the new memory names the group Caroline joined, positively corroborating the prior membership claim.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ],
+          "support_quote": "Our group, 'Connected LGBTQ Activists', is made of all kinds of people investing in positive changes.",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        }
+      ],
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T10:11:17.002811+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 10413,
+              "completion_tokens": 2399,
+              "total_tokens": 12812
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:148",
+            "elapsed_seconds": 6.5168710889993235,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T10:11:23.519684+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 11236,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      },
+      "label_counts": {
+        "undetermined": 19,
+        "RETAIN": 1
+      },
+      "quote_audit": [
+        {
+          "output_index": 0,
+          "old_memory_id": "686d6b42589fa76a7d768fca",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 1,
+          "old_memory_id": "4e45f78e72dfbb587c002bbc",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 2,
+          "old_memory_id": "05300631bea57d15f8d19e33",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 3,
+          "old_memory_id": "c1d17d188491340b6ea4016a",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 4,
+          "old_memory_id": "c42feb64bea881ca3fd147de",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 5,
+          "old_memory_id": "30dea0d02066415795e4e04c",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 6,
+          "old_memory_id": "176104d4ffd9286dcfb0b7f2",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 7,
+          "old_memory_id": "6342116bb9c4027264de3dff",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 8,
+          "old_memory_id": "6edcb11633c9ad8b6230cb7b",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 9,
+          "old_memory_id": "a357631c96a4b2e0c6546097",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 10,
+          "old_memory_id": "792b3a6ea07e1cc0f6da9f2b",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 11,
+          "old_memory_id": "6fbe3f56c439c0d0ff750887",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 12,
+          "old_memory_id": "810bba509064a824962cff4c",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 13,
+          "old_memory_id": "5a9450e73bb81e6d1b68be57",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 14,
+          "old_memory_id": "03077468c729669ff7cb3cf4",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 15,
+          "old_memory_id": "f3c8f9950c10091ff919b043",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 16,
+          "old_memory_id": "03ac8ae7cc9b795267494740",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 17,
+          "old_memory_id": "3894eb5aecbcc1647f2f4f5d",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 18,
+          "old_memory_id": "1dd8915638d3bc4ff814518c",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 19,
+          "old_memory_id": "feafe311934ed4d80915e79a",
+          "label": "RETAIN",
+          "quote_present": true,
+          "quote_length": 101,
+          "exact_in_cited_source": true,
+          "casefold_match": true,
+          "whitespace_normalized_match": true,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        }
+      ]
+    },
+    {
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+      "payload_sha256": "ffda46baff46f54e7f32dd43f7c9389460bb163a265ec119d958b3a8090658e1",
+      "candidate_count": 20,
+      "status": "succeeded",
+      "covered_candidate_count": 20,
+      "judgments": [
+        {
+          "old_memory_id": "c1f4a516fa6b21bc3a28c220",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (marital_status vs pottery_project); new memory about pottery does not address marital status.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:16",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "6b664bf5b3931f434fa840d1",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (wedding_event vs pottery_project); no relation between wedding and pottery bowl.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:14",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "3fba0065740e03450ef53208",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (wedding_favorite_part vs pottery_project); unrelated dimensions.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:16",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "8514dfa4eb160f1e0f853e0e",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (sources_of_peace vs pottery_project); no evidence of stage transition.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:28",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "9b9a3bb4915afa1ff2df14ce",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (family_support vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:29",
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "9a3b3260e5c9c88fdf9eea58",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (family_support vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "aff1cf8b21974105565d7fc0",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (camping_trip vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "a7701e32828ba3e2f322cdee",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (family_activities vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "d3d5ae3b3f3f8410718157cb",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (weekend_activity vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "b76696c30018cca918a160a9",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (camping_trip vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "78487f43d6d0b7abe674da2d",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (painting_creation vs pottery_project); painting and pottery are distinct projects.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "2423c12f3e1d85f25e2771c9",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (beach_visit vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "4824549aa68e05c557ab2e21",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (beach_visit_frequency vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:10",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "2edeb92f8b561ec2c6a20e73",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (family_tradition vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "04f98a3f06a00047b0530a8c",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (camping_activities vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "e31e922556be76e195c31d29",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (camping_trip vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "fe7b8207755984cd96b0036f",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (child_milestone vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:20",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "49e43e04899bc8e967037bd8",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (birthday_celebration vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "3402011625a483f97bc40d3e",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "undetermined",
+          "reason": "Different state keys (concert_attended vs pottery_project); unrelated.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": null,
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        },
+        {
+          "old_memory_id": "32a5b80fcfba6f409b45b842",
+          "new_memory_id": "fdd1ba084c0100474dbf66b3",
+          "label": "UPDATE",
+          "reason": "Same state_key pottery_project. Old stage: Melanie finished another pottery project. New stage: she describes making the bowl with colors and patterns, i.e., producing the work in that same pottery project.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ],
+          "support_quote": "I finished another pottery project - want to see a pic?",
+          "applicability": {
+            "from_date": null,
+            "to_date": null,
+            "condition": null,
+            "condition_satisfied": null,
+            "condition_source_ids": [],
+            "time_anchor_source_id": null,
+            "original_time_expression": null,
+            "time_basis": null
+          }
+        }
+      ],
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T10:11:23.549439+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 10601,
+              "completion_tokens": 2567,
+              "total_tokens": 13168
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:172",
+            "elapsed_seconds": 6.686660676001338,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T10:11:30.236100+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 11435,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      },
+      "label_counts": {
+        "undetermined": 19,
+        "UPDATE": 1
+      },
+      "quote_audit": [
+        {
+          "output_index": 0,
+          "old_memory_id": "c1f4a516fa6b21bc3a28c220",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 1,
+          "old_memory_id": "6b664bf5b3931f434fa840d1",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 2,
+          "old_memory_id": "3fba0065740e03450ef53208",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 3,
+          "old_memory_id": "8514dfa4eb160f1e0f853e0e",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 4,
+          "old_memory_id": "9b9a3bb4915afa1ff2df14ce",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 5,
+          "old_memory_id": "9a3b3260e5c9c88fdf9eea58",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 6,
+          "old_memory_id": "aff1cf8b21974105565d7fc0",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 7,
+          "old_memory_id": "a7701e32828ba3e2f322cdee",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 8,
+          "old_memory_id": "d3d5ae3b3f3f8410718157cb",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 9,
+          "old_memory_id": "b76696c30018cca918a160a9",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 10,
+          "old_memory_id": "78487f43d6d0b7abe674da2d",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 11,
+          "old_memory_id": "2423c12f3e1d85f25e2771c9",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 12,
+          "old_memory_id": "4824549aa68e05c557ab2e21",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 13,
+          "old_memory_id": "2edeb92f8b561ec2c6a20e73",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 14,
+          "old_memory_id": "04f98a3f06a00047b0530a8c",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 15,
+          "old_memory_id": "e31e922556be76e195c31d29",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 16,
+          "old_memory_id": "fe7b8207755984cd96b0036f",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 17,
+          "old_memory_id": "49e43e04899bc8e967037bd8",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 18,
+          "old_memory_id": "3402011625a483f97bc40d3e",
+          "label": "undetermined",
+          "quote_present": false,
+          "quote_length": null,
+          "exact_in_cited_source": false,
+          "casefold_match": false,
+          "whitespace_normalized_match": false,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        },
+        {
+          "output_index": 19,
+          "old_memory_id": "32a5b80fcfba6f409b45b842",
+          "label": "UPDATE",
+          "quote_present": true,
+          "quote_length": 55,
+          "exact_in_cited_source": true,
+          "casefold_match": true,
+          "whitespace_normalized_match": true,
+          "contains_ellipsis": false,
+          "all_source_ids_known": true
+        }
+      ]
+    }
+  ],
+  "determined_quotes_exercised": 2,
+  "finished_at": "2026-10-20T10:11:30.255536+00:00",
+  "budget": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 21,
+    "reserved_total_calls": 334,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2
+    },
+    "operations": {
+      "relate": 21
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 20
+    },
+    "usage": {
+      "generation_calls": 21,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 199648,
+        "completion_tokens": 55689,
+        "total_tokens": 255337
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 199648,
+          "calls_with_reported_usage": 20,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 55689,
+          "calls_with_reported_usage": 20,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 255337,
+          "calls_with_reported_usage": 20,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 161.52932241000235
+    }
+  }
+}

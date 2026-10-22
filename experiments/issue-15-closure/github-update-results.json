@@ -1,0 +1,79 @@
+[
+  {
+    "issue": 16,
+    "comment_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/16#issuecomment-6317369373",
+    "verified": {
+      "html_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/16",
+      "labels": [],
+      "number": 16,
+      "state": "closed",
+      "state_reason": "completed"
+    }
+  },
+  {
+    "issue": 17,
+    "comment_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/17#issuecomment-6317373667",
+    "verified": {
+      "html_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/17",
+      "labels": [],
+      "number": 17,
+      "state": "closed",
+      "state_reason": "completed"
+    }
+  },
+  {
+    "issue": 18,
+    "comment_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/18#issuecomment-6317378725",
+    "verified": {
+      "html_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/18",
+      "labels": [],
+      "number": 18,
+      "state": "closed",
+      "state_reason": "completed"
+    }
+  },
+  {
+    "issue": 19,
+    "comment_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/19#issuecomment-6317383240",
+    "verified": {
+      "html_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/19",
+      "labels": [],
+      "number": 19,
+      "state": "closed",
+      "state_reason": "completed"
+    }
+  },
+  {
+    "issue": 20,
+    "comment_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/20#issuecomment-6317399092",
+    "verified": {
+      "html_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/20",
+      "labels": [],
+      "number": 20,
+      "state": "open",
+      "state_reason": null
+    }
+  },
+  {
+    "issue": 21,
+    "comment_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/21#issuecomment-6317402473",
+    "verified": {
+      "html_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/21",
+      "labels": [],
+      "number": 21,
+      "state": "closed",
+      "state_reason": "not_planned"
+    }
+  },
+  {
+    "issue": 15,
+    "comment_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/15#issuecomment-6317407393",
+    "verified": {
+      "html_url": "https://github.com/kenqia/locomo-dynamic-memory/issues/15",
+      "labels": [],
+      "number": 15,
+      "state": "closed",
+      "state_reason": "not_planned"
+    }
+  }
+]

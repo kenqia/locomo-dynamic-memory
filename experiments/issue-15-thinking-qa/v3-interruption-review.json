@@ -1,0 +1,107 @@
+{
+  "reviewed_at": "2026-10-20T15:40:12.603007+00:00",
+  "build_id": "5c7699dd6543407697ae232633154036",
+  "sequence": 184,
+  "reason": "Execution process absent; campaign and backend exclusive ownership acquired; provider result unavailable. Reservation remains counted; only unfinished fragments will be retried.",
+  "original_call_metadata": {
+    "attempt": 1,
+    "timestamp": "2026-10-20T15:10:16.925340+00:00",
+    "status": "started",
+    "response_received": false,
+    "requested_model": "deepseek-flash",
+    "returned_model": null,
+    "usage": {},
+    "failure_stage": null,
+    "error_code": null,
+    "field_path": null,
+    "finish_reason": null,
+    "finish_reason_status": "not_observed",
+    "http_status": null,
+    "http_error_category": null,
+    "http_retryable": null,
+    "thinking": {
+      "type": "disabled"
+    },
+    "reasoning_effort": null,
+    "max_tokens": 8192
+  },
+  "previous_outcome": {
+    "started_at": "2026-10-20T15:08:49.086620+00:00",
+    "status": "running",
+    "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3",
+    "dataset_id": "f69a07a79a2d5f4c8188300a",
+    "build_id": "5c7699dd6543407697ae232633154036"
+  },
+  "recovered_progress": {
+    "total": 21,
+    "succeeded": 17,
+    "failed": 1,
+    "pending": 3
+  },
+  "budget_before": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 184,
+    "reserved_total_calls": 497,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2,
+      "quality-C-stages": 3,
+      "quality-D-raw": 7,
+      "quality-E-evidence": 10,
+      "thinking-conv26-build-qa": 133
+    },
+    "operations": {
+      "relate": 91,
+      "extract": 76,
+      "resolve_raw": 12,
+      "answer_raw": 5
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 156,
+      "invalid_output": 26,
+      "unknown": 1
+    },
+    "usage": {
+      "generation_calls": 184,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 2,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 1123604,
+        "completion_tokens": 451655,
+        "total_tokens": 1575259
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 1123604,
+          "calls_with_reported_usage": 182,
+          "calls_missing_usage": 2,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 451655,
+          "calls_with_reported_usage": 182,
+          "calls_missing_usage": 2,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 1575259,
+          "calls_with_reported_usage": 182,
+          "calls_missing_usage": 2,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 17,
+      "reported_provider_seconds": 1599.6978078609882
+    }
+  }
+}

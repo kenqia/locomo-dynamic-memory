@@ -1,0 +1,3487 @@
+{
+  "status": "completed",
+  "summaries": {
+    "A": {
+      "dynamic": {
+        "successful": 5,
+        "planned": 5,
+        "answerable_questions": 4,
+        "answerable_f1": 0.27100919913419913,
+        "official_refusal_matches": 1,
+        "refusal_questions": 1,
+        "all_qa_mean": 0.4168073593073593,
+        "generation_calls": 15,
+        "usage": {
+          "generation_calls": 15,
+          "unknown_attempts": 0,
+          "calls_without_reported_usage": 0,
+          "calls_with_partial_usage": 0,
+          "reported_tokens": {
+            "prompt_tokens": 348646,
+            "completion_tokens": 28015,
+            "total_tokens": 376661
+          },
+          "usage_fields": {
+            "prompt_tokens": {
+              "reported": 348646,
+              "calls_with_reported_usage": 15,
+              "calls_missing_usage": 0,
+              "complete": true
+            },
+            "completion_tokens": {
+              "reported": 28015,
+              "calls_with_reported_usage": 15,
+              "calls_missing_usage": 0,
+              "complete": true
+            },
+            "total_tokens": {
+              "reported": 376661,
+              "calls_with_reported_usage": 15,
+              "calls_missing_usage": 0,
+              "complete": true
+            }
+          },
+          "provider_usage_complete": true,
+          "provider_retries": 0,
+          "reported_provider_seconds": 137.2893594890047,
+          "logical_attempts": 5,
+          "logical_retries": 0,
+          "running_attempts": 0,
+          "failed_attempts": 0,
+          "first_attempt_failures": 0,
+          "reported_embedding_calls": 5,
+          "samples_with_unknown_embedding_call_count": 0,
+          "reported_attempt_seconds": 145.34550332099025,
+          "attempts_without_elapsed_seconds": 0,
+          "reported_stage_seconds": {
+            "answer": 9.618311546997575,
+            "expansion": 0.29561287401156733,
+            "resolve": 123.72174965500017,
+            "retrieval": 11.311219706003612
+          },
+          "scope": "all_saved_query_attempts"
+        },
+        "previous_matched_answerable_f1": 0.3212092731829574
+      },
+      "dynamic_raw_fallback": {
+        "successful": 5,
+        "planned": 5,
+        "answerable_questions": 4,
+        "answerable_f1": 0.14166666666666666,
+        "official_refusal_matches": 1,
+        "refusal_questions": 1,
+        "all_qa_mean": 0.31333333333333335,
+        "generation_calls": 19,
+        "usage": {
+          "generation_calls": 19,
+          "unknown_attempts": 0,
+          "calls_without_reported_usage": 0,
+          "calls_with_partial_usage": 0,
+          "reported_tokens": {
+            "prompt_tokens": 123827,
+            "completion_tokens": 29514,
+            "total_tokens": 153341
+          },
+          "usage_fields": {
+            "prompt_tokens": {
+              "reported": 123827,
+              "calls_with_reported_usage": 19,
+              "calls_missing_usage": 0,
+              "complete": true
+            },
+            "completion_tokens": {
+              "reported": 29514,
+              "calls_with_reported_usage": 19,
+              "calls_missing_usage": 0,
+              "complete": true
+            },
+            "total_tokens": {
+              "reported": 153341,
+              "calls_with_reported_usage": 19,
+              "calls_missing_usage": 0,
+              "complete": true
+            }
+          },
+          "provider_usage_complete": true,
+          "provider_retries": 0,
+          "reported_provider_seconds": 166.89337602797605,
+          "logical_attempts": 5,
+          "logical_retries": 0,
+          "running_attempts": 0,
+          "failed_attempts": 0,
+          "first_attempt_failures": 0,
+          "reported_embedding_calls": 5,
+          "samples_with_unknown_embedding_call_count": 0,
+          "reported_attempt_seconds": 169.7916249290065,
+          "attempts_without_elapsed_seconds": 0,
+          "reported_stage_seconds": {
+            "answer": 5.982550390988763,
+            "expansion": 0.2602834520075703,
+            "joint_resolve": 75.88272045600752,
+            "resolve": 81.73267992000183,
+            "retrieval": 4.907005048989959
+          },
+          "scope": "all_saved_query_attempts"
+        },
+        "previous_matched_answerable_f1": 0.1884612573099415
+      }
+    },
+    "B": {
+      "dynamic_raw_fallback": {
+        "successful": 10,
+        "planned": 10,
+        "answerable_questions": 8,
+        "answerable_f1": 0.2247850529100529,
+        "official_refusal_matches": 1,
+        "refusal_questions": 2,
+        "all_qa_mean": 0.2798280423280423,
+        "generation_calls": 34,
+        "usage": {
+          "generation_calls": 34,
+          "unknown_attempts": 0,
+          "calls_without_reported_usage": 0,
+          "calls_with_partial_usage": 0,
+          "reported_tokens": {
+            "prompt_tokens": 191952,
+            "completion_tokens": 54590,
+            "total_tokens": 246542
+          },
+          "usage_fields": {
+            "prompt_tokens": {
+              "reported": 191952,
+              "calls_with_reported_usage": 34,
+              "calls_missing_usage": 0,
+              "complete": true
+            },
+            "completion_tokens": {
+              "reported": 54590,
+              "calls_with_reported_usage": 34,
+              "calls_missing_usage": 0,
+              "complete": true
+            },
+            "total_tokens": {
+              "reported": 246542,
+              "calls_with_reported_usage": 34,
+              "calls_missing_usage": 0,
+              "complete": true
+            }
+          },
+          "provider_usage_complete": true,
+          "provider_retries": 0,
+          "reported_provider_seconds": 310.03703692001,
+          "logical_attempts": 10,
+          "logical_retries": 0,
+          "running_attempts": 0,
+          "failed_attempts": 0,
+          "first_attempt_failures": 0,
+          "reported_embedding_calls": 10,
+          "samples_with_unknown_embedding_call_count": 0,
+          "reported_attempt_seconds": 314.7062001719969,
+          "attempts_without_elapsed_seconds": 0,
+          "reported_stage_seconds": {
+            "answer": 13.877892884993344,
+            "expansion": 0.4679701929926523,
+            "joint_resolve": 102.64006355799938,
+            "resolve": 187.00004704097955,
+            "retrieval": 9.011202532994503
+          },
+          "scope": "all_saved_query_attempts"
+        }
+      },
+      "hybrid_no_resolution": {
+        "successful": 10,
+        "planned": 10,
+        "answerable_questions": 8,
+        "answerable_f1": 0.3422064341337936,
+        "official_refusal_matches": 1,
+        "refusal_questions": 2,
+        "all_qa_mean": 0.3737651473070349,
+        "generation_calls": 20,
+        "usage": {
+          "generation_calls": 20,
+          "unknown_attempts": 0,
+          "calls_without_reported_usage": 0,
+          "calls_with_partial_usage": 0,
+          "reported_tokens": {
+            "prompt_tokens": 77681,
+            "completion_tokens": 2846,
+            "total_tokens": 80527
+          },
+          "usage_fields": {
+            "prompt_tokens": {
+              "reported": 77681,
+              "calls_with_reported_usage": 20,
+              "calls_missing_usage": 0,
+              "complete": true
+            },
+            "completion_tokens": {
+              "reported": 2846,
+              "calls_with_reported_usage": 20,
+              "calls_missing_usage": 0,
+              "complete": true
+            },
+            "total_tokens": {
+              "reported": 80527,
+              "calls_with_reported_usage": 20,
+              "calls_missing_usage": 0,
+              "complete": true
+            }
+          },
+          "provider_usage_complete": true,
+          "provider_retries": 0,
+          "reported_provider_seconds": 25.51483730701875,
+          "logical_attempts": 10,
+          "logical_retries": 0,
+          "running_attempts": 0,
+          "failed_attempts": 0,
+          "first_attempt_failures": 0,
+          "reported_embedding_calls": 10,
+          "samples_with_unknown_embedding_call_count": 0,
+          "reported_attempt_seconds": 26.812711195998418,
+          "attempts_without_elapsed_seconds": 0,
+          "reported_stage_seconds": {
+            "answer": 17.18177910799568,
+            "expansion": 0.49295000699930824,
+            "retrieval": 9.102145388009376
+          },
+          "scope": "all_saved_query_attempts"
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "experiment": "A",
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "question_id": "conv-26:qa:3",
+      "qa_index": 3,
+      "purpose": "targeted_research",
+      "question": "What did Caroline research?",
+      "category": 1,
+      "reference_answer": "Adoption agencies",
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline researched adoption agencies and looked into counseling or mental health work as a career.",
+      "explanation": "Caroline described researching adoption agencies (25 May 2023) and looking into counseling/mental health work as a career (27 June, 6 July, and 12 July 2023).",
+      "qa_score": 0.26666666666666666,
+      "run_score": 0.26666666666666666,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:3"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "c29d9f9836d5c49d48f6d49b",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+          ]
+        },
+        {
+          "memory_id": "2b7b411aca4d8f777d3a726b",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+          ]
+        },
+        {
+          "memory_id": "edf0ad6dfb5ddf068bbe2225",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+          ]
+        },
+        {
+          "memory_id": "376676a70336006ce30b797e",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+          ]
+        },
+        {
+          "memory_id": "b48a241d0644ef8309ef12cb",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": 0.25,
+      "previous_answer": "Caroline researched adoption agencies and also looked into counseling or mental health work as a career.",
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 32.38396926099813,
+        "reported_tokens": {
+          "completion_tokens": 7087,
+          "prompt_tokens": 77538,
+          "total_tokens": 84625
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 7087
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 77538
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 84625
+          }
+        }
+      }
+    },
+    {
+      "experiment": "A",
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "question_id": "conv-26:qa:3",
+      "qa_index": 3,
+      "purpose": "targeted_research",
+      "question": "What did Caroline research?",
+      "category": 1,
+      "reference_answer": "Adoption agencies",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "No information available.",
+      "explanation": "The only supplied evidence shows Caroline saying she is off to do some research, but it does not identify the topic, field, project, or subject of that research.",
+      "qa_score": 0.0,
+      "run_score": 0.0,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10"
+      ],
+      "first_resolution_reference_coverage": 0.0,
+      "joint_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:18"
+      ],
+      "joint_resolution_reference_coverage": 0.0,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:17"
+      ],
+      "answer_reference_coverage": 0.0,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:17"
+          ]
+        }
+      ],
+      "raw_triggered": true,
+      "raw_trigger_reasons": [
+        "No supplied memory or raw source identifies a research topic, field, project, or subject that Caroline researched."
+      ],
+      "raw_cited_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:17"
+      ],
+      "previous_score": 0.0,
+      "previous_answer": "No information available.",
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 4,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 18.08542520199262,
+        "reported_tokens": {
+          "completion_tokens": 2928,
+          "prompt_tokens": 26730,
+          "total_tokens": 29658
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 2928
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 26730
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 29658
+          }
+        }
+      }
+    },
+    {
+      "experiment": "A",
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "question_id": "conv-26:qa:15",
+      "qa_index": 15,
+      "purpose": "targeted_enumeration",
+      "question": "What activities does Melanie partake in?",
+      "category": 1,
+      "reference_answer": "pottery, camping, painting, swimming",
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie's activities include running, reading, playing the violin, pottery (making bowls and plates in pottery class), painting nature-inspired pictures with her partner, hiking and exploring forests, and camping with her family (including roasting marshmallows, telling stories around the campfire, and camping at the beach).",
+      "explanation": "Direct statements from Melanie across sessions describe her me-time activities (running, reading, violin), pottery class and creations, painting with her partner, hiking/exploring forests, and family camping activities. All cited sources are within the conversation cutoff.",
+      "qa_score": 0.2589285714285714,
+      "run_score": 0.2589285714285714,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:29",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:2"
+      ],
+      "first_resolution_reference_coverage": 0.5,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+      ],
+      "answer_reference_coverage": 0.5,
+      "citations": [
+        {
+          "memory_id": "831f646db1fb093105c2ecd6",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+          ]
+        },
+        {
+          "memory_id": "6534d081d8a862191bc19fec",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:20"
+          ]
+        },
+        {
+          "memory_id": "f7dc5f80d0bd262e64a8f605",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:10"
+          ]
+        },
+        {
+          "memory_id": "8af2ffcad4b7c2cc004d3ed1",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ]
+        },
+        {
+          "memory_id": "48981a97b7c240dc2a1377d9",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:4"
+          ]
+        },
+        {
+          "memory_id": "36276da9b3e7f0a96342e7d0",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+          ]
+        },
+        {
+          "memory_id": "2cb517b0dccd4d83bce9eabc",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:34"
+          ]
+        },
+        {
+          "memory_id": "f4d9ccdebd7cbc9f2ac2114f",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:8"
+          ]
+        },
+        {
+          "memory_id": "08d952527a6b81e9f2fbe9e1",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:12"
+          ]
+        },
+        {
+          "memory_id": "1bdfae29d84ec904411b664a",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": 0.24285714285714285,
+      "previous_answer": "Melanie's activities include running, reading, playing the violin, pottery (making bowls and plates), painting nature-inspired works with her partner, hiking and exploring forests, and camping with her family (roasting marshmallows, telling stories around the campfire, and enjoying nature).",
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 36.39142662800441,
+        "reported_tokens": {
+          "completion_tokens": 7646,
+          "prompt_tokens": 86417,
+          "total_tokens": 94063
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 7646
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 86417
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 94063
+          }
+        }
+      }
+    },
+    {
+      "experiment": "A",
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "question_id": "conv-26:qa:15",
+      "qa_index": 15,
+      "purpose": "targeted_enumeration",
+      "question": "What activities does Melanie partake in?",
+      "category": 1,
+      "reference_answer": "pottery, camping, painting, swimming",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "No information available.",
+      "explanation": "No delivered memories or raw sources identify specific activities Melanie actually partakes in. The only related evidence concerns intended outing planning (proposing a family outing, agreeing to plan something special, intending to think about possible activities), which does not establish accomplished activities. The raw source refers to Caroline's projects/activities, not Melanie's. A complete list of Melanie's activities is therefore missing.",
+      "qa_score": 0.0,
+      "run_score": 0.0,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:29",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+      ],
+      "first_resolution_reference_coverage": 0.0,
+      "joint_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:10"
+      ],
+      "joint_resolution_reference_coverage": 0.0,
+      "answer_delivered_source_ids": [],
+      "answer_reference_coverage": 0.0,
+      "citations": [],
+      "raw_triggered": true,
+      "raw_trigger_reasons": [
+        "The conversation supports several activities, but it does not establish a complete list of all activities Melanie partakes in. Planned family-outing evidence also does not identify specific activities.",
+        "enumeration_coverage_check"
+      ],
+      "raw_cited_source_ids": [],
+      "previous_score": 0.11805555555555555,
+      "previous_answer": "Melanie partakes in running (including running longer since a prior chat), reading, playing the violin, painting with her partner (especially nature-inspired paintings lately), and pottery (which she uses for self-expression and peace, though she had to take a break after getting hurt last month).",
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 4,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 49.90856142399571,
+        "reported_tokens": {
+          "completion_tokens": 8903,
+          "prompt_tokens": 27562,
+          "total_tokens": 36465
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 8903
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 27562
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 36465
+          }
+        }
+      }
+    },
+    {
+      "experiment": "A",
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "question_id": "conv-26:qa:153",
+      "qa_index": 153,
+      "purpose": "targeted_refusal",
+      "question": "What are Melanie's plans for the summer with respect to adoption?",
+      "category": 5,
+      "reference_answer": null,
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "No information available.",
+      "explanation": "The only delivered evidence shows Melanie saying in October 2023 that a friend's adoption made her feel she 'maybe should do it too,' which is a tentative consideration, not a plan for the summer. No information about summer plans or any concrete adoption plan is provided.",
+      "qa_score": 1.0,
+      "run_score": 1.0,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:21",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:34",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:4"
+      ],
+      "answer_reference_coverage": 0.0,
+      "citations": [
+        {
+          "memory_id": "7a9548c9ffb7cac80e5a5039",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:4"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": 0.0,
+      "previous_answer": "Melanie has only said she feels like maybe she should adopt too, after a friend adopted last year; no specific summer plans are stated.",
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 32.581394847999036,
+        "reported_tokens": {
+          "completion_tokens": 6127,
+          "prompt_tokens": 69347,
+          "total_tokens": 75474
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 6127
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 69347
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 75474
+          }
+        }
+      }
+    },
+    {
+      "experiment": "A",
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "question_id": "conv-26:qa:153",
+      "qa_index": 153,
+      "purpose": "targeted_refusal",
+      "question": "What are Melanie's plans for the summer with respect to adoption?",
+      "category": 5,
+      "reference_answer": null,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "No information available.",
+      "explanation": "The delivered evidence contains no Melanie adoption plan for the summer. Melanie's summer references are camping and family outings (e.g., D2:7, D10:12, D12:16), and her adoption remark is only a general reaction to her buddy's adoption ('maybe I should do it too,' D17:4) with no summer timing or concrete adoption step. Caroline, not Melanie, is researching adoption agencies (D2:8) and contacting a mentor for adoption advice (D17:1).",
+      "qa_score": 1.0,
+      "run_score": 1.0,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+      ],
+      "first_resolution_reference_coverage": 0.0,
+      "joint_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1"
+      ],
+      "joint_resolution_reference_coverage": 1.0,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [],
+      "raw_triggered": true,
+      "raw_trigger_reasons": [
+        "There is no evidence that Melanie has an adoption plan for the summer. The only adoption-related evidence says she is generally considering adoption, with no summer timing or concrete plan."
+      ],
+      "raw_cited_source_ids": [],
+      "previous_score": 1.0,
+      "previous_answer": "No information available about Melanie's summer adoption plans. The only adoption-related evidence is that on 13 October 2023 she said a friend's adoption made her feel like maybe she should adopt too.",
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 4,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 46.379979073994036,
+        "reported_tokens": {
+          "completion_tokens": 8502,
+          "prompt_tokens": 29378,
+          "total_tokens": 37880
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 8502
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 29378
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 37880
+          }
+        }
+      }
+    },
+    {
+      "experiment": "A",
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "question_id": "conv-26:qa:0",
+      "qa_index": 0,
+      "purpose": "time_nonregression",
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "category": 2,
+      "reference_answer": "7 May 2023",
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline went to an LGBTQ support group on 7 May 2023 (she said \"yesterday\" in a conversation on 8 May 2023).",
+      "explanation": "The source states she attended the day before the 8 May 2023 session, anchoring the event to 7 May 2023.",
+      "qa_score": 0.2727272727272727,
+      "run_score": 0.2727272727272727,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "7b29fbb3088ff54b1d95727f",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": 0.3157894736842105,
+      "previous_answer": "Caroline went to an LGBTQ support group on 7 May 2023 (the day before the 8 May 2023 conversation).",
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 17.61576989900641,
+        "reported_tokens": {
+          "completion_tokens": 3617,
+          "prompt_tokens": 64176,
+          "total_tokens": 67793
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 3617
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 64176
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 67793
+          }
+        }
+      }
+    },
+    {
+      "experiment": "A",
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "question_id": "conv-26:qa:0",
+      "qa_index": 0,
+      "purpose": "time_nonregression",
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "category": 2,
+      "reference_answer": "7 May 2023",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline went to the LGBTQ support group on 7 May 2023 (\"yesterday\" relative to the 8 May 2023 session).",
+      "explanation": "The memory and raw source both state she went \"yesterday\" relative to the 8 May 2023 session, resolving to 7 May 2023.",
+      "qa_score": 0.3,
+      "run_score": 0.3,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "7b29fbb3088ff54b1d95727f",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+          ]
+        }
+      ],
+      "raw_triggered": false,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": 0.3157894736842105,
+      "previous_answer": "Caroline went to the LGBTQ support group on 7 May 2023 (the day before the 8 May 2023 conversation).",
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 7.121839494997403,
+        "reported_tokens": {
+          "completion_tokens": 1162,
+          "prompt_tokens": 12490,
+          "total_tokens": 13652
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 1162
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 12490
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 13652
+          }
+        }
+      }
+    },
+    {
+      "experiment": "A",
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "question_id": "conv-26:qa:53",
+      "qa_index": 53,
+      "purpose": "time_nonregression",
+      "question": "When did Caroline apply to adoption agencies?",
+      "category": 2,
+      "reference_answer": "The week of 23 August 2023",
+      "strategy": "dynamic",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline applied to adoption agencies \"this week,\" as stated in her message on 23 August 2023 — i.e., during the week preceding that date.",
+      "explanation": "The source gives only the relative expression \"this week\" anchored to the 23 August 2023 session, so the exact day is not specified.",
+      "qa_score": 0.2857142857142857,
+      "run_score": 0.2857142857142857,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "30b7c2fe26350ed64a276cb2",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": 0.47619047619047616,
+      "previous_answer": "The week of 23 August 2023 (she said she applied \"this week\" as of 23 August 2023).",
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 18.316798852996726,
+        "reported_tokens": {
+          "completion_tokens": 3538,
+          "prompt_tokens": 51168,
+          "total_tokens": 54706
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 3538
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 51168
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 54706
+          }
+        }
+      }
+    },
+    {
+      "experiment": "A",
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "question_id": "conv-26:qa:53",
+      "qa_index": 53,
+      "purpose": "time_nonregression",
+      "question": "When did Caroline apply to adoption agencies?",
+      "category": 2,
+      "reference_answer": "The week of 23 August 2023",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline applied to adoption agencies \"this week,\" in a message sent at 3:31 pm on 23 August 2023; the exact day within that week is not stated.",
+      "explanation": "The raw source contains Caroline's direct statement that she applied to adoption agencies \"this week,\" anchored to the week containing 23 August 2023. The exact day is unspecified, so the original anchored expression is retained.",
+      "qa_score": 0.26666666666666666,
+      "run_score": 0.26666666666666666,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:9"
+      ],
+      "first_resolution_reference_coverage": 0.0,
+      "joint_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14"
+      ],
+      "joint_resolution_reference_coverage": 1.0,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+          ]
+        }
+      ],
+      "raw_triggered": true,
+      "raw_trigger_reasons": [
+        "No delivered memory states that Caroline applied to adoption agencies or gives an application date. The available evidence only shows adoption-related activity around 25 May 2023 (hope/optimism about the adoption process) and 15 July 2023 (attendance at an adoption council meeting reported as 'last Friday'). An application date is missing."
+      ],
+      "raw_cited_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+      ],
+      "previous_score": 0.32,
+      "previous_answer": "During the week containing 23 August 2023 (she said on 23 August 2023 that she applied to adoption agencies \"this week\").",
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 4,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 45.39757083299628,
+        "reported_tokens": {
+          "completion_tokens": 8019,
+          "prompt_tokens": 27667,
+          "total_tokens": 35686
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 8019
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 27667
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 35686
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:18",
+      "qa_index": 18,
+      "purpose": "cross_session",
+      "question": "Where has Melanie camped?",
+      "category": 1,
+      "reference_answer": "beach, mountains, forest",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie has camped at the beach with her family.",
+      "explanation": "The raw source directly states Melanie's family was camping at the beach; no named beach or other camping locations are supported.",
+      "qa_score": 0.07407407407407407,
+      "run_score": 0.07407407407407407,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:20"
+      ],
+      "first_resolution_reference_coverage": 0.0,
+      "joint_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:18"
+      ],
+      "joint_resolution_reference_coverage": 0.3333333333333333,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+      ],
+      "answer_reference_coverage": 0.3333333333333333,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+          ]
+        }
+      ],
+      "raw_triggered": true,
+      "raw_trigger_reasons": [
+        "No specific camping location is provided. The memories support general family camping trips and camping activities, but not where Melanie camped."
+      ],
+      "raw_cited_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+      ],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 4,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 26.63886960500531,
+        "reported_tokens": {
+          "completion_tokens": 4745,
+          "prompt_tokens": 27269,
+          "total_tokens": 32014
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 4745
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 27269
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 32014
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:18",
+      "qa_index": 18,
+      "purpose": "cross_session",
+      "question": "Where has Melanie camped?",
+      "category": 1,
+      "reference_answer": "beach, mountains, forest",
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie has camped in the mountains, in the forest, and at the beach.",
+      "explanation": "Melanie describes camping in the mountains (last week as of 27 June 2023), another camping trip in the forest, and her family camping at the beach. Other camping mentions (with kids a few weeks before 13 September 2023, and a Perseid meteor shower trip last year) do not specify a location.",
+      "qa_score": 0.5555555555555555,
+      "run_score": 0.5555555555555555,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+      ],
+      "first_resolution_delivered_source_ids": null,
+      "first_resolution_reference_coverage": null,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "1727fee9cb63d0e3461c3dcb",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:6"
+          ]
+        },
+        {
+          "memory_id": "b56272f2400d5bf7ab86e8c6",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+          ]
+        },
+        {
+          "memory_id": "1bdfae29d84ec904411b664a",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 2.451354304997949,
+        "reported_tokens": {
+          "completion_tokens": 299,
+          "prompt_tokens": 7930,
+          "total_tokens": 8229
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 299
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7930
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 8229
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:55",
+      "qa_index": 55,
+      "purpose": "cross_session",
+      "question": "What subject have Caroline and Melanie both painted?",
+      "category": 1,
+      "reference_answer": "Sunsets",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Nature-inspired subjects.",
+      "explanation": "Melanie says they love painting together lately, especially nature-inspired ones, supporting a shared painting subject.",
+      "qa_score": 0.0,
+      "run_score": 0.0,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17"
+      ],
+      "first_resolution_reference_coverage": 0.5,
+      "joint_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:31"
+      ],
+      "joint_resolution_reference_coverage": 0.5,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+      ],
+      "answer_reference_coverage": 0.5,
+      "citations": [
+        {
+          "memory_id": null,
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+          ]
+        }
+      ],
+      "raw_triggered": true,
+      "raw_trigger_reasons": [
+        "No delivered evidence states a painting subject shared by both: Caroline's painting is described only by theme—unity and strength—while Melanie's described subjects are a horse and nature-inspired work. Caroline is not shown to have painted a horse or a nature-inspired/landscape/still-life subject."
+      ],
+      "raw_cited_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+      ],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 4,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 58.128729440992174,
+        "reported_tokens": {
+          "completion_tokens": 10491,
+          "prompt_tokens": 27807,
+          "total_tokens": 38298
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 10491
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 27807
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 38298
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:55",
+      "qa_index": 55,
+      "purpose": "cross_session",
+      "question": "What subject have Caroline and Melanie both painted?",
+      "category": 1,
+      "reference_answer": "Sunsets",
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Both Caroline and Melanie have painted sunsets: Caroline painted a sunset picture, and Melanie painted a sunset-inspired painting.",
+      "explanation": "Caroline describes painting a sunset after visiting the beach (25 Aug 2023), and Melanie shares a painting inspired by sunsets (13 Oct 2023). Both also paint other subjects, but sunset is the shared subject supported by the delivered evidence.",
+      "qa_score": 0.18181818181818182,
+      "run_score": 0.18181818181818182,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+      ],
+      "first_resolution_delivered_source_ids": null,
+      "first_resolution_reference_coverage": null,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15"
+      ],
+      "answer_reference_coverage": 0.0,
+      "citations": [
+        {
+          "memory_id": "8bfc515b107c2cf92f897851",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:7"
+          ]
+        },
+        {
+          "memory_id": "0c1f196cbd4e38b9eda0e816",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:12"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 2.3547705320015666,
+        "reported_tokens": {
+          "completion_tokens": 237,
+          "prompt_tokens": 8106,
+          "total_tokens": 8343
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 237
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 8106
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 8343
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:36",
+      "qa_index": 36,
+      "purpose": "time",
+      "question": "When did Caroline join a mentorship program?",
+      "category": 2,
+      "reference_answer": "The weekend before 17 July 2023",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline joined a mentorship program for LGBTQ youth \"last weekend\" relative to 17 July 2023, i.e., the weekend of 15–16 July 2023; the exact day is not stated.",
+      "explanation": "The source session time is 2:31 pm on 17 July 2023, and Caroline said she joined \"Last weekend.\" Resolved against that session date, the join occurred on the weekend of 15–16 July 2023; the exact day is not specified, so the interval is retained.",
+      "qa_score": 0.26666666666666666,
+      "run_score": 0.26666666666666666,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:2"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:2"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "675698f4952bf9c9393ca5ee",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:2"
+          ]
+        }
+      ],
+      "raw_triggered": false,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 11.544757654010027,
+        "reported_tokens": {
+          "completion_tokens": 1951,
+          "prompt_tokens": 12495,
+          "total_tokens": 14446
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 1951
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 12495
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 14446
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:36",
+      "qa_index": 36,
+      "purpose": "time",
+      "question": "When did Caroline join a mentorship program?",
+      "category": 2,
+      "reference_answer": "The weekend before 17 July 2023",
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline joined a mentorship program for LGBTQ youth last weekend, relative to 17 July 2023 (i.e., the weekend before that date).",
+      "explanation": "The source states 'Last weekend I joined a mentorship program for LGBTQ youth' at session time 2:31 pm on 17 July 2023, so the join date is anchored to the weekend before 17 July 2023; no exact calendar date is given.",
+      "qa_score": 0.4166666666666667,
+      "run_score": 0.4166666666666667,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:2"
+      ],
+      "first_resolution_delivered_source_ids": null,
+      "first_resolution_reference_coverage": null,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:23",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "675698f4952bf9c9393ca5ee",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:2"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 2.18610071400326,
+        "reported_tokens": {
+          "completion_tokens": 189,
+          "prompt_tokens": 7577,
+          "total_tokens": 7766
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 189
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7577
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7766
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:74",
+      "qa_index": 74,
+      "purpose": "time",
+      "question": "When did Melanie's family go on a roadtrip?",
+      "category": 2,
+      "reference_answer": "The weekend before 20 October 2023",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie said the roadtrip was \"this past weekend\" in a session dated 20 October 2023, so it took place the weekend immediately before 20 October 2023; the exact day within that weekend is not stated.",
+      "explanation": "The source session time is 6:55 pm on 20 October 2023, and the original expression \"this past weekend\" anchors the trip to the weekend before that date. The exact day is not given.",
+      "qa_score": 0.2777777777777778,
+      "run_score": 0.2777777777777778,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "104e93eed67bcaea3ca08c86",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+          ]
+        }
+      ],
+      "raw_triggered": false,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 21.472274777988787,
+        "reported_tokens": {
+          "completion_tokens": 3866,
+          "prompt_tokens": 12576,
+          "total_tokens": 16442
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 3866
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 12576
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 16442
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:74",
+      "qa_index": 74,
+      "purpose": "time",
+      "question": "When did Melanie's family go on a roadtrip?",
+      "category": 2,
+      "reference_answer": "The weekend before 20 October 2023",
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie's family went on the roadtrip \"this past weekend\" relative to 20 October 2023, i.e., the weekend before 20 October 2023.",
+      "explanation": "The source states the roadtrip occurred \"this past weekend\" as of the 20 October 2023 session, so the exact day is not given; the original relative expression is preserved.",
+      "qa_score": 0.4166666666666667,
+      "run_score": 0.4166666666666667,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+      ],
+      "first_resolution_delivered_source_ids": null,
+      "first_resolution_reference_coverage": null,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "104e93eed67bcaea3ca08c86",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 2.332366953000019,
+        "reported_tokens": {
+          "completion_tokens": 182,
+          "prompt_tokens": 7949,
+          "total_tokens": 8131
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 182
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7949
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 8131
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:65",
+      "qa_index": 65,
+      "purpose": "dynamic_changes",
+      "question": "What are some changes Caroline has faced during her transition journey?",
+      "category": 1,
+      "reference_answer": "Changes to her body, losing unsupportive friends",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "Caroline's transition changed her relationships: some close friends kept supporting her, while a few couldn't handle it, and her relationships now feel more genuine. Art also allowed her to explore her transition and changing body.",
+      "explanation": "Supported: relationship changes and art as a way to explore her transition/changing body. Missing: specific personal-development details Caroline described since coming out, and the evidence does not provide an exhaustive list of every change she faced.",
+      "qa_score": 0.27142857142857146,
+      "run_score": 0.27142857142857146,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+      ],
+      "joint_resolution_reference_coverage": 1.0,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "87dc7fae09c589f68fc357a8",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+          ]
+        },
+        {
+          "memory_id": "069b185a7aba0d32cc611b53",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:14"
+          ]
+        }
+      ],
+      "raw_triggered": true,
+      "raw_trigger_reasons": [
+        "The supplied memories do not enumerate all possible changes; additional changes Caroline experienced are not recorded."
+      ],
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 4,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 73.26630886700877,
+        "reported_tokens": {
+          "completion_tokens": 13125,
+          "prompt_tokens": 28291,
+          "total_tokens": 41416
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 13125
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 28291
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 41416
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:65",
+      "qa_index": 65,
+      "purpose": "dynamic_changes",
+      "question": "What are some changes Caroline has faced during her transition journey?",
+      "category": 1,
+      "reference_answer": "Changes to her body, losing unsupportive friends",
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline's transition changed her relationships: some close friends kept supporting her, but a few weren't able to handle it, and her relationships now feel more genuine. She found transitioning and acceptance difficult, but support from friends, family, and people she looked up to helped her through tough times. Art allowed her to explore her transition and changing body, and she realized she could be herself without fear and had the courage to transition.",
+      "explanation": "Supported changes include altered relationships (some friends supportive, a few unable to handle it), a difficult transition and acceptance process eased by support, art as a way to explore her transition and changing body, and gaining courage to be herself without fear. The evidence is as of the conversation cutoff.",
+      "qa_score": 0.3167701863354037,
+      "run_score": 0.3167701863354037,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+      ],
+      "first_resolution_delivered_source_ids": null,
+      "first_resolution_reference_coverage": null,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:25",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:19",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "87dc7fae09c589f68fc357a8",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+          ]
+        },
+        {
+          "memory_id": "ef29c48c5bd5d7478e6a38a5",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+          ]
+        },
+        {
+          "memory_id": "41eceb70983189049494a2a7",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:9"
+          ]
+        },
+        {
+          "memory_id": "08bd3fdd2d2afe49e4ea0199",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:15"
+          ]
+        },
+        {
+          "memory_id": "069b185a7aba0d32cc611b53",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:14"
+          ]
+        },
+        {
+          "memory_id": "98ae1ac24798246848cd63cd",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:25"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 3.6230798729957314,
+        "reported_tokens": {
+          "completion_tokens": 560,
+          "prompt_tokens": 7746,
+          "total_tokens": 8306
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 560
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7746
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 8306
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:136",
+      "qa_index": 136,
+      "purpose": "dynamic_changes",
+      "question": "What does Melanie do to keep herself busy during her pottery break?",
+      "category": 4,
+      "reference_answer": "Read a book and paint.",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie has been painting to keep busy.",
+      "explanation": "The cited memory and raw source state that Melanie has been painting to keep busy; the source also mentions reading a recommended book, but the direct answer to the pottery-break question is painting.",
+      "qa_score": 0.2,
+      "run_score": 0.2,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:4"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "eef2de7a1146b7880239b699",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+          ]
+        }
+      ],
+      "raw_triggered": false,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 31.83910936600296,
+        "reported_tokens": {
+          "completion_tokens": 5774,
+          "prompt_tokens": 12072,
+          "total_tokens": 17846
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 5774
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 12072
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 17846
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:136",
+      "qa_index": 136,
+      "purpose": "dynamic_changes",
+      "question": "What does Melanie do to keep herself busy during her pottery break?",
+      "category": 4,
+      "reference_answer": "Read a book and paint.",
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie has been painting to keep busy during her pottery break.",
+      "explanation": "In the 13 October 2023 session, Melanie says she had to take a break from pottery after getting hurt and that she has been painting to keep busy.",
+      "qa_score": 0.14285714285714285,
+      "run_score": 0.14285714285714285,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+      ],
+      "first_resolution_delivered_source_ids": null,
+      "first_resolution_reference_coverage": null,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:11"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "eef2de7a1146b7880239b699",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+          ]
+        },
+        {
+          "memory_id": "bc0c987112d83fee8236bbb4",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 2.233622992003802,
+        "reported_tokens": {
+          "completion_tokens": 201,
+          "prompt_tokens": 7724,
+          "total_tokens": 7925
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 201
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7724
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7925
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:32",
+      "qa_index": 32,
+      "purpose": "enumeration",
+      "question": "What LGBTQ+ events has Caroline participated in?",
+      "category": 1,
+      "reference_answer": "Pride parade, school speech, support group",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline participated in a school LGBTQ-related event (around \"last week\" relative to 9 June 2023), where she spoke about her transgender journey and encouraged students to get involved in the LGBTQ community; she also volunteered at an LGBTQ+ youth center (mentioned 28 August 2023).",
+      "explanation": "The school event's exact date is unknown; the source only says \"last week\" relative to the 9 June 2023 session. The list may not be complete, as additional events are not described.",
+      "qa_score": 0.041666666666666664,
+      "run_score": 0.041666666666666664,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:17"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:9",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+      ],
+      "first_resolution_reference_coverage": 0.25,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+      ],
+      "answer_reference_coverage": 0.25,
+      "citations": [
+        {
+          "memory_id": "ed2e9ba1185f14a945cd3b41",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:1"
+          ]
+        },
+        {
+          "memory_id": "8ecd78f1bef0bb848ac29377",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:1"
+          ]
+        },
+        {
+          "memory_id": "7b597b714d21eed7176aba52",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+          ]
+        },
+        {
+          "memory_id": "f29a76536cbcf2476d5b2289",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:3"
+          ]
+        }
+      ],
+      "raw_triggered": false,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 18.855824153004505,
+        "reported_tokens": {
+          "completion_tokens": 3057,
+          "prompt_tokens": 15195,
+          "total_tokens": 18252
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 3057
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 15195
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 18252
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:32",
+      "qa_index": 32,
+      "purpose": "enumeration",
+      "question": "What LGBTQ+ events has Caroline participated in?",
+      "category": 1,
+      "reference_answer": "Pride parade, school speech, support group",
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Caroline has participated in: an LGBTQ support group (the day before 8 May 2023); a school event where she spoke about her transgender journey and encouraged students to get involved in the LGBTQ community (last week as of 9 June 2023); an LGBTQ+ counseling workshop (last Friday as of 27 June 2023); an LGBTQ+ pride parade (last week as of 3 July 2023); an LGBTQ conference (two days before 12 July 2023); a mentorship program for LGBTQ youth (last weekend as of 17 July 2023); a new LGBTQ activist group, 'Connected LGBTQ Activists' (last Tuesday as of 20 July 2023); and volunteering at an LGBTQ+ youth center (as of 28 August 2023).",
+      "explanation": "All listed events are past participations reported by Caroline. Relative times are anchored to each source session date. Her LGBTQ art show is a plan for the following month, not a completed event, so it is excluded from participation.",
+      "qa_score": 0.04065040650406504,
+      "run_score": 0.04065040650406504,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:17"
+      ],
+      "first_resolution_delivered_source_ids": null,
+      "first_resolution_reference_coverage": null,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:33",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D1:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D9:12"
+      ],
+      "answer_reference_coverage": 0.75,
+      "citations": [
+        {
+          "memory_id": "7b29fbb3088ff54b1d95727f",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+          ]
+        },
+        {
+          "memory_id": "8ecd78f1bef0bb848ac29377",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:1"
+          ]
+        },
+        {
+          "memory_id": "d744e00a235c5eccfcb43f73",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+          ]
+        },
+        {
+          "memory_id": "96b4d58809db63dccf241a6c",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:1"
+          ]
+        },
+        {
+          "memory_id": "b6db40e4fa413b0b6763173e",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1"
+          ]
+        },
+        {
+          "memory_id": "675698f4952bf9c9393ca5ee",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:2"
+          ]
+        },
+        {
+          "memory_id": "5f80ff6f5c996eacb546e9d8",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:3"
+          ]
+        },
+        {
+          "memory_id": "f29a76536cbcf2476d5b2289",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:3"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 3.3783572770043975,
+        "reported_tokens": {
+          "completion_tokens": 681,
+          "prompt_tokens": 8133,
+          "total_tokens": 8814
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 681
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 8133
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 8814
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:60",
+      "qa_index": 60,
+      "purpose": "enumeration",
+      "question": "What instruments does Melanie play?",
+      "category": 1,
+      "reference_answer": "clarinet and violin",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie plays clarinet and violin.",
+      "explanation": "Clarinet is stated directly; violin appears among her me-time activities. These are the instruments explicitly mentioned, not necessarily an exhaustive list.",
+      "qa_score": 0.6666666666666666,
+      "run_score": 0.6666666666666666,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "ad50d1035de8bd6dfcf596a2",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:26"
+          ]
+        },
+        {
+          "memory_id": "831f646db1fb093105c2ecd6",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+          ]
+        }
+      ],
+      "raw_triggered": false,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 16.407355007009755,
+        "reported_tokens": {
+          "completion_tokens": 2496,
+          "prompt_tokens": 13395,
+          "total_tokens": 15891
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 2496
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 13395
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 15891
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:60",
+      "qa_index": 60,
+      "purpose": "enumeration",
+      "question": "What instruments does Melanie play?",
+      "category": 1,
+      "reference_answer": "clarinet and violin",
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "Melanie plays the clarinet and the violin.",
+      "explanation": "Melanie states she plays clarinet (started when young) and lists playing her violin among her me-time activities.",
+      "qa_score": 0.6666666666666666,
+      "run_score": 0.6666666666666666,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+      ],
+      "first_resolution_delivered_source_ids": null,
+      "first_resolution_reference_coverage": null,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:26",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D12:20",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:28",
+        "f69a07a79a2d5f4c8188300a/conv-26/D19:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D11:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:10"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "ad50d1035de8bd6dfcf596a2",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:26"
+          ]
+        },
+        {
+          "memory_id": "831f646db1fb093105c2ecd6",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 2.107679613007349,
+        "reported_tokens": {
+          "completion_tokens": 187,
+          "prompt_tokens": 7837,
+          "total_tokens": 8024
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 187
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7837
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 8024
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:178",
+      "qa_index": 178,
+      "purpose": "refusal",
+      "question": "Is Oscar Melanie's pet?",
+      "category": 5,
+      "reference_answer": "No",
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "No. Oscar is Caroline's guinea pig, not Melanie's pet. Melanie's pets are Luna and Oliver, and she later got another cat named Bailey.",
+      "explanation": "Caroline identifies Oscar as her guinea pig; Melanie names her pets as Luna and Oliver and later mentions another cat, Bailey.",
+      "qa_score": 0.0,
+      "run_score": 0.0,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:3"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D15:2",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:12"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "652c615d38466683a39261ca",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:3"
+          ]
+        },
+        {
+          "memory_id": "dd5f45045cc6b51918142eac",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:18"
+          ]
+        },
+        {
+          "memory_id": "edc039f1b558331299a9132e",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:4"
+          ]
+        },
+        {
+          "memory_id": "0e024e669701ea6197293efb",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:4"
+          ]
+        }
+      ],
+      "raw_triggered": false,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 19.425238221992913,
+        "reported_tokens": {
+          "completion_tokens": 3327,
+          "prompt_tokens": 13758,
+          "total_tokens": 17085
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 3327
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 13758
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 17085
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:178",
+      "qa_index": 178,
+      "purpose": "refusal",
+      "question": "Is Oscar Melanie's pet?",
+      "category": 5,
+      "reference_answer": "No",
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "sufficient",
+      "answer": "No. Oscar is Caroline's guinea pig, not Melanie's pet.",
+      "explanation": "Caroline states Oscar is her guinea pig. Melanie's pets are named Luna and Oliver (plus later Bailey), so Oscar is not Melanie's pet.",
+      "qa_score": 0.0,
+      "run_score": 0.0,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:3"
+      ],
+      "first_resolution_delivered_source_ids": null,
+      "first_resolution_reference_coverage": null,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:16",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:18",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:4",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:30",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D7:20"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "652c615d38466683a39261ca",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:3"
+          ]
+        },
+        {
+          "memory_id": "dd5f45045cc6b51918142eac",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:18"
+          ]
+        }
+      ],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 2.078450202003296,
+        "reported_tokens": {
+          "completion_tokens": 195,
+          "prompt_tokens": 7373,
+          "total_tokens": 7568
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 195
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7373
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7568
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:191",
+      "qa_index": 191,
+      "purpose": "refusal",
+      "question": "What happened to Caroline's son on their road trip?",
+      "category": 5,
+      "reference_answer": null,
+      "strategy": "dynamic_raw_fallback",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "No information available.",
+      "explanation": "The delivered evidence only describes Melanie's son: he got into an accident during their road trip and was okay afterward. No evidence identifies a son of Caroline, says Caroline's son was on the road trip, or describes what happened to him.",
+      "qa_score": 1.0,
+      "run_score": 1.0,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+      ],
+      "first_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:8",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:15",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15"
+      ],
+      "first_resolution_reference_coverage": 1.0,
+      "joint_resolution_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:17",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+      ],
+      "joint_resolution_reference_coverage": 1.0,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [
+        {
+          "memory_id": "957768d959215a4d96168564",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+          ]
+        },
+        {
+          "memory_id": "710227ea7706b407b1688fe9",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+          ]
+        }
+      ],
+      "raw_triggered": true,
+      "raw_trigger_reasons": [
+        "No delivered evidence identifies a son of Caroline, that Caroline's son was on the road trip, or what happened to him. The only supplied son/road-trip account is attributed to Melanie's son."
+      ],
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 4,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 32.45856982699479,
+        "reported_tokens": {
+          "completion_tokens": 5758,
+          "prompt_tokens": 29094,
+          "total_tokens": 34852
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 5758
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 29094
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 4,
+            "complete": true,
+            "reported": 34852
+          }
+        }
+      }
+    },
+    {
+      "experiment": "B",
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "question_id": "conv-26:qa:191",
+      "qa_index": 191,
+      "purpose": "refusal",
+      "question": "What happened to Caroline's son on their road trip?",
+      "category": 5,
+      "reference_answer": null,
+      "strategy": "hybrid_no_resolution",
+      "execution_status": "succeeded",
+      "answer_status": "insufficient",
+      "answer": "No information available.",
+      "explanation": "The question asks about Caroline's son on their road trip. The delivered evidence contains no information about Caroline having a son or about a road trip involving Caroline's son. The road-trip accident evidence concerns Melanie's son, not Caroline's, so it does not answer the question.",
+      "qa_score": 1.0,
+      "run_score": 1.0,
+      "reference_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+      ],
+      "first_resolution_delivered_source_ids": null,
+      "first_resolution_reference_coverage": null,
+      "joint_resolution_delivered_source_ids": null,
+      "joint_resolution_reference_coverage": null,
+      "answer_delivered_source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D13:7",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D18:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D14:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D16:1",
+        "f69a07a79a2d5f4c8188300a/conv-26/D10:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D8:32",
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:15"
+      ],
+      "answer_reference_coverage": 1.0,
+      "citations": [],
+      "raw_triggered": null,
+      "raw_trigger_reasons": null,
+      "raw_cited_source_ids": [],
+      "previous_score": null,
+      "previous_answer": null,
+      "error": null,
+      "usage": {
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "embedding_calls": 1,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 2.7690548460013815,
+        "reported_tokens": {
+          "completion_tokens": 115,
+          "prompt_tokens": 7306,
+          "total_tokens": 7421
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 115
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7306
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 7421
+          }
+        }
+      }
+    }
+  ],
+  "candidate_comparisons": [
+    {
+      "experiment": "A",
+      "question_id": "conv-26:qa:3",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "A",
+      "question_id": "conv-26:qa:15",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "A",
+      "question_id": "conv-26:qa:153",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "A",
+      "question_id": "conv-26:qa:0",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "A",
+      "question_id": "conv-26:qa:53",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "B",
+      "question_id": "conv-26:qa:18",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "B",
+      "question_id": "conv-26:qa:55",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "B",
+      "question_id": "conv-26:qa:36",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "B",
+      "question_id": "conv-26:qa:74",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "B",
+      "question_id": "conv-26:qa:65",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "B",
+      "question_id": "conv-26:qa:136",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "B",
+      "question_id": "conv-26:qa:32",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "B",
+      "question_id": "conv-26:qa:60",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "B",
+      "question_id": "conv-26:qa:178",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    },
+    {
+      "experiment": "B",
+      "question_id": "conv-26:qa:191",
+      "initial_same_set": true,
+      "expanded_same_set": true
+    }
+  ],
+  "scope": "Question-level holdout within already tuned conv-26, not unseen conversations or independent hidden-test generalization. Prior source-level relation audits may have exposed underlying facts. No selected QA answer was used in selection.",
+  "paid_calls": 88,
+  "cumulative_calls": 1097,
+  "budget_limit": 1111,
+  "original_build_unchanged": true,
+  "snapshot_build_unchanged": true
+}

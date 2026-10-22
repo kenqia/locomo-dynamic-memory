@@ -1,0 +1,129 @@
+{
+  "review_type": "independent_agent_pre_model_source_review",
+  "input_path": "/tmp/issue15-v61-same-key-inputs.json",
+  "input_sha256": "ac098800ee457501999c06a99a80347eea686f1e03553b9404acbd852600d358",
+  "source_db_sha256": "12410a8a857e91a9e23b97280b4cbcb647278daef83200cb9907c748cd238e2d",
+  "model_results_seen": false,
+  "new_model_calls": 0,
+  "human_ground_truth": false,
+  "definitions": [
+    "CONTEXT.md",
+    "docs/adr/0001-memory-architecture.md"
+  ],
+  "summary": {
+    "undetermined": 2,
+    "RETAIN": 2
+  },
+  "limitations": [
+    "四项定向同键样本仅来自 relation:31 与 relation:76，不能覆盖同键关系全部类型或估计准确率。",
+    "期望标签来自独立代理按原文和项目操作定义复核，不是人工真值或课程标注。",
+    "两项 RETAIN 只支持职业兴趣及探索持续，不证明职业已实现或不存在其他职业方向。",
+    "未读取之后模型输出；未调用模型；未修改源码或数据库。"
+  ],
+  "items": [
+    {
+      "case_id": "sk01",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:31",
+      "old_memory_id": "04d691cc6e211e79cc0700fc",
+      "new_memory_id": "421e00bab892b9e79dd9b35a",
+      "expected_label": "undetermined",
+      "reason": "收养过程中的希望、乐观与演讲时的强大感属于不同事件条件下的感受。两者能并存；没有证据说明后者替代前者、保持前者，或构成同一过程的新阶段。同键 emotional_state 过于宽泛，不能据此制造关系。",
+      "old_content": "Caroline is feeling hopeful and optimistic about the adoption process.",
+      "new_content": "Caroline felt super powerful giving her talk.",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+          "quote": "I'm feeling hopeful and optimistic."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+          "quote": "I felt super powerful giving my talk."
+        }
+      ],
+      "same_state_key": true,
+      "applicability": "仅在原文相应活动或职业探索语境成立。日期边界未精确声明，保留空日期，不把会话日期当事实起止日期。"
+    },
+    {
+      "case_id": "sk02",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:31",
+      "old_memory_id": "7140560fa6eac1c93cd6d4b9",
+      "new_memory_id": "421e00bab892b9e79dd9b35a",
+      "expected_label": "undetermined",
+      "reason": "为需要家庭的孩子组建家庭而兴奋，与演讲时的强大感有不同诱因。后文未提收养，没有延续、替代或冲突证据；不能仅依后说的情绪替换先前情绪。",
+      "old_content": "Caroline is thrilled to make a family for kids who need one.",
+      "new_content": "Caroline felt super powerful giving her talk.",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+        "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+          "quote": "I'm thrilled to make a family for kids who need one."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D3:3",
+          "quote": "I felt super powerful giving my talk."
+        }
+      ],
+      "same_state_key": true,
+      "applicability": "仅在原文相应活动或职业探索语境成立。日期边界未精确声明，保留空日期，不把会话日期当事实起止日期。"
+    },
+    {
+      "case_id": "sk03",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:76",
+      "old_memory_id": "69299a7bd9cfc5dcb916dc38",
+      "new_memory_id": "8c3fb2d3e5167026633668ca",
+      "expected_label": "RETAIN",
+      "reason": "新来源明确说自上次交流后还在进一步了解咨询或心理健康工作，为此前职业探索持续提供正面证据。more 表示继续探索，未陈述申请、培训、入职等可区分的新阶段，因此首选 RETAIN。and/or 的措辞变化不证明旧值遭替代或矛盾。",
+      "old_content": "Caroline has been looking into counseling and mental health as a career.",
+      "new_content": "Caroline has been looking into counseling or mental health work.",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+          "quote": "I've been looking into counseling and mental health as a career."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+          "quote": "Since our last chat, I've been looking into counseling or mental health work more."
+        }
+      ],
+      "same_state_key": true,
+      "applicability": "仅在原文相应活动或职业探索语境成立。日期边界未精确声明，保留空日期，不把会话日期当事实起止日期。"
+    },
+    {
+      "case_id": "sk04",
+      "source_task_id": "23f0459c5b3b47269dc1497cfc066810:relation:76",
+      "old_memory_id": "a8cec9be91860db3646ee08f",
+      "new_memory_id": "8c3fb2d3e5167026633668ca",
+      "expected_label": "RETAIN",
+      "reason": "旧来源说仍认为咨询与心理健康是职业方向，新来源明确在继续探索这一工作方向，支持该兴趣在当前职业探索语境继续适用。未声称职业已实现，也未进入明确下一阶段，故首选 RETAIN，不因 more 就记 UPDATE。",
+      "old_content": "Caroline still thinks counseling and mental health is the career path for her.",
+      "new_content": "Caroline has been looking into counseling or mental health work.",
+      "source_ids": [
+        "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+        "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+      ],
+      "quotes": [
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+          "quote": "I'm still thinking that counseling and mental health is the way to go."
+        },
+        {
+          "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D6:3",
+          "quote": "Since our last chat, I've been looking into counseling or mental health work more."
+        }
+      ],
+      "same_state_key": true,
+      "applicability": "仅在原文相应活动或职业探索语境成立。日期边界未精确声明，保留空日期，不把会话日期当事实起止日期。"
+    }
+  ]
+}

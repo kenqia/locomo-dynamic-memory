@@ -1,0 +1,15 @@
+{
+  "build_id": "eca7ec7974d4492eb0a4047be6fe2906",
+  "status": "interrupted",
+  "prompt_version": "relations-v7-stage-evidence",
+  "schema_version": "relation-v2-stage-evidence",
+  "error_code": "interrupted",
+  "progress": {
+    "total": 264,
+    "succeeded": 52,
+    "failed": 3,
+    "pending": 209
+  },
+  "history_comparisons_truncated": 13096,
+  "history_limit": 20
+}

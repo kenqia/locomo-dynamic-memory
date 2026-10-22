@@ -1,0 +1,1589 @@
+{
+  "kind": "offline_delivery_replay_not_live_answers",
+  "source_database": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-query-reliability-frozen/memory.sqlite3",
+  "provider_calls": 0,
+  "replay_script_sha256": "642712c324be1cd45178454ea6bfbccc572b15924911a1fbeb6f719ea85f2999",
+  "reports": [
+    {
+      "question": "What did Caroline research?",
+      "trace_id": "19be30b63bc04562b74d15fce0ad7d53",
+      "original_candidates": 48,
+      "first_input_tokens": 11882,
+      "first_delivered": [
+        {
+          "memory_id": "c29d9f9836d5c49d48f6d49b",
+          "content": "Caroline is researching adoption agencies.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+          ]
+        },
+        {
+          "memory_id": "d6e9c99ff085a28d09313fc9",
+          "content": "Caroline is an artist.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:7"
+          ]
+        },
+        {
+          "memory_id": "8e5fd562caf75df696399a41",
+          "content": "Caroline might try pottery sometime.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:11"
+          ]
+        },
+        {
+          "memory_id": "819e4905a08ccf025291d0b7",
+          "content": "Caroline is a trans woman.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:13"
+          ]
+        },
+        {
+          "memory_id": "87dc7fae09c589f68fc357a8",
+          "content": "Caroline's transition changed her relationships.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+          ]
+        },
+        {
+          "memory_id": "4432640ac0d206c4b5e73dc9",
+          "content": "Caroline wants to help people who have gone through the same things as her.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ]
+        },
+        {
+          "memory_id": "41eceb70983189049494a2a7",
+          "content": "Caroline's transition was not easy.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:9"
+          ]
+        },
+        {
+          "memory_id": "2f68c6af3a2ab6f48746c85c",
+          "content": "Caroline creates art.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:5"
+          ]
+        },
+        {
+          "memory_id": "bdbd5262ede13d6d0cabd57a",
+          "content": "Caroline would love to support those with similar issues.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+          ]
+        },
+        {
+          "memory_id": "8e08017bf7e25b66e1e59587",
+          "content": "Caroline has a mentee.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:10"
+          ]
+        },
+        {
+          "memory_id": "edf0ad6dfb5ddf068bbe2225",
+          "content": "Caroline has been looking into counseling or mental health work.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+          ]
+        },
+        {
+          "memory_id": "710c1236d48a31302c628218",
+          "content": "Caroline plays guitar, mostly.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:19"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "c29d9f9836d5c49d48f6d49b"
+      ],
+      "joint_input_tokens": 11852,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What is Caroline's identity?",
+      "trace_id": "941cbb906be442828bc1f2763268cf79",
+      "original_candidates": 35,
+      "first_input_tokens": 11778,
+      "first_delivered": [
+        {
+          "memory_id": "b2f29bf3d5f84d8a744b62b2",
+          "content": "Caroline's painting 'Embracing Identity' is about finding comfort and love in being yourself.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:12"
+          ]
+        },
+        {
+          "memory_id": "819e4905a08ccf025291d0b7",
+          "content": "Caroline is a trans woman.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:13"
+          ]
+        },
+        {
+          "memory_id": "87dc7fae09c589f68fc357a8",
+          "content": "Caroline's transition changed her relationships.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+          ]
+        },
+        {
+          "memory_id": "08bd3fdd2d2afe49e4ea0199",
+          "content": "Caroline's friends and family have been helping her with her transition.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:15"
+          ]
+        },
+        {
+          "memory_id": "cace5d0fe0546544e6388e12",
+          "content": "Caroline's mentoring is going great.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:4"
+          ]
+        },
+        {
+          "memory_id": "9943272e33d89e508d1c672b",
+          "content": "Caroline's art is about expressing her trans experience.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:10"
+          ]
+        },
+        {
+          "memory_id": "f7b3964319acc13440f39ee7",
+          "content": "Drawing flowers is one of Caroline's favorite activities.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:29"
+          ]
+        },
+        {
+          "memory_id": "fb275f176161a92d09c48e68",
+          "content": "Caroline's friends, family and people she looked up to encouraged her and made her who she is.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:13"
+          ]
+        },
+        {
+          "memory_id": "9f59f64d98f43e4a7f06daf3",
+          "content": "Caroline wants to live authentically and help others do the same.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:15"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "819e4905a08ccf025291d0b7"
+      ],
+      "joint_input_tokens": 11830,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What career path has Caroline decided to persue?",
+      "trace_id": "9effa1d9a2d74ae1bfcaf780a6512dc6",
+      "original_candidates": 28,
+      "first_input_tokens": 11937,
+      "first_delivered": [
+        {
+          "memory_id": "f78fb9042f436973ce7bd177",
+          "content": "Caroline still thinks counseling and mental health is the career path she wants to pursue.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:3"
+          ]
+        },
+        {
+          "memory_id": "ab5f9130290ce528637215d1",
+          "content": "Caroline plans to check out career options.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:9"
+          ]
+        },
+        {
+          "memory_id": "376676a70336006ce30b797e",
+          "content": "Caroline started looking into counseling and mental health career options.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:7"
+          ]
+        },
+        {
+          "memory_id": "b48a241d0644ef8309ef12cb",
+          "content": "Caroline has been looking into counseling and mental health as a career.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ]
+        },
+        {
+          "memory_id": "bdbd5262ede13d6d0cabd57a",
+          "content": "Caroline would love to support those with similar issues.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:11"
+          ]
+        },
+        {
+          "memory_id": "4432640ac0d206c4b5e73dc9",
+          "content": "Caroline wants to help people who have gone through the same things as her.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:11"
+          ]
+        },
+        {
+          "memory_id": "edf0ad6dfb5ddf068bbe2225",
+          "content": "Caroline has been looking into counseling or mental health work.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:3"
+          ]
+        },
+        {
+          "memory_id": "f7de0c7917d07b065d17886f",
+          "content": "Caroline decided to transition and join the transgender community.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:13"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "4432640ac0d206c4b5e73dc9",
+        "66184f4ba6e3b9edea9b210f",
+        "99ff162c4f2eb2d6a0680e0e",
+        "bdbd5262ede13d6d0cabd57a"
+      ],
+      "joint_input_tokens": 11815,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What activities does Melanie partake in?",
+      "trace_id": "aaa9dbb2e64940d7be23593e6e40b327",
+      "original_candidates": 39,
+      "first_input_tokens": 11604,
+      "first_delivered": [
+        {
+          "memory_id": "831f646db1fb093105c2ecd6",
+          "content": "Melanie's me-time activities include running, reading, and playing the violin.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+          ]
+        },
+        {
+          "memory_id": "f4d9ccdebd7cbc9f2ac2114f",
+          "content": "During the camping trip, Melanie's family explored nature, roasted marshmallows around the campfire, and went on a hike.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:8"
+          ]
+        },
+        {
+          "memory_id": "f7dc5f80d0bd262e64a8f605",
+          "content": "Melanie considers pottery a huge part of her life, not just a hobby.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:10"
+          ]
+        },
+        {
+          "memory_id": "08d952527a6b81e9f2fbe9e1",
+          "content": "Melanie's family roasts marshmallows, tells stories around the campfire, and enjoys each other's company on their camping trip.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:12"
+          ]
+        },
+        {
+          "memory_id": "20eb29adb2155e25475046dd",
+          "content": "Melanie is carving out some me-time each day.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+          ]
+        },
+        {
+          "memory_id": "2cb517b0dccd4d83bce9eabc",
+          "content": "Melanie and her family enjoy hiking in the mountains and exploring forests.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:34"
+          ]
+        },
+        {
+          "memory_id": "36276da9b3e7f0a96342e7d0",
+          "content": "Melanie and her partner love painting together lately, especially nature-inspired paintings.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:6"
+          ]
+        },
+        {
+          "memory_id": "a5024258a9e1c57f2c6919a8",
+          "content": "Melanie and her family did an activity yesterday that the kids loved.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:17"
+          ]
+        },
+        {
+          "memory_id": "e6716b385dbde36d51f25d07",
+          "content": "Melanie got hurt last month.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "08d952527a6b81e9f2fbe9e1",
+        "1727fee9cb63d0e3461c3dcb",
+        "2cb517b0dccd4d83bce9eabc",
+        "48981a97b7c240dc2a1377d9",
+        "831f646db1fb093105c2ecd6",
+        "e3a2e6585ad03929929abf29",
+        "f4d9ccdebd7cbc9f2ac2114f"
+      ],
+      "joint_input_tokens": 11862,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "When did Caroline go to the LGBTQ support group?",
+      "trace_id": "86d529f50ec24e4281d79612730f214f",
+      "original_candidates": 29,
+      "first_input_tokens": 11892,
+      "first_delivered": [
+        {
+          "memory_id": "7b29fbb3088ff54b1d95727f",
+          "content": "Caroline went to an LGBTQ support group the day before the conversation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+          ]
+        },
+        {
+          "memory_id": "5f80ff6f5c996eacb546e9d8",
+          "content": "Caroline joined a new LGBTQ activist group last Tuesday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:3"
+          ]
+        },
+        {
+          "memory_id": "f7fc0bd9b8ee1314e8fe7958",
+          "content": "Caroline's group is named 'Connected LGBTQ Activists'.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:5"
+          ]
+        },
+        {
+          "memory_id": "b50cb1c451a8e918e5965d76",
+          "content": "Caroline found the transgender stories at the support group inspiring.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:5"
+          ]
+        },
+        {
+          "memory_id": "9632f2128fac4eb2513ac798",
+          "content": "The support group has given Caroline courage to embrace herself.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:7"
+          ]
+        },
+        {
+          "memory_id": "2d52e33e7c7d7d50e5bfa3da",
+          "content": "The support group has made Caroline feel accepted.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:7"
+          ]
+        },
+        {
+          "memory_id": "db67113a4e69018163495668",
+          "content": "Caroline attended an adoption advice/assistance group.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+          ]
+        },
+        {
+          "memory_id": "0b994adcb2b04d7828f66ac4",
+          "content": "Caroline used to go horseback riding with her dad when she was a kid.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:7"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "7b29fbb3088ff54b1d95727f"
+      ],
+      "joint_input_tokens": 11717,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "When did Melanie sign up for a pottery class?",
+      "trace_id": "3d5a4d0fc3d44a1ea0d842a03abf3c19",
+      "original_candidates": 25,
+      "first_input_tokens": 11589,
+      "first_delivered": [
+        {
+          "memory_id": "84713399b8856b32289d625e",
+          "content": "Melanie signed up for a pottery class yesterday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:4"
+          ]
+        },
+        {
+          "memory_id": "8af2ffcad4b7c2cc004d3ed1",
+          "content": "Melanie made a black and white bowl in her pottery class.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ]
+        },
+        {
+          "memory_id": "48981a97b7c240dc2a1377d9",
+          "content": "Melanie made a plate in pottery class yesterday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:4"
+          ]
+        },
+        {
+          "memory_id": "6319012a17441f4eb602f046",
+          "content": "Melanie uses pottery for self-expression and peace.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+          ]
+        },
+        {
+          "memory_id": "a393d7fcd7db15da9df52fab",
+          "content": "Melanie is a big fan of pottery.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:6"
+          ]
+        },
+        {
+          "memory_id": "6e0a899cb0a4c553a939fce3",
+          "content": "Melanie took her kids to a pottery workshop last Friday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:2"
+          ]
+        },
+        {
+          "memory_id": "bc0c987112d83fee8236bbb4",
+          "content": "Melanie had to take a break from pottery.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "6e0a899cb0a4c553a939fce3"
+      ],
+      "joint_input_tokens": 11657,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "When did Caroline apply to adoption agencies?",
+      "trace_id": "dbf47bd8fd884c6d95878e35820a4a28",
+      "original_candidates": 29,
+      "first_input_tokens": 11766,
+      "first_delivered": [
+        {
+          "memory_id": "30b7c2fe26350ed64a276cb2",
+          "content": "Caroline applied to adoption agencies.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+          ]
+        },
+        {
+          "memory_id": "c29d9f9836d5c49d48f6d49b",
+          "content": "Caroline is researching adoption agencies.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+          ]
+        },
+        {
+          "memory_id": "31d452af0431e55c3ebfb59f",
+          "content": "Caroline passed the adoption agency interviews last Friday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:1"
+          ]
+        },
+        {
+          "memory_id": "2b7b411aca4d8f777d3a726b",
+          "content": "Caroline is looking into an adoption agency.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+          ]
+        },
+        {
+          "memory_id": "0954710d2cdbad5f6456adb6",
+          "content": "Caroline chose the adoption agency because they help LGBTQ+ folks with adoption.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:12"
+          ]
+        },
+        {
+          "memory_id": "db67113a4e69018163495668",
+          "content": "Caroline attended an adoption advice/assistance group.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+          ]
+        },
+        {
+          "memory_id": "702e0179288165db069b742e",
+          "content": "Caroline views adoption as a way of giving back and showing love and acceptance.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:3"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "30b7c2fe26350ed64a276cb2"
+      ],
+      "joint_input_tokens": 11683,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "When did Caroline pass the adoption interview?",
+      "trace_id": "18f5779f42eb45918f70d66cd193cbb2",
+      "original_candidates": 29,
+      "first_input_tokens": 11743,
+      "first_delivered": [
+        {
+          "memory_id": "31d452af0431e55c3ebfb59f",
+          "content": "Caroline passed the adoption agency interviews last Friday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:1"
+          ]
+        },
+        {
+          "memory_id": "30b7c2fe26350ed64a276cb2",
+          "content": "Caroline applied to adoption agencies.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+          ]
+        },
+        {
+          "memory_id": "f129106c71948dbf6c652071",
+          "content": "Caroline went to a council meeting for adoption last Friday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:9"
+          ]
+        },
+        {
+          "memory_id": "2b7b411aca4d8f777d3a726b",
+          "content": "Caroline is looking into an adoption agency.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+          ]
+        },
+        {
+          "memory_id": "db67113a4e69018163495668",
+          "content": "Caroline attended an adoption advice/assistance group.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:1"
+          ]
+        },
+        {
+          "memory_id": "c29d9f9836d5c49d48f6d49b",
+          "content": "Caroline is researching adoption agencies.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+          ]
+        },
+        {
+          "memory_id": "702e0179288165db069b742e",
+          "content": "Caroline views adoption as a way of giving back and showing love and acceptance.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:3"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [],
+      "joint_input_tokens": 11918,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What are Melanie's plans for the summer with respect to adoption?",
+      "trace_id": "16b5981fe3084e6497a2687cc7e3c323",
+      "original_candidates": 39,
+      "first_input_tokens": 11862,
+      "first_delivered": [
+        {
+          "memory_id": "248c91bf208897034bc744d7",
+          "content": "Melanie's kids are excited about summer break.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:7"
+          ]
+        },
+        {
+          "memory_id": "7ed5e6554c01d85740df077a",
+          "content": "Melanie proposes a family outing this summer.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:16"
+          ]
+        },
+        {
+          "memory_id": "d707bee0dd604db6a3f03945",
+          "content": "Melanie's buddy adopted a child last year.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:4"
+          ]
+        },
+        {
+          "memory_id": "7a9548c9ffb7cac80e5a5039",
+          "content": "Melanie feels like maybe she should adopt too.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:4"
+          ]
+        },
+        {
+          "memory_id": "cf20ca008c10cd79816dba6e",
+          "content": "Melanie will start thinking about what they can do for the outing.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:20"
+          ]
+        },
+        {
+          "memory_id": "e28dae4e15b737df9593ad0d",
+          "content": "Melanie and her family are thinking about going camping next month.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:7"
+          ]
+        },
+        {
+          "memory_id": "cb09cbcb6f8755d5720b03dc",
+          "content": "Melanie's family always looks forward to their family camping trip.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:12"
+          ]
+        },
+        {
+          "memory_id": "5ef5b0462b050b51ccdca1ec",
+          "content": "Melanie agrees to plan something special with Caroline.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:18"
+          ]
+        },
+        {
+          "memory_id": "1bdfae29d84ec904411b664a",
+          "content": "Melanie's family goes camping at the beach.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+          ]
+        },
+        {
+          "memory_id": "63ce0b294423da1b733f2de9",
+          "content": "Caroline suggests planning something special for this summer, just the two of them.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:17"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "7a9548c9ffb7cac80e5a5039"
+      ],
+      "joint_input_tokens": 11835,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What does Melanie's necklace symbolize?",
+      "trace_id": "f69e06a1e63943eb822774670720f848",
+      "original_candidates": 39,
+      "first_input_tokens": 11927,
+      "first_delivered": [
+        {
+          "memory_id": "e8302a13d5a7a9128e1f4339",
+          "content": "Flowers were an important part of Melanie's wedding decor.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:12"
+          ]
+        },
+        {
+          "memory_id": "2e841c2209c95b07aa165bee",
+          "content": "Melanie's real muses are painting and pottery.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:8"
+          ]
+        },
+        {
+          "memory_id": "4bb2a18f1fe2a792762450ba",
+          "content": "Melanie's family motivates her and gives her love.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:10"
+          ]
+        },
+        {
+          "memory_id": "813a2d152e2d73905761895a",
+          "content": "Melanie's new shoes are for running.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:20"
+          ]
+        },
+        {
+          "memory_id": "710227ea7706b407b1688fe9",
+          "content": "Melanie's son is okay after the accident.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+          ]
+        },
+        {
+          "memory_id": "957768d959215a4d96168564",
+          "content": "Melanie's son got into an accident during the roadtrip.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+          ]
+        },
+        {
+          "memory_id": "ab6d302c8ec19df34df48bdb",
+          "content": "Melanie's kids loved the pottery workshop.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:4"
+          ]
+        },
+        {
+          "memory_id": "dd5f45045cc6b51918142eac",
+          "content": "Melanie's pets are named Luna and Oliver.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:18"
+          ]
+        },
+        {
+          "memory_id": "12896a6c0fecd31d01f05222",
+          "content": "Running has been great for Melanie's headspace.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:22"
+          ]
+        },
+        {
+          "memory_id": "2a9af5c235f4e8803eabb192",
+          "content": "Melanie made a bowl with colors and patterns to catch the eye and make people smile.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D12:6"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [],
+      "joint_input_tokens": 11901,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "Where has Melanie camped?",
+      "trace_id": "d596275aea7548d0bdc7ae9a52646470",
+      "original_candidates": 26,
+      "first_input_tokens": 11943,
+      "first_delivered": [
+        {
+          "memory_id": "9244df64a02401a5aa610b6d",
+          "content": "Melanie went camping with the kids a few weeks before the conversation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:2"
+          ]
+        },
+        {
+          "memory_id": "d3dae5c6947596177bbb4dbb",
+          "content": "Melanie went camping with her family two weekends before 17 July 2023.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:1"
+          ]
+        },
+        {
+          "memory_id": "1bdfae29d84ec904411b664a",
+          "content": "Melanie's family goes camping at the beach.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+          ]
+        },
+        {
+          "memory_id": "b56272f2400d5bf7ab86e8c6",
+          "content": "Melanie and her family went on another camping trip in the forest.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:32"
+          ]
+        },
+        {
+          "memory_id": "1727fee9cb63d0e3461c3dcb",
+          "content": "Melanie took her family camping in the mountains last week.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:6"
+          ]
+        },
+        {
+          "memory_id": "e28dae4e15b737df9593ad0d",
+          "content": "Melanie and her family are thinking about going camping next month.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:7"
+          ]
+        },
+        {
+          "memory_id": "08d952527a6b81e9f2fbe9e1",
+          "content": "Melanie's family roasts marshmallows, tells stories around the campfire, and enjoys each other's company on their camping trip.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:12"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "1727fee9cb63d0e3461c3dcb",
+        "1bdfae29d84ec904411b664a",
+        "b56272f2400d5bf7ab86e8c6"
+      ],
+      "joint_input_tokens": 11900,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What subject have Caroline and Melanie both painted?",
+      "trace_id": "b8d651891df84608bffa5f97dea8dfb7",
+      "original_candidates": 37,
+      "first_input_tokens": 11708,
+      "first_delivered": [
+        {
+          "memory_id": "e059d2dd6c8418d842c17dc4",
+          "content": "Caroline painted a painting for the art show.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:14"
+          ]
+        },
+        {
+          "memory_id": "c2602308eef544a039793ccc",
+          "content": "Melanie painted an abstract painting.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:14"
+          ]
+        },
+        {
+          "memory_id": "8bfc515b107c2cf92f897851",
+          "content": "Caroline painted a sunset picture after visiting the beach last week.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:7"
+          ]
+        },
+        {
+          "memory_id": "b9a9011de84e4bbd7d52ae3d",
+          "content": "Melanie painted a horse painting recently.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:8"
+          ]
+        },
+        {
+          "memory_id": "6c800b37dd2afa0094091f8d",
+          "content": "A friend made Caroline a hand-painted bowl for her 18th birthday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:5"
+          ]
+        },
+        {
+          "memory_id": "1bd0dc950a72d4aa40ec6e95",
+          "content": "Melanie did a painting recently.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:30"
+          ]
+        },
+        {
+          "memory_id": "69f7c7492f136b47e0a65062",
+          "content": "Melanie and her kids just finished another painting like their last one.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:17"
+          ]
+        },
+        {
+          "memory_id": "07f332e38d5c51723cf51227",
+          "content": "Caroline wanted to capture everyone's unity and strength in her painting.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:16"
+          ]
+        },
+        {
+          "memory_id": "e01038e26bdefa5d050bcfed",
+          "content": "Caroline painted the painting after she visited an LGBTQ center.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:16"
+          ]
+        },
+        {
+          "memory_id": "488e21b483101e953887a94d",
+          "content": "Melanie is planning a few paintings inspired by autumn.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:32"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "07f332e38d5c51723cf51227",
+        "21301a30408df7ba29407309",
+        "b9a9011de84e4bbd7d52ae3d"
+      ],
+      "joint_input_tokens": 11898,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "When did Caroline join a mentorship program?",
+      "trace_id": "d5c6d3bdefc54486ac3bb30f7d1cce97",
+      "original_candidates": 41,
+      "first_input_tokens": 11855,
+      "first_delivered": [
+        {
+          "memory_id": "675698f4952bf9c9393ca5ee",
+          "content": "Caroline joined a mentorship program for LGBTQ youth last weekend.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:2"
+          ]
+        },
+        {
+          "memory_id": "8e08017bf7e25b66e1e59587",
+          "content": "Caroline has a mentee.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:10"
+          ]
+        },
+        {
+          "memory_id": "f7de0c7917d07b065d17886f",
+          "content": "Caroline decided to transition and join the transgender community.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:13"
+          ]
+        },
+        {
+          "memory_id": "e465f31d351ba4a10e15e33f",
+          "content": "Caroline has met amazing young folks and supported them through mentoring.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:4"
+          ]
+        },
+        {
+          "memory_id": "cace5d0fe0546544e6388e12",
+          "content": "Caroline's mentoring is going great.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:4"
+          ]
+        },
+        {
+          "memory_id": "eff52fd88a8c7ccf8b4c52a5",
+          "content": "Caroline finds mentoring rewarding for helping the community.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:2"
+          ]
+        },
+        {
+          "memory_id": "3b31499a19af7017e92605e6",
+          "content": "Caroline and her mentee have been working on building confidence and finding positive strategies, which has been paying off.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D9:6"
+          ]
+        },
+        {
+          "memory_id": "76127db9ac3f8a2cbc842fff",
+          "content": "Caroline's grandmother gave Caroline a necklace when Caroline was young.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:3"
+          ]
+        },
+        {
+          "memory_id": "553c4718886e69460dd924ad",
+          "content": "Caroline is creating a library for when she has kids.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:7"
+          ]
+        },
+        {
+          "memory_id": "0b994adcb2b04d7828f66ac4",
+          "content": "Caroline used to go horseback riding with her dad when she was a kid.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:7"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "675698f4952bf9c9393ca5ee"
+      ],
+      "joint_input_tokens": 11963,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "When did Melanie's family go on a roadtrip?",
+      "trace_id": "fa0a76cc923f4027bc805c46b39fbe72",
+      "original_candidates": 26,
+      "first_input_tokens": 11736,
+      "first_delivered": [
+        {
+          "memory_id": "957768d959215a4d96168564",
+          "content": "Melanie's son got into an accident during the roadtrip.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+          ]
+        },
+        {
+          "memory_id": "104e93eed67bcaea3ca08c86",
+          "content": "Melanie went on a roadtrip this past weekend.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+          ]
+        },
+        {
+          "memory_id": "cb09cbcb6f8755d5720b03dc",
+          "content": "Melanie's family always looks forward to their family camping trip.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:12"
+          ]
+        },
+        {
+          "memory_id": "4bb2a18f1fe2a792762450ba",
+          "content": "Melanie's family motivates her and gives her love.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:10"
+          ]
+        },
+        {
+          "memory_id": "bf2a27a1986afb1459ae77b4",
+          "content": "Melanie's family enjoyed the Grand Canyon a lot.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:5"
+          ]
+        },
+        {
+          "memory_id": "d7faff2728442e1eb59977e4",
+          "content": "Melanie's family helped out and showed love and support during her move.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:30"
+          ]
+        },
+        {
+          "memory_id": "1bdfae29d84ec904411b664a",
+          "content": "Melanie's family goes camping at the beach.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:16"
+          ]
+        },
+        {
+          "memory_id": "f4d9ccdebd7cbc9f2ac2114f",
+          "content": "During the camping trip, Melanie's family explored nature, roasted marshmallows around the campfire, and went on a hike.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:8"
+          ]
+        },
+        {
+          "memory_id": "8f9e24cca3dbc9c375401e23",
+          "content": "Melanie's family saw the Perseid meteor shower on their camping trip last year.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:14"
+          ]
+        },
+        {
+          "memory_id": "f6a7a14cb8da26b4e6a5d6eb",
+          "content": "Melanie took her kids to a park yesterday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:2"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "104e93eed67bcaea3ca08c86",
+        "957768d959215a4d96168564"
+      ],
+      "joint_input_tokens": 11815,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What are some changes Caroline has faced during her transition journey?",
+      "trace_id": "0c482fb250d549d890fc09fd7c9a9bb2",
+      "original_candidates": 28,
+      "first_input_tokens": 11713,
+      "first_delivered": [
+        {
+          "memory_id": "87dc7fae09c589f68fc357a8",
+          "content": "Caroline's transition changed her relationships.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+          ]
+        },
+        {
+          "memory_id": "08bd3fdd2d2afe49e4ea0199",
+          "content": "Caroline's friends and family have been helping her with her transition.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:15"
+          ]
+        },
+        {
+          "memory_id": "069b185a7aba0d32cc611b53",
+          "content": "Art has allowed Caroline to explore her transition and her changing body.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:14"
+          ]
+        },
+        {
+          "memory_id": "ed2e9ba1185f14a945cd3b41",
+          "content": "Caroline spoke about her transgender journey at a school event last week.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:1"
+          ]
+        },
+        {
+          "memory_id": "7b597b714d21eed7176aba52",
+          "content": "Caroline shared her own journey, struggles, and development since coming out at the school event.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:3"
+          ]
+        },
+        {
+          "memory_id": "ef29c48c5bd5d7478e6a38a5",
+          "content": "A few of Caroline's friends were not able to handle her transition.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+          ]
+        },
+        {
+          "memory_id": "72f408ea768e651f6684c5c1",
+          "content": "Caroline's own journey and the support she received made a huge difference in her life.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:15"
+          ]
+        },
+        {
+          "memory_id": "7961e6dcf00bf5df71fc26ef",
+          "content": "Caroline made the stained glass window to show her own journey as a transgender woman.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:19"
+          ]
+        },
+        {
+          "memory_id": "d7faff2728442e1eb59977e4",
+          "content": "Melanie's family helped out and showed love and support during her move.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:30"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "069b185a7aba0d32cc611b53",
+        "712380059f91f8ddd127339b",
+        "7b597b714d21eed7176aba52",
+        "87dc7fae09c589f68fc357a8",
+        "ef29c48c5bd5d7478e6a38a5"
+      ],
+      "joint_input_tokens": 11750,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What does Melanie do to keep herself busy during her pottery break?",
+      "trace_id": "395b300a74bd4557b7f317f5c685bb40",
+      "original_candidates": 31,
+      "first_input_tokens": 11657,
+      "first_delivered": [
+        {
+          "memory_id": "bc0c987112d83fee8236bbb4",
+          "content": "Melanie had to take a break from pottery.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+          ]
+        },
+        {
+          "memory_id": "6e0a899cb0a4c553a939fce3",
+          "content": "Melanie took her kids to a pottery workshop last Friday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:2"
+          ]
+        },
+        {
+          "memory_id": "eef2de7a1146b7880239b699",
+          "content": "Melanie has been painting to keep busy.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+          ]
+        },
+        {
+          "memory_id": "f7dc5f80d0bd262e64a8f605",
+          "content": "Melanie considers pottery a huge part of her life, not just a hobby.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:10"
+          ]
+        },
+        {
+          "memory_id": "12b66a85602fad1ff4864a4e",
+          "content": "Melanie and her kids each made their own pots at the pottery workshop.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:2"
+          ]
+        },
+        {
+          "memory_id": "8af2ffcad4b7c2cc004d3ed1",
+          "content": "Melanie made a black and white bowl in her pottery class.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+          ]
+        },
+        {
+          "memory_id": "a393d7fcd7db15da9df52fab",
+          "content": "Melanie is a big fan of pottery.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:6"
+          ]
+        },
+        {
+          "memory_id": "6319012a17441f4eb602f046",
+          "content": "Melanie uses pottery for self-expression and peace.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "bc0c987112d83fee8236bbb4",
+        "eef2de7a1146b7880239b699"
+      ],
+      "joint_input_tokens": 11742,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What LGBTQ+ events has Caroline participated in?",
+      "trace_id": "59369e6248a94652898487cfffb82d49",
+      "original_candidates": 28,
+      "first_input_tokens": 11469,
+      "first_delivered": [
+        {
+          "memory_id": "b6db40e4fa413b0b6763173e",
+          "content": "Caroline went to an LGBTQ conference two days ago.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:1"
+          ]
+        },
+        {
+          "memory_id": "ed2e9ba1185f14a945cd3b41",
+          "content": "Caroline spoke about her transgender journey at a school event last week.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:1"
+          ]
+        },
+        {
+          "memory_id": "5f80ff6f5c996eacb546e9d8",
+          "content": "Caroline joined a new LGBTQ activist group last Tuesday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D10:3"
+          ]
+        },
+        {
+          "memory_id": "f29a76536cbcf2476d5b2289",
+          "content": "Caroline volunteered at an LGBTQ+ youth center.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:3"
+          ]
+        },
+        {
+          "memory_id": "96b4d58809db63dccf241a6c",
+          "content": "Caroline went to an LGBTQ+ pride parade last week.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:1"
+          ]
+        },
+        {
+          "memory_id": "d744e00a235c5eccfcb43f73",
+          "content": "Caroline went to an LGBTQ+ counseling workshop last Friday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D4:13"
+          ]
+        },
+        {
+          "memory_id": "7b29fbb3088ff54b1d95727f",
+          "content": "Caroline went to an LGBTQ support group the day before the conversation.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D1:3"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "5f80ff6f5c996eacb546e9d8",
+        "8ecd78f1bef0bb848ac29377",
+        "96b4d58809db63dccf241a6c",
+        "b6db40e4fa413b0b6763173e",
+        "d744e00a235c5eccfcb43f73",
+        "f29a76536cbcf2476d5b2289"
+      ],
+      "joint_input_tokens": 11962,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What instruments does Melanie play?",
+      "trace_id": "efd294bb8aa649d997494040ea1d39b6",
+      "original_candidates": 35,
+      "first_input_tokens": 11662,
+      "first_delivered": [
+        {
+          "memory_id": "ad50d1035de8bd6dfcf596a2",
+          "content": "Melanie plays clarinet.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:26"
+          ]
+        },
+        {
+          "memory_id": "831f646db1fb093105c2ecd6",
+          "content": "Melanie's me-time activities include running, reading, and playing the violin.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:5"
+          ]
+        },
+        {
+          "memory_id": "211d94799c62c882ab55b339",
+          "content": "Melanie started playing clarinet when she was young.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:26"
+          ]
+        },
+        {
+          "memory_id": "e6716b385dbde36d51f25d07",
+          "content": "Melanie got hurt last month.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:8"
+          ]
+        },
+        {
+          "memory_id": "a393d7fcd7db15da9df52fab",
+          "content": "Melanie is a big fan of pottery.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D5:6"
+          ]
+        },
+        {
+          "memory_id": "104e93eed67bcaea3ca08c86",
+          "content": "Melanie went on a roadtrip this past weekend.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1"
+          ]
+        },
+        {
+          "memory_id": "44105418e5ab87babd983088",
+          "content": "Melanie is doing ok.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D17:10"
+          ]
+        },
+        {
+          "memory_id": "3581335eb4c3cc72333cd170",
+          "content": "Melanie is a fan of classical music such as Bach and Mozart.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D15:28"
+          ]
+        },
+        {
+          "memory_id": "7cae36f75a63c0e6e5e2acfb",
+          "content": "Melanie bought figurines yesterday.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D19:2"
+          ]
+        },
+        {
+          "memory_id": "a5024258a9e1c57f2c6919a8",
+          "content": "Melanie and her family did an activity yesterday that the kids loved.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:17"
+          ]
+        },
+        {
+          "memory_id": "d6c168cc312240ef03141010",
+          "content": "Melanie celebrated her daughter's birthday with a concert last night.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D11:1"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "831f646db1fb093105c2ecd6",
+        "ad50d1035de8bd6dfcf596a2"
+      ],
+      "joint_input_tokens": 11964,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "Is Oscar Melanie's pet?",
+      "trace_id": "2cf0e8ed29db4e6780de5cde2f212ba2",
+      "original_candidates": 28,
+      "first_input_tokens": 11626,
+      "first_delivered": [
+        {
+          "memory_id": "dd5f45045cc6b51918142eac",
+          "content": "Melanie's pets are named Luna and Oliver.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:18"
+          ]
+        },
+        {
+          "memory_id": "d6c524de720a2908a9ec19f2",
+          "content": "Melanie has a dog (a pup).",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:16"
+          ]
+        },
+        {
+          "memory_id": "a898aecc5010f5ee4cc8da73",
+          "content": "Melanie has a cat (a kitty).",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D7:16"
+          ]
+        },
+        {
+          "memory_id": "edc039f1b558331299a9132e",
+          "content": "Melanie has a cat named Oliver.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:4"
+          ]
+        },
+        {
+          "memory_id": "0e024e669701ea6197293efb",
+          "content": "Melanie got another cat named Bailey.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:4"
+          ]
+        },
+        {
+          "memory_id": "710227ea7706b407b1688fe9",
+          "content": "Melanie's son is okay after the accident.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+          ]
+        },
+        {
+          "memory_id": "e8302a13d5a7a9128e1f4339",
+          "content": "Flowers were an important part of Melanie's wedding decor.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D8:12"
+          ]
+        },
+        {
+          "memory_id": "957768d959215a4d96168564",
+          "content": "Melanie's son got into an accident during the roadtrip.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+          ]
+        },
+        {
+          "memory_id": "79f75600ed1f56df772340ff",
+          "content": "Melanie's family is her biggest motivation and support.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:11",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:13"
+          ]
+        },
+        {
+          "memory_id": "5d094939d255fa10e221bf58",
+          "content": "Melanie's kids were scared during the accident but were reassured.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:7"
+          ]
+        },
+        {
+          "memory_id": "c6ef8175e5c691f8ac6bcca1",
+          "content": "Painting landscapes and still life is Melanie's favorite.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:30"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "0e024e669701ea6197293efb",
+        "652c615d38466683a39261ca",
+        "dd5f45045cc6b51918142eac",
+        "edc039f1b558331299a9132e"
+      ],
+      "joint_input_tokens": 11796,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    },
+    {
+      "question": "What happened to Caroline's son on their road trip?",
+      "trace_id": "3bb9619a50484be9bdd18c70fdda49ef",
+      "original_candidates": 32,
+      "first_input_tokens": 11812,
+      "first_delivered": [
+        {
+          "memory_id": "b2310b6e8b898aabf3e20bf0",
+          "content": "Caroline's goal is to give kids a loving home.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:10"
+          ]
+        },
+        {
+          "memory_id": "08bd3fdd2d2afe49e4ea0199",
+          "content": "Caroline's friends and family have been helping her with her transition.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:12",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:13",
+            "f69a07a79a2d5f4c8188300a/conv-26/D6:15"
+          ]
+        },
+        {
+          "memory_id": "41c5f3ef3d7a340e6c24236e",
+          "content": "Caroline's dream is to have a family and give a loving home to kids who need it.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D2:8"
+          ]
+        },
+        {
+          "memory_id": "87dc7fae09c589f68fc357a8",
+          "content": "Caroline's transition changed her relationships.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D16:15"
+          ]
+        },
+        {
+          "memory_id": "0b994adcb2b04d7828f66ac4",
+          "content": "Caroline used to go horseback riding with her dad when she was a kid.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D13:7"
+          ]
+        },
+        {
+          "memory_id": "710227ea7706b407b1688fe9",
+          "content": "Melanie's son is okay after the accident.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+          ]
+        },
+        {
+          "memory_id": "fd3cd7e78d8786c51e46efe0",
+          "content": "Caroline went hiking last week and got into a bad spot with some people.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D14:1"
+          ]
+        },
+        {
+          "memory_id": "19cd746fe22231018ae1338c",
+          "content": "Caroline moved from her home country 4 years ago.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:13"
+          ]
+        },
+        {
+          "memory_id": "957768d959215a4d96168564",
+          "content": "Melanie's son got into an accident during the roadtrip.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:1",
+            "f69a07a79a2d5f4c8188300a/conv-26/D18:3"
+          ]
+        },
+        {
+          "memory_id": "fc32b8dad018e43f956bfcd7",
+          "content": "Caroline had a tough breakup.",
+          "source_ids": [
+            "f69a07a79a2d5f4c8188300a/conv-26/D3:13"
+          ]
+        }
+      ],
+      "old_supported_memory_ids": [
+        "710227ea7706b407b1688fe9",
+        "957768d959215a4d96168564"
+      ],
+      "joint_input_tokens": 11797,
+      "joint_retains_all_prior_support": true,
+      "required_recovery": null
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "implementation_sha256": "b6d05ee02cf29d5df3c7bab0dcef855bdba317061c187febc49eaa5222ddf4b1",
+  "offline_regression": {
+    "command": "HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 .venv/bin/python -m pytest -q -m 'not live_model and not local_embedding'",
+    "passed": 371,
+    "deselected": 4,
+    "elapsed_seconds": 222.07,
+    "warning": "Existing Starlette/httpx deprecation warning"
+  },
+  "targeted_after_report_change": {
+    "command": ".venv/bin/python -m pytest -q tests/test_answer_repeat_experiment.py tests/test_strategy_ui.py",
+    "passed": 5
+  },
+  "compileall": "passed",
+  "git_diff_check": "passed",
+  "browser_e2e": "not_run",
+  "new_paid_calls": 98,
+  "cumulative_calls": 1009,
+  "ui_validation": "Streamlit AppTest, 2 tests; four saved strategies and GET sources; switching causes no POST",
+  "immutable_artifact_digest": "5e4b912b1978994cd73804291686195441bc28630e25e56dd1d2990fb225e22a",
+  "original_and_snapshot_build_artifacts_unchanged": true
+}

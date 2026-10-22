@@ -1,0 +1,176 @@
+[
+  {
+    "started_at": "2026-10-20T15:08:49.086620+00:00",
+    "status": "extraction_incomplete",
+    "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3",
+    "dataset_id": "f69a07a79a2d5f4c8188300a",
+    "build_id": "5c7699dd6543407697ae232633154036",
+    "interruption_review": "interruption-review.json",
+    "reviewed_at": "2026-10-20T15:40:12.603007+00:00"
+  },
+  {
+    "started_at": "2026-10-20T15:40:29.587482+00:00",
+    "status": "relations_incomplete",
+    "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3",
+    "dataset_id": "f69a07a79a2d5f4c8188300a",
+    "build_id": "5c7699dd6543407697ae232633154036",
+    "resumed_at": "2026-10-20T15:40:29.587720+00:00",
+    "interruption_review": "second-interruption-review.json",
+    "reviewed_at": "2026-10-20T16:24:58.144403+00:00"
+  },
+  {
+    "started_at": "2026-10-20T16:25:13.028840+00:00",
+    "status": "relations_incomplete",
+    "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3",
+    "dataset_id": "f69a07a79a2d5f4c8188300a",
+    "build_id": "5c7699dd6543407697ae232633154036",
+    "resumed_at": "2026-10-20T16:25:13.029757+00:00",
+    "error_type": "BuildError",
+    "completed_at": "2026-10-20T17:25:58.099365+00:00",
+    "budget_after": {
+      "limit": 1000,
+      "previous_calls": 313,
+      "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+      "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+      "reserved_new_calls": 461,
+      "reserved_total_calls": 774,
+      "phases": {
+        "gate2-lengths": 13,
+        "gate4-evidence": 6,
+        "gate5-same-key": 2,
+        "gate5-single-pair-diagnosis": 4,
+        "quality-A-extraction": 4,
+        "quality-B-candidates": 2,
+        "quality-C-stages": 3,
+        "quality-D-raw": 7,
+        "quality-E-evidence": 10,
+        "thinking-conv26-build-qa": 410
+      },
+      "operations": {
+        "relate": 364,
+        "extract": 80,
+        "resolve_raw": 12,
+        "answer_raw": 5
+      },
+      "outcomes": {
+        "model_http_error": 1,
+        "succeeded": 426,
+        "invalid_output": 32,
+        "interrupted_unknown": 2
+      },
+      "usage": {
+        "generation_calls": 461,
+        "unknown_attempts": 0,
+        "calls_without_reported_usage": 3,
+        "calls_with_partial_usage": 0,
+        "reported_tokens": {
+          "prompt_tokens": 3893414,
+          "completion_tokens": 1973239,
+          "total_tokens": 5866653
+        },
+        "usage_fields": {
+          "prompt_tokens": {
+            "reported": 3893414,
+            "calls_with_reported_usage": 458,
+            "calls_missing_usage": 3,
+            "complete": false
+          },
+          "completion_tokens": {
+            "reported": 1973239,
+            "calls_with_reported_usage": 458,
+            "calls_missing_usage": 3,
+            "complete": false
+          },
+          "total_tokens": {
+            "reported": 5866653,
+            "calls_with_reported_usage": 458,
+            "calls_missing_usage": 3,
+            "complete": false
+          }
+        },
+        "provider_usage_complete": false,
+        "provider_retries": 23,
+        "reported_provider_seconds": 7321.031453840982
+      }
+    },
+    "reviewed_at": "2026-10-20T17:29:44.346705+00:00",
+    "publication_error": "endpoint_evidence_required",
+    "repair_record": "endpoint-evidence-repair.json"
+  },
+  {
+    "started_at": "2026-10-20T17:29:45.656168+00:00",
+    "status": "experiment_stopped",
+    "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3",
+    "dataset_id": "f69a07a79a2d5f4c8188300a",
+    "build_id": "5c7699dd6543407697ae232633154036",
+    "resumed_at": "2026-10-20T17:29:45.657181+00:00",
+    "error_type": "HTTPStatusError",
+    "completed_at": "2026-10-20T17:30:14.850001+00:00",
+    "budget_after": {
+      "limit": 1000,
+      "previous_calls": 313,
+      "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+      "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+      "reserved_new_calls": 462,
+      "reserved_total_calls": 775,
+      "phases": {
+        "gate2-lengths": 13,
+        "gate4-evidence": 6,
+        "gate5-same-key": 2,
+        "gate5-single-pair-diagnosis": 4,
+        "quality-A-extraction": 4,
+        "quality-B-candidates": 2,
+        "quality-C-stages": 3,
+        "quality-D-raw": 7,
+        "quality-E-evidence": 10,
+        "thinking-conv26-build-qa": 411
+      },
+      "operations": {
+        "relate": 365,
+        "extract": 80,
+        "resolve_raw": 12,
+        "answer_raw": 5
+      },
+      "outcomes": {
+        "model_http_error": 1,
+        "succeeded": 427,
+        "invalid_output": 32,
+        "interrupted_unknown": 2
+      },
+      "usage": {
+        "generation_calls": 462,
+        "unknown_attempts": 0,
+        "calls_without_reported_usage": 3,
+        "calls_with_partial_usage": 0,
+        "reported_tokens": {
+          "prompt_tokens": 3904798,
+          "completion_tokens": 1979688,
+          "total_tokens": 5884486
+        },
+        "usage_fields": {
+          "prompt_tokens": {
+            "reported": 3904798,
+            "calls_with_reported_usage": 459,
+            "calls_missing_usage": 3,
+            "complete": false
+          },
+          "completion_tokens": {
+            "reported": 1979688,
+            "calls_with_reported_usage": 459,
+            "calls_missing_usage": 3,
+            "complete": false
+          },
+          "total_tokens": {
+            "reported": 5884486,
+            "calls_with_reported_usage": 459,
+            "calls_missing_usage": 3,
+            "complete": false
+          }
+        },
+        "provider_usage_complete": false,
+        "provider_retries": 23,
+        "reported_provider_seconds": 7346.187285045982
+      }
+    }
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "at": "2026-10-21T02:51:57.935704+00:00",
+    "operation": "resolve",
+    "errors": [
+      {
+        "type": "json_invalid",
+        "field_path": null,
+        "cause": "other_validation_error"
+      }
+    ]
+  }
+]

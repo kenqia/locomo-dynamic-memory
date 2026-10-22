@@ -1,0 +1,1300 @@
+{
+  "created_at": "2026-10-20T12:38:40.593979+00:00",
+  "implementation_sha256": "bb5dc4ffaf1ff8cb0c01233de1d1e331683f12cc63e2d1f8c27cd281a3b87aca",
+  "before": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 29,
+    "reserved_total_calls": 342,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4
+    },
+    "operations": {
+      "relate": 25,
+      "extract": 4
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 28
+    },
+    "usage": {
+      "generation_calls": 29,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 217534,
+        "completion_tokens": 57287,
+        "total_tokens": 274821
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 217534,
+          "calls_with_reported_usage": 28,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 57287,
+          "calls_with_reported_usage": 28,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 274821,
+          "calls_with_reported_usage": 28,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 171.97055093599738
+    }
+  },
+  "phase": "candidates",
+  "cases": [
+    {
+      "case": 73,
+      "selection": {
+        "algorithm_version": "same-key-factual-and-cross-key-v1",
+        "input_count": 25,
+        "same_key_quota": 16,
+        "cross_key_quota": 4,
+        "same_key_available": 0,
+        "cross_key_available": 25,
+        "same_key_selected": 0,
+        "cross_key_selected": 20,
+        "borrowed_same_key_seats": 0,
+        "borrowed_cross_key_seats": 16,
+        "omitted_count": 5,
+        "selected": [
+          {
+            "memory_id": "480d91e2f9e90f04b47fa0af",
+            "score": 6.887208644956306,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "ace77a25a90690ed18490261",
+            "score": 5.886948823110008,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "adf64b5516b03ab518ca1684",
+            "score": 4.6516102123116365,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "b9a5ccd804677b0cdee96f2f",
+            "score": 3.582991779008074,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "8c8408241ea40f242f99a20d",
+            "score": 2.73145239586262,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "88700a00dabe497e930fb306",
+            "score": 2.4359911861180095,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "824895bb6e62cfb97a200228",
+            "score": 2.3981736147432806,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "2c1cd3e7b4576777dd9a710d",
+            "score": 1.9318117576087046,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "b031aaa5783bf8426e090849",
+            "score": 1.7874059090758971,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "03b96b88113ce39e5944194e",
+            "score": 1.4682707428273998,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "997ba06e60ec21a9100e6282",
+            "score": 1.1140174062105186,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "efc2acb8ae95893ddf1e112a",
+            "score": 1.04557958393242,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "8f676aa8bc55b144d2ec15b0",
+            "score": 1.013772169316001,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "f59e2e3288e9d9ff2198a25a",
+            "score": 0.6116531459930725,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "c00fbdd1ae312634001a1c48",
+            "score": 0.6069328951775922,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "2f32b470aad956d99cfa84c2",
+            "score": 0.5386111439451708,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "f4ec91f20227962b3350857b",
+            "score": 0.42825389775661116,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "c6fa3f2aa303d301827a1460",
+            "score": 0.34616632683918613,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "1a12cf669aef10ff96555b00",
+            "score": 0.0,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "25cb2f95868ef76695e0f0c1",
+            "score": 0.0,
+            "pool": "cross_key_lexical_candidate"
+          }
+        ]
+      },
+      "output": {
+        "judgments": [
+          {
+            "old_memory_id": "480d91e2f9e90f04b47fa0af",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "UPDATE",
+            "reason": "Old stage: Melanie enrolled in a pottery class. New stage: she produced a bowl in that class, a later concrete step in the same pottery process.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": "I just signed up for a pottery class yesterday.",
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "ace77a25a90690ed18490261",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Old claim describes pottery as therapeutic self-expression; new memory only reports making a bowl, with no evidence about the class's effect.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:4",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "adf64b5516b03ab518ca1684",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Camping trip and pottery bowl are unrelated activities; no same-process progression.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:6",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "b9a5ccd804677b0cdee96f2f",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Interest in pottery and making a bowl are related but the new memory does not establish a new stage of the interest state.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "8c8408241ea40f242f99a20d",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Family state and pottery creation are different dimensions with no same-process link.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:14",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "88700a00dabe497e930fb306",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Painting meaning and pottery bowl creation are different activities; no progression evidence.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "824895bb6e62cfb97a200228",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Motivation source and pottery creation are unrelated dimensions.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "2c1cd3e7b4576777dd9a710d",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Camping plan and pottery bowl creation are unrelated; no same-process stage transition.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:7",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "b031aaa5783bf8426e090849",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Family-time feeling and pottery creation are unrelated dimensions.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:22",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "03b96b88113ce39e5944194e",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Family gathering and pottery bowl creation are unrelated events.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:20",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "997ba06e60ec21a9100e6282",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Camping activities and pottery creation are unrelated; no same-process link.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "efc2acb8ae95893ddf1e112a",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Intention to be courageous and pottery creation are unrelated dimensions.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "8f676aa8bc55b144d2ec15b0",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Self-care activities and pottery creation are different dimensions with no progression evidence.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "f59e2e3288e9d9ff2198a25a",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Wedding event and pottery creation are unrelated.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "c00fbdd1ae312634001a1c48",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Painting as relaxation and pottery bowl creation are different activities; no same-process stage.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:16",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "2f32b470aad956d99cfa84c2",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Self-care effect and pottery creation are unrelated dimensions.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:3",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "f4ec91f20227962b3350857b",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Painting a lake sunrise and making a pottery bowl are separate creations; no same-process progression.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:14",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "c6fa3f2aa303d301827a1460",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Charity race and pottery creation are unrelated events.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "1a12cf669aef10ff96555b00",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Children's interest in nature and Melanie's pottery creation are unrelated dimensions.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "25cb2f95868ef76695e0f0c1",
+            "new_memory_id": "6238c781aa4e813acfed882f",
+            "label": "undetermined",
+            "reason": "Marital status and pottery creation are unrelated dimensions.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:16",
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:8"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T12:38:40.706948+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 10452,
+              "completion_tokens": 2429,
+              "total_tokens": 12881
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "elapsed_seconds": 6.987575461997039,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T12:38:47.694525+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 11296,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      }
+    },
+    {
+      "case": 91,
+      "selection": {
+        "algorithm_version": "same-key-factual-and-cross-key-v1",
+        "input_count": 59,
+        "same_key_quota": 16,
+        "cross_key_quota": 4,
+        "same_key_available": 0,
+        "cross_key_available": 59,
+        "same_key_selected": 0,
+        "cross_key_selected": 20,
+        "borrowed_same_key_seats": 0,
+        "borrowed_cross_key_seats": 16,
+        "omitted_count": 39,
+        "selected": [
+          {
+            "memory_id": "98e7a1f4e17629630d19c154",
+            "score": 13.3715299371404,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "7140560fa6eac1c93cd6d4b9",
+            "score": 11.887813999837476,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "64adfdeaedb942a62de851cc",
+            "score": 10.428456070875322,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "7e3dbe2a9fe2d84f684fba03",
+            "score": 10.023765126035935,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "e0782e983de28fbcbaf84d47",
+            "score": 9.419513180716542,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "155d3c3ef6cf265ebd88718e",
+            "score": 8.718532561509456,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "40fa459584311ebc9c3a2681",
+            "score": 6.5537766136972735,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "0fe308da95cefa0ff580922a",
+            "score": 6.031416187729006,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "d3e99b6d906b72fff7257d73",
+            "score": 5.828266589955914,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "18a48456263789123ede019e",
+            "score": 5.688477377895025,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "aca53d53155ea24b1fc23883",
+            "score": 5.11968951332251,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "44d071c29ab309a4544555be",
+            "score": 5.109597724307708,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "02fe353db8ae3fb4cdd87d80",
+            "score": 4.999295356301737,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "0d0dde9b0847ed92febbc1f0",
+            "score": 4.894312871595847,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "cfc400288ec0bc112c12c0c8",
+            "score": 3.9880540813092944,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "c6dc866b3fb8e304c725357e",
+            "score": 3.8046802462380125,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "a8cec9be91860db3646ee08f",
+            "score": 3.469525559182757,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "7351aee115b6824e22292dc8",
+            "score": 3.3008909865534477,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "3aa444881579e4cb8f9f1f71",
+            "score": 3.148690497948119,
+            "pool": "cross_key_lexical_candidate"
+          },
+          {
+            "memory_id": "08cd5c0bfe925e05ec6f65bc",
+            "score": 2.970479971271958,
+            "pool": "cross_key_lexical_candidate"
+          }
+        ]
+      },
+      "output": {
+        "judgments": [
+          {
+            "old_memory_id": "98e7a1f4e17629630d19c154",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (personal_experience vs advocacy_intention); new intention about trans rights advocacy does not establish a stage transition from the old fact about support making a difference.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "7140560fa6eac1c93cd6d4b9",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (emotional_state vs advocacy_intention); no evidence linking the old emotional state to a new advocacy stage.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "64adfdeaedb942a62de851cc",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (helping_goal vs advocacy_intention); the new statement about fighting for trans rights is a distinct intention, not shown as a later stage of the old helping goal.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "7e3dbe2a9fe2d84f684fba03",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (advocacy vs advocacy_intention); the new intention to help fight for trans rights is related but not evidence of a concrete stage transition from the old intention to keep using her voice.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:7",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "e0782e983de28fbcbaf84d47",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (career_focus vs advocacy_intention); no evidence that the new advocacy intention is a later stage of the career plan.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:13",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "155d3c3ef6cf265ebd88718e",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (support_after_breakup vs advocacy_intention); no stage-transition evidence connects them.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "40fa459584311ebc9c3a2681",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (passion vs advocacy_intention); the new advocacy intention does not establish a transition from the old passion.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:15",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "0fe308da95cefa0ff580922a",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (advocacy_belief vs advocacy_intention); a belief about promoting understanding is not shown to progress into the new advocacy intention.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:5",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "d3e99b6d906b72fff7257d73",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (activity vs advocacy_intention); unrelated dimensions with no stage-transition evidence.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D6:7",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "18a48456263789123ede019e",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (bowl_gift vs advocacy_intention); unrelated event and intention.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:5",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "aca53d53155ea24b1fc23883",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (parenting_outlook vs advocacy_intention); no evidence of a stage transition.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:14",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "44d071c29ab309a4544555be",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (adoption_agency_selection_reason vs advocacy_intention); unrelated dimensions.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:12",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "02fe353db8ae3fb4cdd87d80",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (family_goal vs advocacy_intention); no evidence that the new advocacy intention is a later stage of the family goal.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "0d0dde9b0847ed92febbc1f0",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (emotional_response vs advocacy_intention); no stage-transition evidence.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D1:5",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "cfc400288ec0bc112c12c0c8",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (necklace_origin vs advocacy_intention); unrelated event and intention.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "c6dc866b3fb8e304c725357e",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (gratitude vs advocacy_intention); no evidence of a stage transition.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "a8cec9be91860db3646ee08f",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (career_interest vs advocacy_intention); no evidence that the new advocacy intention is a later stage of the career interest.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D5:3",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "7351aee115b6824e22292dc8",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (school_event vs advocacy_intention); the past school event is not shown to progress into the new advocacy intention.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "3aa444881579e4cb8f9f1f71",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (friendship_duration vs advocacy_intention); unrelated dimensions.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D3:13",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          },
+          {
+            "old_memory_id": "08cd5c0bfe925e05ec6f65bc",
+            "new_memory_id": "1a4534c2816be2a913dd5d0a",
+            "label": "undetermined",
+            "reason": "Different state keys (family_goal vs advocacy_intention); the new advocacy intention is not a later stage of the family goal.",
+            "source_ids": [
+              "f69a07a79a2d5f4c8188300a/conv-26/D2:10",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:1",
+              "f69a07a79a2d5f4c8188300a/conv-26/D7:3"
+            ],
+            "support_quote": null,
+            "applicability": {
+              "from_date": null,
+              "to_date": null,
+              "condition": null,
+              "condition_satisfied": null,
+              "condition_source_ids": [],
+              "time_anchor_source_id": null,
+              "original_time_expression": null,
+              "time_basis": null
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "calls": [
+          {
+            "attempt": 1,
+            "timestamp": "2026-10-20T12:38:47.711891+00:00",
+            "requested_model": "deepseek-flash",
+            "returned_model": "deepseek-flash",
+            "usage": {
+              "prompt_tokens": 10707,
+              "completion_tokens": 3192,
+              "total_tokens": 13899
+            },
+            "response_received": true,
+            "diagnostic_version": 1,
+            "status": "succeeded",
+            "finish_reason": "stop",
+            "finish_reason_status": "reported",
+            "failure_stage": null,
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "http_error_category": null,
+            "http_retryable": null,
+            "elapsed_seconds": 9.806421904002491,
+            "outcome": "succeeded",
+            "completed_at": "2026-10-20T12:38:57.518314+00:00"
+          }
+        ],
+        "request_context_estimate": {
+          "token_count": 11547,
+          "method": "regex-word-punctuation-v1",
+          "scope": "serialized_messages_including_prompt_schema_and_payload",
+          "is_provider_token_count": false,
+          "reserved_output_tokens": 8192
+        }
+      }
+    }
+  ],
+  "status": "requires_semantic_review",
+  "after": {
+    "limit": 1000,
+    "previous_calls": 313,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/provider-budget.sqlite3",
+    "prior_sha256": "9b687fe84e89893a64a10852744d363f4840f95729743845f67f96d6f879fcc7",
+    "reserved_new_calls": 31,
+    "reserved_total_calls": 344,
+    "phases": {
+      "gate2-lengths": 13,
+      "gate4-evidence": 6,
+      "gate5-same-key": 2,
+      "gate5-single-pair-diagnosis": 4,
+      "quality-A-extraction": 4,
+      "quality-B-candidates": 2
+    },
+    "operations": {
+      "relate": 27,
+      "extract": 4
+    },
+    "outcomes": {
+      "model_http_error": 1,
+      "succeeded": 30
+    },
+    "usage": {
+      "generation_calls": 31,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 1,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 238693,
+        "completion_tokens": 62908,
+        "total_tokens": 301601
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 238693,
+          "calls_with_reported_usage": 30,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "completion_tokens": {
+          "reported": 62908,
+          "calls_with_reported_usage": 30,
+          "calls_missing_usage": 1,
+          "complete": false
+        },
+        "total_tokens": {
+          "reported": 301601,
+          "calls_with_reported_usage": 30,
+          "calls_missing_usage": 1,
+          "complete": false
+        }
+      },
+      "provider_usage_complete": false,
+      "provider_retries": 0,
+      "reported_provider_seconds": 188.7645483019969
+    }
+  }
+}

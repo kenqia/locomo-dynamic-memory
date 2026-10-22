@@ -1,0 +1,102 @@
+{
+  "audited_paths": [
+    "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15/memory.sqlite3",
+    "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26/memory.sqlite3",
+    "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3/memory.sqlite3",
+    "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26/memory.sqlite3",
+    "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5/memory.sqlite3",
+    "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v2/memory.sqlite3"
+  ],
+  "used_qa_indices": [
+    0,
+    3,
+    4,
+    13,
+    15,
+    16,
+    53,
+    79,
+    153,
+    157
+  ],
+  "usage_sources": {
+    "3": [
+      "evaluation_attempt:real-baseline-issue15-answer-output-conv26",
+      "evaluation_attempt:real-baseline-issue15-thinking-conv26-v3",
+      "query_trace:real-baseline-issue15-answer-output-conv26",
+      "query_trace:real-baseline-issue15-thinking-conv26-v3",
+      "test:tests/test_answer_regressions.py"
+    ],
+    "4": [
+      "evaluation_attempt:real-baseline-issue15-answer-output-conv26",
+      "evaluation_attempt:real-baseline-issue15-thinking-conv26-v3",
+      "query_trace:real-baseline-issue15-answer-output-conv26",
+      "query_trace:real-baseline-issue15-thinking-conv26-v3"
+    ],
+    "13": [
+      "evaluation_attempt:real-baseline-issue15-answer-output-conv26",
+      "evaluation_attempt:real-baseline-issue15-thinking-conv26-v3",
+      "query_trace:real-baseline-issue15-answer-output-conv26",
+      "query_trace:real-baseline-issue15-thinking-conv26-v3",
+      "test:tests/test_answer_regressions.py"
+    ],
+    "15": [
+      "evaluation_attempt:real-baseline-issue15-answer-output-conv26",
+      "evaluation_attempt:real-baseline-issue15-thinking-conv26-v3",
+      "query_trace:real-baseline-issue15-answer-output-conv26",
+      "query_trace:real-baseline-issue15-thinking-conv26-v3",
+      "test:tests/test_answer_regressions.py"
+    ],
+    "0": [
+      "evaluation_attempt:real-baseline-issue15-answer-output-conv26",
+      "evaluation_attempt:real-baseline-issue15-thinking-conv26-v3",
+      "query_trace:real-baseline-issue15-answer-output-conv26",
+      "query_trace:real-baseline-issue15-thinking-conv26-v3"
+    ],
+    "16": [
+      "evaluation_attempt:real-baseline-issue15-answer-output-conv26",
+      "evaluation_attempt:real-baseline-issue15-thinking-conv26-v3",
+      "query_trace:real-baseline-issue15-answer-output-conv26",
+      "query_trace:real-baseline-issue15-thinking-conv26-v3"
+    ],
+    "53": [
+      "evaluation_attempt:real-baseline-issue15-answer-output-conv26",
+      "evaluation_attempt:real-baseline-issue15-thinking-conv26-v3",
+      "query_trace:real-baseline-issue15-answer-output-conv26",
+      "query_trace:real-baseline-issue15-thinking-conv26-v3",
+      "test:tests/test_answer_regressions.py"
+    ],
+    "79": [
+      "evaluation_attempt:real-baseline-issue15-answer-output-conv26",
+      "evaluation_attempt:real-baseline-issue15-thinking-conv26-v3",
+      "query_trace:real-baseline-issue15-answer-output-conv26",
+      "query_trace:real-baseline-issue15-thinking-conv26-v3"
+    ],
+    "153": [
+      "evaluation_attempt:real-baseline-issue15-answer-output-conv26",
+      "evaluation_attempt:real-baseline-issue15-thinking-conv26-v3",
+      "query_trace:real-baseline-issue15-answer-output-conv26",
+      "query_trace:real-baseline-issue15-thinking-conv26-v3"
+    ],
+    "157": [
+      "evaluation_attempt:real-baseline-issue15-answer-output-conv26",
+      "evaluation_attempt:real-baseline-issue15-thinking-conv26-v3",
+      "query_trace:real-baseline-issue15-answer-output-conv26",
+      "query_trace:real-baseline-issue15-thinking-conv26-v3",
+      "test:tests/test_answer_regressions.py"
+    ]
+  },
+  "selected_b_indices": [
+    18,
+    55,
+    36,
+    74,
+    65,
+    136,
+    32,
+    60,
+    178,
+    191
+  ],
+  "scope_limitation": "Question-level holdout within already tuned conv-26, not unseen conversations or independent hidden-test generalization. Prior source-level relation audits may have exposed underlying facts. No selected QA answer was used in selection."
+}

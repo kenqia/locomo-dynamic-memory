@@ -1,0 +1,73 @@
+{
+  "reviewed_at": "2026-10-21",
+  "scope": "manual source-bounded diagnostic review; not independent dynamic truth or a scorer replacement",
+  "goals": {
+    "dynamic_execution": {
+      "target": 10,
+      "actual": 10,
+      "planned": 10,
+      "achieved": true
+    },
+    "raw_execution": {
+      "target": "match Dynamic",
+      "actual": 10,
+      "planned": 10,
+      "achieved": true
+    },
+    "dynamic_answerable_f1": {
+      "before": 0.15368599884568704,
+      "after": 0.3338774926446551,
+      "interpretation": "increase observed; no causal or generalization guarantee"
+    },
+    "official_refusal_matches": {
+      "dynamic": 1,
+      "dynamic_raw_fallback": 2,
+      "hybrid_no_resolution": 1,
+      "full_text": 2
+    },
+    "qa53": {
+      "all_four_week_contains_2023_08_23": true,
+      "generalization_not_established": true
+    },
+    "ui": {
+      "query_strategies": [
+        "dynamic",
+        "dynamic_raw_fallback"
+      ],
+      "saved_result_strategies": [
+        "dynamic",
+        "dynamic_raw_fallback",
+        "hybrid_no_resolution",
+        "full_text"
+      ],
+      "streamlit_interaction_tests_passed": true,
+      "browser_e2e_run": false
+    }
+  },
+  "reviewed_cases": {
+    "qa3_raw": {
+      "answer": "No information available.",
+      "semantic_issue": "Relevant adoption research Memory exists in expanded candidates but is omitted before the first resolution by resolution_input_budget. Fallback D17:7 and D17:8 concern advice to Melanie, not Caroline research.",
+      "relevant_memory_id": "c29d9f9836d5c49d48f6d49b",
+      "further_paid_retries": 0
+    },
+    "qa15_raw": {
+      "fallback_triggered": false,
+      "initial_status": "sufficient",
+      "missing_reference_activities": [
+        "camping",
+        "swimming"
+      ],
+      "interpretation": "Successful execution and sufficient status do not establish enumeration completeness."
+    },
+    "qa153_dynamic_hybrid": {
+      "semantic_refusal": true,
+      "official_match": false,
+      "interpretation": "No specific summer plan stated, but phrasing lacks scorer recognized refusal substrings."
+    },
+    "qa157_all_four": {
+      "official_match": true,
+      "person_attribution_error_observed": false
+    }
+  }
+}

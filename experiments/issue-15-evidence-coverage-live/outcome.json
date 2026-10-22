@@ -1,0 +1,91 @@
+{
+  "started_at": "2026-10-21T07:22:57.481841+00:00",
+  "status": "completed",
+  "runs": {
+    "A": {
+      "run_id": "a34e1c24f5dd4d11ab67e194a7222a97",
+      "status": "completed",
+      "progress": {
+        "total": 10,
+        "pending": 0,
+        "running": 0,
+        "succeeded": 10,
+        "failed": 0,
+        "interrupted": 0,
+        "unknown": 0
+      }
+    },
+    "B": {
+      "run_id": "f399cf003fa747deb37b6afa703c4490",
+      "status": "completed",
+      "progress": {
+        "total": 20,
+        "pending": 0,
+        "running": 0,
+        "succeeded": 20,
+        "failed": 0,
+        "interrupted": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "directory": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab",
+  "completed_at": "2026-10-21T07:33:59.110726+00:00",
+  "budget_after": {
+    "limit": 1111,
+    "previous_calls": 1009,
+    "prior_ledger": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26/campaign.sqlite3",
+    "prior_sha256": "dd7a4ab5796e18eafe9f505988da1f101922932173a01649ff03506f4198201e",
+    "reserved_new_calls": 88,
+    "reserved_total_calls": 1097,
+    "phases": {
+      "evidence-coverage-A-B": 88
+    },
+    "operations": {
+      "query_analysis": 30,
+      "resolve": 5,
+      "answer": 15,
+      "resolve_raw": 23,
+      "answer_raw": 15
+    },
+    "outcomes": {
+      "succeeded": 88
+    },
+    "usage": {
+      "generation_calls": 88,
+      "unknown_attempts": 0,
+      "calls_without_reported_usage": 0,
+      "calls_with_partial_usage": 0,
+      "reported_tokens": {
+        "prompt_tokens": 742106,
+        "completion_tokens": 114965,
+        "total_tokens": 857071
+      },
+      "usage_fields": {
+        "prompt_tokens": {
+          "reported": 742106,
+          "calls_with_reported_usage": 88,
+          "calls_missing_usage": 0,
+          "complete": true
+        },
+        "completion_tokens": {
+          "reported": 114965,
+          "calls_with_reported_usage": 88,
+          "calls_missing_usage": 0,
+          "complete": true
+        },
+        "total_tokens": {
+          "reported": 857071,
+          "calls_with_reported_usage": 88,
+          "calls_missing_usage": 0,
+          "complete": true
+        }
+      },
+      "provider_usage_complete": true,
+      "provider_retries": 0,
+      "reported_provider_seconds": 639.7346097440095
+    }
+  },
+  "original_build_unchanged": true,
+  "snapshot_build_unchanged": true
+}
