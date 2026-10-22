@@ -95,6 +95,11 @@ M1 源稿修改后运行 `python scripts/build_m1_report.py` 重建 Word，PDF �
 
 M2 联网调研依据见 [现实系统与基准调研](docs/sources/m2-real-world-memory-research.md)。报告采用一手资料修订问题、可行性与评测边界；调研前快照保存在 `process/m2/iterations/vision-and-scope-before-research.md`。两者均进入过程 ZIP，不代表已运行系统实验。
 
+## M4 中期报告初版
+
+- [设计、实现与初步测试报告 v0.1](docs/design/m4-midterm-report.md)，以 `main@3d9d37c` 为实现基准，单列未合入的真实实验进展，待成员复核。
+- [编写依据、证据索引与定稿检查](process/m4/draft-evidence.md)。当前提供 Markdown，尚未导出 PDF 或正式提交。
+
 ## 过程材料同步与打包
 
 修改任务快照或成员反馈后，运行 `python scripts/build_process_documents.py` 重建对应 Word，再使用 LibreOffice 导出同名 PDF。执行 `python scripts/package_m1_materials.py` 与 `python scripts/package_m2_materials.py` 重建两个过程包。
