@@ -15,9 +15,13 @@
     "10": 0.7291666666666667,
     "20": 0.7791666666666667
   },
-  "local_link_targets_checked": 85,
+  "local_link_targets_checked": 16,
+  "link_check_scope": "report source only",
+  "numeric_reference_labels_unresolved": 0,
+  "formal_m3_reference": "intentionally pending per user",
+  "m3_requirement_mapping": "provisional v0.2 draft",
   "markdown_page_sections": 5,
-  "cjk_characters": 2731,
-  "source_sha256": "318d54599893ef547049e136920d74215f4cfa0dfb1831bb3aef0bf5bf54bfc1",
+  "cjk_characters": 2770,
+  "source_sha256": "cf96a67cf87879c0fc1720b759c694523ebf4d3ed6214fdd9d0d18bbb6ff0cc2",
   "fresh_model_calls": 0
 }

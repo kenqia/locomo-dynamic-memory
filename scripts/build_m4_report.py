@@ -129,6 +129,7 @@ def inline(text: str, baseline: str) -> str:
 def build(font: Path, bold_font: Path):
     text = SOURCE.read_text(encoding="utf-8")
     baseline = re.search(r"main@([a-f0-9]+)", text).group(1)
+    revision = re.search(r"版本：(v[0-9.]+)", text).group(1)
     assert text.count("<!-- pagebreak -->") == 4, "Source must have five explicit page sections"
     architecture(bold_font)
     OUTPUT.mkdir(parents=True, exist_ok=True)
@@ -173,6 +174,8 @@ def build(font: Path, bold_font: Path):
             fractions = {2: [0.25, 0.75], 3: [0.19, 0.34, 0.47], 4: [0.43, 0.19, 0.16, 0.22]}[columns]
             if value[0][0] == "K":
                 fractions = [0.10, 0.30, 0.30, 0.30]
+            elif value[0][0] == "需求" and columns == 4:
+                fractions = [0.18, 0.20, 0.25, 0.37]
             rows = [[Paragraph(inline(cell, baseline), styles["cell"]) for cell in row] for row in value]
             table = Table(rows, colWidths=[width * part for part in fractions], repeatRows=1, hAlign="LEFT")
             table.setStyle(TableStyle([
@@ -195,11 +198,11 @@ def build(font: Path, bold_font: Path):
             word_style = {"title": "Title", "heading": "Heading 1", "subheading": "Heading 2"}.get(kind)
             doc.add_paragraph(plain(value), style=word_style)
     def footer(canvas, document):
-        canvas.setTitle("动态对话记忆管理 M4 中期报告 v0.2")
+        canvas.setTitle(f"动态对话记忆管理 M4 中期报告 {revision}")
         canvas.setAuthor("在阴雨天游泳项目组")
         canvas.setFont("M4Body", 8)
         canvas.setFillColor(colors.HexColor("#53687C"))
-        canvas.drawString(20 * mm, 285 * mm, "Team 3 | M4 中期报告 | v0.2 待复核")
+        canvas.drawString(20 * mm, 285 * mm, f"Team 3 | M4 中期报告 | {revision} 待复核")
         canvas.drawRightString(190 * mm, 10 * mm, f"第 {document.page} 页 / 共 5 页")
     SimpleDocTemplate(str(pdf), pagesize=A4, leftMargin=20*mm, rightMargin=20*mm,
                       topMargin=19*mm, bottomMargin=17*mm).build(story, onFirstPage=footer, onLaterPages=footer)
