@@ -105,9 +105,9 @@ M2 联网调研依据见 [现实系统与基准调研](docs/sources/m2-real-worl
 
 ## M4 中期报告
 
-- [报告 Markdown v0.3](docs/design/m4-midterm-report.md)、[可编辑 Word](docs/design/m4-midterm-report.docx)和[报告 PDF](deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-报告.pdf)，依据 `main@ffb2657`，覆盖需求规格、系统设计、核心实现与真实展示结果；正式 M3 引用待填写，待成员复核。
+- [报告 Markdown v0.6](docs/design/m4-midterm-report.md)、[可编辑 Word](docs/design/m4-midterm-report.docx)和[报告 PDF](deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-报告.pdf)，实现依据 `main@ffb2657`、文档引用依据 `main@cf422fe`；已引用 [M3 需求规格 v0.3](docs/requirements/software-requirements-specification.md)，M3/M4 均待成员复核。
 - PDF 含结果索引共 **5 页**，见[页数与校验值](process/m4/pdf-validation.json)。Word 保留编辑能力，其分页未独立渲染，页数上限以 PDF 为准。
-- [版本同步、证据索引与定稿检查](process/m4/draft-evidence.md)。构建脚本为 `scripts/build_m4_report.py`，文档工具独立安装，不修改应用依赖；正式提交及成员验收按实际进度完成。
+- [报告修订记录](process/m4/draft-evidence.md)；重建命令和工具依赖见[导出与校验说明](process/m4/validation-record.md)，人工待办和意见见[复核与交付登记](process/m4/member-review-record.md)。
 - [M4 过程材料说明](process/m4-process-index.md)、[离线阅读页](process/m4/index.html)与[过程 ZIP](deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-过程材料.zip)。版本、来源、实验、页面证据和待复核记录按仓库路径整理，清单与检查见 `process/m4/`；重建使用 `python scripts/package_m4_materials.py`。
 
 ## 过程材料同步与打包

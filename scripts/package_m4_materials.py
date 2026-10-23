@@ -27,17 +27,19 @@ ROOT = Path(__file__).resolve().parents[1]
 PROCESS = ROOT / "process/m4"
 OUTPUT = ROOT / "deliverables/m4"
 BASE = "PROJECT-MILESTONE4-3-在阴雨天游泳"
-DATE = "2026-10-22"
+DATE = "2026-10-23"
 REPORT = "docs/design/m4-midterm-report.md"
 CONTROLS = ["process/m4/package-check.json", "process/m4/file-manifest.csv", "process/m4/file-sha256sums.txt"]
 GROUPS = {
     "过程说明与复核": ["process/m4-process-index.md"] + [f"process/m4/{name}" for name in [
-        "draft-evidence.md", "source-notes.md", "version-record.md", "review-checklist.md",
-        "member-review-record.md", "validation-record.md", "code-review.md", "status-snapshot.json",
+        "draft-evidence.md", "source-notes.md", "validation-record.md", "member-review-record.md",
+        "code-review.md", "status-snapshot.json",
         "git-history-baseline.txt", "pdf-validation.json", "source-validation.json", "report-sha256sums.txt"]],
     "报告与需求设计": [REPORT, "process/m4/iterations/report-v0.1.md", "process/m4/iterations/report-v0.2.md",
-        "process/m4/iterations/revision-notes.md", "docs/design/assets/m4/system-architecture.png",
-        "docs/design/assets/m4/system-architecture.svg", "docs/requirements/team-workflow.md", "CONTEXT.md",
+        "docs/design/assets/m4/system-architecture.png",
+        "docs/design/assets/m4/system-architecture.svg", "docs/design/assets/m4/build-query-flow.png",
+        "docs/design/assets/m4/build-query-flow.svg", "docs/requirements/team-workflow.md",
+        "docs/requirements/software-requirements-specification.md", "CONTEXT.md",
         "docs/adr/0001-memory-architecture.md", "docs/adr/0002-real-model-baseline-protocol.md",
         "docs/specs/issue-4-m3-m4-dynamic-memory.md", "docs/specs/issue-15-real-deepseek-baseline.md",
         "docs/app/running.md", "docs/app/building.md", "docs/app/querying.md", "docs/app/versions.md",
@@ -99,12 +101,16 @@ def prepare_history() -> dict:
         "notion_export": False, "head": head, "branch": git("branch", "--show-current"),
         "cached_origin_main": git("rev-parse", "origin/main"), "network_refreshed_this_run": False,
         "capture_phase": "before archive generation; status is not a final commit inventory",
-        "working_status_at_capture": status.splitlines(), "report_version": "v0.3",
+        "working_status_at_capture": status.splitlines(),
+        "report_version": re.search(r"版本：(v[0-9.]+)", (ROOT / REPORT).read_text(encoding="utf-8")).group(1),
         "implementation_baseline": "ffb2657741a535c27cc7d38d6f20d7aede94013a",
-        "formal_m3_reference": "pending", "member_non_author_review": "pending",
+        "reference_baseline": "cf422fe", "formal_m3_reference": "linked_pending_team_review",
+        "formal_m3_path": "docs/requirements/software-requirements-specification.md",
+        "member_non_author_review": "pending",
         "notion_synced": False, "new_m4_meeting_evidence": "not_provided",
         "new_presentation_environment_test": "not_performed", "presentation_file": "not_provided",
         "remote_write_this_run": False, "submitted": False, "submission_receipt": "not_provided"}
+    snapshot["demonstration_video"] = "not_recorded_per_user_2026-10-23"
     write_json("process/m4/status-snapshot.json", snapshot)
     return snapshot
 
@@ -131,18 +137,82 @@ def validate_report() -> dict:
     text = source.decode("utf-8")
     paired = json.loads((ROOT / "experiments/current-showcase/results/paired-results.json").read_text(encoding="utf-8"))
     assert len(paired["rows"]) == 100 and all(row["status"] == "succeeded" for row in paired["rows"])
+    f1, query_tokens = {}, {}
     for strategy, summary in paired["summary"].items():
         rows = [row for row in paired["rows"] if row["strategy"] == strategy and row["category"] in [1, 2, 3, 4]]
         assert len(rows) == 16
         value = sum(row["score"] for row in rows) / 16
         assert abs(value - summary["answerable_f1_failures_zero"]) < 1e-12
         assert f"{value:.4f}" in text, strategy
+        f1[strategy] = value
+        usage = summary["evaluator_summary"]["usage_summary"]
+        assert usage["provider_usage_complete"] and usage["scope"] == "all_saved_query_attempts"
+        query_tokens[strategy] = usage["reported_tokens"]
+        for field in ["prompt_tokens", "completion_tokens"]:
+            assert f"{query_tokens[strategy][field]:,}" in text, (strategy, field)
+    dynamic_hybrid_ratio = query_tokens["dynamic"]["total_tokens"] / query_tokens["hybrid_no_resolution"]["total_tokens"]
+    assert f"{dynamic_hybrid_ratio:.1f} 倍" in text
+    assert f"{query_tokens['dynamic']['total_tokens']:,}" in text
+    assert f"{query_tokens['hybrid_no_resolution']['total_tokens']:,}" in text
+    assert "当前真实 Build 尚无 SUPERSEDE／CONFLICT" in text
+    assert "未独立复核" in text
+    for obsolete in ["757", "3,028", "Issue #15", "Issue #20", "原全量范围结案", "本次文档修订", "对上传仓库记录的核对"]:
+        assert obsolete not in text, "Historical or drafting narrative in report: " + obsolete
     recall = json.loads((ROOT / "experiments/current-showcase/results/recall-results.json").read_text(encoding="utf-8"))
     assert len(recall["rows"]) == 40
+    rrf = {}
     for k in ["5", "10", "20"]:
         value = sum(row["recall_at"][k] for row in recall["rows"]) / 40
         assert f"{value * 100:.2f}%" in text, k
-    return {"report_pages": pages, "report_hashes": "pass", "word_xml": "pass", "saved_metrics": "pass"}
+        rrf[k] = value
+    local_links = 0
+    for target in re.findall(r"!?\[[^\]]+\]\(([^)]+)\)", text):
+        parsed = urlsplit(target)
+        if parsed.scheme or parsed.netloc:
+            continue
+        path = (ROOT / REPORT).parent / unquote(parsed.path)
+        assert path.resolve().is_relative_to(ROOT) and path.is_file(), target
+        local_links += 1
+    assert not re.findall(r"\[\d+\](?!\()", text), "Undefined numeric reference"
+    case = json.loads((ROOT / "experiments/current-showcase/results/dynamic-review.json").read_text(encoding="utf-8"))["records"][0]
+    packet = json.loads((ROOT / "experiments/current-showcase/results/dynamic-packets.json").read_text(encoding="utf-8"))[0]
+    assert case["case_id"] == packet["case_id"] == "state-01"
+    assert case["trace_id"] in text and case["question"] in text
+    assert case["old_memory_effective"] and case["new_memory_effective"]
+    assert case["actual_pair_relations"][0]["label"] == "UPDATE"
+    for stage in ["old_stage", "new_stage"]:
+        quote_text = packet["relation"]["update_evidence"][stage]["quote"]
+        assert quote_text in text
+        source_id = packet["relation"]["update_evidence"][stage]["source_id"]
+        assert any(source["source_id"] == source_id and quote_text in source["text"] for source in packet["evidence_sources"])
+    screenshot = "experiments/current-showcase/web-recorded/history-and-effective-memory.png"
+    original = subprocess.run(["git", "show", f"{validation['reference_baseline']}:{screenshot}"],
+                              cwd=ROOT, check=True, capture_output=True).stdout
+    assert original == (ROOT / screenshot).read_bytes(), "Original screenshot modified"
+    m3_paths = ["docs/requirements/software-requirements-specification.md"] + [
+        path.relative_to(ROOT).as_posix() for path in (ROOT / "deliverables").glob("PROJECT-MILESTONE3-*.pdf")]
+    subprocess.run(["git", "diff", "--exit-code", "origin/main", "--", *m3_paths],
+                   cwd=ROOT, check=True, capture_output=True)
+    source_validation = json.loads((PROCESS / "source-validation.json").read_text(encoding="utf-8"))
+    source_validation.update({"checked_on": DATE,
+        "report_version": re.search(r"版本：(v[0-9.]+)", text).group(1),
+        "source_metrics_checked_from_saved_rows": True, "paired_logical_items": 100,
+        "answerable_questions_per_strategy": 16, "f1": f1, "recall_questions": 40,
+        "initial_rrf_recall": rrf, "query_tokens_all_saved_attempts": query_tokens,
+        "dynamic_to_hybrid_total_tokens_ratio": dynamic_hybrid_ratio,
+        "independent_dynamic_review": "not_performed", "historical_issue_narrative_removed": True,
+        "local_link_targets_checked": local_links, "numeric_reference_labels_unresolved": 0,
+        "markdown_page_sections": text.count("<!-- pagebreak -->")+1,
+        "cjk_characters": len(re.findall(r"[\u4e00-\u9fff]", text)),
+        "source_sha256": digest(source), "fresh_model_calls": 0,
+        "case_trace_and_quotes_checked": True, "screenshot_original_unchanged": True,
+        "video_status": "not_recorded_per_user_2026-10-23"})
+    write_json("process/m4/source-validation.json", source_validation)
+    return {"report_pages": pages, "report_hashes": "pass", "word_xml": "pass", "saved_metrics": "pass",
+        "query_token_totals": "pass", "case_trace_and_source_quotes": "pass", "report_local_links": "pass",
+        "dynamic_hybrid_negative_result": "pass", "current_scope_and_narrative": "pass",
+        "independent_dynamic_review": "not_performed",
+        "video": "not_recorded", "m3_files_modified_this_revision": False}
 
 
 def article_id(path: str) -> str:
@@ -228,8 +298,8 @@ def offline_index(payload: dict[str, bytes], baseline: str) -> str:
     body = ["<!doctype html><html lang='zh-CN'><head><meta charset='utf-8'>",
         "<meta name='viewport' content='width=device-width,initial-scale=1'><title>M4 过程材料</title>",
         "<style>body{font:16px/1.75 system-ui,'Microsoft YaHei',sans-serif;color:#203247;margin:0}main{max-width:1100px;margin:32px auto;padding:0 24px 64px}a{color:#245d8d}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #ccd6e0;padding:7px;vertical-align:top;text-align:left}th{background:#edf3f8}.table-wrap{overflow:auto}img{max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f6f8;padding:12px}article{border-top:2px solid #d6e0ea;padding-top:24px;margin-top:40px}code{overflow-wrap:anywhere}</style></head><body><main>",
-        "<h1 id='top'>M4 过程材料离线阅读页</h1><p>在阴雨天游泳 · Team 3 · 2026-10-22</p>",
-        "<p>报告 PDF 独立交付，含索引共 5 页。成员复核、正式 M3 引用、Notion 同步及正式提交仍待补齐。本页不运行代码或模型。</p>",
+        "<h1 id='top'>M4 过程材料离线阅读页</h1><p>在阴雨天游泳 · Team 3 · " + DATE + "</p>",
+        "<p>报告 PDF 独立交付。阅读顺序和材料状态见下方 M4 过程材料说明；本页不运行代码或模型。</p>",
         "<p>主要说明已内嵌；JSON/CSV 和截图随包。标注“在线补充”的链接不属于离线载荷，需要网络和仓库权限。</p>"]
     for category, paths in GROUPS.items():
         body.append("<h2>" + escape(category) + "</h2><ul>")
@@ -363,14 +433,16 @@ def build() -> None:
         source = ROOT / name
         assert source.is_file() and not source.is_symlink(), name
         payload[name] = source.read_bytes()
-    html = offline_index(payload, snapshot["implementation_baseline"])
+    html = offline_index(payload, snapshot["reference_baseline"])
     write("process/m4/index.html", html)
     payload["process/m4/index.html"] = (PROCESS / "index.html").read_bytes()
     checks = {"organized_on": DATE, "archive_files": len(payload) + len(CONTROLS),
         "implementation_baseline": snapshot["implementation_baseline"], "document_capture_head": snapshot["head"],
         **report_checks, **check_payload(payload), "zip_crc": "pass", "payload_hashes": "pass", "manifest": "pass",
         "all_archive_files_match_repository": True, "report_outputs_separate": True,
-        "historical_report_snapshots": 2, "member_review": "pending", "formal_m3_reference": "pending",
+        "historical_report_snapshots": 2, "member_review": "pending",
+        "reference_baseline": snapshot["reference_baseline"],
+        "formal_m3_reference": snapshot["formal_m3_reference"],
         "notion_snapshot": "not_provided", "notion_updated": False, "new_meeting_evidence": "not_provided",
         "remote_write": False, "submitted": False, "model_calls_this_run": 0}
     archive_path = assemble(payload, checks)

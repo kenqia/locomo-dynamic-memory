@@ -13,10 +13,11 @@ import json
 import os
 from pathlib import Path
 import re
-from urllib.parse import unquote
+from urllib.parse import unquote, urlsplit
 
 from PIL import Image as PillowImage, ImageDraw, ImageFont
 from docx import Document
+from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Pt
 import pymupdf
@@ -26,7 +27,7 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import Image, PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import Flowable, Image, PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -99,7 +100,13 @@ def blocks(text: str):
                 index += 1
             yield "table", rows
         elif match := re.fullmatch(r"!\[(.*?)\]\((.*?)\)", line):
-            yield "image", (match.group(1), SOURCE.parent / match.group(2))
+            target = urlsplit(match.group(2))
+            view = None
+            if target.fragment:
+                assert target.fragment.startswith("view="), "Unknown image viewport"
+                view = tuple(int(part) for part in target.fragment[5:].split(","))
+                assert len(view) == 4
+            yield "image", (match.group(1), SOURCE.parent / unquote(target.path), view)
         elif line.startswith("# "):
             yield "title", line[2:]
         elif line.startswith("## "):
@@ -114,6 +121,69 @@ def plain(text: str) -> str:
     return re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text).replace("`", "")
 
 
+def workflow(font_path: Path) -> None:
+    """Draw the two documented workflows; the architecture remains editable code."""
+    picture = PillowImage.new("RGB", (1500, 350), "white")
+    draw = ImageDraw.Draw(picture)
+    font = ImageFont.truetype(str(font_path), 25)
+    svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="350" viewBox="0 0 1500 350">',
+           '<rect width="1500" height="350" fill="white"/>']
+    flows = [
+        (20, "构建", [["导入原文", "来源检查"], ["分片抽取", "原子校验"], ["索引 / 关系", "状态投影"],
+                       ["完整性检查", "发布 Build"], ["失败保留旧版", "显式恢复"]]),
+        (185, "查询", [["固定 Build", "问题分析"], ["BM25 / Dense", "RRF 混合召回"], ["扩展相关历史", "选择有效证据"],
+                        ["有界原文补查", "仅在需要时"], ["答案 / 原文", "保存 Trace"]]),
+    ]
+    for top, title, boxes in flows:
+        draw.text((15, top + 48), title, font=font, fill=INK, anchor="lm")
+        svg.append(f'<text x="15" y="{top+48}" font-family="SimHei,sans-serif" font-size="25" fill="{INK}">{title}</text>')
+        for index, labels in enumerate(boxes):
+            left = 100 + index * 280
+            right = left + 250
+            bottom = top + 110
+            draw.rounded_rectangle((left, top, right, bottom), radius=10, fill="#EDF4FA", outline=BLUE, width=3)
+            svg.append(f'<rect x="{left}" y="{top}" width="250" height="110" rx="10" fill="#EDF4FA" stroke="{BLUE}" stroke-width="3"/>')
+            for line, label in enumerate(labels):
+                x, y = (left + right) / 2, top + 37 + 37 * line
+                draw.text((x, y), label, font=font, fill=INK, anchor="mm")
+                svg.append(f'<text x="{x}" y="{y}" text-anchor="middle" dominant-baseline="central" font-family="SimHei,sans-serif" font-size="25" fill="{INK}">{escape(label)}</text>')
+            if index < 4:
+                # Build recovery is a side branch of the build, not a step after publication.
+                if title == "构建" and index == 3:
+                    continue
+                x, y = right + 25, top + 55
+                draw.line([(right + 3, y), (x, y)], fill=BLUE, width=3)
+                draw.polygon([(x, y), (x-9, y-6), (x-9, y+6)], fill=BLUE)
+                svg.append(f'<path d="M {right+3} {y} H {x} M {x-9} {y-6} L {x} {y} L {x-9} {y+6}" fill="none" stroke="{BLUE}" stroke-width="3"/>')
+    note = "构建写入版本与全局状态；查询只读完整版本，仅保存本次 Trace。"
+    draw.text((750, 330), note, font=font, fill=INK, anchor="mm")
+    svg.append(f'<text x="750" y="330" text-anchor="middle" font-family="SimHei,sans-serif" font-size="25" fill="{INK}">{note}</text>')
+    picture.save(ASSETS / "build-query-flow.png")
+    (ASSETS / "build-query-flow.svg").write_text("\n".join(svg + ["</svg>"]), encoding="utf-8")
+
+
+class ScreenshotViewport(Flowable):
+    """Clip the image in the document layout while preserving the source bitmap."""
+    def __init__(self, path: Path, size: tuple[int, int], view: tuple[int, ...], width: float):
+        super().__init__()
+        self.path, self.size, self.view = path, size, view
+        left, top, right, bottom = view
+        assert 0 <= left < right <= size[0] and 0 <= top < bottom <= size[1]
+        self.width = width
+        self.height = width * (bottom-top) / (right-left)
+
+    def draw(self):
+        left, top, right, bottom = self.view
+        scale = self.width / (right-left)
+        self.canv.saveState()
+        clipping = self.canv.beginPath()
+        clipping.rect(0, 0, self.width, self.height)
+        self.canv.clipPath(clipping, stroke=0)
+        self.canv.drawImage(str(self.path), -left*scale, -(self.size[1]-bottom)*scale,
+                            width=self.size[0]*scale, height=self.size[1]*scale)
+        self.canv.restoreState()
+
+
 def inline(text: str, baseline: str) -> str:
     def link(match):
         target = (SOURCE.parent / unquote(match.group(2))).resolve()
@@ -126,12 +196,16 @@ def inline(text: str, baseline: str) -> str:
     return re.sub(r"\[([^\]]+)\]\(([^)]+)\)", link, escape(text).replace("`", ""))
 
 
-def build(font: Path, bold_font: Path):
+def build(font: Path, bold_font: Path, reference_baseline: str = "cf422fe"):
     text = SOURCE.read_text(encoding="utf-8")
     baseline = re.search(r"main@([a-f0-9]+)", text).group(1)
+    reference_match = re.search(r"文档引用基准：main@([a-f0-9]+)", text)
+    if reference_match:
+        reference_baseline = reference_match.group(1)
     revision = re.search(r"版本：(v[0-9.]+)", text).group(1)
     assert text.count("<!-- pagebreak -->") == 4, "Source must have five explicit page sections"
     architecture(bold_font)
+    workflow(bold_font)
     OUTPUT.mkdir(parents=True, exist_ok=True)
     pdfmetrics.registerFont(TTFont("M4Body", str(font), subfontIndex=0))
     pdfmetrics.registerFont(TTFont("M4Bold", str(bold_font), subfontIndex=0))
@@ -166,17 +240,34 @@ def build(font: Path, bold_font: Path):
             doc.add_page_break()
         elif kind == "image":
             with PillowImage.open(value[1]) as image:
-                height = width * image.height / image.width
-            story.extend([Image(str(value[1]), width=width, height=height), Spacer(1, 7)])
-            doc.add_picture(str(value[1]), width=Cm(17))
+                size = image.size
+            view = value[2]
+            if view:
+                figure = ScreenshotViewport(value[1], size, view, width)
+                shape = doc.add_picture(str(value[1]), width=Cm(17), height=Cm(17*(view[3]-view[1])/(view[2]-view[0])))
+                crop = OxmlElement("a:srcRect")
+                for name, fraction in zip(("l", "t", "r", "b"),
+                        (view[0]/size[0], view[1]/size[1], 1-view[2]/size[0], 1-view[3]/size[1])):
+                    crop.set(name, str(round(fraction*100000)))
+                shape._inline.graphic.graphicData.pic.blipFill.insert(1, crop)
+            else:
+                figure = Image(str(value[1]), width=width, height=width*size[1]/size[0])
+                doc.add_picture(str(value[1]), width=Cm(17))
+            story.extend([figure, Spacer(1, 7)])
         elif kind == "table":
             columns = len(value[0])
             fractions = {2: [0.25, 0.75], 3: [0.19, 0.34, 0.47], 4: [0.43, 0.19, 0.16, 0.22]}[columns]
             if value[0][0] == "K":
                 fractions = [0.10, 0.30, 0.30, 0.30]
-            elif value[0][0] == "需求" and columns == 4:
-                fractions = [0.18, 0.20, 0.25, 0.37]
-            rows = [[Paragraph(inline(cell, baseline), styles["cell"]) for cell in row] for row in value]
+            elif value[0][0] == "用户任务":
+                fractions = [0.16, 0.27, 0.25, 0.32]
+            elif value[0][0] == "策略":
+                fractions = [0.37, 0.15, 0.26, 0.22]
+            elif value[0][0] == "历史阶段":
+                fractions = [0.20, 0.35, 0.45]
+            elif value[0][0] == "未完成项":
+                fractions = [0.25, 0.75] if columns == 2 else [0.21, 0.28, 0.51]
+            rows = [[Paragraph(inline(cell, reference_baseline), styles["cell"]) for cell in row] for row in value]
             table = Table(rows, colWidths=[width * part for part in fractions], repeatRows=1, hAlign="LEFT")
             table.setStyle(TableStyle([
                 ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#E8EFF6")),
@@ -193,8 +284,8 @@ def build(font: Path, bold_font: Path):
                 for cell, content in zip(cells, row):
                     cell.text = plain(content)
         else:
-            style = "caption" if kind == "text" and value.startswith("图 1") else kind
-            story.append(Paragraph(inline(value, baseline), styles[style]))
+            style = "caption" if kind == "text" and re.match(r"图 \d", value) else kind
+            story.append(Paragraph(inline(value, reference_baseline), styles[style]))
             word_style = {"title": "Title", "heading": "Heading 1", "subheading": "Heading 2"}.get(kind)
             doc.add_paragraph(plain(value), style=word_style)
     def footer(canvas, document):
@@ -223,6 +314,7 @@ def build(font: Path, bold_font: Path):
                 raise RuntimeError("Page number missing")
         (ROOT / "process/m4/pdf-text.txt").write_text("\n\f\n".join(p.get_text() for p in rendered), encoding="utf-8")
     manifest = {"source": SOURCE.relative_to(ROOT).as_posix(), "baseline": baseline,
+                "reference_baseline": reference_baseline,
                 "pdf": pdf.relative_to(ROOT).as_posix(), "pages": page_count, "page_limit": 5,
                 "limit_passed": page_count <= 5, "pdf_sha256": sha256(pdf.read_bytes()).hexdigest(),
                 "source_sha256": sha256(SOURCE.read_bytes()).hexdigest(),
@@ -237,5 +329,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--font", type=Path, default=Path("C:/Windows/Fonts/simsun.ttc"))
     parser.add_argument("--bold-font", type=Path, default=Path("C:/Windows/Fonts/simhei.ttf"))
+    parser.add_argument("--reference-baseline", default="cf422fe", help="Git revision used for frozen source links")
     options = parser.parse_args()
-    build(options.font, options.bold_font)
+    build(options.font, options.bold_font, options.reference_baseline)

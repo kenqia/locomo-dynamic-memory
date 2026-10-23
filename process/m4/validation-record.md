@@ -1,29 +1,28 @@
-# M4 报告与过程包本地验证
+# M4 导出、打包与校验
 
-日期：2026-10-22。范围为报告文件、保存的实验结果和过程包，不进行新模型调用或业务系统测试。
+本文只说明重建方法和机器检查；成绩口径见[来源说明](source-notes.md)，人工意见见[复核登记](member-review-record.md)。
 
-## 报告与来源
+## 重建
 
-报告使用同一 Markdown 源生成 Word 和 PDF，保存实际页数及来源 SHA-256；当前 PDF 含索引共 5 页，Word 分页未独立渲染。过程打包再次直接打开 PDF 核页数，并核对 PDF 与源稿的摘要是否匹配 pdf-validation.json。
-
-五策略 F1 从 paired-results.json 的类别 1–4 共 16 题逐项重算；40 题初始 RRF Recall 从 recall-results.json 逐项重算。重算与当前报告显示值一致才打包。网页回放、作者审阅和受控测试仍保持原有边界。
-
-## 打包操作
-
-在独立文档环境中运行：
+使用独立文档环境：Pillow、python-docx、ReportLab、PyMuPDF，不加入应用依赖。
 
 ```sh
+python scripts/build_m4_report.py
 python scripts/package_m4_materials.py
 ```
 
-工具依赖为 Pillow 和 PyMuPDF，沿用报告工具环境，不增加应用依赖。包保留仓库相对路径，报告 Word/PDF 独立交付；过程包内含报告 Markdown 作为当前迭代材料。
+报告正文改变时依次运行两条命令；仅整理过程文件时运行打包命令。构建以 Markdown 为源，默认使用 Windows 宋体／黑体；其他系统用 --font、--bold-font 指定中文 TrueType 字体。
 
-机器检查项目包括：实际 PDF 页数、源稿与导出哈希、DOCX XML、逐项指标、JSON/CSV 解析、PNG/SVG 可读性、ZIP CRC、安全路径、与仓库原件逐字节一致、清单与包内哈希、离线页内链和文件链接。文本凭据模式检查只报告是否命中和文件位置，不输出匹配内容。
+## 检查结果与文件用途
 
-检查结果保存于 package-check.json；清单、包内哈希和独立报告哈希同目录保存，交付哈希另存 deliverables/m4/sha256sums.txt。验证脚本不向来源文件回写实验分数、历史任务状态或模型输出。
+| 文件 | 检查及用途 |
+| --- | --- |
+| [pdf-validation.json](pdf-validation.json) | 实际 PDF 页数、源稿和 PDF 摘要；含索引共 5 页。Word 分页未独立渲染，单独编辑 Word 后需另导出并核页数 |
+| [source-validation.json](source-validation.json) | 从保存行重算 F1、Recall、查询 token 及 Dynamic／Hybrid 比值；核对真实案例 Trace、原文片段和报告本地链接 |
+| [package-check.json](package-check.json) | DOCX XML、JSON/CSV、PNG/SVG、ZIP CRC、安全路径、离线链接、载荷与工作区原件一致性；只读检查 M3 与截图原件未变 |
+| [file-manifest.csv](file-manifest.csv)、[file-sha256sums.txt](file-sha256sums.txt) | 清单记录路径、类别、大小与 SHA-256；清单排除自身及哈希文件，哈希文件覆盖除自身外的包内文件 |
+| [report-sha256sums.txt](report-sha256sums.txt)、deliverables/m4/sha256sums.txt | 前者记录源稿及报告导出，后者记录独立交付的 PDF、Word 和 ZIP |
 
-## 人工与外部边界
+包内源文件保留仓库路径和原字节，Word/PDF 在 ZIP 外独立交付。预览图和提取正文由本目录 .gitignore 忽略，可随构建重建；历史稿由 Git 对象读取并校验，不覆盖其内容。
 
-自动文件检查不能证明成员已复核、系统质量达标或课程已提交。当前正式 M3 文档、非作者意见、Notion 阶段导出及正式提交回执仍待补齐。status-snapshot.json 只表示本地材料清点，不是在线任务看板快照。
-
-本地 index.html 可离线阅读已选说明并打开随包数据与截图。未纳入的补充源文件通过固定版本 GitHub 链接标注为在线资源，不把它们算作离线完整应用代码或可直接运行的数据库环境。
+脚本不调用模型或重跑业务测试。自动检查不代替[成员复核与正式交付](member-review-record.md)。

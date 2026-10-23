@@ -1,31 +1,19 @@
-# M4 来源与证据边界
+# M4 来源与统计口径
 
-整理日期：2026-10-22。对应报告 v0.3；实现基准 ffb2657。
+本文只索引依据；版本变化见[修订记录](draft-evidence.md)，文件检查见[验证说明](validation-record.md)。来源优先采用已确认课程说明、现行 ADR、实际实现和保存的执行记录；历史 spec 保留当时范围。
 
-## 要求与来源优先级
-
-本轮用户提供的助教说明：Mid-term 主要展示需求规格、设计、已实现功能和初步测试，建议有可运行核心，未完成部分如实说明；用户明确限制报告小于等于 5 页。报告已按此范围编写，原始课程文件仍保留在仓库，不把 M2 的计划当成 M4 已完成结果。
-
-来源顺序为：已确认课程说明与后续范围决定、现行 ADR、实际代码和保存的执行记录、文档编写及检查记录。历史 spec 和 ticket 原文只证明当时定义，后续变更按 ADR 和结案说明核对。
-
-正式 M3 需求文档引用仍按用户要求待填写。报告 F01–F06 与 FR 编号是对已阅读的组员 v0.2 待复核稿作暂定对应，不复制其微信目录原件，不声称该稿已经入库或验收。
-
-## 已保存的系统与实验材料
-
-| 来源 | 证据性质 | 可支持与不可支持的结论 |
+| 内容 | 原始依据 | 使用口径 |
 | --- | --- | --- |
-| current-showcase 的 plan、paired-results、recall-results 与审计 | 固定输入、实际请求结果、计分与执行身份 | 证明本次限定范围执行；不代表全开发集或留出集 |
-| 动态和回答来源审阅 | 开发助手逐条检查原文与答案 | 可以保留异议与失败分析；不是独立人类 gold |
-| web-recorded | 生产页面读取已有真实 Trace 的只读回放 | 证明保存结果的页面呈现；不算新的实时 QA |
-| web-controlled | 真页面和业务实现，LLM/Embedding 受控 | 检查当前、历史、冲突、不足、失败恢复；不评价真实模型语义质量 |
-| issue-15-integration 与 checks JSON | 合并前已有工程回归 | 405 passed、4 skipped 是历史执行，不是本轮重跑 |
-| issue-4-implementation | 早期真实 MiniLM 与集成记录 | 3 passed 限于该标记运行范围 |
-| process/m4/pdf-validation 与 source-validation | 本轮报告页数、源文件及已存指标重算 | 证明文档一致性，不增加系统测试样本 |
+| 需求与设计 | [需求文档](../../docs/requirements/software-requirements-specification.md)、[CONTEXT](../../CONTEXT.md)、[ADR 0001](../../docs/adr/0001-memory-architecture.md)、[Issue #4 规格](../../docs/specs/issue-4-m3-m4-dynamic-memory.md) | 引用需求与设计，不改写 M3 原件 |
+| 数据、配置与版本 | [原始数据](../../data/raw/locomo/README.md)、[固定计划](../../experiments/current-showcase/plan.json)、[配置代码](../../src/locomo_memory/config.py)、[ADR 0002](../../docs/adr/0002-real-model-baseline-protocol.md) | 以固定 Build、题单、配置和实现指纹标识展示 |
+| 问答成绩与查询用量 | [分题报告](../../experiments/current-showcase/results/report.md)、[配对机器记录](../../experiments/current-showcase/results/paired-results.json) | conv-26 开发对话，20 题五策略共 100 项；F1 汇总类别 1–4 的 16 题，类别 5 的 4 题拒答另列 |
+| 证据检索 | [Recall 机器记录](../../experiments/current-showcase/results/recall-results.json) | 40 题；K 计初始 Memory 排名，覆盖计映射后去重 Source Turn，逐题计算后平均 |
+| 动态案例与来源审阅 | [动态记录](../../experiments/current-showcase/results/dynamic-review.json)、[原文证据包](../../experiments/current-showcase/results/dynamic-packets.json)、[回答来源审阅](../../experiments/current-showcase/results/answer-source-review.json)、[展示分析](../../experiments/current-showcase/results/analysis.md) | 作者审阅保留失败及异议，尚未独立复核；真实 Build 无 SUPERSEDE／CONFLICT |
+| 页面表现 | [真实 Trace 回放](../../experiments/current-showcase/web-recorded/results.json)、[受控浏览器](../../experiments/current-showcase/web-controlled/issue-12-result.json)、[案例原图](../../experiments/current-showcase/web-recorded/history-and-effective-memory.png) | 前者读取保存结果，后者使用受控模型检查边界；截图原件不改，文档仅裁切显示 |
+| 工程与 MiniLM 检查 | [合并前验证](../prs/issue-15-integration.md)、[检查 JSON](../prs/issue-15-checks.json)、[早期实现记录](../../experiments/issue-4-implementation.md) | 405 passed／4 skipped、展示前 24 passed、早期 MiniLM 3 passed 均沿用原执行范围 |
+| 调用身份及历史范围 | [最终审计](../../experiments/current-showcase/results/final-audit.json)、[范围结案](../../experiments/issue-15-closure/README.md) | 原始失败、重试和范围变化留档，不把旧计划当本轮成果 |
+| 运行与接口 | [运行指南](../../docs/app/running.md)、[构建](../../docs/app/building.md)、[问答](../../docs/app/querying.md)、[版本](../../docs/app/versions.md) | 在线两策略与实验五策略分开；原文补查不产生新 Memory |
 
-包内保留原始失败、局限及范围取消说明。未包含的完整应用代码和官方原件可从固定版本仓库补充查阅。没有打包 SQLite、凭据、认证文件、真实环境文件或无关私人材料。
+token 采用各策略 usage_summary 的全部已保存查询尝试，包含失败、重试和查询各阶段，不含复用 Build 的构建、额外 Recall 或动态案例调用。Dynamic 两题实际触发备用路径，按请求策略汇总并保留实际执行策略。
 
-## 本地过程证据
-
-报告初稿 v0.1 和修订稿 v0.2 从已有 Git 提交读取并保存在 iterations；当前 v0.3 在原位置提供。version-record 和 Git 摘要区分已提交历史与未提交工作区。AI 审查只对应当时待审提交，不改成当前成员已通过。
-
-status-snapshot.json 是本轮本地材料清点，明确不是 Notion 导出。没有为本轮新增会议、任务领取、审批、签字或课程回执；缺失项在待填记录中列出。M1/M2 过程文件仅作组织形式参考，不纳入本轮 M4 完成证据。
+开发对话为 conv-26/30/41/42，本地留出为 conv-43/44；当前单轮展示仅用 conv-26，不能代表跨对话、留出集或教师隐藏评分。此轮过程整理不新增系统实验。
