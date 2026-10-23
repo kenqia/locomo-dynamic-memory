@@ -154,7 +154,7 @@ Run 进度读取使用轻量 `/evaluation-runs/{run_id}/progress`，页面也可
   --scope development
 ```
 
-导出在 `runs/<run_id>/` 保存完整 `run.json`、`grouped-summary.json`、`failure-cases.json` 和 `report.md`。构建目录保存完整版本导出，运行记录保留所有尝试、用量、来源和 Trace。`experiment.json` 保存精确命令、阶段 HTTP 时间和状态观察时间；观察间隔包含操作人员空闲时间，不作为纯构建计算耗时。provider 已报告调用耗时和查询用量分别保留，未知用量不计为已知零。
+导出在 `runs/<run_id>/` 保存完整 `run.json`、`grouped-summary.json`、`failure-cases.json`、`report.md` 和 `report.html`。实验目录也生成对应范围的 `report-<scope>.html`，用于直接展示或打印；机器核查仍以 Run JSON 为准。构建目录保存完整版本导出，运行记录保留所有尝试、用量、来源和 Trace。`experiment.json` 保存精确命令、阶段 HTTP 时间和状态观察时间；观察间隔包含操作人员空闲时间，不作为纯构建计算耗时。provider 已报告调用耗时和查询用量分别保留，未知用量不计为已知零。
 
 报告分列成功 QA、执行成功率、基线运行得分及分母，按策略、对话和类别展示。失败案例包含原始来源映射、Memory 排名、阶段来源和引用指针；自动根因标为未确定，独立复核后才做语义归因。部分运行、服务失败或中断只能报告实际完成范围。
 

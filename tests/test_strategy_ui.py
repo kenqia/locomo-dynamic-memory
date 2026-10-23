@@ -1,6 +1,25 @@
 """Exercise actual Streamlit switches and source reads without model calls."""
+from pathlib import Path
+
 from streamlit.testing.v1 import AppTest
 import pytest
+
+
+def test_primary_streamlit_pages_use_dropdowns_for_query_and_evaluation_strategies():
+    root = Path(__file__).parents[1] / 'src' / 'locomo_memory'
+    source = '\n'.join((root / name).read_text(encoding='utf-8') for name in (
+        'ui.py', 'query_ui.py', 'evaluation_ui.py', 'version_ui.py'))
+    assert source.count('selectbox(') == 3
+    assert "'运行策略'" in source
+    assert '"问答策略"' in source
+    assert 'multiselect(' not in source
+    assert 'date_input(' not in source
+
+
+def test_running_build_keeps_refresh_action_visible():
+    source = (Path(__file__).parents[1] / 'src' / 'locomo_memory' / 'ui.py').read_text(encoding='utf-8')
+    assert 'if status != "complete":' in source
+    assert 'elif st.button("刷新当前状态"' not in source
 
 
 def test_query_strategy_switch_only_calls_backend_on_submit():
@@ -18,14 +37,14 @@ def request(method, path, **kwargs):
 render_queries(request, 'dataset', 'conv-26', {'build_id':'build', 'query_ready':True})
 ''').run()
     assert not app.exception
-    app.radio[0].set_value('dynamic_raw_fallback').run()
+    app.selectbox[0].set_value('dynamic_raw_fallback').run()
     assert app.session_state['calls'] == []
-    app.text_area[0].set_value('What does the necklace symbolize?')
+    app.text_input[0].set_value('What does the necklace symbolize?').run()
     app.button[0].click().run()
     assert not app.exception
     assert len(app.session_state['calls']) == 1
     assert app.session_state['calls'][0][2]['json']['strategy'] == 'dynamic_raw_fallback'
-    app.radio[0].set_value('dynamic').run()
+    app.selectbox[0].set_value('dynamic').run()
     assert len(app.session_state['calls']) == 1
 
 
@@ -117,6 +136,6 @@ render_queries(st.session_state['request'], 'dataset', 'conv-a',
         if strategy == 'dynamic':
             assert any('有界原文备用策略' in c.value for c in app.caption)
         assert any(m.value == '证据不足' for m in app.markdown)
-        app.radio[0].set_value('dynamic_raw_fallback').run()
+        app.selectbox[0].set_value('dynamic_raw_fallback').run()
         assert not app.exception
         assert any(t.value == 'Paris.' for t in app.text)

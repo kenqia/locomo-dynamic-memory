@@ -1,6 +1,7 @@
 """SQLite storage. Connections are short lived; transactions make imports atomic."""
 
 from contextlib import contextmanager
+import os
 from pathlib import Path
 import sqlite3
 
@@ -55,14 +56,33 @@ class Database:
 @contextmanager
 def backend_ownership(path: Path):
     """A kernel lock distinguishes a restart from a competing local backend."""
-    import fcntl
+    with path.with_suffix(path.suffix + ".runtime.lock").open("a+") as handle:
+        if os.name == "nt":
+            import msvcrt
 
-    with path.with_suffix(path.suffix + ".runtime.lock").open("a") as handle:
-        try:
-            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError:
-            raise RuntimeError("Another backend owns this SQLite database") from None
-        try:
-            yield
-        finally:
-            fcntl.flock(handle, fcntl.LOCK_UN)
+            handle.seek(0)
+            if not handle.read(1):
+                handle.seek(0)
+                handle.write("0")
+                handle.flush()
+            handle.seek(0)
+            try:
+                msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+            except OSError:
+                raise RuntimeError("Another backend owns this SQLite database") from None
+            try:
+                yield
+            finally:
+                handle.seek(0)
+                msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
+        else:
+            import fcntl
+
+            try:
+                fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except BlockingIOError:
+                raise RuntimeError("Another backend owns this SQLite database") from None
+            try:
+                yield
+            finally:
+                fcntl.flock(handle, fcntl.LOCK_UN)

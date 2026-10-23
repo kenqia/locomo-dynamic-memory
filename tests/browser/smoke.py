@@ -48,43 +48,52 @@ with sync_playwright() as playwright:
             settle()
             expect(field).to_have_value(value)
 
+        def open_expander(name):
+            settle()
+            summary = page.get_by_text(name, exact=True)
+            details = summary.locator('xpath=ancestor::details')
+            if details.get_attribute('open') is None:
+                summary.click()
+                settle()
+
         page.goto(args.ui)
-        expect(page.get_by_text('本页没有数据集，请先导入或选择前一页。')).to_be_visible()
+        expect(page.get_by_role('heading', name='上传一份对话数据', exact=True)).to_be_visible()
         page.get_by_test_id('stFileUploader').first.locator('input[type=file]').set_input_files({'name': 'browser-synthetic.json', 'mimeType': 'application/json', 'buffer': json.dumps(sample).encode()})
-        click('导入选择的文件')
-        expect(page.get_by_role('button', name='构建所选对话的 Memory', exact=True)).to_be_visible()
+        click('上传并继续')
+        expect(page.get_by_role('heading', name='选择要处理的对话', exact=True)).to_be_visible()
+        click('使用 conv-a')
+        expect(page.get_by_role('heading', name='构建这段对话的记忆', exact=True)).to_be_visible()
         dataset = get('/datasets')['items'][0]['dataset_id']
         original = get(f'/datasets/{dataset}/conversations/conv-a/turns')
-        page.get_by_label('精确定位 dia_id（可选，如 D1:1）').fill('D1:1')
-        page.get_by_label('精确定位 dia_id（可选，如 D1:1）').press('Enter')
+        open_expander('检查原始对话')
+        page.get_by_label('按 dia_id 定位原文', exact=True).fill('D1:1')
+        click('读取这一轮')
         expect(page.get_by_text('I live in Paris.', exact=False).first).to_be_visible()
         page.wait_for_timeout(1000)
-        click('构建所选对话的 Memory')
-        expect(page.get_by_text('构建已接受：', exact=False)).to_be_visible(timeout=20000)
+        click('开始构建 Memory')
         page.wait_for_timeout(1500)
-        click('刷新构建进度')
-        expect(page.get_by_text('状态：抽取失败，可显式重试', exact=False)).to_be_visible(timeout=20000)
+        click('刷新当前状态')
+        expect(page.get_by_text('抽取失败', exact=True)).to_be_visible(timeout=20000)
         build = get('/builds')['items'][0]['build_id']
         assert get(f'/builds/{build}')['progress']['failed'] == 1
         page.screenshot(path=str(args.output / 'issue-12-build-failure.png'), full_page=True)
-        click('仅重试失败或中断片段')
+        click('重试未完成片段')
         page.wait_for_timeout(1500)
-        click('刷新构建进度')
-        expect(page.get_by_text('状态：抽取结束', exact=False)).to_be_visible(timeout=20000)
-        click('建立或重试混合检索索引')
-        expect(page.get_by_text('状态：已建立索引', exact=False)).to_be_visible(timeout=20000)
-        fill('英文问题（候选检查）', 'Where does Alex live?')
-        click('检查 BM25 / Dense / RRF 候选')
-        expect(page.get_by_text('RRF 融合后的初始 Memory', exact=True)).to_be_visible()
-        click('构建或重试历史关系')
-        click('刷新构建进度')
-        expect(page.get_by_text('状态：关系与投影已保存', exact=False)).to_be_visible(timeout=20000)
-        page.get_by_text('双方原始证据', exact=True).click()
-        click('从历史与关系重算投影')
-        click('校验并发布为完整构建版本')
-        expect(page.get_by_text('状态：完整版本', exact=False)).to_be_visible()
+        click('刷新当前状态')
+        expect(page.get_by_text('Memory 已生成', exact=True)).to_be_visible(timeout=20000)
+        click('建立检索索引')
+        expect(page.get_by_text('检索索引已建立', exact=True)).to_be_visible(timeout=20000)
+        fill('检索问题', 'Where does Alex live?')
+        click('运行检索诊断')
+        expect(page.get_by_text(re.compile(r'^Query [a-f0-9]+ · 初始候选'))).to_be_visible()
+        click('生成历史关系')
+        click('刷新当前状态')
+        expect(page.get_by_text('关系与当前状态已生成', exact=True)).to_be_visible(timeout=20000)
+        click('重新计算当前状态')
+        click('校验并发布版本')
+        expect(page.get_by_text('完整版本已发布', exact=True)).to_be_visible()
         assert get('/versions/pin?dataset_id=' + dataset + '&sample_id=conv-a')['build_id'] == build
-        click('扩展当前候选的相关历史')
+        click('扩展相关历史')
         state = get(f'/builds/{build}/current-state')
         trace_ids = []
         relations = get(f'/builds/{build}/relations')
@@ -92,20 +101,11 @@ with sync_playwright() as playwright:
         assert len(conflicts) == 1
         conflict_sources = {f'{dataset}/conv-a/D2:2', f'{dataset}/conv-a/D2:3'}
         assert set(conflicts[0]['source_ids']) == conflict_sources
-        for question, date, expected in [('Where does Alex live?', None, 'Rome'), ('Where did Alex live?', '2023/05/01', 'Paris'), ("What is Sam's birth year?", None, '证据冲突'), ("What is Alex's passport number?", None, '证据不足')]:
+        click('进入证据问答')
+        for question, date, expected in [('Where does Alex live?', None, 'Rome'), ('Where did Alex live?', '2023-05-01', 'Paris'), ("What is Sam's birth year?", None, '证据冲突'), ("What is Alex's passport number?", None, '证据不足')]:
             fill('英文问题', question)
-            dated = page.get_by_label('指定历史或未来日期', exact=True)
-            if dated.is_checked() != (date is not None):
-                dated.press('Space')
-            expect(dated).to_be_checked(checked=date is not None)
-            settle()
-            if date:
-                page.wait_for_timeout(1200)
-                for part, value in [('year', '2023'), ('month', '05'), ('day', '01')]:
-                    page.get_by_role('spinbutton', name=part + ', 问题日期', exact=True).fill(value)
-                page.get_by_role('spinbutton', name='day, 问题日期', exact=True).press('Tab')
-            page.wait_for_timeout(1000)
-            click('解析有效证据并回答')
+            fill('指定日期，可留空', date or '')
+            click('分析证据并回答')
             caption = page.get_by_text(re.compile(r'^Trace [a-f0-9]+ · 固定构建')).inner_text()
             trace_id = caption.split()[1]
             trace = get('/queries/' + trace_id)
@@ -143,6 +143,7 @@ with sync_playwright() as playwright:
         assert get(f'/builds/{build}/current-state') == state
         assert get(f'/builds/{build}/relations') == relations
         assert get(f'/datasets/{dataset}/conversations/conv-a/turns') == original
+        click('进入评测与报告')
         click('准备所选版本 JSON')
         with page.expect_download() as download:
             click('下载完整 Memory JSON')
@@ -156,7 +157,7 @@ with sync_playwright() as playwright:
         evaluation = {'kind': 'synthetic', 'samples': [{'sample_id': 'conv-a', 'question': q, 'answer': 'Rome', 'category': 4, 'evidence': ['D2:1']} for q in ['Where does Alex live?', 'Trigger failure.']]}
         page.get_by_test_id('stFileUploader').last.locator('input[type=file]').set_input_files({'name': 'evaluation.json', 'mimeType': 'application/json', 'buffer': json.dumps(evaluation).encode()})
         click('保存独立评测输入')
-        click('运行所选对照')
+        click('开始评测')
         expect(page.get_by_text(re.compile(r'^Run [a-f0-9]+ ·'))).to_be_visible(timeout=30000)
         run_id = page.get_by_text(re.compile(r'^Run [a-f0-9]+ ·')).inner_text().split()[1]
         deadline = time.monotonic() + 30

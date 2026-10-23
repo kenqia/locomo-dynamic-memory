@@ -2,20 +2,34 @@
 import json
 import streamlit as st
 
+from locomo_memory.report_html import render_evaluation_report_html
+
 
 LABELS = {'dynamic': '完整动态系统', 'dynamic_raw_fallback': 'Dynamic + 原文兜底', 'full_text': 'Full Text 原始轮次', 'vector': 'Vector RAG（无状态解析）', 'hybrid_no_resolution': 'Hybrid + 扩展（无状态解析）'}
 
 
 def render_saved_comparison(request, run):
     """Switch saved answers without launching or retrying any model operation."""
-    st.subheader('同题策略切换与引用原文')
+    st.subheader('逐题检查结果')
     rows = run.get('results', [])
     indices = list(dict.fromkeys(row['sample_index'] for row in rows))
     if not indices:
         st.caption('尚无已保存结果。')
         return
     samples = run['input']['samples']
-    index = st.selectbox('查看题目', indices, format_func=lambda i: samples[i]['question'], key='comparison_question')
+    position = min(st.session_state.get('comparison_question_position', 0), len(indices) - 1)
+    index = indices[position]
+    if len(indices) == 1:
+        st.markdown(f"**题目**  \\n{samples[index]['question']}")
+    else:
+        navigation = st.columns([1, 4, 1])
+        if navigation[0].button('上一题', disabled=position == 0, key='comparison_previous'):
+            st.session_state['comparison_question_position'] = position - 1
+            st.rerun()
+        navigation[1].markdown(f"**题目 {position + 1} / {len(indices)}**  \\n{samples[index]['question']}")
+        if navigation[2].button('下一题', disabled=position == len(indices) - 1, key='comparison_next'):
+            st.session_state['comparison_question_position'] = position + 1
+            st.rerun()
     strategies = [s for s in run['strategies'] if any(r['sample_index'] == index and r['strategy'] == s for r in rows)]
     strategy = st.radio('查看策略', strategies, format_func=LABELS.get, horizontal=True, key='comparison_strategy')
     st.caption('切换只读取本次 Run 的已保存结果，不会调用模型。引用原文按需读取。')
@@ -45,36 +59,70 @@ def render_saved_comparison(request, run):
 
 
 def render_development_plan(request, dataset_id):
-    with st.expander('开发集评测计划预览', expanded=True):
-        st.caption('开发集：conv-26、conv-30、conv-41、conv-42。本地测试：conv-43、conv-44，系统冻结后再测；教师隐藏评分集另行保密。')
-        st.caption('预览只读取已导入的来源和独立 QA，不需要完整构建，不调用生成模型，也不运行本地测试。预览数量不代表已完成模型评测。')
-        artifacts = request('GET', f'/datasets/{dataset_id}/provenance', params={'limit': 100})['items']
-        artifact = st.selectbox('评测原件 artifact SHA256', [a['artifact_sha256'] for a in artifacts], key=f'evaluation_artifact_{dataset_id}')
-        scope = st.selectbox('开发计划范围', ['development', 'smoke'], format_func=lambda value: '官方原件全量开发集：757 题 / 3,028 组合' if value == 'development' else 'conv-26：类别 1–5 各首题 / 20 组合')
-        if st.button('生成开发集计划预览', disabled=not artifact):
-            plan = request('POST', '/evaluation-plans', json={'dataset_id': dataset_id, 'artifact_sha256': artifact, 'scope': scope})
-            st.session_state['evaluation_plan'] = plan
-            st.session_state['evaluation_input_id'] = plan['input_id']
-        plan_id = st.text_input('读取已保存 Plan ID', key='evaluation_saved_plan')
-        if st.button('读取计划预览', disabled=not plan_id):
-            st.session_state['evaluation_plan'] = request('GET', f'/evaluation-plans/{plan_id}')
+    artifacts = request('GET', f'/datasets/{dataset_id}/provenance', params={'limit': 100})['items']
+    required = {'conv-26', 'conv-30', 'conv-41', 'conv-42'}
+    artifact = None
+    for item in artifacts:
+        samples = item.get('provenance', {}).get('samples')
+        annotated = {
+            sample.get('sample_id')
+            for sample in samples or []
+            if isinstance(sample, dict) and sample.get('qa', 0) > 0
+        }
+        if required <= annotated:
+            artifact = item['artifact_sha256']
+            break
+
+    with st.container(border=True):
+        st.markdown('##### 课程开发集计划')
+        if artifact:
+            st.caption('开发集使用 conv-26、conv-30、conv-41、conv-42；5 题计划覆盖五类课程问题。计划预览不会调用生成模型。')
+            plan_columns = st.columns(2)
+            if plan_columns[0].button('生成 5 题冒烟计划', use_container_width=True, key='create_smoke_plan'):
+                plan = request('POST', '/evaluation-plans', json={'dataset_id': dataset_id, 'artifact_sha256': artifact, 'scope': 'smoke'})
+                st.session_state['evaluation_plan'] = plan
+                st.session_state['evaluation_input_id'] = plan['input_id']
+            if plan_columns[1].button('生成完整开发集计划', use_container_width=True, key='create_development_plan'):
+                plan = request('POST', '/evaluation-plans', json={'dataset_id': dataset_id, 'artifact_sha256': artifact, 'scope': 'development'})
+                st.session_state['evaluation_plan'] = plan
+                st.session_state['evaluation_input_id'] = plan['input_id']
+        else:
+            st.info('当前数据集是自定义数据，未包含课程开发集 QA。请在第一页导入官方 LoCoMo 后创建课程计划。')
+
+        saved_columns = st.columns([4, 1])
+        plan_id = saved_columns[0].text_input(
+            '读取已保存 Plan ID',
+            key='evaluation_saved_plan',
+            placeholder='输入已保存的 Plan ID',
+            label_visibility='collapsed',
+        )
+        if saved_columns[1].button('读取计划', use_container_width=True):
+            if not plan_id:
+                st.warning('请先输入 Plan ID。')
+            else:
+                st.session_state['evaluation_plan'] = request('GET', f'/evaluation-plans/{plan_id}')
+
         plan = st.session_state.get('evaluation_plan')
         if plan and plan['dataset_id'] == dataset_id:
             st.write(f"Plan {plan['plan_id']}")
             st.write(f"{plan['question_count']} 题 · {len(plan['strategies'])} 策略 · {plan['combination_count']} 组合 · 尚未执行")
-            st.json({'course_split': plan['course_split'], 'strategies': plan['strategies'], 'input_id': plan['input_id'], 'artifact_sha256': plan['artifact_sha256']})
             st.dataframe(plan['questions'], hide_index=True)
-            if st.button('运行此开发集计划'):
+            action_columns = st.columns(2)
+            if action_columns[0].button('运行此开发集计划', use_container_width=True):
                 run = request('POST', '/evaluation-runs', json={'plan_id': plan['plan_id']})
                 st.session_state['evaluation_run'] = run
                 st.session_state['evaluation_saved_run'] = run['run_id']
-            st.download_button('导出开发集计划 JSON', json.dumps(plan, ensure_ascii=False, indent=2), file_name=f"evaluation-plan-{plan['plan_id']}.json", mime='application/json')
-            with st.expander('完整计划与来源身份'):
-                st.json(plan)
+            action_columns[1].download_button(
+                '导出计划 JSON',
+                json.dumps(plan, ensure_ascii=False, indent=2),
+                file_name=f"evaluation-plan-{plan['plan_id']}.json",
+                mime='application/json',
+                use_container_width=True,
+            )
 
 
 def render_evaluation(request, dataset_id):
-    st.subheader('独立评测与基线比较')
+    st.subheader('创建评测')
     render_development_plan(request, dataset_id)
     st.caption('独立动态真值缺失时动态指标未评；原文来源覆盖不能证明语义事实已被抽取。运行对照前需发布完整构建版本。')
     uploaded = st.file_uploader('独立评测 JSON（samples、kind、可选 course_split）', type=['json'], key='evaluation_upload')
@@ -92,15 +140,43 @@ def render_evaluation(request, dataset_id):
                 st.session_state['evaluation_input_id'] = value['input_id']
                 st.json(value)
     input_id = st.text_input('评测 Input ID', key='evaluation_input_id')
-    strategies = st.multiselect('对照策略', list(LABELS), default=[s for s in LABELS if s != 'dynamic_raw_fallback'], format_func=LABELS.get)
-    partition = st.selectbox('课程划分（合成案例选择不适用）', ['不适用', 'dev', 'test'])
-    if st.button('运行所选对照', disabled=not input_id or not strategies):
-        created = request('POST', '/evaluation-runs', json={'input_id': input_id, 'strategies': strategies, 'partition': None if partition == '不适用' else partition})
-        st.session_state['evaluation_run'] = created
-        st.session_state['evaluation_saved_run'] = created['run_id']
+    strategy_columns = st.columns([1, 2.35], gap='large', vertical_alignment='bottom')
+    strategy_mode = strategy_columns[0].selectbox(
+        '运行策略',
+        ['course', 'course_with_raw_fallback'],
+        format_func=lambda value: (
+            '课程策略'
+            if value == 'course'
+            else '课程策略+原文'
+        ),
+        key='evaluation_strategy_mode',
+    )
+    strategy_columns[1].caption(
+        '课程策略用于默认对照；原文作为额外实验随第二项一起运行。'
+    )
+    include_raw_fallback = strategy_mode == 'course_with_raw_fallback'
+    strategies = ['dynamic', 'full_text', 'vector', 'hybrid_no_resolution']
+    if include_raw_fallback:
+        strategies.append('dynamic_raw_fallback')
+    partition_label = st.selectbox(
+        '评测数据范围',
+        ['合成或自定义输入', '课程开发集', '本地留出集'],
+        key='evaluation_partition',
+    )
+    partition = {'合成或自定义输入': None, '课程开发集': 'dev', '本地留出集': 'test'}[partition_label]
+    if st.button('开始评测', type='primary', use_container_width=True):
+        if not input_id:
+            st.warning('请先上传评测文件或输入评测 Input ID。')
+        else:
+            created = request('POST', '/evaluation-runs', json={'input_id': input_id, 'strategies': strategies, 'partition': partition})
+            st.session_state['evaluation_run'] = created
+            st.session_state['evaluation_saved_run'] = created['run_id']
     run_id = st.text_input('读取已保存 Run ID', key='evaluation_saved_run')
-    if st.button('读取评测记录', disabled=not run_id):
-        st.session_state['evaluation_run'] = request('GET', f'/evaluation-runs/{run_id}')
+    if st.button('读取评测记录'):
+        if not run_id:
+            st.warning('请先输入 Run ID。')
+        else:
+            st.session_state['evaluation_run'] = request('GET', f'/evaluation-runs/{run_id}')
     run = st.session_state.get('evaluation_run')
     if not run:
         return
@@ -127,8 +203,12 @@ def render_evaluation(request, dataset_id):
     columns = st.columns(max(1, len(run.get('summary', {}))))
     for column, (strategy, summary) in zip(columns, run['summary'].items()):
         with column:
-            st.write(LABELS[strategy])
-            st.json(summary)
+            execution = summary.get('execution', {})
+            qa = summary.get('qa', {})
+            st.metric(LABELS[strategy], '—' if qa.get('mean') is None else f"{qa['mean']:.3f}",
+                      f"成功 {execution.get('succeeded', 0)} / {execution.get('planned', 0)}")
+            with st.expander('查看完整指标'):
+                st.json(summary)
     if 'overall_summary' in run:
         st.caption('QA 均值只含成功且可计分项。运行成功率使用全部计划项。基线运行得分将适用参考规则的执行失败记零；未完成时最终得分为空，此指标不是教师评分。')
         st.write('总体逐项汇总')
@@ -155,8 +235,13 @@ def render_evaluation(request, dataset_id):
         with st.expander('构建开销与全部查询尝试用量'):
             st.caption('仅合计已保存的 provider 用量。缺失字段、未知结果及未记录的历史构建开销分别标明，不据此计算完整账单。')
             st.json({'query_attempts': run.get('usage_summary', {}), 'pinned_builds': run.get('build_usage_summary', {})})
-    st.download_button('导出评测完整 JSON', json.dumps(run, ensure_ascii=False, indent=2),
-        file_name=f"evaluation-run-{run['run_id']}.json", mime='application/json')
+    export_columns = st.columns(2)
+    with export_columns[0]:
+        st.download_button('导出评测完整 JSON', json.dumps(run, ensure_ascii=False, indent=2),
+            file_name=f"evaluation-run-{run['run_id']}.json", mime='application/json', use_container_width=True)
+    with export_columns[1]:
+        st.download_button('下载可视化 HTML 报告', render_evaluation_report_html(run),
+            file_name=f"evaluation-run-{run['run_id']}.html", mime='text/html', use_container_width=True)
     st.dataframe([{'样本': r['sample_index'], '策略': LABELS[r['strategy']], 'QA': r['qa']['value'], 'QA不可计分原因': r['qa'].get('reason'), '证据不可计分原因': r['mapping']['reason'], **r['source_coverage']} for r in run['results']], hide_index=True)
     st.caption('Full Text 使用完整原始对话；RAG 保留证据预算。近似计数采用 regex，不是 provider tokenizer 或账单 token。发送后未收到响应时，来源送达情况未知。')
     contexts = []

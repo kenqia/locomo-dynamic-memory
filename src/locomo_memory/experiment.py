@@ -13,6 +13,7 @@ import httpx
 
 from .model import utc_now
 from .experiment_report import render_report
+from .report_html import render_experiment_report_html
 
 
 class ExperimentError(Exception):
@@ -24,7 +25,8 @@ class ExperimentError(Exception):
 def write_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + '.tmp')
-    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+    temporary.write_text(
+        json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     temporary.replace(path)
 
 
@@ -33,7 +35,7 @@ class Experiment:
         self.client = client
         self.directory = directory.resolve()
         self.state_path = self.directory / 'experiment.json'
-        self.state = json.loads(self.state_path.read_text()) if self.state_path.exists() else {'created_at': utc_now(), 'status': 'unprepared', 'blockers': [], 'builds': {}, 'live_smoke': 'not_run', 'full_baseline': 'not_run'}
+        self.state = json.loads(self.state_path.read_text(encoding='utf-8')) if self.state_path.exists() else {'created_at': utc_now(), 'status': 'unprepared', 'blockers': [], 'builds': {}, 'live_smoke': 'not_run', 'full_baseline': 'not_run'}
 
     def request(self, method, path, **kwargs):
         initiating = method == 'POST' and path in {'/builds', '/evaluation-runs'}
@@ -128,7 +130,7 @@ class Experiment:
         target = self.directory / 'model-contract.json'
         if path is None and not target.exists():
             raise ExperimentError('service_contract_not_recorded')
-        record = json.loads((path or target).read_text())
+        record = json.loads((path or target).read_text(encoding='utf-8'))
         fields = ('checked_date', 'source_url', 'model_name', 'known_service_version', 'context_window_tokens', 'thinking_enabled', 'response_format', 'verification_scope', 'limitations')
         if (set(record) != set(fields) or record['source_url'] != 'https://api-docs.deepseek.com/quick_start/pricing'
                 or record['model_name'] != 'deepseek-flash' or record['thinking_enabled'] is not False
@@ -380,8 +382,13 @@ class Experiment:
                     trace = result.get('trace', {})
                     failures.append({'sample_id': item['sample_id'], 'qa_index': item.get('qa_index'), 'question_id': item.get('question_id'), 'strategy': item['strategy'], 'status': item['status'], 'qa': result.get('qa'), 'source_mapping': result.get('mapping'), 'memory_rankings': result.get('memory_rankings'), 'source_sets': result.get('source_sets'), 'citations': trace.get('answer', {}).get('citations'), 'diagnosis': 'undetermined', 'evidence_pointer': f"run.json#items/{n}"})
             write_json(target / 'failure-cases.json', failures)
-            (target / 'report.md').write_text(render_report(self.state, scope, run))
-        (self.directory / f'report-{scope}.md').write_text(render_report(self.state, scope, run))
+            (target / 'report.md').write_text(
+                render_report(self.state, scope, run), encoding='utf-8')
+            (target / 'report.html').write_text(render_experiment_report_html(self.state, scope, run), encoding='utf-8')
+        (self.directory / f'report-{scope}.md').write_text(
+            render_report(self.state, scope, run), encoding='utf-8')
+        (self.directory / f'report-{scope}.html').write_text(
+            render_experiment_report_html(self.state, scope, run), encoding='utf-8')
         return self.state
 
     def prepare(self):

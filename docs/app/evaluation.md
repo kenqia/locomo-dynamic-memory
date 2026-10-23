@@ -137,7 +137,7 @@ Vector 的 `retrieval.executed_components` 披露实际执行的问题分析、B
 
 ## 读取、导出和成本核查
 
-读取完整 Run ID 后，页面显示总体、各策略、对话及类别的指标，点击 **导出评测完整 JSON** 保存机器可读记录。`results` 是当前采用的逐项原始结果，`items[].attempts` 保留旧错误、重试、用量和耗时。读取已有记录不会生成答案；未完成记录导出的仍是部分结果。
+读取完整 Run ID 后，页面显示总体、各策略、对话及类别的指标。点击 **导出评测完整 JSON** 保存机器可读记录，点击 **下载可视化 HTML 报告** 保存可直接展示或打印的独立页面。HTML 报告包含运行概览、策略结果、逐项回答和证据边界，原始 Trace 仍以 JSON 为准。`results` 是当前采用的逐项原始结果，`items[].attempts` 保留旧错误、重试、用量和耗时。读取已有记录不会生成答案；未完成记录导出的仍是部分结果。
 
 `usage_summary` 汇总所有已保存查询尝试，包含后来恢复成功前的失败。`logical_attempts`、`logical_retries`、`first_attempt_failures` 和 `failed_attempts` 与题目分母分别记录。`reported_attempt_seconds` 与 `reported_stage_seconds` 合计已记录的尝试及阶段耗时，不将未知耗时填成零。`provider_retries` 单列一次逻辑尝试内模型适配器的重试。
 

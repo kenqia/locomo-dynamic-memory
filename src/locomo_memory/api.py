@@ -133,8 +133,8 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
     def import_official():
         # Fixed repository files only: no arbitrary filesystem path from HTTP clients.
         try:
-            raw = (OFFICIAL_DIRECTORY / "locomo10.json").read_bytes()
-            license_bytes = (OFFICIAL_DIRECTORY / "LICENSE.txt").read_bytes()
+            raw = (OFFICIAL_DIRECTORY / "locomo10.json").read_bytes().replace(b"\r\n", b"\n")
+            license_bytes = (OFFICIAL_DIRECTORY / "LICENSE.txt").read_bytes().replace(b"\r\n", b"\n")
             provenance = json.loads((OFFICIAL_DIRECTORY / "provenance.json").read_text())
             manifest = {item["path"]: item["sha256"] for item in provenance["files"]}
             if hashlib.sha256(raw).hexdigest() != manifest["locomo10.json"] or hashlib.sha256(license_bytes).hexdigest() != manifest["LICENSE.txt"]:
