@@ -1,0 +1,22 @@
+{
+  "source": "docs/design/m4-midterm-report.md",
+  "baseline": "ffb2657",
+  "reference_baseline": "cf422fe",
+  "pdf": "deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-报告.pdf",
+  "pages": 5,
+  "page_limit": 5,
+  "limit_passed": true,
+  "pdf_sha256": "63894249b3cfe70a81b23dc04ac287fda34d06c46cf94042b4a3156fe38b04b3",
+  "source_sha256": "0dec5e16db714d6ce3ec441aeff1db0e9c4e157ac4b0761ad9a5491f0e1ec794",
+  "characters_per_page": [
+    1096,
+    843,
+    884,
+    1360,
+    777
+  ],
+  "word": "docs/design/m4-midterm-report.docx",
+  "word_pagination": "not independently rendered; use verified PDF for page limit",
+  "font": "simsun.ttc",
+  "bold_font": "simhei.ttf"
+}

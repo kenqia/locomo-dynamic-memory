@@ -1,0 +1,65 @@
+{
+  "checked_on": "2026-10-23",
+  "report_version": "v0.6",
+  "source_metrics_checked_from_saved_rows": true,
+  "paired_logical_items": 100,
+  "answerable_questions_per_strategy": 16,
+  "f1": {
+    "full_text": 0.3490463849016481,
+    "vector": 0.4910918394471026,
+    "hybrid_no_resolution": 0.512371607437397,
+    "dynamic": 0.510038517768781,
+    "dynamic_raw_fallback": 0.39974948861123394
+  },
+  "recall_questions": 40,
+  "initial_rrf_recall": {
+    "5": 0.6416666666666667,
+    "10": 0.7291666666666667,
+    "20": 0.7791666666666667
+  },
+  "local_link_targets_checked": 22,
+  "link_check_scope": "report source only",
+  "numeric_reference_labels_unresolved": 0,
+  "formal_m3_reference": "linked_pending_team_review",
+  "formal_m3_path": "docs/requirements/software-requirements-specification.md",
+  "m3_requirement_mapping": "checked against tracked v0.3; human acceptance pending",
+  "reference_baseline": "cf422fe",
+  "implementation_baseline": "ffb2657",
+  "markdown_page_sections": 5,
+  "cjk_characters": 2531,
+  "source_sha256": "0dec5e16db714d6ce3ec441aeff1db0e9c4e157ac4b0761ad9a5491f0e1ec794",
+  "fresh_model_calls": 0,
+  "query_tokens_all_saved_attempts": {
+    "full_text": {
+      "prompt_tokens": 1270393,
+      "completion_tokens": 2558,
+      "total_tokens": 1272951
+    },
+    "vector": {
+      "prompt_tokens": 159789,
+      "completion_tokens": 3567,
+      "total_tokens": 163356
+    },
+    "hybrid_no_resolution": {
+      "prompt_tokens": 168978,
+      "completion_tokens": 3473,
+      "total_tokens": 172451
+    },
+    "dynamic": {
+      "prompt_tokens": 1477136,
+      "completion_tokens": 112169,
+      "total_tokens": 1589305
+    },
+    "dynamic_raw_fallback": {
+      "prompt_tokens": 341097,
+      "completion_tokens": 75900,
+      "total_tokens": 416997
+    }
+  },
+  "case_trace_and_quotes_checked": true,
+  "screenshot_original_unchanged": true,
+  "video_status": "not_recorded_per_user_2026-10-23",
+  "dynamic_to_hybrid_total_tokens_ratio": 9.21598019147468,
+  "independent_dynamic_review": "not_performed",
+  "historical_issue_narrative_removed": true
+}

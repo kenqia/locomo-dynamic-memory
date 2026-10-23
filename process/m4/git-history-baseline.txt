@@ -1,0 +1,26 @@
+M4 local Git capture; client date: 2026-10-23 Asia/Shanghai
+HEAD: 13607f9b618566d5967edcb382c777dff7c74375
+Branch: docs/m4-midterm-report
+Local cached origin/main: cf422febb50d987200d3baae28049655f3f91b97
+No network refresh in this packaging run. Working files are not claimed to be in HEAD.
+
+13607f9 | 2026-10-23T00:20:35+08:00 | Merge remote-tracking branch 'origin/main' into docs/m4-midterm-report
+1d29362 | 2026-10-23T00:18:38+08:00 | docs: checkpoint M4 report and process materials in progress
+cf422fe | 2026-10-22T17:05:27+08:00 | Add files via upload
+54df6ce | 2026-10-22T16:22:58+08:00 | Add files via upload
+ec699ac | 2026-10-22T11:12:44+08:00 | docs: record M4 report standards and requirements review
+ed94421 | 2026-10-22T11:08:18+08:00 | docs: preserve M4 PDF bytes across platform checkouts
+cfc4416 | 2026-10-22T11:06:39+08:00 | docs: update M4 report to current results and verify five-page PDF
+f466a9e | 2026-10-22T10:51:38+08:00 | Merge remote-tracking branch 'origin/main' into docs/m4-midterm-report
+7a1da75 | 2026-10-22T10:51:35+08:00 | docs: preserve M4 report draft before main synchronization
+ffb2657 | 2026-10-21T23:03:09+08:00 | Merge pull request #22 from kenqia/codex/issue-15-integration
+8195c0b | 2026-10-21T22:48:07+08:00 | chore: prepare issue-15 integration review and normalize report whitespace
+b17ae18 | 2026-10-21T22:35:59+08:00 | experiments: record five-strategy results and evidence reviews
+951f9b6 | 2026-10-21T22:08:15+08:00 | experiments: freeze bounded five-strategy system showcase
+7a705fa | 2026-10-21T21:35:26+08:00 | docs: close superseded baseline scope and accept independent engineering tickets
+ff037d2 | 2026-10-21T21:19:11+08:00 | docs: record bounded citation replay and final evidence audit
+2ef0bd0 | 2026-10-21T21:08:27+08:00 | fix: clarify delivered citation forms after frozen query replay
+9cd3aa1 | 2026-10-21T20:55:22+08:00 | fix: diversify list evidence and recover invalid dynamic resolution
+fb8b497 | 2026-10-21T18:10:46+08:00 | test: verify query reliability with frozen live replay and UI checks
+7546b41 | 2026-10-21T17:14:38+08:00 | fix: preserve core query evidence and source-anchored time
+5c1e23e | 2026-10-21T16:23:12+08:00 | docs: record temporary P0/P1 rollback and retained P2 behavior

@@ -103,6 +103,13 @@ M1 源稿修改后运行 `python scripts/build_m1_report.py` 重建 Word，PDF �
 
 M2 联网调研依据见 [现实系统与基准调研](docs/sources/m2-real-world-memory-research.md)。报告采用一手资料修订问题、可行性与评测边界；调研前快照保存在 `process/m2/iterations/vision-and-scope-before-research.md`。两者均进入过程 ZIP，不代表已运行系统实验。
 
+## M4 中期报告
+
+- [报告 Markdown v0.6](docs/design/m4-midterm-report.md)、[可编辑 Word](docs/design/m4-midterm-report.docx)和[报告 PDF](deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-报告.pdf)，实现依据 `main@ffb2657`、文档引用依据 `main@cf422fe`；已引用 [M3 需求规格 v0.3](docs/requirements/software-requirements-specification.md)，M3/M4 均待成员复核。
+- PDF 含结果索引共 **5 页**，见[页数与校验值](process/m4/pdf-validation.json)。Word 保留编辑能力，其分页未独立渲染，页数上限以 PDF 为准。
+- [报告修订记录](process/m4/draft-evidence.md)；重建命令和工具依赖见[导出与校验说明](process/m4/validation-record.md)，人工待办和意见见[复核与交付登记](process/m4/member-review-record.md)。
+- [M4 过程材料说明](process/m4-process-index.md)、[离线阅读页](process/m4/index.html)与[过程 ZIP](deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-过程材料.zip)。版本、来源、实验、页面证据和待复核记录按仓库路径整理，清单与检查见 `process/m4/`；重建使用 `python scripts/package_m4_materials.py`。
+
 ## 过程材料同步与打包
 
 修改任务快照或成员反馈后，运行 `python scripts/build_process_documents.py` 重建对应 Word，再使用 LibreOffice 导出同名 PDF。执行 `python scripts/package_m1_materials.py` 与 `python scripts/package_m2_materials.py` 重建两个过程包。

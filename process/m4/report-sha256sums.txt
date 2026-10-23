@@ -1,0 +1,4 @@
+0dec5e16db714d6ce3ec441aeff1db0e9c4e157ac4b0761ad9a5491f0e1ec794  docs/design/m4-midterm-report.md
+31dda8626bf633941ad98f552c897042056976057bffdd99573feacc2666daa4  docs/design/m4-midterm-report.docx
+63894249b3cfe70a81b23dc04ac287fda34d06c46cf94042b4a3156fe38b04b3  deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-报告.pdf
+31dda8626bf633941ad98f552c897042056976057bffdd99573feacc2666daa4  deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-报告.docx
