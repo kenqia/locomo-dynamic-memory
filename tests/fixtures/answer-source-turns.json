@@ -1,0 +1,61 @@
+{
+  "provenance": "Public LoCoMo conv-26 conversation SourceTurns from the pinned v3 memory export. No QA answers or annotations.",
+  "turns": [
+    {
+      "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:5",
+      "dia_id": "D2:5",
+      "speaker": "Melanie",
+      "session_time": "1:14 pm on 25 May, 2023",
+      "text": "Yeah, it's tough. So I'm carving out some me-time each day - running, reading, or playing my violin - which refreshes me and helps me stay present for my fam!"
+    },
+    {
+      "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D2:8",
+      "dia_id": "D2:8",
+      "speaker": "Caroline",
+      "session_time": "1:14 pm on 25 May, 2023",
+      "text": "Researching adoption agencies — it's been a dream to have a family and give a loving home to kids who need it."
+    },
+    {
+      "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:3",
+      "dia_id": "D4:3",
+      "speaker": "Caroline",
+      "session_time": "10:37 am on 27 June, 2023",
+      "text": "Thanks, Melanie! This necklace is super special to me - a gift from my grandma in my home country, Sweden. She gave it to me when I was young, and it stands for love, faith and strength. It's like a reminder of my roots and all the love and support I get from my family."
+    },
+    {
+      "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D4:11",
+      "dia_id": "D4:11",
+      "speaker": "Caroline",
+      "session_time": "10:37 am on 27 June, 2023",
+      "text": "Lately, I've been looking into counseling and mental health as a career. I want to help people who have gone through the same things as me."
+    },
+    {
+      "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D5:6",
+      "dia_id": "D5:6",
+      "speaker": "Melanie",
+      "session_time": "1:36 pm on 3 July, 2023",
+      "text": "I'm a big fan of pottery - the creativity and skill is awesome. Plus, making it is so calming. Look at this!"
+    },
+    {
+      "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D7:5",
+      "dia_id": "D7:5",
+      "speaker": "Caroline",
+      "session_time": "4:33 pm on 12 July, 2023",
+      "text": "Thanks, Mell! I'm still looking into counseling and mental health jobs. It's important to me that people have someone to talk to, and I want to help make that happen."
+    },
+    {
+      "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D13:1",
+      "dia_id": "D13:1",
+      "speaker": "Caroline",
+      "session_time": "3:31 pm on 23 August, 2023",
+      "text": "Hi Melanie! Hope you're doing good. Guess what I did this week? I took the first step towards becoming a mom - I applied to adoption agencies! It's a big decision, but I think I'm ready to give all my love to a child. I got lots of help from this adoption advice/assistance group I attended. It was great!"
+    },
+    {
+      "source_id": "f69a07a79a2d5f4c8188300a/conv-26/D17:8",
+      "dia_id": "D17:8",
+      "speaker": "Melanie",
+      "session_time": "10:31 am on 13 October, 2023",
+      "text": "Thanks for the tip, Caroline. Doing research and readying myself emotionally makes sense. I'll do that. BTW, recently I had a setback. Last month I got hurt and had to take a break from pottery, which I use for self-expression and peace."
+    }
+  ]
+}

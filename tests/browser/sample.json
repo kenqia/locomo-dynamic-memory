@@ -1,0 +1,46 @@
+[
+  {
+    "sample_id": "conv-a",
+    "conversation": {
+      "speaker_a": "Alex",
+      "speaker_b": "Sam",
+      "session_1_date_time": "1:00 pm on 1 May, 2023",
+      "session_1": [
+        {
+          "dia_id": "D1:1",
+          "speaker": "Alex",
+          "text": "I live in Paris."
+        },
+        {
+          "dia_id": "D1:2",
+          "speaker": "Sam",
+          "text": "I work in London."
+        }
+      ],
+      "session_2_date_time": "1:00 pm on 2 May, 2023",
+      "session_2": [
+        {
+          "dia_id": "D2:1",
+          "speaker": "Alex",
+          "text": "I moved from Paris to Rome on 2 May 2023."
+        },
+        {
+          "dia_id": "D2:2",
+          "speaker": "Sam",
+          "text": "My birth year is 1990."
+        },
+        {
+          "dia_id": "D2:3",
+          "speaker": "Sam",
+          "text": "My birth year is 1992. These reports are contradictory and unresolved."
+        }
+      ]
+    },
+    "qa": [
+      {
+        "question": "ANNOTATION ONLY",
+        "answer": "ANNOTATION ONLY"
+      }
+    ]
+  }
+]
