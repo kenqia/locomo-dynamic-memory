@@ -1,0 +1,247 @@
+{
+  "repository": "kenqia/locomo-dynamic-memory",
+  "visibility": "PUBLIC",
+  "remote_baseline_heads": {
+    "codex/issue-15-integration": "8195c0b78d13ede08c4b8b0596fdc8970b8c8b16",
+    "codex/v2-6d-production-safe": "068eb23ec72e90913e5748022f1fd638949dc0fb",
+    "codex/v2-6d-research-safe": "7634bd75a2ed2fe7dfa8593778ebd75d53d5cbb6",
+    "main": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "team/product-console-v2-6d": "068eb23ec72e90913e5748022f1fd638949dc0fb",
+    "team/research-delivery-v2-6d": "068eb23ec72e90913e5748022f1fd638949dc0fb",
+    "team/temporal-event-sidecar-v0-6d": "7634bd75a2ed2fe7dfa8593778ebd75d53d5cbb6"
+  },
+  "issues": {
+    "TRACK-PRODUCT": {
+      "number": 23,
+      "id": 6176234580,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/23",
+      "owner": "Thorns-06",
+      "branch": "team/product-console-v2-6d",
+      "due": "D6"
+    },
+    "TRACK-ARCHITECTURE": {
+      "number": 24,
+      "id": 6176235137,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/24",
+      "owner": "xiaozhuozi39",
+      "branch": "team/temporal-event-sidecar-v0-6d",
+      "due": "D6"
+    },
+    "TRACK-DELIVERY": {
+      "number": 25,
+      "id": 6176235633,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/25",
+      "owner": "VanadisssSSS",
+      "branch": "team/research-delivery-v2-6d",
+      "due": "D6"
+    },
+    "PROD-01": {
+      "number": 26,
+      "id": 6176236161,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/26",
+      "owner": "Thorns-06",
+      "branch": "team/product-console-v2-6d",
+      "due": "D2"
+    },
+    "PROD-02": {
+      "number": 27,
+      "id": 6176236632,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/27",
+      "owner": "Thorns-06",
+      "branch": "team/product-console-v2-6d",
+      "due": "D3"
+    },
+    "PROD-03": {
+      "number": 28,
+      "id": 6176237083,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/28",
+      "owner": "Thorns-06",
+      "branch": "team/product-console-v2-6d",
+      "due": "D4"
+    },
+    "PROD-04": {
+      "number": 29,
+      "id": 6176237562,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/29",
+      "owner": "Thorns-06",
+      "branch": "team/product-console-v2-6d",
+      "due": "D5"
+    },
+    "ARCH-01": {
+      "number": 30,
+      "id": 6176238081,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/30",
+      "owner": "xiaozhuozi39",
+      "branch": "team/temporal-event-sidecar-v0-6d",
+      "due": "D1"
+    },
+    "ARCH-02": {
+      "number": 31,
+      "id": 6176238572,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/31",
+      "owner": "xiaozhuozi39",
+      "branch": "team/temporal-event-sidecar-v0-6d",
+      "due": "D3"
+    },
+    "ARCH-03": {
+      "number": 32,
+      "id": 6176239084,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/32",
+      "owner": "xiaozhuozi39",
+      "branch": "team/temporal-event-sidecar-v0-6d",
+      "due": "D4"
+    },
+    "ARCH-04": {
+      "number": 33,
+      "id": 6176239620,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/33",
+      "owner": "xiaozhuozi39",
+      "branch": "team/temporal-event-sidecar-v0-6d",
+      "due": "D5"
+    },
+    "DEL-01": {
+      "number": 34,
+      "id": 6176240098,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/34",
+      "owner": "VanadisssSSS",
+      "branch": "team/research-delivery-v2-6d",
+      "due": "D2"
+    },
+    "DEL-02": {
+      "number": 35,
+      "id": 6176240595,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/35",
+      "owner": "VanadisssSSS",
+      "branch": "team/research-delivery-v2-6d",
+      "due": "D3"
+    },
+    "DEL-03": {
+      "number": 36,
+      "id": 6176241083,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/36",
+      "owner": "VanadisssSSS",
+      "branch": "team/research-delivery-v2-6d",
+      "due": "D5"
+    },
+    "DEL-04": {
+      "number": 37,
+      "id": 6176241622,
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/37",
+      "owner": "VanadisssSSS",
+      "branch": "team/research-delivery-v2-6d",
+      "due": "D6"
+    }
+  },
+  "tests": {
+    "production": {
+      "tests": "583",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "436.240"
+    },
+    "research": {
+      "tests": "748",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "652.468"
+    }
+  },
+  "notion": "not synchronized: no linked task records or available Notion connector",
+  "wechat": "private draft ready; no sending connector; not sent",
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 41578969219,
+      "headBranch": "team/research-delivery-v2-6d",
+      "headSha": "068eb23ec72e90913e5748022f1fd638949dc0fb",
+      "status": "completed",
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/actions/runs/41578969219"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 41578968902,
+      "headBranch": "codex/v2-6d-production-safe",
+      "headSha": "068eb23ec72e90913e5748022f1fd638949dc0fb",
+      "status": "completed",
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/actions/runs/41578968902"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 41578968542,
+      "headBranch": "team/product-console-v2-6d",
+      "headSha": "068eb23ec72e90913e5748022f1fd638949dc0fb",
+      "status": "completed",
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/actions/runs/41578968542"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 41578968361,
+      "headBranch": "codex/v2-6d-research-safe",
+      "headSha": "7634bd75a2ed2fe7dfa8593778ebd75d53d5cbb6",
+      "status": "completed",
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/actions/runs/41578968361"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 41578968358,
+      "headBranch": "team/temporal-event-sidecar-v0-6d",
+      "headSha": "7634bd75a2ed2fe7dfa8593778ebd75d53d5cbb6",
+      "status": "completed",
+      "url": "https://github.com/kenqia/locomo-dynamic-memory/actions/runs/41578968358"
+    }
+  ],
+  "code_sha_scope": "Verified initial kickoff code revisions; subsequent evidence-only commits do not change runtime code.",
+  "clean_clone": {
+    "remote_code_sha": "068eb23ec72e90913e5748022f1fd638949dc0fb",
+    "locked_install": "passed",
+    "fixture_cases": [
+      {
+        "question": "Where does Alex live?",
+        "expected": "sufficient",
+        "status": "sufficient"
+      },
+      {
+        "question": "Where did Alex live?",
+        "expected": "sufficient",
+        "status": "sufficient"
+      },
+      {
+        "question": "What is Sam's birth year?",
+        "expected": "conflict",
+        "status": "conflict"
+      },
+      {
+        "question": "What is Alex's passport number?",
+        "expected": "insufficient",
+        "status": "insufficient"
+      }
+    ],
+    "api_health": "passed",
+    "ui_health": "passed",
+    "apptest_query": "passed",
+    "provider_calls": 0,
+    "browser_e2e": "not_performed",
+    "targeted_regression": {
+      "passed": 3,
+      "failed": 0
+    }
+  },
+  "preservation": {
+    "main_status_unchanged": true,
+    "production_status_unchanged": true,
+    "research_status": "concurrent research activity observed; this task did not write source files there",
+    "archived_originals": 2856,
+    "archive_hash_mismatches": 0,
+    "runtime_sensitive_paths_held": 22,
+    "active_databases_opened_or_copied": false
+  },
+  "validation_limits": [
+    "3 artifact-dependent test modules not collected",
+    "production 6 / research 8 deselected including live/local-model checks",
+    "full browser E2E pending",
+    "non-author human review pending",
+    "D6 sidecar and formal media not yet delivered"
+  ]
+}

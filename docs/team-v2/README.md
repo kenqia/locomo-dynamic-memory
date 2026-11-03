@@ -66,3 +66,5 @@ push 前核对无敏感内容且符合负责人授权；不要使用 `git add .`
 唯一日程：[06 六天冲刺看板](task-package/06_SIX_DAY_SPRINT_BOARD.md)。任务状态以 [GitHub milestone](https://github.com/kenqia/locomo-dynamic-memory/milestone/1) 为准；[每日记录](sprint-status.md)仅记录证据和阻塞。
 
 继续阅读：[任务书及执行覆盖](task-package/README.md)、[接口与改动边界](contracts.md)、[事实台账](claims.md)、[同步审查](github-sync-report.md)、[最终验收](acceptance.md)。
+
+机器可读任务分配及真实链接：[issue-map.json](issue-map.json)。已验证启动版本与 CI：[remote-verification.json](remote-verification.json)。
