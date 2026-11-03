@@ -1,0 +1,21 @@
+{
+  "scope": "All HEAD reachable commit metadata, trees and blobs plus each proposed white-listed public file; intermediate safe roots included. Final audit stored privately after commit.",
+  "checked_head": "bb83c32ab133a807ffe0ff2ebf16ed34dc9baa18",
+  "reachable_commits": 6,
+  "unique_reachable_blobs": 527,
+  "candidate_files": 538,
+  "unsafe_source_ancestors": {
+    "915fac02f6b9296e331f913a1e78717cfa7e2df1": false,
+    "f41c94b79d0d59a81a1a26ac343ac82420560898": false,
+    "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404": false
+  },
+  "findings": [],
+  "reviewed_false_positive": {
+    "path": "tests/test_config.py",
+    "blob": "9ebdb26322fe4f92a1c8d2d8d077a595b207751a",
+    "reason": "literal synthetic rejected localhost URL in security regression; pinned blob and exact literal exception only"
+  },
+  "scan_limits": "Pattern/path screening plus AI per-file review; not independent human/legal/semantic certification; no runtime/private data read.",
+  "new_provider_calls": 0,
+  "snapshot_notice": "Pre-manifest-commit scan of all history plus final candidate files. Final commit is scanned again before push; final remote receipt retained privately to avoid self-reference."
+}

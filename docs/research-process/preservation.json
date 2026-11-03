@@ -1,0 +1,38 @@
+{
+  "worktrees": {
+    "main": {
+      "head_at_capture": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+      "head_at_check": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+      "head_unchanged": true,
+      "status_unchanged": true,
+      "safe_files_compared": 952,
+      "safe_files_changed": [],
+      "excluded_sensitive_or_runtime_paths": 2320,
+      "interpretation": "Original worktree not written by archive; concurrent external changes if listed are not rolled back"
+    },
+    "research": {
+      "head_at_capture": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+      "head_at_check": "c13fd602c68de62c51ee109cf4070afb08243aec",
+      "head_unchanged": false,
+      "status_unchanged": false,
+      "safe_files_compared": 1126,
+      "safe_files_changed": [],
+      "excluded_sensitive_or_runtime_paths": 199,
+      "interpretation": "Original worktree not written by archive; concurrent external changes if listed are not rolled back"
+    },
+    "production": {
+      "head_at_capture": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
+      "head_at_check": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
+      "head_unchanged": true,
+      "status_unchanged": true,
+      "safe_files_compared": 865,
+      "safe_files_changed": [],
+      "excluded_sensitive_or_runtime_paths": 199,
+      "interpretation": "Original worktree not written by archive; concurrent external changes if listed are not rolled back"
+    }
+  },
+  "no_stash_reset_clean": true,
+  "no_original_database_ledger_or_report_writes": true,
+  "runtime_policy": "No DB, ledger, private history, provider wire or sensitive log opened/copied; no process environment/arguments read; no new model/embedding run; no service stop or restart",
+  "evidence_limitation": "Safe-file hash baseline captured after initial metadata inventory, not a disk backup or full runtime integrity check"
+}

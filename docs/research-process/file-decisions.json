@@ -1,0 +1,176 @@
+{
+  "scope": "Per-path classification across current main/research, 26 archive refs and 19 archived worktree manifests. This is NOT a run counter. New public derivatives and inherited files are enumerated separately in upload-allowlist.json.",
+  "archive_manifests": [
+    {
+      "manifest": "answer-diagnostics-20261029.manifest.json",
+      "sha256": "483d3c357c6cf734f00aa9b65a739e4ff65fdc49f91cda3cce4aba0ef9cfa480",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "dynamic-validation-20261027.manifest.json",
+      "sha256": "da478588c077279b3c47f498714e683d241c0382f22ab5b7863c7ab80514af3b",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "extraction-anchor-feedback-20261028.manifest.json",
+      "sha256": "5f2138cdd45e85837ddb7552ef53e1a73a3c0fc516d40ec2bc342cea2e34ee5e",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "integration-baseline-20261031.manifest.json",
+      "sha256": "eee4366580315d8e14d1964e8f9a7c67370712cb4b425c4e4eeade45d50e47e6",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "integration-followup-20261101.manifest.json",
+      "sha256": "67c32c66324522d5aa844855afcd7b6212f9c74aa052c670656a55534c00491e",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "issue15.manifest.json",
+      "sha256": "7d560a70e76baccd3f1788ac261a319887956854fd1689a825fa94e454cb064f",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "production-integration-20261101.manifest.json",
+      "sha256": "c43807f0ec2c458af6ee9624c563f8a9259fa318153c706329de418ec1ba17ef",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "resolution-contract-20261028.manifest.json",
+      "sha256": "cddbb0031be7edaa56c7e7ce810eb4cf8321b76049cb2c2a281e2db30cd92139",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "retro-credential-navigation.manifest.json",
+      "sha256": "6d422894b97cf78ee71ec918bcea12c65633f7278fecc8b151658ac2c65eaaf7",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "top145-final-exploration-20261030.manifest.json",
+      "sha256": "6c95260edbf4704d1cb4cecff592d365007a2b28fd623db1c07208700806aa08",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "top145-next-exploration-20261029.manifest.json",
+      "sha256": "1f1f40fffd8172ff79e7731c105868d3d9727a6706c9b34ac6b1e46d143380e5",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "top145-open-exploration-20261029.manifest.json",
+      "sha256": "ced656a62f311f5dd1fc394dda9fc7f02ceb3237e1ccde4dbc1afa0a97a27ede",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "top145-repair-context-20261030.manifest.json",
+      "sha256": "0c89295900dd34eea828e0d7d7e02e30eb077bbd0d420c04162df42d2db2c070",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "top7-iteration-20261029.manifest.json",
+      "sha256": "a464d9801d9cbfd7a66c04c46b73fabc45a5197f041b90f34b9bda85d925e9a7",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "top7-layered-contracts-20261029.manifest.json",
+      "sha256": "fb051ed6c4105abe48161d2bf29c337d1b875e0553cea65d2b6c01dad6e78a1d",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "top7-open-exploration-20261029.manifest.json",
+      "sha256": "a2345b84aecaf2a28c018b0dff198349ecda252ec15f41e0520ea95205cd3e56",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "top7-open-exploration-r2-20261029.manifest.json",
+      "sha256": "e048dfc4b44147610523f0f288a030670e64f43b1882dbdf8f57111fdad0d23b",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "top7-retry-budget-20261029.manifest.json",
+      "sha256": "c296ff85d2cc39f49db2efdc92495483809b3c4ff1644d941c91a4156cc5897c",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    },
+    {
+      "manifest": "verbatim-memory-validation-20261029.manifest.json",
+      "sha256": "2d61d644f6cc557e7e9ef0bc25b840aeb734897efdc8deba8c9c1cf99d9d9674",
+      "scope": "metadata read only; no tar extraction; runtime/private payload not opened"
+    }
+  ],
+  "excluded_roots": [
+    {
+      "path": "var/ and ignored runtime",
+      "classification": "HOLD",
+      "reason": "active databases, ledgers, running reports; no content access or copying"
+    },
+    {
+      "path": "credential files, private session/history, provider wire, sealed review mappings",
+      "classification": "DENY",
+      "reason": "explicit prohibition; not read or copied"
+    },
+    {
+      "path": "deliverables/, presentations/, course PDFs and external corpus",
+      "classification": "HOLD",
+      "reason": "media, privacy, license or formal review not verified; not uploaded"
+    },
+    {
+      "path": "*.bundle, *.tar, model caches, .venv",
+      "classification": "HOLD",
+      "reason": "backup/dependency artifacts never uploaded"
+    }
+  ],
+  "pages": [
+    {
+      "path": "decisions/files-01.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-02.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-03.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-04.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-05.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-06.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-07.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-08.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-09.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-10.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-11.json",
+      "count": 400
+    },
+    {
+      "path": "decisions/files-12.json",
+      "count": 385
+    }
+  ],
+  "counts": {
+    "DENY": 3374,
+    "HOLD": 1411
+  }
+}

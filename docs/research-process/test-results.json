@@ -1,0 +1,22 @@
+{
+  "planner": {
+    "passed": 17,
+    "deselected": 1,
+    "seconds": 0.4,
+    "excluded": "Research QueryService integration not imported into this archive"
+  },
+  "analysis_initial": {
+    "passed": 45,
+    "failed": 1,
+    "failure": "invalid_official_data: excluded upstream corpus not present"
+  },
+  "analysis_public": {
+    "passed": 45,
+    "deselected": 1,
+    "seconds": 2.16,
+    "excluded": "official-data preparation case"
+  },
+  "new_provider_calls": 0,
+  "fresh_historical_replays": 0,
+  "independent_human_review": "not performed"
+}
