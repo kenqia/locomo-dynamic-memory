@@ -1,7 +1,7 @@
-# LoCoMo Dynamic Memory v2 — reviewed code snapshot
+# LoCoMo Dynamic Memory v2
 
-Six-day sprint: 2026-11-03 to 2026-11-08, Asia/Shanghai.
+2026-11-03–11-08 六天交付冲刺。进入 [团队启动入口](docs/team-v2/README.md) 查看分工、15 个 Issue、分支、离线 Demo 与验收。
 
-This snapshot exports reviewed code from `915fac02f6b9296e331f913a1e78717cfa7e2df1`. Original local research history is preserved separately. It deliberately has no private datasets, live databases, provider wires, sealed review mappings, course assets or historical experiment outputs.
+本分支是经过白名单审查的代码快照。原 Production/Research 历史和未提交文件保留在本地；公开快照不包含原始 provider wire、封存映射、活动数据库或未审课程媒体。原 main 历史保留。
 
-Start at [the team guide](docs/team-v2/README.md) after the kickoff commit lands. This is a code baseline, not a completed v2 release.
+当前阶段为 D1 协作基线，不代表最终 v2 交付或人工验收完成。
