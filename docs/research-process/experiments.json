@@ -1,0 +1,2737 @@
+{
+  "snapshot_date": "2026-11-03 Asia/Shanghai",
+  "unit": "research exploration, not report file or unique model run; related stages are nested in the same entry",
+  "entries": [
+    {
+      "id": "ENG-01",
+      "title": "导入与来源隔离",
+      "date": "2026-10-19",
+      "question_and_hypothesis": "原始来源与评测标注能否隔离并持久化？",
+      "method_and_input_scope": "真实 SQLite/FastAPI；合成响应；官方原件只读检查",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": "10 对话/5882 轮仅作来源检查；11 工程测试",
+      "observed_result": "11 项测试通过；未知会话、SQL列数及时间戳元数据问题先失败后修复",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "采用工程入口；不是模型质量结果",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S054",
+          "public": "evidence/S054.md",
+          "local_original": "experiments/issue-5-import-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "198cc925ea26995bd01e1a7e2a4cba9ad500d35c823e81f64abe8728baf14e20"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "ENG-02",
+      "title": "原子抽取与显式失败",
+      "date": "2026-10-19",
+      "question_and_hypothesis": "合法持久化是否能阻断空/无效模型输出？",
+      "method_and_input_scope": "受控 HTTP，片段提交、重启、恢复和来源校验",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "27 passed/1 skipped；空白 Memory 与响应结构校验修复",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "采用工程契约；事实原子性未评",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S055",
+          "public": "evidence/S055.md",
+          "local_original": "experiments/issue-6-extraction-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "c05fa6066ef8f2a6e3846382ee04c762dd97c45a76591ed3334f6547bc2300c8"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "ENG-03",
+      "title": "混合检索与真实本地编码",
+      "date": "2026-10-19",
+      "question_and_hypothesis": "真实 BM25/cosine/RRF 与固定编码器是否协作？",
+      "method_and_input_scope": "固定 CPU MiniLM；真实 SQLite；LLM受控",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "39 passed/3 skipped；另2真实本地模型检查通过；超长输入拒绝",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "采用；Recall质量需另测",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S056",
+          "public": "evidence/S056.md",
+          "local_original": "experiments/issue-7-retrieval-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "77d815feaf4e315ecb9e28398b1b6661076a23b84ad3b2378029ca1752dfc99b"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "ENG-04",
+      "title": "关系状态、历史扩展和发布",
+      "date": "2026-10-19",
+      "question_and_hypothesis": "能否保留历史并防止不完整版本发布？",
+      "method_and_input_scope": "关系图/同键历史、scope pin、真实 API 合成外部输出",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "62 passed/3 skipped；非法来源、未来/条件状态与部分发布被拒绝",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "采用工程基线；关系语义未因此验证",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S057",
+          "public": "evidence/S057.md",
+          "local_original": "experiments/issue-8-relations-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "c417c80a6445021138e8690dd32981d6760d6537b251c174b2d820f30d3c9aa0"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "ENG-05",
+      "title": "当前与历史问答",
+      "date": "2026-10-19",
+      "question_and_hypothesis": "查询能否固定版本并区分计划、冲突和不足？",
+      "method_and_input_scope": "受控 HTTP+真实检索/SQLite；Paris/Rome等合成边界",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "69 passed/3 skipped；最终query8 passed；英文日期解析先红后绿",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "采用；不是任意时间语言的正确性保证",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S058",
+          "public": "evidence/S058.md",
+          "local_original": "experiments/issue-9-query-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "ca4626613a7ceb383605d56e6ee5c7a964973f8bcbc3996b62744f416f1f60fa"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "ENG-06",
+      "title": "阶段恢复、导出与并发",
+      "date": "2026-10-19",
+      "question_and_hypothesis": "中断后能否保留成功项并固定旧版本？",
+      "method_and_input_scope": "真实子进程退出、发布竞态、索引身份；只控制外部模型",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "12默认通过/1跳过，补充1项通过；各阶段失败保留；缺依赖live未测",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "采用工程约束",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S006",
+          "public": "evidence/S006.md",
+          "local_original": "experiments/issue-10-version-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "42199c75127da229fe708c978ff79e5735dde8ee4a41cd7f9758abdabe2b0a3c"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "ENG-07",
+      "title": "评测、完整全文与运行分母",
+      "date": "2026-10-19—2026-10-20",
+      "question_and_hypothesis": "得分是否保留失败/unknown和Full Text身份？",
+      "method_and_input_scope": "官方类别scorer、持久Run、全文超限失败、显式恢复",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": "757QA/3028只是当时计划；各工程测试不叠加",
+      "observed_result": "分别见工程票；未执行模型的计划预览不是成绩；unknown不自动重发",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "采用分母及恢复机制",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S007",
+          "public": "evidence/S007.md",
+          "local_original": "experiments/issue-11-evaluation-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "87152915955c180eecbe26ee8223158b53366ed1c33ab43edc2b068ff8e332e5"
+        },
+        {
+          "id": "S046",
+          "public": "evidence/S046.md",
+          "local_original": "experiments/issue-16-development-plan-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "8634cbf8c0238f0ae711fef40f899a39f0d93e5a5b649618fc55dc75ac620236"
+        },
+        {
+          "id": "S047",
+          "public": "evidence/S047.md",
+          "local_original": "experiments/issue-17-recovery-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "9e33f0591373d89d843f19f7803d89d621887f8234d0f11cc91e81fc1054d95e"
+        },
+        {
+          "id": "S048",
+          "public": "evidence/S048.md",
+          "local_original": "experiments/issue-18-full-text-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "140fc8de85e26e7063007b11a9f476ba80576a86535e2d5ee6c10b9e2456a828"
+        },
+        {
+          "id": "S049",
+          "public": "evidence/S049.md",
+          "local_original": "experiments/issue-19-failure-report-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "3180c7e6c99c7b8b0a14ec06a4711f2c794d9be71e6f7355c212036cc05f1371"
+        },
+        {
+          "id": "S050",
+          "public": "evidence/S050.md",
+          "local_original": "experiments/issue-20-runner-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "db0044aef7afba3ee204ad18ce1867b3ccad3cd16be17a0c6293c5b3fe73a488"
+        },
+        {
+          "id": "S037",
+          "public": "evidence/S037.md",
+          "local_original": "experiments/issue-15-review-fixes.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "82beb7a7d34a4490c43d9c57880ba0b53b1ff7486accf260ef7295154e098239"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S046",
+          "reported_identity_or_config_line": "使用仓库固定官方原件，经 `POST /imports/official` 校验并导入真实 SQLite。原件 SHA256 为 `79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4`，upstream commit 为 `3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376`。"
+        },
+        {
+          "source": "S037",
+          "reported_identity_or_config_line": "- P1：真实 SQLite 触发器在 provider 接受请求后拒绝结果提交。修复前公开 Run 显示 unknown=0（失败）；修复后标为 unknown，默认恢复不调用 provider，显式 retry_unknown 后保留 unknown/succeeded 两次尝试。执行结束和后端启动均在独占所有权下修复遗留 running 项，包括已标 interrupted 的 Run。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "ENG-08",
+      "title": "浏览器/CI与安全复盘",
+      "date": "2026-10-19",
+      "question_and_hypothesis": "能否以真实UI识别受控夹具和环境缺陷？",
+      "method_and_input_scope": "Playwright/HTTP/SQLite/受控provider；临时环境",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "112 passed/4 skipped；故障注入预期失败；浏览器exit0；早期独立审查含安全问题",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "采用工程改进；旧报告中的未push是当时状态",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S008",
+          "public": "evidence/S008.md",
+          "local_original": "experiments/issue-12-integration-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "1970baf887316efb33f5f45722284843e508ef9aa8466f67806c9fe39dcee127"
+        },
+        {
+          "id": "S051",
+          "public": "evidence/S051.md",
+          "local_original": "experiments/issue-4-implementation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "969dc02fa3e71c3463cbe7d294d27a384d32972828dae85b906a4aeb3f078655"
+        },
+        {
+          "id": "S052",
+          "public": "evidence/S052.md",
+          "local_original": "experiments/issue-4-review-fixes.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "e6a698ea2535ce8b88572980d5bafe984a874fdb03e6844d97b04bbf17fda92e"
+        },
+        {
+          "id": "S053",
+          "public": "evidence/S053.md",
+          "local_original": "experiments/issue-4-review.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "94e885cd39e095ab8dc22da27e5fd11f6362fbc8f02b014642921456044af2f8"
+        },
+        {
+          "id": "S059",
+          "public": "evidence/S059.md",
+          "local_original": "experiments/retro-validation-guardrails.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "81c9f53e9226b26667e274d0a8c236368d8671f3b9b88280ebb946bf46e9e71b"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S008",
+          "reported_identity_or_config_line": "2026-10-19，WSL Ubuntu。起点为集成提交 `a7830ca`，它是本票分支的祖先。"
+        },
+        {
+          "source": "S051",
+          "reported_identity_or_config_line": "Integrated with merge commit `3a1f697`. See"
+        },
+        {
+          "source": "S051",
+          "reported_identity_or_config_line": "Integrated with merge commit `c754a28`. `uv sync --locked` passed in the"
+        },
+        {
+          "source": "S051",
+          "reported_identity_or_config_line": "Integrated with merge commit `dc3e9c5`. Default integration installation and"
+        },
+        {
+          "source": "S051",
+          "reported_identity_or_config_line": "Integrated with merge commit `81d2ecf`. Fresh integration commands"
+        },
+        {
+          "source": "S051",
+          "reported_identity_or_config_line": "Question answering was integrated with merge commit `59f7102`:"
+        },
+        {
+          "source": "S051",
+          "reported_identity_or_config_line": "Recovery and export were then integrated with merge commit `5dfca1b`:"
+        },
+        {
+          "source": "S051",
+          "reported_identity_or_config_line": "Integrated with merge commit `a7830ca`. The resulting tracked tree exactly"
+        },
+        {
+          "source": "S051",
+          "reported_identity_or_config_line": "upstream evaluator at commit `3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376`, with"
+        },
+        {
+          "source": "S051",
+          "reported_identity_or_config_line": "on random Memory IDs. This was a browser-fixture defect. Commit `b453eb1`,"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "R15-01",
+      "title": "首次完整构建失败与中断",
+      "date": "2026-10-20",
+      "question_and_hypothesis": "冻结原契约能否构建conv26？",
+      "method_and_input_scope": "21片段抽取；同配置显式恢复一次；292关系任务",
+      "configuration": "deepseek-flash; thinking disabled; max_tokens4096; retries2",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": "91f1f50938064972820e3ab7b390d9dd",
+      "denominator": 292,
+      "observed_result": "抽取恢复后295Memory；关系89成功/29失败/1中断/173待执行；220已保存provider调用，缺失用量未知",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "保留失败；QA未启动；原29项根因不能统一推断",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S023",
+          "public": "evidence/S023.md",
+          "local_original": "experiments/issue-15-live-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "53385b4ea12f4f1639ea1b45088a8ef691a2152ef838cfc1c1110f4c83ef45d8"
+        },
+        {
+          "id": "S035",
+          "public": "evidence/S035.md",
+          "local_original": "experiments/issue-15-relation-failure-diagnosis.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "799bdc88322f5a8d6745de83a624a6a7c48c59a92bdf11a27393c4c3d23d6f8a"
+        },
+        {
+          "id": "S024",
+          "public": "evidence/S024.md",
+          "local_original": "experiments/issue-15-offline-relation-diagnosis/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "d44ab1c69469655581a8fbab2885e07de3e961a32802ad8a73eb131426b69232"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S023",
+          "reported_identity_or_config_line": "恢复修复合入 `6a2918383aa10c906a2e3d350a9ccb495fe7bd1f` 后，真实 runner probe 通过。实现 SHA-256 为 `543cb6e3f768c60a8dff1cec56437e3d5d87ac0cd77a3aa560ccc8cb6c9bb40a`；之后的提交仅增加实验文档。实际请求与返回模型均为 `deepseek-flash`，请求关闭思考、温度为 0、输出上限 4,096 tokens、每次调用最多重试两次。"
+        },
+        {
+          "source": "S023",
+          "reported_identity_or_config_line": "所有已提交结果仍可读取，数据库保留原件、计划、构建、索引、Memory、关系、阶段任务及模型元数据。最新任务导出为 `builds/91f1f50938064972820e3ab7b390d9dd/relation-tasks.json`，停止前快照及停止记录位于 `observations/stopped-after-relation-failures/`，阶段观察时间线为 `observations/relations-progress.jsonl`。这些观察时间包含操作等待，不能代替纯计算耗时。"
+        },
+        {
+          "source": "S024",
+          "reported_identity_or_config_line": "Build ID 为 `91f1f50938064972820e3ab7b390d9dd`。数据库共有 292 个关系任务，状态为成功 89、失败 29、中断 1、待执行 173。本报告逐项审计 29 个 `failed` 任务；中断任务 `relation:120` 的结果与未持久化用量仍未知，不计入这 29 项。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "R15-02",
+      "title": "独立关系回放与证据修复",
+      "date": "2026-10-20",
+      "question_and_hypothesis": "指导与契约缺口能否定向定位？",
+      "method_and_input_scope": "固定原候选、不覆写Build；独立单请求及有限前后回放",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "一例same-state-dimension违约得到定位；原29项/87尝试子类未知；followup4/16请求后停止",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "局部修复；回放不能追认原任务根因",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S033",
+          "public": "evidence/S033.md",
+          "local_original": "experiments/issue-15-relation-contract-replay/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "3eff301734533779fb95f4f9ae13f7deca926e3fa61f3c4cbd63be6f58f9a526"
+        },
+        {
+          "id": "S034",
+          "public": "evidence/S034.md",
+          "local_original": "experiments/issue-15-relation-evidence-followup/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "7950b8148675e88117ff53ef2aed4ce944f8555b2ee4db6edb5d3492c1e20d97"
+        },
+        {
+          "id": "S015",
+          "public": "evidence/S015.md",
+          "local_original": "experiments/issue-15-diagnostics-validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "512124d09f72aac1efecd10265722c5b7cfe1f78dbf7bfd9d179efc37d3c8983"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S033",
+          "reported_identity_or_config_line": "第一阶段提交为 `9d36f76`，本轮重新运行两个诊断测试文件：34 passed。"
+        },
+        {
+          "source": "S033",
+          "reported_identity_or_config_line": "| temperature / thinking / response_format | `0` / disabled / `json_object` |"
+        },
+        {
+          "source": "S033",
+          "reported_identity_or_config_line": "| 每次 max_tokens | 4,096，请求输出上限 |"
+        },
+        {
+          "source": "S034",
+          "reported_identity_or_config_line": "`deepseek-flash`、temperature 0、thinking disabled、`json_object`、max_tokens 4096、"
+        },
+        {
+          "source": "S034",
+          "reported_identity_or_config_line": "通过宣称语义改善。本次没有后处理强制改标签、过滤候选或放宽验证。单次对照与 temperature 0"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "R15-03",
+      "title": "v5完整构建停止",
+      "date": "2026-10-20",
+      "question_and_hypothesis": "新增指导能否通过完整关系构建？",
+      "method_and_input_scope": "新独立Build、固定1000累计调用门禁",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "累计313调用；抽取/索引完成；关系length、逐字引用违约及HTTP停止；Build interrupted",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "停止；不发布、不运行QA",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S022",
+          "public": "evidence/S022.md",
+          "local_original": "experiments/issue-15-live-continuation/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "5fae6c61df32e683579012213eb8588d84e3d44a07d87c835ab932162ad4f26d"
+        },
+        {
+          "id": "S036",
+          "public": "evidence/S036.md",
+          "local_original": "experiments/issue-15-relation-output-fix.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "6fd7014df9aa6e488678442fcc3660e522c3401c92ba63064de94cb4256a157a"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "R15-04",
+      "title": "v6/v6.1/v6.2语义关卡",
+      "date": "2026-10-20",
+      "question_and_hypothesis": "结构通过与严格引用是否足以证明关系正确？",
+      "method_and_input_scope": "73/91长度输入、148/172语义和同键对照",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "25新增调用，24结构成功/1 HTTP402；第五关仍失败；control148早期接受判断被撤回",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "阻止完整重建；保留AI判断更正与HTTP未知用量",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S041",
+          "public": "evidence/S041.md",
+          "local_original": "experiments/issue-15-v6-gates/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "f5d8a48eb30bcb004b16484bc13b2e4054c6b9b88fcde52d72c1ffad73aeeb3a"
+        },
+        {
+          "id": "S042",
+          "public": "evidence/S042.md",
+          "local_original": "experiments/issue-15-v6-gates/controls-reassessment.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "b8f0fb5460a51771b2f5e6fa73f0112345c1b013da0376d1c1c8c4cf0874fdf4"
+        },
+        {
+          "id": "S043",
+          "public": "evidence/S043.md",
+          "local_original": "experiments/issue-15-v6-gates/semantic-v6-audit.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "9f73610ace111684dd64ecc08bd3df300abab5cb4480d3c034b2287a02ff728c"
+        },
+        {
+          "id": "S044",
+          "public": "evidence/S044.md",
+          "local_original": "experiments/issue-15-v6-gates/v6.1/same-key-pre-review.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "dc654abef822a0731364fcb488af2a245939bd4f567c511a28c52f8eb26b5aea"
+        },
+        {
+          "id": "S045",
+          "public": "evidence/S045.md",
+          "local_original": "experiments/issue-15-v6-gates/v6.1/semantic-audit.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "a14febe6550f131e545e8d8762808f105d22c7ba02513461614a68fa29911776"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S041",
+          "reported_identity_or_config_line": "后续按用户要求，将默认 `model_max_tokens` 从4096提高到8192，示例配置同步更新。"
+        },
+        {
+          "source": "S041",
+          "reported_identity_or_config_line": "每个版本分别比较4096和8192，retries=0，发送前离线捕获请求，去掉max_tokens后精确相等。"
+        },
+        {
+          "source": "S043",
+          "reported_identity_or_config_line": "- 旧 Memory `e0782e983de28fbcbaf84d47`：Caroline is thinking of working with trans people, helping them accept themselves and supporting their mental health."
+        },
+        {
+          "source": "S045",
+          "reported_identity_or_config_line": "- 旧 Memory `e0782e983de28fbcbaf84d47`：Caroline is thinking of working with trans people, helping them accept themselves and supporting their mental health."
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "R15-05",
+      "title": "分阶段thinking与10题四策略",
+      "date": "2026-10-20—2026-10-21",
+      "question_and_hypothesis": "阶段强度及较大关系输出上限能否完成？",
+      "method_and_input_scope": "独立v1/v2失败Build后v3完整Build，10题×4策略",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": "1e6e9dac610b4491b1362a151022af05",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "denominator": 40,
+      "observed_result": "40项24成功/16校验失败；Dynamic9/10、raw4/10、hybrid3/10、full8/10；无全关闭thinking对照",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "不能归因思考强度；不支持raw总体更优",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S038",
+          "public": "evidence/S038.md",
+          "local_original": "experiments/issue-15-thinking-qa/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "1c1c02a2f351e49490606764bfdc7ec5087207758ad7bf8c896a0a9cafefc13c"
+        },
+        {
+          "id": "S039",
+          "public": "evidence/S039.md",
+          "local_original": "experiments/issue-15-thinking-qa/results/analysis.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "482a03e2f0619799c1334e7573fdd5448c55773e65b82bbd33a2b96808bf43db"
+        },
+        {
+          "id": "S040",
+          "public": "evidence/S040.md",
+          "local_original": "experiments/issue-15-thinking-qa/results/report.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "f335cdce0d6478b804b222545d9c0ca4934173ce981e63d1e22b7f4f0bbf738f"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S038",
+          "reported_identity_or_config_line": "`v2` Build `eca7ec7974d4492eb0a4047be6fe2906` 在 8192 共用上限下完成 21 个抽取片段、"
+        },
+        {
+          "source": "S038",
+          "reported_identity_or_config_line": "`v3` 新增可选 `relation_max_tokens`，仅本轮显式设为 16384，其他操作仍为 8192；"
+        },
+        {
+          "source": "S038",
+          "reported_identity_or_config_line": ".venv/bin/python experiments/issue-15-thinking-qa/run.py prepare --relation-max-tokens 16384 --model-timeout-seconds 120 \\"
+        },
+        {
+          "source": "S038",
+          "reported_identity_or_config_line": "  experiments/issue-15-thinking-qa/run.py execute \\"
+        },
+        {
+          "source": "S038",
+          "reported_identity_or_config_line": ".venv/bin/python experiments/issue-15-thinking-qa/report.py \\"
+        },
+        {
+          "source": "S038",
+          "reported_identity_or_config_line": "  --output experiments/issue-15-thinking-qa/results"
+        },
+        {
+          "source": "S039",
+          "reported_identity_or_config_line": "- Build：`5c7699dd6543407697ae232633154036`，状态 `complete`。"
+        },
+        {
+          "source": "S039",
+          "reported_identity_or_config_line": "- Run：`1e6e9dac610b4491b1362a151022af05`，状态 `completed_with_errors`。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "R15-06",
+      "title": "答案输出修复后同题复验",
+      "date": "2026-10-21",
+      "question_and_hypothesis": "契约和输出提示能否减少答案校验失败？",
+      "method_and_input_scope": "同Build同10题；新Run、四策略",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": "70f6545c0de94cdabf5507be050a26da",
+      "build_id": "5c7699dd6543407697ae232633154036",
+      "denominator": 40,
+      "observed_result": "40/40执行成功；Dynamic/raw8题F1 0.334/0.340（旧0.154/0.039）；98请求；多改动无法分离贡献",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "保留局部结果；拒答语义及泛化未完全通过",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S009",
+          "public": "evidence/S009.md",
+          "local_original": "experiments/issue-15-answer-output-live/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "08d2df9452bc66008f49b7f130dab853cdab7673def7c11f9e230e24a4291aa4"
+        },
+        {
+          "id": "S010",
+          "public": "evidence/S010.md",
+          "local_original": "experiments/issue-15-answer-output-live/results/analysis.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "f1836243744a58d337c63d37f2ebdf5ca82473b52e39bfd9394cd8a645918b5f"
+        },
+        {
+          "id": "S011",
+          "public": "evidence/S011.md",
+          "local_original": "experiments/issue-15-answer-output-live/results/comparison.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "8050aae1913c6b1fcc198406f58fc81290da2973027b2cda16c91833b137d2f0"
+        },
+        {
+          "id": "S012",
+          "public": "evidence/S012.md",
+          "local_original": "experiments/issue-15-answer-output-live/results/report.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "76bcf7d0944f1e6a6be6e7b60da60458fbffe6f4f3c995d80301eaef618bce71"
+        },
+        {
+          "id": "S013",
+          "public": "evidence/S013.md",
+          "local_original": "experiments/issue-15-answer-output/validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "2f41c0465da7519098fdd82f6d3c4c00ce5413187f80d970b406f23e48b4a0bc"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S009",
+          "reported_identity_or_config_line": "- 完整 Build：`5c7699dd6543407697ae232633154036`。复用 272 条 Memory、4902 条模型关系及原索引。"
+        },
+        {
+          "source": "S013",
+          "reported_identity_or_config_line": "代码提交依次为 `3cd1f2d`、`10e7256`、`4fd2a30`、`2ac718a`、`0db8861`。"
+        },
+        {
+          "source": "S013",
+          "reported_identity_or_config_line": "最终源码实现身份为 `534641d28f088b57cc054864f8419c28cf41855e2b3598fc2d417ea7d7eacc42`。"
+        },
+        {
+          "source": "S013",
+          "reported_identity_or_config_line": "原 `experiments/issue-15-thinking-qa/`、外部 Run、原 plan 身份、账本和实验成绩均保持原样。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "R15-07",
+      "title": "证据覆盖优化及P0/P1回滚",
+      "date": "2026-10-21",
+      "question_and_hypothesis": "重排/枚举补查能否保留关键事实？",
+      "method_and_input_scope": "固定目标与未见题30项；不重建Memory",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 30,
+      "observed_result": "未见稳定提升；QA3完整关键组仍超预算、QA15补查丢原支持；原失败不覆盖",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "按用户决定revert439fe93/982c44c/35bfcc8，保留P2；回滚commit fe13a72/f0006ae",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S016",
+          "public": "evidence/S016.md",
+          "local_original": "experiments/issue-15-evidence-coverage-live/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "82da3c7f0babbc4fff9c4fd108f73968bd5b74b78325acec05c1744db121aab8"
+        },
+        {
+          "id": "S017",
+          "public": "evidence/S017.md",
+          "local_original": "experiments/issue-15-evidence-coverage-live/results/analysis.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "81dd801255101171eca8ecc52a4e31255116daf53cc047e4141b75b570ed0cbf"
+        },
+        {
+          "id": "S018",
+          "public": "evidence/S018.md",
+          "local_original": "experiments/issue-15-evidence-coverage-live/results/report.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "021c5711a69bd469b2f4a27a59e2e00694d4b93bc3a582f1bebe845fa80d2017"
+        },
+        {
+          "id": "S019",
+          "public": "evidence/S019.md",
+          "local_original": "experiments/issue-15-evidence-coverage/rollback-p0-p1.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "3fd8004cc2e41c301622b269c4b2922bb0a85e939e550278fb6325d78686e767"
+        },
+        {
+          "id": "S020",
+          "public": "evidence/S020.md",
+          "local_original": "experiments/issue-15-evidence-coverage/validation.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "01e35177edde86643b7eef00b586127bd5a33fd30667eff10c7e2f456aaecc46"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S016",
+          "reported_identity_or_config_line": "2026-10-21，Asia/Shanghai。实现基点 `b0a7d06`，源码身份在 `plan.json` 中冻结。"
+        },
+        {
+          "source": "S019",
+          "reported_identity_or_config_line": "使用 `git revert --no-commit 439fe93 982c44c 35bfcc8`，保留原提交和全部实验历史。"
+        },
+        {
+          "source": "S019",
+          "reported_identity_or_config_line": "`query_schemas.py` 和 `tests/test_answer_regressions.py` 与 P2 提交 `c071cf1` 一致。"
+        },
+        {
+          "source": "S019",
+          "reported_identity_or_config_line": "回退后源码身份为 `667d8b4a7ab835168405bb315a8a6c2b0affcdfd8926cfbccd7120f7a3d76f0b`。"
+        },
+        {
+          "source": "S020",
+          "reported_identity_or_config_line": "最终源码实现身份为 `61f7d8a0d8cec821e3c4ded7c0a5c1ac36cceb2706e34c800c24424d94a8c8cf`。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "R15-08",
+      "title": "查询可靠性、来源与定向followup",
+      "date": "2026-10-21",
+      "question_and_hypothesis": "证据保留/来源日期/列表多样性修复是否有效？",
+      "method_and_input_scope": "独立快照、固定query与后续citation replay",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "初轮、followup、citation结果分别保留；小样本不是全量；最终旧基线scope取消",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "工程修复保留；不合并不同Run成绩",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S027",
+          "public": "evidence/S027.md",
+          "local_original": "experiments/issue-15-query-reliability/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "7085ac24d46c48c184ef23dcb0476e39a702fb757611ee29364135179ad748d9"
+        },
+        {
+          "id": "S028",
+          "public": "evidence/S028.md",
+          "local_original": "experiments/issue-15-query-reliability/citation-results/report.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "539f94b9da56a01a3f68396137dca39de30449a81750dd5575884d9d14414912"
+        },
+        {
+          "id": "S029",
+          "public": "evidence/S029.md",
+          "local_original": "experiments/issue-15-query-reliability/followup-results/report.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "19600449ab3b23b199c14d69086eaa31efeabd12fe7506b4914bfd92d63775d7"
+        },
+        {
+          "id": "S030",
+          "public": "evidence/S030.md",
+          "local_original": "experiments/issue-15-query-reliability/followup.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "353d8d06f3ae64b9f808dff904f5b816f0017fdc84647f44991d6f733d8ae605"
+        },
+        {
+          "id": "S031",
+          "public": "evidence/S031.md",
+          "local_original": "experiments/issue-15-query-reliability/live-results/report.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "8958e70916a06e54b980a9aa8a97e3924b05340b7312d5308f0b350f20e555d7"
+        },
+        {
+          "id": "S032",
+          "public": "evidence/S032.md",
+          "local_original": "experiments/issue-15-query-reliability/recheck.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "ece5a056b57930cd23bd4ba5d2ff101b4ca84e923e2759adcdc69da436632a1c"
+        },
+        {
+          "id": "S021",
+          "public": "evidence/S021.md",
+          "local_original": "experiments/issue-15-final-review.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "b72c3f74f7384c3ec888c18ac3a9eb9966e2310c0a229c47c54745488a623e55"
+        },
+        {
+          "id": "S014",
+          "public": "evidence/S014.md",
+          "local_original": "experiments/issue-15-closure/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "6b9b463b6ef93f88e91ea8d414ee6842e1b18c988898f67a4e96aa13fbc9a8f6"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S030",
+          "reported_identity_or_config_line": "2026-10-21，基线提交 `fb8b497`。修复上一轮真实复验发现的三个问题，不重建现有 Build，"
+        },
+        {
+          "source": "S032",
+          "reported_identity_or_config_line": "2026-10-21，Asia/Shanghai。复验查询实现为提交 `7546b41`。本轮不修改查询行为或 UI，"
+        },
+        {
+          "source": "S032",
+          "reported_identity_or_config_line": "沿用 DeepSeek Flash、temperature 0、输出上限 8,192、timeout 120 秒、model_retries 2，"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "SHOW-01",
+      "title": "五策略展示",
+      "date": "2026-10-21",
+      "question_and_hypothesis": "原文兜底在分层题上是否总体更好？",
+      "method_and_input_scope": "conv26同Build；20题×5；40Recall；10真实动态；20来源审阅",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 100,
+      "observed_result": "100/100执行成功；16可回答题F1：full.3490/vector.4911/hybrid.5124/dynamic.5100/raw.3997；Recall@5/10/20=.6417/.7292/.7792",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "否定raw总体更优；Dynamic实际含2题备用路径；来源审阅为开发助手自查",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "开发助手来源语义自查；非独立人工gold",
+      "evidence": [
+        {
+          "id": "S001",
+          "public": "evidence/S001.md",
+          "local_original": "experiments/current-showcase/README.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "97278c783509c71596b3c2763c3e187485bd2f4a180e214ba7f963a4461f54c6"
+        },
+        {
+          "id": "S002",
+          "public": "evidence/S002.md",
+          "local_original": "experiments/current-showcase/results/analysis.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "32fba0108eb1065d1a63784ed8079f63eaba34e45ccae08d20fb2758fc61d08a"
+        },
+        {
+          "id": "S003",
+          "public": "evidence/S003.md",
+          "local_original": "experiments/current-showcase/results/answer-source-review.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "e2750923e682710147fa124489b5889d624058edb24ea93502a7fddf4be012e0"
+        },
+        {
+          "id": "S004",
+          "public": "evidence/S004.md",
+          "local_original": "experiments/current-showcase/results/dynamic-review.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "ef115e1430357aa08c1344d889e05283aff1a0a7707a651101a842c416964d5e"
+        },
+        {
+          "id": "S005",
+          "public": "evidence/S005.md",
+          "local_original": "experiments/current-showcase/results/report.md",
+          "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+          "sha256": "815099c0ee26a0ad2b6913e57698347984aae45195f249b22b9d6877ab8cf3d6"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "DYN-01",
+      "title": "五组动态机制验证与16K/32K恢复",
+      "date": "2026-10-27—2026-10-29",
+      "question_and_hypothesis": "固定抽取能否识别扩展/解析/关系复用贡献？",
+      "method_and_input_scope": "conv30/41/42，ABCDE×3最多1080；16K和32K不同campaign",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": "conv30 5abd7718841d417ebd71a1db896be39f; conv41 e45e688ea9ec467eae7f052df0dd0ae2",
+      "denominator": "最多1080计划；QA完成数见原件，未完成",
+      "observed_result": "16K第107调用结果用量未知；32K多次transport恢复后conv30完整；conv41抽取33/34，重复失败；正式1080未完成",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "停止；不从完整conv30外推全部机制收益",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S113",
+          "public": "evidence/S113.md",
+          "local_original": "experiments/dynamic-validation/README.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "f04a82bcff80a16923e5df268c170ed706ac481c8af47255def9ee11683be469"
+        },
+        {
+          "id": "S115",
+          "public": "evidence/S115.md",
+          "local_original": "experiments/dynamic-validation/results/32k-conv41-diagnostic-proposal-20261028.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "cc2b72a3efd8102651d360a19f9b1822c4e850c84618368a4db2354c87bbe09a"
+        },
+        {
+          "id": "S116",
+          "public": "evidence/S116.md",
+          "local_original": "experiments/dynamic-validation/results/32k-conv41-extraction-recovery-20261028.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "b4afb8714abfa7bd22576b102b706d1ea7ccba0f98a3bf806c31645c31754f83"
+        },
+        {
+          "id": "S117",
+          "public": "evidence/S117.md",
+          "local_original": "experiments/dynamic-validation/results/32k-second-recovery-proposal-20261028.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "3cf33fe08439fd87ca932533542ff7ca1e0bdc81cf35f582a9ccfd013234f26d"
+        },
+        {
+          "id": "S118",
+          "public": "evidence/S118.md",
+          "local_original": "experiments/dynamic-validation/results/32k-transport-recovery-20261028.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "471693850bc1a56885f9955ba785ddfaa0c2e3678a45ebdcd1852dcbb26c8491"
+        },
+        {
+          "id": "S121",
+          "public": "evidence/S121.md",
+          "local_original": "experiments/dynamic-validation/results/recovery-107-proposal-20261028.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "10cf70d8e9629cdf341af5370ce89f6341272911aefe8670e30c962c75a55a2e"
+        },
+        {
+          "id": "S122",
+          "public": "evidence/S122.md",
+          "local_original": "experiments/dynamic-validation/results/recovery-20261028.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "904f36ef7ae529eeab93c76087a1ab4e54d42a1998aa20c8774090b1c086a62a"
+        },
+        {
+          "id": "S123",
+          "public": "evidence/S123.md",
+          "local_original": "experiments/dynamic-validation/results/relation-budget-32768-20261028.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "7b9cd6d270412600049d42a11e8e1ff7cb5f20b2271d48c469b94d64869baffd"
+        },
+        {
+          "id": "S124",
+          "public": "evidence/S124.md",
+          "local_original": "experiments/dynamic-validation/results/run-start.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "a67c51cefc55bb0766aa09361d321ba993dea606d97ed173d53def940776ded7"
+        },
+        {
+          "id": "S139",
+          "public": "evidence/S139.md",
+          "local_original": "experiments/dynamic-validation/README.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "6ab6911943d1981e86c7571f06bd6d63f3b79d1e18ed5f51eec45c883faff000"
+        },
+        {
+          "id": "S156",
+          "public": "evidence/S156.md",
+          "local_original": "experiments/dynamic-validation/README.md",
+          "source_commit": "c53d1920fa12b5b4950c436a7b424bb27cf44605",
+          "sha256": "d27e87b804c28ddbbef75d2fe068a02bb27e25f0108a8ae65d1462780c713f51"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S122",
+          "reported_identity_or_config_line": "恢复完成后，一次性续跑流程会先核对 `conv-30` 已发布且账本无未知调用，再逐字节保留上次停止记录为 `completion-stopped-20261028.json`，然后调用未修改的 `complete.py` 完成原有限范围。若当前恢复没有完整成功或后续阶段失败，流程停止并保留诊断；不会自动绕过阶段恢复上限。"
+        },
+        {
+          "source": "S123",
+          "reported_identity_or_config_line": "旧目录 `var/dynamic-validation-20261027/`、205 个成功关系任务、234 条抽取 Memory、索引及两份账本保持原样。旧未完成 Build 的配置和指纹不修改，旧恢复次数不重置。新版不将这些产物移植到新 Build，也不把它们当作新预算下生成的结果。"
+        },
+        {
+          "source": "S124",
+          "reported_identity_or_config_line": "运行目录为 `var/dynamic-validation-20261027/`，未将数据库或日志提交到仓库。机器可核对的启动身份、配额、失败尝试和阶段计数见 `run-start.json`。手工复核步骤见上层 `REVIEW.md`；执行和恢复命令见上层 `README.md`。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "DYN-02",
+      "title": "时间锚点因子与反馈探针",
+      "date": "2026-10-28",
+      "question_and_hypothesis": "引用锚点/源句表示能否解决conv41失败？",
+      "method_and_input_scope": "四组有限对照阶段1最多12请求；阶段2有复核门槛",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "8可用输出/4不可用，48事实判断待审；后续反馈3次仍失败；不启动完整重建",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "阶段2未获得证据支持；保留抽取8份待审",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S140",
+          "public": "evidence/S140.md",
+          "local_original": "experiments/dynamic-validation/results/anchor-factorial-20261028/RUNBOOK.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "6dcab7bd28340fc1dc67df6a4ae48a3c3c4336a2c7233168df4adc844bba19f5"
+        },
+        {
+          "id": "S141",
+          "public": "evidence/S141.md",
+          "local_original": "experiments/dynamic-validation/results/anchor-factorial-20261028/design.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "8d2b1ac984aa0a102488c6aff8dc898f2b221f2bc48f62833bd7f5725acbfb64"
+        },
+        {
+          "id": "S142",
+          "public": "evidence/S142.md",
+          "local_original": "experiments/dynamic-validation/results/anchor-factorial-20261028/source-review-package/README.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "f98236f1950f5a898b771210eddcf671e28753ef1b37c1e0e150895dc7d84963"
+        },
+        {
+          "id": "S143",
+          "public": "evidence/S143.md",
+          "local_original": "experiments/dynamic-validation/results/anchor-factorial-20261028/stage1-output-review-package/README.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "a0e84d3ea4d7250fcf0dd36b808dd24496213f7185ccd43d9a92a12e5bacef46"
+        },
+        {
+          "id": "S144",
+          "public": "evidence/S144.md",
+          "local_original": "experiments/dynamic-validation/results/anchor-factorial-20261028/stage1-results.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "18d11123c359c7f48961d8b957295d386a433d697d51281a0e344f2ab8452aa6"
+        },
+        {
+          "id": "S145",
+          "public": "evidence/S145.md",
+          "local_original": "experiments/dynamic-validation/results/anchor-feedback-probe-proposal-20261028.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "22c12d51411f54b3f2ad2dd5679ef155ae0a34c68474a18e19dcba6a791e0083"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S145",
+          "reported_identity_or_config_line": "建议使用相同失败片段，最多 3 次提供方请求，单独保存到 `var/anchor-feedback-probe-20261028/`。首次 HTTP 请求正文摘要已与原实验核对一致。模型、温度、输出上限、来源分片和原 schema 不变，仅校验失败后的错误码及对应重试反馈改变。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "DYN-03",
+      "title": "conv30四题A/D",
+      "date": "2026-10-28",
+      "question_and_hypothesis": "同Build动态处理能否改善证据选择与正确性？",
+      "method_and_input_scope": "4题×A/D，无自动重试，独立副本",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": "5abd7718841d417ebd71a1db896be39f",
+      "denominator": 8,
+      "observed_result": "6成功/2D解析失败；14请求392178token；3accept/3correct；correct=需改；2解释判断受制包缺源限制",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "两对完整答案不足以证明总体增益；D两例16→2Memory不等于降总成本",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "原记录称收到成员B的6答案独立盲审；本次未另核实身份/过程；解盲后制包审计为作者检查",
+      "evidence": [
+        {
+          "id": "S132",
+          "public": "evidence/S132.md",
+          "local_original": "experiments/conv30-ad-mini-20261028/COURSE-REPORT.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "617d47010ba61dabb99dab536f6276ba7495623ce0b66afd4783a2e5458fd78d"
+        },
+        {
+          "id": "S133",
+          "public": "evidence/S133.md",
+          "local_original": "experiments/conv30-ad-mini-20261028/EXECUTION.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "a5fd6d09d34c6894f2e3fc1f0421d42c2323a25b9dedd857c9c810014bfec560"
+        },
+        {
+          "id": "S134",
+          "public": "evidence/S134.md",
+          "local_original": "experiments/conv30-ad-mini-20261028/README.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "23aaf8935db2ad2936d0cd05e7b7f8f5c58a68ea7a2e280f073d727f07f79ead"
+        },
+        {
+          "id": "S135",
+          "public": "evidence/S135.md",
+          "local_original": "experiments/conv30-ad-mini-20261028/REVIEWED-RESULTS.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "f30c6e8a9f1268b7db7aa52864cb8713c234150262d36a99bbcd418e0fc84072"
+        },
+        {
+          "id": "S136",
+          "public": "evidence/S136.md",
+          "local_original": "experiments/conv30-ad-mini-20261028/execution-v1/RESULTS.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "359091d6affd1d2ac459b4626a43303991292234fae06419d5b32282570625f2"
+        },
+        {
+          "id": "S137",
+          "public": "evidence/S137.md",
+          "local_original": "experiments/conv30-ad-mini-20261028/execution-v1/TRACE-ASSESSMENT.md",
+          "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+          "sha256": "9b7ac7d9f6b9847475157cbc229cc0e5749bf1beb894d653eaff2f85d1fb689c"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "DYN-04",
+      "title": "解析契约修复及六题提前停止",
+      "date": "2026-10-28—2026-10-29",
+      "question_and_hypothesis": "澄清现有契约是否能通过原两题门槛？",
+      "method_and_input_scope": "修复两题与后续六题效果实验分开",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 12,
+      "observed_result": "修复4请求214263token；效果4成功/1失败/7未尝试，10请求129252token；第二对话未运行",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "保留停止；mini03-A具体违约未知；非总体可靠性收益",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "用户提交成员B的4份盲审：A1accept/1correct、D2accept；未另核实过程；不替改答案",
+      "evidence": [
+        {
+          "id": "S125",
+          "public": "evidence/S125.md",
+          "local_original": "experiments/resolution-contract-20261028/README.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "1dcb8a135a8e6af3417d0fd3874a7f7189c61d54e2fa04ec2aa5722aaf908090"
+        },
+        {
+          "id": "S126",
+          "public": "evidence/S126.md",
+          "local_original": "experiments/resolution-contract-20261028/RESULTS.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "7b1399873de8a610a12787e0cba984a8ab993ea0fbd7e3bb93b8ea8a1d0e8cfa"
+        },
+        {
+          "id": "S127",
+          "public": "evidence/S127.md",
+          "local_original": "experiments/resolution-contract-20261028/STATUS.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "6106ace26c94505c016fb7c4d9903cdb27754784fbf5b445711940b0f552b786"
+        },
+        {
+          "id": "S128",
+          "public": "evidence/S128.md",
+          "local_original": "experiments/two-conversation-mini-20261028/CURRENT.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "ee6b87dbfbcf7dc0884e6e69b589f993b1e0b077928b606a5a81154775a51918"
+        },
+        {
+          "id": "S129",
+          "public": "evidence/S129.md",
+          "local_original": "experiments/two-conversation-mini-20261028/FAILURE.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "e7fae767ad83b0a97f4f878cb8ba38321293bc436ebbaa4a67360ed05911b5ce"
+        },
+        {
+          "id": "S130",
+          "public": "evidence/S130.md",
+          "local_original": "experiments/two-conversation-mini-20261028/README.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "0ccca50a19b295d660cca851a367cb5c11e003736aa04611bf953279fd6758d4"
+        },
+        {
+          "id": "S131",
+          "public": "evidence/S131.md",
+          "local_original": "experiments/two-conversation-mini-20261028/review/README.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "85c9554fa456c6ee9db19a171c86d3f4dfb662df9ae7c25d7661142829ec596e"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S125",
+          "reported_identity_or_config_line": "实现位于独立分支 `codex/resolution-contract-20261028`，起点为原冻结源码所在提交 `50727ee`，不包含后续抽取修复。旧工作树、原实验及复核材料保留；没有合并或修改应用默认运行环境。保留该分支即可回看候选版本，继续使用原冻结工作树即可回到旧行为，不需要数据库回滚。"
+        },
+        {
+          "source": "S126",
+          "reported_identity_or_config_line": "2026-10-28。独立候选实现 `f9bfbb3` 的两题验证已结束：02、05 各执行一次 D，两项解析和两项回答全部通过既有校验，共 **4 次请求、214,263 token、54.21 秒、0 重试、0 未知用量**。沿用原输出上限 8,192 和 low 解析思考，原准备 fingerprint、共享查询分析、初始候选、扩展候选和业务解析输入均一致，原库及原实验记录未改。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "DIAG-01",
+      "title": "回答诊断细化",
+      "date": "2026-10-29",
+      "question_and_hypothesis": "通用异常是否使历史根因不可辨？",
+      "method_and_input_scope": "保持接受条件/AST，仅改固定诊断码；960合成矩阵",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 960,
+      "observed_result": "58接受/902拒绝/0变化；旧mini03根因仍未知",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "采用可观测性改进；不追认历史原因",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S112",
+          "public": "evidence/S112.md",
+          "local_original": "experiments/answer-diagnostics-20261029/README.md",
+          "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+          "sha256": "aa3057ab208b5ede13a92ac8c28238295bc800b8e2b304b68538a24bbe9b55e7"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S112",
+          "reported_identity_or_config_line": "不改 JSON schema、Prompt、模型参数、重试设置、检索、扩展、事实／时间／来源约束，也不保留无效答案正文、异常文本或隐藏推理。顶层失败仍为 `invalid_output`，`field_path` 对模型级错误仍为 null。未分类错误继续使用通用诊断。新源码身份为 `23051252963182fcf07c01d56f05fc1c710b8abc15ba55676903fafa36ad09d1`，与旧实验分开。"
+        },
+        {
+          "source": "S112",
+          "reported_identity_or_config_line": "本次没有继续六题实验、机制消融、Build 构建或旧失败恢复。两题修复验证、四份盲审与成本结论不变。原冻结核验命令应在原工作树 `resolution-contract-20261028` 执行，不能要求新源码满足旧身份。若放弃本次候选，继续使用原工作树即可；没有数据库迁移或配置回滚。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "TOP7-01",
+      "title": "Top7离线修复与v2真实关卡",
+      "date": "2026-10-29",
+      "question_and_hypothesis": "反馈、预算与事件约束是否改善可靠性？",
+      "method_and_input_scope": "7稳定问题；离线527测试，后续六项有限真实诊断",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 6,
+      "observed_result": "六项4技术通过/2失败，9HTTP81966token；4份输出AI盲审1通过/2失败/1不确定；630离线候选不等于真实验收",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "七父项未整体验收；分层契约保持opt-in",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S060",
+          "public": "evidence/S060.md",
+          "local_original": "experiments/top7-iteration-20261029/README.md",
+          "source_commit": null,
+          "sha256": "3a4c34890e668c8130581edfaaf018d85f87d5e121176961ae0274bae9ca6c86"
+        },
+        {
+          "id": "S061",
+          "public": "evidence/S061.md",
+          "local_original": "experiments/top7-iteration-20261029/continuation/CONTRACTS.md",
+          "source_commit": null,
+          "sha256": "e61e2fb31e63e9c6f9c4fc555d82a436570538d16dccce174b8723c6da5d867e"
+        },
+        {
+          "id": "S062",
+          "public": "evidence/S062.md",
+          "local_original": "experiments/top7-iteration-20261029/continuation/LIVE-V2.md",
+          "source_commit": null,
+          "sha256": "3b2b165621053de1f07ed711402e3fed7c105f0632478b4281f6a3fed8058389"
+        },
+        {
+          "id": "S063",
+          "public": "evidence/S063.md",
+          "local_original": "experiments/top7-iteration-20261029/continuation/PAIRED-VALIDATION.md",
+          "source_commit": null,
+          "sha256": "a321453f6f39b0a73ec10a33fd877b13ab6817e470f3e1aed34e022006c32b0e"
+        },
+        {
+          "id": "S064",
+          "public": "evidence/S064.md",
+          "local_original": "experiments/top7-iteration-20261029/continuation/README.md",
+          "source_commit": null,
+          "sha256": "fec5991a5fa4706cd3f5c322e098ad39555553c2f71cc432a9d9340c18ad0beb"
+        },
+        {
+          "id": "S065",
+          "public": "evidence/S065.md",
+          "local_original": "experiments/top7-iteration-20261029/continuation/semantic-review-v2/README.md",
+          "source_commit": null,
+          "sha256": "258686720f5bddc6a8b280c39d1c35e914dc07bf4a3f28ebe19371b09433a1c5"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S063",
+          "reported_identity_or_config_line": "使用原完整 Build，不进行抽取、embedding 或 Build 恢复：conv-26 为 `5c7699dd6543407697ae232633154036`，conv-30 为 `5abd7718841d417ebd71a1db896be39f`。两个库和索引的既有哈希见 v2 plan；运行前只读复核，固定原始来源、问题文本、请求时间、初始召回、预算与所有随机化身份。"
+        },
+        {
+          "source": "S063",
+          "reported_identity_or_config_line": "4. 冻结模型别名和返回版本信息、thinking、temperature、输出上限；用固定种子随机化组别先后，按题／重复成对交错执行，禁止一组全部跑完才跑另一组。"
+        },
+        {
+          "source": "S064",
+          "reported_identity_or_config_line": "`safe-validation-feedback-v2-budget-aware` 在完整静态反馈超过显式输入上限时，仅保留安全错误码和净化字段位置。该选择只缩短反馈，不修改首轮输入、证据、系统 Prompt/schema、校验上下文或重试次数。调用记录的 `retry_feedback_mode` 区分完整反馈和简短诊断。简短诊断仍放不下时，保持 HTTP 前停止并保留旧用量的行为；抽取与关系反馈规则不变。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "TOP7-02",
+      "title": "首轮证据目录开放探索",
+      "date": "2026-10-29",
+      "question_and_hypothesis": "短证据地址与程序绑定能否改善契约？",
+      "method_and_input_scope": "E1接口、成本及抽取候选分开；冻结输入",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": null,
+      "observed_result": "48HTTP旧实验结果独立；短地址局部技术改善；语义增益不足",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "保留接口候选，不替换默认",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S069",
+          "public": "evidence/S069.md",
+          "local_original": "experiments/top7-iteration-20261029/open-exploration/README.md",
+          "source_commit": null,
+          "sha256": "64160065341b961f2d26e29c68d987012dea67d831e6b5bb50946ee042ce090d"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S069",
+          "reported_identity_or_config_line": "- conv-26 Build：`5c7699dd6543407697ae232633154036`。"
+        },
+        {
+          "source": "S069",
+          "reported_identity_or_config_line": "- conv-30 Build：`5abd7718841d417ebd71a1db896be39f`。"
+        },
+        {
+          "source": "S069",
+          "reported_identity_or_config_line": "E1应用身份为 `e4732563…`，代码可在提交 `802e162` 复原。E2/E3/E4/E5为 `0baa52ee…`，应用源码及runner归档在 `8475dd3`；不能拿当前实现验证旧E1后认定历史被改。每轮冻结plan及其SHA保留。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "TOP7-03",
+      "title": "r2阅读、thinking成本与中断",
+      "date": "2026-10-29",
+      "question_and_hypothesis": "去Memory提示的原文阅读能否改善？",
+      "method_and_input_scope": "R1 64HTTP；成本37HTTP；抽取20计划只完成2",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": "R1 64任务；成本24最终任务；抽取20任务",
+      "observed_result": "第104请求未知；103已结算448646token另30192规划预留；low8/8完成语义过/direct2/8/disabled3/8；抽取17未尝试+1未知",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "关闭thinking降本淘汰；原文阅读局部候选，七父项不验收",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S066",
+          "public": "evidence/S066.md",
+          "local_original": "experiments/top7-iteration-20261029/open-exploration-r2/README.md",
+          "source_commit": null,
+          "sha256": "b70680466e22f308fd1b0d48c58a11c8aa56bfc7757a91c2dce6b6f2b3f228ed"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S066",
+          "reported_identity_or_config_line": "- 已执行实验源码身份：`d3bf94e1a301c36bd5a96d4cdc4147853f8df4b955941914fae324520d82bee0`，源码可由提交 `26a17ad` 还原。抽取 runner、参考和冻结输入另行保存，不以提交时间代替实验身份。"
+        },
+        {
+          "source": "S066",
+          "reported_identity_or_config_line": "- 后续离线 reader v2：提交 `ce0e0c3`，应用身份 `3ba2f84cba08c7eb440ba4b61b0e4088222e221bddc89255754f86dfa3c540f0`。**本轮真实输出不属于 v2。** 添加新模块前的身份与历史来源核验见 `pre-adapter-verification.json`。"
+        },
+        {
+          "source": "S066",
+          "reported_identity_or_config_line": "本轮检验了三件不同的事：回答契约与摘要干扰、解析 thinking 的成本与失败、抽取言语行为的分类提示。没有把这三类改动合并后只报告一个成功率。"
+        },
+        {
+          "source": "S066",
+          "reported_identity_or_config_line": "四道已知问题 × 三组 × 两次，24 个最终任务。`direct` 使用冻结初始召回；`low` 和 `disabled` 使用相同扩展候选、相同解析 prompt/schema/messages，区别为 provider thinking。三组统一使用 `plain_raw` 阅读；没有邻近原文补查。三次解析失败后不再发答案请求，因此实际 37 HTTP，失败仍留在 24 分母。"
+        },
+        {
+          "source": "S066",
+          "reported_identity_or_config_line": "过度拒答均为 0。关闭 thinking 的成本下降伴随三次解析失败、两次 QA51 合作画作类型遗漏，淘汰为当前可用的降本方案。保留 low 作对照，其成本仍高。"
+        },
+        {
+          "source": "S066",
+          "reported_identity_or_config_line": "在这四道题、此阅读接口和两次重复中，动态组合观察到局部优势：完成且语义通过 8/8 对 2/8；候选语义 8/8 对 6/8。**前者包含控制组的四次引用失败，不能全部归因于语义判断改善。** 动态组合成本约为直接召回的 4.92 倍，也没有分离扩展、解析和存储关系各自贡献。初始召回与扩展从完整 Build 冻结结果回放，未重新执行分析、embedding 或建库；thinking 切换也改变有效采样语义。不能外推泛化收益。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "TOP7-04",
+      "title": "reader v2移除T地址",
+      "date": "2026-10-29",
+      "question_and_hypothesis": "回答暴露抽取句柄是否导致结构拒绝？",
+      "method_and_input_scope": "8样本×3组×2；只移除time_expressions或再反序",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 48,
+      "observed_result": "48HTTP99193token全终结；已知题原序v1完成4/8→v2 8/8，完成语义2/8→6/8；QA51语义仍失败",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "保留显式reader；不采用反序优化，不推断动态算法收益",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S067",
+          "public": "evidence/S067.md",
+          "local_original": "experiments/top7-iteration-20261029/open-exploration-r2/next-reader/README.md",
+          "source_commit": null,
+          "sha256": "e2516dbccd7a5697c5fe0e11b70ff64b7b5ed9c93647b8cf42350e8c87354163"
+        },
+        {
+          "id": "S068",
+          "public": "evidence/S068.md",
+          "local_original": "experiments/top7-iteration-20261029/open-exploration-r2/reader-v2-code-review.md",
+          "source_commit": null,
+          "sha256": "4ea53ebcbcc7e5b0918e3be30821d69239e5aac86ba3469ca009d8f7e40cabbf"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S067",
+          "reported_identity_or_config_line": "- 应用源码 SHA256：`3ba2f84cba08c7eb440ba4b61b0e4088222e221bddc89255754f86dfa3c540f0`，源码提交 `ce0e0c3`；准备及执行器归档提交 `9a6f9bd`。原 r2 实测 `d3bf94e…` 是另一身份。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "TOP145-01",
+      "title": "单命题、模态、notes与窗口",
+      "date": "2026-10-29",
+      "question_and_hypothesis": "减少双份摘要和补前文是否无损改善？",
+      "method_and_input_scope": "96HTTP；抽取20/阅读48/窗口16/模态12",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 96,
+      "observed_result": "276723token，无未知；窗口技术6/8vs6/8、整体4/8vs4/8；错误接回T地址，保留失败；caption仍缺",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "单命题局部opt-in；notes/思考/窗口整体替换均未获支持",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S072",
+          "public": "evidence/S072.md",
+          "local_original": "experiments/top7-iteration-20261029/top145-open/README.md",
+          "source_commit": null,
+          "sha256": "1284d1b7fc1081dad3efac4128a81906f7cb36d3be0905c95975688f89c15e3b"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S072",
+          "reported_identity_or_config_line": "应用源码在独立分支 `codex/top145-open-exploration-20261029`，commit `cde3250`；冻结实现 SHA 为 `6919d1c0b8428cb6eb35e9eafc5c6e5e204c892242bd326b0b043b3119870faa`。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "TOP145-02",
+      "title": "复核、时间索引与新边界",
+      "date": "2026-10-29",
+      "question_and_hypothesis": "二阶段检查能否稳定纠错？",
+      "method_and_input_scope": "249HTTP，多阶段各自冻结",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 249,
+      "observed_result": "593616token；窗口+复核已知题8/8但108925token；新12边界复核19/24vs19/24；源内时间索引无益",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "保留窄候选；逐断言检查/独立盘点/源内时间索引整体替换淘汰",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S071",
+          "public": "evidence/S071.md",
+          "local_original": "experiments/top7-iteration-20261029/top145-next/README.md",
+          "source_commit": null,
+          "sha256": "5d4fb62b890188100b4a7b9412276b6a6dd59a8997c96424fec58ffbe7203245"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "TOP145-03",
+      "title": "更便宜首次检查与异语境示例",
+      "date": "2026-10-30",
+      "question_and_hypothesis": "一阶段检查能否替代昂贵复核？",
+      "method_and_input_scope": "86HTTP；已知题和12边界分别统计",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 86,
+      "observed_result": "212852token；首次检查总23/32vs23/32且token+11.2%；conv41新增整批拒绝",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "淘汰首次检查替换；抽取示例不默认采纳",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S070",
+          "public": "evidence/S070.md",
+          "local_original": "experiments/top7-iteration-20261029/top145-final/README.md",
+          "source_commit": null,
+          "sha256": "c11140ea8439585a2d1b20d0d0ea6499a78e69afa8f4abefed7b96d7517e473e"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S070",
+          "reported_identity_or_config_line": "本轮源码commit `96a7bf2`，应用实现SHA保持`6919d1c0b8428cb6eb35e9eafc5c6e5e204c892242bd326b0b043b3119870faa`。没有应用src/默认服务/生产依赖/历史Build迁移。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "TOP145-04",
+      "title": "受限patch与选择性前文",
+      "date": "2026-10-30",
+      "question_and_hypothesis": "局部patch和指代触发前文能否保留事实？",
+      "method_and_input_scope": "56HTTP；四已知题2次重复；六fixture×两法×2",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 56,
+      "observed_result": "242531token；前文+复核均8/8，109185→78242token（-28.3%）；patch技术6/12vs4/12但语义2/12vs2/12",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "前文局部成本候选；patch不作完整修复，模态/语义仍未解",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S073",
+          "public": "evidence/S073.md",
+          "local_original": "experiments/top7-iteration-20261029/top145-repair-context/README.md",
+          "source_commit": null,
+          "sha256": "1e1b5b10ac12cee8861763984b2161b6847abb4b5a5c4f67d9cb2479dc4d9d8f"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S073",
+          "reported_identity_or_config_line": "应用src、默认服务、依赖和历史Build未改变，应用SHA仍为`6919d1c0b8428cb6eb35e9eafc5c6e5e204c892242bd326b0b043b3119870faa`。冻结实现commit `250795a`；后续盲包/统计/适配器另提交，不更改运行时冻结身份。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "VERB-01",
+      "title": "原文分块替代结构化链路",
+      "date": "2026-10-29—2026-10-30",
+      "question_and_hypothesis": "取消生成压缩能否无损替代Memory？",
+      "method_and_input_scope": "10例×3主组×2另8reader诊断+12抽取=80计划",
+      "configuration": "相同来源/题单；deepseek-flash alias，temperature=0，回答effort=disabled，max_tokens=8192，零重试；结构化和原文reader/schema/提示存在整体接口差异，不能全部归因于去抽取。",
+      "execution_code_commit": "175d6be（执行前冻结）；证据报告保存版本c8eeb11952b8c24810eb395d5cf0d83502bb60a6不是执行身份。",
+      "run_id": null,
+      "build_id": null,
+      "denominator": "80计划项=60主组问答（10例×2×3组）+8共同reader诊断+12抽取；实际78HTTP，另2依赖问答因上游失败未发送，保留计划分母。",
+      "observed_result": "结构化/分块/全文技术交付分别18/20、20/20、20/20；整体正确11/20、12/20、16/20；干净必需事实64/78、48/78、70/78。分块reader错拒=0仅针对已交付输入，不能掩盖端到端检索缺口。",
+      "failures_and_unknown": "两次抽取将memory_type写成不支持的intention，整批严格拒绝，2个依赖问答upstream_failure且不补跑；78真实HTTP全部用量已知，0重试/unknown/provider异常。分块端到端错误拒答2/20。离线导入失败0HTTP保留。",
+      "conclusion_and_adoption": "拒绝以固定原文分块替换默认结构化链路；分块未满足事实保留与QA非劣，全文也有遗漏/过推断且成本更高；近似去重未实施，不把未试方案写成失败。",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "两位非作者AI评审，未视为人类真值；复核澄清与初始预注册分开",
+      "evidence": [
+        {
+          "id": "S161",
+          "public": "evidence/S161.md",
+          "local_original": "experiments/verbatim-memory-20261029/README.md",
+          "source_commit": "c8eeb11952b8c24810eb395d5cf0d83502bb60a6",
+          "sha256": "f29af049228f09edfad6c1d31d2f533b87325e54e66bad5aad31a776f2962f08"
+        },
+        {
+          "id": "S162",
+          "public": "evidence/S162.md",
+          "local_original": "experiments/verbatim-memory-20261029/REPORT.md",
+          "source_commit": "c8eeb11952b8c24810eb395d5cf0d83502bb60a6",
+          "sha256": "ff70392cb29a24f700f67b188336651303d66d4c4e7ae50cc173e8478e6107cb"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "78HTTP合计656,063 token，含12新抽取26,501 token；不含旧Build成本或不可得的Codex用量。没有核实单价/货币账单，金额未知，低token不等于实际省钱。",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S162",
+          "reported_identity_or_config_line": "三组使用相同来源快照、问题、`deepseek-flash`、temperature=0、回答 effort=disabled、max_tokens=8192、零重试。结构化与原文使用不同既有回答 schema／提示，属于整体接口包差异；原文两组的 reader、schema 和设置相同。模型 alias 的 provider 内部 revision 不能固定，记录 requested/returned model 均为 `deepseek-flash`。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "INT-01",
+      "title": "安全集成RC1/RC2与后续修复",
+      "date": "2026-10-31—2026-11-01",
+      "question_and_hypothesis": "哪些窄改动可进入生产候选？",
+      "method_and_input_scope": "先审查26项集成候选，RC1/RC2独立保留；后续INT-FOLLOWUP-20261101-v1为28题（12已曝光开发+12合成+4旧回归）×2重复×3 arms，每pipeline初答+一次通用复核。",
+      "configuration": "RC2完整解析输入预算24,000；后续三臂wide-original/wide-guided/selective-guided；单阶段最多1HTTP，单并发；计划、执行、后处理分别冻结。",
+      "execution_code_commit": "RC2基准5fc33a9611565711ba175a807f19881d0ae748fb；后续真实执行冻结aea7ed9；后处理修复178e121；并非同一个执行版本。",
+      "run_id": "后续实验身份INT-FOLLOWUP-20261101-v1；RC1/RC2其他运行身份见原记录，未合并为一个Run。",
+      "build_id": null,
+      "denominator": "后续168 pipelines/336逻辑输出槽；实际334HTTP=168初答+166复核。原版2次初答被严格拒绝，其复核未发送；4 null输出保留。RC1/RC2其他分母不相加。",
+      "observed_result": "后续已曝光开发24输出，原版17/24→复核17/24，两guided各24/24→24/24；合成24输出原版20/24→20/24、wide-guided23/24→23/24、selective22/24→22/24；旧回归8输出依次6/8→7/8、6/8→8/8、7/8→7/8。选择性总token节省15.7594%，低于20%门槛。",
+      "failures_and_unknown": "后续原版2初答严格拒绝，4 null槽保留；全部334请求settled，未知用量0。逐事实仍有过推断与必要细节遗漏；相同HTTP输入仍产生输出差异，不把差异归因于上下文选择。首次离线导入环境错误invalid-import-*不计成绩；178e121修复3项后处理P2，不改模型输入/结果。",
+      "conclusion_and_adoption": "RC1/RC2采用矩阵另存；后续F01四包可逆但估算32,859–59,291均超24K，0真实解析请求，本实现不采用；F02指导留研究候选，F03未验收，未加入默认路径。",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "后续非作者AI预审及336输出盲审，31 fail/uncertain交叉复核；评审有既有曝光，不是人工真值。未发现新增独立人工验收。",
+      "evidence": [
+        {
+          "id": "S146",
+          "public": "evidence/S146.md",
+          "local_original": "docs/integration/20261031/AUDIT.md",
+          "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+          "sha256": "178bb16ad9442757da525b1d5fbb21ff99da912ce30219234cc33997e3e72745"
+        },
+        {
+          "id": "S147",
+          "public": "evidence/S147.md",
+          "local_original": "docs/integration/20261031/CODE_REVIEW.md",
+          "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+          "sha256": "cf1e1daf47bf39a35bf92a06ce5ba42eed6b0b8f93f0edd40d471481051858e7"
+        },
+        {
+          "id": "S148",
+          "public": "evidence/S148.md",
+          "local_original": "docs/integration/20261031/INVENTORY.md",
+          "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+          "sha256": "19c56675b1155f3c93194a4d9149f64f6372087f8bd2e7274d79aea14c86152e"
+        },
+        {
+          "id": "S149",
+          "public": "evidence/S149.md",
+          "local_original": "docs/integration/20261031/REPORT.md",
+          "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+          "sha256": "406c31d3db7648f29807eefb7368d2da741b9c71e20a7cf16abe5d9c59eab8ae"
+        },
+        {
+          "id": "S150",
+          "public": "evidence/S150.md",
+          "local_original": "docs/integration/20261101/ACCEPTANCE_REPORT.md",
+          "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+          "sha256": "cbd745b49a086f15950d094424706890f543b8b389e703533356cb70da9fff5f"
+        },
+        {
+          "id": "S151",
+          "public": "evidence/S151.md",
+          "local_original": "docs/integration/20261101/NEXT_EXPERIMENTS.md",
+          "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+          "sha256": "17d394f18b9290889aac0c5f18da8fe2a38ec8f072a5da89a9a168698d906af8"
+        },
+        {
+          "id": "S152",
+          "public": "evidence/S152.md",
+          "local_original": "docs/integration/20261101-followup/REPORT.md",
+          "source_commit": "de3af7396243bd6505daedeea2df8813567b8a2c",
+          "sha256": "5f8816dba9aba2fa637543f98601d1fc2dba27e42a0bfc4383c175b25bfa886d"
+        },
+        {
+          "id": "S110",
+          "public": "evidence/S110.md",
+          "local_original": "experiments/integration-acceptance-20261101/README.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "be85ea1155fbb069256efb43e4ee66cd299ce0d61b283904c851c93d4204b14f"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "后续646,438 provider tokens，高峰cache-miss估算上界1.463288元；连上一轮估算2.094828元不是实际扣费。Codex评审用量不可得，不能宣称全项目成本。",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S146",
+          "reported_identity_or_config_line": "| A01 | 解析契约说明及类型化拒绝码 | A | `f9bfbb3c10e3` | 提示新增输入；判断谓词须完全保持；按原始commit逐文件差分移植，合成接受集合对照 |"
+        },
+        {
+          "source": "S146",
+          "reported_identity_or_config_line": "| A03 | 共享来源预算去重及冲突双边保护 | A | `ca5aa74e6913` | 冲突证据无法完整交付时明确失败，可能增加拒绝但避免单边结论；逐证据对象计预算；测试恰好上限/超一/共享来源/全文 |"
+        },
+        {
+          "source": "S146",
+          "reported_identity_or_config_line": "| A05 | 答案和解释的事件身份指导 | A | `8d8adab9f2f3` | 仅作为契约澄清；不声明解决事件误连；复用已明确语义规则，答案及解释同受约束 |"
+        },
+        {
+          "source": "S146",
+          "reported_identity_or_config_line": "| A08 | 普通Dynamic解析上限和交付审计 | A | `d80b095e6d51` | 预算截断可能损失事实；安全关系缺端不得确定；复用既有packer，保留omitted_groups与失败delivery |"
+        },
+        {
+          "source": "S146",
+          "reported_identity_or_config_line": "| D01 | 关闭resolution thinking降本 | D | `26a17ad001ba` | 节约伴随事实损失和失败；不改变resolution_thinking_effort=low |"
+        },
+        {
+          "source": "S146",
+          "reported_identity_or_config_line": "| D04 | 无条件邻轮扩张作为整体优化 | D | `cde32509a462` | 单独窗口未修QA51，成本显著增加；上下文函数可保留不默认启用；默认不补邻轮；B05选择性实验另有身份 |"
+        },
+        {
+          "source": "S146",
+          "reported_identity_or_config_line": "初始25项矩阵固定在提交 `8fa6f8e`，保留其原判断以供追溯。最终交付回放发现 `conv-26-mini-02-D` 的普通 Dynamic packer 删除历史人工验收答案引用的全部3条 Memory（申请、研究、考察收养机构）。因此否决该子方案，新增 **D07 普通Dynamic静默证据裁剪**，最终26项。不能用离线全绿覆盖该负证据。"
+        },
+        {
+          "source": "S148",
+          "reported_identity_or_config_line": "| top7-open-exploration-r2 | 104开始/103完成/1未知；已知448646 token不是总量；关闭解析thinking3次失败 | D01；停机不恢复 |"
+        },
+        {
+          "source": "S149",
+          "reported_identity_or_config_line": "| 最后生产代码提交 | `a2cbdd05dfdb9473c5fed50e0b6d43d0a026fef7` |"
+        },
+        {
+          "source": "S149",
+          "reported_identity_or_config_line": "| 测试边界修正提交 | `5794fdff5229d68446c4e9ecc5b7de44679b43a0` |"
+        },
+        {
+          "source": "S149",
+          "reported_identity_or_config_line": "抽取反馈采用 `c0f47d6` 的统一受限实现，没有叠加另一分支的旧反馈循环。重叠模块逐补丁比较；没有将任何研究分支的生产目录整目录覆盖。每项本地提交记录来源、采用级别及验证日志。"
+        },
+        {
+          "source": "S149",
+          "reported_identity_or_config_line": "- 关闭解析 thinking：low 的正确交付 8/8，disabled 为 3/8，并出现解析失败及事实遗漏。"
+        },
+        {
+          "source": "S150",
+          "reported_identity_or_config_line": "| 执行器准备提交 | `1a551f1` |"
+        },
+        {
+          "source": "S150",
+          "reported_identity_or_config_line": "| 新实验冻结提交 | `32437e6a5e9496523552c3d271319a6474ce4fb7` |"
+        },
+        {
+          "source": "S150",
+          "reported_identity_or_config_line": "系统标签为 `integration-20261101-rc2`，包版本仍为0.1.0，没有发布或推送。模型请求与返回alias均为 `deepseek-flash`；官方文档版本快照与调用原件已保存，服务端可变alias不是权重固定版本的证明。后处理代码与评分身份单独记录，不冒充执行时源码。"
+        },
+        {
+          "source": "S150",
+          "reported_identity_or_config_line": "A08采用授权的24,000完整输入上限，保持不裁原证据、超限发送前明确拒绝、每阶段遗漏审计和有限重试。没有同时提高 `candidate_token_budget`、`evidence_token_budget` 或输出预算，也没有关闭解析thinking。已有显式配置仍覆盖默认值，用户配置文件没有被自动修改。"
+        },
+        {
+          "source": "S150",
+          "reported_identity_or_config_line": "- rc1 D01–D07继续不采用，尤其不靠关闭解析thinking、静默裁来源、忽略校验或无限重试换取技术完成。"
+        },
+        {
+          "source": "S150",
+          "reported_identity_or_config_line": "这创建反向提交并恢复示例/相关测试/隔离声明；保留所有实验数据。也可在运行配置显式设 `resolution_input_budget = 12000` 仅恢复旧预算。查看原主线完整版本则使用 `./tools/integration/run_local.sh baseline api`，基准为f5a5dfd；与恢复rc1预算分开识别。没有自动merge main、push、PR、远端任务或Notion写入，等待用户代码审查。"
+        },
+        {
+          "source": "S151",
+          "reported_identity_or_config_line": "候选基准是已交付的 `integration-20261031-rc1`：审查 HEAD `3cd2ab032550de9551ee26b40be573c32548f849`，生产提交 `a2cbdd05dfdb9473c5fed50e0b6d43d0a026fef7`，实现 SHA-256 为 `d635dc923d29a6010feb0240cff796be5b3a6031f24263806fd8a4b2a2403f7e`。本轮没有修改生产代码、原采用矩阵、旧实验结果或 Top7 历史状态。原离线验证仍为589 passed、4 deselected；这次没有把旧测试记录改成新运行。"
+        },
+        {
+          "source": "S152",
+          "reported_identity_or_config_line": "| 后处理修复提交 | `178e121`；后处理与执行器分开识别 |"
+        },
+        {
+          "source": "S152",
+          "reported_identity_or_config_line": "| 原件保存提交 | `2249eef` |"
+        },
+        {
+          "source": "S152",
+          "reported_identity_or_config_line": "原集成worktree仍停在5fc33a9且干净。生产目录与该提交的diff为空，没有新schema、API参数、UI入口或生产依赖。原版本的FastAPI、Streamlit、SQLite、Memory和JSON导出接口保持；本轮全量测试覆盖既有API/数据库测试，但没有重复声称新的人工UI/视觉验收。"
+        },
+        {
+          "source": "S152",
+          "reported_identity_or_config_line": "先独立检查一次可逆表示编码，再只对符合前置条件的指导和上下文假设付费。没有关闭解析thinking、裁剪关系或来源、增加重试、扩大默认上下文或改用Graph。"
+        },
+        {
+          "source": "S152",
+          "reported_identity_or_config_line": "合成Leeds历史题仍有利用后来搬家报告，倒推早期真实住所的过强确定性。合成样本在两guided上下文的24个配对初答HTTP body完全相同，却仍出现不同输出，见 `negative-control-wire-audit.json`。不能将这些差异归因于上下文选择；temperature=0也不证明服务端输出确定。不过冻结门槛要求保留所有观测损失，不能因负控制波动删掉失败样本。"
+        },
+        {
+          "source": "S152",
+          "reported_identity_or_config_line": "所有首次记录保留：第一次纯离线编码命令未设置PYTHONPATH，导入共享虚拟环境绑定的旧主仓；相关产物标记 `invalid-import-*`，不计成绩。已增加导入worktree断言并用 `PYTHONPATH=src` 重跑。后处理独立审查发现三个P2：响应到结果身份链不完整、评分审计可陈旧、重复裁决可覆盖fail；178e121修复并经两位复核者关闭，旧发现、旧SHA和测试记录未删除。上述修复不改冻结模型输入或真实结果。"
+        },
+        {
+          "source": "S152",
+          "reported_identity_or_config_line": "该隔离启动器使用数据库副本、屏蔽账户变量与外网。恢复更早12k预算的方法仍为显式配置或反向提交5d7e9b7，见rc2原报告。本轮没有默认代码变化需要回滚。全部旧实验和本轮失败保留；没有merge、push、PR、远端任务或Notion写入。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "V2-01",
+      "title": "11月真实smoke输出/输入预算递进",
+      "date": "2026-11-01",
+      "question_and_hypothesis": "默认预算是否能完成五题四策略？",
+      "method_and_input_scope": "独立原Build→32768新Build→96000新Run；不拼接",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": "1f5ad0252c1a4832ba5065f6d7998a41",
+      "build_id": "5c9390515a3447d0b4dcfa8257a98719",
+      "denominator": "每轮20QA；首轮未建Run",
+      "observed_result": "首轮84HTTP Build失败/20QA阻塞；32K Build完整但15/20成功；96K新Run20/20结构成功、40HTTP",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "研究参数服务可用；语义/隐藏成绩未评",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S107",
+          "public": "evidence/S107.md",
+          "local_original": "docs/research-v2/SMOKE_RESULT.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "fb57e98813ca9c59b421afe6c37224fc77501189476d33cbb986458fb5d423eb"
+        },
+        {
+          "id": "S108",
+          "public": "evidence/S108.md",
+          "local_original": "docs/research-v2/SMOKE_RETRY_32768.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "294dfea25a99b7a7ae04a77b50b594f0236dd17deda26c3435cedb7e64de78cd"
+        },
+        {
+          "id": "S105",
+          "public": "evidence/S105.md",
+          "local_original": "docs/research-v2/RESOLUTION_SMOKE_96000.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "40e5578edf51150be5a153a0194eabc7c4f50ed880fc270aa52bcc9b69d84dae"
+        },
+        {
+          "id": "S106",
+          "public": "evidence/S106.md",
+          "local_original": "docs/research-v2/SMOKE_OBSERVER.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "296034af70c188c2e716535e178b340600ac3d009fec02d5eb33f7f5a67dbe28"
+        },
+        {
+          "id": "S102",
+          "public": "evidence/S102.md",
+          "local_original": "docs/research-v2/POST_RESOLUTION_COST_ESTIMATE.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "be251c23b0d655d7cb24653aff7342131b7fef82fa42f69f5c7a4e7e8976adb2"
+        },
+        {
+          "id": "S103",
+          "public": "evidence/S103.md",
+          "local_original": "docs/research-v2/POST_RETRY_COST_ESTIMATE.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "65b2c08761994005bfcd51f6f2bb79f5fe3d99536f3df057dfe1046e26ff089f"
+        },
+        {
+          "id": "S104",
+          "public": "evidence/S104.md",
+          "local_original": "docs/research-v2/POST_SMOKE_COST_ESTIMATE.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "e7b4fb446d068e4d8ece66eedc7cf110e224ceef33ad6f085c57ef6588e9b08e"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S107",
+          "reported_identity_or_config_line": "- 起点：`bf820d45b603bad43fdd66c7aa762ffcf2a7fea9`；实际执行代码提交：`f00715191daf39d148d6f62fac86f2dfc679c8c7`。"
+        },
+        {
+          "source": "S107",
+          "reported_identity_or_config_line": "| conv-26 Build ID | `4c741582a42c4ff2aa1da6b0a9b75324` |"
+        },
+        {
+          "source": "S107",
+          "reported_identity_or_config_line": "全部调用发生在北京时间星期日，按当日公布的空闲时段价格计算为 **¥1.60584648**；未读取账户账单，不能将其称为已核对的实际扣款。预算始终以峰时计算，没有利用折扣放宽 ¥40 上限。本地 Embedding API 费用 ¥0，CPU、电费、存储货币成本未知。"
+        },
+        {
+          "source": "S108",
+          "reported_identity_or_config_line": "2026-11-01。用户明确要求输出上限翻四倍后重试。本研究入口将 `model_max_tokens` 从 8,192 提高到 32,768，Relation 继承该值。Production v1、Prompt、Schema、来源顺序、证据范围、思考强度、温度和内部尝试次数均不改变。"
+        },
+        {
+          "source": "S108",
+          "reported_identity_or_config_line": "同日重新查询官方 DeepSeek 接口文档：`max_tokens` 允许 1–393,216；32,768 在范围内。峰时每百万 tokens：input hit ¥0.04、miss ¥2、output ¥8。使用原轮次受控官方快照冻结哈希；模型别名不能固定服务端权重，实际响应模型与 fingerprint 单独保留。"
+        },
+        {
+          "source": "S108",
+          "reported_identity_or_config_line": "本次重试已停止，无新增付费工作排程。新冻结身份 SHA-256 为 `64f69c9ac25faf130669bfe038eeb8b2bb41a281b2fd88881a08f8b6873f91d9`，实际研究源码逐文件保存于受控目录的 `frozen-code/` 并验证与身份哈希一致。执行前研究修改未提交，Git HEAD 为 `0d1c2cd`；HEAD 不能单独代表本次运行实现，必须同时使用冻结源码哈希。原付费前 JUnit 保持原件，新鲜重试测试另存于 `retry-gate-supplement.json`，没有将旧测试冒称为本次参数测试。"
+        },
+        {
+          "source": "S108",
+          "reported_identity_or_config_line": "- Build：`5c9390515a3447d0b4dcfa8257a98719`，419 Source Turns、21/21 抽取片段、275 Memory、真实本地 MiniLM 索引、269/269 关系任务成功，已发布为 `complete`。"
+        },
+        {
+          "source": "S108",
+          "reported_identity_or_config_line": "- Run：`6aa4f580775c4342909bf320fbd9164f`，`completed_with_errors`；20 项全部有持久结果，15 成功、5 失败、0 未知、0 待执行。每个逻辑项仅一次尝试，没有补跑。"
+        },
+        {
+          "source": "S105",
+          "reported_identity_or_config_line": "本次复用完整Build `5c9390515a3447d0b4dcfa8257a98719`，不重新抽取、Embedding索引或判断关系。使用SQLite backup生成独立实验数据库副本，保留Build原始生产配置、fingerprint、Memory、来源、索引和关系。新的Query配置与Build生产者配置分开记录；现有版本pin接口本来就支持完整Build供Query使用，没有绕过或修改生产配置检查。"
+        },
+        {
+          "source": "S105",
+          "reported_identity_or_config_line": "- Build复用：`5c9390515a3447d0b4dcfa8257a98719`，275 Memory、269/269关系；Build生产者配置、来源、索引和关系保持不变，没有新增Build或probe。"
+        },
+        {
+          "source": "S105",
+          "reported_identity_or_config_line": "- 新Run：`1f5ad0252c1a4832ba5065f6d7998a41`，`completed`，20成功、0失败、0未知、0待执行。每项一次逻辑尝试，没有物理重试，没有选取旧Run更高成绩。"
+        },
+        {
+          "source": "S105",
+          "reported_identity_or_config_line": "- 冻结身份SHA-256：`f7d53c5ee721c182c291ba0019f26b89839ea7c6081f2dc05a3a4a56cd9d6b2e`。82个冻结源码文件保留在私有`frozen-code/`，新配置与Build生产者配置分别冻结。"
+        },
+        {
+          "source": "S106",
+          "reported_identity_or_config_line": "超时、网络错误、进程中断、非成功 HTTP、缺失/不一致用量均不视为免费。未知请求保留预约，阻断后续发送。即使收到完整响应，若持久化失败也不返回给业务层继续执行。服务端账单核对需要后续明确操作；本实现不提供自动清除未知或付费恢复命令。预约依赖已核查的服务上下文上限、`max_tokens` 和价目表；本地无法证明供应商实际账单正确。"
+        },
+        {
+          "source": "S102",
+          "reported_identity_or_config_line": "2026-11-01。固定20项真实smoke在研究配置`model_max_tokens=32768`、`resolution_input_budget=96000`下全部完成。完整Build与Query用量现均有真实观测，可以提出独立全量预算；**本文件不构成付费授权，未启动全量**。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "V2-02",
+      "title": "11月四对话全量基线及恢复",
+      "date": "2026-11-01—2026-11-03",
+      "question_and_hypothesis": "真实四策略完整分母上表现如何？",
+      "method_and_input_scope": "4开发对话757QA×4，32768输出/96000解析；多段显式恢复",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": "a2abe1fb49be45ccba291728e1f6b3c9",
+      "build_id": null,
+      "denominator": 3028,
+      "observed_result": "3028=2969成功+56失败+3unknown；Dynamic709/757，48失败；原Run完整总分null；Build、OOM/402/timeout恢复分段保留",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "保留原基线不拼接；Dynamic成功子集均值不能掩盖失败",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S074",
+          "public": "evidence/S074.md",
+          "local_original": "docs/research-v2/BASELINE_COST_ESTIMATE.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "539a13d9ac97b86b016108fec69fc3b4fc3f3cd7e76e34d374243eca772da535"
+        },
+        {
+          "id": "S075",
+          "public": "evidence/S075.md",
+          "local_original": "docs/research-v2/BASELINE_READINESS_REPORT.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "74a8b6fe47292988daaf332bf2e60308ae9f0c4ef6f965fa99f3f54830eb8adf"
+        },
+        {
+          "id": "S078",
+          "public": "evidence/S078.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_ANSWER_REPAIR_8.md",
+          "source_commit": null,
+          "sha256": "fc29f12ea8a125054a2a8a30d9cb07d640b566770feb6d82dfe701cae90a4e88"
+        },
+        {
+          "id": "S079",
+          "public": "evidence/S079.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_BUILD_RECOVERY.md",
+          "source_commit": null,
+          "sha256": "acdaf7123c645ec0c479bf0caec45e6a5fe94c842b9f5714a82283624fa4f4f9"
+        },
+        {
+          "id": "S080",
+          "public": "evidence/S080.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_COST_APPROVAL.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "2f126312448ff8293c61243df6c35125160c34a1637c3f0a05cef2a322b839d8"
+        },
+        {
+          "id": "S081",
+          "public": "evidence/S081.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_PARALLEL_2.md",
+          "source_commit": null,
+          "sha256": "23eb0282713728c022d38ad1a4e4d1232d6ea4a684518b18455a063d153a7a44"
+        },
+        {
+          "id": "S082",
+          "public": "evidence/S082.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_PREFLIGHT_REPORT.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "8f0782eb27e842700a707bfb4121a2960b88354f986159f8014e191fcdb34999"
+        },
+        {
+          "id": "S083",
+          "public": "evidence/S083.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_QUERY_RESUME_1.md",
+          "source_commit": null,
+          "sha256": "792ab6ed53b07591f4ebc384b18da2025eac921c8cbc3f4462a7bd6eb8a71feb"
+        },
+        {
+          "id": "S084",
+          "public": "evidence/S084.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_RECOVERY42_2.md",
+          "source_commit": null,
+          "sha256": "5a14d539fb554e4dd0f68c09dd59837047f8ee3d339b6210c0f03129900af0b6"
+        },
+        {
+          "id": "S085",
+          "public": "evidence/S085.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_RESUME_1.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "c04df6fb597b5620ac33a213c76673a91e1e4ab7943c4b80e6ea4a183d2fd419"
+        },
+        {
+          "id": "S086",
+          "public": "evidence/S086.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_RESUME_2.md",
+          "source_commit": null,
+          "sha256": "c497e8de4e10923e1538e76e8d5da16e0e28789538c417f638d3d0ef31d43529"
+        },
+        {
+          "id": "S087",
+          "public": "evidence/S087.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_RESUME_3.md",
+          "source_commit": null,
+          "sha256": "3a0045468ccbc9444afb76df77a399e7718f67bc2a48fc0d102ed509cb482000"
+        },
+        {
+          "id": "S089",
+          "public": "evidence/S089.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_TEST_REPORT.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "63985a1d37fadf21be9863e51747e396a2b448c2ed8cdf28e9f8dc6191120df4"
+        },
+        {
+          "id": "S090",
+          "public": "evidence/S090.md",
+          "local_original": "docs/research-v2/GIT_CLEANUP_REPORT.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "86cedef17921871d6843cd18e80119251ba4dc02d0a7a81525912d4a9d78bd84"
+        },
+        {
+          "id": "S111",
+          "public": "evidence/S111.md",
+          "local_original": "experiments/research-v2/README.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "6e374709cd6b361b3cc404ec75b636782938f593a2624ea7749cd0987ae2014e"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S075",
+          "reported_identity_or_config_line": "CLI 契约的 `thinking_enabled=false` 是历史兼容字段，不表示所有阶段关闭思考；本轮未改动该接口。"
+        },
+        {
+          "source": "S078",
+          "reported_identity_or_config_line": "63 项离线测试通过；身份 SHA-256 `661d5421662ea763b75c0efeff5875f92290da7fe209e21d589f15977a8aa3b9`。独立真实 Run `a9c2024b9b444224ad79cb5075f671ad`：8 成功、0 失败、0 未知，耗时约 53.65 秒。共 17 笔物理 HTTP，全部首次物理尝试成功，无新增物理重试；峰时单价计量 ¥0.09423232，不是实际账户扣款。累计 7,779 笔已结算请求约 ¥317.85109788；六笔历史未知保留 ¥14.155776 完整预约。原金额、次数、绝对截止和并发上限不变，服务 Result=success、inactive/dead、Restart=no。"
+        },
+        {
+          "source": "S080",
+          "reported_identity_or_config_line": "冻结身份 SHA-256：`e55a30615d40a05812660653b8a2abe9103591c8bbbe52a572a987e7c264fa06`。"
+        },
+        {
+          "source": "S082",
+          "reported_identity_or_config_line": "现有 Smoke Run `1f5ad0252c1a4832ba5065f6d7998a41` 为 20/20 成功；其 SHA-256 为 `f7d53c5ee721c182c291ba0019f26b89839ea7c6081f2dc05a3a4a56cd9d6b2e` 的冻结身份通过核验。195 份受控文件、195 份外部归档文件和 82 份历史冻结代码均核验；两个 SQLite 完整性检查为 `ok`，交付 Bundle 验证成功。原账本仍停止于累计 446 HTTP、峰时计价 ¥21.45706856、未知计费 0。所有历史实验目录、旧失败及 Smoke 成绩保留。"
+        },
+        {
+          "source": "S082",
+          "reported_identity_or_config_line": "**不复用 conv-26 Build `5c9390515a3447d0b4dcfa8257a98719`。** 它完整且有 275 Memory、269 个关系任务，但原生产者完整 Settings 使用 `resolution_input_budget=24000`，数据库路径也与本轮独立运行位置不同。Build 指纹使用整个 Settings。严格身份审计不将这两个字段归一化，不修改旧 Build 元数据以伪装一致。"
+        },
+        {
+          "source": "S082",
+          "reported_identity_or_config_line": "研究配置：`model_max_tokens=32768`、`resolution_input_budget=96000`。Production v1 默认仍为 8192/24000，`src/` 未修改。这两个研究参数来自用户指令及固定 Smoke，不根据五题分数选择参数。"
+        },
+        {
+          "source": "S084",
+          "reported_identity_or_config_line": "执行身份 SHA-256 为 `ccf9481e2c9b9541d42cacd034a04fca82f7d86f170fad521103cabe8a6da57b`。启动前外部归档 6,043 个文件全部通过逐文件流式 SHA-256 验证。"
+        },
+        {
+          "source": "S085",
+          "reported_identity_or_config_line": "原执行身份：`e55a30615d40a05812660653b8a2abe9103591c8bbbe52a572a987e7c264fa06`。Run：`a2abe1fb49be45ccba291728e1f6b3c9`。"
+        },
+        {
+          "source": "S085",
+          "reported_identity_or_config_line": "复用原 conv-26 完整 Build `367c901b300440649bdc0bfba2af8010`，继续原 conv-30 Build `b8f34a05c8ef4585a1fc3c917745aa53`。显式重启唯一失败 Relation task，保留第一次失败及 provider call 历史，成功抽取和关系任务不重复执行。随后按原协议构建 conv-41、conv-42，四策略执行原 3,028 分母。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "V2-03",
+      "title": "192000补充与8项回答修复",
+      "date": "2026-11-03",
+      "question_and_hypothesis": "提高输入上限及有限回答反馈能否恢复失败？",
+      "method_and_input_scope": "只选择原56失败+3unknown；补充59与修复8新Run",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": "supplement df096a57752f496d86facefe75eaf423; repair a9c2024b9b444224ad79cb5075f671ad",
+      "build_id": null,
+      "denominator": "59 / 8 分开",
+      "observed_result": "补充51成功/8失败；修复8/8；原3028失败/unknown不覆盖",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "局部恢复；仍有scorer=1却AI交叉指出Citation Failure的答案",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S088",
+          "public": "evidence/S088.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_SUPPLEMENTAL_RETRY_192000.md",
+          "source_commit": null,
+          "sha256": "ff1f0e3348709b409b5d1c308c3714624f6a7a19e03a1eed4a86341394774817"
+        },
+        {
+          "id": "S078",
+          "public": "evidence/S078.md",
+          "local_original": "docs/research-v2/FULL_BASELINE_ANSWER_REPAIR_8.md",
+          "source_commit": null,
+          "sha256": "fc29f12ea8a125054a2a8a30d9cb07d640b566770feb6d82dfe701cae90a4e88"
+        },
+        {
+          "id": "S077",
+          "public": "evidence/S077.md",
+          "local_original": "docs/research-v2/FAILURE_ATLAS.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "f6e3b1ac9867d52bbc0dc6f809c45e0572aaaf76b1e1ec0e7229d3a3598c33d8"
+        },
+        {
+          "id": "S101",
+          "public": "evidence/S101.md",
+          "local_original": "docs/research-v2/POST_BASELINE_AI_REVIEW.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "5ba6f48747b6a08f151023a70b3086d04ed48b65a74aaaa68e607b517c3d0e34"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S088",
+          "reported_identity_or_config_line": "最终 33 项离线测试通过后冻结身份 SHA-256 `e77288a4cbfdeff2de4a841add5a33c7e30b230b46a24e686b33d135f5e60fe2`，创建补充 Run `df096a57752f496d86facefe75eaf423`。服务正常退出，没有自动重试后续失败。"
+        },
+        {
+          "source": "S088",
+          "reported_identity_or_config_line": "安全结果摘要见 `experiments/research-v2/supplemental-retry-192000-result.json`。完整产物位于 `var/research-v2-full-baseline-20261101/supplemental-retry-192000-1/`：原始 `items.jsonl`、独立 `metrics.json`、Run 引用、身份和基线完整性检查。外部归档 `b647f2ed650344849fdfe495ed409069` 的 manifest 包含 16,071 个文件及本段完整性记录；本次仅检查归档索引存在与包含本段，没有宣称再次逐文件验证整个最终归档。"
+        },
+        {
+          "source": "S078",
+          "reported_identity_or_config_line": "63 项离线测试通过；身份 SHA-256 `661d5421662ea763b75c0efeff5875f92290da7fe209e21d589f15977a8aa3b9`。独立真实 Run `a9c2024b9b444224ad79cb5075f671ad`：8 成功、0 失败、0 未知，耗时约 53.65 秒。共 17 笔物理 HTTP，全部首次物理尝试成功，无新增物理重试；峰时单价计量 ¥0.09423232，不是实际账户扣款。累计 7,779 笔已结算请求约 ¥317.85109788；六笔历史未知保留 ¥14.155776 完整预约。原金额、次数、绝对截止和并发上限不变，服务 Result=success、inactive/dead、Restart=no。"
+        },
+        {
+          "source": "S101",
+          "reported_identity_or_config_line": "原研究配置是 `model_max_tokens=32768`、`resolution_input_budget=96000`，不是 Production v1 原始默认。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "V2-04",
+      "title": "Failure Atlas及独立AI复核",
+      "date": "2026-11-03",
+      "question_and_hypothesis": "分数与来源合法性是否掩盖语义问题？",
+      "method_and_input_scope": "84匿名AI初审+18交叉，3个Run各自Atlas",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": "84初审、18交叉不相加为独立样本",
+      "observed_result": "2053/41/8候选记录，不等于错误数；8项错误拒答被共同指出；仅1明确交叉Citation Failure，其余根因多Unknown",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "不外推总体语义正确率/严重错误率；保持未评",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "非作者AI研究复核；非人工验收、非模型自评",
+      "evidence": [
+        {
+          "id": "S077",
+          "public": "evidence/S077.md",
+          "local_original": "docs/research-v2/FAILURE_ATLAS.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "f6e3b1ac9867d52bbc0dc6f809c45e0572aaaf76b1e1ec0e7229d3a3598c33d8"
+        },
+        {
+          "id": "S101",
+          "public": "evidence/S101.md",
+          "local_original": "docs/research-v2/POST_BASELINE_AI_REVIEW.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "5ba6f48747b6a08f151023a70b3086d04ed48b65a74aaaa68e607b517c3d0e34"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S101",
+          "reported_identity_or_config_line": "原研究配置是 `model_max_tokens=32768`、`resolution_input_budget=96000`，不是 Production v1 原始默认。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "V2-05",
+      "title": "Hybrid/Dynamic配对",
+      "date": "2026-11-03",
+      "question_and_hypothesis": "更高成功子集QA是否值得额外成本？",
+      "method_and_input_scope": "原Run内757题；705双方成功比较",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": "a2abe1fb49be45ccba291728e1f6b3c9",
+      "build_id": null,
+      "denominator": 757,
+      "observed_result": "136胜/110负/459平，配对delta+.026074；Dynamic完整分母.515133，Hybrid含unknown上下界[.521886,.523207]；Query峰时估算98.930522vs9.597679CNY",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "现有结果不支持默认采用更贵Dynamic的全面质量主张",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S094",
+          "public": "evidence/S094.md",
+          "local_original": "docs/research-v2/PHASE3_PAIRED_DIAGNOSIS.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "e493ccb1c3752d5ba0277ff7a46570ddaa1174bb7697fffad68d653d9b1d466d"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S094",
+          "reported_identity_or_config_line": "仅在原 Run `a2abe1fb49be45ccba291728e1f6b3c9` 内配对。逐题身份为 `question_id`，同时核对 sample index、问题、对话和冻结 Build。59 项补充与 8 项修复保持独立。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "V2-06",
+      "title": "E1路由负结果",
+      "date": "2026-11-03",
+      "question_and_hypothesis": "可证明充分的便宜路径能否覆盖真实题？",
+      "method_and_input_scope": "LOCO四折，规则不读取gold/答案/后续分数",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 757,
+      "observed_result": "757/757全部Dynamic；便宜路径覆盖0、额外provider节省0",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "不进入付费Screening，不事后放宽gate",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S091",
+          "public": "evidence/S091.md",
+          "local_original": "docs/research-v2/PHASE3_E1_ROUTER.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "eec28f7f34f61c0d6773404ecd72e4d312298b5d4359d682dabc480716dc423d"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "V2-07",
+      "title": "E5缓存切片与真实应用测量",
+      "date": "2026-11-03",
+      "question_and_hypothesis": "编码CPU下降是否能移植为应用收益？",
+      "method_and_input_scope": "2271编码需求/756唯一键；应用19题×3每arm57，Mock模型",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": "切片2271需求；应用57/arm 分开",
+      "observed_result": "切片cold编码CPU-64.22%、本地检索-57.36%；应用coldCPU-7.93%，warmwall退化12.21%；业务等价57对，51成功/6预算拒绝",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "未稳定达到15%应用CPU门槛；保留opt-in，provider节省0",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S092",
+          "public": "evidence/S092.md",
+          "local_original": "docs/research-v2/PHASE3_E5_CACHE.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "5ddabb2d3c342eb02de880beb502e57a86e9e7616127046d89cd9aaf5416cdfa"
+        },
+        {
+          "id": "S095",
+          "public": "evidence/S095.md",
+          "local_original": "docs/research-v2/PHASE4_E5_APPLICATION_BENCHMARK.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "bf13a152f9f279d4bca79c604fe301c3df21c996b6c23e522357a86b925c3377"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "V2-08",
+      "title": "固定失败回归与E6可逆表示",
+      "date": "2026-11-03",
+      "question_and_hypothesis": "完整关系输入膨胀能否不删证据压缩？",
+      "method_and_input_scope": "77失败诊断；E6-A全部757完整包、往返/引用保护和Mock",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 757,
+      "observed_result": "估算39660331→26051688（-34.31%）；原46超限全适配、新增0；129已有引文丢失0；E6-B未实现",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "E6-A仅研究候选，真实QA/provider成本未评；不以Mock通过承诺语义",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "未发现独立人工验收；原记录中的 AI 审查/作者检查与工程测试分别保留",
+      "evidence": [
+        {
+          "id": "S093",
+          "public": "evidence/S093.md",
+          "local_original": "docs/research-v2/PHASE3_FAILURE_REGRESSION.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "1c801589547e81c86026678d38d5fbe86989c19ccb8e240ea23ee1e7bd3fe587"
+        },
+        {
+          "id": "S098",
+          "public": "evidence/S098.md",
+          "local_original": "docs/research-v2/PHASE4_RESOLUTION_DIAGNOSIS.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "2d2ecff1023adecc81369e1cbff51a1fd36595ba4fcac51e9cf544eace3311af"
+        },
+        {
+          "id": "S096",
+          "public": "evidence/S096.md",
+          "local_original": "docs/research-v2/PHASE4_E6_IMPLEMENTATION.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "a4523993c1ac36e2a9e5b445e9499066a0e54ce6d28d09712e4d93e4b6321a63"
+        },
+        {
+          "id": "S097",
+          "public": "evidence/S097.md",
+          "local_original": "docs/research-v2/PHASE4_E6_OFFLINE_RESULTS.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "e58146d4c796e7ba3190a625cbd3bbc327a0264b8e3420a3fa71f3efbf0afcd0"
+        },
+        {
+          "id": "S099",
+          "public": "evidence/S099.md",
+          "local_original": "docs/research-v2/PHASE4_SCREENING_PROPOSAL.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "1c1e6f9527cbdf0cf02b1a579d45d00e59a08e8ad69d11d236709596fa5cc4c9"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S097",
+          "reported_identity_or_config_line": "最终结果在 `experiments/research-v2/phase4/replay-final/`；编码原文只在权限受控的 `var/research-v2-phase4-20261103/replay-final/plans.jsonl`。重放命令使用新的目录并启用已有 offline guard，见 Phase 4 `DELIVERY.json`。`ARTIFACT_MANIFEST.json`、受控 `MANIFEST.json` 和各 SHA-256 清单绑定代码、输入、配置、输出。全仓与定向测试计数以交付索引为准，重叠测试不相加。"
+        },
+        {
+          "source": "S099",
+          "reported_identity_or_config_line": "Control 以新身份允许完整输入 192,000，原 Prompt/Schema 和完整证据不变；否则原 46 个失败题无法作语义对照。E6-A 使用新列式输入指南和 96,000 预算。两 arm 使用同一 Build、问题、固定上游输入及相同模型生成参数：deepseek-flash、temperature=0、max_output_tokens=32768，Resolution thinking=low、Answer thinking=disabled。两个新的独立 Run 和新 runtime/ledger 必须与原三个 Run 分离。预算差只影响 preflight，不截断证据；明确不能称与原 96,000 历史失败执行完全同身份。"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "V2-09",
+      "title": "Phase5执行器准备与Mock",
+      "date": "2026-11-03",
+      "question_and_hypothesis": "冻结25对输入能否安全编排双arm？",
+      "method_and_input_scope": "Control192000/E6A96000；50arm；严格MockTransport",
+      "configuration": "按来源版本与冻结配置；本归档未修改或执行历史配置",
+      "execution_code_commit": "以来源记录中的执行 commit / implementation SHA 为准；source_commit 是证据文件版本，不能替代执行身份",
+      "run_id": null,
+      "build_id": null,
+      "denominator": 50,
+      "observed_result": "canary4 mock成功/46pending，8模拟HTTP；独立all-mock50成功、100模拟HTTP；真实模型0",
+      "failures_and_unknown": "见 observed_result；未明确报告的失败、unknown 与用量为证据缺失，不推定为零",
+      "conclusion_and_adoption": "只完成离线准备；无live入口/新预算/语义结论",
+      "limitations": "开发诊断/已知题结果不能推断隐藏集；结构、引用 ID 与 scorer 不等于语义正确；未复跑历史实验",
+      "human_participation": "用户提出问题、范围取舍及授权见原记录；未将助手实现或实验执行归为用户亲手完成",
+      "ai_participation": "原记录中的实现、运行、分析或 AI 复核；本次另由 AI 只读归档",
+      "review_type": "原记录未独立代码审查；本次AI归档非独立验收",
+      "evidence": [
+        {
+          "id": "S100",
+          "public": "evidence/S100.md",
+          "local_original": "docs/research-v2/PHASE5_EXECUTION_PREPARATION.md",
+          "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+          "sha256": "66d0e5b659822cf44ca5ffab87fef0395a68da1b695d77cb258f0e019b49302b"
+        }
+      ],
+      "source_and_tests": "现有安全分支 src/、tests/、tools/；历史特定源码/测试若未在白名单中则 HOLD，不能声称新检出可重现原 Run",
+      "data_and_reports": "公开指标见 metrics.json；原表/Trace/数据/盲审原件保留在本地，按证据 SHA 定位",
+      "cost_notice": "provider token/峰时价格估算/未知预约/实际扣款分开；实际账单未核对；各轮额度和重复报告不累加",
+      "reported_identity_configuration_evidence": [],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。",
+      "evidence_status": "索引条目已建立；部分身份/配置仅在原件中，未公开字段为证据缺失或HOLD；不代表完整可复现实验包"
+    },
+    {
+      "id": "INT-02",
+      "title": "Production v1最终采用与拒绝矩阵",
+      "date": "2026-11-01",
+      "question_and_hypothesis": "研究候选中哪些工程改进可以进入稳定默认路径？",
+      "method_and_input_scope": "31规范化采用项，A11/B6/C5/D9；固定原件对照、API及受控浏览器",
+      "configuration": "默认解析完整输入24,000；普通Dynamic无隐式raw重跑；显式raw独立保留",
+      "execution_code_commit": "a2528d6eb4d2a1dd96a021902063dbf6917dc7ee",
+      "run_id": null,
+      "build_id": null,
+      "denominator": "608离线测试；4模型检查deselected；1788契约组合；32库/43Build/172API对照均属当时历史验证",
+      "observed_result": "实现/离线验收完成；默认合入诊断、来源预算、反馈、完整输入保护；F01未移植，F02/F03不默认采用；F03 15.7594%低于20%门槛",
+      "failures_and_unknown": "原四超限解析包在24,000仍拒绝；首次合成夹具/浏览器断言失败保留；真实语义收益未评",
+      "conclusion_and_adoption": "代码已进入此前安全生产快照；不是main已合并或课程验收",
+      "limitations": "未在本次重跑；只使用既有审计记录",
+      "human_participation": "用户决定集成边界；无新增成员人工验收证明",
+      "ai_participation": "实现、离线测试及两路非作者AI静态审查；本次AI归档",
+      "review_type": "非作者AI代码审查，不是人工批准",
+      "evidence": [
+        {
+          "id": "S163",
+          "public": "evidence/S163.md",
+          "local_original": "docs/integration/production-v1/REPORT.md",
+          "source_commit": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
+          "sha256": "515a3f93e47bb59f0f878ecafa012d53622b548358448e72bd4edf7d44ca4302"
+        }
+      ],
+      "source_and_tests": "../../src/locomo_memory/queries.py 和 ../../tests/test_production_paths.py",
+      "data_and_reports": "原报告见来源索引；本次不打开或复制历史数据库",
+      "cost_notice": "本轮归档新增provider调用0",
+      "reported_identity_configuration_evidence": [
+        {
+          "source": "S163",
+          "reported_identity_or_config_line": "| 生产修正提交 | `a2528d6`，移除默认 Dynamic 的隐式 raw recovery |"
+        },
+        {
+          "source": "S163",
+          "reported_identity_or_config_line": "| D01 关闭 resolution thinking 降本 | 默认继续 `low`；不推广 disabled |"
+        }
+      ],
+      "missing_fields_policy": "未显式记录的实际日期、执行commit、Run/Build、失败细分、人类操作或独立评估均为证据缺失；不以来源commit/文件时间/AI自查代替。"
+    }
+  ]
+}

@@ -1,0 +1,2958 @@
+[
+  {
+    "id": "S001",
+    "source": "main",
+    "source_path": "experiments/current-showcase/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "97278c783509c71596b3c2763c3e187485bd2f4a180e214ba7f963a4461f54c6",
+    "source_bytes": 6732,
+    "public_excerpt": "evidence/S001.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S002",
+    "source": "main",
+    "source_path": "experiments/current-showcase/results/analysis.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "32fba0108eb1065d1a63784ed8079f63eaba34e45ccae08d20fb2758fc61d08a",
+    "source_bytes": 5945,
+    "public_excerpt": "evidence/S002.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S003",
+    "source": "main",
+    "source_path": "experiments/current-showcase/results/answer-source-review.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "e2750923e682710147fa124489b5889d624058edb24ea93502a7fddf4be012e0",
+    "source_bytes": 4967,
+    "public_excerpt": "evidence/S003.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S004",
+    "source": "main",
+    "source_path": "experiments/current-showcase/results/dynamic-review.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "ef115e1430357aa08c1344d889e05283aff1a0a7707a651101a842c416964d5e",
+    "source_bytes": 2889,
+    "public_excerpt": "evidence/S004.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S005",
+    "source": "main",
+    "source_path": "experiments/current-showcase/results/report.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "815099c0ee26a0ad2b6913e57698347984aae45195f249b22b9d6877ab8cf3d6",
+    "source_bytes": 3856,
+    "public_excerpt": "evidence/S005.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S006",
+    "source": "main",
+    "source_path": "experiments/issue-10-version-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "42199c75127da229fe708c978ff79e5735dde8ee4a41cd7f9758abdabe2b0a3c",
+    "source_bytes": 3253,
+    "public_excerpt": "evidence/S006.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S007",
+    "source": "main",
+    "source_path": "experiments/issue-11-evaluation-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "87152915955c180eecbe26ee8223158b53366ed1c33ab43edc2b068ff8e332e5",
+    "source_bytes": 5028,
+    "public_excerpt": "evidence/S007.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S008",
+    "source": "main",
+    "source_path": "experiments/issue-12-integration-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "1970baf887316efb33f5f45722284843e508ef9aa8466f67806c9fe39dcee127",
+    "source_bytes": 8684,
+    "public_excerpt": "evidence/S008.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S009",
+    "source": "main",
+    "source_path": "experiments/issue-15-answer-output-live/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "08d2df9452bc66008f49b7f130dab853cdab7673def7c11f9e230e24a4291aa4",
+    "source_bytes": 5445,
+    "public_excerpt": "evidence/S009.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S010",
+    "source": "main",
+    "source_path": "experiments/issue-15-answer-output-live/results/analysis.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "f1836243744a58d337c63d37f2ebdf5ca82473b52e39bfd9394cd8a645918b5f",
+    "source_bytes": 5929,
+    "public_excerpt": "evidence/S010.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S011",
+    "source": "main",
+    "source_path": "experiments/issue-15-answer-output-live/results/comparison.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "8050aae1913c6b1fcc198406f58fc81290da2973027b2cda16c91833b137d2f0",
+    "source_bytes": 3711,
+    "public_excerpt": "evidence/S011.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S012",
+    "source": "main",
+    "source_path": "experiments/issue-15-answer-output-live/results/report.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "76bcf7d0944f1e6a6be6e7b60da60458fbffe6f4f3c995d80301eaef618bce71",
+    "source_bytes": 11995,
+    "public_excerpt": "evidence/S012.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S013",
+    "source": "main",
+    "source_path": "experiments/issue-15-answer-output/validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "2f41c0465da7519098fdd82f6d3c4c00ce5413187f80d970b406f23e48b4a0bc",
+    "source_bytes": 5311,
+    "public_excerpt": "evidence/S013.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [
+      "534641d28f088b57cc054864f8419c28cf41855e2b3598fc2d417ea7d7eacc42"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S014",
+    "source": "main",
+    "source_path": "experiments/issue-15-closure/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "6b9b463b6ef93f88e91ea8d414ee6842e1b18c988898f67a4e96aa13fbc9a8f6",
+    "source_bytes": 3794,
+    "public_excerpt": "evidence/S014.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S015",
+    "source": "main",
+    "source_path": "experiments/issue-15-diagnostics-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "512124d09f72aac1efecd10265722c5b7cfe1f78dbf7bfd9d179efc37d3c8983",
+    "source_bytes": 4251,
+    "public_excerpt": "evidence/S015.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S016",
+    "source": "main",
+    "source_path": "experiments/issue-15-evidence-coverage-live/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "82da3c7f0babbc4fff9c4fd108f73968bd5b74b78325acec05c1744db121aab8",
+    "source_bytes": 5093,
+    "public_excerpt": "evidence/S016.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S017",
+    "source": "main",
+    "source_path": "experiments/issue-15-evidence-coverage-live/results/analysis.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "81dd801255101171eca8ecc52a4e31255116daf53cc047e4141b75b570ed0cbf",
+    "source_bytes": 7397,
+    "public_excerpt": "evidence/S017.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S018",
+    "source": "main",
+    "source_path": "experiments/issue-15-evidence-coverage-live/results/report.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "021c5711a69bd469b2f4a27a59e2e00694d4b93bc3a582f1bebe845fa80d2017",
+    "source_bytes": 20692,
+    "public_excerpt": "evidence/S018.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S019",
+    "source": "main",
+    "source_path": "experiments/issue-15-evidence-coverage/rollback-p0-p1.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "3fd8004cc2e41c301622b269c4b2922bb0a85e939e550278fb6325d78686e767",
+    "source_bytes": 3473,
+    "public_excerpt": "evidence/S019.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [
+      "667d8b4a7ab835168405bb315a8a6c2b0affcdfd8926cfbccd7120f7a3d76f0b"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S020",
+    "source": "main",
+    "source_path": "experiments/issue-15-evidence-coverage/validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "01e35177edde86643b7eef00b586127bd5a33fd30667eff10c7e2f456aaecc46",
+    "source_bytes": 6574,
+    "public_excerpt": "evidence/S020.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [
+      "61f7d8a0d8cec821e3c4ded7c0a5c1ac36cceb2706e34c800c24424d94a8c8cf"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S021",
+    "source": "main",
+    "source_path": "experiments/issue-15-final-review.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "b72c3f74f7384c3ec888c18ac3a9eb9966e2310c0a229c47c54745488a623e55",
+    "source_bytes": 3285,
+    "public_excerpt": "evidence/S021.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S022",
+    "source": "main",
+    "source_path": "experiments/issue-15-live-continuation/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "5fae6c61df32e683579012213eb8588d84e3d44a07d87c835ab932162ad4f26d",
+    "source_bytes": 13644,
+    "public_excerpt": "evidence/S022.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [
+      "13497e43f418275585532d7d8a3a2bb326035662ed6eef67f41a05b6e8f46116",
+      "897f17a3f62022945e855773203cffebfa28183e13cf07cf132ab714359a98c0"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S023",
+    "source": "main",
+    "source_path": "experiments/issue-15-live-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "53385b4ea12f4f1639ea1b45088a8ef691a2152ef838cfc1c1110f4c83ef45d8",
+    "source_bytes": 6257,
+    "public_excerpt": "evidence/S023.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [
+      "543cb6e3f768c60a8dff1cec56437e3d5d87ac0cd77a3aa560ccc8cb6c9bb40a"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S024",
+    "source": "main",
+    "source_path": "experiments/issue-15-offline-relation-diagnosis/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "d44ab1c69469655581a8fbab2885e07de3e961a32802ad8a73eb131426b69232",
+    "source_bytes": 12574,
+    "public_excerpt": "evidence/S024.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [
+      "13497e43f418275585532d7d8a3a2bb326035662ed6eef67f41a05b6e8f46116",
+      "b98124fb8f57a2d6056bb77e945f8fd7b58deef73aa1fab22402939d18c94fdb"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S025",
+    "source": "main",
+    "source_path": "experiments/issue-15-quality/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "cb83cffcdfab7eb526c9880a998c4464d73dab5e66dca39e215dcf3797bf313e",
+    "source_bytes": 8641,
+    "public_excerpt": "evidence/S025.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S026",
+    "source": "main",
+    "source_path": "experiments/issue-15-quality/review.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "94866b2d13fdff6bcf5e75f0cd3b36fe0022799e31062737a70f6ad057147383",
+    "source_bytes": 4471,
+    "public_excerpt": "evidence/S026.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S027",
+    "source": "main",
+    "source_path": "experiments/issue-15-query-reliability/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "7085ac24d46c48c184ef23dcb0476e39a702fb757611ee29364135179ad748d9",
+    "source_bytes": 7884,
+    "public_excerpt": "evidence/S027.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S028",
+    "source": "main",
+    "source_path": "experiments/issue-15-query-reliability/citation-results/report.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "539f94b9da56a01a3f68396137dca39de30449a81750dd5575884d9d14414912",
+    "source_bytes": 1050,
+    "public_excerpt": "evidence/S028.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S029",
+    "source": "main",
+    "source_path": "experiments/issue-15-query-reliability/followup-results/report.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "19600449ab3b23b199c14d69086eaa31efeabd12fe7506b4914bfd92d63775d7",
+    "source_bytes": 5248,
+    "public_excerpt": "evidence/S029.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S030",
+    "source": "main",
+    "source_path": "experiments/issue-15-query-reliability/followup.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "353d8d06f3ae64b9f808dff904f5b816f0017fdc84647f44991d6f733d8ae605",
+    "source_bytes": 11979,
+    "public_excerpt": "evidence/S030.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S031",
+    "source": "main",
+    "source_path": "experiments/issue-15-query-reliability/live-results/report.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "8958e70916a06e54b980a9aa8a97e3924b05340b7312d5308f0b350f20e555d7",
+    "source_bytes": 10922,
+    "public_excerpt": "evidence/S031.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S032",
+    "source": "main",
+    "source_path": "experiments/issue-15-query-reliability/recheck.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "ece5a056b57930cd23bd4ba5d2ff101b4ca84e923e2759adcdc69da436632a1c",
+    "source_bytes": 9974,
+    "public_excerpt": "evidence/S032.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S033",
+    "source": "main",
+    "source_path": "experiments/issue-15-relation-contract-replay/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "3eff301734533779fb95f4f9ae13f7deca926e3fa61f3c4cbd63be6f58f9a526",
+    "source_bytes": 8899,
+    "public_excerpt": "evidence/S033.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [
+      "13497e43f418275585532d7d8a3a2bb326035662ed6eef67f41a05b6e8f46116",
+      "f22b45e588cbcb2ee481b0a2bffef2270e264db89f3ca5a2126738099660e3b2"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S034",
+    "source": "main",
+    "source_path": "experiments/issue-15-relation-evidence-followup/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "7950b8148675e88117ff53ef2aed4ce944f8555b2ee4db6edb5d3492c1e20d97",
+    "source_bytes": 7788,
+    "public_excerpt": "evidence/S034.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [
+      "13497e43f418275585532d7d8a3a2bb326035662ed6eef67f41a05b6e8f46116",
+      "b6d38a90328a403651da8582a078d1015f9a2ead7ac4db42adaa56d9416bfcd0"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S035",
+    "source": "main",
+    "source_path": "experiments/issue-15-relation-failure-diagnosis.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "799bdc88322f5a8d6745de83a624a6a7c48c59a92bdf11a27393c4c3d23d6f8a",
+    "source_bytes": 2250,
+    "public_excerpt": "evidence/S035.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S036",
+    "source": "main",
+    "source_path": "experiments/issue-15-relation-output-fix.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "6fd7014df9aa6e488678442fcc3660e522c3401c92ba63064de94cb4256a157a",
+    "source_bytes": 3524,
+    "public_excerpt": "evidence/S036.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [
+      "93c2a407dc7e635906ccfe2e5c69bf20cf8fa9bd23e731691b500c4ce17be29f"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S037",
+    "source": "main",
+    "source_path": "experiments/issue-15-review-fixes.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "82beb7a7d34a4490c43d9c57880ba0b53b1ff7486accf260ef7295154e098239",
+    "source_bytes": 1519,
+    "public_excerpt": "evidence/S037.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S038",
+    "source": "main",
+    "source_path": "experiments/issue-15-thinking-qa/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "1c1c02a2f351e49490606764bfdc7ec5087207758ad7bf8c896a0a9cafefc13c",
+    "source_bytes": 8495,
+    "public_excerpt": "evidence/S038.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20",
+      "2026-10-21"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S039",
+    "source": "main",
+    "source_path": "experiments/issue-15-thinking-qa/results/analysis.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "482a03e2f0619799c1334e7573fdd5448c55773e65b82bbd33a2b96808bf43db",
+    "source_bytes": 6918,
+    "public_excerpt": "evidence/S039.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S040",
+    "source": "main",
+    "source_path": "experiments/issue-15-thinking-qa/results/report.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "f335cdce0d6478b804b222545d9c0ca4934173ce981e63d1e22b7f4f0bbf738f",
+    "source_bytes": 18025,
+    "public_excerpt": "evidence/S040.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S041",
+    "source": "main",
+    "source_path": "experiments/issue-15-v6-gates/README.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "f5d8a48eb30bcb004b16484bc13b2e4054c6b9b88fcde52d72c1ffad73aeeb3a",
+    "source_bytes": 8283,
+    "public_excerpt": "evidence/S041.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [
+      "12410a8a857e91a9e23b97280b4cbcb647278daef83200cb9907c748cd238e2d",
+      "13497e43f418275585532d7d8a3a2bb326035662ed6eef67f41a05b6e8f46116",
+      "c3207ffd535a6337705377dd413ed35b9f7196bec5a050c493a55b3d52cc6a13"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S042",
+    "source": "main",
+    "source_path": "experiments/issue-15-v6-gates/controls-reassessment.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "b8f0fb5460a51771b2f5e6fa73f0112345c1b013da0376d1c1c8c4cf0874fdf4",
+    "source_bytes": 2146,
+    "public_excerpt": "evidence/S042.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S043",
+    "source": "main",
+    "source_path": "experiments/issue-15-v6-gates/semantic-v6-audit.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "9f73610ace111684dd64ecc08bd3df300abab5cb4480d3c034b2287a02ff728c",
+    "source_bytes": 20065,
+    "public_excerpt": "evidence/S043.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S044",
+    "source": "main",
+    "source_path": "experiments/issue-15-v6-gates/v6.1/same-key-pre-review.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "dc654abef822a0731364fcb488af2a245939bd4f567c511a28c52f8eb26b5aea",
+    "source_bytes": 3576,
+    "public_excerpt": "evidence/S044.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S045",
+    "source": "main",
+    "source_path": "experiments/issue-15-v6-gates/v6.1/semantic-audit.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "a14febe6550f131e545e8d8762808f105d22c7ba02513461614a68fa29911776",
+    "source_bytes": 23094,
+    "public_excerpt": "evidence/S045.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S046",
+    "source": "main",
+    "source_path": "experiments/issue-16-development-plan-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "8634cbf8c0238f0ae711fef40f899a39f0d93e5a5b649618fc55dc75ac620236",
+    "source_bytes": 2461,
+    "public_excerpt": "evidence/S046.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [
+      "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S047",
+    "source": "main",
+    "source_path": "experiments/issue-17-recovery-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "9e33f0591373d89d843f19f7803d89d621887f8234d0f11cc91e81fc1054d95e",
+    "source_bytes": 3021,
+    "public_excerpt": "evidence/S047.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S048",
+    "source": "main",
+    "source_path": "experiments/issue-18-full-text-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "140fc8de85e26e7063007b11a9f476ba80576a86535e2d5ee6c10b9e2456a828",
+    "source_bytes": 2382,
+    "public_excerpt": "evidence/S048.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S049",
+    "source": "main",
+    "source_path": "experiments/issue-19-failure-report-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "3180c7e6c99c7b8b0a14ec06a4711f2c794d9be71e6f7355c212036cc05f1371",
+    "source_bytes": 3098,
+    "public_excerpt": "evidence/S049.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S050",
+    "source": "main",
+    "source_path": "experiments/issue-20-runner-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "db0044aef7afba3ee204ad18ce1867b3ccad3cd16be17a0c6293c5b3fe73a488",
+    "source_bytes": 3851,
+    "public_excerpt": "evidence/S050.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S051",
+    "source": "main",
+    "source_path": "experiments/issue-4-implementation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "969dc02fa3e71c3463cbe7d294d27a384d32972828dae85b906a4aeb3f078655",
+    "source_bytes": 15188,
+    "public_excerpt": "evidence/S051.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S052",
+    "source": "main",
+    "source_path": "experiments/issue-4-review-fixes.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "e6a698ea2535ce8b88572980d5bafe984a874fdb03e6844d97b04bbf17fda92e",
+    "source_bytes": 5099,
+    "public_excerpt": "evidence/S052.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S053",
+    "source": "main",
+    "source_path": "experiments/issue-4-review.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "94e885cd39e095ab8dc22da27e5fd11f6362fbc8f02b014642921456044af2f8",
+    "source_bytes": 6016,
+    "public_excerpt": "evidence/S053.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S054",
+    "source": "main",
+    "source_path": "experiments/issue-5-import-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "198cc925ea26995bd01e1a7e2a4cba9ad500d35c823e81f64abe8728baf14e20",
+    "source_bytes": 2476,
+    "public_excerpt": "evidence/S054.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S055",
+    "source": "main",
+    "source_path": "experiments/issue-6-extraction-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "c05fa6066ef8f2a6e3846382ee04c762dd97c45a76591ed3334f6547bc2300c8",
+    "source_bytes": 2759,
+    "public_excerpt": "evidence/S055.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S056",
+    "source": "main",
+    "source_path": "experiments/issue-7-retrieval-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "77d815feaf4e315ecb9e28398b1b6661076a23b84ad3b2378029ca1752dfc99b",
+    "source_bytes": 3198,
+    "public_excerpt": "evidence/S056.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S057",
+    "source": "main",
+    "source_path": "experiments/issue-8-relations-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "c417c80a6445021138e8690dd32981d6760d6537b251c174b2d820f30d3c9aa0",
+    "source_bytes": 2873,
+    "public_excerpt": "evidence/S057.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S058",
+    "source": "main",
+    "source_path": "experiments/issue-9-query-validation.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "ca4626613a7ceb383605d56e6ee5c7a964973f8bcbc3996b62744f416f1f60fa",
+    "source_bytes": 3498,
+    "public_excerpt": "evidence/S058.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S059",
+    "source": "main",
+    "source_path": "experiments/retro-validation-guardrails.md",
+    "source_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "archive_ref": null,
+    "source_sha256": "81c9f53e9226b26667e274d0a8c236368d8671f3b9b88280ebb946bf46e9e71b",
+    "source_bytes": 5483,
+    "public_excerpt": "evidence/S059.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-19"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S060",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/README.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "3a4c34890e668c8130581edfaaf018d85f87d5e121176961ae0274bae9ca6c86",
+    "source_bytes": 5395,
+    "public_excerpt": "evidence/S060.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S061",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/continuation/CONTRACTS.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "e61e2fb31e63e9c6f9c4fc555d82a436570538d16dccce174b8723c6da5d867e",
+    "source_bytes": 6831,
+    "public_excerpt": "evidence/S061.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S062",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/continuation/LIVE-V2.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "3b2b165621053de1f07ed711402e3fed7c105f0632478b4281f6a3fed8058389",
+    "source_bytes": 5722,
+    "public_excerpt": "evidence/S062.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [
+      "9d0aa2f1ca5f3b24a277bb4e5964f13f2cad5504926e9e9ba4ffc7399b9fa68f",
+      "bf59b7599aca4f3be3828f73b230dc80c93915d7629a2ae2be116c0d56a035a7"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S063",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/continuation/PAIRED-VALIDATION.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "a321453f6f39b0a73ec10a33fd877b13ab6817e470f3e1aed34e022006c32b0e",
+    "source_bytes": 5717,
+    "public_excerpt": "evidence/S063.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S064",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/continuation/README.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "fec5991a5fa4706cd3f5c322e098ad39555553c2f71cc432a9d9340c18ad0beb",
+    "source_bytes": 12185,
+    "public_excerpt": "evidence/S064.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [
+      "71d957582c5d97eaae50af317139c69b78f418a17f7538394b44d61638ad248a",
+      "bf59b7599aca4f3be3828f73b230dc80c93915d7629a2ae2be116c0d56a035a7"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S065",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/continuation/semantic-review-v2/README.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "258686720f5bddc6a8b280c39d1c35e914dc07bf4a3f28ebe19371b09433a1c5",
+    "source_bytes": 3282,
+    "public_excerpt": "evidence/S065.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [
+      "b6b15c4d649f8afe4381fc0a1f234123f575971692755ae16925aaf88e5d2bdf",
+      "c75fa00902e30734fb28d718a4d532fe01fa2d749a17bc40cef580bbf6559065"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S066",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/open-exploration-r2/README.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "b70680466e22f308fd1b0d48c58a11c8aa56bfc7757a91c2dce6b6f2b3f228ed",
+    "source_bytes": 11725,
+    "public_excerpt": "evidence/S066.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [
+      "3ba2f84cba08c7eb440ba4b61b0e4088222e221bddc89255754f86dfa3c540f0",
+      "d3bf94e1a301c36bd5a96d4cdc4147853f8df4b955941914fae324520d82bee0"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S067",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/open-exploration-r2/next-reader/README.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "e2516dbccd7a5697c5fe0e11b70ff64b7b5ed9c93647b8cf42350e8c87354163",
+    "source_bytes": 7470,
+    "public_excerpt": "evidence/S067.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [
+      "3ba2f84cba08c7eb440ba4b61b0e4088222e221bddc89255754f86dfa3c540f0"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S068",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/open-exploration-r2/reader-v2-code-review.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "4ea53ebcbcc7e5b0918e3be30821d69239e5aac86ba3469ca009d8f7e40cabbf",
+    "source_bytes": 5201,
+    "public_excerpt": "evidence/S068.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [
+      "8c1a281a9a50d3d09572e2294ca514eb44b4b10417b945512c146102a681b2cf",
+      "8e95ae311638f546aba2bfbdf90dfef1505d072dfeb5882f218ef6c1d94c1862"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S069",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/open-exploration/README.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "64160065341b961f2d26e29c68d987012dea67d831e6b5bb50946ee042ce090d",
+    "source_bytes": 12552,
+    "public_excerpt": "evidence/S069.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S070",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/top145-final/README.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "c11140ea8439585a2d1b20d0d0ea6499a78e69afa8f4abefed7b96d7517e473e",
+    "source_bytes": 5663,
+    "public_excerpt": "evidence/S070.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [
+      "6919d1c0b8428cb6eb35e9eafc5c6e5e204c892242bd326b0b043b3119870faa"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S071",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/top145-next/README.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "5d4fb62b890188100b4a7b9412276b6a6dd59a8997c96424fec58ffbe7203245",
+    "source_bytes": 7493,
+    "public_excerpt": "evidence/S071.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [
+      "6919d1c0b8428cb6eb35e9eafc5c6e5e204c892242bd326b0b043b3119870faa"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S072",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/top145-open/README.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "1284d1b7fc1081dad3efac4128a81906f7cb36d3be0905c95975688f89c15e3b",
+    "source_bytes": 11941,
+    "public_excerpt": "evidence/S072.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [
+      "6919d1c0b8428cb6eb35e9eafc5c6e5e204c892242bd326b0b043b3119870faa"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S073",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/top145-repair-context/README.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "1e1b5b10ac12cee8861763984b2161b6847abb4b5a5c4f67d9cb2479dc4d9d8f",
+    "source_bytes": 7372,
+    "public_excerpt": "evidence/S073.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [
+      "6919d1c0b8428cb6eb35e9eafc5c6e5e204c892242bd326b0b043b3119870faa"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S074",
+    "source": "research",
+    "source_path": "docs/research-v2/BASELINE_COST_ESTIMATE.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "539a13d9ac97b86b016108fec69fc3b4fc3f3cd7e76e34d374243eca772da535",
+    "source_bytes": 6267,
+    "public_excerpt": "evidence/S074.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S075",
+    "source": "research",
+    "source_path": "docs/research-v2/BASELINE_READINESS_REPORT.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "74a8b6fe47292988daaf332bf2e60308ae9f0c4ef6f965fa99f3f54830eb8adf",
+    "source_bytes": 13081,
+    "public_excerpt": "evidence/S075.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-21",
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [
+      "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S076",
+    "source": "research",
+    "source_path": "docs/research-v2/EXPERIMENT_ROADMAP.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "6a5c65ae9628ce1527fa229b8da39c01519bb6c2477b3d40c1809184da7ffc72",
+    "source_bytes": 19716,
+    "public_excerpt": "evidence/S076.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01",
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S077",
+    "source": "research",
+    "source_path": "docs/research-v2/FAILURE_ATLAS.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "f6e3b1ac9867d52bbc0dc6f809c45e0572aaaf76b1e1ec0e7229d3a3598c33d8",
+    "source_bytes": 9544,
+    "public_excerpt": "evidence/S077.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S078",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_ANSWER_REPAIR_8.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "fc29f12ea8a125054a2a8a30d9cb07d640b566770feb6d82dfe701cae90a4e88",
+    "source_bytes": 5990,
+    "public_excerpt": "evidence/S078.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [
+      "0e55abca285db9045d1e2c927188d70a4eacb32b20dc94b503472485b6aaf8b1",
+      "661d5421662ea763b75c0efeff5875f92290da7fe209e21d589f15977a8aa3b9",
+      "75b1d83a86cb50fbc1827fd52a1e2346af0dd97606b1a3507871d7b16b39ecdd",
+      "e55a30615d40a05812660653b8a2abe9103591c8bbbe52a572a987e7c264fa06"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S079",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_BUILD_RECOVERY.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "acdaf7123c645ec0c479bf0caec45e6a5fe94c842b9f5714a82283624fa4f4f9",
+    "source_bytes": 3959,
+    "public_excerpt": "evidence/S079.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S080",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_COST_APPROVAL.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "2f126312448ff8293c61243df6c35125160c34a1637c3f0a05cef2a322b839d8",
+    "source_bytes": 4677,
+    "public_excerpt": "evidence/S080.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [
+      "e55a30615d40a05812660653b8a2abe9103591c8bbbe52a572a987e7c264fa06"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S081",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_PARALLEL_2.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "23eb0282713728c022d38ad1a4e4d1232d6ea4a684518b18455a063d153a7a44",
+    "source_bytes": 3654,
+    "public_excerpt": "evidence/S081.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-02",
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S082",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_PREFLIGHT_REPORT.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "8f0782eb27e842700a707bfb4121a2960b88354f986159f8014e191fcdb34999",
+    "source_bytes": 9089,
+    "public_excerpt": "evidence/S082.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [
+      "f7d53c5ee721c182c291ba0019f26b89839ea7c6081f2dc05a3a4a56cd9d6b2e"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S083",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_QUERY_RESUME_1.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "792ab6ed53b07591f4ebc384b18da2025eac921c8cbc3f4462a7bd6eb8a71feb",
+    "source_bytes": 2990,
+    "public_excerpt": "evidence/S083.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-02"
+    ],
+    "fingerprints_mentioned": [
+      "e55a30615d40a05812660653b8a2abe9103591c8bbbe52a572a987e7c264fa06"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S084",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_RECOVERY42_2.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "5a14d539fb554e4dd0f68c09dd59837047f8ee3d339b6210c0f03129900af0b6",
+    "source_bytes": 4162,
+    "public_excerpt": "evidence/S084.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-02"
+    ],
+    "fingerprints_mentioned": [
+      "ccf9481e2c9b9541d42cacd034a04fca82f7d86f170fad521103cabe8a6da57b"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S085",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_RESUME_1.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "c04df6fb597b5620ac33a213c76673a91e1e4ab7943c4b80e6ea4a183d2fd419",
+    "source_bytes": 3291,
+    "public_excerpt": "evidence/S085.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-02",
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [
+      "e55a30615d40a05812660653b8a2abe9103591c8bbbe52a572a987e7c264fa06"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S086",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_RESUME_2.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "c497e8de4e10923e1538e76e8d5da16e0e28789538c417f638d3d0ef31d43529",
+    "source_bytes": 1884,
+    "public_excerpt": "evidence/S086.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-02",
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S087",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_RESUME_3.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "3a0045468ccbc9444afb76df77a399e7718f67bc2a48fc0d102ed509cb482000",
+    "source_bytes": 1522,
+    "public_excerpt": "evidence/S087.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-02",
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S088",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_SUPPLEMENTAL_RETRY_192000.md",
+    "source_commit": null,
+    "archive_ref": null,
+    "source_sha256": "ff1f0e3348709b409b5d1c308c3714624f6a7a19e03a1eed4a86341394774817",
+    "source_bytes": 5777,
+    "public_excerpt": "evidence/S088.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [
+      "0e55abca285db9045d1e2c927188d70a4eacb32b20dc94b503472485b6aaf8b1",
+      "e77288a4cbfdeff2de4a841add5a33c7e30b230b46a24e686b33d135f5e60fe2"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S089",
+    "source": "research",
+    "source_path": "docs/research-v2/FULL_BASELINE_TEST_REPORT.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "63985a1d37fadf21be9863e51747e396a2b448c2ed8cdf28e9f8dc6191120df4",
+    "source_bytes": 3587,
+    "public_excerpt": "evidence/S089.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S090",
+    "source": "research",
+    "source_path": "docs/research-v2/GIT_CLEANUP_REPORT.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "86cedef17921871d6843cd18e80119251ba4dc02d0a7a81525912d4a9d78bd84",
+    "source_bytes": 10471,
+    "public_excerpt": "evidence/S090.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [
+      "11d772ad63d9af8af733623182b8267363ab98dcc7f451c0b12b54e3bfade827"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S091",
+    "source": "research",
+    "source_path": "docs/research-v2/PHASE3_E1_ROUTER.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "eec28f7f34f61c0d6773404ecd72e4d312298b5d4359d682dabc480716dc423d",
+    "source_bytes": 6701,
+    "public_excerpt": "evidence/S091.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S092",
+    "source": "research",
+    "source_path": "docs/research-v2/PHASE3_E5_CACHE.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "5ddabb2d3c342eb02de880beb502e57a86e9e7616127046d89cd9aaf5416cdfa",
+    "source_bytes": 4932,
+    "public_excerpt": "evidence/S092.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S093",
+    "source": "research",
+    "source_path": "docs/research-v2/PHASE3_FAILURE_REGRESSION.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "1c801589547e81c86026678d38d5fbe86989c19ccb8e240ea23ee1e7bd3fe587",
+    "source_bytes": 6120,
+    "public_excerpt": "evidence/S093.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S094",
+    "source": "research",
+    "source_path": "docs/research-v2/PHASE3_PAIRED_DIAGNOSIS.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "e493ccb1c3752d5ba0277ff7a46570ddaa1174bb7697fffad68d653d9b1d466d",
+    "source_bytes": 6762,
+    "public_excerpt": "evidence/S094.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S095",
+    "source": "research",
+    "source_path": "docs/research-v2/PHASE4_E5_APPLICATION_BENCHMARK.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "bf13a152f9f279d4bca79c604fe301c3df21c996b6c23e522357a86b925c3377",
+    "source_bytes": 4220,
+    "public_excerpt": "evidence/S095.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S096",
+    "source": "research",
+    "source_path": "docs/research-v2/PHASE4_E6_IMPLEMENTATION.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "a4523993c1ac36e2a9e5b445e9499066a0e54ce6d28d09712e4d93e4b6321a63",
+    "source_bytes": 5313,
+    "public_excerpt": "evidence/S096.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S097",
+    "source": "research",
+    "source_path": "docs/research-v2/PHASE4_E6_OFFLINE_RESULTS.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "e58146d4c796e7ba3190a625cbd3bbc327a0264b8e3420a3fa71f3efbf0afcd0",
+    "source_bytes": 4709,
+    "public_excerpt": "evidence/S097.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S098",
+    "source": "research",
+    "source_path": "docs/research-v2/PHASE4_RESOLUTION_DIAGNOSIS.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "2d2ecff1023adecc81369e1cbff51a1fd36595ba4fcac51e9cf544eace3311af",
+    "source_bytes": 6411,
+    "public_excerpt": "evidence/S098.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S099",
+    "source": "research",
+    "source_path": "docs/research-v2/PHASE4_SCREENING_PROPOSAL.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "1c1e6f9527cbdf0cf02b1a579d45d00e59a08e8ad69d11d236709596fa5cc4c9",
+    "source_bytes": 5298,
+    "public_excerpt": "evidence/S099.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S100",
+    "source": "research",
+    "source_path": "docs/research-v2/PHASE5_EXECUTION_PREPARATION.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "66d0e5b659822cf44ca5ffab87fef0395a68da1b695d77cb258f0e019b49302b",
+    "source_bytes": 7928,
+    "public_excerpt": "evidence/S100.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [
+      "2f3abb2997211d39d54a3cf0116e6d58a56fe710cc17d5eab68efcf97696bb2e"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S101",
+    "source": "research",
+    "source_path": "docs/research-v2/POST_BASELINE_AI_REVIEW.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "5ba6f48747b6a08f151023a70b3086d04ed48b65a74aaaa68e607b517c3d0e34",
+    "source_bytes": 10662,
+    "public_excerpt": "evidence/S101.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-03"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S102",
+    "source": "research",
+    "source_path": "docs/research-v2/POST_RESOLUTION_COST_ESTIMATE.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "be251c23b0d655d7cb24653aff7342131b7fef82fa42f69f5c7a4e7e8976adb2",
+    "source_bytes": 3146,
+    "public_excerpt": "evidence/S102.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S103",
+    "source": "research",
+    "source_path": "docs/research-v2/POST_RETRY_COST_ESTIMATE.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "65b2c08761994005bfcd51f6f2bb79f5fe3d99536f3df057dfe1046e26ff089f",
+    "source_bytes": 3157,
+    "public_excerpt": "evidence/S103.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S104",
+    "source": "research",
+    "source_path": "docs/research-v2/POST_SMOKE_COST_ESTIMATE.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "e7b4fb446d068e4d8ece66eedc7cf110e224ceef33ad6f085c57ef6588e9b08e",
+    "source_bytes": 3459,
+    "public_excerpt": "evidence/S104.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S105",
+    "source": "research",
+    "source_path": "docs/research-v2/RESOLUTION_SMOKE_96000.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "40e5578edf51150be5a153a0194eabc7c4f50ed880fc270aa52bcc9b69d84dae",
+    "source_bytes": 8996,
+    "public_excerpt": "evidence/S105.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [
+      "f7d53c5ee721c182c291ba0019f26b89839ea7c6081f2dc05a3a4a56cd9d6b2e"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S106",
+    "source": "research",
+    "source_path": "docs/research-v2/SMOKE_OBSERVER.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "296034af70c188c2e716535e178b340600ac3d009fec02d5eb33f7f5a67dbe28",
+    "source_bytes": 6816,
+    "public_excerpt": "evidence/S106.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S107",
+    "source": "research",
+    "source_path": "docs/research-v2/SMOKE_RESULT.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "fb57e98813ca9c59b421afe6c37224fc77501189476d33cbb986458fb5d423eb",
+    "source_bytes": 9790,
+    "public_excerpt": "evidence/S107.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [
+      "c25a6ef2f6d5758b4fc9ad4e7702f3d0be344dcd762e72f118920ffc5a888ad8"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S108",
+    "source": "research",
+    "source_path": "docs/research-v2/SMOKE_RETRY_32768.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "294dfea25a99b7a7ae04a77b50b594f0236dd17deda26c3435cedb7e64de78cd",
+    "source_bytes": 9801,
+    "public_excerpt": "evidence/S108.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [
+      "64f69c9ac25faf130669bfe038eeb8b2bb41a281b2fd88881a08f8b6873f91d9"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S109",
+    "source": "research",
+    "source_path": "experiments/dynamic-validation/README.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "fdd266e8b503ff36b8af48a6c43366dbe0771af975771ca3e6d6bbac1e5d6206",
+    "source_bytes": 1052,
+    "public_excerpt": "evidence/S109.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S110",
+    "source": "research",
+    "source_path": "experiments/integration-acceptance-20261101/README.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "be85ea1155fbb069256efb43e4ee66cd299ce0d61b283904c851c93d4204b14f",
+    "source_bytes": 3775,
+    "public_excerpt": "evidence/S110.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S111",
+    "source": "research",
+    "source_path": "experiments/research-v2/README.md",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "archive_ref": null,
+    "source_sha256": "6e374709cd6b361b3cc404ec75b636782938f593a2624ea7749cd0987ae2014e",
+    "source_bytes": 9205,
+    "public_excerpt": "evidence/S111.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-11-01"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S112",
+    "source": "main",
+    "source_path": "experiments/answer-diagnostics-20261029/README.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "aa3057ab208b5ede13a92ac8c28238295bc800b8e2b304b68538a24bbe9b55e7",
+    "source_bytes": 4391,
+    "public_excerpt": "evidence/S112.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [
+      "23051252963182fcf07c01d56f05fc1c710b8abc15ba55676903fafa36ad09d1"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S113",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/README.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "f04a82bcff80a16923e5df268c170ed706ac481c8af47255def9ee11683be469",
+    "source_bytes": 13442,
+    "public_excerpt": "evidence/S113.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S114",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/REVIEW.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "cb8d51decd8ec5f479166676f1a08dff163623a357cd8f968516445f5a201afb",
+    "source_bytes": 4210,
+    "public_excerpt": "evidence/S114.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S115",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/32k-conv41-diagnostic-proposal-20261028.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "cc2b72a3efd8102651d360a19f9b1822c4e850c84618368a4db2354c87bbe09a",
+    "source_bytes": 4899,
+    "public_excerpt": "evidence/S115.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S116",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/32k-conv41-extraction-recovery-20261028.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "b4afb8714abfa7bd22576b102b706d1ea7ccba0f98a3bf806c31645c31754f83",
+    "source_bytes": 4458,
+    "public_excerpt": "evidence/S116.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S117",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/32k-second-recovery-proposal-20261028.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "3cf33fe08439fd87ca932533542ff7ca1e0bdc81cf35f582a9ccfd013234f26d",
+    "source_bytes": 4544,
+    "public_excerpt": "evidence/S117.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S118",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/32k-transport-recovery-20261028.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "471693850bc1a56885f9955ba785ddfaa0c2e3678a45ebdcd1852dcbb26c8491",
+    "source_bytes": 3704,
+    "public_excerpt": "evidence/S118.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S119",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/existing-case-audit.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "0593afd225b76737719617fdbd0b73dfc233256065c4874cb7fc6f155bd82c44",
+    "source_bytes": 1151,
+    "public_excerpt": "evidence/S119.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S120",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/independent-reference-review-20261028/README.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "8691632406b5e21079e452092329d3c7279f1e292cbcd32254a4d9f99765f946",
+    "source_bytes": 3405,
+    "public_excerpt": "evidence/S120.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S121",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/recovery-107-proposal-20261028.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "10cf70d8e9629cdf341af5370ce89f6341272911aefe8670e30c962c75a55a2e",
+    "source_bytes": 5253,
+    "public_excerpt": "evidence/S121.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S122",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/recovery-20261028.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "904f36ef7ae529eeab93c76087a1ab4e54d42a1998aa20c8774090b1c086a62a",
+    "source_bytes": 2227,
+    "public_excerpt": "evidence/S122.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S123",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/relation-budget-32768-20261028.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "7b9cd6d270412600049d42a11e8e1ff7cb5f20b2271d48c469b94d64869baffd",
+    "source_bytes": 6341,
+    "public_excerpt": "evidence/S123.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S124",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/run-start.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "a67c51cefc55bb0766aa09361d321ba993dea606d97ed173d53def940776ded7",
+    "source_bytes": 2301,
+    "public_excerpt": "evidence/S124.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-27"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S125",
+    "source": "main",
+    "source_path": "experiments/resolution-contract-20261028/README.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "1dcb8a135a8e6af3417d0fd3874a7f7189c61d54e2fa04ec2aa5722aaf908090",
+    "source_bytes": 4275,
+    "public_excerpt": "evidence/S125.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S126",
+    "source": "main",
+    "source_path": "experiments/resolution-contract-20261028/RESULTS.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "7b1399873de8a610a12787e0cba984a8ab993ea0fbd7e3bb93b8ea8a1d0e8cfa",
+    "source_bytes": 2288,
+    "public_excerpt": "evidence/S126.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S127",
+    "source": "main",
+    "source_path": "experiments/resolution-contract-20261028/STATUS.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "6106ace26c94505c016fb7c4d9903cdb27754784fbf5b445711940b0f552b786",
+    "source_bytes": 4111,
+    "public_excerpt": "evidence/S127.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S128",
+    "source": "main",
+    "source_path": "experiments/two-conversation-mini-20261028/CURRENT.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "ee6b87dbfbcf7dc0884e6e69b589f993b1e0b077928b606a5a81154775a51918",
+    "source_bytes": 1919,
+    "public_excerpt": "evidence/S128.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28",
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S129",
+    "source": "main",
+    "source_path": "experiments/two-conversation-mini-20261028/FAILURE.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "e7fae767ad83b0a97f4f878cb8ba38321293bc436ebbaa4a67360ed05911b5ce",
+    "source_bytes": 1784,
+    "public_excerpt": "evidence/S129.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S130",
+    "source": "main",
+    "source_path": "experiments/two-conversation-mini-20261028/README.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "0ccca50a19b295d660cca851a367cb5c11e003736aa04611bf953279fd6758d4",
+    "source_bytes": 4584,
+    "public_excerpt": "evidence/S130.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S131",
+    "source": "main",
+    "source_path": "experiments/two-conversation-mini-20261028/review/README.md",
+    "source_commit": "1d93531b70fdf0d3632b0134a5c8f9364a4ed031",
+    "archive_ref": "archive/20261101-pre-v2/codex/answer-diagnostics-20261029",
+    "source_sha256": "85c9554fa456c6ee9db19a171c86d3f4dfb662df9ae7c25d7661142829ec596e",
+    "source_bytes": 3596,
+    "public_excerpt": "evidence/S131.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28",
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S132",
+    "source": "main",
+    "source_path": "experiments/conv30-ad-mini-20261028/COURSE-REPORT.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "617d47010ba61dabb99dab536f6276ba7495623ce0b66afd4783a2e5458fd78d",
+    "source_bytes": 6620,
+    "public_excerpt": "evidence/S132.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S133",
+    "source": "main",
+    "source_path": "experiments/conv30-ad-mini-20261028/EXECUTION.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "a5fd6d09d34c6894f2e3fc1f0421d42c2323a25b9dedd857c9c810014bfec560",
+    "source_bytes": 3354,
+    "public_excerpt": "evidence/S133.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S134",
+    "source": "main",
+    "source_path": "experiments/conv30-ad-mini-20261028/README.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "23aaf8935db2ad2936d0cd05e7b7f8f5c58a68ea7a2e280f073d727f07f79ead",
+    "source_bytes": 2918,
+    "public_excerpt": "evidence/S134.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S135",
+    "source": "main",
+    "source_path": "experiments/conv30-ad-mini-20261028/REVIEWED-RESULTS.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "f30c6e8a9f1268b7db7aa52864cb8713c234150262d36a99bbcd418e0fc84072",
+    "source_bytes": 5019,
+    "public_excerpt": "evidence/S135.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S136",
+    "source": "main",
+    "source_path": "experiments/conv30-ad-mini-20261028/execution-v1/RESULTS.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "359091d6affd1d2ac459b4626a43303991292234fae06419d5b32282570625f2",
+    "source_bytes": 3368,
+    "public_excerpt": "evidence/S136.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S137",
+    "source": "main",
+    "source_path": "experiments/conv30-ad-mini-20261028/execution-v1/TRACE-ASSESSMENT.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "9b7ac7d9f6b9847475157cbc229cc0e5749bf1beb894d653eaff2f85d1fb689c",
+    "source_bytes": 3450,
+    "public_excerpt": "evidence/S137.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S138",
+    "source": "main",
+    "source_path": "experiments/conv30-ad-mini-20261028/execution-v1/blind-review/README.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "d3f7c73abd28c56ef9f701810a1e8c176b24edd307c804586a8036bd1f36b90e",
+    "source_bytes": 1015,
+    "public_excerpt": "evidence/S138.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S139",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/README.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "6ab6911943d1981e86c7571f06bd6d63f3b79d1e18ed5f51eec45c883faff000",
+    "source_bytes": 13851,
+    "public_excerpt": "evidence/S139.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S140",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/anchor-factorial-20261028/RUNBOOK.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "6dcab7bd28340fc1dc67df6a4ae48a3c3c4336a2c7233168df4adc844bba19f5",
+    "source_bytes": 7240,
+    "public_excerpt": "evidence/S140.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S141",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/anchor-factorial-20261028/design.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "8d2b1ac984aa0a102488c6aff8dc898f2b221f2bc48f62833bd7f5725acbfb64",
+    "source_bytes": 13819,
+    "public_excerpt": "evidence/S141.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S142",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/anchor-factorial-20261028/source-review-package/README.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "f98236f1950f5a898b771210eddcf671e28753ef1b37c1e0e150895dc7d84963",
+    "source_bytes": 1219,
+    "public_excerpt": "evidence/S142.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S143",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/anchor-factorial-20261028/stage1-output-review-package/README.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "a0e84d3ea4d7250fcf0dd36b808dd24496213f7185ccd43d9a92a12e5bacef46",
+    "source_bytes": 2603,
+    "public_excerpt": "evidence/S143.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S144",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/anchor-factorial-20261028/stage1-results.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "18d11123c359c7f48961d8b957295d386a433d697d51281a0e344f2ab8452aa6",
+    "source_bytes": 3859,
+    "public_excerpt": "evidence/S144.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S145",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/results/anchor-feedback-probe-proposal-20261028.md",
+    "source_commit": "94491c1a8a15c833ea48e5e53ae8ee88f4fb971a",
+    "archive_ref": "archive/20261101-pre-v2/codex/extraction-anchor-feedback-20261028",
+    "source_sha256": "22c12d51411f54b3f2ad2dd5679ef155ae0a34c68474a18e19dcba6a791e0083",
+    "source_bytes": 5086,
+    "public_excerpt": "evidence/S145.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S146",
+    "source": "main",
+    "source_path": "docs/integration/20261031/AUDIT.md",
+    "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+    "archive_ref": "archive/20261101-pre-v2/codex/integration-baseline-20261031",
+    "source_sha256": "178bb16ad9442757da525b1d5fbb21ff99da912ce30219234cc33997e3e72745",
+    "source_bytes": 7509,
+    "public_excerpt": "evidence/S146.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-31"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S147",
+    "source": "main",
+    "source_path": "docs/integration/20261031/CODE_REVIEW.md",
+    "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+    "archive_ref": "archive/20261101-pre-v2/codex/integration-baseline-20261031",
+    "source_sha256": "cf1e1daf47bf39a35bf92a06ce5ba42eed6b0b8f93f0edd40d471481051858e7",
+    "source_bytes": 4358,
+    "public_excerpt": "evidence/S147.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S148",
+    "source": "main",
+    "source_path": "docs/integration/20261031/INVENTORY.md",
+    "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+    "archive_ref": "archive/20261101-pre-v2/codex/integration-baseline-20261031",
+    "source_sha256": "19c56675b1155f3c93194a4d9149f64f6372087f8bd2e7274d79aea14c86152e",
+    "source_bytes": 7310,
+    "public_excerpt": "evidence/S148.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S149",
+    "source": "main",
+    "source_path": "docs/integration/20261031/REPORT.md",
+    "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+    "archive_ref": "archive/20261101-pre-v2/codex/integration-baseline-20261031",
+    "source_sha256": "406c31d3db7648f29807eefb7368d2da741b9c71e20a7cf16abe5d9c59eab8ae",
+    "source_bytes": 20776,
+    "public_excerpt": "evidence/S149.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [
+      "d635dc923d29a6010feb0240cff796be5b3a6031f24263806fd8a4b2a2403f7e"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S150",
+    "source": "main",
+    "source_path": "docs/integration/20261101/ACCEPTANCE_REPORT.md",
+    "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+    "archive_ref": "archive/20261101-pre-v2/codex/integration-baseline-20261031",
+    "source_sha256": "cbd745b49a086f15950d094424706890f543b8b389e703533356cb70da9fff5f",
+    "source_bytes": 12751,
+    "public_excerpt": "evidence/S150.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [
+      "f4935678eb9184fa9062f05bb693dc313e09206490b14c441aa451515568d755"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S151",
+    "source": "main",
+    "source_path": "docs/integration/20261101/NEXT_EXPERIMENTS.md",
+    "source_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+    "archive_ref": "archive/20261101-pre-v2/codex/integration-baseline-20261031",
+    "source_sha256": "17d394f18b9290889aac0c5f18da8fe2a38ec8f072a5da89a9a168698d906af8",
+    "source_bytes": 6073,
+    "public_excerpt": "evidence/S151.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-31"
+    ],
+    "fingerprints_mentioned": [
+      "d635dc923d29a6010feb0240cff796be5b3a6031f24263806fd8a4b2a2403f7e"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S152",
+    "source": "main",
+    "source_path": "docs/integration/20261101-followup/REPORT.md",
+    "source_commit": "de3af7396243bd6505daedeea2df8813567b8a2c",
+    "archive_ref": "archive/20261101-pre-v2/codex/integration-followup-20261101",
+    "source_sha256": "5f8816dba9aba2fa637543f98601d1fc2dba27e42a0bfc4383c175b25bfa886d",
+    "source_bytes": 12267,
+    "public_excerpt": "evidence/S152.md",
+    "dates_mentioned_not_run_dates": [],
+    "fingerprints_mentioned": [
+      "640745254ef1670bf818f96de686031d1f90e003e1e2a46700078857350263ea",
+      "8ec5c6ced62fff98d9c06a67494e77dad83d5e9073d01611a0795fd969894dac",
+      "f4935678eb9184fa9062f05bb693dc313e09206490b14c441aa451515568d755"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S153",
+    "source": "main",
+    "source_path": "experiments/issue-15-live-validation.md",
+    "source_commit": "89ab907bb8b2c9e1ed501ddbb8e8b9f359b476df",
+    "archive_ref": "archive/20261101-pre-v2/codex/issue-15-review-fixes",
+    "source_sha256": "205bfce29d6aa22502c31d1251a5abd576923e90273dd7a2a84c89658fb04b3f",
+    "source_bytes": 1669,
+    "public_excerpt": "evidence/S153.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S154",
+    "source": "main",
+    "source_path": "experiments/issue-15-live-validation.md",
+    "source_commit": "7f0602342dafa4b34e0c39acf772a6de69b5fde3",
+    "archive_ref": "archive/20261101-pre-v2/codex/retro-credential-navigation",
+    "source_sha256": "d9dc4ef1c69cc2c0aff9a73a03afeba91221bf65d2ff6f9900d44bc43ebc6450",
+    "source_bytes": 5814,
+    "public_excerpt": "evidence/S154.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [
+      "543cb6e3f768c60a8dff1cec56437e3d5d87ac0cd77a3aa560ccc8cb6c9bb40a"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S155",
+    "source": "main",
+    "source_path": "experiments/issue-15-relation-evidence-followup/README.md",
+    "source_commit": "7f0602342dafa4b34e0c39acf772a6de69b5fde3",
+    "archive_ref": "archive/20261101-pre-v2/codex/retro-credential-navigation",
+    "source_sha256": "0337dd3ac3a1e95d4190bf773b818e884edd4c5d65f5f3981cc4a1ef15af966e",
+    "source_bytes": 7417,
+    "public_excerpt": "evidence/S155.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-20"
+    ],
+    "fingerprints_mentioned": [
+      "13497e43f418275585532d7d8a3a2bb326035662ed6eef67f41a05b6e8f46116",
+      "b6d38a90328a403651da8582a078d1015f9a2ead7ac4db42adaa56d9416bfcd0"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S156",
+    "source": "main",
+    "source_path": "experiments/dynamic-validation/README.md",
+    "source_commit": "c53d1920fa12b5b4950c436a7b424bb27cf44605",
+    "archive_ref": "archive/20261101-pre-v2/codex/top145-final-exploration-20261030",
+    "source_sha256": "d27e87b804c28ddbbef75d2fe068a02bb27e25f0108a8ae65d1462780c713f51",
+    "source_bytes": 14334,
+    "public_excerpt": "evidence/S156.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-28"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S157",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/README.md",
+    "source_commit": "08f79ccae1c54e77dbcc23863008acd0aad13fe7",
+    "archive_ref": "archive/20261101-pre-v2/codex/top7-iteration-20261029",
+    "source_sha256": "143950bf31cee72f38a99fbacf164b6eb08cc0b1e6a5f2a6fc95f8acc426ca49",
+    "source_bytes": 4938,
+    "public_excerpt": "evidence/S157.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S158",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/continuation/README.md",
+    "source_commit": "08f79ccae1c54e77dbcc23863008acd0aad13fe7",
+    "archive_ref": "archive/20261101-pre-v2/codex/top7-iteration-20261029",
+    "source_sha256": "86f757f9048eee2647eec85ca5a2a984a668d8491a09b959683e4e73e07b6840",
+    "source_bytes": 8889,
+    "public_excerpt": "evidence/S158.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [
+      "71d957582c5d97eaae50af317139c69b78f418a17f7538394b44d61638ad248a"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S159",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/README.md",
+    "source_commit": "6ee0c571d3efcdc162299cdd3974810b56dc7e66",
+    "archive_ref": "archive/20261101-pre-v2/codex/top7-retry-budget-20261029",
+    "source_sha256": "c3e38eccf81d7f7257ec8119c3c136ce3ac0f0a0ca58225f75bd7d4abf7cd9fd",
+    "source_bytes": 5207,
+    "public_excerpt": "evidence/S159.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S160",
+    "source": "main",
+    "source_path": "experiments/top7-iteration-20261029/continuation/README.md",
+    "source_commit": "6ee0c571d3efcdc162299cdd3974810b56dc7e66",
+    "archive_ref": "archive/20261101-pre-v2/codex/top7-retry-budget-20261029",
+    "source_sha256": "34d0dc9086d643fc27606ee41d979178750a572ed397b5e45d651c4c43657b5b",
+    "source_bytes": 11978,
+    "public_excerpt": "evidence/S160.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [
+      "71d957582c5d97eaae50af317139c69b78f418a17f7538394b44d61638ad248a",
+      "bf59b7599aca4f3be3828f73b230dc80c93915d7629a2ae2be116c0d56a035a7"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S161",
+    "source": "main",
+    "source_path": "experiments/verbatim-memory-20261029/README.md",
+    "source_commit": "c8eeb11952b8c24810eb395d5cf0d83502bb60a6",
+    "archive_ref": "archive/20261101-pre-v2/codex/verbatim-memory-validation-20261029",
+    "source_sha256": "f29af049228f09edfad6c1d31d2f533b87325e54e66bad5aad31a776f2962f08",
+    "source_bytes": 14378,
+    "public_excerpt": "evidence/S161.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29"
+    ],
+    "fingerprints_mentioned": [],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "id": "S162",
+    "source": "main",
+    "source_path": "experiments/verbatim-memory-20261029/REPORT.md",
+    "source_commit": "c8eeb11952b8c24810eb395d5cf0d83502bb60a6",
+    "archive_ref": "archive/20261101-pre-v2/codex/verbatim-memory-validation-20261029",
+    "source_sha256": "ff70392cb29a24f700f67b188336651303d66d4c4e7ae50cc173e8478e6107cb",
+    "source_bytes": 15813,
+    "public_excerpt": "evidence/S162.md",
+    "dates_mentioned_not_run_dates": [
+      "2026-10-29",
+      "2026-10-30"
+    ],
+    "fingerprints_mentioned": [
+      "bd7ab81685382cdb865a19a514cef34267bba1b4c404c7eb9727bb18fb1ae994"
+    ],
+    "review": "AI curator; not independent human review",
+    "original_classification": "HOLD",
+    "original_reason": "historical context, corpus quotations and linked controlled artifacts require further review; sanitized excerpt published",
+    "license": "Project-authored narrative; publication authorized by owner 2026-11-03; no new reuse license; third-party corpus quotations excluded"
+  },
+  {
+    "source": "production",
+    "source_path": "docs/integration/production-v1/REPORT.md",
+    "source_commit": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
+    "archive_ref": null,
+    "id": "S163",
+    "source_sha256": "515a3f93e47bb59f0f878ecafa012d53622b548358448e72bd4edf7d44ca4302",
+    "source_bytes": 16480,
+    "public_excerpt": "evidence/S163.md",
+    "original_classification": "HOLD",
+    "review": "AI curator; not independent human review",
+    "license": "Project report; publication authorized by owner; no reuse license added"
+  }
+]

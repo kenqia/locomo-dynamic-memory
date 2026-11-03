@@ -1,0 +1,20 @@
+[
+  {
+    "path": "tools/research_v2/resolution_planner.py",
+    "source_path": "tools/research_v2/resolution_planner.py",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "source_sha256": "f8bdfa92185dabe909cc3f3140b8439a5d86c0cde6ab6e6908455206bd84d843",
+    "transformation": "byte-identical committed source; synthetic test archived at separate path",
+    "review": "AI source review; no independent human approval",
+    "license": "project-owned source, owner authorized publication; no repository LICENSE found, no new reuse license"
+  },
+  {
+    "path": "docs/research-process/code/test_phase4_resolution.py",
+    "source_path": "tests/test_phase4_resolution.py",
+    "source_commit": "c2a7ca173b9f14c9a7d32ae6ef2f1143403cd404",
+    "source_sha256": "311c8422cb344948b77d3f07a4b3faa19fbac173c19cb08d1b07c2c42921435d",
+    "transformation": "byte-identical committed source; synthetic test archived at separate path",
+    "review": "AI source review; no independent human approval",
+    "license": "project-owned source, owner authorized publication; no repository LICENSE found, no new reuse license"
+  }
+]

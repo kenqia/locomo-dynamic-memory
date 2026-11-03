@@ -1,3 +1,5 @@
+> [研究过程档案（截至2026-11-03）](docs/research-process/README.md)：时间线、42项探索、失败/回滚、来源SHA与公开边界。
+
 # LoCoMo Dynamic Memory v2
 
 2026-11-03–11-08 六天交付冲刺。进入 [团队启动入口](docs/team-v2/README.md) 查看分工、15 个 Issue、分支、离线 Demo 与验收。

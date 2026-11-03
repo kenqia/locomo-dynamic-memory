@@ -1,0 +1,477 @@
+{
+  "rule": "same Run+ordinal is one logical item; supplemental/repair have new Run IDs; one source path may have multiple historical content hashes; report versions do not count as new experiments",
+  "source_versions": 163,
+  "distinct_narrative_paths": 153,
+  "families": {
+    "experiments/current-showcase/README.md": [
+      "S001"
+    ],
+    "experiments/current-showcase/results/analysis.md": [
+      "S002"
+    ],
+    "experiments/current-showcase/results/answer-source-review.md": [
+      "S003"
+    ],
+    "experiments/current-showcase/results/dynamic-review.md": [
+      "S004"
+    ],
+    "experiments/current-showcase/results/report.md": [
+      "S005"
+    ],
+    "experiments/issue-10-version-validation.md": [
+      "S006"
+    ],
+    "experiments/issue-11-evaluation-validation.md": [
+      "S007"
+    ],
+    "experiments/issue-12-integration-validation.md": [
+      "S008"
+    ],
+    "experiments/issue-15-answer-output-live/README.md": [
+      "S009"
+    ],
+    "experiments/issue-15-answer-output-live/results/analysis.md": [
+      "S010"
+    ],
+    "experiments/issue-15-answer-output-live/results/comparison.md": [
+      "S011"
+    ],
+    "experiments/issue-15-answer-output-live/results/report.md": [
+      "S012"
+    ],
+    "experiments/issue-15-answer-output/validation.md": [
+      "S013"
+    ],
+    "experiments/issue-15-closure/README.md": [
+      "S014"
+    ],
+    "experiments/issue-15-diagnostics-validation.md": [
+      "S015"
+    ],
+    "experiments/issue-15-evidence-coverage-live/README.md": [
+      "S016"
+    ],
+    "experiments/issue-15-evidence-coverage-live/results/analysis.md": [
+      "S017"
+    ],
+    "experiments/issue-15-evidence-coverage-live/results/report.md": [
+      "S018"
+    ],
+    "experiments/issue-15-evidence-coverage/rollback-p0-p1.md": [
+      "S019"
+    ],
+    "experiments/issue-15-evidence-coverage/validation.md": [
+      "S020"
+    ],
+    "experiments/issue-15-final-review.md": [
+      "S021"
+    ],
+    "experiments/issue-15-live-continuation/README.md": [
+      "S022"
+    ],
+    "experiments/issue-15-live-validation.md": [
+      "S023",
+      "S153",
+      "S154"
+    ],
+    "experiments/issue-15-offline-relation-diagnosis/README.md": [
+      "S024"
+    ],
+    "experiments/issue-15-quality/README.md": [
+      "S025"
+    ],
+    "experiments/issue-15-quality/review.md": [
+      "S026"
+    ],
+    "experiments/issue-15-query-reliability/README.md": [
+      "S027"
+    ],
+    "experiments/issue-15-query-reliability/citation-results/report.md": [
+      "S028"
+    ],
+    "experiments/issue-15-query-reliability/followup-results/report.md": [
+      "S029"
+    ],
+    "experiments/issue-15-query-reliability/followup.md": [
+      "S030"
+    ],
+    "experiments/issue-15-query-reliability/live-results/report.md": [
+      "S031"
+    ],
+    "experiments/issue-15-query-reliability/recheck.md": [
+      "S032"
+    ],
+    "experiments/issue-15-relation-contract-replay/README.md": [
+      "S033"
+    ],
+    "experiments/issue-15-relation-evidence-followup/README.md": [
+      "S034",
+      "S155"
+    ],
+    "experiments/issue-15-relation-failure-diagnosis.md": [
+      "S035"
+    ],
+    "experiments/issue-15-relation-output-fix.md": [
+      "S036"
+    ],
+    "experiments/issue-15-review-fixes.md": [
+      "S037"
+    ],
+    "experiments/issue-15-thinking-qa/README.md": [
+      "S038"
+    ],
+    "experiments/issue-15-thinking-qa/results/analysis.md": [
+      "S039"
+    ],
+    "experiments/issue-15-thinking-qa/results/report.md": [
+      "S040"
+    ],
+    "experiments/issue-15-v6-gates/README.md": [
+      "S041"
+    ],
+    "experiments/issue-15-v6-gates/controls-reassessment.md": [
+      "S042"
+    ],
+    "experiments/issue-15-v6-gates/semantic-v6-audit.md": [
+      "S043"
+    ],
+    "experiments/issue-15-v6-gates/v6.1/same-key-pre-review.md": [
+      "S044"
+    ],
+    "experiments/issue-15-v6-gates/v6.1/semantic-audit.md": [
+      "S045"
+    ],
+    "experiments/issue-16-development-plan-validation.md": [
+      "S046"
+    ],
+    "experiments/issue-17-recovery-validation.md": [
+      "S047"
+    ],
+    "experiments/issue-18-full-text-validation.md": [
+      "S048"
+    ],
+    "experiments/issue-19-failure-report-validation.md": [
+      "S049"
+    ],
+    "experiments/issue-20-runner-validation.md": [
+      "S050"
+    ],
+    "experiments/issue-4-implementation.md": [
+      "S051"
+    ],
+    "experiments/issue-4-review-fixes.md": [
+      "S052"
+    ],
+    "experiments/issue-4-review.md": [
+      "S053"
+    ],
+    "experiments/issue-5-import-validation.md": [
+      "S054"
+    ],
+    "experiments/issue-6-extraction-validation.md": [
+      "S055"
+    ],
+    "experiments/issue-7-retrieval-validation.md": [
+      "S056"
+    ],
+    "experiments/issue-8-relations-validation.md": [
+      "S057"
+    ],
+    "experiments/issue-9-query-validation.md": [
+      "S058"
+    ],
+    "experiments/retro-validation-guardrails.md": [
+      "S059"
+    ],
+    "experiments/top7-iteration-20261029/README.md": [
+      "S060",
+      "S157",
+      "S159"
+    ],
+    "experiments/top7-iteration-20261029/continuation/CONTRACTS.md": [
+      "S061"
+    ],
+    "experiments/top7-iteration-20261029/continuation/LIVE-V2.md": [
+      "S062"
+    ],
+    "experiments/top7-iteration-20261029/continuation/PAIRED-VALIDATION.md": [
+      "S063"
+    ],
+    "experiments/top7-iteration-20261029/continuation/README.md": [
+      "S064",
+      "S158",
+      "S160"
+    ],
+    "experiments/top7-iteration-20261029/continuation/semantic-review-v2/README.md": [
+      "S065"
+    ],
+    "experiments/top7-iteration-20261029/open-exploration-r2/README.md": [
+      "S066"
+    ],
+    "experiments/top7-iteration-20261029/open-exploration-r2/next-reader/README.md": [
+      "S067"
+    ],
+    "experiments/top7-iteration-20261029/open-exploration-r2/reader-v2-code-review.md": [
+      "S068"
+    ],
+    "experiments/top7-iteration-20261029/open-exploration/README.md": [
+      "S069"
+    ],
+    "experiments/top7-iteration-20261029/top145-final/README.md": [
+      "S070"
+    ],
+    "experiments/top7-iteration-20261029/top145-next/README.md": [
+      "S071"
+    ],
+    "experiments/top7-iteration-20261029/top145-open/README.md": [
+      "S072"
+    ],
+    "experiments/top7-iteration-20261029/top145-repair-context/README.md": [
+      "S073"
+    ],
+    "docs/research-v2/BASELINE_COST_ESTIMATE.md": [
+      "S074"
+    ],
+    "docs/research-v2/BASELINE_READINESS_REPORT.md": [
+      "S075"
+    ],
+    "docs/research-v2/EXPERIMENT_ROADMAP.md": [
+      "S076"
+    ],
+    "docs/research-v2/FAILURE_ATLAS.md": [
+      "S077"
+    ],
+    "docs/research-v2/FULL_BASELINE_ANSWER_REPAIR_8.md": [
+      "S078"
+    ],
+    "docs/research-v2/FULL_BASELINE_BUILD_RECOVERY.md": [
+      "S079"
+    ],
+    "docs/research-v2/FULL_BASELINE_COST_APPROVAL.md": [
+      "S080"
+    ],
+    "docs/research-v2/FULL_BASELINE_PARALLEL_2.md": [
+      "S081"
+    ],
+    "docs/research-v2/FULL_BASELINE_PREFLIGHT_REPORT.md": [
+      "S082"
+    ],
+    "docs/research-v2/FULL_BASELINE_QUERY_RESUME_1.md": [
+      "S083"
+    ],
+    "docs/research-v2/FULL_BASELINE_RECOVERY42_2.md": [
+      "S084"
+    ],
+    "docs/research-v2/FULL_BASELINE_RESUME_1.md": [
+      "S085"
+    ],
+    "docs/research-v2/FULL_BASELINE_RESUME_2.md": [
+      "S086"
+    ],
+    "docs/research-v2/FULL_BASELINE_RESUME_3.md": [
+      "S087"
+    ],
+    "docs/research-v2/FULL_BASELINE_SUPPLEMENTAL_RETRY_192000.md": [
+      "S088"
+    ],
+    "docs/research-v2/FULL_BASELINE_TEST_REPORT.md": [
+      "S089"
+    ],
+    "docs/research-v2/GIT_CLEANUP_REPORT.md": [
+      "S090"
+    ],
+    "docs/research-v2/PHASE3_E1_ROUTER.md": [
+      "S091"
+    ],
+    "docs/research-v2/PHASE3_E5_CACHE.md": [
+      "S092"
+    ],
+    "docs/research-v2/PHASE3_FAILURE_REGRESSION.md": [
+      "S093"
+    ],
+    "docs/research-v2/PHASE3_PAIRED_DIAGNOSIS.md": [
+      "S094"
+    ],
+    "docs/research-v2/PHASE4_E5_APPLICATION_BENCHMARK.md": [
+      "S095"
+    ],
+    "docs/research-v2/PHASE4_E6_IMPLEMENTATION.md": [
+      "S096"
+    ],
+    "docs/research-v2/PHASE4_E6_OFFLINE_RESULTS.md": [
+      "S097"
+    ],
+    "docs/research-v2/PHASE4_RESOLUTION_DIAGNOSIS.md": [
+      "S098"
+    ],
+    "docs/research-v2/PHASE4_SCREENING_PROPOSAL.md": [
+      "S099"
+    ],
+    "docs/research-v2/PHASE5_EXECUTION_PREPARATION.md": [
+      "S100"
+    ],
+    "docs/research-v2/POST_BASELINE_AI_REVIEW.md": [
+      "S101"
+    ],
+    "docs/research-v2/POST_RESOLUTION_COST_ESTIMATE.md": [
+      "S102"
+    ],
+    "docs/research-v2/POST_RETRY_COST_ESTIMATE.md": [
+      "S103"
+    ],
+    "docs/research-v2/POST_SMOKE_COST_ESTIMATE.md": [
+      "S104"
+    ],
+    "docs/research-v2/RESOLUTION_SMOKE_96000.md": [
+      "S105"
+    ],
+    "docs/research-v2/SMOKE_OBSERVER.md": [
+      "S106"
+    ],
+    "docs/research-v2/SMOKE_RESULT.md": [
+      "S107"
+    ],
+    "docs/research-v2/SMOKE_RETRY_32768.md": [
+      "S108"
+    ],
+    "experiments/dynamic-validation/README.md": [
+      "S109",
+      "S113",
+      "S139",
+      "S156"
+    ],
+    "experiments/integration-acceptance-20261101/README.md": [
+      "S110"
+    ],
+    "experiments/research-v2/README.md": [
+      "S111"
+    ],
+    "experiments/answer-diagnostics-20261029/README.md": [
+      "S112"
+    ],
+    "experiments/dynamic-validation/REVIEW.md": [
+      "S114"
+    ],
+    "experiments/dynamic-validation/results/32k-conv41-diagnostic-proposal-20261028.md": [
+      "S115"
+    ],
+    "experiments/dynamic-validation/results/32k-conv41-extraction-recovery-20261028.md": [
+      "S116"
+    ],
+    "experiments/dynamic-validation/results/32k-second-recovery-proposal-20261028.md": [
+      "S117"
+    ],
+    "experiments/dynamic-validation/results/32k-transport-recovery-20261028.md": [
+      "S118"
+    ],
+    "experiments/dynamic-validation/results/existing-case-audit.md": [
+      "S119"
+    ],
+    "experiments/dynamic-validation/results/independent-reference-review-20261028/README.md": [
+      "S120"
+    ],
+    "experiments/dynamic-validation/results/recovery-107-proposal-20261028.md": [
+      "S121"
+    ],
+    "experiments/dynamic-validation/results/recovery-20261028.md": [
+      "S122"
+    ],
+    "experiments/dynamic-validation/results/relation-budget-32768-20261028.md": [
+      "S123"
+    ],
+    "experiments/dynamic-validation/results/run-start.md": [
+      "S124"
+    ],
+    "experiments/resolution-contract-20261028/README.md": [
+      "S125"
+    ],
+    "experiments/resolution-contract-20261028/RESULTS.md": [
+      "S126"
+    ],
+    "experiments/resolution-contract-20261028/STATUS.md": [
+      "S127"
+    ],
+    "experiments/two-conversation-mini-20261028/CURRENT.md": [
+      "S128"
+    ],
+    "experiments/two-conversation-mini-20261028/FAILURE.md": [
+      "S129"
+    ],
+    "experiments/two-conversation-mini-20261028/README.md": [
+      "S130"
+    ],
+    "experiments/two-conversation-mini-20261028/review/README.md": [
+      "S131"
+    ],
+    "experiments/conv30-ad-mini-20261028/COURSE-REPORT.md": [
+      "S132"
+    ],
+    "experiments/conv30-ad-mini-20261028/EXECUTION.md": [
+      "S133"
+    ],
+    "experiments/conv30-ad-mini-20261028/README.md": [
+      "S134"
+    ],
+    "experiments/conv30-ad-mini-20261028/REVIEWED-RESULTS.md": [
+      "S135"
+    ],
+    "experiments/conv30-ad-mini-20261028/execution-v1/RESULTS.md": [
+      "S136"
+    ],
+    "experiments/conv30-ad-mini-20261028/execution-v1/TRACE-ASSESSMENT.md": [
+      "S137"
+    ],
+    "experiments/conv30-ad-mini-20261028/execution-v1/blind-review/README.md": [
+      "S138"
+    ],
+    "experiments/dynamic-validation/results/anchor-factorial-20261028/RUNBOOK.md": [
+      "S140"
+    ],
+    "experiments/dynamic-validation/results/anchor-factorial-20261028/design.md": [
+      "S141"
+    ],
+    "experiments/dynamic-validation/results/anchor-factorial-20261028/source-review-package/README.md": [
+      "S142"
+    ],
+    "experiments/dynamic-validation/results/anchor-factorial-20261028/stage1-output-review-package/README.md": [
+      "S143"
+    ],
+    "experiments/dynamic-validation/results/anchor-factorial-20261028/stage1-results.md": [
+      "S144"
+    ],
+    "experiments/dynamic-validation/results/anchor-feedback-probe-proposal-20261028.md": [
+      "S145"
+    ],
+    "docs/integration/20261031/AUDIT.md": [
+      "S146"
+    ],
+    "docs/integration/20261031/CODE_REVIEW.md": [
+      "S147"
+    ],
+    "docs/integration/20261031/INVENTORY.md": [
+      "S148"
+    ],
+    "docs/integration/20261031/REPORT.md": [
+      "S149"
+    ],
+    "docs/integration/20261101/ACCEPTANCE_REPORT.md": [
+      "S150"
+    ],
+    "docs/integration/20261101/NEXT_EXPERIMENTS.md": [
+      "S151"
+    ],
+    "docs/integration/20261101-followup/REPORT.md": [
+      "S152"
+    ],
+    "experiments/verbatim-memory-20261029/README.md": [
+      "S161"
+    ],
+    "experiments/verbatim-memory-20261029/REPORT.md": [
+      "S162"
+    ],
+    "docs/integration/production-v1/REPORT.md": [
+      "S163"
+    ]
+  },
+  "no_project_wide_total_calls": "Historical counters overlap and include nested pipeline attribution; do not sum across reports"
+}

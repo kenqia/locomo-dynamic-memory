@@ -1,0 +1,173 @@
+{
+  "source": "../team-v2/research-evidence.json",
+  "source_sha256": "c6fbdee83a0825de24b7f0157968b4b652ceeb38e2dda43743cf044f6a0de26b",
+  "baseline": {
+    "run": "a2abe1fb49be45ccba291728e1f6b3c9",
+    "questions": 757,
+    "planned_combinations": 3028,
+    "succeeded": 2969,
+    "failed": 56,
+    "unknown": 3
+  },
+  "paired": {
+    "n": 757,
+    "pair_states": {
+      "both_succeeded": 705,
+      "hybrid_only_succeeded": 48,
+      "dynamic_only_succeeded": 3,
+      "unknown": 1
+    },
+    "comparable": 705,
+    "dynamic_wins": 136,
+    "hybrid_wins": 110,
+    "ties": 459,
+    "mean_dynamic_gain_on_wins": 0.30471073403442084,
+    "mean_dynamic_loss_on_losses": -0.20962400490220445,
+    "mean_paired_delta": 0.026073786226154243,
+    "paired_hybrid_mean": 0.5242998888931095,
+    "paired_dynamic_mean": 0.5503736751192637,
+    "hybrid": {
+      "n": 757,
+      "states": {
+        "succeeded": 753,
+        "failed": 3,
+        "unknown": 1
+      },
+      "scorable": 753,
+      "success_rate": 0.9947159841479525,
+      "successful_qa_mean": 0.5246587570800327,
+      "full_denominator_score": null,
+      "full_denominator_bounds": [
+        0.5218864518907063,
+        0.5232074558537182
+      ],
+      "unknown_score_items": 1
+    },
+    "dynamic": {
+      "n": 757,
+      "states": {
+        "succeeded": 709,
+        "failed": 48
+      },
+      "scorable": 709,
+      "success_rate": 0.9365918097754293,
+      "successful_qa_mean": 0.5500084198797083,
+      "full_denominator_score": 0.5151333813668602,
+      "full_denominator_bounds": [
+        0.5151333813668602,
+        0.5151333813668602
+      ],
+      "unknown_score_items": 0
+    },
+    "costs": {
+      "hybrid": {
+        "Query Analysis": 0.49142248,
+        "Resolution": 0.0,
+        "Answer": 9.10625688,
+        "all": 9.59767936
+      },
+      "dynamic": {
+        "Query Analysis": 0.49085448,
+        "Resolution": 96.28555104,
+        "Answer": 2.154116,
+        "all": 98.93052152
+      }
+    }
+  },
+  "e1": {
+    "out_of_fold": {
+      "outcome": {
+        "n": 757,
+        "states": {
+          "succeeded": 709,
+          "failed": 48
+        },
+        "scorable": 709,
+        "success_rate": 0.9365918097754293,
+        "successful_qa_mean": 0.5500084198797083,
+        "full_denominator_score": 0.5151333813668602,
+        "full_denominator_bounds": [
+          0.5151333813668602,
+          0.5151333813668602
+        ],
+        "unknown_score_items": 0
+      },
+      "choices": {
+        "dynamic": 757
+      },
+      "hybrid_fraction": 0.0,
+      "paired_successful_n": 705,
+      "paired_qa_mean": 0.5503736751192637,
+      "paired_delta_vs_dynamic": 0.0,
+      "selected_historical_cost_cny": 98.93052152,
+      "selected_unknown_reservation_cny": 0.0,
+      "notice": "Selected historical outcomes and costs; not new execution or measured counterfactual provider billing."
+    },
+    "semantic_quality": "Full-denominator severe errors, incorrect refusals and citation semantics not evaluated; cannot approve production adoption."
+  },
+  "e5_slice": {
+    "cold_encoding_cpu_reduction": 0.6421863909531219,
+    "cold_local_retrieval_cpu_reduction": 0.5735954745764443,
+    "warm_encoding_cpu_reduction": 0.9901986958458098,
+    "deepseek_physical_calls": 0,
+    "provider_token_saving": 0,
+    "provider_cny_saving": 0,
+    "scope": "Isolated query encoding + warm in-memory ranking replay of fixed index. Does not include production SQLite loading per query, paid analysis/resolution/answer, or new Build. Wall/CPU costs include benchmark tracing overhead; sequential phases share model warmup."
+  },
+  "additional_reported_aggregates": {
+    "supplemental": {
+      "run": "df096a57752f496d86facefe75eaf423",
+      "planned": 59,
+      "succeeded": 51,
+      "failed": 8,
+      "unknown": 0,
+      "evidence": [
+        "S088",
+        "S077",
+        "S101"
+      ]
+    },
+    "answer_repair": {
+      "run": "a9c2024b9b444224ad79cb5075f671ad",
+      "planned": 8,
+      "succeeded": 8,
+      "failed": 0,
+      "unknown": 0,
+      "evidence": [
+        "S078",
+        "S077",
+        "S101"
+      ]
+    },
+    "e6a_offline": {
+      "planned": 757,
+      "control_local_input_estimate": 39660331,
+      "e6a_local_input_estimate": 26051688,
+      "prior_overflow": 46,
+      "rescued_local": 46,
+      "new_overflow": 0,
+      "new_provider_calls": 0,
+      "semantic_quality": null,
+      "evidence": [
+        "S097"
+      ]
+    },
+    "e5_application": {
+      "questions": 19,
+      "repeats": 3,
+      "queries_per_arm": 57,
+      "success_per_arm": 51,
+      "budget_failure_per_arm": 6,
+      "disabled_cpu_s": 8.827,
+      "cold_cpu_s": 8.127,
+      "warm_cpu_s": 8.44,
+      "disabled_wall_s": 11.01,
+      "cold_wall_s": 10.268,
+      "warm_wall_s": 12.355,
+      "evidence": [
+        "S095"
+      ]
+    }
+  },
+  "scope": "No run concatenation; costs are historical peak-tariff estimates, not account debits. Shared Build counted once, separate from Query. Missing semantic metrics remain null."
+}
