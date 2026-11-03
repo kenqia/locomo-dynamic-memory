@@ -1,0 +1,321 @@
+{
+  "schema_version": "v2-6day-issue-map-v1",
+  "sprint_start": "2026-11-03",
+  "sprint_end": "2026-11-08",
+  "timezone": "Asia/Shanghai",
+  "visibility_warning": "Repository is PUBLIC as verified 2026-11-03; recheck before publication. Do not upload secrets, raw wires, live DB, sealed review key or restricted course assets.",
+  "repository": "kenqia/locomo-dynamic-memory",
+  "issue_count_expected": 15,
+  "parent_count_expected": 3,
+  "child_count_expected": 12,
+  "create_idempotently": true,
+  "owner_assignment": "unassigned until each member explicitly accepts",
+  "milestones": [
+    {
+      "name": "v2-6day-demo",
+      "due_on": "2026-11-08",
+      "description": "Six-day deliverable: runnable demo + opt-in sidecar + evidence-grounded presentation and report"
+    }
+  ],
+  "labels": [
+    "v2-sprint",
+    "track:product",
+    "track:architecture",
+    "track:delivery",
+    "kind:task",
+    "kind:review",
+    "priority:P0",
+    "priority:P1",
+    "blocked",
+    "ready",
+    "opt-in"
+  ],
+  "parents": [
+    {
+      "id": "TRACK-PRODUCT",
+      "title": "[v2][Product] 6-day Research Console + Evidence Demo",
+      "labels": [
+        "track:product",
+        "v2-sprint",
+        "priority:P0"
+      ],
+      "milestone": "v2-6day-demo",
+      "branch": "team/product-console-v2-6d",
+      "source_document": "02_TRACK_PRODUCT_CONSOLE.md",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "due": "D6",
+      "children": [
+        "PROD-01",
+        "PROD-02",
+        "PROD-03",
+        "PROD-04"
+      ],
+      "acceptance": "实现、测试、交付和非作者复核均有真实证据；具体边界见source_document"
+    },
+    {
+      "id": "TRACK-ARCHITECTURE",
+      "title": "[v2][Architecture] 6-day Temporal Event Sidecar opt-in MVP",
+      "labels": [
+        "track:architecture",
+        "v2-sprint",
+        "priority:P0"
+      ],
+      "milestone": "v2-6day-demo",
+      "branch": "team/temporal-event-sidecar-v0-6d",
+      "source_document": "03_TRACK_ARCHITECTURE_INNOVATION.md",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "due": "D6",
+      "children": [
+        "ARCH-01",
+        "ARCH-02",
+        "ARCH-03",
+        "ARCH-04"
+      ],
+      "acceptance": "实现、测试、交付和非作者复核均有真实证据；具体边界见source_document"
+    },
+    {
+      "id": "TRACK-DELIVERY",
+      "title": "[v2][Delivery] 6-day Presentation, Technical Report & Demo Release",
+      "labels": [
+        "track:delivery",
+        "v2-sprint",
+        "priority:P0"
+      ],
+      "milestone": "v2-6day-demo",
+      "branch": "team/research-delivery-v2-6d",
+      "source_document": "04_TRACK_RESEARCH_DELIVERY.md",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "due": "D6",
+      "children": [
+        "DEL-01",
+        "DEL-02",
+        "DEL-03",
+        "DEL-04"
+      ],
+      "acceptance": "实现、测试、交付和非作者复核均有真实证据；具体边界见source_document"
+    }
+  ],
+  "children": [
+    {
+      "id": "PROD-01",
+      "parent": "TRACK-PRODUCT",
+      "title": "[v2][6d][PROD-01] 统一信息架构、Overview 和离线启动",
+      "due": "D2",
+      "labels": [
+        "track:product",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "02_TRACK_PRODUCT_CONSOLE.md",
+      "branch": "team/product-console-v2-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "统一信息架构、Overview 和离线启动",
+      "acceptance": "可运行页面、API字段映射、1张真实截图、正确空态/错误态"
+    },
+    {
+      "id": "PROD-02",
+      "parent": "TRACK-PRODUCT",
+      "title": "[v2][6d][PROD-02] Memory Timeline、Query Trace 与来源跳转",
+      "due": "D3",
+      "labels": [
+        "track:product",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "02_TRACK_PRODUCT_CONSOLE.md",
+      "branch": "team/product-console-v2-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "Memory Timeline、Query Trace 与来源跳转",
+      "acceptance": "实际来源可点击、4个冻结案例、计划/否定/未知正确显示"
+    },
+    {
+      "id": "PROD-03",
+      "parent": "TRACK-PRODUCT",
+      "title": "[v2][6d][PROD-03] 真实实验比较页和离线 Demo Fixture",
+      "due": "D4",
+      "labels": [
+        "track:product",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "02_TRACK_PRODUCT_CONSOLE.md",
+      "branch": "team/product-console-v2-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "真实实验比较页和离线 Demo Fixture",
+      "acceptance": "原3,028分母/unknown正确、Demo不调用付费模型、至少4张截图"
+    },
+    {
+      "id": "PROD-04",
+      "parent": "TRACK-PRODUCT",
+      "title": "[v2][6d][PROD-04] 应用/浏览器 E2E、PR、交付录像素材",
+      "due": "D5",
+      "labels": [
+        "track:product",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "02_TRACK_PRODUCT_CONSOLE.md",
+      "branch": "team/product-console-v2-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "应用/浏览器 E2E、PR、交付录像素材",
+      "acceptance": "关键流程冒烟通过、Reviewer实测、可复现启动命令"
+    },
+    {
+      "id": "ARCH-01",
+      "parent": "TRACK-ARCHITECTURE",
+      "title": "[v2][6d][ARCH-01] 事件/时间/状态 Schema 与冻结边界案例",
+      "due": "D1",
+      "labels": [
+        "track:architecture",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "03_TRACK_ARCHITECTURE_INNOVATION.md",
+      "branch": "team/temporal-event-sidecar-v0-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "事件/时间/状态 Schema 与冻结边界案例",
+      "acceptance": "12–20案例manifest、source指针、Schema/初测"
+    },
+    {
+      "id": "ARCH-02",
+      "parent": "TRACK-ARCHITECTURE",
+      "title": "[v2][6d][ARCH-02] 确定性 Event/Time/State Sidecar",
+      "due": "D3",
+      "labels": [
+        "track:architecture",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "03_TRACK_ARCHITECTURE_INNOVATION.md",
+      "branch": "team/temporal-event-sidecar-v0-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "确定性 Event/Time/State Sidecar",
+      "acceptance": "至少20边界测试、只读旧Build、缺证据unknown"
+    },
+    {
+      "id": "ARCH-03",
+      "parent": "TRACK-ARCHITECTURE",
+      "title": "[v2][6d][ARCH-03] opt-in入口、开关/回滚、最小消融",
+      "due": "D4",
+      "labels": [
+        "track:architecture",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "03_TRACK_ARCHITECTURE_INNOVATION.md",
+      "branch": "team/temporal-event-sidecar-v0-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "opt-in入口、开关/回滚、最小消融",
+      "acceptance": "关闭后原行为不变、两种规则/诊断对照、不发付费请求"
+    },
+    {
+      "id": "ARCH-04",
+      "parent": "TRACK-ARCHITECTURE",
+      "title": "[v2][6d][ARCH-04] 离线回归、ADR、可展示样例、PR",
+      "due": "D5",
+      "labels": [
+        "track:architecture",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "03_TRACK_ARCHITECTURE_INNOVATION.md",
+      "branch": "team/temporal-event-sidecar-v0-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "离线回归、ADR、可展示样例、PR",
+      "acceptance": "真实成员Review、局限声明、脱敏示例交给Product"
+    },
+    {
+      "id": "DEL-01",
+      "parent": "TRACK-DELIVERY",
+      "title": "[v2][6d][DEL-01] 研究叙事与指标来源台账",
+      "due": "D2",
+      "labels": [
+        "track:delivery",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "04_TRACK_RESEARCH_DELIVERY.md",
+      "branch": "team/research-delivery-v2-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "研究叙事与指标来源台账",
+      "acceptance": "关键数字可追溯Run/Build/分母/评审类型"
+    },
+    {
+      "id": "DEL-02",
+      "parent": "TRACK-DELIVERY",
+      "title": "[v2][6d][DEL-02] 12–15页正式可编辑PPTX和PDF初稿",
+      "due": "D3",
+      "labels": [
+        "track:delivery",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "04_TRACK_RESEARCH_DELIVERY.md",
+      "branch": "team/research-delivery-v2-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "12–15页正式可编辑PPTX和PDF初稿",
+      "acceptance": "可编辑、全套初稿、图表来源、可渲染"
+    },
+    {
+      "id": "DEL-03",
+      "parent": "TRACK-DELIVERY",
+      "title": "[v2][6d][DEL-03] 3–5分钟MP4实录、字幕/分镜/操作脚本",
+      "due": "D5",
+      "labels": [
+        "track:delivery",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "04_TRACK_RESEARCH_DELIVERY.md",
+      "branch": "team/research-delivery-v2-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "3–5分钟MP4实录、字幕/分镜/操作脚本",
+      "acceptance": "可播放、不含私密信息、Replay/Prototype明确"
+    },
+    {
+      "id": "DEL-04",
+      "parent": "TRACK-DELIVERY",
+      "title": "[v2][6d][DEL-04] v2技术报告、图示、交付包、答辩Q&A",
+      "due": "D6",
+      "labels": [
+        "track:delivery",
+        "v2-sprint",
+        "kind:task",
+        "priority:P0"
+      ],
+      "source_document": "04_TRACK_RESEARCH_DELIVERY.md",
+      "branch": "team/research-delivery-v2-6d",
+      "owner": "unassigned",
+      "reviewer": "unassigned",
+      "deliverable": "v2技术报告、图示、交付包、答辩Q&A",
+      "acceptance": "完整SHA/manifest、真实成员复核、课程提交状态真实"
+    }
+  ],
+  "release_acceptance": "07_RELEASE_ACCEPTANCE.md",
+  "daily_plan": "06_SIX_DAY_SPRINT_BOARD.md"
+}

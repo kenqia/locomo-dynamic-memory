@@ -1,0 +1,32 @@
+name: V2 sprint offline checks
+on:
+  push:
+    branches: ['codex/v2-6d-*-safe', 'team/*-6d']
+  pull_request:
+    branches: ['codex/v2-6d-*-safe', 'team/*-6d']
+permissions:
+  contents: read
+concurrency:
+  group: v2-offline-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      LOCOMO_LIVE_MODEL: '0'
+      LOCOMO_LOCAL_EMBEDDING: '0'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      PYTHONPATH: tools/integration/offline_guard:src:tests
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
+        with:
+          version: '0.9.11'
+      - run: uv sync --locked
+      - run: uv run --locked python -m compileall -q src tests tools/team_v2
+      - run: uv run --locked python tools/team_v2/check.py -q --tb=short
+      - run: uv run --locked python tools/team_v2/demo.py prepare --output var/ci-demo
