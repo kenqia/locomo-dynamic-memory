@@ -127,7 +127,7 @@ class QueryService:
         budget["model_metadata"] = generation.metadata
         return answer.model_dump(mode="json"), raw_delivered if raw_sources is not None else delivered, budget
 
-    def query(self, request):
+    def query(self, request, *, research_router=None):
         # Pin before analysis, embeddings or generation. Never re-read the active pointer.
         build_id = self.versions.pin(request.dataset_id, request.sample_id, request.build_id)
         started = time.perf_counter()
@@ -202,29 +202,50 @@ class QueryService:
                 context, audit = complete_resolution_input(payload, self.settings)
                 delivery = audit['source_delivery']
                 trace.setdefault('resolution_budgets', {})['resolve'] = audit
-                if not audit['within_budget']:
-                    raise BuildError('complete_resolution_input_budget_exceeded', 422)
-                try:
-                    generation = self.model.generate("resolve", payload, EffectiveResolution, context=context)
-                    trace["operations"][stage] = generation.metadata
-                    resolution = EffectiveResolution.model_validate(generation.value.model_dump(mode="json"), context=context)
-                    record_delivery(delivery, generation.metadata, accepted=True)
-                except (ModelFailure, ValidationError) as error:
-                    record_delivery(delivery, getattr(error, 'metadata', trace['operations'].get(stage, {})), accepted=False,
-                                    error_code=getattr(error, 'code', 'invalid_output'))
-                    raise
+                decision = None
+                if research_router is not None:
+                    # Research injection only; API/UI never supplies this object.
+                    # Initial observations and Build-time relations are available
+                    # before Resolution. Exact preflight is local, not free.
+                    decision = research_router.route(question=request.question, initial=initial, sources=sources,
+                        relations=relations, time_condition=trace['time'], complete_budget={
+                            key: audit[key] for key in ('input_token_count','input_budget','within_budget')})
+                    trace['research_routing'] = decision.to_dict()
+                    trace['research_routing']['preflight_scope'] = 'complete_expanded_packet_before_resolution_http'
+                    trace['query_fingerprint'] = hashlib.sha256(canonical_json({
+                        'base':trace['query_fingerprint'], 'router_version':decision.router_version,
+                        'threshold':decision.observed_features['coverage_threshold']}).encode()).hexdigest()
+                if decision is not None and decision.path == 'hybrid':
+                    # Match the research Hybrid baseline: same expansion and
+                    # answer budget/validator, skip only paid Resolution.
+                    selected = [c['memory'] for c in expanded['candidates']]
+                    status = 'insufficient' if trace['time']['beyond_cutoff'] or not selected else 'sufficient'
+                    trace['resolution'] = {'status':'not_applied', 'reason':'opt_in_e1_hybrid'}
                 else:
+                    if not audit['within_budget']:
+                        raise BuildError('complete_resolution_input_budget_exceeded', 422)
+                    try:
+                        generation = self.model.generate("resolve", payload, EffectiveResolution, context=context)
+                        trace["operations"][stage] = generation.metadata
+                        resolution = EffectiveResolution.model_validate(generation.value.model_dump(mode="json"), context=context)
+                        record_delivery(delivery, generation.metadata, accepted=True)
+                    except (ModelFailure, ValidationError) as error:
+                        record_delivery(delivery, getattr(error, 'metadata', trace['operations'].get(stage, {})), accepted=False,
+                                        error_code=getattr(error, 'code', 'invalid_output'))
+                        raise
                     trace["resolution"] = resolution.model_dump(mode="json")
-                    trace["stage_seconds"][stage] = time.perf_counter() - tick
                     selected = [memory for mid, memory in memories.items() if mid in resolution.effective_memory_ids]
                     status = "insufficient" if trace["time"]["beyond_cutoff"] else resolution.status
-                    if trace["time"]["beyond_cutoff"]:
-                        trace["time"]["limitation"] = "Requested date exceeds known conversation evidence; plans do not establish future reality"
-                    stage, tick = "answer", time.perf_counter()
-                    answer, delivered, budget = self.generate_answer(request.question, trace["time"], selected, sources, status, audit=trace)
-                    trace["answer"], trace["effective_memories"], trace["evidence_budget"] = answer, delivered, budget
-                    trace["operations"][stage] = budget["model_metadata"]
-                    trace["stage_seconds"][stage] = time.perf_counter() - tick
+                trace["stage_seconds"][stage] = time.perf_counter() - tick
+                if trace["time"]["beyond_cutoff"]:
+                    trace["time"]["limitation"] = "Requested date exceeds known conversation evidence; plans do not establish future reality"
+                stage, tick = "answer", time.perf_counter()
+                answer_time = ({key:value for key,value in trace['time'].items() if key != 'origin'}
+                               if decision is not None and decision.path == 'hybrid' else trace['time'])
+                answer, delivered, budget = self.generate_answer(request.question, answer_time, selected, sources, status, audit=trace)
+                trace["answer"], trace["effective_memories"], trace["evidence_budget"] = answer, delivered, budget
+                trace["operations"][stage] = budget["model_metadata"]
+                trace["stage_seconds"][stage] = time.perf_counter() - tick
             trace["outcome"] = "succeeded"
         except (ModelFailure, ValidationError, BuildError, EmbeddingFailure) as error:
             stage = trace.pop("_active_stage", stage)

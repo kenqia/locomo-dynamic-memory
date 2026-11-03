@@ -105,7 +105,7 @@ class RetrievalService:
             raise BuildError("index_failed", 503) from None
         return self.index_info(build_id)
 
-    def query(self, build_id: str, question: str) -> dict:
+    def query(self, build_id: str, question: str, *, query_embedding_cache=None) -> dict:
         build = self.builds.get(build_id)
         with self.database.connect() as db:
             # Pin the index identity and vectors to the same SQLite read snapshot.
@@ -134,7 +134,12 @@ class RetrievalService:
         dimensions = identity["dimensions"]
         memories = {row["memory_id"]: json.loads(row["memory_json"]) for row in rows}
         # Reject an overlong query before an optional paid analysis request.
-        query_vector = normalize_vectors(encoder.encode([question]), 1, dimensions)[0] if rows else None
+        cache_observation = None
+        if rows and query_embedding_cache is not None:
+            query_vector, cache_observation = query_embedding_cache.vector(encoder, question, build_id=build_id,
+                index_fingerprint=info['fingerprint'], text_schema_version=info['text_schema_version'])
+        else:
+            query_vector = normalize_vectors(encoder.encode([question]), 1, dimensions)[0] if rows else None
         analysis = {"status": "fallback", "result": None, "error_code": None, "model_metadata": {"calls": []}, "prompt_version": QUERY_PROMPT_VERSION}
         try:
             generated = self.model.generate("query_analysis", {"question": question}, QueryAnalysis)
@@ -179,6 +184,8 @@ class RetrievalService:
                   "created_at": utc_now(), "analysis": analysis, "channels": channels, "initial_candidates": candidates,
                   "initial_truncated": bool(reasons), "truncation_reasons": reasons, "candidate_token_count": used,
                   "token_budget_method": TOKEN_BUDGET_METHOD, "config": self.settings.snapshot()}
+        if cache_observation is not None:
+            result['research_embedding_cache'] = cache_observation
         with self.database.connect() as db:
             db.execute("INSERT INTO candidate_queries VALUES (?, ?, ?)", (result["query_id"], build_id, canonical_json(result)))
         return result

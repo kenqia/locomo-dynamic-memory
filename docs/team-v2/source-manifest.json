@@ -1,7 +1,7 @@
 {
   "schema": "reviewed-code-snapshot-v1",
-  "source_commit": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
-  "source_branch": "codex/production-integration-20261101",
+  "source_commit": "f41c94b79d0d59a81a1a26ac343ac82420560898",
+  "source_branch": "codex/research-next-20261101",
   "files": [
     {
       "path": ".agents/skills/code-review/SKILL.md",
@@ -263,9 +263,9 @@
     },
     {
       "path": "docs/app/real-baseline.md",
-      "source_blob": "e8ecbddba45528e95e00a77d3ce35c14b5d413d4",
-      "sha256": "1acc7b056885a0e787d699ff93a0188cc67e6a12c510533fcb937b5d18092790",
-      "size": 12499
+      "source_blob": "61c5dea9c030e33092d83cba28cf95c52c8afa23",
+      "sha256": "132c774f5857f8c10b3a618518cacb99b3d3f809b7f95f33394410fef1d3aa59",
+      "size": 13096
     },
     {
       "path": "docs/app/relation-replay.md",
@@ -701,9 +701,9 @@
     },
     {
       "path": "src/locomo_memory/queries.py",
-      "source_blob": "04e2e1a071490e4215ea2ab813746429d6b9cedf",
-      "sha256": "9fd8e6af75265cac7bde9b01f615594ae290ee3e7723fb64bfd018c6089d560f",
-      "size": 16626
+      "source_blob": "4d2b2a0b50a64a2e7ac1f6fa65d188c4fea73103",
+      "sha256": "04989803cc29208857e255abddac10a13333188305f84f70a67ce235f52201d9",
+      "size": 18487
     },
     {
       "path": "src/locomo_memory/query_api.py",
@@ -797,9 +797,9 @@
     },
     {
       "path": "src/locomo_memory/retrieval.py",
-      "source_blob": "f552beca31e8dc08de25a612dedb507291fcb903",
-      "sha256": "743adc94ce4458eaaf2398419df7b8978cbe0931e84e0302532cecafe364efd1",
-      "size": 11379
+      "source_blob": "ac7ad341965b511f10f5dc3fb10527a57e740dd4",
+      "sha256": "b1758ab059f3f97c40b81650de3137f32aec37628f73b4bc157425cd08d33406",
+      "size": 11842
     },
     {
       "path": "src/locomo_memory/retrieval_api.py",
@@ -1144,6 +1144,30 @@
       "size": 21256
     },
     {
+      "path": "tests/test_phase3_cache.py",
+      "source_blob": "0d7ea79813ff71ee99007685c0713bba74462012",
+      "sha256": "9a8697681a7bd9098d78f64dccf5019acf4aaafe6246ef4628beb68fae0e6797",
+      "size": 5568
+    },
+    {
+      "path": "tests/test_phase3_paired.py",
+      "source_blob": "e4dc4cf6e2a3b9dae3d60c166a8bffa1d9fde985",
+      "sha256": "8add32d7fb0cdc1cc3ead7134045e349ff20a041080a99c48fb50fc7861acd72",
+      "size": 1905
+    },
+    {
+      "path": "tests/test_phase3_router.py",
+      "source_blob": "a338aa0cd2838ae6a78d91b1e7794b1a4e51a236",
+      "sha256": "be5711f29c3e3d1f3252746e0a29a54936ce7c39886f4feb310b611a01b161b7",
+      "size": 8174
+    },
+    {
+      "path": "tests/test_phase3_screening.py",
+      "source_blob": "0e2f54a16d0cc1b109ad4724e08350e2bce4ccfd",
+      "sha256": "aa541be788432d7c1ce12379e85d80d26521c8fe9378c789aa68d2815c94af9d",
+      "size": 4225
+    },
+    {
       "path": "tests/test_production_paths.py",
       "source_blob": "139e4e53c8a8ba7b874b4911f884dc7cb3e7a753",
       "sha256": "60cc7913fe6cc3c7ca947d8372c5cc12a088abc1551666417926f9456ba91a88",
@@ -1214,6 +1238,54 @@
       "source_blob": "967dfa4dd3b0e67b454185a31e3526f4f35efe44",
       "sha256": "d7438946821db594520042b05d1f82c47889fedd92f59b6752dccde0703608fb",
       "size": 1746
+    },
+    {
+      "path": "tests/test_research_full_baseline.py",
+      "source_blob": "92beb896e74d886b6a06361cb98da015ede65081",
+      "sha256": "8e40172b359b9a7d6ae161eb60d64380816a5baefb3d4144fc58603028842764",
+      "size": 26539
+    },
+    {
+      "path": "tests/test_research_full_resume.py",
+      "source_blob": "65f6b3bb19f562faf481a4ec96559f884801d807",
+      "sha256": "41bfe6b54912d93aed9baa2cc0e0fc388a8e5a835d37249d8130f1a37f82077d",
+      "size": 8368
+    },
+    {
+      "path": "tests/test_research_observer.py",
+      "source_blob": "499347bbd30b66653cb294a8c8a3d6e6eba47335",
+      "sha256": "f5bf58534d6df5db9e5b3215fffefe2490b4b8e220e1eaf770785c4556c2200c",
+      "size": 15550
+    },
+    {
+      "path": "tests/test_research_postbaseline.py",
+      "source_blob": "70de6712754ef37595117536eab227531c903fa4",
+      "sha256": "cfa1dd4d41f3d2697f295eabb459692aedbf92ede9683bc4c5ccbaef56fcba19",
+      "size": 12727
+    },
+    {
+      "path": "tests/test_research_reestimate.py",
+      "source_blob": "7ec8a5737b558070a0eb1e2b302c4120e6b948cc",
+      "sha256": "4be45ee44b656a6d92002bdad15b4eae4181572a9d00eec012a69dd7c9e5ae55",
+      "size": 7342
+    },
+    {
+      "path": "tests/test_research_resolution_smoke.py",
+      "source_blob": "907cff02909379bf9894f8570d3b6e0d9bd85ed3",
+      "sha256": "afb1d91edfb6c922d7834b8c62c20ca3e09bc11c8fb128c7dfb1ba71b896bb87",
+      "size": 4608
+    },
+    {
+      "path": "tests/test_research_retry.py",
+      "source_blob": "8cdce6ae96fe168bf43903bfcbf03c0ec9bc57d5",
+      "sha256": "4183424257442d9530ede0826fe4944e853a010cef6a5b60c2d0f0662944c678",
+      "size": 3969
+    },
+    {
+      "path": "tests/test_research_v2.py",
+      "source_blob": "59c4155de00c307d5c64f268f5296490bd2e076f",
+      "sha256": "f4733019cf2a2d86ca5019f13f576ee0f3a39b964d503330c42a4ac02af8d4d7",
+      "size": 7985
     },
     {
       "path": "tests/test_resolution_contract_diagnostics.py",
@@ -1414,6 +1486,162 @@
       "size": 5861
     },
     {
+      "path": "tools/research_v2/__init__.py",
+      "source_blob": "f7da1202ef7555bb78584f71e76bc5315a82ce72",
+      "sha256": "dd320b5d5fcb28dcdf58e86c912025c081381a152a52f35cc974842efc9106d2",
+      "size": 84
+    },
+    {
+      "path": "tools/research_v2/atlas.py",
+      "source_blob": "6a60bddfe5c1fc18c3d235f04fc0e08bc79f0b10",
+      "sha256": "3c3a734059c7e52c3996fa24a0d7a1f05c6460b367a32573f5ae6114a351d606",
+      "size": 15621
+    },
+    {
+      "path": "tools/research_v2/audit_history.py",
+      "source_blob": "d97cd123a80045d1504484e9ff3b16fd574d3b4a",
+      "sha256": "d31809134f791e5d155da0f00149a45dd60d6a80ce34c4c6a2fc5d7e900f3469",
+      "size": 2771
+    },
+    {
+      "path": "tools/research_v2/cache_analysis.py",
+      "source_blob": "cd72075275baa44d9abc4de068f9acdad1960dc2",
+      "sha256": "42c74320cb45ee0320ca110978eb783cd74c08ecf46508c539f519ccdfc3d15e",
+      "size": 7842
+    },
+    {
+      "path": "tools/research_v2/cost_estimate.py",
+      "source_blob": "439c0fbd6397edb214e24141a87925fbc7ed4623",
+      "sha256": "75f67566efc5114be415a57c8cfa3d1a9146cbcedc2d503e8a1b3fb5851b0e8d",
+      "size": 9280
+    },
+    {
+      "path": "tools/research_v2/embedding_cache.py",
+      "source_blob": "05e133c92821dc5aa02a580ceb6de2272da80306",
+      "sha256": "529b92283b67dd2553119f9cfa1c60680b33d88df043f90fba02f2a73dc1676b",
+      "size": 4094
+    },
+    {
+      "path": "tools/research_v2/full_analysis.py",
+      "source_blob": "9b1b466684aea1d51e089145bfb1c5ad5ea765a9",
+      "sha256": "3c04b8032d415835347358270d66d86306211d926c52f1c104d9e9aae118ace9",
+      "size": 10303
+    },
+    {
+      "path": "tools/research_v2/full_baseline.py",
+      "source_blob": "06f6a789c623d1dcd06819ad7479b6a6212936f3",
+      "sha256": "7e203227a69c3d186e2b0d5e1c4472890c26654893985a0cf5cde4a462d0a3ae",
+      "size": 17117
+    },
+    {
+      "path": "tools/research_v2/full_budget.py",
+      "source_blob": "e0d9b73c1526feb0ba4934459dbc0eb3928fb238",
+      "sha256": "b3451347c52114b0b36e28321efe858c6a771b09943f5091d4f3936b6455625e",
+      "size": 3069
+    },
+    {
+      "path": "tools/research_v2/full_preflight.py",
+      "source_blob": "460568a6d6de97b470534791375d784147802ac0",
+      "sha256": "fc94fd9d951506c525be4f7916a663e28e51f924ec231a34387afaa17eb02cdc",
+      "size": 14326
+    },
+    {
+      "path": "tools/research_v2/full_resume.py",
+      "source_blob": "c63c680b6eae0e0cc54691fc4b4400566054fd2c",
+      "sha256": "595545ea128a7d7e14a779660a5fc2792271d45860acc03a62bd0a5270e5cb9d",
+      "size": 14599
+    },
+    {
+      "path": "tools/research_v2/observer.py",
+      "source_blob": "35eb800e2986576c4853fc123f3e827a334dfd3a",
+      "sha256": "87022f9be710c416d6ca473718b4b8abdb3115a7542e5a53d027726a26e047a4",
+      "size": 15168
+    },
+    {
+      "path": "tools/research_v2/phase3_cache_benchmark.py",
+      "source_blob": "36318906261df5011c7922e2699cc8b79e9ac0b8",
+      "sha256": "86a62945669c08c8ff2ccb97d62643d8afd85d595d1b379535e20109d02fc154",
+      "size": 7859
+    },
+    {
+      "path": "tools/research_v2/phase3_paired.py",
+      "source_blob": "7bb3ee8710f3cd3008fe1d3a6839ca875e98e26c",
+      "sha256": "7dff8bc41530cbf1100e400f10bcaaa84ab04a75141f61b6bd4758c1a364ad32",
+      "size": 10000
+    },
+    {
+      "path": "tools/research_v2/phase3_regression.py",
+      "source_blob": "98c5d06398f3fe08de738564e985c3958ea3b78e",
+      "sha256": "46fca479280e666c0d16922aa80a31f363c6963caec1b75698ec95004a08f60c",
+      "size": 8582
+    },
+    {
+      "path": "tools/research_v2/phase3_screening.py",
+      "source_blob": "d3a13591642599c3f6b1314e7e029eb0c83123d2",
+      "sha256": "a49f0cb29d0b8bf3053b34f3c618720928e3e807618bc2ba180fb0d6da6fcda7",
+      "size": 11257
+    },
+    {
+      "path": "tools/research_v2/phase3_simulate.py",
+      "source_blob": "d65a3b2d22292b2b38ff98b10c114db74da93320",
+      "sha256": "66f81d930fd03cc9b7643ad780a76d452f689ac19ae7853e58d5fe8dc9c9de3f",
+      "size": 9578
+    },
+    {
+      "path": "tools/research_v2/postbaseline.py",
+      "source_blob": "ea62059fd7d49fef9ccdd6231bf4e2473f933562",
+      "sha256": "c803590fa920cbc566c355bea7dca7a4d1bcd52e18bf605e7e91f1595c59b5a4",
+      "size": 42681
+    },
+    {
+      "path": "tools/research_v2/prepare.py",
+      "source_blob": "6eac7182fdf180fda629080b1a384c0c2a5a215a",
+      "sha256": "f61c450db69b5b6e03831c39d36a0b69ef1558086716ca716645d5025730f518",
+      "size": 8093
+    },
+    {
+      "path": "tools/research_v2/reestimate.py",
+      "source_blob": "e5f9340dd7d7ca25fa1146192f0bdacad12ca0c2",
+      "sha256": "69366e0d4173ba61d6d6ef59112f73f3d4753c2386e52f6945f52f530a9ba062",
+      "size": 13676
+    },
+    {
+      "path": "tools/research_v2/resolution_smoke.py",
+      "source_blob": "70158cd67823d2415af6c3a9135df47e1dc70d4a",
+      "sha256": "b8274112d872405bbbb72dec17df5689200a111a2a7602260d6da0d96724209a",
+      "size": 12692
+    },
+    {
+      "path": "tools/research_v2/retry.py",
+      "source_blob": "16a86b2797bd95910432919d09fa200dfd1216ae",
+      "sha256": "8104abeb1a1f5b5f4b6c42a7f838d632a228294c09befc25a751df215b4bb377",
+      "size": 2750
+    },
+    {
+      "path": "tools/research_v2/retry_report.py",
+      "source_blob": "241de272f206a56715f601ed760f98522c6a09a0",
+      "sha256": "0e4ce9b532e5ba8e3fd6f46b45dbfb7f5951675f9e1fc67a36d63b006bb7f37f",
+      "size": 6769
+    },
+    {
+      "path": "tools/research_v2/router.py",
+      "source_blob": "6fb3fcf7f65d27017b299ce253fc0b9bd347ea6a",
+      "sha256": "7f8e51c302d6e37c8fd6b6fec959d4ff5978fac2719f68158744928c2d9ae5bc",
+      "size": 9889
+    },
+    {
+      "path": "tools/research_v2/smoke.py",
+      "source_blob": "10ade19fe8dc494e65fd6038f48e0922195a1769",
+      "sha256": "f49dbba4f858a591457115ed4c4acf13fd3bfe894558d21259980338f3dc0e5f",
+      "size": 16761
+    },
+    {
+      "path": "tools/research_v2/verify_preservation.py",
+      "source_blob": "896012e6980837bccc28a933497dec255f28c4e7",
+      "sha256": "671143b6690c390b3f3ac44891d9dbdb0b4d139123516a6e5e75364f3f7265b5",
+      "size": 3217
+    },
+    {
       "path": "uv.lock",
       "source_blob": "6ed6d963f68c30e437a263f728afef34bb085cc9",
       "sha256": "ffbc6bcee4449cb5398798e1a7285cf6c277c0582c09db82b20b820988e1981b",
@@ -1425,5 +1653,5 @@
     "high_confidence_secret_patterns": 0,
     "max_file_bytes": 2000000
   },
-  "excluded_path_count": 839
+  "excluded_path_count": 952
 }
