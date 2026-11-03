@@ -17,3 +17,5 @@
 | D6 最终验收 | 未完成 | 正式系统、Sidecar、PPTX/PDF/MP4、报告、人工复核与 RC 待交付 |
 
 每天 15 分钟：交付证据、当天产物、阻塞与解阻人。阻塞超过半天由 Lead 当天决定接口、fixture 或裁剪 P2。冻结时间遵循唯一任务书，不静默顺延。
+
+D1 验证回执：Production 583 passed、Research 748 passed（排除项见同步报告）；五分支 CI success；干净远端 clone 安装/4 案例 seed/3 项 fixture 回归/API/UI/AppTest 通过。仅工程合成数据检查，新增模型费用为 0。分支起点与 CI 链接见 remote-verification.json；有效分配表为 issue-map.json，原任务包的 unassigned 字段已被用户明确分配覆盖。
