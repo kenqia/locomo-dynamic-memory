@@ -1,0 +1,332 @@
+"""Deterministic, conservative English diagnostics over a supplied pinned snapshot.
+
+No expected answers, network, SQLite writes, clock reads, or model calls.
+Rule coverage is deliberately narrower than general English understanding.
+"""
+from __future__ import annotations
+
+import calendar
+import re
+from datetime import date, timedelta
+from itertools import combinations
+from typing import Literal
+
+from pydantic import Field
+from locomo_memory.temporal import MONTHS
+from tools.research_v2.sidecar_schema import (
+    Contract, EventLink, SidecarInput, SidecarRecord, StateClaim, TimeInterval,
+)
+
+RULE_VERSION = 'deterministic-sidecar-v0.2'
+MONTH = '(?:' + '|'.join(MONTHS) + ')'
+DAY_PATTERN = rf'\b(?:\d{{4}}-\d{{2}}-\d{{2}}|{MONTH}\s+\d{{1,2}}(?:,?\s+\d{{4}})?)\b'
+MONTH_PATTERN = rf'\b{MONTH}\s+\d{{4}}\b'
+REL_PATTERN = r'\b(?:yesterday|this week|last week|last (?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)|recently|next month)\b'
+PLACE = r'[A-Za-z]+(?: [A-Za-z]+)*?'
+
+class ClaimDiagnostic(Contract):
+    memory_id: str
+    source_ids: tuple[str, ...]
+    reported_at: tuple[str, ...]
+    event_time: TimeInterval
+    statement_type: str
+    polarity: str
+    completed: Literal['supported', 'denied', 'unknown'] = 'unknown'
+    attended: Literal['supported', 'denied', 'unknown'] = 'unknown'
+    warnings: tuple[str, ...] = ()
+
+class QueryDiagnostic(Contract):
+    evidence_status: Literal['sufficient', 'conflict', 'insufficient', 'unknown']
+    reason: str
+    as_of: date | None = None
+    cutoff: date | None = None
+    answer: str | None = None
+    memory_ids: tuple[str, ...] = ()
+    source_ids: tuple[str, ...] = ()
+    assumptions: tuple[str, ...] = ()
+
+class SidecarDiagnostics(Contract):
+    diagnostic_schema: Literal['sidecar-diagnostics-v0.2'] = 'sidecar-diagnostics-v0.2'
+    rule_version: Literal['deterministic-sidecar-v0.2'] = RULE_VERSION
+    mode: Literal['diagnostic_only'] = 'diagnostic_only'
+    record: SidecarRecord
+    claims: tuple[ClaimDiagnostic, ...] = ()
+    query: QueryDiagnostic | None = None
+    retained_memory_ids: tuple[str, ...] = ()
+    global_mutation: Literal[False] = False
+    links_truncated: bool = False
+
+
+def _dedup(values):
+    return tuple(dict.fromkeys(values))
+
+
+def _reported_sources(snapshot, claim):
+    sources = {s.source_id: s for s in snapshot.sources}
+    return [sources[sid] for sid in claim.source_ids]
+
+
+def _owned_text(snapshot, claim):
+    # Only narrow first-person assertions by the cited speaker are eligible for
+    # automatic rules. Quoted/reported speech and narrator claims stay unknown.
+    texts = []
+    for source in _reported_sources(snapshot, claim):
+        if source.speaker.casefold() != claim.entity_id.casefold():
+            continue
+        if any(x in source.text for x in ('"', '“', '”')):
+            continue
+        if re.search(r'\b(?:if|unless|might|maybe|possibly|perhaps|not sure)\b', source.text, re.I):
+            continue
+        if not re.match(r'^\s*(?:I\b|My\b|On\b|That same\b)', source.text, re.I):
+            continue
+        # Multiple clauses can attach dates and negation to the wrong predicate.
+        # Handle only one claim-bearing sentence (allow an explicit dispute note).
+        parts = re.split(r'(?<=[.!?])\s+', source.text.strip())
+        if len(parts) > 1 and not all(re.fullmatch(
+            r'(?:These reports conflict and remain unresolved|It was a second trip)[.!?]?', p, re.I
+        ) for p in parts[1:]):
+            continue
+        # Only infer a time when a supported predicate in the claim also occurs
+        # in its source; shared speaker alone cannot transfer another fact's date.
+        predicates=(r'\battend(?:ed)?\b',r'\bvisit(?:ed)?\b',r'\barriv(?:e|ed)\b',
+                    r'\bgraduat(?:e|ed)\b',r'\bmov(?:e|ed)\b',r'\blive(?:s|d)?\b',
+                    r'\bconference\b',r'\bbirth year\b',r'\btrip\b',r'\badopt(?:ion)?\b',r'\btravel(?:led|ed)?\b')
+        if not any(re.search(p,claim.content,re.I) and re.search(p,parts[0],re.I) for p in predicates):
+            continue
+        texts.append((source, parts[0]))
+    return texts
+
+
+def _parse_day(expression, anchor):
+    if re.fullmatch(r'\d{4}-\d{2}-\d{2}', expression):
+        try: return date.fromisoformat(expression)
+        except ValueError: return None
+    m = re.fullmatch(rf'({MONTH})\s+(\d{{1,2}})(?:,?\s+(\d{{4}}))?', expression, re.I)
+    if not m: return None
+    year = int(m[3]) if m[3] else anchor.year
+    try: return date(year, MONTHS[m[1].lower()], int(m[2]))
+    except ValueError: return None
+
+
+def _resolve_expression(expression, source):
+    anchor = source.reported_at.date()
+    low = expression.casefold().strip()
+    start = end = None
+    basis = ''
+    parsed = _parse_day(expression, anchor)
+    if parsed:
+        start = end = parsed
+        basis = 'Explicit date; omitted year, if any, interpreted within source report year.'
+    elif re.fullmatch(MONTH_PATTERN, expression, re.I):
+        name, year = expression.split()
+        year, month = int(year), MONTHS[name.casefold()]
+        start, end = date(year,month,1), date(year,month,calendar.monthrange(year,month)[1])
+        basis = 'Explicit month preserved as calendar range; no exact day asserted.'
+    elif low == 'yesterday':
+        start = end = anchor - timedelta(days=1)
+        basis = 'Yesterday anchored to source report calendar day, not query or host time.'
+    elif low in ('this week','last week'):
+        start = anchor - timedelta(days=anchor.weekday() + (7 if low=='last week' else 0))
+        end = start + timedelta(days=6)
+        basis = 'Source-anchored calendar week, Monday through Sunday; day unknown.'
+    elif low.startswith('last '):
+        weekdays = {v:i for i,v in enumerate(('monday','tuesday','wednesday','thursday','friday','saturday','sunday'))}
+        weekday = weekdays.get(low[5:])
+        if weekday is not None:
+            start = end = anchor - timedelta(days=(anchor.weekday()-weekday)%7 or 7)
+            basis = 'Last weekday strictly earlier than source report day.'
+    if start is None:
+        return TimeInterval(original_expression=expression,anchor_source_id=source.source_id,
+                            basis='Unsupported or ambiguous expression; exact dates remain unknown.')
+    return TimeInterval(status='known' if start==end else 'range',start=start,end=end,
+        original_expression=expression,anchor_source_id=source.source_id,basis=basis)
+
+
+def _time(snapshot, claim):
+    candidates = []
+    for source,text in _owned_text(snapshot,claim):
+        expressions = list(re.finditer(DAY_PATTERN, text, re.I))
+        expressions += list(re.finditer(MONTH_PATTERN, text, re.I))
+        expressions += list(re.finditer(REL_PATTERN, text, re.I))
+        # Do not attach one of several dates to an arbitrary predicate.
+        if len(expressions) != 1:
+            continue
+        expression = expressions[0].group()
+        prefix=text[:expressions[0].start()]
+        if re.search(r'\b(?:last|next)\s*$',prefix,re.I) or re.search(r'\b(?:last|next) year\b',text,re.I):
+            continue
+        candidates.append(_resolve_expression(expression,source))
+    if candidates:
+        identities = {(v.status,v.start,v.end) for v in candidates}
+        if len(identities) == 1:
+            return candidates[0]
+        return TimeInterval(basis='Cited source times disagree; no single event interval inferred.')
+    return TimeInterval(original_expression=claim.event_time.original_expression,
+        anchor_source_id=claim.event_time.anchor_source_id,
+        basis='No unique supported time expression; existing derived dates not trusted as source proof.')
+
+
+def _claim_diagnostic(snapshot, claim):
+    completed, attended = 'unknown','unknown'
+    warnings = []
+    for source,text in _owned_text(snapshot,claim):
+        if claim.statement_type != 'fact':
+            warnings.append('plan_intention_or_uncertain_is_not_completed_fact')
+            continue
+        # Narrow predicate correspondence avoids applying attendance to an
+        # unrelated claim sharing the same source turn.
+        if re.search(r'\b(?:move|moved)\b',claim.content,re.I):
+            if re.match(r'^I (?:did not|have not) (?:move|complete)',text,re.I):
+                completed='denied'
+            elif claim.polarity=='positive' and re.match(r'^I (?:completed my move|moved (?:from|to))\b',text,re.I):
+                completed='supported'
+        if re.search(r'\b(?:attend|attended)\b',claim.content,re.I):
+            if claim.polarity=='negative' and re.match(r'^I did not attend\b',text,re.I):
+                attended='denied'
+            elif claim.polarity=='positive' and re.match(r'^I attended\b',text,re.I):
+                attended='supported'
+    return ClaimDiagnostic(memory_id=claim.memory_id,source_ids=claim.source_ids,
+        reported_at=tuple(s.reported_at.isoformat() for s in _reported_sources(snapshot,claim)),
+        event_time=_time(snapshot,claim),statement_type=claim.statement_type,
+        polarity=claim.polarity,completed=completed,attended=attended,warnings=_dedup(warnings))
+
+
+def _event_anchor(snapshot,claim):
+    values=[]
+    for source,text in _owned_text(snapshot,claim):
+        # Identifiable conference occurrence with explicit calendar identity.
+        m=re.match(r'^(?:I attended the|That same) (.+? conference)(?: on (.+?))?(?: had a keynote)?[.!?]?$',text,re.I)
+        if m:
+            when = _time(snapshot,claim)
+            values.append((m[1].casefold(),when.start,when.end))
+    return values[0] if len(values)==1 else None
+
+
+def _link(snapshot,left,right,_allow_reverse=True):
+    sources=_dedup((*left.source_ids,*right.source_ids))
+    decision,code,reason='unknown','identity_not_established','Same person, topic or wording does not establish a unique event.'
+    if left.entity_id != right.entity_id:
+        code,reason='different_entities','Distinct entities do not prove distinct events; shared events are possible.'
+    elif left.memory_type!='event' or right.memory_type!='event':
+        code,reason='not_two_event_claims','State similarity is not proof of a shared event.'
+    elif left.statement_type != 'fact' or right.statement_type != 'fact' or left.polarity != 'positive' or right.polarity != 'positive':
+        code,reason='nonpositive_or_nonfactual','Plan, uncertainty or negation is not a positive completed event identity.'
+    else:
+        la,ra=_event_anchor(snapshot,left),_event_anchor(snapshot,right)
+        right_text=' '.join(t for _,t in _owned_text(snapshot,right))
+        left_text=' '.join(t for _,t in _owned_text(snapshot,left))
+        if (la and ra and la==ra and la[1] is not None
+                and (re.match(r'^That same\b',right_text,re.I) or re.match(r'^That same\b',left_text,re.I))):
+            decision,code,reason='same_event','explicit_same_dated_event','Explicit same-event reference with matching named conference and date.'
+        else:
+            # Different dates alone may describe a multi-day event; require an
+            # explicit repeat occurrence and matching travel destination.
+            lm=re.match(r'^I visited (.+?) on ',left_text,re.I)
+            rm=re.match(r'^I visited (.+?) again on .*\bsecond trip\b',right_text,re.I)
+            lt,rt=_time(snapshot,left),_time(snapshot,right)
+            if (lm and rm and lm[1].casefold()==rm[1].casefold()
+                    and lt.start and rt.start and lt.end<rt.start):
+                decision,code,reason='different_event','explicit_repeat_occurrence','Explicit second trip with a separate date, not merely the same topic.'
+            elif _allow_reverse and re.match(r'^I visited .+? again on .*\bsecond trip\b',left_text,re.I) and re.match(r'^I visited .+? on ',right_text,re.I):
+                reverse=_link(snapshot,right,left,_allow_reverse=False)
+                decision,code,reason=reverse.decision,reverse.reason_code,reverse.reason
+    return EventLink(left_memory_id=left.memory_id,right_memory_id=right.memory_id,
+        decision=decision,reason_code=code,reason=reason,source_ids=sources)
+
+
+def _query(snapshot, diagnostics):
+    cutoff=max((s.reported_at.date() for s in snapshot.sources), default=None)
+    question=snapshot.question or ''
+    question_matches=list(re.finditer(DAY_PATTERN,question,re.I))
+    question_date=None
+    if len(question_matches)==1 and cutoff:
+        question_date=_parse_day(question_matches[0].group(),cutoff)
+    as_of=snapshot.as_of or question_date or cutoff
+    def q(status,reason,**kwargs):
+        return QueryDiagnostic(evidence_status=status,reason=reason,as_of=as_of,cutoff=cutoff,**kwargs)
+    if snapshot.as_of is None and len(question_matches)>1:
+        return q('unknown','Multiple dates require an explicit supported temporal question contract.')
+    if not snapshot.claims:
+        return q('insufficient','No extracted claims supplied; not a contradiction.')
+    if as_of and cutoff and as_of>cutoff:
+        return q('insufficient','Requested date is beyond known report cutoff; plans do not establish future reality.')
+    # Reject multi-entity and out-of-scope questions rather than pick a convenient
+    # claim. Supported questions must identify one existing entity explicitly.
+    entities={c.entity_id for c in snapshot.claims}
+    selected=[e for e in entities if re.search(r'(?<!\w)'+re.escape(e)+r'(?!\w)',question,re.I)]
+    if len(selected)!=1:
+        return q('unknown','Question entity is absent or ambiguous; no general language resolver.')
+    entity=selected[0]
+    relevant=[c for c in snapshot.claims if c.entity_id==entity]
+    times={c.memory_id:c.event_time for c in diagnostics}
+    if re.fullmatch(r'What is .+?\b(?:birth year|year of birth)\s*\?',question,re.I):
+        values=[]
+        if any(c.state_dimension=='birth_year' and (c.statement_type!='fact' or c.polarity!='positive' or not _owned_text(snapshot,c)) for c in relevant):
+            return q('unknown','Birth-year qualification or source attribution is outside supported rules.')
+        for c in relevant:
+            if c.statement_type!='fact' or c.polarity!='positive' or c.state_dimension!='birth_year':continue
+            for source,text in _owned_text(snapshot,c):
+                m=re.fullmatch(r'My birth year is (\d{4})[.]?',text,re.I)
+                if m and c.state_value==m[1]:values.append((m[1],c.memory_id,source.source_id))
+                else:return q('unknown','Birth-year evidence is outside exact assertion grammar or conflicts with extracted value.')
+        if len({v[0] for v in values})>1:
+            return q('conflict','Incompatible birth-year assertions with no supported correction rule.',
+                memory_ids=_dedup(v[1] for v in values),source_ids=_dedup(v[2] for v in values))
+        if values:
+            return q('sufficient','Explicit birth-year assertion only.',answer=values[0][0],
+                memory_ids=_dedup(v[1] for v in values),source_ids=_dedup(v[2] for v in values))
+        return q('insufficient','No supported birth-year assertion.')
+    if re.fullmatch(r'Where (?:does|did) .+? live(?: on .+?)?\?',question,re.I):
+        states=[]
+        if any(c.state_dimension=='residence' and (c.statement_type=='uncertain' or c.polarity!='positive' or not _owned_text(snapshot,c)) for c in relevant):
+            return q('unknown','Residence evidence contains unsupported uncertainty, negation or attribution.')
+        for c in relevant:
+            if c.statement_type!='fact' or c.polarity!='positive' or c.state_dimension!='residence':continue
+            for source,text in _owned_text(snapshot,c):
+                t=times[c.memory_id]
+                if t.status!='known' or not as_of:
+                    return q('unknown','Residence timing is unknown or ambiguous.')
+                if t.start>as_of:continue
+                m=re.match(rf'^I live in ({PLACE}) on ',text,re.I)
+                move=re.match(rf'^I moved from ({PLACE}) to ({PLACE}) on ',text,re.I)
+                value=m[1] if m else move[2] if move else None
+                if value and c.state_value and value.casefold()==c.state_value.casefold():
+                    states.append((t.start,value,c.memory_id,source.source_id,move[1] if move else None))
+                else:return q('unknown','Residence claim is outside explicit state/move grammar or value differs.')
+        if not states:return q('insufficient','No supported dated residence at or before requested date.')
+        states.sort(key=lambda v:(v[0],v[2]))
+        initial=[v for v in states if v[4] is None]
+        if not initial:return q('unknown','No initial state; explicit move alone is not a complete history here.')
+        current=initial[0]
+        for row in states:
+            if row==current:continue
+            if row[0]==current[0] and row[1].casefold()!=current[1].casefold():
+                return q('conflict','Incompatible dated residence assertions without an ordered transition.',
+                    memory_ids=(current[2],row[2]),source_ids=_dedup((current[3],row[3])))
+            if row[1].casefold()==current[1].casefold():continue
+            if row[4] and row[4].casefold()==current[1].casefold():current=row
+            else:return q('unknown','Residence changed without a supported matching from/to transition.')
+        return q('sufficient','Residence follows explicit dated assertions and matched move chain.',
+            answer=current[1],memory_ids=(current[2],),source_ids=(current[3],),
+            assumptions=('Carry last supported residence until next supplied transition, within known report cutoff; diagnostic assumption, not proof of unreported real-world continuity.',))
+    return q('unknown','Question is outside conservative residence/birth-year rules.')
+
+
+def diagnose(snapshot: SidecarInput, *, enabled: bool = False, max_event_pairs: int = 1000) -> SidecarDiagnostics:
+    """Pure diagnostic; never accepts a manifest or expected-behavior labels."""
+    if not isinstance(snapshot,SidecarInput):raise TypeError('Supply validated SidecarInput, not a case/manifest')
+    if not isinstance(max_event_pairs,int) or isinstance(max_event_pairs,bool) or max_event_pairs<0:
+        raise ValueError('Pair budget must be a nonnegative integer')
+    retained=tuple(c.memory_id for c in snapshot.claims)
+    if not enabled:
+        return SidecarDiagnostics(record=SidecarRecord(snapshot=snapshot),retained_memory_ids=retained)
+    diagnostics=tuple(_claim_diagnostic(snapshot,c) for c in snapshot.claims)
+    links=[]
+    for i,(left,right) in enumerate(combinations(snapshot.claims,2)):
+        if i>=max_event_pairs:break
+        links.append(_link(snapshot,left,right))
+    record=SidecarRecord(enabled=True,snapshot=snapshot,event_links=tuple(links))
+    return SidecarDiagnostics(record=record,claims=diagnostics,
+        query=_query(snapshot,diagnostics) if snapshot.question else None,
+        retained_memory_ids=retained,
+        links_truncated=len(snapshot.claims)*(len(snapshot.claims)-1)//2>max_event_pairs)

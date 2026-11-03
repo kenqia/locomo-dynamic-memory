@@ -1,0 +1,244 @@
+{
+  "mode": "SYNTHETIC_DIAGNOSTIC_ONLY",
+  "production_integration": false,
+  "input": {
+    "provenance": {
+      "dataset_id": "synthetic-arch01",
+      "sample_id": "conv-synthetic-a",
+      "build_id": "synthetic-build-a",
+      "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+      "rule_version": "contract-v0.1",
+      "origin": "synthetic"
+    },
+    "sources": [
+      {
+        "source_id": "src-1",
+        "session_id": "session-1",
+        "turn_id": "D1:1",
+        "speaker": "Alex",
+        "reported_at": "2026-01-01T09:00:00Z",
+        "text": "I live in Paris on January 1, 2026."
+      },
+      {
+        "source_id": "src-2",
+        "session_id": "session-1",
+        "turn_id": "D1:2",
+        "speaker": "Alex",
+        "reported_at": "2026-04-01T09:00:00Z",
+        "text": "I moved from Paris to Rome on March 1, 2026."
+      }
+    ],
+    "claims": [
+      {
+        "memory_id": "mem-1",
+        "entity_id": "Alex",
+        "state_dimension": "residence",
+        "state_value": "Paris",
+        "content": "Alex lives in Paris.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "positive",
+        "source_ids": [
+          "src-1"
+        ],
+        "event_time": {
+          "status": "unknown",
+          "start": null,
+          "end": null,
+          "original_expression": null,
+          "anchor_source_id": null,
+          "basis": null
+        }
+      },
+      {
+        "memory_id": "mem-2",
+        "entity_id": "Alex",
+        "state_dimension": "residence",
+        "state_value": "Rome",
+        "content": "Alex moved from Paris to Rome.",
+        "memory_type": "event",
+        "statement_type": "fact",
+        "polarity": "positive",
+        "source_ids": [
+          "src-2"
+        ],
+        "event_time": {
+          "status": "unknown",
+          "start": null,
+          "end": null,
+          "original_expression": null,
+          "anchor_source_id": null,
+          "basis": null
+        }
+      }
+    ],
+    "question": "Where did Alex live on February 1, 2026?",
+    "as_of": "2026-02-01"
+  },
+  "diagnostic": {
+    "diagnostic_schema": "sidecar-diagnostics-v0.2",
+    "rule_version": "deterministic-sidecar-v0.2",
+    "mode": "diagnostic_only",
+    "record": {
+      "schema_version": "temporal-event-sidecar-v0",
+      "enabled": true,
+      "mode": "diagnostic_only",
+      "snapshot": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-01-01T09:00:00Z",
+            "text": "I live in Paris on January 1, 2026."
+          },
+          {
+            "source_id": "src-2",
+            "session_id": "session-1",
+            "turn_id": "D1:2",
+            "speaker": "Alex",
+            "reported_at": "2026-04-01T09:00:00Z",
+            "text": "I moved from Paris to Rome on March 1, 2026."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "residence",
+            "state_value": "Paris",
+            "content": "Alex lives in Paris.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          },
+          {
+            "memory_id": "mem-2",
+            "entity_id": "Alex",
+            "state_dimension": "residence",
+            "state_value": "Rome",
+            "content": "Alex moved from Paris to Rome.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-2"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": "Where did Alex live on February 1, 2026?",
+        "as_of": "2026-02-01"
+      },
+      "event_links": [
+        {
+          "left_memory_id": "mem-1",
+          "right_memory_id": "mem-2",
+          "decision": "unknown",
+          "reason_code": "not_two_event_claims",
+          "reason": "State similarity is not proof of a shared event.",
+          "source_ids": [
+            "src-1",
+            "src-2"
+          ]
+        }
+      ]
+    },
+    "claims": [
+      {
+        "memory_id": "mem-1",
+        "source_ids": [
+          "src-1"
+        ],
+        "reported_at": [
+          "2026-01-01T09:00:00+00:00"
+        ],
+        "event_time": {
+          "status": "known",
+          "start": "2026-01-01",
+          "end": "2026-01-01",
+          "original_expression": "January 1, 2026",
+          "anchor_source_id": "src-1",
+          "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+        },
+        "statement_type": "fact",
+        "polarity": "positive",
+        "completed": "unknown",
+        "attended": "unknown",
+        "warnings": []
+      },
+      {
+        "memory_id": "mem-2",
+        "source_ids": [
+          "src-2"
+        ],
+        "reported_at": [
+          "2026-04-01T09:00:00+00:00"
+        ],
+        "event_time": {
+          "status": "known",
+          "start": "2026-03-01",
+          "end": "2026-03-01",
+          "original_expression": "March 1, 2026",
+          "anchor_source_id": "src-2",
+          "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+        },
+        "statement_type": "fact",
+        "polarity": "positive",
+        "completed": "supported",
+        "attended": "unknown",
+        "warnings": []
+      }
+    ],
+    "query": {
+      "evidence_status": "sufficient",
+      "reason": "Residence follows explicit dated assertions and matched move chain.",
+      "as_of": "2026-02-01",
+      "cutoff": "2026-04-01",
+      "answer": "Paris",
+      "memory_ids": [
+        "mem-1"
+      ],
+      "source_ids": [
+        "src-1"
+      ],
+      "assumptions": [
+        "Carry last supported residence until next supplied transition, within known report cutoff; diagnostic assumption, not proof of unreported real-world continuity."
+      ]
+    },
+    "retained_memory_ids": [
+      "mem-1",
+      "mem-2"
+    ],
+    "global_mutation": false,
+    "links_truncated": false
+  },
+  "notice": "Synthetic input and standalone diagnostic; not a real QA result."
+}
