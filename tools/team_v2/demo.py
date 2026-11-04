@@ -44,6 +44,9 @@ def main():
             command = [sys.executable, '-m', 'streamlit', 'run', str(ROOT / 'tools/team_v2/demo_ui.py'), '--server.address', '127.0.0.1', '--server.port', str(args.ui_port), '--server.headless', 'true', '--browser.gatherUsageStats', 'false']
         print('OFFLINE SYNTHETIC DEMO — controlled model adapter, zero provider calls; not QA quality evidence.', flush=True)
         os.chdir(ROOT)
+        if os.name == 'nt':
+            # Windows exec starts another PID; keep the terminal attached until exit.
+            raise SystemExit(subprocess.call(command, env=env))
         os.execve(sys.executable, command, env)
 
 
@@ -82,7 +85,8 @@ def seed(output):
             response = client.post('/queries', json={'dataset_id': dataset_id, 'sample_id': 'conv-a', 'build_id': build_id, 'question': question, **extra})
             assert response.status_code == 201, response.status_code
             assert response.json()['answer']['status'] == expected
-            cases.append({'question': question, 'expected': expected, 'status': response.json()['answer']['status']})
+            cases.append({'question': question, 'expected': expected,
+                          'status': response.json()['answer']['status'], 'trace_id': response.json()['trace_id']})
     manifest = {'mode': 'OFFLINE_SYNTHETIC', 'dataset_id': dataset_id, 'build_id': build_id,
                 'cases': cases, 'provider_calls': 0, 'quality_claim': 'none; deterministic application fixture only'}
     (output / 'demo-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
