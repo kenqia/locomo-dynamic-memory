@@ -32,12 +32,23 @@ def main():
 
         page.route('**/*', offline_route)
         page.on('pageerror', lambda error: errors.append(str(error)))
+
+        def capture(name):
+            # Fit Streamlit's internal scroll content into the real viewport;
+            # body full_page alone clips it. Desktop width remains 1280px.
+            main = page.get_by_test_id('stMain')
+            height = main.evaluate('(element) => element.scrollHeight')
+            page.set_viewport_size({'width': 1280, 'height': max(900, height + 20)})
+            main.evaluate('(element) => { element.scrollTop = 0; }')
+            page.screenshot(path=str(args.output / name), full_page=True)
+            page.set_viewport_size({'width': 1280, 'height': 900})
+
         page.goto(args.url)
         expect(page.get_by_role('heading', name='Research Console', exact=True)).to_be_visible(timeout=60000)
         expect(page.get_by_text('后端已连接 · Console 只读', exact=True)).to_be_visible()
         expect(page.get_by_text('Build status:', exact=False)).to_contain_text('complete')
         expect(page.get_by_text('unknown 原样保留', exact=False)).to_be_visible()
-        page.screenshot(path=str(args.output / 'overview.png'), full_page=True)
+        capture('overview.png')
         page.get_by_text('评审者', exact=True).click()
         expect(page.get_by_text('核对 Build 身份和全部原始字段', exact=True)).to_be_visible()
         page.get_by_text('展示者', exact=True).click()
@@ -46,7 +57,8 @@ def main():
         page.get_by_text('Memory 原始字段（含时间与来源）', exact=True).click()
         expect(page.get_by_text('Alex lives in Paris.', exact=False).first).to_be_visible()
         page.get_by_text('Memory 原始字段（含时间与来源）', exact=True).click()
-        page.screenshot(path=str(args.output / 'memory.png'), full_page=True)
+        page.get_by_test_id('stJson').last.wait_for(state='hidden')
+        capture('memory.png')
         page.get_by_text('Query/Evidence', exact=True).click()
         expected_answers = ('Alex lives in Rome.', 'Alex lives in Paris.',
                             'Sam reports birth years 1990 and 1992; the contradiction remains unresolved.',
@@ -57,13 +69,14 @@ def main():
             page.get_by_role('button', name='读取已有 Trace', exact=True).click()
             expect(page.get_by_text(answer, exact=True)).to_be_visible()
         page.get_by_text('已保存的证据与完整 Trace', exact=True).click()
-        page.screenshot(path=str(args.output / 'trace.png'), full_page=True)
+        page.get_by_test_id('stJson').last.wait_for(state='hidden')
+        capture('trace.png')
         page.get_by_text('Experiments', exact=True).click()
         expect(page.get_by_text('此处仅原 Run 策略摘要', exact=False)).to_be_visible()
-        page.screenshot(path=str(args.output / 'experiments.png'), full_page=True)
+        capture('experiments.png')
         page.get_by_text('Demo', exact=True).click()
         expect(page.get_by_role('heading', name='Demo · 合成应用 Replay', exact=True)).to_be_visible()
-        page.screenshot(path=str(args.output / 'demo.png'), full_page=True)
+        capture('demo.png')
         page.get_by_text('五阶段工作流', exact=True).click()
         expect(page.get_by_role('heading', name='上传一份对话数据', exact=True)).to_be_visible()
         page.get_by_text('五阶段工作流', exact=True).click()
@@ -71,6 +84,7 @@ def main():
         assert not errors, errors
         summary = {'status': 'passed', 'browser': browser.version,
                    'viewport': {'width': 1280, 'height': 900},
+                   'screenshot_height': 'expanded to fit actual content; width remains 1280',
                    'synthetic_cases_replayed': len(manifest['cases']),
                    'legacy_workflow_opened': True, 'page_errors': errors,
                    'screenshots': ['overview.png', 'memory.png', 'trace.png', 'experiments.png', 'demo.png'],

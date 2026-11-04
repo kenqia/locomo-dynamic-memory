@@ -18,7 +18,7 @@ Console 只使用 GET 和仓库内已审查的冻结 JSON，不提供构建、�
 | Build 选择/身份 | `GET /builds?dataset_id=…&sample_id=…` | `build_id/fingerprint/source_sha256/status/phase/query_ready/created_at/updated_at/progress`；未完整版本也能检查，不伪称完整 |
 | Memory 入口 | `GET /builds/{build_id}/memories` | 分页展示原始 `Memory` 对象；时间、计划、否定、来源等字段原样保留 |
 | Query/Evidence 入口 | `GET /queries/{trace_id}` | 校验 `build_id` 与当前 Build 一致；展示 outcome、answer/error 及原始 Trace；没有 Trace 时不发起生成 |
-| 后端 Run 列表 | `GET /evaluation-runs` | `run_id/status/plan_id`；列表按 API 的 ID 顺序，不能冒称时间顺序 |
+| 后端 Run 列表 / 本页最近报告 | `GET /evaluation-runs`、`GET /evaluation-runs/{run_id}/progress` | `run_id/status/plan_id/completed_at`；API 按 ID 分页，本页按已记录完成时间排序，明确不冒称全库最近；缺失/无时区时间不用于排序 |
 | 保存的报告 | `GET /evaluation-runs/{run_id}` | 显式读取已保存结果；显示 `completed_at`、`status` 和报告 JSON；未记录的时间显示 unknown |
 | 冻结真实报告 | `docs/team-v2/research-evidence.json` | `source_commit/run_id/original_baseline`；与本机 Build、后端 Run 分开标识 |
 | 原 Run 状态 | 同上 | 757 QA、3028 组合；2969 succeeded、56 failed、3 unknown；缺测不填零 |

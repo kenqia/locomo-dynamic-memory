@@ -20,7 +20,8 @@
 .venv\Scripts\python.exe tools/team_v2/check.py -q --tb=short
 ```
 
-1. Console 专项：**7 passed**，覆盖空后端、页面导航、错误提示、unknown、Build 作用域和角色切换后保存的 Trace。
+1. Console 专项：**8 passed**，覆盖空后端、页面导航、错误提示、unknown、Build 作用域、角色切换后保存的 Trace 和按真实完成时间查找本页最近报告。
+   同时复查原 UI 与合成检索：`tests/test_console_ui.py tests/test_strategy_ui.py tests/test_browser_fixture.py` 合计 **17 passed**。
 2. 首次 Windows 完整可收集回归：**537 passed / 40 failed / 6 deselected**，不能标为全绿。
    失败涉及未改动的 POSIX `os.O_DIRECTORY`、历史实验 `fcntl`、默认 GBK 编码、凭据启动器的 HOME/exec 行为及子进程检查。
 3. 检查入口现对子进程启用 UTF-8；重查 `test_credential_launcher.py`、`test_answer_regressions.py`、`test_dynamic_review_scoring.py`、`test_evaluation_recovery.py`：**47 passed / 9 failed**。
@@ -38,8 +39,29 @@
 .venv\Scripts\python.exe tools/team_v2/verify_console.py --browser-python var/console-browser/Scripts/python.exe --output var/product-console-browser-new
 ```
 
-真实浏览器最终结果和经过检查的截图将在同一分支追加；当前不把尚未完成的浏览器流程记为通过。
-此前检查已发现并处理 Windows 启动器进程跟踪，以及浏览器自动化对 radio 标签和输入失焦的处理问题。
+最终运行目录：本 clone 的 `var/product-console-browser-08/`（不提交运行日志和数据库）。
+API/UI 健康检查、共享启动配置、CLI 退出码传播、五项导航、四例保存 Trace 重放、旧五阶段入口均通过；真实 provider 调用 **0**，浏览器页面脚本错误 **0**。
+CLI 端口占用探针确认直接服务和启动器均返回实际退出码 **3**，不将失败冒充成功。
+浏览器为 Edge **156.0.4314.58**，Playwright **1.64.0**；交互检查使用 **1280×900**。
+截图保持宽度 1280，高度扩展至实际内容，避免 Streamlit 内部滚动区域被截断。
+
+已逐张检查的合成 UI 截图：
+
+- [Overview](assets/product-console/overview.png)
+- [Memory](assets/product-console/memory.png)
+- [Query / Evidence](assets/product-console/trace.png)
+- [Experiments](assets/product-console/experiments.png)
+- [Demo](assets/product-console/demo.png)
+- [浏览器结果 JSON](assets/product-console/browser-result.json)
+
+这些是 #26 的 Console 冒烟证据，不冒称 #29 全流程浏览器验收或另一台机器的人工复现。
+
+## AI 代码审查
+
+按仓库 `code-review` 技能，以 `3ba1954` 为固定点，分 Standards 与 Spec 两个独立代理审查。
+Standards：0 项明确规范违规；1 项启动配置重复的维护性意见，已通过共享环境/命令构造及 CLI 探针解决。
+Spec：1 项最近报告缺口，已按本页真实、带时区的完成时间排序并补测试；缺时间保持 unknown。
+两轴均已复查，当前 **0 项未解决发现**。此记录不代替真实成员 Reviewer。
 
 ## 待复核与边界
 

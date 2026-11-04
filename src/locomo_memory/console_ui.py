@@ -1,5 +1,6 @@
 """Read-only Research Console over public HTTP and reviewed frozen reports."""
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 import runpy
 
@@ -90,11 +91,28 @@ def render_frozen_report(evidence_path, reviewer=False, strategies=False):
 
 def render_runs(request):
     st.subheader('后端保存的 Run / 报告')
-    st.caption('按 API 的 Run ID 顺序分页，不代表时间先后；与冻结真实报告分开。')
+    st.caption('API 按 Run ID 分页；本页报告按已记录的完成时间排序，不代表全库最近；与冻结真实报告分开。')
     runs = page_items(request, '/evaluation-runs', 'console_run_offset')
     if not runs:
         st.info('当前页没有已保存的评测 Run。')
         return
+    dated = []
+    for run in runs:
+        progress = request('GET', f"/evaluation-runs/{run['run_id']}/progress")
+        stamp = progress.get('completed_at')
+        try:
+            timestamp = datetime.fromisoformat(stamp)
+            if timestamp.tzinfo is None:
+                timestamp = None
+        except (ValueError, TypeError):
+            timestamp = None
+        dated.append((timestamp, {**run, 'completed_at': stamp or 'unknown'}))
+    dated.sort(key=lambda item: item[0] or datetime.min.replace(tzinfo=timezone.utc), reverse=True)
+    runs = [item[1] for item in dated]
+    if dated[0][0] is not None:
+        st.caption(f"本页最近完成报告：{runs[0]['run_id']} · {runs[0]['completed_at']}")
+    else:
+        st.caption('本页未记录可比较的完成时间：unknown；不按 ID 推断时间。')
     st.dataframe(runs, hide_index=True, width='stretch')
     run_id = st.selectbox('读取保存的 Run', [run['run_id'] for run in runs], key='console_run')
     if st.button('打开保存的报告', key='console_load_report'):
@@ -182,7 +200,8 @@ def render_backend(request, page, reviewer):
         with st.expander('核对 Build 身份和全部原始字段'):
             st.json(build)
     if page == 'Overview':
-        render_runs(request)
+        with st.expander('后端保存的 Run / 最近报告', expanded=False):
+            render_runs(request)
     elif page == 'Memory':
         render_memory(request, build)
     elif page == 'Query/Evidence':

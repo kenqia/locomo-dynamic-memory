@@ -124,3 +124,29 @@ def test_trace_from_other_build_is_rejected(settings, sample, monkeypatch):
         assert any('属于其他 Build' in warning.value for warning in app.warning)
         assert not app.text
         assert all(method == 'GET' for method, _ in calls)
+
+
+def test_overview_uses_recorded_completion_time_for_recent_report(client, monkeypatch):
+    app, calls = console_app(client, monkeypatch)
+    backend = app.session_state['request']
+    timestamps = {'a-old': '2026-11-03T08:00:00Z', 'z-new': '2026-11-04T08:00:00Z', 'm-unknown': None}
+
+    def reports(method, path, **kwargs):
+        if path == '/evaluation-runs':
+            calls.append((method, path))
+            return {'items': [{'run_id': name, 'status': 'completed' if stamp else 'unknown'}
+                              for name, stamp in timestamps.items()], 'total': 3, 'limit': 20, 'offset': 0}
+        if path.startswith('/evaluation-runs/'):
+            calls.append((method, path))
+            run_id = path.split('/')[2]
+            return {'run_id': run_id, 'completed_at': timestamps[run_id], 'status': 'completed'}
+        return backend(method, path, **kwargs)
+
+    app.session_state['request'] = reports
+    app.run()
+    assert not app.exception
+    assert any('本页最近完成报告：z-new' in item.value for item in app.caption)
+    assert app.selectbox(key='console_run').value == 'z-new'
+    app.button(key='console_load_report').click().run()
+    assert any('2026-11-04T08:00:00Z' in item.value for item in app.caption)
+    assert all(method == 'GET' for method, _ in calls)
