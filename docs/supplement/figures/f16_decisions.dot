@@ -1,0 +1,43 @@
+digraph G {
+  graph [fontname="Noto Sans CJK SC", fontsize=11, bgcolor="#fcfcfb", pad=0.25, nodesep=0.28, ranksep=0.42, labeljust=l];
+  node  [fontname="Noto Sans CJK SC", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff", color="#8a8985", penwidth=1.1, margin="0.12,0.06"];
+  edge  [fontname="Noto Sans CJK SC", fontsize=8.5, color="#52514e", arrowsize=0.7];
+
+  rankdir=LR; nodesep=0.12; ranksep=0.5;
+  label="图 16  候选的最终去向"; labelloc=t; fontsize=13;
+  node [shape=box, style="rounded,filled", fontsize=9, width=2.6];
+  subgraph cluster_adopt { label="采用为默认"; style="rounded,filled"; fillcolor="#e6f6ef"; color="#1baf7a";
+    ad1 [label="持久恢复与失败 / unknown 分母"];
+    ad2 [label="来源绑定、完整输入预算保护"];
+    ad3 [label="安全诊断码、受限回答反馈"];
+    ad4 [label="动态关系 + 多版本 + 严格 JSON 导出"];
+    ad5 [label="移除普通 Dynamic 失败后的隐式 raw 重跑"];
+  }
+  subgraph cluster_opt { label="保留为 opt-in / 研究候选"; style="rounded,filled"; fillcolor="#e6f0fb"; color="#2a78d6";
+    op1 [label="显式 reader v2（E7）"];
+    op2 [label="选择性前文 + 复核，−28.3% token（E9）"];
+    op3 [label="单命题抽取（E9）"];
+    op4 [label="E5 编码缓存、E6-A 可逆表示（E14）"];
+    op5 [label="Graph 浏览、状态来源面板（E20）"];
+    op6 [label="Dynamic 作为显式可选策略（E23/E25）"];
+  }
+  subgraph cluster_hold { label="HOLD（证据不足）"; style="rounded,filled"; fillcolor="#fff6e0"; color="#eda100";
+    h1 [label="E6-A 真实扩展（语义风险，E15）"];
+    h2 [label="E7-A/B 来源恢复（E15）"];
+    h3 [label="D1 原文锚点、D2 邻接上下文（E17）"];
+    h4 [label="Cross-Encoder 重排（E18）"];
+    h5 [label="Hindsight 后端（E19）"];
+  }
+  subgraph cluster_rej { label="淘汰 / REJECT"; style="rounded,filled"; fillcolor="#fdeaea"; color="#e34948";
+    r1 [label="P0/P1 证据覆盖优化，已回滚（E4）"];
+    r2 [label="关闭 thinking 降本（E7）"];
+    r3 [label="原文分块替代结构化链路（E8）"];
+    r4 [label="首次检查替换、源内时间索引、patch（E9）"];
+    r5 [label="F01 四包、F03 selective（E10）"];
+    r6 [label="E1 便宜路径路由（E14）"];
+    r7 [label="自适应排序（−0.029）、PropMem 直接配置（E20）"];
+    r8 [label="Qwen3 0.6B + 导出器配置（E19）"];
+  }
+  ad1 -> op1 -> h1 -> r1 [style=invis];
+
+}

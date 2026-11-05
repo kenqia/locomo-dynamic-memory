@@ -1,0 +1,68 @@
+digraph G {
+  graph [fontname="Noto Sans CJK SC", fontsize=11, bgcolor="#fcfcfb", pad=0.25, nodesep=0.28, ranksep=0.42, labeljust=l];
+  node  [fontname="Noto Sans CJK SC", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff", color="#8a8985", penwidth=1.1, margin="0.12,0.06"];
+  edge  [fontname="Noto Sans CJK SC", fontsize=8.5, color="#52514e", arrowsize=0.7];
+
+  rankdir=TB; ranksep=0.26; nodesep=0.35; newrank=true;
+  label="图 3  实验谱系：每个实验由哪个观察引出（虚线为跨阶段）"; labelloc=t; fontsize=13;
+  node [width=1.55];
+  subgraph cluster_p1 { label="阶段一  10-19 至 10-21"; style="rounded,dashed"; color="#8a8985";
+    E0  [label="E0 系统构造", fillcolor="#e6f0fb"];
+    E1  [label="E1 首次构建\n关系契约系列", fillcolor="#e6f0fb"];
+    E2  [label="E2 质量增量 A–E", fillcolor="#e6f0fb"];
+    E3  [label="E3 10 题四策略\n输出修复"];
+    E4  [label="E4 证据覆盖\n优化与回滚"];
+    E5  [label="E5 五策略展示"];
+    E0 -> E1 [label="首个真实 Build"];
+    E1 -> E2 [label="172 误判 UPDATE"];
+    E1 -> E3 [label="v3 Build 完成"];
+    E3 -> E4 [label="证据遗漏"];
+    E4 -> E5 [label="回滚后展示现状"];
+  }
+  subgraph cluster_p2 { label="阶段二、三  10-27 至 11-03"; style="rounded,dashed"; color="#8a8985";
+    E6  [label="E6 五组机制消融"];
+    E7  [label="E7 Top7"];
+    E8  [label="E8 原文分块替代"];
+    E9  [label="E9 Top145"];
+    E10 [label="E10 Production v1", fillcolor="#fdf1d6"];
+    E11 [label="E11 三轮 smoke", fillcolor="#e6f0fb"];
+    E12 [label="E12 757 题全量"];
+    E13 [label="E13 失败图谱\nH/D 配对"];
+    E14 [label="E14 E1/E5/E6\n离线候选"];
+    E6 -> E7 [label="conv41 抽取\n解析违约"];
+    E7 -> E8 [label="抽取是否必要"];
+    E7 -> E9;
+    E8 -> E10; E9 -> E10 [label="窄改动集成"];
+    E10 -> E11 [label="默认预算能否跑通"];
+    E11 -> E12 [label="96000 可用"];
+    E12 -> E13;
+    E13 -> E14 [label="D 贵且无\n全面收益"];
+  }
+  subgraph cluster_p3 { label="阶段四、五  11-03 至 11-05"; style="rounded,dashed"; color="#8a8985";
+    E15 [label="E15 Phase 5/6"];
+    E16 [label="E16 事实审阅"];
+    E17 [label="E17 D1/D2"];
+    E18 [label="E18 CE 重排"];
+    E19 [label="E19 Hindsight"];
+    E20 [label="E20 Level A/B"];
+    E21 [label="E21 有效选择"];
+    E22 [label="E22 Level C v1"];
+    E23 [label="E23 input v2"];
+    E24 [label="E24 留出集构建", fillcolor="#e6f0fb"];
+    E25 [label="E25 Level E", fillcolor="#fde7dc", penwidth=2, color="#eb6834"];
+    E15 -> E16 [label="抽取丢事实"];
+    E16 -> E17 [label="5/8 抽取遗漏"];
+    E17 -> E18 [label="转检索侧"];
+    E17 -> E19 [label="换后端"];
+    E18 -> E20; E19 -> E20;
+    E20 -> E21 [label="关系对≠\n题内有效性"];
+    E20 -> E22 [label="模块不晋级"];
+    E22 -> E23 [label="49 项输入失败"];
+    E23 -> E24 [label="配置锁定"];
+    E24 -> E25 [label="第六份 JSON"];
+  }
+  E5 -> E6 [style=dashed, constraint=false, label="raw 不占优，\n转向机制归因"];
+  E14 -> E15 [style=dashed, constraint=false, label="E6-A 进入\n真实 canary"];
+  { rank=same; E0; E6; E15; }
+
+}
