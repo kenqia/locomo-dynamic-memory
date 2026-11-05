@@ -38,4 +38,5 @@ packages = ["src/locomo_memory"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-markers = ["live_model: explicit opt-in paid DeepSeek integration check", "local_embedding: opt-in real cached MiniLM load and encoding"]
+pythonpath = [".", "src"]
+markers = ["controlled_data: requires legally available original conversation or course/experimental source fixtures", "live_model: explicit opt-in paid DeepSeek integration check", "local_embedding: opt-in real cached MiniLM load and encoding"]

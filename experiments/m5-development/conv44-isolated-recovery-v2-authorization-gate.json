@@ -1,0 +1,10 @@
+{
+  "status": "missing_authorization_rejected",
+  "provider_requests": 0,
+  "prepared_database_and_ledger_unchanged": true,
+  "original_source_unchanged": true,
+  "execution_marker_present": false,
+  "producer_hashes_match": true,
+  "script_hash_matches": true,
+  "plan_sha256": "ca0b07d1633a5fb178bb9cec7061fa9ae453b8428c184ae6a2754c7931cc7425"
+}

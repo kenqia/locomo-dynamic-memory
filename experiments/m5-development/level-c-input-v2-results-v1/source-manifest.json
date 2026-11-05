@@ -1,0 +1,12 @@
+{
+  "plan.json": "3c9adc27b22d1b1da0175a508636ba51e8cdb2fd744a6faed566a963c2a79af6",
+  "inputs.json": "0816f9f2f60acc068a7a6bf3562c603db6545ea85920d1d6cfcfe2ba0ae7c9f0",
+  "sample.json": "f5be6536b105b78d7dc0eca44f7eecaa4b9b6a71d9d3662f115d361c6e707aeb",
+  "settings.json": "08af05ac9e8bf9555b628af8ed28d9739493693155faa7000f7f171119669ebb",
+  "build-identities.json": "050a345fe246a10e0dd8b069b5269bfb952f139c2f5c572c35e26f4c9f6787f2",
+  "generation-freeze.json": "1bfc058224d9ba1c8ba941c39f7ef0ebbc27db9736b4935d742a0e4541147de3",
+  "scores.json": "e9f43c8ff18482eb6c4d5d470fb284f1538e11d3cdee181a8c9f4ca0d2f82f55",
+  "terminal-audit-v1.json": "df4a63378a7cd0fc516bb1a9a5b90961330a4d24f2a655be1182089ded781f1e",
+  "user-authorization-receipt.json": "44beebfc5901fdb14d2445692cb5ace5e7baa095aa81975e6ae5cb215a95b219",
+  "pricing-recheck.json": "098d020a08cf63f9ceb12a6304b0e7beea60dbe2b7bcfc0afafc9a10b6a5b8d7"
+}

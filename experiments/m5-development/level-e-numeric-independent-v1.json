@@ -1,0 +1,748 @@
+{
+  "version": "m5-level-e-numeric-independent-v1",
+  "checked_utc": "2026-11-05T04:40:01.514534+00:00",
+  "reviewer": "/root/final_code_review_v6",
+  "status": "passed_with_explained_storage_snapshot_difference",
+  "provenance": {
+    "prior_producer_authorship": [
+      "src/locomo_memory/extraction_time_diagnostics.py"
+    ],
+    "prior_test_authorship": [
+      "tests/test_extraction_time_diagnostics.py"
+    ],
+    "query_score_generation_config_prompt_authorship": false,
+    "candidate_selection_participation": false,
+    "scope": "independent numerical verification; not wholly uninvolved in all frozen producer implementation",
+    "heldout_results_exposed": true,
+    "no_tuning_or_new_generation": true
+  },
+  "generation_freeze_sha256": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+  "checks": {
+    "score_public_copy": 1,
+    "freeze_scores": 1,
+    "freeze_runtime": 1,
+    "freeze_derived": 1,
+    "all_item_metrics": 23200,
+    "qa_summary": 21,
+    "paired_differences": 2001,
+    "paired_all": 9,
+    "category_summary": 42,
+    "paired_categories": 18,
+    "paired_conversation": 18,
+    "paired_category": 45,
+    "derived_all": 299,
+    "derived_conversations": 599,
+    "derived_categories": 1496,
+    "ledger_usage_order": 8394,
+    "ledger_response_order": 2112,
+    "ledger_totals": 19,
+    "runtime_counts": 30,
+    "runtime_cost": 378,
+    "operation_cost": 162,
+    "latency_item": 36,
+    "latency_stage": 150,
+    "latency_attempt": 36,
+    "token_efficiency": 18,
+    "reservation_ratio": 1,
+    "resources": 7,
+    "shared_phase_sum": 3,
+    "amortization": 12,
+    "joint_cost": 3,
+    "cumulative_cost": 6,
+    "fresh_runtime_report": 904,
+    "original_file_guard": 817,
+    "original_database_guard": 28
+  },
+  "mismatch_count": 1,
+  "mismatches": [
+    "fresh_runtime_report/storage/bytes/stage_total_bytes"
+  ],
+  "planned_items": 800,
+  "questions": 400,
+  "outcomes": {
+    "hybrid_no_resolution": {
+      "succeeded": 394,
+      "failed": 6
+    },
+    "dynamic": {
+      "succeeded": 389,
+      "failed": 11
+    }
+  },
+  "qa_summary": {
+    "hybrid_no_resolution": {
+      "planned": 400,
+      "scorable": 400,
+      "not_scorable": 0,
+      "succeeded": 394,
+      "failed": 6,
+      "unknown": 0,
+      "successful_scorable": 394,
+      "failure_zero_mean": 0.5154610137791985,
+      "successful_only_mean": 0.5233106738875112
+    },
+    "dynamic": {
+      "planned": 400,
+      "scorable": 400,
+      "not_scorable": 0,
+      "succeeded": 389,
+      "failed": 11,
+      "unknown": 0,
+      "successful_scorable": 389,
+      "failure_zero_mean": 0.5078860681623376,
+      "successful_only_mean": 0.5222478849998331
+    }
+  },
+  "separated_categories": {
+    "factual_f1": {
+      "summary": {
+        "hybrid_no_resolution": {
+          "planned": 301,
+          "scorable": 301,
+          "not_scorable": 0,
+          "succeeded": 299,
+          "failed": 2,
+          "unknown": 0,
+          "successful_scorable": 299,
+          "failure_zero_mean": 0.40260599837767247,
+          "successful_only_mean": 0.40529901508922883
+        },
+        "dynamic": {
+          "planned": 301,
+          "scorable": 301,
+          "not_scorable": 0,
+          "succeeded": 295,
+          "failed": 6,
+          "unknown": 0,
+          "successful_scorable": 295,
+          "failure_zero_mean": 0.40915092114596374,
+          "successful_only_mean": 0.41747263479639013
+        }
+      },
+      "paired": {
+        "mean": 0.00654492276829121,
+        "bootstrap95": [
+          -0.020132663918237845,
+          0.034034671619634575
+        ],
+        "improved": 60,
+        "regressed": 56,
+        "unchanged": 185,
+        "denominator": 301
+      }
+    },
+    "adversarial_literal_refusal": {
+      "summary": {
+        "hybrid_no_resolution": {
+          "planned": 99,
+          "scorable": 99,
+          "not_scorable": 0,
+          "succeeded": 95,
+          "failed": 4,
+          "unknown": 0,
+          "successful_scorable": 95,
+          "failure_zero_mean": 0.8585858585858586,
+          "successful_only_mean": 0.8947368421052632
+        },
+        "dynamic": {
+          "planned": 99,
+          "scorable": 99,
+          "not_scorable": 0,
+          "succeeded": 94,
+          "failed": 5,
+          "unknown": 0,
+          "successful_scorable": 94,
+          "failure_zero_mean": 0.8080808080808081,
+          "successful_only_mean": 0.851063829787234
+        }
+      },
+      "paired": {
+        "mean": -0.050505050505050504,
+        "bootstrap95": [
+          -0.10101010101010101,
+          0.0
+        ],
+        "improved": 1,
+        "regressed": 6,
+        "unchanged": 92,
+        "denominator": 99
+      }
+    }
+  },
+  "paired_all": {
+    "mean": -0.007574945616860862,
+    "bootstrap95": [
+      -0.032061162838906594,
+      0.01716131809241569
+    ],
+    "improved": 61,
+    "regressed": 62,
+    "unchanged": 277,
+    "denominator": 400
+  },
+  "recall_all": {
+    "hybrid_no_resolution": {
+      "planned": 400,
+      "qa_failure_zero": {
+        "mean": 0.5154610137791985,
+        "scored": 400,
+        "unscored": 0,
+        "coverage": 1.0
+      },
+      "qa_successful_only": {
+        "mean": 0.5233106738875112,
+        "scored": 394,
+        "unscored": 0,
+        "coverage": 1.0
+      },
+      "source_recall": {
+        "initial": {
+          "5": {
+            "failure_zero": {
+              "mean": 0.6012113617376775,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.61039016115352,
+              "scored": 393,
+              "unscored": 1,
+              "coverage": 0.9974619289340102
+            }
+          },
+          "10": {
+            "failure_zero": {
+              "mean": 0.6819340016708437,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.692345207803223,
+              "scored": 393,
+              "unscored": 1,
+              "coverage": 0.9974619289340102
+            }
+          },
+          "20": {
+            "failure_zero": {
+              "mean": 0.730436209571548,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.7415879074276022,
+              "scored": 393,
+              "unscored": 1,
+              "coverage": 0.9974619289340102
+            }
+          }
+        },
+        "expanded": {
+          "5": {
+            "failure_zero": {
+              "mean": 0.6012113617376775,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.61039016115352,
+              "scored": 393,
+              "unscored": 1,
+              "coverage": 0.9974619289340102
+            }
+          },
+          "10": {
+            "failure_zero": {
+              "mean": 0.6819340016708437,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.692345207803223,
+              "scored": 393,
+              "unscored": 1,
+              "coverage": 0.9974619289340102
+            }
+          },
+          "20": {
+            "failure_zero": {
+              "mean": 0.730436209571548,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.7415879074276022,
+              "scored": 393,
+              "unscored": 1,
+              "coverage": 0.9974619289340102
+            }
+          }
+        },
+        "effective": {
+          "5": {
+            "failure_zero": {
+              "mean": null,
+              "scored": 0,
+              "unscored": 400,
+              "coverage": 0.0
+            },
+            "successful_only": {
+              "mean": null,
+              "scored": 0,
+              "unscored": 394,
+              "coverage": 0.0
+            }
+          },
+          "10": {
+            "failure_zero": {
+              "mean": null,
+              "scored": 0,
+              "unscored": 400,
+              "coverage": 0.0
+            },
+            "successful_only": {
+              "mean": null,
+              "scored": 0,
+              "unscored": 394,
+              "coverage": 0.0
+            }
+          },
+          "20": {
+            "failure_zero": {
+              "mean": null,
+              "scored": 0,
+              "unscored": 400,
+              "coverage": 0.0
+            },
+            "successful_only": {
+              "mean": null,
+              "scored": 0,
+              "unscored": 394,
+              "coverage": 0.0
+            }
+          }
+        },
+        "answer_delivered": {
+          "5": {
+            "failure_zero": {
+              "mean": 0.6012113617376775,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.61039016115352,
+              "scored": 393,
+              "unscored": 1,
+              "coverage": 0.9974619289340102
+            }
+          },
+          "10": {
+            "failure_zero": {
+              "mean": 0.6819340016708437,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.692345207803223,
+              "scored": 393,
+              "unscored": 1,
+              "coverage": 0.9974619289340102
+            }
+          },
+          "20": {
+            "failure_zero": {
+              "mean": 0.7193668695548395,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.7303495698533866,
+              "scored": 393,
+              "unscored": 1,
+              "coverage": 0.9974619289340102
+            }
+          }
+        }
+      }
+    },
+    "dynamic": {
+      "planned": 400,
+      "qa_failure_zero": {
+        "mean": 0.5078860681623376,
+        "scored": 400,
+        "unscored": 0,
+        "coverage": 1.0
+      },
+      "qa_successful_only": {
+        "mean": 0.5222478849998331,
+        "scored": 389,
+        "unscored": 0,
+        "coverage": 1.0
+      },
+      "source_recall": {
+        "initial": {
+          "5": {
+            "failure_zero": {
+              "mean": 0.5982038429406851,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.6151632302405499,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          },
+          "10": {
+            "failure_zero": {
+              "mean": 0.6796783625730994,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.6989475945017182,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          },
+          "20": {
+            "failure_zero": {
+              "mean": 0.725173051676811,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.7457320814923908,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          }
+        },
+        "expanded": {
+          "5": {
+            "failure_zero": {
+              "mean": 0.5982038429406851,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.6151632302405499,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          },
+          "10": {
+            "failure_zero": {
+              "mean": 0.6796783625730994,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.6989475945017182,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          },
+          "20": {
+            "failure_zero": {
+              "mean": 0.725173051676811,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.7457320814923908,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          }
+        },
+        "effective": {
+          "5": {
+            "failure_zero": {
+              "mean": 0.5166696503162669,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.531317501227295,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          },
+          "10": {
+            "failure_zero": {
+              "mean": 0.5343179377013964,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.5494661266568484,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          },
+          "20": {
+            "failure_zero": {
+              "mean": 0.5365109201575368,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.5517212812960236,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          }
+        },
+        "answer_delivered": {
+          "5": {
+            "failure_zero": {
+              "mean": 0.5166696503162669,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.531317501227295,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          },
+          "10": {
+            "failure_zero": {
+              "mean": 0.5343179377013964,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.5494661266568484,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          },
+          "20": {
+            "failure_zero": {
+              "mean": 0.5358843537414966,
+              "scored": 399,
+              "unscored": 1,
+              "coverage": 0.9975
+            },
+            "successful_only": {
+              "mean": 0.5510769513991164,
+              "scored": 388,
+              "unscored": 1,
+              "coverage": 0.9974293059125964
+            }
+          }
+        }
+      }
+    }
+  },
+  "ledger": {
+    "physical_ledger_requests": 2112,
+    "request_statuses": {
+      "reserved": 0,
+      "response_received": 2094,
+      "response_usage_unknown": 18,
+      "transport_unknown": 0
+    },
+    "reserved_usd": "105.4516575",
+    "unknown_usage_requests": 18,
+    "partial_usage_requests": 0,
+    "unknown_usage_reserved_usd": "0.9522705",
+    "reported_usage": {
+      "prompt_tokens": 22771255,
+      "completion_tokens": 766026,
+      "total_tokens": 23537281
+    },
+    "known_complete_usage_peak_cache_miss_upper_usd": "7.7506077",
+    "all_reported_fields_peak_cache_miss_upper_usd": "7.7506077",
+    "remaining_requests": 3888,
+    "remaining_reserved_capacity_usd": "1282.4779425"
+  },
+  "ten_phase_cumulative": {
+    "physical_requests": 3975,
+    "conservative_reserved_usd": "197.6108655",
+    "reported_fields_peak_upper_usd": "18.1208100",
+    "unknown_usage_requests": 25,
+    "unknown_usage_reserved_usd": "1.3023021"
+  },
+  "fresh_runtime_audit": {
+    "path": "/tmp/m5-level-e-runtime-numeric-independent-v1.json",
+    "sha256": "edef5669519a58e931f08c543ce767158b8e619918b1090a94105f740b0afc6a",
+    "same_fixed_process_resource_sha256": "568dd4e09074deda67c0b41ef8a1812a5f93f9a36c3948a94119d30a8045f034"
+  },
+  "source_review_labels_read": false,
+  "source_review_packets_read": false,
+  "gold_read": true,
+  "gold_sql_projection_fields": [
+    "answer",
+    "category",
+    "evidence"
+  ],
+  "gold_question_projections": 400,
+  "reference_full_qa_or_annotations_object_selected": false,
+  "reference_database_backed_up": false,
+  "generated_answer_or_gold_text_emitted": false,
+  "provider_requests": 0,
+  "external_network_blocked": true,
+  "original_files_and_database_identities_unchanged": true,
+  "scores_overwritten": false,
+  "script_sha256": "4608bb42c46b035c953fc1d67aaacd8a90c9dbc5738aead01e84bd207b12ae81",
+  "bindings": {
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/level-e-results-v1/official-scores.json": "14e834d42cf9eeb5e0e161581f09e017bed97779fcfdb3efd6e3ce6045180455",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/level-e-runtime-terminal-v1.json": "5f0f503a3c50f8895c8d316ca7799687686327c39c4f0011070470f20c32f437",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/level-e-derived-results-v1.json": "3ed5acbc1ff471de4d83129b40d17bc3a9fae24467c0c5309c7855ddf3181fad",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/level-e-shared-build-cost-v1.json": "1d522a2eaf1a4a80dc9595f286648e3650943c650e3886616837116671604701",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/cost-ledger-including-conv44-relation-successor-terminal-v1.json": "713688cd9eb1950d2cbad3c9870cfd6b374b07b9597e65905b936c351791948a",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1/execution-process-resource.json": "568dd4e09074deda67c0b41ef8a1812a5f93f9a36c3948a94119d30a8045f034",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1/plan.json": "5d99378868a5aed92889ff3995ae7771270b91d8effb373fb6d7e85672484c92",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1/final-system-lock.json": "3b6e3fbcad1670226f1f9d8e1c9fa96436b104893a875527d078dc4948671ac6",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1/inputs.json": "ced0d3c79e0009de49394544a61d6d4478d9d0c7ce400a5e8aade3adabd06718",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1/authorization.json": "42630194548311edaf2c073a871965198c64eaac74de1fc366d6ba254e366746",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1/execution-started.json": "990ae77c9460fe90769ddd4a0c15db1aeb145a5f7cb64c5daeeaaa5db9a02e7d",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1/generation-freeze.json": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1/scores.json": "14e834d42cf9eeb5e0e161581f09e017bed97779fcfdb3efd6e3ce6045180455",
+    "/tmp/m5_level_e_numeric_independent_review.py": "4608bb42c46b035c953fc1d67aaacd8a90c9dbc5738aead01e84bd207b12ae81",
+    "/tmp/m5_level_e_archive_terminal.py": "f0a3a0069d33dc1454078cf56197962936a75b24c3de9f9f3f19774ba3f87520",
+    "/tmp/m5_level_e_semantic_derive.py": "33be2ccf1cdb1b8e97e8344297ca5bf2fa1a83969ab9d1837721dbd0f6d25082",
+    "/tmp/m5_level_e_derive_results.py": "1e50363d8077da4cb939b88e4e9f3176fcfd313efb88bd9e2cc75da0ad3d69b8"
+  },
+  "item_file_guard_count": 800,
+  "limitations": [
+    "Official category1-4 F1 and category5 literal refusal are separate; neither is source-supported factual accuracy.",
+    "Scorable-only recall means exclude one unmappable question per arm; failed scorable items are zero, not removed.",
+    "Memory-rank unique source coverage is not atomic fact recall or selection correctness.",
+    "Question bootstrap within only conv43/44 is exploratory; no conversation-level generalization or multiple-comparison correction.",
+    "Reservation attribution depends on the frozen serial producer plus complete usage/response correspondence, not an item foreign key.",
+    "Reported partial fields are retained; missing fields are unknown, not free; reservations and invoice costs differ.",
+    "Resource sidecar is whole-launcher cumulative child CPU and lifetime peak RSS; not per-arm, instantaneous or GPU sampling.",
+    "No partial source labels read; semantic derivation and archive are static reviews pending complete source review."
+  ],
+  "numerical_mismatch_count": 0,
+  "storage_snapshot_difference": {
+    "published_stage_total_bytes": 508347589,
+    "fresh_stage_total_bytes": 509059714,
+    "difference_bytes": 712125,
+    "later_scores_json_bytes": 712125,
+    "explanation": "Published runtime storage measurement preceded scores.json; this is a filesystem measurement-time difference, not altered frozen generation or a numeric scoring mismatch.",
+    "build_storage_sizes_unchanged": true,
+    "original_runtime_preserved": true
+  },
+  "shared_build_phase_evidence_verification": [
+    {
+      "evidence_path": "experiments/m5-development/live-extraction-post-recovery-v1.json",
+      "sha256": "2b285fc31796c2a8bc6cd382d797725db295f9bff34fe98ee704d005bd0441b9",
+      "values_match": true,
+      "unknown_usage_requests": 0
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv43-relations-terminal-v1.json",
+      "sha256": "93ba6dd8a92e2f95985d3eb2aa00928e0e9ed507314f2458c1e56970e86ce793",
+      "values_match": true,
+      "unknown_usage_requests": 7
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv44-isolated-recovery-v2-terminal-v1.json",
+      "sha256": "18e8b9d61a7b14e6904b282f4e8fb4025182065187aab2fee7e9f7714d2d9e80",
+      "values_match": true,
+      "unknown_usage_requests": 0
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv44-successor-v3-terminal-v1.json",
+      "sha256": "10ed0eefa87bfc18db000218c4d889feb0855c133ff3fa089111c41fd297df32",
+      "values_match": true,
+      "unknown_usage_requests": 0
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv44-relations-terminal-v1.json",
+      "sha256": "ece3ef725c0bd56679809280fd9c764ed64d14197a0898cc16e5d151893ee79d",
+      "values_match": true,
+      "unknown_usage_requests": 0
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv44-relation-recovery-terminal-v1.json",
+      "sha256": "c6d816a97c3f4a44743f977f9a5f2ad4223eccb72b624c5accb9994b7fcba8be",
+      "values_match": true,
+      "unknown_usage_requests": 0
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv44-relation-successor-terminal-v1.json",
+      "sha256": "24e09a0f75418be112a23d042c13cbfd1e42fed2338db1bb67a08951e78f030f",
+      "values_match": true,
+      "unknown_usage_requests": 0
+    }
+  ],
+  "archive_static_review": {
+    "script_sha256": "f0a3a0069d33dc1454078cf56197962936a75b24c3de9f9f3f19774ba3f87520",
+    "execution_performed": false,
+    "source_review_completion_gate": "validate_review complete=True plus equality with public summary",
+    "explicit_public_result_names": [
+      "official-scores.json",
+      "source-review-summary.json",
+      "source-review-paired.json",
+      "source-review-labels.json"
+    ],
+    "database_backup_names": [
+      "conv-43.sqlite3",
+      "conv-44.sqlite3",
+      "physical-requests.sqlite3"
+    ],
+    "reference_gold_database_backup": false,
+    "raw_stdout_stderr_credentials_excluded": true,
+    "file_sha_before_archive_and_readback_guards": true,
+    "original_database_storage_and_logical_guards": true,
+    "historical_review_files": "only enumerated reviewer-a/b/c-initial-v1.json when present",
+    "corrected_issues": [
+      "archive completion now validates current bound complete review rather than trusting completed count alone",
+      "public JSON discovery replaced with an explicit four-file whitelist"
+    ]
+  },
+  "semantic_derivation_static_review": {
+    "script_sha256": "33be2ccf1cdb1b8e97e8344297ca5bf2fa1a83969ab9d1837721dbd0f6d25082",
+    "execution_performed": false,
+    "partial_source_labels_read": false,
+    "complete_review_validation_required": true,
+    "eligible_pairs": "both runtime succeeded and both labels determinate/applicable",
+    "denominator_counts": [
+      "planned_pairs",
+      "determinate_pairs",
+      "excluded_pairs"
+    ],
+    "error_positive_difference": "more errors",
+    "support_positive_difference": "more support or correct abstention",
+    "bootstrap": "paired question; seed51104,2000 samples; selected two conversations",
+    "substantive_static_findings": []
+  },
+  "finalization_script_sha256": "1fdc35481151f96f4a1a914ae77fd184bbdb86f76a34731373a4a3e56baca113"
+}

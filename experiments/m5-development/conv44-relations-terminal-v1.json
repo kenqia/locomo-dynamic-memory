@@ -1,0 +1,74 @@
+{
+  "version": "m5-conv44-relations-terminal-v1",
+  "checked_utc": "2026-11-04T16:23:33.368899+00:00",
+  "status": "relations_failed_not_complete",
+  "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+  "checks": {
+    "exact_plan_authorization": true,
+    "frozen_producer_settings_inheritance": true,
+    "source_index_and_source_ledger_unchanged": true,
+    "schema_unchanged": true,
+    "all_memories_sources_fragments_indexes_other_builds_unchanged": true,
+    "immutable_task_selection": true,
+    "integrity_foreign_keys": true,
+    "exact_build_and_contract": true,
+    "logical_and_physical_attempts_closed_identity_verified": true,
+    "call_histories_and_returned_models": true,
+    "all_tasks_terminal_and_phase_consistent": true,
+    "strict_relations_sql_endpoints_and_complete_task_coverage": true,
+    "392_finite_normalized_384dim_index": true,
+    "392_memories_34_fragments_281_sources": true,
+    "no_query_or_evaluation_tables": true,
+    "ledger_exact_independent_policy": true,
+    "physical_ledger_closed_call_usage_and_reservation": true,
+    "all_new_calls_flash_disabled_without_effort": true,
+    "saved_outcome_matches_recomputed_counts_costs": true,
+    "single_use_reentry_refused_no_requests_or_mutation": true
+  },
+  "plan_sha256": "0920823b2c04d5d632df481df24ca60348b182fc760da8bb3a28f02cc5eb94cf",
+  "settings_sha256": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+  "inheritance_sha256": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e",
+  "authorization_sha256": "e9b398234690427cf970f4745595522e53e37f99291c4bbab891c2bc8302cfdb",
+  "outcome_sha256": "69b09a6b01aca5b43d3aa140e3a1e522c4a31fcae88ee869e98b47cdedb51e3c",
+  "script_sha256": "d82f8fc0bd0bc0562700a37d1c168a3276b8762936ead2d188c888f79b7bde7a",
+  "audit_script_sha256": "2a969ceac34f223ef6634ab0dcdb541260f838293af2fc853c10cf1df4117b36",
+  "final_database_logical_snapshot": "bf747f0dba9575cf7c3d98328cfa550eab80d9b32a6304d6c9bc68553dde7f8a",
+  "final_ledger_logical_snapshot": "aa3fedecccb9d5f292665c44f534d26cd359732e98e35fbccff6d571d0c9bd0a",
+  "tasks": {
+    "succeeded": 374,
+    "failed": 10
+  },
+  "relations": 6973,
+  "relation_labels": {
+    "undetermined": 6769,
+    "UPDATE": 91,
+    "RETAIN": 106,
+    "SUPERSEDE": 5,
+    "CONFLICT": 2
+  },
+  "physical_requests": 417,
+  "reserved_usd": "20.5545036",
+  "known_usage_peak_upper_usd": "2.3807064",
+  "reported_tokens": {
+    "prompt_tokens": 4154084,
+    "completion_tokens": 945401,
+    "total_tokens": 5099485
+  },
+  "unknown_usage_requests": 0,
+  "unknown_reserved_usd": "0",
+  "call_outcomes": {
+    "succeeded": 374,
+    "invalid_output": 43
+  },
+  "returned_models": {
+    "deepseek-flash": 417
+  },
+  "projection_fingerprint": null,
+  "all_new_thinking": "disabled",
+  "published": false,
+  "complete_build": false,
+  "sixth_export_complete": false,
+  "holdout_qa_evidence_answers_read": false,
+  "actual_invoice": "not_accessed",
+  "relation_semantic_accuracy": "not_measured"
+}

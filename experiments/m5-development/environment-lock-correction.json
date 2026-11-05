@@ -1,0 +1,8 @@
+{
+  "authoritative": "environment-lock-application.json",
+  "earlier_file": "environment-lock.json",
+  "earlier_file_scope": "host python3 only; not experiment interpreter",
+  "experiment_python": "3.12.12",
+  "host_python": "3.13.9",
+  "reason": "Initial inventory used host python3; retain original and identify correct application environment explicitly"
+}

@@ -1,0 +1,31 @@
+{
+  "reference_status_counts": {
+    "sufficient": 30,
+    "insufficient": 9,
+    "conflict": 1
+  },
+  "reference_reviewed": 40,
+  "reference_scorable": 25,
+  "reference_coverage": 0.625,
+  "difference_counts": {
+    "exact": 18,
+    "subset": 1,
+    "superset": 4,
+    "not_scorable": 15,
+    "missing_prediction": 2
+  },
+  "strict_exact_successes": 18,
+  "strict_exact_denominator": 25,
+  "strict_exact_wilson95": [
+    0.5242339480963842,
+    0.8571614614904344
+  ],
+  "interval_limitation": "Small candidate-conditional AI-reference diagnostic; interval ignores conversation clustering and reference ambiguity",
+  "historical_missing_predictions_total": 5,
+  "historical_missing_predictions_scorable": 2,
+  "independent_review_files": {
+    "independent-a.json": "45675cdfff88bd3d1afe85000ddc02fe80e0b1059d7f72a41c069e123fd4530c",
+    "independent-b.json": "60eb34abd0a0faadf3faf226553bd8b86bea15ad3b8489de8bc64bb9f0cfdc96"
+  },
+  "provider_requests": 0
+}

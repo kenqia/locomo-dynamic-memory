@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "builds": [
+    {
+      "sample_id": "conv-26",
+      "build_id": "367c901b300440649bdc0bfba2af8010",
+      "sha256": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78",
+      "memories": 259,
+      "relations": 4740,
+      "source_turns": 190,
+      "status": "PASS"
+    },
+    {
+      "sample_id": "conv-30",
+      "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+      "sha256": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae",
+      "memories": 244,
+      "relations": 4460,
+      "source_turns": 154,
+      "status": "PASS"
+    },
+    {
+      "sample_id": "conv-41",
+      "build_id": "8d459492549b4a3e88005211f036addf",
+      "sha256": "e15b30e89de463cca4ff9fcd347b332a72525f0fbfb8506a5476df120fd4b488",
+      "memories": 321,
+      "relations": 5767,
+      "source_turns": 243,
+      "status": "PASS"
+    },
+    {
+      "sample_id": "conv-42",
+      "build_id": "c892596ac8884f43b4cf2098349a7fa5",
+      "sha256": "89d6bdf02e7eca10014688e0a7946fd536b846c4ff6c8b09a84bb8671680e3fd",
+      "memories": 413,
+      "relations": 7724,
+      "source_turns": 297,
+      "status": "PASS"
+    },
+    {
+      "sample_id": "conv-43",
+      "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+      "sha256": "2ae95deb13dcf22e1bb91cff44db88feba7c3bcf1b753e907ba121f4ac972f17",
+      "memories": 402,
+      "relations": 7620,
+      "source_turns": 300,
+      "status": "PASS"
+    },
+    {
+      "sample_id": "conv-44",
+      "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+      "sha256": "1006ce3d855ffb496cb8a2c029276511707427bb7129474013f4b1768639611f",
+      "memories": 392,
+      "relations": 7134,
+      "source_turns": 281,
+      "status": "PASS"
+    }
+  ],
+  "memories": 2031,
+  "relations": 37445,
+  "provider_requests": 0
+}

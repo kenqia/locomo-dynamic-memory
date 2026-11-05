@@ -1,0 +1,181 @@
+{
+  "version": "public-core-independent-spec-review-v1",
+  "axis": "Spec",
+  "reviewer": "non-author Codex agent /root/release_spec_review",
+  "reviewed_at_utc": "2026-11-05T14:25:43.430244+00:00",
+  "status": "PASS_LOCAL_AWAITING_REMOTE_CI",
+  "baseline_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+  "branch": "m5/personal-public-core",
+  "cutoff": "staged/imported working snapshot before first safe-branch commit; source/CI/document SHA recorded below",
+  "safe_import_source_commit": "c63c9ce4fd26b3e1c1f6509e8d4419d55554aae4",
+  "source_archive_sha256": "8c2cfdb818316887df98c847f67fb10d67fbcfa96e595e38d731f86fe1a3dd77",
+  "origin_release_lineage_only": "af54f0eed24c4a52116bcccf85682f1334d5d116; never merge/cherry-pick/push old122-commit history",
+  "spec": "Safely publish only verified personal public-core snapshot atop currentmain, preserve teammates, run fresh local/remoteCI and non-author review before authorized squash merge; no privateGold/controlledJSON/secrets/paid operations/course submission",
+  "findings": [],
+  "unresolved_behavior_p0": 0,
+  "unresolved_behavior_p1": 0,
+  "independent_verification": [
+    {
+      "operation": "verify801 imported payload paths against originaltar/import-audit",
+      "status": "PASS",
+      "same": 119,
+      "modified": 40,
+      "added": 642,
+      "sha_mismatches": 0
+    },
+    {
+      "operation": "verify801 final imported payload SHA and identify explicit deltas",
+      "status": "PASS",
+      "sha_mismatches": 0,
+      "deltas": [
+        "README.md: safe snapshot link",
+        "src/locomo_memory/extraction_patch.py: remove redundantEOF blank line, no behavior change"
+      ]
+    },
+    {
+      "operation": "git ls-tree -rz baseline compare every main file outsideimport",
+      "status": "PASS",
+      "files": 441,
+      "changed": [
+        ".github/workflows/checks.yml: authorized offlineCI/45min",
+        ".gitattributes:3 exact frozenreport whitespace exceptions"
+      ],
+      "missing_or_other_changes": 0
+    },
+    {
+      "command": "uv run --locked pytest --collect-only -q -m 'not live_model and not local_embedding and not controlled_data'",
+      "status": "PASS",
+      "selected": 967,
+      "collected": 995,
+      "deselected": 28
+    },
+    {
+      "command": "uv run --locked pytest -q tests/release tests/test_answer_regressions.py tests/test_imports.py -m 'not live_model and not local_embedding and not controlled_data'",
+      "status": "PASS",
+      "passed": 42,
+      "warnings": 1,
+      "seconds": 45.0,
+      "note": "Existing main30 regression/import tests kept and pass; no assertion weakening to satisfy newHybrid default"
+    },
+    {
+      "operation": "review updated publicCI",
+      "status": "PASS",
+      "permissions": "contents:read",
+      "checkout_persist_credentials": false,
+      "timeout_minutes": 45,
+      "live_model": "0",
+      "local_embedding": "0",
+      "suite": "run-tests --public;24controlled+4opt-in excluded"
+    },
+    {
+      "operation": "review safe snapshot provenance/README",
+      "status": "PASS",
+      "note": "Separates newbase+payload from originallocalRelease991/937; importedmanifest not represented as allmain history privacy proof; upstreamCC-BY-NC data/officialQA inherited rather than privateGold; oldcommit refs lineageonly"
+    },
+    {
+      "operation": "review documented squash-only/revertPR plan",
+      "status": "PASS",
+      "note": "User authorized merge only after freshsuite/remoteCI/review; mainchanges require renewedcompatibility review; do not push oldhistory or forcepush"
+    },
+    {
+      "operation": "Independently parse this snapshot full JUnit XML and inspect stdout summary with SHA comparison",
+      "status": "PASS",
+      "passed": 967,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "deselected": 28,
+      "m5_tests": 341,
+      "release_tests": 12,
+      "seconds_stdout": 796.03,
+      "seconds_junit": 795.877,
+      "xml_sha256": "3cf4f9c3c5aac6dc86e712bdc4ee4bd3162db1121b2a85d6066b8aa548ff4110",
+      "stdout_sha256": "1052edd188bd541ed1255a015cea7447fb59277e5f9450f78d7168001b2dc7f8",
+      "stdout_summary": "967 passed, 28 deselected, 1 warning in 796.03s (0:13:16)",
+      "note": "No old 991/937 result substituted. Public selection excludes 24 controlled_data and 4 opt-in tests; the 30 inherited main tests remain included. One extraction_patch EOF whitespace change occurred during execution and is behavior-neutral; root reports 11 targeted follow-up tests. Exact committed bytes still require remote CI."
+    }
+  ],
+  "root_executed_evidence_reviewed": [
+    {
+      "path": "docs/public-release/normal-startup.json",
+      "status": "PASS",
+      "notes": "API/UI200,Hybriddefault,newDB,TERMexit0,no providerrequests"
+    },
+    {
+      "path": "docs/public-release/browser-normal/issue-12-result.json",
+      "status": "PASS",
+      "notes": "Chromium,current/historical/conflict/insufficient/failureandretry,8evaluationrows4syntheticfailures,no pageorconsoleerrors"
+    },
+    {
+      "path": "docs/public-release/browser-replay/browser-result.json",
+      "status": "PASS",
+      "notes": "GETonly,externalrequests0,providerrequests0,allreadonlycontrols/export"
+    },
+    {
+      "path": "docs/public-release/six-exports-validation.json",
+      "status": "PASS",
+      "notes": "ActualsixcontrolledMemoryExports readonlyvalidated; no fullJSON copiedto publicsnapshot"
+    }
+  ],
+  "data_scope": "No introducedfullsixMemoryJSON,researchDB,var,credentials,privateGoldorraw-wire paths. main existing licensedupstreamraw/QA/oldderivedcases preserved. Prior801tarprivacycheck retained; non-authorStandards audits inheritedhistoryseparately. Unknownsemanticprivacyis not universallycertified.",
+  "pending": [
+    "Bind review to the first safe-snapshot commit and exact PR head.",
+    "GitHub Checks on that exact PR head must pass before merge.",
+    "Confirm main has not advanced; otherwise review and retest compatibility.",
+    "After all gates pass, verify authorized squash merge parentage and record rollback SHA."
+  ],
+  "remote_ci_status": "NOT_RUN_OR_NOT_YET_VERIFIED",
+  "merge_ready": false,
+  "old991_and937_accepted_as_fresh_verification": false,
+  "snapshot_files": [
+    {
+      "path": "SAFE_PUBLIC_SNAPSHOT.md",
+      "sha256": "cb12ed211efcf533bb53b402e2858fb5073d3284a61560ad3760824d8a216e47"
+    },
+    {
+      "path": "README.md",
+      "sha256": "2fa8c911a12b418570ed24a73f980b9fb0a6b9f38a64660f8d24434a5712525d"
+    },
+    {
+      "path": ".github/workflows/checks.yml",
+      "sha256": "fdb0e437615cd125001d4514edae034d79eedee2217b59da555c22b29d593c2d"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "070779d1c7095e9b6ae2d95be128da61f6f88ff35464e1e6d7909ea7b64e8090"
+    },
+    {
+      "path": "docs/public-release/import-final-audit.json",
+      "sha256": "a173efed549f25b3e26114994ed6a1a320f734de6e23a41b159886ac1bc0e276"
+    },
+    {
+      "path": "docs/public-release/browser-normal/issue-12-result.json",
+      "sha256": "840c6a8b1d1886acfbaa6ca7a5a6ff46d82c8dd537efb058313e782d3dcc4b38"
+    },
+    {
+      "path": "docs/public-release/browser-replay/browser-result.json",
+      "sha256": "0abd5bcc45dbb8bf10596c95b3e053d58051ef9fdd0ef96c0ecdb02d0f513670"
+    },
+    {
+      "path": "docs/public-release/normal-startup.json",
+      "sha256": "a4f0ac0b365dca717359d61029e4e3f8f076d7940a4a0b5668b72f8bc341fed5"
+    },
+    {
+      "path": "docs/public-release/six-exports-validation.json",
+      "sha256": "c7e5a919e2c306d187d0bfdd3745aee939c87fba195208e335ae8c5f8dd3ec89"
+    },
+    {
+      "path": "docs/public-release/PUBLIC_SNAPSHOT_VALIDATION.json",
+      "sha256": "c5d750ff2c294b3ce0ece6bae52d1e79c79d35866540e0dee934b83e453ba5a7"
+    }
+  ],
+  "conclusion": "PASS_LOCAL_AWAITING_REMOTE_CI. No unresolved implementation, team-overwrite, or newly introduced private-data blocker found within the reviewed scope. Fresh local suite independently verified at 967 passed and zero failures/errors/skips; normal Web and Replay evidence reviewed. Exact-head GitHub Checks and final commit review must pass before the user-authorized squash merge. Unknown semantic privacy remains outside any universal guarantee.",
+  "local_review_decision": "PASS: the safe branch may be committed and pushed under the current user authorization. This is not merge readiness; exact-head remote CI and final non-author commit/diff review remain required.",
+  "scope_boundaries": [
+    "Import only the verified public payload and declared integration deltas; no old 122-commit personal history.",
+    "Preserve main and teammate paths outside the payload, except authorized CI and exact frozen-report whitespace attributes.",
+    "Inherited publicly licensed LoCoMo raw data and official QA are distinguished from private Gold and controlled six Memory exports.",
+    "No paid model calls, credential disclosure, destructive cleanup, teammate PR merge, or course-platform submission.",
+    "Use squash only after gates pass, and retain an explicit pre-merge rollback SHA."
+  ]
+}

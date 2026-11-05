@@ -1,0 +1,8 @@
+{
+  "status": "killed",
+  "mutation": "Disable removal of a proven unsent relation checkpoint in isolated source",
+  "test": "zero-budget relation checkpoint rejection",
+  "exit_code": 1,
+  "original_source_modified": false,
+  "provider_requests": 0
+}

@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-11-04T15:05:42.863134+00:00",
+  "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "scrape_id": "01a1a716-c767-74c3-8f3e-4af8571a9c9c",
+  "source_sha256": "f7787affc6f73b3aeed981430df533e1e71b6b91ca4bcb4f531c4741fd7d3894",
+  "cache_state": "hit",
+  "cached_at": "2026-11-04T14:52:36.899Z",
+  "requested_model": "deepseek-flash",
+  "published_version": "DeepSeek-V4.1-Flash-1017",
+  "immutable_server_version_pin_verified": false,
+  "input_peak_usd_per_million": ".30",
+  "output_peak_usd_per_million": "1.20",
+  "matches_approved_policy": true,
+  "model_completion_requests": 0
+}

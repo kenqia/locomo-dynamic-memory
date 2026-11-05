@@ -1,0 +1,834 @@
+{
+  "version": "m5-level-e-failures-terminal-v1",
+  "generation_freeze_sha256": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+  "failed_items": 17,
+  "items": [
+    {
+      "question_id": "conv-43:qa:1",
+      "sample_id": "conv-43",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "invalid_output",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "invalid_output",
+          "error_code": "answer_memory_citation_scope_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 2,
+          "outcome": "invalid_output",
+          "error_code": "answer_memory_citation_scope_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 3,
+          "outcome": "invalid_output",
+          "error_code": "answer_memory_citation_scope_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-43:qa:7",
+      "sample_id": "conv-43",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "invalid_output",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "invalid_output",
+          "error_code": "answer_memory_citation_scope_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 2,
+          "outcome": "invalid_output",
+          "error_code": "answer_memory_citation_scope_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 3,
+          "outcome": "invalid_output",
+          "error_code": "answer_memory_citation_scope_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-43:qa:7",
+      "sample_id": "conv-43",
+      "arm": "hybrid_no_resolution",
+      "outcome": "failed",
+      "error_code": "invalid_output",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "invalid_output",
+          "error_code": "answer_memory_citation_scope_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "failed_operation"
+        },
+        {
+          "attempt": 2,
+          "outcome": "invalid_output",
+          "error_code": "answer_memory_citation_scope_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "failed_operation"
+        },
+        {
+          "attempt": 3,
+          "outcome": "invalid_output",
+          "error_code": "answer_memory_citation_scope_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "failed_operation"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-43:qa:65",
+      "sample_id": "conv-43",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "invalid_output",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 2,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 3,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:31",
+      "sample_id": "conv-44",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "invalid_output",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "invalid_output",
+          "error_code": "resolution_selection_agreement_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "resolve"
+        },
+        {
+          "attempt": 2,
+          "outcome": "invalid_output",
+          "error_code": "resolution_selection_agreement_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "resolve"
+        },
+        {
+          "attempt": 3,
+          "outcome": "invalid_output",
+          "error_code": "resolution_selection_agreement_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:41",
+      "sample_id": "conv-44",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "invalid_output",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 2,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 3,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:41",
+      "sample_id": "conv-44",
+      "arm": "hybrid_no_resolution",
+      "outcome": "failed",
+      "error_code": "invalid_output",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "failed_operation"
+        },
+        {
+          "attempt": 2,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "failed_operation"
+        },
+        {
+          "attempt": 3,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "failed_operation"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:94",
+      "sample_id": "conv-44",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "invalid_output",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 2,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 3,
+          "outcome": "invalid_output",
+          "error_code": "answer_evidence_status_required",
+          "failure_stage": "domain_validation",
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "answer"
+        },
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "succeeded",
+          "error_code": null,
+          "failure_stage": null,
+          "field_path": null,
+          "http_status": 200,
+          "http_error_category": null,
+          "http_retryable": null,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:153",
+      "sample_id": "conv-44",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "model_http_error",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:154",
+      "sample_id": "conv-44",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "model_http_error",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:154",
+      "sample_id": "conv-44",
+      "arm": "hybrid_no_resolution",
+      "outcome": "failed",
+      "error_code": "model_http_error",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "failed_operation"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:155",
+      "sample_id": "conv-44",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "model_http_error",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:155",
+      "sample_id": "conv-44",
+      "arm": "hybrid_no_resolution",
+      "outcome": "failed",
+      "error_code": "model_http_error",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "failed_operation"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:156",
+      "sample_id": "conv-44",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "model_http_error",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:156",
+      "sample_id": "conv-44",
+      "arm": "hybrid_no_resolution",
+      "outcome": "failed",
+      "error_code": "model_http_error",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "failed_operation"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:157",
+      "sample_id": "conv-44",
+      "arm": "dynamic",
+      "outcome": "failed",
+      "error_code": "model_http_error",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "resolve"
+        }
+      ]
+    },
+    {
+      "question_id": "conv-44:qa:157",
+      "sample_id": "conv-44",
+      "arm": "hybrid_no_resolution",
+      "outcome": "failed",
+      "error_code": "model_http_error",
+      "calls": [
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "query_analysis"
+        },
+        {
+          "attempt": 1,
+          "outcome": "model_http_error",
+          "error_code": "model_http_error",
+          "failure_stage": "provider_http",
+          "field_path": null,
+          "http_status": 402,
+          "http_error_category": "insufficient_balance",
+          "http_retryable": false,
+          "response_received": true,
+          "operation": "failed_operation"
+        }
+      ]
+    }
+  ],
+  "http_error_request_counts": [
+    {
+      "status": 402,
+      "category": "insufficient_balance",
+      "requests": 18
+    }
+  ],
+  "notes": [
+    "HTTP402 is provider insufficient_balance, not input limit or model semantic failure.",
+    "Missing usage stays unknown and fully reserved; no rerun after once-only freeze."
+  ],
+  "raw_provider_body_read": false,
+  "private_logs_read": false,
+  "provider_requests": 0
+}

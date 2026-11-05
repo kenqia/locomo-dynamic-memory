@@ -12,20 +12,10 @@ from .query_schemas import EvidenceAnswer
 from .raw_schemas import MixedResolution, RAW_RESOLUTION_VERSION, RAW_ANSWER_VERSION, ANSWER_BOUNDARY_VERSION
 from .raw_retrieval import retrieve_sources, RAW_RETRIEVAL_VERSION
 from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
+from .resolution_delivery import record_delivery
 
 
-def record_delivery(delivery, metadata, *, accepted, error_code=None):
-    calls = metadata.get('calls', [])
-    attempted = accepted or bool(calls)
-    received = accepted or any(c.get('response_received') for c in calls)
-    ids = delivery['expected_source_ids']
-    delivery.update(attempted_source_ids=ids if attempted else [],
-                    delivered_source_ids=ids if received else [],
-                    status='accepted' if accepted else 'request_attempted' if attempted else 'not_sent',
-                    provider_accepted=True if accepted else False if error_code=='context_length_exceeded' else None)
-
-
-PACKING_VERSION = "core-source-distinct-items-v2"
+PACKING_VERSION = "core-source-distinct-items-v4-raw-only"
 
 
 def required_relation_labels(question):
@@ -88,7 +78,7 @@ def evidence_payload(base, memories, raw, sources):
 
 
 def pack_payload(base, memories, raw, sources, settings, *, final=False):
-    operation, schema = ('answer_raw',EvidenceAnswer) if final else ('resolve_raw',MixedResolution)
+    operation, schema = ('answer_raw', EvidenceAnswer) if final else ('resolve_raw', MixedResolution)
     selected_m, selected_s, omitted = [], [], []
     empty = evidence_payload(base, [], [], sources)
     if request_token_estimate(operation, empty, schema) > settings.resolution_input_budget:

@@ -1,0 +1,69 @@
+{
+  "version": "m5-level-e-shared-build-cost-v1",
+  "scope": "joint conv43/44 reusable Build acquisition; all seven paid construction/recovery phases; excludes both development QA phases and Level E query cost",
+  "phases": [
+    {
+      "evidence_path": "experiments/m5-development/live-extraction-post-recovery-v1.json",
+      "evidence_sha256": "2b285fc31796c2a8bc6cd382d797725db295f9bff34fe98ee704d005bd0441b9",
+      "physical_requests": 78,
+      "reserved_usd": "3.4624767",
+      "known_usage_peak_upper_usd": "0.2265405"
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv43-relations-terminal-v1.json",
+      "evidence_sha256": "93ba6dd8a92e2f95985d3eb2aa00928e0e9ed507314f2458c1e56970e86ce793",
+      "physical_requests": 408,
+      "reserved_usd": "20.2028820",
+      "known_usage_peak_upper_usd": "3.9199638"
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv44-isolated-recovery-v2-terminal-v1.json",
+      "evidence_sha256": "18e8b9d61a7b14e6904b282f4e8fb4025182065187aab2fee7e9f7714d2d9e80",
+      "physical_requests": 3,
+      "reserved_usd": "0.1335687",
+      "known_usage_peak_upper_usd": "0.0100968"
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv44-successor-v3-terminal-v1.json",
+      "evidence_sha256": "10ed0eefa87bfc18db000218c4d889feb0855c133ff3fa089111c41fd297df32",
+      "physical_requests": 1,
+      "reserved_usd": "0.0453867",
+      "known_usage_peak_upper_usd": "0.0031977"
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv44-relations-terminal-v1.json",
+      "evidence_sha256": "ece3ef725c0bd56679809280fd9c764ed64d14197a0898cc16e5d151893ee79d",
+      "physical_requests": 417,
+      "reserved_usd": "20.5545036",
+      "known_usage_peak_upper_usd": "2.3807064"
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv44-relation-recovery-terminal-v1.json",
+      "evidence_sha256": "c6d816a97c3f4a44743f977f9a5f2ad4223eccb72b624c5accb9994b7fcba8be",
+      "physical_requests": 12,
+      "reserved_usd": "0.5913375",
+      "known_usage_peak_upper_usd": "0.0664212"
+    },
+    {
+      "evidence_path": "experiments/m5-development/conv44-relation-successor-terminal-v1.json",
+      "evidence_sha256": "24e09a0f75418be112a23d042c13cbfd1e42fed2338db1bb67a08951e78f030f",
+      "physical_requests": 1,
+      "reserved_usd": "0.0537564",
+      "known_usage_peak_upper_usd": "0.0072651"
+    }
+  ],
+  "physical_requests": 920,
+  "conservative_reserved_usd": "45.0439116",
+  "known_usage_peak_cache_miss_upper_usd": "6.6141915",
+  "unknown_usage_requests": 7,
+  "unknown_usage_reserved_usd": "0.3500316",
+  "failed_recovery_cost_included": true,
+  "local_embedding_hardware_monetary_cost": "not_measured",
+  "actual_invoice": "not_accessed",
+  "historical_thinking_modes_preserved": true,
+  "amortization_policy": "Charge the shared Build acquisition once per separately deployed arm, divide by 400 questions; do not divide by 800 and claim each arm paid only half. Joint two-arm experiment incurs acquisition once.",
+  "per_arm_build_reservation_per_400_questions_usd": "0.112609779",
+  "per_arm_build_known_usage_peak_upper_per_400_questions_usd": "0.01653547875",
+  "provider_calls_by_this_aggregation": 0,
+  "gold_read": false
+}

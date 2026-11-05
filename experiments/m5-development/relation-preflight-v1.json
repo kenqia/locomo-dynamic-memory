@@ -1,0 +1,56 @@
+{
+  "status": "read_only_preflight_not_authorized",
+  "builds": [
+    {
+      "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+      "sample_id": "conv-43",
+      "status": "extracted",
+      "build_fingerprint": "e7bf70017616b07b0e9d12c8fca8aa681cc4fbdc58d64e0568bf435ec8a66a25",
+      "memory_count": 402,
+      "relation_tasks": 400,
+      "comparisons": 7620,
+      "omitted_history_comparisons": 33669,
+      "max_first_attempt_message_bytes": 38122,
+      "over_cap_tasks": 0,
+      "request_bound": 1200,
+      "worst_reserved_usd": "104.7859200",
+      "eligible_for_complete_build_proposal": true,
+      "task_identity_sha256": "009a2847285a61cb9385091d4d04c146004d923ad376571fa5053f27c2defcb1"
+    },
+    {
+      "build_id": "bef9f685957843698b3083ff4cbc79a4",
+      "sample_id": "conv-44",
+      "status": "failed",
+      "build_fingerprint": "9820e3a7d9dd0186434409f1d1436390f39325c05bfef731a6708256e2fd7220",
+      "memory_count": 383,
+      "relation_tasks": 375,
+      "comparisons": 6954,
+      "omitted_history_comparisons": 27132,
+      "max_first_attempt_message_bytes": 38256,
+      "over_cap_tasks": 0,
+      "request_bound": 1125,
+      "worst_reserved_usd": "98.2368000",
+      "eligible_for_complete_build_proposal": false,
+      "task_identity_sha256": "ce99eb3e6bdd78292c1ada4dace3679bd25165579b320dbf1c67840790157a46"
+    }
+  ],
+  "output_tokens": 32768,
+  "max_input_message_bytes": 160000,
+  "attempts_per_task": 3,
+  "per_physical_request_upper_usd": "0.0873216",
+  "total_request_bound": 2325,
+  "total_worst_reserved_usd": "203.0227200",
+  "relation_thinking_effort": "high",
+  "price_basis": "2026-11-04 DeepSeek peak cache-miss input .30/output 1.20 USD per million",
+  "exact_scope": "Existing accepted extraction snapshot only. Failed conv-44 is provisional and must be recomputed after recovery.",
+  "byte_cap_scope": "Retry feedback may increase messages; proposed transport refuses over-cap requests, no silent evidence truncation.",
+  "excludes": [
+    "embedding/index runtime verification",
+    "relation provider calls",
+    "query/evaluation",
+    "holdout QA/evidence"
+  ],
+  "provider_requests": 0,
+  "source_plan_sha256": "8363cb625599cd2650a89ee41c2b1773ad3528444d42d26a5ebfc254d9553c69",
+  "source_settings_sha256": "830bb4879747d32c16df0fc59a4cd87641c29a96c295f1eaec911a8ebd7146e7"
+}

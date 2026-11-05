@@ -38,6 +38,12 @@
 并要求实体、维度名称遵守原有字符格式。抽取返回不合规或不完整 JSON 后的有限重试会附带安全错误代码、
 字段位置及相同约束，不改变校验规则。既有 `extract-v2-examples` 构建保留原指纹。
 
+当前候选将时间锚点未引用与时间表达不在锚点原文中分别记为
+`extraction_time_anchor_cited`、`extraction_time_expression_required`，并在已有有限重试中要求重新核查来源与时间字段。
+反馈不包含被拒绝的输出，不允许为通过校验清空日期或编造来源。
+`safe-validation-feedback-v2-budget-aware` 进入构建指纹：旧的不完整构建不能跨该契约恢复，返回 `build_contract_changed`；
+已完成版本仍可读取和查询。继续使用原工作树即可保留原反馈行为，无需迁移数据库。
+
 ## 前提
 
 - 按 [运行指南](running.md) 启动 FastAPI 与 Streamlit，并导入一个数据集。

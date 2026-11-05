@@ -1,0 +1,17 @@
+{
+  "checked_date_local": "2026-11-04",
+  "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "source_sha256": "579412351262de19f1b067420542d042dc9433f389be6d252d0f4c41b82f515b",
+  "requested_model": "deepseek-flash",
+  "published_version": "DeepSeek-V4.1-Flash-1017",
+  "currency": "USD",
+  "per_million_tokens": {
+    "peak_cache_miss": 0.3,
+    "peak_output": 1.2,
+    "peak_cache_hit": 0.006,
+    "offpeak_cache_miss": 0.15,
+    "offpeak_output": 0.6
+  },
+  "course_model_constraint": "classroom notes only; course PDF does not independently establish exact model/thinking restriction",
+  "source_is_price_quote_not_paid_call": true
+}

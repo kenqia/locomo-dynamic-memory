@@ -1,0 +1,8 @@
+{
+  "status": "killed",
+  "mutation": "Disable explicit request interval override in isolated source copy",
+  "test": "test_temporal_priority_uses_explicit_request_date_over_question_cutoff",
+  "exit_code": 1,
+  "original_source_modified": false,
+  "paid_requests": 0
+}

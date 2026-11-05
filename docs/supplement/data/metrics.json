@@ -1,0 +1,194 @@
+{
+  "_readme": "补充材料中所有图表数字的唯一来源。src 字段为核对用的来源位置（分支:路径），正文不引用。H=Hybrid（hybrid_no_resolution），D=Dynamic。",
+  "_sources": {
+    "ARC": "codex/research-process-archive-20261103:docs/research-process/entries/",
+    "RN": "codex/research-next-20261101:docs/research-v2/",
+    "M5": "codex/m5-final-conv44-relations-20261104:docs/m5-development/",
+    "M5C": "codex/m5-final-completion-20261104:docs/m5-development/",
+    "WT": "main 工作区 experiments/"
+  },
+  "timeline": [
+    {"id": "E0", "lane": "构建", "start": "10-19", "end": "10-19", "label": "系统构造与工程验证"},
+    {"id": "E1", "lane": "构建", "start": "10-20", "end": "10-20", "label": "首次完整构建与关系契约"},
+    {"id": "E2", "lane": "构建", "start": "10-20", "end": "10-20", "label": "质量增量 A–E"},
+    {"id": "E3", "lane": "评测", "start": "10-20", "end": "10-21", "label": "10 题四策略与输出修复"},
+    {"id": "E4", "lane": "评测", "start": "10-21", "end": "10-21", "label": "证据覆盖优化与回滚"},
+    {"id": "E5", "lane": "评测", "start": "10-21", "end": "10-21", "label": "五策略现状展示"},
+    {"id": "E6", "lane": "评测", "start": "10-27", "end": "10-29", "label": "五组动态机制消融"},
+    {"id": "E7", "lane": "诊断", "start": "10-29", "end": "10-29", "label": "回答诊断与 Top7"},
+    {"id": "E8", "lane": "诊断", "start": "10-29", "end": "10-30", "label": "原文分块替代"},
+    {"id": "E9", "lane": "诊断", "start": "10-29", "end": "10-30", "label": "Top145 系列"},
+    {"id": "E10", "lane": "决策", "start": "10-31", "end": "11-01", "label": "RC1/RC2 与 Production v1"},
+    {"id": "E11", "lane": "构建", "start": "11-01", "end": "11-01", "label": "三轮预算 smoke"},
+    {"id": "E12", "lane": "评测", "start": "11-01", "end": "11-03", "label": "757 题全量基线"},
+    {"id": "E13", "lane": "诊断", "start": "11-03", "end": "11-03", "label": "失败图谱与 H/D 配对"},
+    {"id": "E14", "lane": "诊断", "start": "11-03", "end": "11-03", "label": "E1 路由 / E5 缓存 / E6 表示"},
+    {"id": "E15", "lane": "评测", "start": "11-03", "end": "11-03", "label": "Phase 5 canary 与 Phase 6"},
+    {"id": "E16", "lane": "诊断", "start": "11-03", "end": "11-03", "label": "Phase 7 事实审阅"},
+    {"id": "E17", "lane": "诊断", "start": "11-03", "end": "11-03", "label": "Phase 7 D1/D2 消融"},
+    {"id": "E18", "lane": "诊断", "start": "11-04", "end": "11-04", "label": "Phase 8 CE 重排"},
+    {"id": "E19", "lane": "诊断", "start": "11-04", "end": "11-04", "label": "Phase 9 Hindsight / Qwen3"},
+    {"id": "E20", "lane": "诊断", "start": "11-04", "end": "11-04", "label": "M5 Level A/B 与关系审阅"},
+    {"id": "E21", "lane": "诊断", "start": "11-04", "end": "11-04", "label": "有效选择诊断"},
+    {"id": "E22", "lane": "评测", "start": "11-04", "end": "11-04", "label": "Level C v1"},
+    {"id": "E23", "lane": "评测", "start": "11-04", "end": "11-04", "label": "Level C input v2"},
+    {"id": "E24", "lane": "构建", "start": "11-04", "end": "11-05", "label": "留出集构建与恢复"},
+    {"id": "E25", "lane": "评测", "start": "11-05", "end": "11-05", "label": "Level E 独立留出评测"}
+  ],
+  "f1_by_stage": {
+    "_note": "完整分母 F1（失败记零）。E12 Hybrid 含 1 个 unknown，取下界；E5 为 16 道可回答题的成功项均值。",
+    "rows": [
+      {"exp": "E5", "label": "E5 展示\n16 题", "H": 0.5124, "D": 0.5100, "n": 16, "src": "ARC SHOW-01.md"},
+      {"exp": "E12", "label": "E12 全量\n757 题", "H": 0.521886, "D": 0.515133, "n": 757, "src": "ARC V2-05.md"},
+      {"exp": "E22", "label": "E22 Level C v1\n普通 80 题", "H": 0.399883, "D": 0.228329, "n": 80, "src": "M5 LEVEL_C_RESULTS.md"},
+      {"exp": "E23", "label": "E23 input v2\n普通 80 题", "H": 0.401172, "D": 0.444702, "n": 80, "src": "M5 LEVEL_C_INPUT_V2_RESULTS.md"},
+      {"exp": "E25", "label": "E25 留出\n类别1–4 301 题", "H": 0.402606, "D": 0.409151, "n": 301, "src": "M5 LEVEL_E_RESULTS_V1.md"}
+    ]
+  },
+  "paired_wlt": {
+    "_note": "D 相对 H 的逐题变化：提升 / 退化 / 不变。",
+    "rows": [
+      {"label": "E12 全量（705 对共同成功）", "up": 136, "down": 110, "tie": 459, "src": "ARC V2-05.md"},
+      {"label": "E22 普通 80", "up": 17, "down": 35, "tie": 28, "src": "M5 LEVEL_C_RESULTS.md"},
+      {"label": "E22 诊断 20", "up": 4, "down": 7, "tie": 9, "src": "M5 LEVEL_C_RESULTS.md"},
+      {"label": "E23 普通 80", "up": 27, "down": 14, "tie": 39, "src": "M5 LEVEL_C_INPUT_V2_RESULTS.md"},
+      {"label": "E23 诊断 20", "up": 5, "down": 3, "tie": 12, "src": "M5 LEVEL_C_INPUT_V2_RESULTS.md"},
+      {"label": "E25 类别1–4 301", "up": 60, "down": 56, "tie": 185, "src": "M5 LEVEL_E_RESULTS_V1.md"},
+      {"label": "E25 类别5 99", "up": 1, "down": 6, "tie": 92, "src": "M5 LEVEL_E_RESULTS_V1.md"}
+    ]
+  },
+  "forest": {
+    "_note": "D−H 配对差及 95% 题目 bootstrap 区间（E22/E23 seed 固定、2000 次；E25 seed 51104、2000 次；E18 seed 80804、10000 次）。",
+    "answer_f1": [
+      {"label": "E22 普通 80", "d": -0.171553, "lo": -0.256728, "hi": -0.092833},
+      {"label": "E22 诊断 20", "d": -0.163200, "lo": -0.365019, "hi": 0.028623},
+      {"label": "E23 普通 80", "d": 0.043530, "lo": -0.008095, "hi": 0.095318},
+      {"label": "E23 诊断 20", "d": 0.039158, "lo": -0.056014, "hi": 0.134784},
+      {"label": "E25 类别1–4 F1", "d": 0.006545, "lo": -0.020133, "hi": 0.034035},
+      {"label": "E25 类别5 字面拒答", "d": -0.050505, "lo": -0.101010, "hi": 0.0},
+      {"label": "E25 混合规则均值", "d": -0.007575, "lo": -0.032061, "hi": 0.017161}
+    ],
+    "source_review": [
+      {"label": "E25 原文支持（297 对）", "d": 0.033670, "lo": -0.010101, "hi": 0.077525},
+      {"label": "E25 引用支持（297 对）", "d": 0.026936, "lo": -0.020202, "hi": 0.074074},
+      {"label": "E25 正确拒答（124 对）", "d": -0.016129, "lo": -0.040323, "hi": 0.0},
+      {"label": "E25 错误时间（308 对，负为减少）", "d": -0.012987, "lo": -0.035714, "hi": 0.009740},
+      {"label": "E25 列表遗漏（317 对，负为减少）", "d": -0.018927, "lo": -0.037855, "hi": 0.0},
+      {"label": "E23 原文支持（普通 60 对）", "d": 0.016667, "lo": -0.033333, "hi": 0.066667},
+      {"label": "E18 CE 交付 Recall（753 题，C1−C0）", "d": -0.009790, "lo": -0.028066, "hi": 0.007836}
+    ]
+  },
+  "success": {
+    "_note": "运行成功数 / 计划数。",
+    "rows": [
+      {"label": "E11 smoke 32768", "H": [5, 5], "D": [0, 5]},
+      {"label": "E11 smoke 96000", "H": [5, 5], "D": [5, 5]},
+      {"label": "E12 全量 757", "H": [753, 757], "D": [709, 757]},
+      {"label": "E22 Level C v1", "H": [100, 100], "D": [51, 100]},
+      {"label": "E23 input v2", "H": [99, 100], "D": [100, 100]},
+      {"label": "E25 留出 400", "H": [394, 400], "D": [389, 400]}
+    ]
+  },
+  "failures": {
+    "_note": "各实验的失败类型计数；单位不同（任务/项），只在实验内部比较。",
+    "groups": [
+      {"exp": "E1 首次构建关系任务（292）", "items": {"成功": 89, "失败": 29, "中断": 1, "待执行": 173}},
+      {"exp": "E12 Dynamic 失败（48）", "items": {"完整解析输入超预算": 46, "其他": 2}},
+      {"exp": "E22 Dynamic 失败（49）", "items": {"请求字节上限拒绝": 35, "完整解析输入超预算": 14}},
+      {"exp": "E24 conv-44 关系失败（10）", "items": {"未知来源 ID 违约": 8, "同状态维度违约": 2}},
+      {"exp": "E25 运行失败（17）", "items": {"invalid_output": 8, "HTTP 402 余额不足": 9}}
+    ]
+  },
+  "recall_funnel_e25": {
+    "_note": "E25 来源 Recall 代理（Memory 排名 K，覆盖唯一 Source Turn；399/400 可评分，失败记零）。",
+    "K": [5, 10, 20],
+    "H": {"initial": [0.601211, 0.681934, 0.730436], "expanded": [0.601211, 0.681934, 0.730436], "delivered": [0.601211, 0.681934, 0.719367]},
+    "D": {"initial": [0.598204, 0.679678, 0.725173], "expanded": [0.598204, 0.679678, 0.725173], "effective": [0.516670, 0.534318, 0.536511], "delivered": [0.516670, 0.534318, 0.535884]}
+  },
+  "attribution_e16": {
+    "source_chain_35": {"初始召回疑似缺口": 21, "有效选择疑似缺口": 9, "无来源关联": 4, "已交付仍遗漏": 1},
+    "confirmed_8": {"具体事实抽取遗漏": 5, "已有事实未召回/未交付": 2, "已交付仍过度拒答": 1, "Answer 预算丢失": 0},
+    "src": "RN PHASE7_FAILURE_ATTRIBUTION_AND_CANDIDATE.md"
+  },
+  "cost_ratio": {
+    "_note": "Dynamic/Hybrid 查询费用比；均为 provider 报告 usage 按峰时 cache-miss 单价折算，不是实际账单。",
+    "rows": [
+      {"label": "E12 全量 757（CNY）", "H": 9.597679, "D": 98.930522},
+      {"label": "E22 Level C v1（USD）", "H": 0.2301042, "D": 0.9397167},
+      {"label": "E23 input v2（USD）", "H": 0.2330898, "D": 2.3531001},
+      {"label": "E25 留出 400（USD）", "H": 0.8705958, "D": 6.8800119}
+    ]
+  },
+  "latency": {
+    "_note": "item 级 p50 / p95 秒，包含失败项。",
+    "rows": [
+      {"label": "E22 普通", "H": [2.902, 6.034], "D": [12.654, 38.016]},
+      {"label": "E22 诊断", "H": [2.438, 3.258], "D": [9.151, 38.763]},
+      {"label": "E23 普通", "H": [2.506, 5.192], "D": [8.848, 14.253]},
+      {"label": "E23 诊断", "H": [2.519, 3.229], "D": [8.461, 11.719]},
+      {"label": "E25 留出", "H": [2.370, 3.935], "D": [8.315, 12.404]}
+    ]
+  },
+  "iteration_pairs": {
+    "_note": "Top7/Top145/VERB 迭代中对照→候选的同题比较（分子/分母）。",
+    "rows": [
+      {"label": "E7 reader v1→v2 完成语义（8）", "before": [2, 8], "after": [6, 8], "kept": true},
+      {"label": "E7 thinking low→disabled（8）", "before": [8, 8], "after": [3, 8], "kept": false},
+      {"label": "E8 结构化→原文分块 整体正确（20）", "before": [11, 20], "after": [12, 20], "kept": false},
+      {"label": "E8 结构化→原文分块 干净必需事实（78）", "before": [64, 78], "after": [48, 78], "kept": false},
+      {"label": "E8 结构化→完整全文 干净必需事实（78）", "before": [64, 78], "after": [70, 78], "kept": false},
+      {"label": "E9 窗口 无→有 整体（8）", "before": [4, 8], "after": [4, 8], "kept": false},
+      {"label": "E9 首次检查替换 复核（32）", "before": [23, 32], "after": [23, 32], "kept": false},
+      {"label": "E9 受限 patch 语义（12）", "before": [2, 12], "after": [2, 12], "kept": false},
+      {"label": "E9 选择性前文+复核（8）", "before": [8, 8], "after": [8, 8], "kept": true}
+    ],
+    "tokens": [
+      {"label": "完整 ±1 窗口 + 复核", "tokens": 109185},
+      {"label": "选择性前文 + 复核", "tokens": 78242}
+    ]
+  },
+  "budget_progression": {
+    "_note": "输入/输出预算递进与 Dynamic 成功率。",
+    "rows": [
+      {"label": "E11①\n输出 8192", "D_ok": 0, "D_n": 5, "note": "Build 关系阶段失败，QA 未执行"},
+      {"label": "E11②\n输出 32768", "D_ok": 0, "D_n": 5, "note": "Build 完整，5 项被解析预算阻止"},
+      {"label": "E11③\n解析 96000", "D_ok": 5, "D_n": 5, "note": "20/20 结构成功"},
+      {"label": "E12\n32768 / 96000", "D_ok": 709, "D_n": 757, "note": "46 项解析输入超预算"},
+      {"label": "E22\n160KB / 96000", "D_ok": 51, "D_n": 100, "note": "35 字节拒绝，14 预算超限"},
+      {"label": "E23\n640KB / 192000", "D_ok": 100, "D_n": 100, "note": "无输入限制失败"}
+    ]
+  },
+  "showcase_e5": {
+    "strategies": ["Full Text", "Vector", "Hybrid", "Dynamic", "原文兜底"],
+    "f1": [0.3490, 0.4911, 0.5124, 0.5100, 0.3997],
+    "recall_at": {"5": 0.6417, "10": 0.7292, "20": 0.7792}
+  },
+  "source_review_e25": {
+    "_note": "E25 800 项盲审，比例分母仅含成功且标签适用单位。",
+    "rows": [
+      {"label": "原文支持", "H": [250, 343], "D": [233, 307]},
+      {"label": "实际引用支持", "H": [195, 321], "D": [197, 310]},
+      {"label": "正确拒答", "H": [100, 143], "D": [95, 134]},
+      {"label": "错误时间", "H": [17, 344], "D": [11, 334]},
+      {"label": "错误事件", "H": [10, 351], "D": [13, 340]},
+      {"label": "列表遗漏", "H": [25, 349], "D": [15, 339]},
+      {"label": "错误人物", "H": [3, 351], "D": [2, 342]}
+    ]
+  },
+  "e7a_hits": {
+    "_note": "E15 Phase 6 E7 离线：标注来源命中题次。",
+    "rows": [
+      {"conv": "conv-26", "n": 251, "base": 199, "A": 212, "AB": 215},
+      {"conv": "conv-30", "n": 131, "base": 101, "A": 108, "AB": 108},
+      {"conv": "conv-41", "n": 251, "base": 210, "A": 215, "AB": 218},
+      {"conv": "conv-42", "n": 365, "base": 277, "A": 303, "AB": 304}
+    ]
+  },
+  "ce_by_category_e18": {
+    "rows": [
+      {"cat": "1 多跳/列表", "n": 110, "d": 0.060253},
+      {"cat": "2 时间", "n": 130, "d": -0.015385},
+      {"cat": "3 开放域", "n": 30, "d": 0.066667}
+    ]
+  }
+}

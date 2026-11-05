@@ -1,0 +1,18 @@
+{
+  "version": "m5-cost-ledger-including-conv44-relation-recovery-terminal-v1",
+  "scope": "eight approved paid phases; cumulative, terminal, non-transferable",
+  "real_provider_requests": 1862,
+  "conservative_reserved_usd": "92.1054516",
+  "reported_usage_peak_cache_miss_upper_usd_known": "10.3629372",
+  "unknown_usage_requests": 7,
+  "unknown_usage_reserved_usd": "0.3500316",
+  "parent_cumulative_terminal_sha256": "f725bc6a9f74d7fa8d84de94fffa88a4fb5e62021876702f1f402e490ae982f9",
+  "new_phase_terminal_sha256": "c6d816a97c3f4a44743f977f9a5f2ad4223eccb72b624c5accb9994b7fcba8be",
+  "new_phase_requests": 12,
+  "new_phase_reserved_usd": "0.5913375",
+  "new_phase_known_usage_peak_upper_usd": "0.0664212",
+  "budgets_independent_not_transferable": true,
+  "remaining_capacity_authorizes_extra_attempts": false,
+  "further_recovery_authorized": false,
+  "actual_invoice": "not_accessed"
+}

@@ -1,0 +1,66 @@
+{
+  "status": "prepared_not_authorized",
+  "scope": "fixed M5 development 80 ordinary + 20 diagnostic questions; Hybrid and Dynamic only; no holdout or Bonus",
+  "policy": {
+    "model": "deepseek-flash",
+    "input_usd_per_million": "0.30",
+    "output_usd_per_million": "1.20",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768,
+    "max_requests": 1500,
+    "max_usd": "130.9824000"
+  },
+  "arms": [
+    "hybrid_no_resolution",
+    "dynamic"
+  ],
+  "strata": {
+    "ordinary": 80,
+    "diagnostic": 20
+  },
+  "questions": 100,
+  "planned_items": 200,
+  "inputs_sha256": "0816f9f2f60acc068a7a6bf3562c603db6545ea85920d1d6cfcfe2ba0ae7c9f0",
+  "build_identities_sha256": "050a345fe246a10e0dd8b069b5269bfb952f139c2f5c572c35e26f4c9f6787f2",
+  "plan_sha256": "e7caed32203c567f5fb3ee7fb3a10250400a6da9a9ad453dbfb101eb4f03cf76",
+  "script_sha256": "3d8cb571f727099db8a0f171527052b2354449b9f9194e499e8c7e78f9d53ee0",
+  "source_storage_identity": {
+    "main": {
+      "exists": true,
+      "sha256": "ffa299c36ba1d15a6148826dd14430dca6e4ebfa27069d7a141021987cda060c"
+    },
+    "wal": {
+      "exists": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "unauthorized_execution_rejected": true,
+  "prepared_database_and_ledger_unchanged": true,
+  "output": "/home/kenqia/my_folder/locomo-worktrees/m5-final-development-20261104/var/m5-development/level-c-preparation-v1/final/final-v2",
+  "embedding_preflight": {
+    "status": "passed",
+    "questions": 100,
+    "dimensions": 384,
+    "embedding_identity": {
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+      "dimensions": 384,
+      "max_tokens": 256,
+      "length_policy": "reject",
+      "normalized": true,
+      "device": "cpu"
+    },
+    "input_sha256": "0816f9f2f60acc068a7a6bf3562c603db6545ea85920d1d6cfcfe2ba0ae7c9f0",
+    "plan_sha256": "e7caed32203c567f5fb3ee7fb3a10250400a6da9a9ad453dbfb101eb4f03cf76",
+    "wall_seconds": 3.1600181850008084,
+    "cpu_seconds": 4.942915786,
+    "process_peak_rss_kib": 632940,
+    "provider_calls": 0,
+    "gold_read": false,
+    "gpu_used": false,
+    "generation_executed": false
+  },
+  "gold_read": false,
+  "holdout_read": false,
+  "provider_requests": 0
+}

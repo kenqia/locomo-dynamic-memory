@@ -1,0 +1,10 @@
+{
+  "build-identities.json": "04b4dc03bc7bd998b87c266315173523d00f121715fef3d6a0b62ff8acd24023",
+  "cost-ledger.json": "e49c38f8481c51ab0cabde411b6a5f0b7f8f1e66a16ea98ecc89b1e6be7590e6",
+  "dataset-split.json": "a3bfc6eb77bb94c53bf508b07e2fb281d12fbe6dc90b0a9c7c4807ddd3412d8e",
+  "fixed-live-sample.json": "f5be6536b105b78d7dc0eca44f7eecaa4b9b6a71d9d3662f115d361c6e707aeb",
+  "metrics-summary.json": "10c26e64cd2d070dac5065d4944f8cf2e40224684af2d78e1f2e03de9d8fc26f",
+  "per-question-metrics.json": "05518b4e4d358e42a1defe8e9c8256473bd8d45792ec1aed782b9e5d5adf019b",
+  "protocol.json": "79f4307dd85fce700926e7fd3b6fa8f10c08974395f4eec5565621473908737d",
+  "source-manifest.json": "f577886ec75ed8f70fa69997b6c1e5584ddcd55e2d0cadc06d663714b1f87f22"
+}

@@ -1,0 +1,243 @@
+{
+  "version": "independent-standards-review-v1",
+  "axis": "Standards",
+  "reviewer": "non-author release_standards_review agent",
+  "checked_utc": "2026-11-05T12:30:09.680444+00:00",
+  "base_commit": "28ce63d73d6736c7812aa0be4425a0d9650dd09e",
+  "reviewed_commit": "f31ad0fe3f758fe8d87b5c0445b12b34f5a09002",
+  "diff_command": "git diff 28ce63d...f31ad0fe3f758fe8d87b5c0445b12b34f5a09002",
+  "commits": [
+    "036c506 fix: finish owned service cleanup during repeated interrupts",
+    "312cc47 docs: preserve rebuildable experiment appendix and audited errata",
+    "2a289d9 feat: deliver Hybrid default, isolated replay, and safe release tooling",
+    "267d580 docs: integrate scoped research supplement and pin personal release requirements"
+  ],
+  "standards_sources": [
+    "AGENTS.md",
+    "CONTEXT.md",
+    "docs/agents/*.md",
+    "docs/adr/0001-memory-architecture.md",
+    "docs/adr/0002-real-model-baseline-protocol.md",
+    "docs/release/REQUEST.md",
+    ".agents/skills/code-review/SKILL.md"
+  ],
+  "scope": {
+    "core_reviewed": [
+      "src/locomo_memory/release_cli.py",
+      "src/locomo_memory/release_viewer.py",
+      "src/locomo_memory/replay_ui.py",
+      "src/locomo_memory/release_queries.py",
+      "src/locomo_memory/query_api.py",
+      "src/locomo_memory/evaluation.py",
+      "scripts/archive_personal_evidence.py",
+      "scripts/package_personal_release.py",
+      "scripts/build_release_indexes.py",
+      "tests/release/test_personal_release.py",
+      "tests/browser/personal_replay.py",
+      "tests/browser/smoke.py"
+    ],
+    "uncommitted_documents": "Final readiness/acceptance documents are authored after completed tests; final package receipt will bind their source cutoff separately.",
+    "initial_committed_changed_files": 92,
+    "committed_changed_files": 149
+  },
+  "documented_standard_violations": [],
+  "judgment_smells": [],
+  "resolved_during_review": [
+    "replay compression import used missing unpack; changed to expand(package)",
+    "custom controlled replay manifest initially selected only by UI; API now reads identical explicit env and ordinary app mount stays fixed Synthetic",
+    "service stop ProcessLookupError race handled; port preflight SO_REUSEADDR permits immediate restart",
+    "archive verifier member comparison normalized identity fields while retaining provenance inventory",
+    "synthetic fixture dataset license aligned with CC0 manifest",
+    "browser executable uses optional environment override instead of host absolute path",
+    "run-tests --public explicitly excludes controlled_data; original Dynamic regressions now explicitly name strategy without weakening assertions",
+    "repeated SIGINT during cleanup ignored until owned child groups are reaped",
+    "P1 public boundary: controlled_data marking alone left five official QA questions and one exact44-char Source Turn in Python source. Public selector now excludes test_answer_regressions.py and test_imports.py entirely; local whole-repo tests unchanged. Scanner includes Python, complete Source>=18, long Source80 spans, official QA>=18 and reports excluded modules explicitly.",
+    "Supplement audit reusable tool now reports tool/authored_by instead of falsely repeating agent reviewer identity; original independent review identity preserved.",
+    "Public scanner explicitly marks known upstream catalog unavailable as PARTIAL/NOT_RUN instead of an apparent literal-scan pass. Current source catalog is available."
+  ],
+  "actual_verification": [
+    {
+      "command": ".venv/bin/python -m pytest tests/release/test_personal_release.py -q",
+      "status": "PASS",
+      "result": "11 passed, 1 Starlette deprecation warning in 3.39s",
+      "cutoff": "pre-commit implementation subsequently included in 2a289d9"
+    },
+    {
+      "command": ".venv/bin/python -m pytest tests/release tests/test_queries.py tests/test_browser_fixture.py tests/test_dynamic_resolution_budget.py tests/test_production_paths.py -q",
+      "status": "PASS",
+      "result": "35 passed, 1 Starlette deprecation warning in 32.82s",
+      "cutoff": "312cc476de4f980ff51e6734a8f2c827da2658d7; files unchanged by 036c506 except launcher cleanup"
+    },
+    {
+      "command": "independent subprocess replay launcher exercise; temporary custom Synthetic manifest and ephemeral loopback ports",
+      "status": "PASS",
+      "result": "occupied port exits 1 with explicit prompt; API/UI healthy and custom catalog matches; SIGTERM exits 0 and reaps both children; killing API child propagates exit 1 and stops UI"
+    },
+    {
+      "command": "independent same-port immediate restart twice; connect_ex and /proc child existence checks",
+      "status": "PASS",
+      "result": "both rounds ready and exit 0; no remaining listeners or owned children"
+    },
+    {
+      "command": "independent replay launcher, 6 SIGINT deliveries spaced 30ms after both health endpoints ready",
+      "status": "PASS",
+      "result": "launcher exit 0, no API/UI listener, no owned children remain",
+      "cutoff": "036c506eb5edaad6a1b02032ec185e1ff4ec8693"
+    },
+    {
+      "command": "TestClient(create_replay_app()) and Streamlit AppTest",
+      "status": "PASS",
+      "result": "export/graph 200; invalid graph root 422; missing source/sample 404; mutation endpoints 404; Graph+Compression enabled UI has 0 exceptions"
+    },
+    {
+      "command": "independent in-memory temporary tar + verify_files(private=True)",
+      "status": "PASS",
+      "result": "full archive inventory metadata accepted; intentionally changed member SHA rejected"
+    },
+    {
+      "command": "package_personal_release.public_paths() + scan(paths), no output writes",
+      "status": "PASS",
+      "result": "765 candidate files, findings=[], no selected var or locomo10.json path",
+      "scope": "credential-shaped bytes and long upstream literal spans in selected text/PDF; not proof against unknown private content; final package remains to be scanned"
+    },
+    {
+      "command": "git status --porcelain=v1 -z in main repository; SHA256 compared to initial-state",
+      "status": "PASS",
+      "result": "36 original dirty entries unchanged"
+    },
+    {
+      "command": "six original JSON read/parse and SHA256 compared to existing frozen manifest",
+      "status": "PASS",
+      "result": "all 6 SHA256 match; 2031 Memory / 37445 relations; no contents printed"
+    },
+    {
+      "command": "archive-v1 actual SHA256, file and parent permissions",
+      "status": "PASS",
+      "result": "2301324861 bytes, SHA bfb7f58a42cf5f76e35db580f06e215a3bc15beb691892d781a02fa0251f5ddd; file0600/directory0700"
+    },
+    {
+      "command": ".venv/bin/python -m pytest tests/release -q",
+      "status": "PASS",
+      "result": "12 passed, 1 Starlette deprecation warning in 3.35s",
+      "cutoff": "c7eae7a2f4ed667e83f2520e000e33aee7314e2b"
+    },
+    {
+      "command": "SHA256 actual files compared to RELEASE_COMMIT_MAP.json source_file_lineage",
+      "status": "PASS",
+      "result": "136 source files checked; 0 mismatches",
+      "cutoff": "c7eae7a2f4ed667e83f2520e000e33aee7314e2b"
+    },
+    {
+      "command": "metadata-only public Python AST/raw scan using official question >=18 chars, long Source80 spans, then exact full Source Turn >=18 chars; no answers/private Gold",
+      "status": "P1_FOUND",
+      "result": "273 Python files; question/80-char scan empty after first fix; full short Source Turn scan found one exact44-char literal in tests/test_imports.py:170. Other selected.py had zero exact full Source matches."
+    },
+    {
+      "command": "independent all-selected-text scan: text/PDF extraction + Python AST constants + JSON decoded strings; official complete Source>=18 and QA>=18 chars",
+      "status": "PASS",
+      "result": "748 selected text/PDF files, findings=[] after both controlled module exclusions. No answers/private Gold compared. Actual final tar verification pending."
+    },
+    {
+      "command": "actual sanitized tar manifest, member digest, controlled path exclusions, cold/current runtime file equality",
+      "status": "PASS",
+      "cutoff": "f1cbd7d77e2b4f3727ccac000f2ab26dc3be9f4e",
+      "result": "12361072 bytes, archive SHA c30d8e1138ba9ab666b65305c4927add080ee2954695cf3c2f47a421f0e88226; 788 inventory files +1 evidence member, all SHA/size match, no extras/prohibited path. 235 src/tools/tests/lock/start files equal cold extracted dir and current root."
+    },
+    {
+      "command": "actual sanitized tar strict Source/question scan using text/PDF, Python AST, decoded JSON; >=18 characters",
+      "status": "PASS",
+      "result": "748 files, no official complete Source Turn/question match; no answers/private Gold compared."
+    },
+    {
+      "command": "actual sanitized tar metadata-only JSON answer/Gold/Trace field inspection",
+      "status": "PASS_WITH_SCOPE",
+      "result": "252 JSON checked. No reference_answer/expected_answer/gold_answer/raw_response/raw_request/messages payload fields; gold appears only twice as top-level protocol metadata, answer strings only in Synthetic examples or authorization/config metadata. M5 answer dicts are latency/token/usage aggregates; trace fields metadata/counts, Synthetic demo contains three intentional traces. Unknown-key semantic risk not ruled out; values not printed/private Gold not read."
+    },
+    {
+      "command": "fresh main git status --porcelain=v1 -z byte digest comparison",
+      "status": "PASS",
+      "result": "36 original dirty entries; exact initial-state SHA unchanged."
+    },
+    {
+      "command": "independent parse full final JUnit and compare XML/stdout SHA to full-tests-final.json; stdout content not read",
+      "status": "PASS",
+      "result": "991 testcases, zero failures/errors/skips; 342 M5 and12 Release; both file SHA match summary. XML1300.684s vs outer pytest1300.91s. 4 deselected is author-recorded pytest summary, not encoded in JUnit."
+    },
+    {
+      "command": "independent sanitized public final JUnit parse and XML/stdout digest comparison",
+      "status": "PASS",
+      "result": "937 testcases, zero failures/errors/skips, XML/stdout SHA match public-tests-final.json. Remaining24 controlled +4 opt-in deselected are author-recorded selection; excluded module source removed30 tests. 991 whole minus30 omitted minus24 controlled =937 public. XML996.446s vs outer997.96s."
+    }
+  ],
+  "not_claimed": [
+    "Reviewer did not rerun991/937 whole suites; independently verified final JUnit outcomes and XML/stdout digests.",
+    "Final document-only package must retain tested src/tools/tests/lock/start bytes; its actual tar identity check will be delivered separately for final receipt, avoiding self-referential archive SHA.",
+    "No paid calls, remote writes, destructive cleanup, credential/private stdout/stderr reads performed.",
+    "Known public Source/question matching and field metadata checks do not prove absence of unknown secrets, paraphrases, short identifiers or image-only sensitive text.",
+    "Standards pass is scoped engineering review; not teacher/human truth certification, team deliverable completion, data disclosure authorization or remote publication approval."
+  ],
+  "status": "PASS_STANDARDS_WITH_FULL_AND_SANITIZED_PUBLIC_EVIDENCE_VERIFIED",
+  "finding_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "judgment_smells": 0
+  },
+  "summary": "规范审查PASS：未解决P0/P1/P2与判断型smell均为0。受控Python字面题/原文P1已修复且实际tar成员与748文件严格复扫通过；全仓991与独立公开冷包937项终态及哈希独立核实，分母差异明确。核心App/测试/锁固定c7eae7a，封装/审计metadata截至f31ad0f。最终文档封装身份由另行receipt核对，不以此报告代替团队或教师验收。",
+  "followup_test_only_review": {
+    "commit": "66e53fb2592d87f54a7a22765913884edb0b407c",
+    "result": "PASS",
+    "changes": "AppTest explicit 30s runtime timeout; three real-question dependent tests labelled controlled_data for public-only selection. Existing assertions unchanged and full local test selection retains them.",
+    "new_runtime_pass_not_claimed": true
+  },
+  "external_evidence_observed": [
+    {
+      "path": "experiments/personal-release/browser-app/issue-12-result.json",
+      "reported_result": "Chromium156.0.8078.4, zero pageerrors/console_errors; 8 evaluation rows/4 failed; current/historical/conflict/insufficient/build retry/evaluation failure; controlled model+embedding",
+      "reviewer_did_not_rerun_this_browser_script": true
+    },
+    {
+      "path": "experiments/personal-release/full-tests-final.json",
+      "reported_result": "991passed/4deselected/0skip/0fail,1300.91s; marker selection not live_model and not local_embedding; provider_requests0",
+      "independent_scope": "JUnit991 outcomes + XML/stdout digest checked; whole pytest not rerun by reviewer; provider_requests claim not independently instrumented by reviewer."
+    },
+    {
+      "path": "experiments/personal-release/public-tests-final.json",
+      "reported_result": "937passed/28deselected/0skip/0fail,997.96s; extracted standalone environment; original controlled data absent; provider_requests0",
+      "independent_scope": "937 JUnit outcomes and both file digests verified; whole public pytest not rerun by reviewer."
+    }
+  ],
+  "final_code_followup": {
+    "reviewed_commit": "c7eae7a2f4ed667e83f2520e000e33aee7314e2b",
+    "diff": "git diff 66e53fb...c7eae7a",
+    "result": "PASS",
+    "changes": "Replay label is derived from actual catalog.kind: Synthetic warning for synthetic fixture, Controlled info otherwise; new negative assertion prevents real exports being described as synthetic. Loader and model logic unchanged.",
+    "uncommitted_source_test_changes_at_check": [],
+    "runtime_source_tests_lock_unchanged_through": "f1cbd7d77e2b4f3727ccac000f2ab26dc3be9f4e",
+    "reviewed_packaging_audit_metadata_commit": "f31ad0fe3f758fe8d87b5c0445b12b34f5a09002"
+  },
+  "provisional_documents_reviewed": [
+    "RELEASE_MANIFEST.md",
+    "docs/release/ACCEPTANCE.md",
+    "docs/release/ADVERSARIAL_REVIEW.md",
+    "RELEASE_COMPONENT_MATRIX.md",
+    "LOCAL_ARCHIVE_AND_CLEANUP_PLAN.md",
+    "docs/release/DEFAULTS_AND_ROLLBACK.md",
+    "docs/release/DATA_POLICY.md",
+    "docs/release/RUNBOOK.md",
+    "README.md"
+  ],
+  "provisional_document_result": "No blocking standard violation; final acceptance/public package results are explicitly pending, not fabricated. One screenshot count correction reported to author (browser-app contains 7 PNG plus JSON, not 8 PNG).",
+  "public_boundary_followup": {
+    "reviewed_parent_commit": "cc9571df10b3570f3132631a35eacdca797a60aa",
+    "packager_fix": "f1cbd7d77e2b4f3727ccac000f2ab26dc3be9f4e",
+    "excluded_modules": [
+      "tests/test_answer_regressions.py",
+      "tests/test_imports.py"
+    ],
+    "status": "SANITIZED_TESTED_TAR_PASS_FINAL_DOCUMENT_ONLY_PACKAGE_RECEIPT_SEPARATE",
+    "remaining_scope": "No unknown/private secrets guarantee; scanner reads public upstream conversation/question fields only, not answers or private Gold; image OCR not performed.",
+    "sanitized_archive_sha256": "c30d8e1138ba9ab666b65305c4927add080ee2954695cf3c2f47a421f0e88226"
+  },
+  "initial_reviewed_commit": "036c506eb5edaad6a1b02032ec185e1ff4ec8693"
+}

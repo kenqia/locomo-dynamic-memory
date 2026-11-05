@@ -1,0 +1,40 @@
+{
+  "version": "m5-level-e-v1",
+  "scope": "one held-out evaluation; all conv-43/44 questions; Hybrid/Dynamic; no Bonus",
+  "status": "prepared_not_authorized",
+  "stage_path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1",
+  "questions": 400,
+  "planned_items": 800,
+  "arms": [
+    "hybrid_no_resolution",
+    "dynamic"
+  ],
+  "policy": {
+    "model": "deepseek-flash",
+    "max_input_bytes": 640000,
+    "max_output_tokens": 32768,
+    "input_usd_per_million": ".30",
+    "output_usd_per_million": "1.20",
+    "max_requests": 6000,
+    "max_usd": "1387.9296000"
+  },
+  "build_snapshots": {
+    "conv-43": "5e8b59c89482eb2d31705d476cdcd6a9ae0a20ae1c28fa345292e9d28ff5df3f",
+    "conv-44": "b925ebf4ddde653ca8227761d83589eae26d89a9a695ec8e15ca7b4a00a763d8"
+  },
+  "final_lock_sha256": "3b6e3fbcad1670226f1f9d8e1c9fa96436b104893a875527d078dc4948671ac6",
+  "inputs_sha256": "ced0d3c79e0009de49394544a61d6d4478d9d0c7ce400a5e8aade3adabd06718",
+  "ledger_identity": {
+    "main": {
+      "exists": true,
+      "sha256": "9012ff9db11111e9cc6c73ebcb179a446ea92e10ac69293eed6e0abb6364cbfb"
+    },
+    "wal": {
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "gold_read": false,
+  "bonus_enabled": false,
+  "selection": "all_original_ordinals"
+}

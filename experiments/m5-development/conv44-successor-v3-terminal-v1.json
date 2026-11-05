@@ -1,0 +1,100 @@
+{
+  "version": "m5-conv44-successor-v3-terminal-v1",
+  "status": "extracted_not_complete",
+  "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+  "outcome": {
+    "version": "m5-conv44-successor-v3",
+    "scope": "inherit verified conv44 successful fragments into new Build; extract full failed fragment only; no index/relation/publish/QA",
+    "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+    "status": "extracted",
+    "phase": "extraction",
+    "progress": {
+      "total": 34,
+      "succeeded": 34,
+      "failed": 0,
+      "pending": 0
+    },
+    "new_memories": 9,
+    "inherited_memories": 383,
+    "physical_requests": 1,
+    "reserved_usd": "0.0453867",
+    "reported_tokens": {
+      "prompt_tokens": 5679,
+      "completion_tokens": 1245,
+      "total_tokens": 6924
+    },
+    "known_usage_peak_upper_usd": "0.0031977",
+    "unknown_usage_requests": 0,
+    "unknown_reserved_usd": "0",
+    "request_statuses": {
+      "response_received": 1
+    },
+    "parent_and_inherited_rows_unchanged": true,
+    "thinking": "disabled",
+    "holdout_qa_read": false,
+    "complete_build": false,
+    "automatic_retry": false,
+    "mixed_extraction_producers": true,
+    "actual_invoice": "not_accessed",
+    "safe_diagnostics": [
+      {
+        "error_code": null,
+        "field_path": null,
+        "failure_stage": null
+      }
+    ]
+  },
+  "checks": {
+    "extracted_34_of_34": true,
+    "exact_authorization": true,
+    "marker_matches": true,
+    "source_identity_unchanged": true,
+    "parent_rows_unchanged": true,
+    "inherited_rows_unchanged": true,
+    "producer_unchanged": true,
+    "config_and_inheritance_unchanged": true,
+    "new_build_identity_matches": true,
+    "build_fragment_calls_equal": true,
+    "foreign_keys_valid": true,
+    "all_memories_strict_valid": true,
+    "new_memories_392": true,
+    "only_conversation_tables": true,
+    "no_index_relation_publish_or_qa": true,
+    "one_successful_response": true,
+    "usage_matches_ledger": true,
+    "all_calls_disabled": true,
+    "within_approved_cap": true,
+    "repeat_execution_rejected_without_mutation": true
+  },
+  "checks_passed": 20,
+  "database_table_counts": {
+    "datasets": 1,
+    "import_artifacts": 1,
+    "conversations": 2,
+    "source_turns": 1355,
+    "build_versions": 3,
+    "build_fragments": 102,
+    "memories": 1177,
+    "memory_sources": 1215
+  },
+  "strict_memories_checked": 1177,
+  "new_build_memories": 392,
+  "new_build_referenced_sources": 281,
+  "plan_sha256": "27fbb376bbd493c7911b55124c3a6e71930428fe86e10d65f1533af208114bbd",
+  "authorization_sha256": "37f08da570dbd3577cc85bd8c64051b9b73f65e93fa0360b165e676e486ecb74",
+  "outcome_sha256": "255bfd54b5f5fd49ca48c8dbfa6a67c15a5df203bac1a82282c7b1d0e24c4fce",
+  "final_database_logical_snapshot": "07ce1ee6d2a32c9b4c310e520c328134fea00cb7fc041776425770e618034e79",
+  "final_ledger_logical_snapshot": "ece4a12e1128428da2aaee99fadf13272457fa1fb4e7df8c01a527b37bcfddf0",
+  "returned_models": [
+    "deepseek-flash"
+  ],
+  "known_version_limitation": "mutable alias; immutable server version pin not verified",
+  "cumulative_physical_requests": 1433,
+  "cumulative_reserved_usd": "70.9596105",
+  "cumulative_known_usage_peak_usd": "7.9158096",
+  "historical_unknown_requests": 7,
+  "historical_unknown_reserved_usd": "0.3500316",
+  "actual_invoice": "not_accessed",
+  "holdout_qa_evidence_answers_read": false,
+  "private_process_output_read": false
+}

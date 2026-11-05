@@ -1,0 +1,10 @@
+{
+  "denominator": 757,
+  "semantic_metrics_unchanged": true,
+  "excluded_comparison": [
+    "wall_seconds"
+  ],
+  "before": "delivery-v1",
+  "after": "delivery-final-v2",
+  "provider_requests": 0
+}

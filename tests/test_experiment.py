@@ -1,3 +1,7 @@
+import pytest
+
+pytestmark = pytest.mark.controlled_data
+
 """Offline preparation and explicit experiment controls at public boundaries."""
 import json
 

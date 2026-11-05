@@ -21,6 +21,7 @@ from test_retrieval import ControlledEmbedder
     (model_contract, "EXTRACTION_PROMPT"),
     (model_contract, "EXTRACTION_PROMPT_VERSION"),
     (model_contract, "MEMORY_SCHEMA_VERSION"),
+    (model_contract, "VALIDATION_RETRY_FEEDBACK_VERSION"),
     (model_contract, "RELATION_PROMPT"),
     (model_contract, "RELATION_PROMPT_VERSION"),
     (relation_contract, "RELATION_SCHEMA_VERSION"),
@@ -75,6 +76,6 @@ def test_complete_versions_remain_readable_after_producer_contract_changes(setti
         monkeypatch.setattr(projection_contract, "PROJECTION_VERSION", "revised-projection")
         assert client.get(f"/builds/{build_id}").json() == before
         assert client.get("/versions/pin", params={"dataset_id": dataset_id, "sample_id": "conv-a"}).json()["build_id"] == build_id
-        response = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where does Alex live?"})
+        response = client.post("/queries", json={"strategy": "dynamic", "dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where does Alex live?"})
         assert response.status_code == 201, response.text
         assert response.json()["answer"]["answer"] == "Alex lives in Rome."

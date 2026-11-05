@@ -1,0 +1,13 @@
+{
+  "user_reply": "授权本次 2.619648 USD / 30 次关系恢复阶段",
+  "approved_scope": "conv-44 frozen failed relation tasks only; independent retry; no publish/query/QA",
+  "approved_requests": 30,
+  "approved_usd": "2.619648",
+  "plan_sha256": "82251c43a541f86a089dd649337930c501dcb00717debeb6786651f04b93529b",
+  "authorization_sha256": "b45a5685e984522c90f0d80924f654ff498cf481bfd72ca4dcd24a88becb0d80",
+  "prepared_manifest_sha256": "24b798aac5c7b28312f54bae6c7c383a99c0695935dfaa2bdaf5621254f4f795",
+  "pricing_sha256": "5eafca759758e65514e1db83791271cea9710047e399fd0acd17474907505f75",
+  "thinking": "disabled",
+  "prior_stage_balance_transferred": false,
+  "level_e_authorized": false
+}

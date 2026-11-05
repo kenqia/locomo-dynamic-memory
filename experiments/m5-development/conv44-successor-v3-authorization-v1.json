@@ -1,0 +1,25 @@
+{
+  "version": "m5-conv44-successor-v3-authorization-v1",
+  "authorized_utc": "2026-11-04T14:12:11.408246+00:00",
+  "user_reply": "是",
+  "antecedent": "Approve conv-44 successor v3 failed full 20-turn fragment extraction; max 3 physical requests / USD 0.2619648; deepseek-flash, thinking disabled; no relations or QA",
+  "authorization": {
+    "approved": true,
+    "version": "m5-conv44-successor-v3",
+    "scope": "inherit verified conv44 successful fragments into new Build; extract full failed fragment only; no index/relation/publish/QA",
+    "policy": {
+      "max_requests": 3,
+      "max_usd": "0.2619648",
+      "model": "deepseek-flash",
+      "input_usd_per_million": ".30",
+      "output_usd_per_million": "1.20",
+      "max_input_bytes": 160000,
+      "max_output_tokens": 32768
+    },
+    "plan_sha256": "27fbb376bbd493c7911b55124c3a6e71930428fe86e10d65f1533af208114bbd"
+  },
+  "authorization_sha256": "37f08da570dbd3577cc85bd8c64051b9b73f65e93fa0360b165e676e486ecb74",
+  "old_budget_transferred": false,
+  "authority_source": "explicit user approval in current Codex conversation",
+  "credential_values_recorded": false
+}

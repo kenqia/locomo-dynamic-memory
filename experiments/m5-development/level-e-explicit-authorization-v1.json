@@ -1,0 +1,32 @@
+{
+  "version": "m5-level-e-explicit-authorization-v1",
+  "recorded_utc": "2026-11-05T02:56:13.602599+00:00",
+  "status": "authorized_not_started",
+  "user_approval": "授权本次 USD1,387.9296 / 6,000次独立 Level E",
+  "preparation_commit": "41a3386",
+  "implementation_commit": "0dbd98e7b296ef29d9998fa55d88d512f8ec85f1",
+  "plan_sha256": "5d99378868a5aed92889ff3995ae7771270b91d8effb373fb6d7e85672484c92",
+  "final_lock_sha256": "3b6e3fbcad1670226f1f9d8e1c9fa96436b104893a875527d078dc4948671ac6",
+  "authorization_sha256": "42630194548311edaf2c073a871965198c64eaac74de1fc366d6ba254e366746",
+  "prepared_manifest_sha256": "c20fa4de2baaa259967b1e587f464cc9a5ce493cfd37e909badcfc288c0e641c",
+  "pricing_sha256": "91a5b937eb5d35a2c20c04f595291977f31bfea29a4ffc8e551ecf435cef6fe0",
+  "policy": {
+    "model": "deepseek-flash",
+    "max_input_bytes": 640000,
+    "max_output_tokens": 32768,
+    "input_usd_per_million": ".30",
+    "output_usd_per_million": "1.20",
+    "max_requests": 6000,
+    "max_usd": "1387.9296000"
+  },
+  "questions": 400,
+  "planned_items": 800,
+  "preflight_all_checks": true,
+  "initial_provider_requests": 0,
+  "source_storage_unchanged": true,
+  "gold_read": false,
+  "bonus_enabled": false,
+  "automatic_recovery": false,
+  "old_budget_transferred": false,
+  "preflight_script_sha256": "0a5596e5dfcb828253d4e156e9786c5abf68dddfa1effee5b963ddf5411e05b0"
+}

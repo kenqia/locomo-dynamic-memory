@@ -1,0 +1,58 @@
+{
+  "status": "PASS_LOCAL_AWAITING_REMOTE_PR_CI",
+  "branch": "m5/personal-public-core",
+  "base_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+  "original_release_record_commit": "af54f0eed24c4a52116bcccf85682f1334d5d116",
+  "tar_source_commit": "c63c9ce4fd26b3e1c1f6509e8d4419d55554aae4",
+  "tar_sha256": "8c2cfdb818316887df98c847f67fb10d67fbcfa96e595e38d731f86fe1a3dd77",
+  "source_history_imported": false,
+  "tests": {
+    "passed": 967,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 28,
+    "deselection_breakdown": {
+      "controlled_data": 24,
+      "live_model_and_local_embedding": 4
+    },
+    "seconds": 796.03,
+    "command": "scripts/personal-release run-tests --public -- --junitxml=var/public-snapshot-tests.xml",
+    "xml_sha256": "3cf4f9c3c5aac6dc86e712bdc4ee4bd3162db1121b2a85d6066b8aa548ff4110",
+    "stdout_sha256": "1052edd188bd541ed1255a015cea7447fb59277e5f9450f78d7168001b2dc7f8",
+    "difference_from_old_public_release": "937 + 30 existing main tests = 967",
+    "test_source_note": "While the suite ran, one extra EOF newline in extraction_patch.py was removed with no behavioral change; its 11 targeted regressions passed afterwards. GitHub CI will test the final committed bytes."
+  },
+  "targeted_tests": {
+    "independent_release_and_main_retained_modules": 42,
+    "extraction_whitespace_followup": 11
+  },
+  "checks": {
+    "uv_sync_locked": "PASS fresh .venv Python3.12.12",
+    "uv_lock_check": "PASS unchanged uv.lock",
+    "compileall": "PASS",
+    "shell_syntax": "PASS",
+    "git_diff_check": "PASS; only three exact frozen-report trailing-space exceptions",
+    "normal_launcher": "PASS new DB, both health200, Hybrid default, TERM0",
+    "ordinary_browser": "PASS Chromium; 0 page/console errors; 8 synthetic evaluation rows incl4 failures",
+    "replay_browser": "PASS isolated Chromium; GET only, no external/model requests",
+    "six_controlled_exports": "PASS local read-only; no full payload copied into Git"
+  },
+  "privacy": {
+    "status": "PASS",
+    "staged_and_integration_files": 706,
+    "known_upstream_literal_catalog_available": true,
+    "findings": [],
+    "scope": "credential-shaped bytes, known Source spans>=80 and complete Source>=18, official question>=18; no private Gold read, no unknown semantic or OCR guarantee"
+  },
+  "remote_publication": {
+    "pushed": false,
+    "pr": null,
+    "ci": "NOT_RUN until branch push",
+    "merge_gate": "Require checks successful, no adverse independent reviews, final parentage and PR path equality"
+  },
+  "rollback": "Before merge base_commit; use a separate revert PR after merge, no destructive reset or database replacement",
+  "private_data": "six JSON and private archives remain local under controlled delivery; disclosure channel/recipient approval required",
+  "team_dependencies": "Product#26\u201329, Architecture#38 opt-in only after semantics review, Delivery#34\u201337; no team final submission",
+  "notion": "No linked task identified; not synchronized"
+}

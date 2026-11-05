@@ -1,0 +1,11 @@
+{
+  "version": "m5-level-e-runner-prelaunch-v1",
+  "runner_sha256": "b6682fd2fb5ac8eb852725ed29a001f80f65911c95f4ec1ab56f5d7a736fa877",
+  "resource_schema": "m5-level-e-process-resource-v1",
+  "pythonpath": "src:.",
+  "hf_hub_offline": true,
+  "transformers_offline": true,
+  "single_child_launch": true,
+  "private_output": true,
+  "automatic_recovery": false
+}

@@ -1,0 +1,85 @@
+{
+  "version": "m5-six-build-exports-v1",
+  "checked_utc": "2026-11-05T02:17:16.598139+00:00",
+  "status": "six_strict_exports_complete_local_copies",
+  "builds": [
+    {
+      "sample_id": "conv-26",
+      "build_id": "367c901b300440649bdc0bfba2af8010",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-26.json",
+      "sha256": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78",
+      "memories": 259,
+      "relations": 4740,
+      "source_turns": 190,
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-30",
+      "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-30.json",
+      "sha256": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae",
+      "memories": 244,
+      "relations": 4460,
+      "source_turns": 154,
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-41",
+      "build_id": "8d459492549b4a3e88005211f036addf",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-41.json",
+      "sha256": "e15b30e89de463cca4ff9fcd347b332a72525f0fbfb8506a5476df120fd4b488",
+      "memories": 321,
+      "relations": 5767,
+      "source_turns": 243,
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-42",
+      "build_id": "c892596ac8884f43b4cf2098349a7fa5",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-42.json",
+      "sha256": "89d6bdf02e7eca10014688e0a7946fd536b846c4ff6c8b09a84bb8671680e3fd",
+      "memories": 413,
+      "relations": 7724,
+      "source_turns": 297,
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-43",
+      "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+      "dataset_id": "610b0aa9bfd787ff0882a806",
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-43.json",
+      "sha256": "2ae95deb13dcf22e1bb91cff44db88feba7c3bcf1b753e907ba121f4ac972f17",
+      "memories": 402,
+      "relations": 7620,
+      "source_turns": 300,
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-44",
+      "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+      "dataset_id": "610b0aa9bfd787ff0882a806",
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-sixth-export-successor-v1/exports/conv-44.json",
+      "sha256": "1006ce3d855ffb496cb8a2c029276511707427bb7129474013f4b1768639611f",
+      "memories": 392,
+      "relations": 7134,
+      "source_turns": 281,
+      "strict_roundtrip": true,
+      "provenance": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-sixth-export-successor-v1/exports/conv-44.provenance.json",
+      "provenance_sha256": "19d1272ceb3482db11b3698d9e9c1ea4e260dd280b80e226dae14e2e29d18580"
+    }
+  ],
+  "source_complete_databases": {
+    "conv-43": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/memory.sqlite3",
+    "conv-44": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-sixth-export-successor-v1/memory.sqlite3"
+  },
+  "fifth_export_manifest_sha256": "ba90a8cb4d5389fd18367da245b573d1876c101dac58ad04ce84603b9c284bd9",
+  "sixth_export_summary_sha256": "54a7d6fb31a8bb0d2ab7b832f13eea784f3c6610c5ae57443d5fe73b5fceaade",
+  "holdout_qa_evidence_answers_read": false,
+  "provider_requests": 0,
+  "final_system_configuration_locked": false,
+  "level_e_prepared": false
+}

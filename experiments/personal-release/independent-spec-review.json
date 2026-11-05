@@ -1,0 +1,409 @@
+{
+  "version": "personal-release-independent-spec-review-v1",
+  "reviewer": "non-author Codex agent /root/release_spec_review",
+  "reviewed_at_utc": "2026-11-05T12:33:49.880485+00:00",
+  "baseline_commit": "28ce63d73d6736c7812aa0be4425a0d9650dd09e",
+  "code_commit": "c7eae7a2f4ed667e83f2520e000e33aee7314e2b",
+  "scope": "git diff28ce63d...c7eae7a plus explicitly uncommitted release-document SHA snapshots; fixed executable/test cutoff reviewed",
+  "status": "PERSONAL_READY_LOCAL_CANDIDATE",
+  "confirmed_behavior_p0": 0,
+  "confirmed_behavior_p1": 0,
+  "personal_ready_attested": true,
+  "findings": [],
+  "pending_final_evidence": [],
+  "privacy_scanner_limit": {
+    "path": "scripts/package_personal_release.py:47",
+    "description": "f1cbd7d broadens Source spans>=80, complete Source>=18,official QA question strings>=18 includingPython; excludes two mixed upstream/synthetic test modules andanswer-source-turns. No private Gold read, no guarantee for unknown secrets,paraphrases or image text."
+  },
+  "independently_executed": [
+    {
+      "command": "PYTHONPATH=src /home/kenqia/my_folder/locomo-dynamic-memory/.venv/bin/python -m pytest -q tests/release/test_personal_release.py",
+      "code_commit": "036c506eb5edaad6a1b02032ec185e1ff4ec8693",
+      "exit_code": 0,
+      "result": "11 passed,1 Starlette/httpx deprecation warning in9.24s"
+    },
+    {
+      "operation": "six actual MemoryExport strict parsing/hash/identity and shared Web load_export typed-roundtrip",
+      "status": "PASS",
+      "memory_count": 2031,
+      "relation_count": 37445,
+      "source_count": 1465
+    },
+    {
+      "operation": "aggregate existing public E official-scores, no rescoring/Gold access",
+      "status": "PASS",
+      "rows": 800,
+      "failed_rows_preserved": 17,
+      "ordinary_per_arm": 301,
+      "hybrid_f1": 0.40260599837767247,
+      "dynamic_f1": 0.4091509211459637
+    },
+    {
+      "operation": "supplement numerical fields vs28 pinned public sources",
+      "status": "PARTIAL",
+      "numeric_fields": 282,
+      "json_verified": 201,
+      "report_verified": 81,
+      "mismatches": 0,
+      "note": "timeline/date/labels/causal prose and historical raw not re-certified"
+    },
+    {
+      "operation": "source-v2 archive full member SHA/size/order/mode/path readback",
+      "status": "PASS",
+      "archive_sha256": "546a29a16cf4a7cffd40200a7a82cdb03112eb43833f83320e676f2e77200eef",
+      "members": 2446,
+      "bytes": 5880956
+    },
+    {
+      "operation": "original Level E private archive SHA/safe member paths/modes only, no content unpack",
+      "status": "PASS",
+      "sha256": "72d6bd2dd5261ff863ec861eab780a5b580e4dec6889f5948ac73f45f44a31f5",
+      "bytes": 55172721,
+      "members": 863
+    },
+    {
+      "command": "PYTHONPATH=src /home/kenqia/my_folder/locomo-dynamic-memory/.venv/bin/python -m pytest -q tests/release/test_personal_release.py::test_controlled_viewer_never_labels_real_exports_as_synthetic",
+      "code_commit": "c7eae7a2f4ed667e83f2520e000e33aee7314e2b",
+      "status": "PASS",
+      "result": "1 passed,1 existing Starlette/httpx deprecation warning in0.92s"
+    },
+    {
+      "operation": "controlled delivery tar full readback without unpacking content",
+      "status": "PASS",
+      "sha256": "49bfb20346270bdbfcdbd776aa078a65cf80adf914628895b31b8b6f95a65247",
+      "bytes": 5194932,
+      "members": 10,
+      "file_mode": "0600"
+    },
+    {
+      "operation": "Read full final pytest JUnit XML and compare public summary SHA/testcase/module counts",
+      "code_commit": "c7eae7a2f4ed667e83f2520e000e33aee7314e2b",
+      "status": "PASS",
+      "passed": 991,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "m5_tests": 342,
+      "release_tests": 12,
+      "xml_sha256": "deb4072f9e0758542cb6b3012e4564a3018ce975a88526444c59ee1b1332f59f",
+      "note": "4 deselected and1300.91s from root pytest summary; XML directly991cases,time1300.684s"
+    },
+    {
+      "operation": "Parse sanitized public pytest JUnit XML and compare SHA/testcase/module absence with public summary",
+      "status": "PASS",
+      "passed": 937,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "m5_tests": 341,
+      "release_tests": 12,
+      "xml_sha256": "032ebf0793e77c812a446229cde999fbcf91ccfb66617de1eeb471c87723730e",
+      "excluded_test_modules_absent": true,
+      "note": "28deselected from fixedselection/summary=24controlled+4opt-in;30testcases in2source modules intentionally not packaged;991-30-24=937"
+    }
+  ],
+  "adversarial_checks": [
+    {
+      "question": 1,
+      "status": "PASS",
+      "evidence": "normal startup/Chromium and extracted c7eae7a public candidate independent uv sync,API/UI200,GET-only offline browser,owned SIGTERM cleanup evidence reviewed",
+      "paths": [
+        "README.md",
+        "experiments/personal-release/cold-start-final.json",
+        "experiments/personal-release/browser-cold-final/browser-result.json"
+      ]
+    },
+    {
+      "question": 2,
+      "status": "PASS",
+      "evidence": "Independent AppTest forbids sockets/SQLite; browser-offline result records no external requests and GET only",
+      "paths": [
+        "tests/release/test_personal_release.py",
+        "experiments/personal-release/browser-offline/browser-result.json"
+      ]
+    },
+    {
+      "question": 3,
+      "status": "PASS",
+      "evidence": "All six actual files independently read, hash/schema/complete Build/source/time/typed-roundtrip validated: 2031 Memory,37445 relations,1465 sources",
+      "paths": [
+        "six-memory-exports-manifest.json",
+        "experiments/personal-release/six-exports-validation.json"
+      ]
+    },
+    {
+      "question": 4,
+      "status": "PASS",
+      "evidence": "Graph keeps source_ids and basis; structural Entity/Memory/Source edges distinguished from model relation assertions; this does not prove semantic truth",
+      "paths": [
+        "src/locomo_memory/m5_graph.py",
+        "tests/test_m5_graph_compression.py",
+        "RELEASE_COMPONENT_MATRIX.md"
+      ]
+    },
+    {
+      "question": 5,
+      "status": "PASS",
+      "evidence": "Historical757, C80 ordinary within100, input-v2 same100, E301 ordinary within400 separated; E CI crosses zero",
+      "paths": [
+        "PERSONAL_EXPERIMENT_SUMMARY.md",
+        "docs/release/SUPPLEMENT_ERRATA.md"
+      ]
+    },
+    {
+      "question": 6,
+      "status": "PASS",
+      "evidence": "Independently regrouped 800 E official-score records: 400 unique per arm; 17 failed records remain zero; ordinary301 per arm",
+      "paths": [
+        "experiments/m5-development/level-e-results-v1/official-scores.json"
+      ]
+    },
+    {
+      "question": 7,
+      "status": "PASS",
+      "evidence": "Category5 separately described as literal refusal, not factual F1",
+      "paths": [
+        "PERSONAL_EXPERIMENT_SUMMARY.md",
+        "TEAM_INTEGRATION_HANDOFF.md"
+      ]
+    },
+    {
+      "question": 8,
+      "status": "PASS",
+      "evidence": "60-unit AI diagnostic explicitly lacks SUPERSEDE/CONFLICT reference coverage; no general four-label accuracy claim",
+      "paths": [
+        "RELEASE_COMPONENT_MATRIX.md",
+        "PERSONAL_EXPERIMENT_SUMMARY.md"
+      ]
+    },
+    {
+      "question": 9,
+      "status": "PASS",
+      "evidence": "Four bonuses distinguish code/test/demo from measured QA gain; B multi-hop/C/D default off and QA benefits not claimed",
+      "paths": [
+        "RELEASE_COMPONENT_MATRIX.md"
+      ]
+    },
+    {
+      "question": 10,
+      "status": "PARTIAL",
+      "evidence": "Actual root rebuild evidence37pages/text equality; independent282 numerical fields audited0mismatch; dates/labels/causal claims not fully certified and81 fields report-derived",
+      "paths": [
+        "experiments/personal-release/supplement-rebuild.json",
+        "experiments/personal-release/independent-metrics-audit.json",
+        "docs/release/SUPPLEMENT_ERRATA.md"
+      ]
+    },
+    {
+      "question": 11,
+      "status": "PASS",
+      "evidence": "Full XML independently991passed/0failure/0error/0skip; sanitized public independent environment XML937passed/0failure/0error/0skip; explicit30not-packaged+24controlled+4opt-in boundaries explain differences; cold install/browser evidence reviewed",
+      "paths": [
+        "tests/release/test_personal_release.py",
+        "docs/release/RUNBOOK.md"
+      ]
+    },
+    {
+      "question": 12,
+      "status": "PARTIAL",
+      "evidence": "f1cbd7d excludes upstream-derived modules/answer-source-turns and expandsPython/Source/question matching; sanitized public937passed and independent Standards strict scan reviewed. Partial means unknown privacy/semantic guarantees remain, not a known unresolved leak. Finaltar identity verified separately.",
+      "paths": [
+        "scripts/package_personal_release.py",
+        "docs/release/DATA_POLICY.md"
+      ]
+    },
+    {
+      "question": 13,
+      "status": "PASS",
+      "evidence": "Personal core vs Product/Architecture/Delivery scopes and absent Notion linkage explicit; no teammate work claimed",
+      "paths": [
+        "TEAM_INTEGRATION_HANDOFF.md",
+        "deliverables/m5-personal-candidate/README.md"
+      ]
+    },
+    {
+      "question": 14,
+      "status": "PASS",
+      "evidence": "Reviewed new tools only verify/hash/replay; no historical runner or paid execution performed by this reviewer; old artifacts preserved",
+      "paths": [
+        "src/locomo_memory/release_cli.py",
+        "scripts/archive_personal_evidence.py"
+      ]
+    },
+    {
+      "question": 15,
+      "status": "PASS",
+      "evidence": "Public default reversible by explicit dynamic; independent directory/revert documented, no DB schema migration or delete; owned service cleanup pinned036c506",
+      "paths": [
+        "docs/release/DEFAULTS_AND_ROLLBACK.md",
+        "src/locomo_memory/release_cli.py"
+      ]
+    },
+    {
+      "question": 16,
+      "status": "PARTIAL",
+      "evidence": "Core candidate supports team integration; controlled license/channel, Product/Architecture acceptance, PPTX/MP4/team report and final submission confirmation remain dependencies",
+      "paths": [
+        "TEAM_INTEGRATION_HANDOFF.md",
+        "docs/release/DATA_POLICY.md"
+      ]
+    }
+  ],
+  "document_snapshot": [
+    {
+      "path": "README.md",
+      "sha256": "380327f0d36b1f13db6f3594ffc85bad8985dceb561391d6556a46b84ab2cbe2",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "RELEASE_COMPONENT_MATRIX.md",
+      "sha256": "1656db1d97cb8da9aa406fcb5586e55c2d0c92b45f48fdcad1ce878161f138f2",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "RELEASE_CODE_LINEAGE.md",
+      "sha256": "da405eb0ea098c1770956af0c6c29b06629cf520cbfe62aad2abbb8c72d0a8cf",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "RELEASE_COMMIT_MAP.json",
+      "sha256": "7fae6d26205376a24cadf287ef1c5bf3bb635f32ce66780d0fec61287f2de0f8",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "PERSONAL_EXPERIMENT_SUMMARY.md",
+      "sha256": "6f8d0c797330fbe8fb03ad53b5ed1319ff0e1ff5aa5d960a31f61e26ad42b5bc",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "EXPERIMENT_ARCHIVE_INDEX.md",
+      "sha256": "716413e0d6380032bd9ebd66df5aafa43e11bb01431175e1e915c175d983afc9",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "LOCAL_ARCHIVE_AND_CLEANUP_PLAN.md",
+      "sha256": "cd0f931e4211b023eef3fb0d987bb9cab1103f5a88617509b472f7bea2b196da",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "TEAM_INTEGRATION_HANDOFF.md",
+      "sha256": "62ed4850953cb189cd2f0a0a33e31c72c685d7e06f8bb06390f124ab7e87d0e6",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "docs/release/DATA_POLICY.md",
+      "sha256": "a75e8f7040b64f4034f78b3b577c7f8fe641fbff7409b6c0692308792e023071",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "docs/release/DEFAULTS_AND_ROLLBACK.md",
+      "sha256": "2d601aff9026d2fc8b957675fc63430ab5ef7d9737eea9b726c8e27947a6f681",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "docs/release/RUNBOOK.md",
+      "sha256": "b6d49a6e8c169cadfc0d66d1790d5dc602748823d0766ae6002f1498a3292067",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "docs/release/SUPPLEMENT_ERRATA.md",
+      "sha256": "bf122383b440536a350ca7f8cf8685eaf21e158a77e5bcc97c998ab86dbe315e",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "RELEASE_MANIFEST.md",
+      "sha256": "556920f805841e5fd4f58273665bbc9a94cd4fff3ab801c80b3ece5d583475e9",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "docs/release/ACCEPTANCE.md",
+      "sha256": "da5f0f531df866f533bb86ec07d08a0463a9802ae2a52efb6ea7170ba1254127",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    },
+    {
+      "path": "docs/release/ADVERSARIAL_REVIEW.md",
+      "sha256": "64a561d4d6705ce2f3d2d38fa78c41c4ac9cdd714db281718218c378d9df4404",
+      "status": "reviewed final wording snapshot before final commit/assembly"
+    }
+  ],
+  "not_performed": [
+    "no private Gold or credential reads",
+    "no paid model request",
+    "no history/result rewrite",
+    "no remote write",
+    "no historical deletion"
+  ],
+  "conclusion": "PERSONAL_READY for the local personal core candidate. No unclosed implementation P0/P1/P2 or scope creep found. Full991 and sanitized public937 XML pass independently verified; six actual exports2031/37445/1465, preserved archives, existing E800 records and282 appendix numeric fields audited. Final documentation clearly preserves13PASS/3PARTIAL and all unmeasured/controlled/team boundaries. Finaltar assembly must be checked in a separate non-self-referential receipt; no remote/data disclosure/course submission authorization implied.",
+  "reported_acceptance_evidence": [
+    {
+      "path": "experiments/personal-release/browser-app/issue-12-result.json",
+      "status": "PASS",
+      "reviewer_action": "Read root-generated synthetic browser JSON; browser not independently rerun by this reviewer",
+      "pageerrors": 0,
+      "console_errors": 0,
+      "evaluation_rows": 8,
+      "failed_rows": 4
+    },
+    {
+      "operation": "main worktree status raw-NUL hash independently rechecked",
+      "dirty_entries": 36,
+      "sha256": "e7afa929866125a843cc257c5f0a0d95cba4e5949cbc00bd77c9a2d4d19e72ee",
+      "matches_initial": true
+    },
+    {
+      "path": "experiments/personal-release/cold-start-final.json",
+      "status": "PASS",
+      "reviewer_action": "read fixed-cutoff evidence; root executed, independent reviewer did not rerun browser"
+    },
+    {
+      "path": "experiments/personal-release/static-checks-final.json",
+      "status": "PASS",
+      "reviewer_action": "read fixed-cutoff evidence; root executed, independent reviewer did not rerun browser"
+    },
+    {
+      "path": "experiments/personal-release/browser-cold-final/browser-result.json",
+      "status": "PASS",
+      "reviewer_action": "read fixed-cutoff evidence; root executed, independent reviewer did not rerun browser"
+    },
+    {
+      "path": "experiments/personal-release/six-interface-validation.json",
+      "status": "PASS",
+      "reviewer_action": "read root-generated six API/UI interface test summary; actual six strict parsed earlier independently"
+    }
+  ],
+  "resolved_findings": [
+    {
+      "path": "RELEASE_COMMIT_MAP.json:431",
+      "finding": "release_cli.py stale SHA after signal cleanup",
+      "status": "CLOSED",
+      "verification": "all136 source_file_lineage actual SHA match"
+    },
+    {
+      "path": "scripts/package_personal_release.py",
+      "finding": "Earlier rehearsal included upstream-derived test examples; Standards review found and root excluded whole modules, never published",
+      "status": "CLOSED_IN_TESTED_SANITIZED_CANDIDATE",
+      "verification": "f1cbd7d diff reviewed; final public tests/package must reflect exclusions"
+    }
+  ],
+  "packaging_changes_reviewed_through": "f1cbd7d77e2b4f3727ccac000f2ab26dc3be9f4e",
+  "tests_completed": true,
+  "attestation_scope": "Fixed c7eae7a application/tests, tested sanitized public candidate, actual six exports/controlled local archive, and SHA-pinned final documentation; final assembled tar must have a separate post-package identity/parity receipt. Does not attest remote publication, disclosure, team/course submission, semantic ground truth or unmeasured QA gains.",
+  "external_package_receipt_required": {
+    "status": "NOT_YET_ASSEMBLED_AT_REVIEW_FREEZE",
+    "instruction": "Root will assemble final tar after committing this review. Verify final hash/member inventory and application/test/lock/config parity with tested sanitized candidate in a separate receipt; do not edit this packaged JSON to avoid SHA self-reference."
+  },
+  "unresolved_findings": [],
+  "adversarial_counts": {
+    "PASS": 13,
+    "PARTIAL": 3,
+    "FAIL": 0
+  },
+  "external_gates": [
+    "Course/source license scope, controlled recipient and channel must be confirmed before fullMemory/Source disclosure",
+    "Existing Git ancestry contains controlled original data; finaltar scan is not authority to publish that history",
+    "Product final Console/Timeline/comparison commit and browser evidence",
+    "Architecture PR38 semantic review fixes and non-author approval; opt-in only",
+    "Delivery editablePPTX/PDF,MP4,team technical report,single-package specification",
+    "Final course submission confirmation and linkedNotion task owner update"
+  ]
+}

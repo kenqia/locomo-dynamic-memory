@@ -58,7 +58,7 @@ def test_focus_removes_unrelated_group_but_keeps_employment_history_and_uncertai
     model = DeepSeekModel(settings,api_key='synthetic-test-key',transport=httpx.MockTransport(provider))
     with TestClient(create_app(settings,model=model,embedder=ControlledEmbedder())) as client:
         query = {**published(client,sample),'question':question}
-        responses = [client.post('/queries',json={**query,'evidence_profile':profile}) for profile in ('expanded','focused')]
+        responses = [client.post('/queries',json={"strategy": "dynamic", **query,'evidence_profile':profile}) for profile in ('expanded','focused')]
         for response in responses:
             assert response.status_code == 201, response.text
         expanded,focused = [r.json() for r in responses]
@@ -118,7 +118,7 @@ def test_partial_lexical_match_never_hides_synonymous_fact_or_named_person(setti
         return completion({'entities':['Alex'],'topic':None,'time':None,'keywords':[]})
     model = DeepSeekModel(settings,api_key='synthetic-test-key',transport=httpx.MockTransport(provider))
     with TestClient(create_app(settings,model=model,embedder=ControlledEmbedder())) as client:
-        response = client.post('/queries',json={**published(client,sample),'question':question,'evidence_profile':'focused'})
+        response = client.post('/queries',json={"strategy": "dynamic", **published(client,sample),'question':question,'evidence_profile':'focused'})
         assert response.status_code == 201, response.text
         assert {m['state_value'] for m in observed[0]['memories']} == {'nurse','violet','teacher'}
         assert response.json()['evidence_selection']['fallback_to_expanded']

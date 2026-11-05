@@ -1,0 +1,15 @@
+{
+  "status": "proposed_not_authorized",
+  "scope": "retry exactly one failed extraction fragment with unchanged production contract",
+  "build_id": "bef9f685957843698b3083ff4cbc79a4",
+  "fragment_ordinal": 18,
+  "prior_attempts": 3,
+  "prior_error": "extraction_time_expression_required",
+  "action": "assert exactly this failed fragment; BuildService.retry(build_id) then BuildService.run(build_id), no index/relation/QA",
+  "settings": "same frozen settings, model_retries=2 => at most 3 new physical requests",
+  "max_additional_physical_requests": 3,
+  "max_additional_reserved_usd": "0.2619648",
+  "budget": "same existing global ledger max18USD/204; no new total allowance",
+  "expected_result": "may still fail; no prompt/schema change or relaxed validation",
+  "why_confirmation": "Original approved plan limits each fragment to 3 attempts and explicitly does not auto-resume failures; this fragment exhausted all 3."
+}

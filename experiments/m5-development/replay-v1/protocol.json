@@ -1,0 +1,42 @@
+{
+  "version": "m5-offline-v1",
+  "original_run": "a2abe1fb49be45ccba291728e1f6b3c9",
+  "denominator": 757,
+  "development": [
+    "conv-26",
+    "conv-30",
+    "conv-41",
+    "conv-42"
+  ],
+  "holdout": [
+    "conv-43",
+    "conv-44"
+  ],
+  "provider_calls": 0,
+  "new_answers": false,
+  "arms": [
+    "H:frozen_hybrid_initial",
+    "D:frozen_dynamic_expanded",
+    "B1:graph_depth2",
+    "B2:lossless_grouping",
+    "B3:adaptive",
+    "B4:temporal"
+  ],
+  "controls": "D frozen pre-resolution candidates; same seeds and complete-Memory JSON budget per arm",
+  "graph": {
+    "depth": 2,
+    "max_candidates": 60,
+    "token_budget": 24000,
+    "semantic_edges": "stored relations only"
+  },
+  "compression": "exact roundtrip every field; no summary, no decoder prompt or provider claim",
+  "route": "question + frozen analysis only; no answer or annotated evidence input",
+  "truth": "adjacent same-state-key reports, SHA order, 15/conversation, no predicted labels",
+  "metrics": "Source proxy Recall@K over Memory ranks, not fact recall or QA; failed arm recall zero when scorable",
+  "promotion": "No paid/production promotion without independent positive fact review and zero severe errors",
+  "combinations": "B5/B6 withheld until independent single-arm evidence",
+  "bootstrap": {
+    "seed": 51104,
+    "repeats": 2000
+  }
+}

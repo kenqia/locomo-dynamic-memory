@@ -1,0 +1,17 @@
+{
+  "version": "m5-conv44-relation-successor-v1",
+  "status": "sixth_strict_export_complete_local_copy_only",
+  "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+  "memories": 392,
+  "relations": 7134,
+  "export": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-sixth-export-successor-v1/exports/conv-44.json",
+  "export_sha256": "1006ce3d855ffb496cb8a2c029276511707427bb7129474013f4b1768639611f",
+  "provenance": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-sixth-export-successor-v1/exports/conv-44.provenance.json",
+  "provenance_sha256": "19d1272ceb3482db11b3698d9e9c1ea4e260dd280b80e226dae14e2e29d18580",
+  "strict_roundtrip": true,
+  "source_and_ledgers_unchanged": true,
+  "provider_requests": 0,
+  "holdout_qa_read": false,
+  "source_status": "related",
+  "level_e_executed": false
+}

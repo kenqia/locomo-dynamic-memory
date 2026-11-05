@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "physical_mock_requests": 68,
+  "real_provider_requests": 0,
+  "real_extraction": false,
+  "scope": "conversation-only synthetic no-facts model; no index/relation/QA",
+  "build_states": [
+    [
+      "conv-43",
+      "extracted",
+      "extraction"
+    ],
+    [
+      "conv-44",
+      "extracted",
+      "extraction"
+    ]
+  ],
+  "repeat_refused": true,
+  "code_hash_check": true
+}

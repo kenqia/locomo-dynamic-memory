@@ -1,0 +1,69 @@
+{
+  "version": "m5-build-repair-manifest-v1",
+  "status": "five_exports_complete_conv44_recovery_prepared_not_authorized",
+  "worktree": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104",
+  "branch": "codex/m5-final-build-repair-20261104",
+  "prior_frozen_worktrees": {
+    "development": "0aae59c",
+    "input_v2": "aba95ca"
+  },
+  "local_merge_commit": "bcbf479d3a24f79a87695a3d3bbbacd86974e184",
+  "implementation_commits": [
+    "0303c5c79aadcabb6d94f8246c9c3e79c0005f3c",
+    "3fa8b4fd60f6973e76f634bcd597eaabe796f4b6"
+  ],
+  "public_files": {
+    "tools/m5/isolated_extraction_recovery.py": "9d53ab4837757bedc0b3258ec4ef1be841cc05fec74358b9559bb650ab055ea3",
+    "tests/test_m5_isolated_extraction_recovery.py": "2a45286d2f8d8cbd92bfe35300f401bc4abd4840c359b389a513cebf18a0595a",
+    "docs/m5-development/ISOLATED_EXTRACTION_RECOVERY_V2.md": "702d9c03a2130a1349715328158ea173044e5bc62e2eca67a1fcd5dcda9ba349",
+    "docs/m5-development/ISOLATED_EXTRACTION_RECOVERY_REVIEW_V2.md": "dc3494d041838c4df3292570d7300f173e6e58fc189079135c5bddafee646868",
+    "experiments/m5-development/conv44-isolated-recovery-v2-prepared.json": "445674bd03add8cdc1ba6d3a074c2f11fdfcf67a1d24ae88416efc4e4ca09e51",
+    "experiments/m5-development/conv44-isolated-recovery-v2-pricing.json": "ae1cb4884b36d241d8fc04704c0a7785a4eb78212770fb9b5846ab2d6f3a5d0e",
+    "experiments/m5-development/conv44-isolated-recovery-v2-authorization-gate.json": "001e076e2ccccdaf11d15d85dffd972a19559ba3e40874c5d75708bd46ccceb3",
+    "tools/m5/complete_export_copy.py": "4dc064e11d4d174fd21f7037379a3382b10d85b6a218e58afd0c7c0445a8a071",
+    "docs/m5-development/FIVE_BUILD_EXPORT_V1.md": "b4e45381fb2f089f70ca18a5a83e8821a04baa663bbf5744a0c2a62ab4a2c8a0",
+    "experiments/m5-development/five-build-export-v1.json": "ba90a8cb4d5389fd18367da245b573d1876c101dac58ad04ce84603b9c284bd9",
+    "experiments/m5-development/five-build-export-v1-independent-check.json": "08cc91a8c508d9e25c34ec7e7ff191a69e81f2462b267c503bb52dc1a7dd4462",
+    "M5_BUILD_REPAIR_HANDOFF.md": "7074db88f1014657e9ffde36be6d13c5f0cd99195aabf4629af454201f07f963",
+    "docs/m5-development/FINAL_DELIVERY_CHECKLIST.md": "ff70f3396364a8c05695ca75ea3adecdfa763dc6172af0d82e5338471b61a71f",
+    "experiments/m5-development/build-repair-verification-v1.json": "74c86a560c68b92db424287da14ba713508ee63f7ad809291a4e07cab0d614ea"
+  },
+  "manifest_excludes_itself": true,
+  "manifest_tracking_commit": "use git log -- experiments/m5-development/build-repair-manifest-v1.json",
+  "private_recovery_stage": "var/m5-development/conv44-isolated-recovery-v2",
+  "private_recovery_files": {
+    "var/m5-development/conv44-isolated-recovery-v2/plan.json": "ca0b07d1633a5fb178bb9cec7061fa9ae453b8428c184ae6a2754c7931cc7425",
+    "var/m5-development/conv44-isolated-recovery-v2/settings.json": "830bb4879747d32c16df0fc59a4cd87641c29a96c295f1eaec911a8ebd7146e7",
+    "var/m5-development/conv44-isolated-recovery-v2/authorization-template.json": "c3aac6bd769046016140436306c9401ab286c9e1647a7ca893e8670e833d32ad"
+  },
+  "recovery_plan_sha256": "ca0b07d1633a5fb178bb9cec7061fa9ae453b8428c184ae6a2754c7931cc7425",
+  "recovery_prepared_database_logical_snapshot": "9310cd06333a4358ea688e752310c0616105e16c04dff7ab6c39686e92e7692c",
+  "recovery_prepared_ledger_logical_snapshot": "9c25527a302bd5ae0a37bb3f4ba432acf909d04a85d6de76260c4edad9a8c88b",
+  "authorization_present": false,
+  "execution_marker_present": false,
+  "new_provider_requests": 0,
+  "holdout_qa_evidence_answers_read": false,
+  "proposed_new_policy": {
+    "max_requests": 3,
+    "max_usd": "0.2619648",
+    "model": "deepseek-flash",
+    "input_usd_per_million": ".30",
+    "output_usd_per_million": "1.20",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768
+  },
+  "stage_balances_transferable": false,
+  "total_task_complete": false,
+  "level_e_executed": false,
+  "release_frozen": false,
+  "remote_write": false,
+  "production_database_written": false,
+  "notion_sync": "no linked task identified; not synchronized or marked complete",
+  "limitations": [
+    "conv44 still failed",
+    "historical relation thinking high retained",
+    "strict schema exports do not prove semantic quality",
+    "full offline tests exclude live_model and local_embedding",
+    "no live recovery authorization yet"
+  ]
+}

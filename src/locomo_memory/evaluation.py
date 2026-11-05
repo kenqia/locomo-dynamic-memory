@@ -182,7 +182,7 @@ class EvaluationService:
         source_map = {s['source_id']: s for s in sources}
         with self.database.connect() as db:
             cutoff, raw = conversation_cutoff(db, request.dataset_id, request.sample_id)
-        requested = explicit_question_date(request.question)
+        requested = request.requested_date or explicit_question_date(request.question)
         condition = {'requested_date': requested.isoformat() if requested else None, 'anchor_date': (requested or cutoff.date()).isoformat(), 'cutoff': cutoff.isoformat(), 'cutoff_source_time': raw, 'beyond_cutoff': bool(requested and requested > cutoff.date())}
         if strategy == 'full_text':
             # Keep the complete intended input even when the provider rejects it.
@@ -219,7 +219,7 @@ class EvaluationService:
                 trace['expanded'] = selected
             else:
                 tick = time.perf_counter()
-                expanded = q.expansion.expand(initial['query_id'])
+                expanded = q.expansion.expand(initial['query_id'], requested_date=requested)
                 trace['stage_seconds']['expansion'] = time.perf_counter() - tick
                 trace['expansion'] = expanded
                 trace['initial'] = [c['memory'] for c in initial['initial_candidates']]

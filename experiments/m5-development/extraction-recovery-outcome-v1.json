@@ -1,0 +1,50 @@
+{
+  "status": "authorized_recovery_finished_failed",
+  "scope": "one failed extraction fragment only",
+  "build_id": "bef9f685957843698b3083ff4cbc79a4",
+  "fragment_ordinal": 18,
+  "additional_physical_requests": 3,
+  "recovery_reservation_usd": "0.1335684",
+  "reported_usage_complete": true,
+  "reported_usage_peak_cache_miss_upper_usd": "0.0091488",
+  "failure_code": "invalid_output",
+  "attempt_diagnostics": [
+    {
+      "attempt": 1,
+      "outcome": "invalid_output",
+      "failure_stage": "domain_validation",
+      "error_code": "extraction_time_expression_required",
+      "field_path": "memories[7]",
+      "response_received": true,
+      "finish_reason": "stop"
+    },
+    {
+      "attempt": 2,
+      "outcome": "invalid_output",
+      "failure_stage": "domain_validation",
+      "error_code": "extraction_time_expression_required",
+      "field_path": "memories[8]",
+      "response_received": true,
+      "finish_reason": "stop"
+    },
+    {
+      "attempt": 3,
+      "outcome": "invalid_output",
+      "failure_stage": "domain_validation",
+      "error_code": "extraction_time_expression_required",
+      "field_path": "memories[6]",
+      "response_received": true,
+      "finish_reason": "stop"
+    }
+  ],
+  "accepted_fragments_unchanged": 67,
+  "accepted_memories_unchanged": 785,
+  "protected_rows_sha256": "31a52494c4cb9c4c72f96a78e632e8607811dcd1858acca4e797e7be88d50fe2",
+  "plan_sha256": "c735a02f7051e8b4a2fc8dcfb0675373d31136c8a7dd305ea0f59fe357eb7a50",
+  "authorization_sha256": "e58b288aca55f43b64ece077259867c5cf4bc9b427781df4ffea81187449fed2",
+  "receipt_sha256": "3ad28665ee51890b21c26577f56486d0e3211fe474c8d67a5447bdde056f251b",
+  "no_index_relation_publish_qa": true,
+  "holdout_answers_read": false,
+  "further_automatic_retry": false,
+  "actual_account_bill": "not_accessed"
+}

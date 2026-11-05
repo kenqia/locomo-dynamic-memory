@@ -1,0 +1,34 @@
+{
+  "version": "release-export-catalog-v1",
+  "kind": "Synthetic / Offline Replay",
+  "license": "CC0-1.0; original fictional Alex/Sam fixture created for this project",
+  "builds": [
+    {
+      "sample_id": "conv-a",
+      "file": "conv-a.json",
+      "build_id": "2cc81c93ae4441239a929d9ba28b9268",
+      "dataset_id": "daa7e270462fb444c2cd76e4",
+      "sha256": "f6712a4e2f6faef8d8a7f67673d7644022d8b9672faa1e22ac7af65b66d63d83",
+      "build_fingerprint": "0239267ad75451f97701d2fbff1c68c4d10aa0385896d2d21cd377b0589c1360",
+      "index_fingerprint": "5ac46af0b46fd745b580e61c8a56cdbeff0752ae81f995a188abb9629c8f07fb",
+      "projection_fingerprint": "275d4835036d1d359c3a0d191547a533c9fc9f6ce58c3d164b91fa43483efcab",
+      "memories": 2,
+      "relations": 1,
+      "source_turns": 2
+    }
+  ],
+  "replays": [
+    {
+      "name": "Current",
+      "file": "current.json"
+    },
+    {
+      "name": "Historical",
+      "file": "historical.json"
+    },
+    {
+      "name": "Failed Trace",
+      "file": "failed.json"
+    }
+  ]
+}

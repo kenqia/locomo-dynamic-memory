@@ -1,0 +1,10 @@
+{
+  "units_sha256": "e06ce7b3f9ccd6b34b89934e0dcb6ea037f546abecb3c3c70f000dde81540911",
+  "predictions_sha256": "38e48679cb870c5a74471ad759605c820958cc1e00add26fc9d63741431ebcee",
+  "references": {
+    "var/m5-development/query-applicability-v1/independent-a.json": "45675cdfff88bd3d1afe85000ddc02fe80e0b1059d7f72a41c069e123fd4530c",
+    "var/m5-development/query-applicability-v1/independent-b.json": "60eb34abd0a0faadf3faf226553bd8b86bea15ad3b8489de8bc64bb9f0cfdc96"
+  },
+  "protocol": "m5-query-applicability-v1",
+  "scope": "Independent AI references; not human or teacher truth"
+}

@@ -1,0 +1,12 @@
+{
+  "version": "private-research-archive-v1",
+  "status": "PASS",
+  "deletions": 0,
+  "scope": "all existing docs/experiments/process and experimental var in discovered sibling directories; protected logs/credentials/caches omitted and preserved in place",
+  "restore_verification": "all member bytes streamed and SHA/size/order compared to source snapshot inventory",
+  "provider_requests": 0,
+  "archive_sha256": "bfb7f58a42cf5f76e35db580f06e215a3bc15beb691892d781a02fa0251f5ddd",
+  "archive_bytes": 2301324861,
+  "members": 35440,
+  "omitted_files": 5431
+}

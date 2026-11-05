@@ -1,0 +1,126 @@
+{
+  "observed_utc": "2026-11-04T07:34:07.332316+00:00",
+  "status": "Level C complete; conv-43 relation running; total M5 not complete",
+  "real_provider_requests": 730,
+  "real_provider_requests_scope": "all three independent phase ledgers at this observation, including in-flight reservations",
+  "finalized_provider_requests": 499,
+  "conservative_reserved_usd": "34.1096862",
+  "finalized_reserved_usd": "22.7714316",
+  "paid_usd": "not_measured",
+  "unknown_usage_requests": 4,
+  "unknown_usage_scope": "includes any in-flight reserved request; not all are terminal transport failures",
+  "reported_usage_peak_cache_miss_upper_usd_known": "3.5597451",
+  "actual_invoice": "not_accessed",
+  "budgets_independent_not_transferable": true,
+  "remaining_capacity_authorizes_extra_attempts": false,
+  "stages": {
+    "extraction_recovery": {
+      "real_provider_requests": 78,
+      "paid_usd": "not_measured",
+      "authorized_nonzero_budget": true,
+      "unknown_paid_requests": 0,
+      "local_resource_cost": "not_measured",
+      "status": "authorized extraction and one-fragment recovery finished; fragment remains failed",
+      "authorized_scope": {
+        "max_usd": "18",
+        "physical_requests": 204,
+        "scope": "conv-43/44 conversation extraction only"
+      },
+      "reported_usage_peak_cache_miss_upper_usd": "0.2265405",
+      "conservative_reserved_usd": "3.4624767",
+      "remaining_approved_reservation_usd": "14.5375233",
+      "remaining_request_capacity": 126,
+      "remaining_capacity_authorizes_extra_fragment_attempts": false,
+      "recovery_authorization": {
+        "scope": "conv-44 ordinal18 only",
+        "max_additional_requests": 3,
+        "max_additional_reserved_usd": "0.2619648",
+        "executed_requests": 3,
+        "reserved_usd": "0.1335684",
+        "reported_usage_peak_cache_miss_upper_usd": "0.0091488",
+        "result": "failed; no further automatic retry"
+      },
+      "latest_audit": "live-extraction-post-recovery-v1.json",
+      "recovery_audit": "extraction-recovery-outcome-v1.json",
+      "real_provider_requests_scope": "finalized extraction/recovery only; other independent ledgers are excluded from this historical subtotal"
+    },
+    "conv43_relations": {
+      "authorization": {
+        "scope": "conv-43 existing indexed Build relation phase only; no conv-44/rebuild/publish/query/QA",
+        "max_usd": "104.78592",
+        "max_requests": 1200,
+        "status": "authorized_running",
+        "ledger": "var/m5-development/conv43-relation-proposal-v1/physical-requests.sqlite3",
+        "automatic_retry_after_stage": false
+      },
+      "observed": {
+        "requests": 231,
+        "reserved_usd": "11.3382546",
+        "statuses": {
+          "response_received": 227,
+          "transport_unknown": 3,
+          "reserved": 1
+        },
+        "known_usage_peak_upper_usd": "2.1633837",
+        "unknown_usage_requests": 4,
+        "unknown_usage_reserved_usd": "0.1995363",
+        "tasks": {
+          "pending": 172,
+          "running": 1,
+          "succeeded": 227
+        },
+        "build_statuses": {
+          "conv-43": "running",
+          "conv-44": "failed"
+        }
+      }
+    },
+    "level_c": {
+      "authorization": {
+        "scope": "fixed M5 development 80 ordinary + 20 diagnostic questions; Hybrid and Dynamic only; no holdout or Bonus",
+        "max_usd": "130.9824",
+        "max_requests": 1500,
+        "status": "complete_no_automatic_recovery",
+        "ledger": "var/m5-development/level-c-preparation-v1/final/final-v2/physical-requests.sqlite3",
+        "automatic_retry_after_stage": false
+      },
+      "terminal_ledger": {
+        "physical_ledger_requests": 421,
+        "request_statuses": {
+          "reserved": 0,
+          "response_received": 421,
+          "response_usage_unknown": 0,
+          "transport_unknown": 0
+        },
+        "reserved_usd": "19.3089549",
+        "reservations_by_status_usd": {
+          "reserved": "0",
+          "response_received": "19.3089549",
+          "response_usage_unknown": "0",
+          "transport_unknown": "0"
+        },
+        "unknown_usage_requests": 0,
+        "partial_usage_requests": 0,
+        "unknown_usage_reserved_usd": "0",
+        "reported_usage": {
+          "prompt_tokens": 2860923,
+          "completion_tokens": 259620,
+          "total_tokens": 3120543
+        },
+        "known_complete_usage_peak_cache_miss_upper_usd": "1.1698209",
+        "all_reported_fields_peak_cache_miss_upper_usd": "1.1698209",
+        "reported_cost_scope": "reported fields only; missing usage remains unknown and fully reserved",
+        "reported_partial_usage_included_in_token_totals": true,
+        "unknown_reservations_retained": true,
+        "remaining_requests": 1079,
+        "remaining_reserved_capacity_usd": "111.6734451",
+        "actual_invoice_usd": "not_accessed",
+        "policy_verified": true
+      },
+      "generated_items": 200,
+      "succeeded": 151,
+      "failed": 49,
+      "semantic_review": "200 independent AI source reviews complete; not teacher truth"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "version": "m5-level-e-root-terminal-v1",
+  "generation_freeze_sha256": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+  "plan_sha256": "5d99378868a5aed92889ff3995ae7771270b91d8effb373fb6d7e85672484c92",
+  "final_lock_sha256": "3b6e3fbcad1670226f1f9d8e1c9fa96436b104893a875527d078dc4948671ac6",
+  "implementation_commit": "0dbd98e7b296ef29d9998fa55d88d512f8ec85f1",
+  "frozen_items": 800,
+  "questions": 400,
+  "runtime_outcomes": {
+    "hybrid_no_resolution": {
+      "succeeded": 394,
+      "failed": 6
+    },
+    "dynamic": {
+      "succeeded": 389,
+      "failed": 11
+    }
+  },
+  "errors": {
+    "invalid_output": 8,
+    "model_http_error": 9
+  },
+  "ledger": {
+    "physical_requests": 2112,
+    "reserved_usd": "105.4516575",
+    "usage_unknown_requests": 18,
+    "reported_prompt_tokens": 22771255,
+    "reported_completion_tokens": 766026,
+    "reported_usage_peak_miss_upper_usd": "7.7506077",
+    "actual_invoice": "not_accessed",
+    "unknown_reservations_retained": true
+  },
+  "process_resource_sha256": "568dd4e09074deda67c0b41ef8a1812a5f93f9a36c3948a94119d30a8045f034",
+  "process_exit_code": 0,
+  "full_frozen_items_gate_passed": true,
+  "gold_read": false,
+  "provider_requests": 0,
+  "raw_text_emitted": false
+}

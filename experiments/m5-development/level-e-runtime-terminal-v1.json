@@ -1,0 +1,1142 @@
+{
+  "version": "m5-level-e-reporting-v1",
+  "reporting_implementation_sha256": {
+    "tools/m5/level_e_reporting.py": "50687231bd01a603a0bd6872b07a8c64c27b89abacc7b7b41591df0f7ab6fb89",
+    "tools/m5/level_c_audit.py": "c8823a95c1c5a52212fb7a9b7138da50ac30efeef2218d28510feee03c2085ab",
+    "tools/m5/level_c_semantic_review.py": "933bdeac1a9a4498b6cf74a971583e9d5e219fd38c66e290c922f65861369ba2",
+    "tools/m5/level_c_results.py": "32a3a96b7f6f97f91c7621b0e08eb9ddab0c3819ed41980d93d6e48a64d446c5"
+  },
+  "generation_freeze_sha256": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+  "planned_items": 800,
+  "groups": {
+    "all/hybrid_no_resolution": {
+      "planned": 400,
+      "succeeded": 394,
+      "failed": 6,
+      "unknown": 0,
+      "success_rate": 0.985,
+      "elapsed_seconds": {
+        "observed": 400,
+        "missing": 0,
+        "total": 1016.43568998306,
+        "p50": 2.3702301470111706,
+        "p95": 3.9353236094524613
+      },
+      "stage_seconds": {
+        "retrieval": {
+          "observed": 400,
+          "missing": 0,
+          "total": 410.31774330997723,
+          "p50": 0.8739879009954166,
+          "p95": 2.1465855820526465
+        },
+        "expansion": {
+          "observed": 400,
+          "missing": 0,
+          "total": 27.221864141887636,
+          "p50": 0.06485790399892721,
+          "p95": 0.09113277354044837
+        },
+        "resolve": {
+          "observed": 0,
+          "missing": 400,
+          "total": 0,
+          "p50": null,
+          "p95": null
+        },
+        "answer": {
+          "observed": 394,
+          "missing": 6,
+          "total": 564.2224580720504,
+          "p50": 1.3689765614981297,
+          "p95": 2.1424760305402737
+        }
+      },
+      "adapter_attempt_seconds": {
+        "observed": 851,
+        "missing": 0,
+        "total": 949.5915288837277,
+        "p50": 1.0260267100093188,
+        "p95": 1.8680920004990185
+      },
+      "costs": {
+        "all_attempts": {
+          "adapter_reported": {
+            "attempts": 851,
+            "unknown_usage_attempts": 8,
+            "reported_tokens": {
+              "prompt_tokens": 2601810,
+              "completion_tokens": 75044
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.8705958"
+          },
+          "physical_reservations": {
+            "physical_requests": 851,
+            "reserved_usd": "36.2805087",
+            "unknown_usage_requests": 8,
+            "unknown_reserved_usd": "0.3424887"
+          }
+        },
+        "retries": {
+          "adapter_reported": {
+            "attempts": 51,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 62136,
+              "completion_tokens": 3382
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0226992"
+          },
+          "physical_reservations": {
+            "physical_requests": 51,
+            "reserved_usd": "2.0737962",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "failed_attempts": {
+          "adapter_reported": {
+            "attempts": 81,
+            "unknown_usage_attempts": 8,
+            "reported_tokens": {
+              "prompt_tokens": 79336,
+              "completion_tokens": 4834
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0296016"
+          },
+          "physical_reservations": {
+            "physical_requests": 81,
+            "reserved_usd": "3.3001812",
+            "unknown_usage_requests": 8,
+            "unknown_reserved_usd": "0.3424887"
+          }
+        },
+        "failed_item_attempts": {
+          "adapter_reported": {
+            "attempts": 16,
+            "unknown_usage_attempts": 8,
+            "reported_tokens": {
+              "prompt_tokens": 36941,
+              "completion_tokens": 1763
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0131979"
+          },
+          "physical_reservations": {
+            "physical_requests": 16,
+            "reserved_usd": "0.6963153",
+            "unknown_usage_requests": 8,
+            "unknown_reserved_usd": "0.3424887"
+          }
+        },
+        "unknown_item_attempts": {
+          "adapter_reported": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          },
+          "physical_reservations": {
+            "physical_requests": 0,
+            "reserved_usd": "0",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "by_operation": {
+          "query_analysis": {
+            "attempts": 443,
+            "unknown_usage_attempts": 4,
+            "reported_tokens": {
+              "prompt_tokens": 124575,
+              "completion_tokens": 15673
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0561801"
+          },
+          "resolve": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          },
+          "answer": {
+            "attempts": 398,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 2440853,
+              "completion_tokens": 57668
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.8014575"
+          },
+          "failed_operation": {
+            "attempts": 10,
+            "unknown_usage_attempts": 4,
+            "reported_tokens": {
+              "prompt_tokens": 36382,
+              "completion_tokens": 1703
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0129582"
+          }
+        }
+      },
+      "token_efficiency": {
+        "reported_tokens_per_successful_item": {
+          "prompt_tokens": 6603.578680203046,
+          "completion_tokens": 190.46700507614213
+        },
+        "scope": "reported fields across all attempts divided by successful items; missing usage excluded, not zero",
+        "factual_gain_per_token": "not_measured"
+      }
+    },
+    "all/dynamic": {
+      "planned": 400,
+      "succeeded": 389,
+      "failed": 11,
+      "unknown": 0,
+      "success_rate": 0.9725,
+      "elapsed_seconds": {
+        "observed": 400,
+        "missing": 0,
+        "total": 3487.6100525718502,
+        "p50": 8.314747211501526,
+        "p95": 12.403791126237023
+      },
+      "stage_seconds": {
+        "retrieval": {
+          "observed": 400,
+          "missing": 0,
+          "total": 386.7601447840716,
+          "p50": 0.8925308380057686,
+          "p95": 1.9181439676009047
+        },
+        "expansion": {
+          "observed": 400,
+          "missing": 0,
+          "total": 26.497558412185754,
+          "p50": 0.06362853899918264,
+          "p95": 0.09021192049913215
+        },
+        "resolve": {
+          "observed": 400,
+          "missing": 0,
+          "total": 2534.3883736840653,
+          "p50": 6.062975324006402,
+          "p95": 8.633841317093896
+        },
+        "answer": {
+          "observed": 394,
+          "missing": 6,
+          "total": 511.0618604460469,
+          "p50": 1.1742452055041213,
+          "p95": 2.050187791803908
+        }
+      },
+      "adapter_attempt_seconds": {
+        "observed": 1261,
+        "missing": 0,
+        "total": 3398.850214986349,
+        "p50": 1.1774453500111122,
+        "p95": 7.1615284110012
+      },
+      "costs": {
+        "all_attempts": {
+          "adapter_reported": {
+            "attempts": 1261,
+            "unknown_usage_attempts": 10,
+            "reported_tokens": {
+              "prompt_tokens": 20169445,
+              "completion_tokens": 690982
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "6.8800119"
+          },
+          "physical_reservations": {
+            "physical_requests": 1261,
+            "reserved_usd": "69.1711488",
+            "unknown_usage_requests": 10,
+            "unknown_reserved_usd": "0.6097818"
+          }
+        },
+        "retries": {
+          "adapter_reported": {
+            "attempts": 67,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 691765,
+              "completion_tokens": 29090
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.2424375"
+          },
+          "physical_reservations": {
+            "physical_requests": 67,
+            "reserved_usd": "3.2951112",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "failed_attempts": {
+          "adapter_reported": {
+            "attempts": 103,
+            "unknown_usage_attempts": 10,
+            "reported_tokens": {
+              "prompt_tokens": 754293,
+              "completion_tokens": 35095
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.2684019"
+          },
+          "physical_reservations": {
+            "physical_requests": 103,
+            "reserved_usd": "4.9896021",
+            "unknown_usage_requests": 10,
+            "unknown_reserved_usd": "0.6097818"
+          }
+        },
+        "failed_item_attempts": {
+          "adapter_reported": {
+            "attempts": 39,
+            "unknown_usage_attempts": 10,
+            "reported_tokens": {
+              "prompt_tokens": 426090,
+              "completion_tokens": 18449
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.1499658"
+          },
+          "physical_reservations": {
+            "physical_requests": 39,
+            "reserved_usd": "2.1613635",
+            "unknown_usage_requests": 10,
+            "unknown_reserved_usd": "0.6097818"
+          }
+        },
+        "unknown_item_attempts": {
+          "adapter_reported": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          },
+          "physical_reservations": {
+            "physical_requests": 0,
+            "reserved_usd": "0",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "by_operation": {
+          "query_analysis": {
+            "attempts": 444,
+            "unknown_usage_attempts": 5,
+            "reported_tokens": {
+              "prompt_tokens": 124572,
+              "completion_tokens": 15705
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0562176"
+          },
+          "resolve": {
+            "attempts": 413,
+            "unknown_usage_attempts": 5,
+            "reported_tokens": {
+              "prompt_tokens": 19228337,
+              "completion_tokens": 618839
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "6.5111079"
+          },
+          "answer": {
+            "attempts": 404,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 816536,
+              "completion_tokens": 56438
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.3126864"
+          },
+          "failed_operation": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          }
+        }
+      },
+      "token_efficiency": {
+        "reported_tokens_per_successful_item": {
+          "prompt_tokens": 51849.473007712084,
+          "completion_tokens": 1776.3033419023136
+        },
+        "scope": "reported fields across all attempts divided by successful items; missing usage excluded, not zero",
+        "factual_gain_per_token": "not_measured"
+      }
+    },
+    "conv-43/hybrid_no_resolution": {
+      "planned": 242,
+      "succeeded": 241,
+      "failed": 1,
+      "unknown": 0,
+      "success_rate": 0.9958677685950413,
+      "elapsed_seconds": {
+        "observed": 242,
+        "missing": 0,
+        "total": 648.0169083830697,
+        "p50": 2.47513683699799,
+        "p95": 4.015823235449352
+      },
+      "stage_seconds": {
+        "retrieval": {
+          "observed": 242,
+          "missing": 0,
+          "total": 269.0893378399487,
+          "p50": 0.9223721505113645,
+          "p95": 2.2482804379069417
+        },
+        "expansion": {
+          "observed": 242,
+          "missing": 0,
+          "total": 17.186554668922327,
+          "p50": 0.06696673549595289,
+          "p95": 0.09275180534168612
+        },
+        "resolve": {
+          "observed": 0,
+          "missing": 242,
+          "total": 0,
+          "p50": null,
+          "p95": null
+        },
+        "answer": {
+          "observed": 241,
+          "missing": 1,
+          "total": 355.2038313390076,
+          "p50": 1.4351816279959166,
+          "p95": 2.029516449008952
+        }
+      },
+      "adapter_attempt_seconds": {
+        "observed": 518,
+        "missing": 0,
+        "total": 604.7018774198514,
+        "p50": 1.0613755469967145,
+        "p95": 1.8858468344420543
+      },
+      "costs": {
+        "all_attempts": {
+          "adapter_reported": {
+            "attempts": 518,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 1582247,
+              "completion_tokens": 45064
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.5287509"
+          },
+          "physical_reservations": {
+            "physical_requests": 518,
+            "reserved_usd": "22.0745148",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "retries": {
+          "adapter_reported": {
+            "attempts": 34,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 39237,
+              "completion_tokens": 2092
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0142815"
+          },
+          "physical_reservations": {
+            "physical_requests": 34,
+            "reserved_usd": "1.3804806",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "failed_attempts": {
+          "adapter_reported": {
+            "attempts": 48,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 48476,
+              "completion_tokens": 2845
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0179568"
+          },
+          "physical_reservations": {
+            "physical_requests": 48,
+            "reserved_usd": "1.9412394",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "failed_item_attempts": {
+          "adapter_reported": {
+            "attempts": 4,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 18200,
+              "completion_tokens": 750
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.00636"
+          },
+          "physical_reservations": {
+            "physical_requests": 4,
+            "reserved_usd": "0.1768923",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "unknown_item_attempts": {
+          "adapter_reported": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          },
+          "physical_reservations": {
+            "physical_requests": 0,
+            "reserved_usd": "0",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "by_operation": {
+          "query_analysis": {
+            "attempts": 271,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 76862,
+              "completion_tokens": 9690
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0346866"
+          },
+          "resolve": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          },
+          "answer": {
+            "attempts": 244,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 1487464,
+              "completion_tokens": 34656
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.4878264"
+          },
+          "failed_operation": {
+            "attempts": 3,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 17921,
+              "completion_tokens": 718
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0062379"
+          }
+        }
+      },
+      "token_efficiency": {
+        "reported_tokens_per_successful_item": {
+          "prompt_tokens": 6565.340248962656,
+          "completion_tokens": 186.9875518672199
+        },
+        "scope": "reported fields across all attempts divided by successful items; missing usage excluded, not zero",
+        "factual_gain_per_token": "not_measured"
+      }
+    },
+    "conv-43/dynamic": {
+      "planned": 242,
+      "succeeded": 239,
+      "failed": 3,
+      "unknown": 0,
+      "success_rate": 0.987603305785124,
+      "elapsed_seconds": {
+        "observed": 242,
+        "missing": 0,
+        "total": 2088.576885847855,
+        "p50": 8.282867065499886,
+        "p95": 11.457859943500804
+      },
+      "stage_seconds": {
+        "retrieval": {
+          "observed": 242,
+          "missing": 0,
+          "total": 242.89243381209963,
+          "p50": 0.9265955384980771,
+          "p95": 2.177547216403033
+        },
+        "expansion": {
+          "observed": 242,
+          "missing": 0,
+          "total": 16.71118893811945,
+          "p50": 0.06573428900446743,
+          "p95": 0.09484427594652514
+        },
+        "resolve": {
+          "observed": 242,
+          "missing": 0,
+          "total": 1493.3849514319445,
+          "p50": 6.057229969497712,
+          "p95": 7.726176612790732
+        },
+        "answer": {
+          "observed": 242,
+          "missing": 0,
+          "total": 317.6775788860541,
+          "p50": 1.1847863259972655,
+          "p95": 2.1004588998483085
+        }
+      },
+      "adapter_attempt_seconds": {
+        "observed": 767,
+        "missing": 0,
+        "total": 2034.4841188471619,
+        "p50": 1.187970660001156,
+        "p95": 6.922441081493161
+      },
+      "costs": {
+        "all_attempts": {
+          "adapter_reported": {
+            "attempts": 767,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 11703072,
+              "completion_tokens": 401109
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "3.9922524"
+          },
+          "physical_reservations": {
+            "physical_requests": 767,
+            "reserved_usd": "41.5017816",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "retries": {
+          "adapter_reported": {
+            "attempts": 41,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 248002,
+              "completion_tokens": 11221
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0878658"
+          },
+          "physical_reservations": {
+            "physical_requests": 41,
+            "reserved_usd": "1.8546846",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "failed_attempts": {
+          "adapter_reported": {
+            "attempts": 57,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 258946,
+              "completion_tokens": 12822
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0930702"
+          },
+          "physical_reservations": {
+            "physical_requests": 57,
+            "reserved_usd": "2.4968097",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "failed_item_attempts": {
+          "adapter_reported": {
+            "attempts": 15,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 178417,
+              "completion_tokens": 7576
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0626163"
+          },
+          "physical_reservations": {
+            "physical_requests": 15,
+            "reserved_usd": "0.7657728",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "unknown_item_attempts": {
+          "adapter_reported": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          },
+          "physical_reservations": {
+            "physical_requests": 0,
+            "reserved_usd": "0",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "by_operation": {
+          "query_analysis": {
+            "attempts": 272,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 77143,
+              "completion_tokens": 9759
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0348537"
+          },
+          "resolve": {
+            "attempts": 247,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 11155864,
+              "completion_tokens": 358145
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "3.7765332"
+          },
+          "answer": {
+            "attempts": 248,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 470065,
+              "completion_tokens": 33205
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.1808655"
+          },
+          "failed_operation": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          }
+        }
+      },
+      "token_efficiency": {
+        "reported_tokens_per_successful_item": {
+          "prompt_tokens": 48966.828451882844,
+          "completion_tokens": 1678.2803347280335
+        },
+        "scope": "reported fields across all attempts divided by successful items; missing usage excluded, not zero",
+        "factual_gain_per_token": "not_measured"
+      }
+    },
+    "conv-44/hybrid_no_resolution": {
+      "planned": 158,
+      "succeeded": 153,
+      "failed": 5,
+      "unknown": 0,
+      "success_rate": 0.9683544303797469,
+      "elapsed_seconds": {
+        "observed": 158,
+        "missing": 0,
+        "total": 368.4187815999903,
+        "p50": 2.200157464503718,
+        "p95": 3.54540752545654
+      },
+      "stage_seconds": {
+        "retrieval": {
+          "observed": 158,
+          "missing": 0,
+          "total": 141.22840547002852,
+          "p50": 0.8143524570041336,
+          "p95": 1.291437385397876
+        },
+        "expansion": {
+          "observed": 158,
+          "missing": 0,
+          "total": 10.03530947296531,
+          "p50": 0.06093746699480107,
+          "p95": 0.08999438560931594
+        },
+        "resolve": {
+          "observed": 0,
+          "missing": 158,
+          "total": 0,
+          "p50": null,
+          "p95": null
+        },
+        "answer": {
+          "observed": 153,
+          "missing": 5,
+          "total": 209.01862673304277,
+          "p50": 1.291977381988545,
+          "p95": 2.2279037345986583
+        }
+      },
+      "adapter_attempt_seconds": {
+        "observed": 333,
+        "missing": 0,
+        "total": 344.88965146387636,
+        "p50": 0.9803944860032061,
+        "p95": 1.7775237778027073
+      },
+      "costs": {
+        "all_attempts": {
+          "adapter_reported": {
+            "attempts": 333,
+            "unknown_usage_attempts": 8,
+            "reported_tokens": {
+              "prompt_tokens": 1019563,
+              "completion_tokens": 29980
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.3418449"
+          },
+          "physical_reservations": {
+            "physical_requests": 333,
+            "reserved_usd": "14.2059939",
+            "unknown_usage_requests": 8,
+            "unknown_reserved_usd": "0.3424887"
+          }
+        },
+        "retries": {
+          "adapter_reported": {
+            "attempts": 17,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 22899,
+              "completion_tokens": 1290
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0084177"
+          },
+          "physical_reservations": {
+            "physical_requests": 17,
+            "reserved_usd": "0.6933156",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "failed_attempts": {
+          "adapter_reported": {
+            "attempts": 33,
+            "unknown_usage_attempts": 8,
+            "reported_tokens": {
+              "prompt_tokens": 30860,
+              "completion_tokens": 1989
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0116448"
+          },
+          "physical_reservations": {
+            "physical_requests": 33,
+            "reserved_usd": "1.3589418",
+            "unknown_usage_requests": 8,
+            "unknown_reserved_usd": "0.3424887"
+          }
+        },
+        "failed_item_attempts": {
+          "adapter_reported": {
+            "attempts": 12,
+            "unknown_usage_attempts": 8,
+            "reported_tokens": {
+              "prompt_tokens": 18741,
+              "completion_tokens": 1013
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0068379"
+          },
+          "physical_reservations": {
+            "physical_requests": 12,
+            "reserved_usd": "0.5194230",
+            "unknown_usage_requests": 8,
+            "unknown_reserved_usd": "0.3424887"
+          }
+        },
+        "unknown_item_attempts": {
+          "adapter_reported": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          },
+          "physical_reservations": {
+            "physical_requests": 0,
+            "reserved_usd": "0",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "by_operation": {
+          "query_analysis": {
+            "attempts": 172,
+            "unknown_usage_attempts": 4,
+            "reported_tokens": {
+              "prompt_tokens": 47713,
+              "completion_tokens": 5983
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0214935"
+          },
+          "resolve": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          },
+          "answer": {
+            "attempts": 154,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 953389,
+              "completion_tokens": 23012
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.3136311"
+          },
+          "failed_operation": {
+            "attempts": 7,
+            "unknown_usage_attempts": 4,
+            "reported_tokens": {
+              "prompt_tokens": 18461,
+              "completion_tokens": 985
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0067203"
+          }
+        }
+      },
+      "token_efficiency": {
+        "reported_tokens_per_successful_item": {
+          "prompt_tokens": 6663.81045751634,
+          "completion_tokens": 195.94771241830065
+        },
+        "scope": "reported fields across all attempts divided by successful items; missing usage excluded, not zero",
+        "factual_gain_per_token": "not_measured"
+      }
+    },
+    "conv-44/dynamic": {
+      "planned": 158,
+      "succeeded": 150,
+      "failed": 8,
+      "unknown": 0,
+      "success_rate": 0.9493670886075949,
+      "elapsed_seconds": {
+        "observed": 158,
+        "missing": 0,
+        "total": 1399.0331667239952,
+        "p50": 8.3246096005023,
+        "p95": 13.232615612258815
+      },
+      "stage_seconds": {
+        "retrieval": {
+          "observed": 158,
+          "missing": 0,
+          "total": 143.86771097197197,
+          "p50": 0.8316767865035217,
+          "p95": 1.4593272366044403
+        },
+        "expansion": {
+          "observed": 158,
+          "missing": 0,
+          "total": 9.786369474066305,
+          "p50": 0.06040151200431865,
+          "p95": 0.08465136295490085
+        },
+        "resolve": {
+          "observed": 158,
+          "missing": 0,
+          "total": 1041.0034222521208,
+          "p50": 6.096694634507003,
+          "p95": 10.27149306944193
+        },
+        "answer": {
+          "observed": 152,
+          "missing": 6,
+          "total": 193.38428155999281,
+          "p50": 1.1479316024997388,
+          "p95": 1.9208708731464865
+        }
+      },
+      "adapter_attempt_seconds": {
+        "observed": 494,
+        "missing": 0,
+        "total": 1364.366096139187,
+        "p50": 1.1391227124986472,
+        "p95": 7.357120827054313
+      },
+      "costs": {
+        "all_attempts": {
+          "adapter_reported": {
+            "attempts": 494,
+            "unknown_usage_attempts": 10,
+            "reported_tokens": {
+              "prompt_tokens": 8466373,
+              "completion_tokens": 289873
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "2.8877595"
+          },
+          "physical_reservations": {
+            "physical_requests": 494,
+            "reserved_usd": "27.6693672",
+            "unknown_usage_requests": 10,
+            "unknown_reserved_usd": "0.6097818"
+          }
+        },
+        "retries": {
+          "adapter_reported": {
+            "attempts": 26,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 443763,
+              "completion_tokens": 17869
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.1545717"
+          },
+          "physical_reservations": {
+            "physical_requests": 26,
+            "reserved_usd": "1.4404266",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "failed_attempts": {
+          "adapter_reported": {
+            "attempts": 46,
+            "unknown_usage_attempts": 10,
+            "reported_tokens": {
+              "prompt_tokens": 495347,
+              "completion_tokens": 22273
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.1753317"
+          },
+          "physical_reservations": {
+            "physical_requests": 46,
+            "reserved_usd": "2.4927924",
+            "unknown_usage_requests": 10,
+            "unknown_reserved_usd": "0.6097818"
+          }
+        },
+        "failed_item_attempts": {
+          "adapter_reported": {
+            "attempts": 24,
+            "unknown_usage_attempts": 10,
+            "reported_tokens": {
+              "prompt_tokens": 247673,
+              "completion_tokens": 10873
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0873495"
+          },
+          "physical_reservations": {
+            "physical_requests": 24,
+            "reserved_usd": "1.3955907",
+            "unknown_usage_requests": 10,
+            "unknown_reserved_usd": "0.6097818"
+          }
+        },
+        "unknown_item_attempts": {
+          "adapter_reported": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          },
+          "physical_reservations": {
+            "physical_requests": 0,
+            "reserved_usd": "0",
+            "unknown_usage_requests": 0,
+            "unknown_reserved_usd": "0"
+          }
+        },
+        "by_operation": {
+          "query_analysis": {
+            "attempts": 172,
+            "unknown_usage_attempts": 5,
+            "reported_tokens": {
+              "prompt_tokens": 47429,
+              "completion_tokens": 5946
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.0213639"
+          },
+          "resolve": {
+            "attempts": 166,
+            "unknown_usage_attempts": 5,
+            "reported_tokens": {
+              "prompt_tokens": 8072473,
+              "completion_tokens": 260694
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "2.7345747"
+          },
+          "answer": {
+            "attempts": 156,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {
+              "prompt_tokens": 346471,
+              "completion_tokens": 23233
+            },
+            "reported_usage_peak_cache_miss_upper_usd": "0.1318209"
+          },
+          "failed_operation": {
+            "attempts": 0,
+            "unknown_usage_attempts": 0,
+            "reported_tokens": {},
+            "reported_usage_peak_cache_miss_upper_usd": "0.00"
+          }
+        }
+      },
+      "token_efficiency": {
+        "reported_tokens_per_successful_item": {
+          "prompt_tokens": 56442.486666666664,
+          "completion_tokens": 1932.4866666666667
+        },
+        "scope": "reported fields across all attempts divided by successful items; missing usage excluded, not zero",
+        "factual_gain_per_token": "not_measured"
+      }
+    }
+  },
+  "ledger": {
+    "physical_ledger_requests": 2112,
+    "request_statuses": {
+      "reserved": 0,
+      "response_received": 2094,
+      "response_usage_unknown": 18,
+      "transport_unknown": 0
+    },
+    "reserved_usd": "105.4516575",
+    "reservations_by_status_usd": {
+      "reserved": "0",
+      "response_received": "104.4993870",
+      "response_usage_unknown": "0.9522705",
+      "transport_unknown": "0"
+    },
+    "unknown_usage_requests": 18,
+    "partial_usage_requests": 0,
+    "unknown_usage_reserved_usd": "0.9522705",
+    "reported_usage": {
+      "prompt_tokens": 22771255,
+      "completion_tokens": 766026,
+      "total_tokens": 23537281
+    },
+    "known_complete_usage_peak_cache_miss_upper_usd": "7.7506077",
+    "all_reported_fields_peak_cache_miss_upper_usd": "7.7506077",
+    "reported_cost_scope": "reported fields only; missing usage remains unknown and fully reserved",
+    "reported_partial_usage_included_in_token_totals": true,
+    "unknown_reservations_retained": true,
+    "remaining_requests": 3888,
+    "remaining_reserved_capacity_usd": "1282.4779425",
+    "actual_invoice_usd": "not_accessed",
+    "policy_verified": true
+  },
+  "reservation_attribution": "complete_serial_order_and_usage_verified",
+  "completed_adapter_records": 2112,
+  "unattributed_physical_requests": 0,
+  "dynamic_hybrid_reservation_ratio": "1.906565020131594792109406118",
+  "resources": {
+    "scope": "whole_launcher_process_children",
+    "artifact_sha256": "568dd4e09074deda67c0b41ef8a1812a5f93f9a36c3948a94119d30a8045f034",
+    "wall_seconds": 4530.6875303309935,
+    "children_user_cpu_seconds": 311.002229,
+    "children_system_cpu_seconds": 29.620455,
+    "children_peak_rss_kib": 830608,
+    "gpu": "not_measured",
+    "per_arm_cpu_rss": "not_measured",
+    "limitation": "whole launcher children; cumulative CPU and process lifetime peak RSS, not instantaneous samples"
+  },
+  "storage": {
+    "bytes": {
+      "conv-43": 132931584,
+      "conv-44": 100069376,
+      "stage_total_bytes": 508347589
+    },
+    "scope": "post-freeze filesystem sizes; not runtime peak or storage growth"
+  },
+  "semantic_source_support": "not_measured_pending_independent_source_review",
+  "actual_invoice": "not_accessed",
+  "gold_read": false,
+  "provider_requests": 0,
+  "raw_text_emitted": false
+}

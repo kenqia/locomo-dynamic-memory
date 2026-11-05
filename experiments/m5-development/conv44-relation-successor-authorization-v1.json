@@ -1,0 +1,27 @@
+{
+  "version": "m5-conv44-relation-successor-authorization-record-v1",
+  "approved": true,
+  "recorded_utc": "2026-11-05T02:12:54.258046+00:00",
+  "user_approval": "授权本次 USD0.2619648 / 3次单任务恢复",
+  "plan_sha256": "699934d373556a353f837322322931cd8aec3adc76b87feada2c97a5fb9bd8a4",
+  "authorization_sha256": "494a9075ea5e386823992f3f602035dd40e6b9c74245928bf8f31596ae403c2f",
+  "policy": {
+    "model": "deepseek-flash",
+    "input_usd_per_million": "0.30",
+    "output_usd_per_million": "1.20",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768,
+    "max_requests": 3,
+    "max_usd": "0.2619648"
+  },
+  "scope": "conv-44 single closed logical-2 relation failure only; independent logical-3 retry; no publish/query/QA",
+  "implementation_commit": "1f7952456cf61c294df9051a53798d2e69023984",
+  "preparation_commit": "679abb4",
+  "preparation_manifest_sha256": "abe3bb346d04af8878af73eeb0786ee1c7b02944a4906cc6974c05edc703e1b1",
+  "execution_pricing_sha256": "fbe370996bfd30e1eeca8398d533f56fab4f51fcb59b5241957ec33d29d42abd",
+  "terminal_audit_script_v2_sha256": "1049e52bff478adfac15f420d77591a126434c51c2f13104d635057e55931b69",
+  "terminal_template_correction": "Only expected repeat-entry error string corrected from recovery_already_started to successor_already_started; original frozen template preserved; no producer or plan change",
+  "provider_requests_at_authorization": 0,
+  "old_budget_transferred": false,
+  "level_e_or_qa_authorized": false
+}

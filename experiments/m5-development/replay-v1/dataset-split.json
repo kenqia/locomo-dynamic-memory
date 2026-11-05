@@ -1,0 +1,56 @@
+[
+  {
+    "sample_id": "conv-26",
+    "split": "development",
+    "turns": 419,
+    "sessions": 19,
+    "source_sha256": "22d190ec98fdefe101cd910538062edc61898fd7b20e5a4f330358e8c90373bc",
+    "complete_build": "367c901b300440649bdc0bfba2af8010",
+    "qa_read": true
+  },
+  {
+    "sample_id": "conv-30",
+    "split": "development",
+    "turns": 369,
+    "sessions": 19,
+    "source_sha256": "f1c0989bb0d252e3b24e360bf17926cc1c1a2ca65e8715d0148d19f265523d5c",
+    "complete_build": "b8f34a05c8ef4585a1fc3c917745aa53",
+    "qa_read": true
+  },
+  {
+    "sample_id": "conv-41",
+    "split": "development",
+    "turns": 663,
+    "sessions": 32,
+    "source_sha256": "00df63d9a89164fa93cfd06796728a7197122511be9c9efc268c88151287b9e0",
+    "complete_build": "8d459492549b4a3e88005211f036addf",
+    "qa_read": true
+  },
+  {
+    "sample_id": "conv-42",
+    "split": "development",
+    "turns": 629,
+    "sessions": 29,
+    "source_sha256": "a539495aef20026cae8b3583d41117ba059f0bc8c315f3343ef625b8e3b1f32c",
+    "complete_build": "c892596ac8884f43b4cf2098349a7fa5",
+    "qa_read": true
+  },
+  {
+    "sample_id": "conv-43",
+    "split": "holdout",
+    "turns": 680,
+    "sessions": 29,
+    "source_sha256": "37fa70816f31f6987539aca3eaab472122072eb67c3a91f2d553cefff1f0b9b2",
+    "complete_build": null,
+    "qa_read": false
+  },
+  {
+    "sample_id": "conv-44",
+    "split": "holdout",
+    "turns": 675,
+    "sessions": 28,
+    "source_sha256": "bb335a65249fff834dbcb54467bc911f67e045db1da8aff9398915d1e53c289b",
+    "complete_build": null,
+    "qa_read": false
+  }
+]

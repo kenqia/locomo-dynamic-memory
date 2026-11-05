@@ -501,6 +501,8 @@ def render_query_page(dataset_id: str, sample_id: str, build: dict) -> None:
     )
     render_context(dataset_id=dataset_id, sample_id=sample_id, build_id=build["build_id"])
     render_queries(request, dataset_id, sample_id, build)
+    from locomo_memory.m5_ui import render_bonus
+    render_bonus(request, build)
     navigation = st.columns(2)
     if navigation[0].button("返回构建页", use_container_width=True, key="query_back"):
         go_to(3)

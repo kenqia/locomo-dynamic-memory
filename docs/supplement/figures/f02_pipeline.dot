@@ -1,0 +1,37 @@
+digraph G {
+  graph [fontname="Noto Sans CJK SC", fontsize=11, bgcolor="#fcfcfb", pad=0.25, nodesep=0.28, ranksep=0.42, labeljust=l];
+  node  [fontname="Noto Sans CJK SC", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff", color="#8a8985", penwidth=1.1, margin="0.12,0.06"];
+  edge  [fontname="Noto Sans CJK SC", fontsize=8.5, color="#52514e", arrowsize=0.7];
+
+  rankdir=LR;
+  label="图 2  系统流水线与各阶段的主要失败点（红色虚线框）"; labelloc=t; fontsize=13;
+  subgraph cluster_build { label="构建期（每个对话一次，生成 Build 版本）"; style="rounded,dashed"; color="#8a8985"; fontsize=10;
+    src  [label="原始对话\nSource Turn"];
+    ext  [label="原子抽取\nExtracted Memory"];
+    idx  [label="混合索引\nBM25 + MiniLM"];
+    rel  [label="关系判断\nRETAIN/UPDATE/\nSUPERSEDE/CONFLICT"];
+    cs   [label="CurrentState\n投影（可重算）"];
+    src -> ext -> idx -> rel -> cs;
+  }
+  subgraph cluster_query { label="查询期（每道题）"; style="rounded,dashed"; color="#8a8985"; fontsize=10;
+    qa   [label="查询分析"];
+    ret  [label="初始检索\n(RRF top-20)"];
+    exp  [label="相关历史扩展\n(≤60 Memory)"];
+    res  [label="有效证据解析\n(仅 Dynamic)", fillcolor="#fde7dc", color="#eb6834"];
+    ans  [label="回答生成\n引用 + 解释"];
+    qa -> ret -> exp -> res -> ans;
+    exp -> ans [style=dashed, label="Hybrid 跳过解析", color="#2a78d6", fontcolor="#2a78d6"];
+  }
+  cs -> exp [style=dotted, label="存储关系复用"];
+  idx -> ret [style=dotted];
+  node [shape=note, style="filled", fillcolor="#fff5f5", color="#e34948", fontsize=8.5, fontcolor="#52514e"];
+  f1 [label="时间锚点契约违约\nconv-41 / conv-44 片段反复失败\n事实抽取遗漏（E16：5/8 例）"];
+  f2 [label="未知来源 ID、同状态维度、\n重复证据 ID 违约（E1、E24）\n关系阶段 length 停止"];
+  f3 [label="完整解析输入超预算\n请求字节上限拒绝\n（E12：46 项，E22：49 项）"];
+  f4 [label="过度拒答、人物错绑\n回答结构校验失败（E3、E15）"];
+  f1 -> ext [color="#e34948", style=dashed, arrowhead=none];
+  f2 -> rel [color="#e34948", style=dashed, arrowhead=none];
+  f3 -> res [color="#e34948", style=dashed, arrowhead=none];
+  f4 -> ans [color="#e34948", style=dashed, arrowhead=none];
+
+}

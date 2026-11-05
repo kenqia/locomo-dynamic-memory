@@ -1,0 +1,145 @@
+{
+  "status": "PASS",
+  "path": "/home/kenqia/my_folder/locomo-private-delivery/m5-personal-candidate-20261105/release-verification-v1.tar.gz",
+  "sha256": "f180dc739b8535f5fdebe3f4a9debdd95a0fcdae75597d8f33444c3f1c10d8da",
+  "bytes": 117348,
+  "files": [
+    {
+      "path": "var/browser-app-v1.txt",
+      "sha256": "6c3ce8273dea9f9b0f8b5d60500dfecf110c82545b9a5a0ee5dcb6d43b0b0f42",
+      "bytes": 4620
+    },
+    {
+      "path": "var/browser-app-v2.txt",
+      "sha256": "e4ad5dee8e5bc21c24cad6aa8aee40cd6a87f984f4de473f9fa628c470020f1f",
+      "bytes": 2740
+    },
+    {
+      "path": "var/public-cold-final/public-tests-final.txt",
+      "sha256": "512475c32203d54c3a315a0837c25a66191d2f0aa0fcd297b6481f79a1cdb6dc",
+      "bytes": 1556
+    },
+    {
+      "path": "var/public-cold-final/public-tests-final.xml",
+      "sha256": "58b6436d9deb635bb0b7697defaf2337fdd5718d948c4c60dba7768b5fa0b87c",
+      "bytes": 75699
+    },
+    {
+      "path": "var/public-cold-sanitized-final/public-tests-sanitized-final.txt",
+      "sha256": "c94a6532ed2e54e6af37a80ff595384d7107160e0907d5493a3a177ec474ee1b",
+      "bytes": 1825
+    },
+    {
+      "path": "var/public-cold-sanitized-final/public-tests-sanitized-final.xml",
+      "sha256": "032ebf0793e77c812a446229cde999fbcf91ccfb66617de1eeb471c87723730e",
+      "bytes": 139924
+    },
+    {
+      "path": "var/public-cold-start/public-tests-v1.txt",
+      "sha256": "1c5310733cd85ee4633245b3ed38bb6889dd052a368371d7110b8e9140732443",
+      "bytes": 7267
+    },
+    {
+      "path": "var/public-cold-start/public-tests-v1.xml",
+      "sha256": "302c64f3a21b387f76f1540dfd543896882e8aa2f1e5acc015728112f5ea3550",
+      "bytes": 25814
+    },
+    {
+      "path": "var/public-cold-v2/public-tests-v2.txt",
+      "sha256": "76bf232346885d3a853c53ea918bd52b010259d05f65f70e809504910f4d7758",
+      "bytes": 1349
+    },
+    {
+      "path": "var/public-cold-v2/public-tests-v2.xml",
+      "sha256": "36f993bc4f6d36ab824d9d1302d1a193ff067ac5268dbd377c079995ba491398",
+      "bytes": 50084
+    },
+    {
+      "path": "var/release-final-ui-label.txt",
+      "sha256": "d9a08b4e1eef4adb4c2786e5d45b4bd9ea464b8422ff64c73a1188f18092a7c6",
+      "bytes": 639
+    },
+    {
+      "path": "var/release-full-final.txt",
+      "sha256": "82ec2c6288924417eec48383ee1ae9f8f4981a2088323af5eb2d195ded8d8a49",
+      "bytes": 1769
+    },
+    {
+      "path": "var/release-full-final.xml",
+      "sha256": "deb4072f9e0758542cb6b3012e4564a3018ce975a88526444c59ee1b1332f59f",
+      "bytes": 147618
+    },
+    {
+      "path": "var/release-full-v1.txt",
+      "sha256": "07eb00ae422acf4a9e79820e9b0cd88be2df70e324397bb3455a1816a4ad6ebe",
+      "bytes": 60909
+    },
+    {
+      "path": "var/release-full-v1.xml",
+      "sha256": "8ca94f2166b32d3f078989b761f2651a857ea5aa5a288667a57939f5a251312d",
+      "bytes": 290865
+    },
+    {
+      "path": "var/release-full-v2.txt",
+      "sha256": "10e2a1b005fff8542aca6fe2b21ce65d3e37e6f2905f8fde93e37480494ade9a",
+      "bytes": 4998
+    },
+    {
+      "path": "var/release-full-v2.xml",
+      "sha256": "91b85e1e842dc1178f6e3ee44c7afdcfbf04107757d13b2dc59899275e7a443a",
+      "bytes": 31330
+    },
+    {
+      "path": "var/release-full-v3.txt",
+      "sha256": "f522030fc87556fea655a4c83aeaedec60492750f136c3288aec206404bdb6e4",
+      "bytes": 6834
+    },
+    {
+      "path": "var/release-full-v3.xml",
+      "sha256": "a30b51d638b744b74f72a06f387571c2276e85c812cad653502f58eaf9f0144c",
+      "bytes": 50086
+    },
+    {
+      "path": "var/release-local-embedding.txt",
+      "sha256": "6f82112ef64e07622a2d5a893c43f6bf6a1a7c863d19efdfabab2ef7348a40f4",
+      "bytes": 640
+    },
+    {
+      "path": "var/release-local-embedding.xml",
+      "sha256": "a3bfe17473872ebf8f2ba4a519d66ca6241fae3b145a9ad2de57f01c49059a3c",
+      "bytes": 507
+    },
+    {
+      "path": "var/release-resume-targeted-v3.txt",
+      "sha256": "1db34697eb1d91dbc166237e939fb3fe348a40f9b22e77b8ce1c150379823885",
+      "bytes": 639
+    },
+    {
+      "path": "var/release-resume-targeted.txt",
+      "sha256": "65bf76a1f7dced7dd6cda325b7802d4fdd1eedab3182444e6baf787f3cbe856b",
+      "bytes": 639
+    },
+    {
+      "path": "var/release-targeted-first.txt",
+      "sha256": "a0a8a59ec04613f290122a91455ec5c04fcb7c2e572d150c711e3489d708c28f",
+      "bytes": 4545
+    },
+    {
+      "path": "var/release-targeted-second.txt",
+      "sha256": "2904574492fd78cd628e3bd75a1d2bba940de83fb54f8ababfc7e1a287015d3c",
+      "bytes": 640
+    },
+    {
+      "path": "var/replay-ui-full-collection-v2.txt",
+      "sha256": "0dcc676ac391dc2dde75304879c23d2790bfbb88adba1bdf7184cee9b070a21a",
+      "bytes": 654
+    },
+    {
+      "path": "var/replay-ui-isolated-v2.txt",
+      "sha256": "04ae6ff5fe5fefccea515e2f56dfe22342b79805f555e48a38ab80397ed0e2f9",
+      "bytes": 638
+    }
+  ],
+  "scope": "Only this release owned test stdout/JUnit including failed/interrupted rehearsals; no private service logs/credentials/history copied",
+  "deletions": 0
+}

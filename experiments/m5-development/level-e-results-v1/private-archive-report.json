@@ -1,0 +1,18 @@
+{
+  "version": "m5-level-e-private-archive-report-v1",
+  "archive_path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-raw-terminal-v1.tar.gz",
+  "archive_sha256": "72d6bd2dd5261ff863ec861eab780a5b580e4dec6889f5948ac73f45f44a31f5",
+  "archive_bytes": 55172721,
+  "members": 863,
+  "archive_manifest_sha256": "c86218adb841a95e73f8c40be42fd01602deaeb75f4dca8412f37001fc204ad9",
+  "generation_freeze_sha256": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+  "all_members_read_back_verified": true,
+  "all_file_modes": "0600",
+  "backup_directory_mode": "0700",
+  "original_files_and_execution_databases_unchanged": true,
+  "reference_database_backed_up": false,
+  "raw_logs_credentials_wal_shm_locks_excluded": true,
+  "provider_requests": 0,
+  "gold_read_by_archive": false,
+  "source_reviewed_items": 800
+}

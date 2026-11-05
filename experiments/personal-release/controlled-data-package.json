@@ -1,0 +1,62 @@
+{
+  "status": "LOCAL_CONTROLLED_CANDIDATE_VERIFIED_NOT_AUTHORIZED_FOR_DISCLOSURE",
+  "path": "/home/kenqia/my_folder/locomo-private-delivery/m5-personal-candidate-20261105/controlled-memory-delivery-v1.tar.gz",
+  "bytes": 5194932,
+  "sha256": "49bfb20346270bdbfcdbd776aa078a65cf80adf914628895b31b8b6f95a65247",
+  "members": [
+    {
+      "path": "conv-26.json",
+      "sha256": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78",
+      "bytes": 5053297
+    },
+    {
+      "path": "conv-30.json",
+      "sha256": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae",
+      "bytes": 4897537
+    },
+    {
+      "path": "conv-41.json",
+      "sha256": "e15b30e89de463cca4ff9fcd347b332a72525f0fbfb8506a5476df120fd4b488",
+      "bytes": 6147480
+    },
+    {
+      "path": "conv-42.json",
+      "sha256": "89d6bdf02e7eca10014688e0a7946fd536b846c4ff6c8b09a84bb8671680e3fd",
+      "bytes": 8229528
+    },
+    {
+      "path": "conv-43.json",
+      "sha256": "2ae95deb13dcf22e1bb91cff44db88feba7c3bcf1b753e907ba121f4ac972f17",
+      "bytes": 8027134
+    },
+    {
+      "path": "conv-44.json",
+      "sha256": "1006ce3d855ffb496cb8a2c029276511707427bb7129474013f4b1768639611f",
+      "bytes": 7416236
+    },
+    {
+      "path": "six-memory-exports-manifest.json",
+      "sha256": "1649229df0d7a5f19a8e1039aa7e46a821009c806d1c815d2581e5dd2672bf7c",
+      "bytes": 5989
+    },
+    {
+      "path": "memory-export-schema.json",
+      "sha256": "48ee20421889a9ef0153878d163b743b57ee4eb44b5b6b12d4370198d7dc466f",
+      "bytes": 28002
+    },
+    {
+      "path": "DATA_POLICY.md",
+      "sha256": "65dde63015dd8340db35d4139d3c57abfaa48ef48f7d842bf83ca79c430adfaa",
+      "bytes": 1739
+    },
+    {
+      "path": "LICENSE.txt",
+      "sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0",
+      "bytes": 19347
+    }
+  ],
+  "mode": "0600, parent0700",
+  "provider_requests": 0,
+  "public_upload": false,
+  "license_channel_gate": "CC-BY-NC4 source attribution preserved; receiver/course permission and channel must be confirmed before disclosure"
+}

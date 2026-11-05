@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "executable_test_cutoff": "c7eae7a2f4ed667e83f2520e000e33aee7314e2b",
+  "python": "3.12.12",
+  "checks": [
+    "python -m compileall -q src tools scripts tests",
+    "uv lock --check",
+    "bash -n scripts/personal-release tests/browser/run.sh",
+    "git diff --check"
+  ],
+  "formatter": "not configured; no new formatting dependency",
+  "uv_lock_sha256": "ffbc6bcee4449cb5398798e1a7285cf6c277c0582c09db82b20b820988e1981b"
+}

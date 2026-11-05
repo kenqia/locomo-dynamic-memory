@@ -19,7 +19,8 @@ class ExpansionService:
         with self.database.connect() as db:
             db.execute("CREATE TABLE IF NOT EXISTS candidate_expansions(expansion_id TEXT PRIMARY KEY, query_id TEXT NOT NULL REFERENCES candidate_queries(query_id), build_id TEXT NOT NULL REFERENCES build_versions(build_id),result_json TEXT NOT NULL)")
 
-    def expand(self, query_id: str, *, requested_date: date | None = None) -> dict:
+    def expand(self, query_id: str, *, requested_date: date | None = None,
+               include_relations: bool = True, include_state_history: bool = True) -> dict:
         with self.database.connect() as db:
             db.execute("BEGIN")
             row = db.execute("SELECT result_json FROM candidate_queries WHERE query_id=?", (query_id,)).fetchone()
@@ -61,7 +62,7 @@ class ExpansionService:
                 if not append(seed["memory"], {"kind": "initial", "seed_memory_id": seed["memory"]["memory_id"], "reason": "Original hybrid candidate"}, initial=True):
                     break
             # The original list alone is the frontier. New endpoints never become seeds.
-            if self.settings.expansion_depth == 1:
+            if include_relations and self.settings.expansion_depth == 1:
                 for seed in seeds:
                     seed_id = seed["memory"]["memory_id"]
                     remaining = max(0, self.settings.expansion_scan_limit - scanned)
@@ -81,7 +82,7 @@ class ExpansionService:
             # Explicit question dates may prioritize an interval, never hard-filter history.
             requested = requested_date or explicit_question_date(query["question"])
             date_text = requested.isoformat() if requested else ""
-            for seed in seeds:
+            for seed in seeds if include_state_history else []:
                 seed_id, key = seed["memory"]["memory_id"], seed["memory"]["state_key"]
                 remaining = max(0, self.settings.expansion_scan_limit - scanned)
                 rows = db.execute("SELECT m.memory_json,MIN(s.position) AS source_order FROM memories m JOIN memory_sources ms ON m.memory_id=ms.memory_id JOIN source_turns s ON ms.source_id=s.source_id WHERE m.build_id=? AND m.state_key=? AND m.memory_id!=? GROUP BY m.memory_id ORDER BY CASE WHEN json_extract(m.memory_json,'$.time.valid_from')<=? AND (json_extract(m.memory_json,'$.time.valid_to') IS NULL OR json_extract(m.memory_json,'$.time.valid_to')>=?) THEN 0 ELSE 1 END,source_order,m.memory_id LIMIT ?", (build_id, key, seed_id, date_text, date_text, remaining + 1)).fetchall()
@@ -95,7 +96,9 @@ class ExpansionService:
                   "initial_candidates": seeds, "added_candidates": [item for item in selected if not item["is_initial"]],
                   "candidates": selected, "truncated": bool(reasons), "truncation_reasons": reasons,
                   "candidate_token_count": used, "token_budget_method": TOKEN_BUDGET_METHOD,
-                  "relation_depth": self.settings.expansion_depth, "scanned": scanned, "config": self.settings.snapshot()}
+                  "relation_depth": self.settings.expansion_depth if include_relations else 0,
+                  "state_history_enabled": include_state_history,
+                  "scanned": scanned, "config": self.settings.snapshot()}
         with self.database.connect() as db:
             db.execute("INSERT INTO candidate_expansions VALUES (?,?,?,?)", (result["expansion_id"], query_id, build_id, canonical_json(result)))
         return result

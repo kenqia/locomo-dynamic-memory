@@ -1,0 +1,31 @@
+digraph G {
+  graph [fontname="Noto Sans CJK SC", fontsize=11, bgcolor="#fcfcfb", pad=0.25, nodesep=0.28, ranksep=0.42, labeljust=l];
+  node  [fontname="Noto Sans CJK SC", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff", color="#8a8985", penwidth=1.1, margin="0.12,0.06"];
+  edge  [fontname="Noto Sans CJK SC", fontsize=8.5, color="#52514e", arrowsize=0.7];
+
+  rankdir=LR;
+  label="图 15  E24 留出集 conv-43 / conv-44 的构建与恢复路径（每一步都单独授权、单独记账）"; labelloc=t; fontsize=13;
+  subgraph cluster_43 { label="conv-43"; style="rounded,dashed"; color="#8a8985";
+    a1 [label="抽取\n34/34 片段\n402 Memory", fillcolor="#e6f6ef"];
+    a2 [label="索引\nMiniLM"];
+    a3 [label="关系\n400/400 任务\n7,620 条", fillcolor="#e6f6ef"];
+    a4 [label="complete\n严格导出", fillcolor="#e6f6ef", penwidth=2, color="#1baf7a"];
+    a1 -> a2 -> a3 -> a4;
+  }
+  subgraph cluster_44 { label="conv-44"; style="rounded,dashed"; color="#8a8985";
+    b1 [label="初次抽取\n33/34 片段\nordinal 18 失败×3", fillcolor="#fdeaea", color="#e34948"];
+    b2 [label="隔离恢复 v2\n3 请求全部\n时间来源违约", fillcolor="#fdeaea", color="#e34948"];
+    b3 [label="successor v3\n新 Build，1 请求成功\n383 继承 + 9 新增", fillcolor="#e6f6ef"];
+    b4 [label="关系 v1\n374/384 成功\n10 失败", fillcolor="#fdeaea", color="#e34948"];
+    b5 [label="关系恢复 v1\n12 请求，9 恢复\n383/384", fillcolor="#fff6e0", color="#eda100"];
+    b6 [label="单任务 successor\n1 请求成功\n384/384，7,134 条", fillcolor="#e6f6ef"];
+    b7 [label="complete\n第六份严格 JSON", fillcolor="#e6f6ef", penwidth=2, color="#1baf7a"];
+    b1 -> b2 [label="不放宽契约"];
+    b2 -> b3 [label="修正时间\n原文锚定"];
+    b3 -> b4 -> b5 -> b6 -> b7;
+  }
+  a4 -> e [style=invis];
+  e [label="E25 Level E\n一次性留出评测", fillcolor="#fde7dc", color="#eb6834", penwidth=2];
+  a4 -> e; b7 -> e;
+
+}
