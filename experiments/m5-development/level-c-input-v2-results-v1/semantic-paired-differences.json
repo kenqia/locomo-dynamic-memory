@@ -1,0 +1,867 @@
+{
+  "summary": {
+    "ordinary": {
+      "planned_question_pairs": 80,
+      "both_generation_succeeded": 79,
+      "metrics": {
+        "source_support": {
+          "mean": 0.016666666666666666,
+          "bootstrap95": [
+            -0.03333333333333333,
+            0.06666666666666667
+          ],
+          "improved": 2,
+          "regressed": 1,
+          "unchanged": 57,
+          "denominator": 60,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "citation_support": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 61,
+          "denominator": 61,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      }
+    },
+    "diagnostic": {
+      "planned_question_pairs": 20,
+      "both_generation_succeeded": 20,
+      "metrics": {
+        "source_support": {
+          "mean": 0.0,
+          "bootstrap95": [
+            -0.21428571428571427,
+            0.21428571428571427
+          ],
+          "improved": 1,
+          "regressed": 1,
+          "unchanged": 12,
+          "denominator": 14,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "citation_support": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 14,
+          "denominator": 14,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      }
+    }
+  },
+  "pairs": [
+    {
+      "question_id": "conv-26:qa:0",
+      "sample_id": "conv-26",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:115",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:117",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:12",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:123",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:131",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:134",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-26:qa:136",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:141",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:15",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-26:qa:18",
+      "sample_id": "conv-26",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:22",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:26",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-26:qa:3",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:32",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:33",
+      "sample_id": "conv-26",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-26:qa:37",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-26:qa:45",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:53",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-26:qa:60",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:76",
+      "sample_id": "conv-26",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-26:qa:8",
+      "sample_id": "conv-26",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-26:qa:85",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:88",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-26:qa:89",
+      "sample_id": "conv-26",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-30:qa:11",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 1,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:12",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-30:qa:14",
+      "sample_id": "conv-30",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:15",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-30:qa:19",
+      "sample_id": "conv-30",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:21",
+      "sample_id": "conv-30",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:23",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:26",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:29",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:31",
+      "sample_id": "conv-30",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-30:qa:32",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-30:qa:34",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-30:qa:35",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:38",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:42",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:48",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:5",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:52",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-30:qa:55",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:58",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:7",
+      "sample_id": "conv-30",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-30:qa:70",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:74",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:8",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-30:qa:80",
+      "sample_id": "conv-30",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:10",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:11",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 1,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:111",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:12",
+      "sample_id": "conv-41",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:140",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": false,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-41:qa:22",
+      "sample_id": "conv-41",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:23",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:24",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:25",
+      "sample_id": "conv-41",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:28",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:33",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:34",
+      "sample_id": "conv-41",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:4",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-41:qa:42",
+      "sample_id": "conv-41",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": -1,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:51",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:6",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:62",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-41:qa:68",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-41:qa:72",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-41:qa:80",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:83",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:85",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": -1,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-41:qa:87",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:90",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-41:qa:94",
+      "sample_id": "conv-41",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:100",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:108",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:133",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:134",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:136",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:14",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:140",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:158",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:162",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:163",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:170",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:18",
+      "sample_id": "conv-42",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:180",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:189",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:191",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:192",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:194",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:26",
+      "sample_id": "conv-42",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:33",
+      "sample_id": "conv-42",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-42:qa:38",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:39",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-42:qa:63",
+      "sample_id": "conv-42",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 1,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:70",
+      "sample_id": "conv-42",
+      "stratum": "diagnostic",
+      "both_generation_succeeded": true,
+      "source_support": 0,
+      "citation_support": 0
+    },
+    {
+      "question_id": "conv-42:qa:85",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": null
+    },
+    {
+      "question_id": "conv-42:qa:99",
+      "sample_id": "conv-42",
+      "stratum": "ordinary",
+      "both_generation_succeeded": true,
+      "source_support": null,
+      "citation_support": 0
+    }
+  ],
+  "limitation": "determinate joint-success subset; exploratory AI source judgments, not causal or teacher truth"
+}

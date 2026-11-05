@@ -1,0 +1,22 @@
+{
+  "version": "m5-conv44-relation-recovery-pricing-v1",
+  "checked_at_local": "2026-11-05T00:30:28.307892+08:00",
+  "checked_utc": "2026-11-04T16:30:28.307934+00:00",
+  "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "scrape_id": "01a1a763-7509-75fe-a038-4fa25cbecfc3",
+  "max_age_requested_ms": 0,
+  "raw_source_sha256": "56b1dd739ea30cff91994bae0d13b73672256aadaa038bf5faf015f043ec64e6",
+  "raw_source_path": "var/m5-development/conv44-relation-recovery-pricing-source-v1.json",
+  "model": "deepseek-flash",
+  "announced_version": "DeepSeek-V4.1-Flash-1017",
+  "peak_input_cache_miss_usd_per_million": ".30",
+  "peak_output_usd_per_million": "1.20",
+  "max_input_bytes": 160000,
+  "max_output_tokens": 32768,
+  "per_request_max_reserved_usd": ".0873216",
+  "proposed_tasks": 10,
+  "proposed_max_requests": 30,
+  "proposed_max_reserved_usd": "2.619648",
+  "immutable_server_pin": false,
+  "paid_recovery_authorized": false
+}

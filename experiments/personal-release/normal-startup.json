@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "command": "scripts/personal-release start --api-port 18030 --ui-port 18530",
+  "checks": {
+    "/health": {
+      "http_status": 200
+    },
+    "/datasets": {
+      "http_status": 200
+    },
+    "/builds": {
+      "http_status": 200
+    },
+    "/replay/health": {
+      "http_status": 200
+    },
+    "/openapi.json": {
+      "http_status": 200,
+      "strategy_default": "hybrid_no_resolution"
+    }
+  },
+  "provider_requests": 0,
+  "database": "new var/personal-app/memory.sqlite3; research databases untouched"
+}

@@ -1,0 +1,31 @@
+{
+  "status": "authorized_running",
+  "user_reply": "授权本次 104.78592 USD / 1,200 次关系阶段",
+  "source": "explicit user reply in this Codex chat",
+  "scope": "conv-43 existing indexed Build relation phase only; no conv-44/rebuild/publish/query/QA",
+  "plan_sha256": "3ecc4142916a7959b2c4fde9d421214ee872d0401bc5bf82f8d07b10478495c6",
+  "script_sha256": "960de2683e341966e13217a1a07ef4ef5a1b1e0dada840822f0d32e2865ae5d7",
+  "authorized_max_physical_requests": 1200,
+  "authorized_max_usd": "104.78592",
+  "pricing": {
+    "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "checked_utc": "2026-11-04 05:46 UTC",
+    "source_sha256": "45396c395f2bbe150317331dcd9e4d0b485456432e0d891af7d0c9028f6abc9d",
+    "model": "deepseek-flash",
+    "published_version": "DeepSeek-V4.1-Flash-1017",
+    "input_peak_cache_miss_usd_per_million": "0.30",
+    "output_peak_usd_per_million": "1.20",
+    "matches_approved_policy": true
+  },
+  "pre_execution_integrity": {
+    "plan_sha256": "3ecc4142916a7959b2c4fde9d421214ee872d0401bc5bf82f8d07b10478495c6",
+    "script_sha256": "960de2683e341966e13217a1a07ef4ef5a1b1e0dada840822f0d32e2865ae5d7",
+    "producer_sha_match": true,
+    "database_and_ledger_match": true,
+    "source_index_unchanged": true,
+    "pricing_matches": true,
+    "provider_requests_before": 0,
+    "holdout_qa_read": false
+  },
+  "final_outcome": "pending; no publish/query/QA authorized"
+}

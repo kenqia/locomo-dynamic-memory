@@ -26,3 +26,34 @@ EXTRACTION_EXAMPLES = [
                               claim("Alex passed the adoption interview.", "example/interview", dimension="adoption_status", value="interview")]},
      "avoid": "Keep each stage and its source. Passing an interview does not establish a completed adoption. Later details of an already completed event are not a new real-world stage."},
 ]
+
+# Literal source wording and derived dates have separate roles. These examples
+# are synthetic and do not select facts from any evaluation conversation.
+_yesterday = claim("Alex painted yesterday.", "example/time", dimension="painting")
+_yesterday["time"] = dict(original_expression="yesterday", anchor_source_id="example/time",
+    event_start="2024-04-09", event_end="2024-04-09",
+    basis="Yesterday relative to the cited April 10 source session.")
+_next_month = claim("Alex plans to apply next month.", "example/next-month",
+    dimension="application", statement="plan")
+_next_month["time"] = dict(original_expression="next month", anchor_source_id="example/next-month",
+    event_start="2024-05-01", event_end="2024-05-31",
+    basis="Calendar month after the cited April 2024 session; exact day unknown.")
+EXTRACTION_EXAMPLES.extend([
+    {"sources": [{"source_id": "example/time", "speaker": "Alex",
+                  "session_time": "2024-04-10T10:00:00", "text": "I painted yesterday."}],
+     "output": {"memories": [_yesterday]},
+     "avoid": "Do not put April 9, 2024 or the previous day in original_expression; neither appears in raw text. Keep yesterday and its supported derived date."},
+    {"sources": [{"source_id": "example/no-time", "speaker": "Alex",
+                  "session_time": "2024-04-10T10:00:00", "text": "I moved to Rome."}],
+     "output": {"memories": [claim("Alex moved to Rome.", "example/no-time", value="Rome")]},
+     "avoid": "The report timestamp alone does not date the move. Retain the move fact with unknown event time, rather than quoting metadata as source text."},
+    {"sources": [{"source_id": "example/context", "speaker": "Sam",
+                  "session_time": "2024-04-10T10:00:00", "text": "I applied yesterday."},
+                 {"source_id": "example/next-month", "speaker": "Alex",
+                  "session_time": "2024-04-10T10:01:00", "text": "I plan to apply next month."}],
+     "output": {"memories": [
+         {**_yesterday, "content": "Sam applied yesterday.", "entity_id": "Sam",
+          "state_dimension": "application", "source_ids": ["example/context"],
+          "time": {**_yesterday["time"], "anchor_source_id": "example/context"}}, _next_month]},
+     "avoid": "Do not borrow Sam's yesterday for Alex's plan, paraphrase next month as the following month, or invent a particular day."},
+])

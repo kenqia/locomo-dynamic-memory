@@ -1,0 +1,16 @@
+flatbuffers==25.12.19
+greenlet==3.5.6
+networkx==3.7
+numpy==2.5.4
+onnxruntime==1.31.1
+packaging==26.3
+playwright==1.58.0
+protobuf==7.36.2
+psutil==7.2.2
+pyee==13.0.1
+pymupdf==2.1
+pymupdf-layout==2.1
+pymupdf4llm==2.1
+pyyaml==6.0.3
+tabulate==0.10.0
+typing-extensions==4.16.0

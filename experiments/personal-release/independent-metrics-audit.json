@@ -1,0 +1,2528 @@
+{
+  "version": "independent-supplement-metrics-audit-v1",
+  "reviewer": "/root/release_spec_review",
+  "status": "PARTIAL",
+  "numeric_fields": 282,
+  "checked_numeric_fields": 282,
+  "numeric_mismatches": [],
+  "unverified_numeric_fields": [],
+  "sections": {
+    "f1_by_stage": {
+      "numeric_fields": 15,
+      "PASS_REPORT": 6,
+      "PASS_JSON": 9
+    },
+    "paired_wlt": {
+      "numeric_fields": 21,
+      "PASS_REPORT": 3,
+      "PASS_JSON": 18
+    },
+    "forest": {
+      "numeric_fields": 42,
+      "PASS_JSON": 42
+    },
+    "success": {
+      "numeric_fields": 24,
+      "PASS_REPORT": 12,
+      "PASS_JSON": 12
+    },
+    "failures": {
+      "numeric_fields": 12,
+      "PASS_REPORT": 4,
+      "PASS_JSON": 8
+    },
+    "recall_funnel_e25": {
+      "numeric_fields": 24,
+      "PASS_JSON": 24
+    },
+    "attribution_e16": {
+      "numeric_fields": 8,
+      "PASS_JSON": 8
+    },
+    "cost_ratio": {
+      "numeric_fields": 8,
+      "PASS_REPORT": 2,
+      "PASS_JSON": 6
+    },
+    "latency": {
+      "numeric_fields": 20,
+      "PASS_JSON": 20
+    },
+    "iteration_pairs": {
+      "numeric_fields": 38,
+      "PASS_REPORT": 38
+    },
+    "budget_progression": {
+      "numeric_fields": 12,
+      "PASS_REPORT": 8,
+      "PASS_JSON": 4
+    },
+    "showcase_e5": {
+      "numeric_fields": 8,
+      "PASS_REPORT": 8
+    },
+    "source_review_e25": {
+      "numeric_fields": 28,
+      "PASS_JSON": 28
+    },
+    "e7a_hits": {
+      "numeric_fields": 16,
+      "PASS_JSON": 16
+    },
+    "ce_by_category_e18": {
+      "numeric_fields": 6,
+      "PASS_JSON": 6
+    },
+    "timeline": {
+      "numeric_fields": 0,
+      "authored_date_intervals": 26,
+      "status": "PARTIAL",
+      "reason": "Date strings are outside numerical-leaf comparison; no independent clock certification"
+    }
+  },
+  "fields": {
+    "f1_by_stage.rows[2].H": {
+      "actual": 0.399883,
+      "expected": 0.3998827870755096,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "strata.ordinary.groups.failure_zero_mean",
+      "absolute_tolerance": 5.01e-07
+    },
+    "cost_ratio.rows[1].H": {
+      "actual": 0.2301042,
+      "expected": "0.2301042",
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "cost_by_arm.all_attempts.reported_usage_peak_cache_miss_upper_usd",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[3].H[0]": {
+      "actual": 100,
+      "expected": 100,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "sum strata succeeded",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[3].H[1]": {
+      "actual": 100,
+      "expected": 100,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "sum strata planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "latency.rows[0].H[0]": {
+      "actual": 2.902,
+      "expected": 2.9017440030002035,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "runtime.ordinary/hybrid_no_resolution.item_elapsed_seconds.p50",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[0].H[1]": {
+      "actual": 6.034,
+      "expected": 6.034015602000906,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "runtime.ordinary/hybrid_no_resolution.item_elapsed_seconds.p95",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[1].H[0]": {
+      "actual": 2.438,
+      "expected": 2.437693368499822,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "runtime.diagnostic/hybrid_no_resolution.item_elapsed_seconds.p50",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[1].H[1]": {
+      "actual": 3.258,
+      "expected": 3.2583803481496045,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "runtime.diagnostic/hybrid_no_resolution.item_elapsed_seconds.p95",
+      "absolute_tolerance": 0.000501
+    },
+    "f1_by_stage.rows[2].D": {
+      "actual": 0.228329,
+      "expected": 0.22832948647686496,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "strata.ordinary.groups.failure_zero_mean",
+      "absolute_tolerance": 5.01e-07
+    },
+    "cost_ratio.rows[1].D": {
+      "actual": 0.9397167,
+      "expected": "0.9397167",
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "cost_by_arm.all_attempts.reported_usage_peak_cache_miss_upper_usd",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[3].D[0]": {
+      "actual": 51,
+      "expected": 51,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "sum strata succeeded",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[3].D[1]": {
+      "actual": 100,
+      "expected": 100,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "sum strata planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "latency.rows[0].D[0]": {
+      "actual": 12.654,
+      "expected": 12.654276697000569,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "runtime.ordinary/dynamic.item_elapsed_seconds.p50",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[0].D[1]": {
+      "actual": 38.016,
+      "expected": 38.01550332985016,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "runtime.ordinary/dynamic.item_elapsed_seconds.p95",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[1].D[0]": {
+      "actual": 9.151,
+      "expected": 9.150784993999878,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "runtime.diagnostic/dynamic.item_elapsed_seconds.p50",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[1].D[1]": {
+      "actual": 38.763,
+      "expected": 38.76336753545056,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "runtime.diagnostic/dynamic.item_elapsed_seconds.p95",
+      "absolute_tolerance": 0.000501
+    },
+    "f1_by_stage.rows[2].n": {
+      "actual": 80,
+      "expected": 80,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "strata.ordinary.groups.dynamic.planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[0].d": {
+      "actual": -0.171553,
+      "expected": -0.17155330059864465,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[0].lo": {
+      "actual": -0.256728,
+      "expected": -0.2567276710554164,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[0].hi": {
+      "actual": -0.092833,
+      "expected": -0.09283300460041861,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[1].up": {
+      "actual": 17,
+      "expected": 17,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "strata.ordinary.comparisons.all_scorable.improved",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[1].down": {
+      "actual": 35,
+      "expected": 35,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "strata.ordinary.comparisons.all_scorable.regressed",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[1].tie": {
+      "actual": 28,
+      "expected": 28,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "strata.ordinary.comparisons.all_scorable.unchanged",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[1].d": {
+      "actual": -0.1632,
+      "expected": -0.16320037105751392,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[1].lo": {
+      "actual": -0.365019,
+      "expected": -0.36501917130488565,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[1].hi": {
+      "actual": 0.028623,
+      "expected": 0.028623299319727874,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[2].up": {
+      "actual": 4,
+      "expected": 4,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "strata.diagnostic.comparisons.all_scorable.improved",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[2].down": {
+      "actual": 7,
+      "expected": 7,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "strata.diagnostic.comparisons.all_scorable.regressed",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[2].tie": {
+      "actual": 9,
+      "expected": 9,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "strata.diagnostic.comparisons.all_scorable.unchanged",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[4].D_ok": {
+      "actual": 51,
+      "expected": 51,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "sum strata dynamic succeeded",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[4].D_n": {
+      "actual": 100,
+      "expected": 100,
+      "status": "PASS_JSON",
+      "source": "C0",
+      "selector": "questions",
+      "absolute_tolerance": 5.01e-07
+    },
+    "f1_by_stage.rows[3].H": {
+      "actual": 0.401172,
+      "expected": 0.4011720415458204,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "strata.ordinary.groups.failure_zero_mean",
+      "absolute_tolerance": 5.01e-07
+    },
+    "cost_ratio.rows[2].H": {
+      "actual": 0.2330898,
+      "expected": "0.2330898",
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "cost_by_arm.all_attempts.reported_usage_peak_cache_miss_upper_usd",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[4].H[0]": {
+      "actual": 99,
+      "expected": 99,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "sum strata succeeded",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[4].H[1]": {
+      "actual": 100,
+      "expected": 100,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "sum strata planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "latency.rows[2].H[0]": {
+      "actual": 2.506,
+      "expected": 2.505617105500278,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "runtime.ordinary/hybrid_no_resolution.item_elapsed_seconds.p50",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[2].H[1]": {
+      "actual": 5.192,
+      "expected": 5.191639374999613,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "runtime.ordinary/hybrid_no_resolution.item_elapsed_seconds.p95",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[3].H[0]": {
+      "actual": 2.519,
+      "expected": 2.51861302350153,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "runtime.diagnostic/hybrid_no_resolution.item_elapsed_seconds.p50",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[3].H[1]": {
+      "actual": 3.229,
+      "expected": 3.2292685102986094,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "runtime.diagnostic/hybrid_no_resolution.item_elapsed_seconds.p95",
+      "absolute_tolerance": 0.000501
+    },
+    "f1_by_stage.rows[3].D": {
+      "actual": 0.444702,
+      "expected": 0.44470197277578744,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "strata.ordinary.groups.failure_zero_mean",
+      "absolute_tolerance": 5.01e-07
+    },
+    "cost_ratio.rows[2].D": {
+      "actual": 2.3531001,
+      "expected": "2.3531001",
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "cost_by_arm.all_attempts.reported_usage_peak_cache_miss_upper_usd",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[4].D[0]": {
+      "actual": 100,
+      "expected": 100,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "sum strata succeeded",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[4].D[1]": {
+      "actual": 100,
+      "expected": 100,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "sum strata planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "latency.rows[2].D[0]": {
+      "actual": 8.848,
+      "expected": 8.847518130000026,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "runtime.ordinary/dynamic.item_elapsed_seconds.p50",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[2].D[1]": {
+      "actual": 14.253,
+      "expected": 14.252735660299729,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "runtime.ordinary/dynamic.item_elapsed_seconds.p95",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[3].D[0]": {
+      "actual": 8.461,
+      "expected": 8.460846568001216,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "runtime.diagnostic/dynamic.item_elapsed_seconds.p50",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[3].D[1]": {
+      "actual": 11.719,
+      "expected": 11.718794831047854,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "runtime.diagnostic/dynamic.item_elapsed_seconds.p95",
+      "absolute_tolerance": 0.000501
+    },
+    "f1_by_stage.rows[3].n": {
+      "actual": 80,
+      "expected": 80,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "strata.ordinary.groups.dynamic.planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[2].d": {
+      "actual": 0.04353,
+      "expected": 0.04352993122996703,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[2].lo": {
+      "actual": -0.008095,
+      "expected": -0.008094517447061621,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[2].hi": {
+      "actual": 0.095318,
+      "expected": 0.09531801929467598,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[3].up": {
+      "actual": 27,
+      "expected": 27,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "strata.ordinary.comparisons.all_scorable.improved",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[3].down": {
+      "actual": 14,
+      "expected": 14,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "strata.ordinary.comparisons.all_scorable.regressed",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[3].tie": {
+      "actual": 39,
+      "expected": 39,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "strata.ordinary.comparisons.all_scorable.unchanged",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[3].d": {
+      "actual": 0.039158,
+      "expected": 0.03915792540792541,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[3].lo": {
+      "actual": -0.056014,
+      "expected": -0.05601442307692308,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[3].hi": {
+      "actual": 0.134784,
+      "expected": 0.13478359487734481,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[4].up": {
+      "actual": 5,
+      "expected": 5,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "strata.diagnostic.comparisons.all_scorable.improved",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[4].down": {
+      "actual": 3,
+      "expected": 3,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "strata.diagnostic.comparisons.all_scorable.regressed",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[4].tie": {
+      "actual": 12,
+      "expected": 12,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "strata.diagnostic.comparisons.all_scorable.unchanged",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[5].D_ok": {
+      "actual": 100,
+      "expected": 100,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "sum strata dynamic succeeded",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[5].D_n": {
+      "actual": 100,
+      "expected": 100,
+      "status": "PASS_JSON",
+      "source": "C1",
+      "selector": "questions",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[4].d": {
+      "actual": 0.006545,
+      "expected": 0.00654492276829121,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[4].lo": {
+      "actual": -0.020133,
+      "expected": -0.020132663918237845,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[4].hi": {
+      "actual": 0.034035,
+      "expected": 0.034034671619634575,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[5].up": {
+      "actual": 60,
+      "expected": 60,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "category_metrics.factual_f1.paired_dynamic_minus_hybrid.improved",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[5].down": {
+      "actual": 56,
+      "expected": 56,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "category_metrics.factual_f1.paired_dynamic_minus_hybrid.regressed",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[5].tie": {
+      "actual": 185,
+      "expected": 185,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "category_metrics.factual_f1.paired_dynamic_minus_hybrid.unchanged",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[5].d": {
+      "actual": -0.050505,
+      "expected": -0.050505050505050504,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[5].lo": {
+      "actual": -0.10101,
+      "expected": -0.10101010101010101,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[5].hi": {
+      "actual": 0.0,
+      "expected": 0.0,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[6].up": {
+      "actual": 1,
+      "expected": 1,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "category_metrics.adversarial_literal_refusal.paired_dynamic_minus_hybrid.improved",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[6].down": {
+      "actual": 6,
+      "expected": 6,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "category_metrics.adversarial_literal_refusal.paired_dynamic_minus_hybrid.regressed",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[6].tie": {
+      "actual": 92,
+      "expected": 92,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "category_metrics.adversarial_literal_refusal.paired_dynamic_minus_hybrid.unchanged",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[6].d": {
+      "actual": -0.007575,
+      "expected": -0.007574945616860862,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[6].lo": {
+      "actual": -0.032061,
+      "expected": -0.032061162838906594,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.answer_f1[6].hi": {
+      "actual": 0.017161,
+      "expected": 0.01716131809241569,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "f1_by_stage.rows[4].H": {
+      "actual": 0.402606,
+      "expected": 0.40260599837767247,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "category_metrics.factual_f1.summary.failure_zero_mean",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[5].H[0]": {
+      "actual": 394,
+      "expected": 394,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "summary.hybrid_no_resolution.succeeded",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[5].H[1]": {
+      "actual": 400,
+      "expected": 400,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "summary.hybrid_no_resolution.planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.H.initial[0]": {
+      "actual": 0.601211,
+      "expected": 0.6012113617376775,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items hybrid_no_resolution.initial@5; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.H.initial[1]": {
+      "actual": 0.681934,
+      "expected": 0.6819340016708437,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items hybrid_no_resolution.initial@10; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.H.initial[2]": {
+      "actual": 0.730436,
+      "expected": 0.730436209571548,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items hybrid_no_resolution.initial@20; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.H.expanded[0]": {
+      "actual": 0.601211,
+      "expected": 0.6012113617376775,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items hybrid_no_resolution.expanded@5; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.H.expanded[1]": {
+      "actual": 0.681934,
+      "expected": 0.6819340016708437,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items hybrid_no_resolution.expanded@10; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.H.expanded[2]": {
+      "actual": 0.730436,
+      "expected": 0.730436209571548,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items hybrid_no_resolution.expanded@20; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.H.delivered[0]": {
+      "actual": 0.601211,
+      "expected": 0.6012113617376775,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items hybrid_no_resolution.answer_delivered@5; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.H.delivered[1]": {
+      "actual": 0.681934,
+      "expected": 0.6819340016708437,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items hybrid_no_resolution.answer_delivered@10; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.H.delivered[2]": {
+      "actual": 0.719367,
+      "expected": 0.7193668695548395,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items hybrid_no_resolution.answer_delivered@20; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "f1_by_stage.rows[4].D": {
+      "actual": 0.409151,
+      "expected": 0.40915092114596374,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "category_metrics.factual_f1.summary.failure_zero_mean",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[5].D[0]": {
+      "actual": 389,
+      "expected": 389,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "summary.dynamic.succeeded",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[5].D[1]": {
+      "actual": 400,
+      "expected": 400,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "summary.dynamic.planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.initial[0]": {
+      "actual": 0.598204,
+      "expected": 0.5982038429406851,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.initial@5; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.initial[1]": {
+      "actual": 0.679678,
+      "expected": 0.6796783625730994,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.initial@10; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.initial[2]": {
+      "actual": 0.725173,
+      "expected": 0.725173051676811,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.initial@20; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.expanded[0]": {
+      "actual": 0.598204,
+      "expected": 0.5982038429406851,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.expanded@5; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.expanded[1]": {
+      "actual": 0.679678,
+      "expected": 0.6796783625730994,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.expanded@10; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.expanded[2]": {
+      "actual": 0.725173,
+      "expected": 0.725173051676811,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.expanded@20; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.delivered[0]": {
+      "actual": 0.51667,
+      "expected": 0.5166696503162669,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.answer_delivered@5; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.delivered[1]": {
+      "actual": 0.534318,
+      "expected": 0.5343179377013964,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.answer_delivered@10; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.delivered[2]": {
+      "actual": 0.535884,
+      "expected": 0.5358843537414966,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.answer_delivered@20; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.effective[0]": {
+      "actual": 0.51667,
+      "expected": 0.5166696503162669,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.effective@5; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.effective[1]": {
+      "actual": 0.534318,
+      "expected": 0.5343179377013964,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.effective@10; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.D.effective[2]": {
+      "actual": 0.536511,
+      "expected": 0.5365109201575368,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "mean all non-null items dynamic.effective@20; failures retained",
+      "absolute_tolerance": 5.01e-07
+    },
+    "f1_by_stage.rows[4].n": {
+      "actual": 301,
+      "expected": 301,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "category_metrics.factual_f1.summary.dynamic.planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.K[0]": {
+      "actual": 5,
+      "expected": 5,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "items source_recall rank keys",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.K[1]": {
+      "actual": 10,
+      "expected": 10,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "items source_recall rank keys",
+      "absolute_tolerance": 5.01e-07
+    },
+    "recall_funnel_e25.K[2]": {
+      "actual": 20,
+      "expected": 20,
+      "status": "PASS_JSON",
+      "source": "E",
+      "selector": "items source_recall rank keys",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[0].d": {
+      "actual": 0.03367,
+      "expected": 0.03367003367003367,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[0].lo": {
+      "actual": -0.010101,
+      "expected": -0.010101010101010102,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[0].hi": {
+      "actual": 0.077525,
+      "expected": 0.07752525252525207,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[1].d": {
+      "actual": 0.026936,
+      "expected": 0.026936026936026935,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[1].lo": {
+      "actual": -0.020202,
+      "expected": -0.020202020202020204,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[1].hi": {
+      "actual": 0.074074,
+      "expected": 0.07407407407407407,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[2].d": {
+      "actual": -0.016129,
+      "expected": -0.016129032258064516,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[2].lo": {
+      "actual": -0.040323,
+      "expected": -0.04032258064516129,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[2].hi": {
+      "actual": 0.0,
+      "expected": 0.0,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[3].d": {
+      "actual": -0.012987,
+      "expected": -0.012987012987012988,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[3].lo": {
+      "actual": -0.035714,
+      "expected": -0.03571428571428571,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[3].hi": {
+      "actual": 0.00974,
+      "expected": 0.00974025974025974,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[4].d": {
+      "actual": -0.018927,
+      "expected": -0.01892744479495268,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[4].lo": {
+      "actual": -0.037855,
+      "expected": -0.03785488958990536,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[4].hi": {
+      "actual": 0.0,
+      "expected": 0.0,
+      "status": "PASS_JSON",
+      "source": "E-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[5].d": {
+      "actual": 0.016667,
+      "expected": 0.016666666666666666,
+      "status": "PASS_JSON",
+      "source": "C1-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[5].lo": {
+      "actual": -0.033333,
+      "expected": -0.03333333333333333,
+      "status": "PASS_JSON",
+      "source": "C1-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[5].hi": {
+      "actual": 0.066667,
+      "expected": 0.06666666666666667,
+      "status": "PASS_JSON",
+      "source": "C1-paired",
+      "selector": "mean/bootstrap95",
+      "absolute_tolerance": 5.01e-07
+    },
+    "cost_ratio.rows[3].H": {
+      "actual": 0.8705958,
+      "expected": "0.8705958",
+      "status": "PASS_JSON",
+      "source": "E-runtime",
+      "selector": "groups.all.costs.all_attempts.adapter_reported",
+      "absolute_tolerance": 5.01e-07
+    },
+    "latency.rows[4].H[0]": {
+      "actual": 2.37,
+      "expected": 2.3702301470111706,
+      "status": "PASS_JSON",
+      "source": "E-runtime",
+      "selector": "groups.all.elapsed_seconds.p50",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[4].H[1]": {
+      "actual": 3.935,
+      "expected": 3.9353236094524613,
+      "status": "PASS_JSON",
+      "source": "E-runtime",
+      "selector": "groups.all.elapsed_seconds.p95",
+      "absolute_tolerance": 0.000501
+    },
+    "cost_ratio.rows[3].D": {
+      "actual": 6.8800119,
+      "expected": "6.8800119",
+      "status": "PASS_JSON",
+      "source": "E-runtime",
+      "selector": "groups.all.costs.all_attempts.adapter_reported",
+      "absolute_tolerance": 5.01e-07
+    },
+    "latency.rows[4].D[0]": {
+      "actual": 8.315,
+      "expected": 8.314747211501526,
+      "status": "PASS_JSON",
+      "source": "E-runtime",
+      "selector": "groups.all.elapsed_seconds.p50",
+      "absolute_tolerance": 0.000501
+    },
+    "latency.rows[4].D[1]": {
+      "actual": 12.404,
+      "expected": 12.403791126237023,
+      "status": "PASS_JSON",
+      "source": "E-runtime",
+      "selector": "groups.all.elapsed_seconds.p95",
+      "absolute_tolerance": 0.000501
+    },
+    "source_review_e25.rows[0].H[0]": {
+      "actual": 250,
+      "expected": 250,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.source_support.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[0].H[1]": {
+      "actual": 343,
+      "expected": 343,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.source_support.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[0].D[0]": {
+      "actual": 233,
+      "expected": 233,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.source_support.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[0].D[1]": {
+      "actual": 307,
+      "expected": 307,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.source_support.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[1].H[0]": {
+      "actual": 195,
+      "expected": 195,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.citation_support.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[1].H[1]": {
+      "actual": 321,
+      "expected": 321,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.citation_support.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[1].D[0]": {
+      "actual": 197,
+      "expected": 197,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.citation_support.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[1].D[1]": {
+      "actual": 310,
+      "expected": 310,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.citation_support.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[2].H[0]": {
+      "actual": 100,
+      "expected": 100,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.abstention.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[2].H[1]": {
+      "actual": 143,
+      "expected": 143,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.abstention.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[2].D[0]": {
+      "actual": 95,
+      "expected": 95,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.abstention.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[2].D[1]": {
+      "actual": 134,
+      "expected": 134,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.abstention.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[3].H[0]": {
+      "actual": 17,
+      "expected": 17,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.wrong_time.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[3].H[1]": {
+      "actual": 344,
+      "expected": 344,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.wrong_time.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[3].D[0]": {
+      "actual": 11,
+      "expected": 11,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.wrong_time.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[3].D[1]": {
+      "actual": 334,
+      "expected": 334,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.wrong_time.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[4].H[0]": {
+      "actual": 10,
+      "expected": 10,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.wrong_event.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[4].H[1]": {
+      "actual": 351,
+      "expected": 351,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.wrong_event.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[4].D[0]": {
+      "actual": 13,
+      "expected": 13,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.wrong_event.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[4].D[1]": {
+      "actual": 340,
+      "expected": 340,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.wrong_event.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[5].H[0]": {
+      "actual": 25,
+      "expected": 25,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.list_omission.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[5].H[1]": {
+      "actual": 349,
+      "expected": 349,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.list_omission.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[5].D[0]": {
+      "actual": 15,
+      "expected": 15,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.list_omission.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[5].D[1]": {
+      "actual": 339,
+      "expected": 339,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.list_omission.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[6].H[0]": {
+      "actual": 3,
+      "expected": 3,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.wrong_person.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[6].H[1]": {
+      "actual": 351,
+      "expected": 351,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.hybrid_no_resolution.wrong_person.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[6].D[0]": {
+      "actual": 2,
+      "expected": 2,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.wrong_person.positive",
+      "absolute_tolerance": 5.01e-07
+    },
+    "source_review_e25.rows[6].D[1]": {
+      "actual": 342,
+      "expected": 342,
+      "status": "PASS_JSON",
+      "source": "E-source",
+      "selector": "by_arm.dynamic.wrong_person.denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[2].items.请求字节上限拒绝": {
+      "actual": 35,
+      "expected": 35,
+      "status": "PASS_JSON",
+      "source": "C-failures",
+      "selector": "count error_code=physical_request_policy_rejected",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[2].items.完整解析输入超预算": {
+      "actual": 14,
+      "expected": 14,
+      "status": "PASS_JSON",
+      "source": "C-failures",
+      "selector": "count error_code=complete_resolution_input_budget_exceeded",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[4].items.invalid_output": {
+      "actual": 8,
+      "expected": 8,
+      "status": "PASS_JSON",
+      "source": "E-failures",
+      "selector": "count error_code=invalid_output",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[4].items.HTTP 402 余额不足": {
+      "actual": 9,
+      "expected": 9,
+      "status": "PASS_JSON",
+      "source": "E-failures",
+      "selector": "count error_code=model_http_error",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[3].items.未知来源 ID 违约": {
+      "actual": 8,
+      "expected": 8,
+      "status": "PASS_JSON",
+      "source": "conv44-recovery",
+      "selector": "final_error_counts.known_source_required",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[3].items.同状态维度违约": {
+      "actual": 2,
+      "expected": 2,
+      "status": "PASS_JSON",
+      "source": "conv44-recovery",
+      "selector": "final_error_counts.same_state_dimension_required",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[0].n": {
+      "actual": 251,
+      "expected": 251,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-26.baseline.reference_source_incidences",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[0].base": {
+      "actual": 199,
+      "expected": 199,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-26.baseline.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[0].A": {
+      "actual": 212,
+      "expected": 212,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-26.e7a.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[0].AB": {
+      "actual": 215,
+      "expected": 215,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-26.e7ab.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[1].n": {
+      "actual": 131,
+      "expected": 131,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-30.baseline.reference_source_incidences",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[1].base": {
+      "actual": 101,
+      "expected": 101,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-30.baseline.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[1].A": {
+      "actual": 108,
+      "expected": 108,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-30.e7a.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[1].AB": {
+      "actual": 108,
+      "expected": 108,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-30.e7ab.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[2].n": {
+      "actual": 251,
+      "expected": 251,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-41.baseline.reference_source_incidences",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[2].base": {
+      "actual": 210,
+      "expected": 210,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-41.baseline.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[2].A": {
+      "actual": 215,
+      "expected": 215,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-41.e7a.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[2].AB": {
+      "actual": 218,
+      "expected": 218,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-41.e7ab.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[3].n": {
+      "actual": 365,
+      "expected": 365,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-42.baseline.reference_source_incidences",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[3].base": {
+      "actual": 277,
+      "expected": 277,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-42.baseline.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[3].A": {
+      "actual": 303,
+      "expected": 303,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-42.e7a.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "e7a_hits.rows[3].AB": {
+      "actual": 304,
+      "expected": 304,
+      "status": "PASS_JSON",
+      "source": "phase6",
+      "selector": "conv-42.e7ab.candidate_reference_hits",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[6].d": {
+      "actual": -0.00979,
+      "expected": -0.00979046775859525,
+      "status": "PASS_JSON",
+      "source": "phase8",
+      "selector": "paired_delta/bootstrap_95_ci",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[6].lo": {
+      "actual": -0.028066,
+      "expected": -0.028066437951896117,
+      "status": "PASS_JSON",
+      "source": "phase8",
+      "selector": "paired_delta/bootstrap_95_ci",
+      "absolute_tolerance": 5.01e-07
+    },
+    "forest.source_review[6].hi": {
+      "actual": 0.007836,
+      "expected": 0.007836063154788242,
+      "status": "PASS_JSON",
+      "source": "phase8",
+      "selector": "paired_delta/bootstrap_95_ci",
+      "absolute_tolerance": 5.01e-07
+    },
+    "ce_by_category_e18.rows[0].n": {
+      "actual": 110,
+      "expected": 110,
+      "status": "PASS_JSON",
+      "source": "phase8",
+      "selector": "by_category.1.proxy_applicable",
+      "absolute_tolerance": 5.01e-07
+    },
+    "ce_by_category_e18.rows[0].d": {
+      "actual": 0.060253,
+      "expected": 0.06025252525252526,
+      "status": "PASS_JSON",
+      "source": "phase8",
+      "selector": "by_category.1.stages.delivered.paired_delta",
+      "absolute_tolerance": 5.01e-07
+    },
+    "ce_by_category_e18.rows[1].n": {
+      "actual": 130,
+      "expected": 130,
+      "status": "PASS_JSON",
+      "source": "phase8",
+      "selector": "by_category.2.proxy_applicable",
+      "absolute_tolerance": 5.01e-07
+    },
+    "ce_by_category_e18.rows[1].d": {
+      "actual": -0.015385,
+      "expected": -0.015384615384615385,
+      "status": "PASS_JSON",
+      "source": "phase8",
+      "selector": "by_category.2.stages.delivered.paired_delta",
+      "absolute_tolerance": 5.01e-07
+    },
+    "ce_by_category_e18.rows[2].n": {
+      "actual": 30,
+      "expected": 30,
+      "status": "PASS_JSON",
+      "source": "phase8",
+      "selector": "by_category.3.proxy_applicable",
+      "absolute_tolerance": 5.01e-07
+    },
+    "ce_by_category_e18.rows[2].d": {
+      "actual": 0.066667,
+      "expected": 0.06666666666666667,
+      "status": "PASS_JSON",
+      "source": "phase8",
+      "selector": "by_category.3.stages.delivered.paired_delta",
+      "absolute_tolerance": 5.01e-07
+    },
+    "attribution_e16.source_chain_35.初始召回疑似缺口": {
+      "actual": 21,
+      "expected": 21,
+      "status": "PASS_JSON",
+      "source": "phase7-attribution",
+      "selector": "stages.Initial Retrieval.suspected_source_path_incidences",
+      "absolute_tolerance": 5.01e-07
+    },
+    "attribution_e16.source_chain_35.有效选择疑似缺口": {
+      "actual": 9,
+      "expected": 9,
+      "status": "PASS_JSON",
+      "source": "phase7-attribution",
+      "selector": "stages.Resolution Evidence Selection.suspected_source_path_incidences",
+      "absolute_tolerance": 5.01e-07
+    },
+    "attribution_e16.source_chain_35.无来源关联": {
+      "actual": 4,
+      "expected": 4,
+      "status": "PASS_JSON",
+      "source": "phase7-attribution",
+      "selector": "stages.Extraction Coverage.suspected_source_path_incidences",
+      "absolute_tolerance": 5.01e-07
+    },
+    "attribution_e16.source_chain_35.已交付仍遗漏": {
+      "actual": 1,
+      "expected": 1,
+      "status": "PASS_JSON",
+      "source": "phase7-attribution",
+      "selector": "stages.Answer Generation.suspected_source_path_incidences",
+      "absolute_tolerance": 5.01e-07
+    },
+    "attribution_e16.confirmed_8.具体事实抽取遗漏": {
+      "actual": 5,
+      "expected": 5,
+      "status": "PASS_JSON",
+      "source": "phase7-attribution",
+      "selector": "independent_semantic_diagnostic len(confirmed_specific_fact_extraction_gaps)",
+      "absolute_tolerance": 5.01e-07
+    },
+    "attribution_e16.confirmed_8.已有事实未召回/未交付": {
+      "actual": 2,
+      "expected": 2,
+      "status": "PASS_JSON",
+      "source": "phase7-attribution",
+      "selector": "independent_semantic_diagnostic len(confirmed_existing_fact_initial_miss_not_recovered)",
+      "absolute_tolerance": 5.01e-07
+    },
+    "attribution_e16.confirmed_8.已交付仍过度拒答": {
+      "actual": 1,
+      "expected": 1,
+      "status": "PASS_JSON",
+      "source": "phase7-attribution",
+      "selector": "independent_semantic_diagnostic len(confirmed_answer_stage_overrefusal)",
+      "absolute_tolerance": 5.01e-07
+    },
+    "attribution_e16.confirmed_8.Answer 预算丢失": {
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS_JSON",
+      "source": "phase7-attribution",
+      "selector": "independent_semantic_diagnostic.confirmed_answer_budget_losses",
+      "absolute_tolerance": 5.01e-07
+    },
+    "showcase_e5.f1[0]": {
+      "actual": 0.349,
+      "expected": 0.349,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "showcase_e5.f1[1]": {
+      "actual": 0.4911,
+      "expected": 0.4911,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "showcase_e5.f1[2]": {
+      "actual": 0.5124,
+      "expected": 0.5124,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "showcase_e5.f1[3]": {
+      "actual": 0.51,
+      "expected": 0.51,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "showcase_e5.f1[4]": {
+      "actual": 0.3997,
+      "expected": 0.3997,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "showcase_e5.recall_at.5": {
+      "actual": 0.6417,
+      "expected": 0.6417,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "showcase_e5.recall_at.10": {
+      "actual": 0.7292,
+      "expected": 0.7292,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "showcase_e5.recall_at.20": {
+      "actual": 0.7792,
+      "expected": 0.7792,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "f1_by_stage.rows[0].n": {
+      "actual": 16,
+      "expected": 16.0,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "f1_by_stage.rows[0].H": {
+      "actual": 0.5124,
+      "expected": 0.5124,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "f1_by_stage.rows[0].D": {
+      "actual": 0.51,
+      "expected": 0.51,
+      "status": "PASS_REPORT",
+      "source": "showcase",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[0].up": {
+      "actual": 136,
+      "expected": 136.0,
+      "status": "PASS_REPORT",
+      "source": "baseline-paired-archive",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[0].down": {
+      "actual": 110,
+      "expected": 110.0,
+      "status": "PASS_REPORT",
+      "source": "baseline-paired-archive",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "paired_wlt.rows[0].tie": {
+      "actual": 459,
+      "expected": 459.0,
+      "status": "PASS_REPORT",
+      "source": "baseline-paired-archive",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "f1_by_stage.rows[1].D": {
+      "actual": 0.515133,
+      "expected": 0.515133,
+      "status": "PASS_REPORT",
+      "source": "baseline-paired-archive",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "f1_by_stage.rows[1].H": {
+      "actual": 0.521886,
+      "expected": 0.521886,
+      "status": "PASS_REPORT",
+      "source": "baseline-paired-archive",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "f1_by_stage.rows[1].n": {
+      "actual": 757,
+      "expected": 757.0,
+      "status": "PASS_REPORT",
+      "source": "baseline-paired-archive",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[0].items.成功": {
+      "actual": 89,
+      "expected": 89.0,
+      "status": "PASS_REPORT",
+      "source": "first-build",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[0].items.失败": {
+      "actual": 29,
+      "expected": 29.0,
+      "status": "PASS_REPORT",
+      "source": "first-build",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[0].items.中断": {
+      "actual": 1,
+      "expected": 1.0,
+      "status": "PASS_REPORT",
+      "source": "first-build",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[0].items.待执行": {
+      "actual": 173,
+      "expected": 173.0,
+      "status": "PASS_REPORT",
+      "source": "first-build",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[0].before[0]": {
+      "actual": 2,
+      "expected": 2.0,
+      "status": "PASS_REPORT",
+      "source": "reader-v2",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[0].before[1]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "reader-v2",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[0].after[0]": {
+      "actual": 6,
+      "expected": 6.0,
+      "status": "PASS_REPORT",
+      "source": "reader-v2",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[0].after[1]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "reader-v2",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[1].before[0]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "thinking",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[1].before[1]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "thinking",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[1].after[0]": {
+      "actual": 3,
+      "expected": 3.0,
+      "status": "PASS_REPORT",
+      "source": "thinking",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[1].after[1]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "thinking",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[2].before[0]": {
+      "actual": 11,
+      "expected": "11",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[2].before[1]": {
+      "actual": 20,
+      "expected": "20",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[2].after[0]": {
+      "actual": 12,
+      "expected": "12",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[2].after[1]": {
+      "actual": 20,
+      "expected": "20",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[3].before[0]": {
+      "actual": 64,
+      "expected": "64",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[3].before[1]": {
+      "actual": 78,
+      "expected": "78",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[3].after[0]": {
+      "actual": 48,
+      "expected": "48",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[3].after[1]": {
+      "actual": 78,
+      "expected": "78",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[4].before[0]": {
+      "actual": 64,
+      "expected": "64",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[4].before[1]": {
+      "actual": 78,
+      "expected": "78",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[4].after[0]": {
+      "actual": 70,
+      "expected": "70",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[4].after[1]": {
+      "actual": 78,
+      "expected": "78",
+      "status": "PASS_REPORT",
+      "source": "verbatim",
+      "selector": "overall/clean required facts report",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[5].before[0]": {
+      "actual": 4,
+      "expected": 4.0,
+      "status": "PASS_REPORT",
+      "source": "window",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[5].before[1]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "window",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[5].after[0]": {
+      "actual": 4,
+      "expected": 4.0,
+      "status": "PASS_REPORT",
+      "source": "window",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[5].after[1]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "window",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[6].before[0]": {
+      "actual": 23,
+      "expected": 23.0,
+      "status": "PASS_REPORT",
+      "source": "first-check",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[6].before[1]": {
+      "actual": 32,
+      "expected": 32.0,
+      "status": "PASS_REPORT",
+      "source": "first-check",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[6].after[0]": {
+      "actual": 23,
+      "expected": 23.0,
+      "status": "PASS_REPORT",
+      "source": "first-check",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[6].after[1]": {
+      "actual": 32,
+      "expected": 32.0,
+      "status": "PASS_REPORT",
+      "source": "first-check",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[7].before[0]": {
+      "actual": 2,
+      "expected": 2.0,
+      "status": "PASS_REPORT",
+      "source": "patch",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[7].before[1]": {
+      "actual": 12,
+      "expected": 12.0,
+      "status": "PASS_REPORT",
+      "source": "patch",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[7].after[0]": {
+      "actual": 2,
+      "expected": 2.0,
+      "status": "PASS_REPORT",
+      "source": "patch",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[7].after[1]": {
+      "actual": 12,
+      "expected": 12.0,
+      "status": "PASS_REPORT",
+      "source": "patch",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[8].before[0]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "patch",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[8].before[1]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "patch",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.tokens[0].tokens": {
+      "actual": 109185,
+      "expected": 109185.0,
+      "status": "PASS_REPORT",
+      "source": "patch",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.tokens[1].tokens": {
+      "actual": 78242,
+      "expected": 78242.0,
+      "status": "PASS_REPORT",
+      "source": "patch",
+      "selector": "curated report expression",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[8].after[0]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "patch",
+      "selector": "same report states both arms 均8/8",
+      "absolute_tolerance": 5.01e-07
+    },
+    "iteration_pairs.rows[8].after[1]": {
+      "actual": 8,
+      "expected": 8.0,
+      "status": "PASS_REPORT",
+      "source": "patch",
+      "selector": "same report states both arms 均8/8",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[0].H[0]": {
+      "actual": 5,
+      "expected": "5",
+      "status": "PASS_REPORT",
+      "source": "smoke0",
+      "selector": "table hybrid_no_resolution succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[0].H[1]": {
+      "actual": 5,
+      "expected": "5",
+      "status": "PASS_REPORT",
+      "source": "smoke0",
+      "selector": "table hybrid_no_resolution succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[0].D[0]": {
+      "actual": 0,
+      "expected": "0",
+      "status": "PASS_REPORT",
+      "source": "smoke0",
+      "selector": "table dynamic succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[0].D[1]": {
+      "actual": 5,
+      "expected": "5",
+      "status": "PASS_REPORT",
+      "source": "smoke0",
+      "selector": "table dynamic succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[1].D_ok": {
+      "actual": 0,
+      "expected": "0",
+      "status": "PASS_REPORT",
+      "source": "smoke0",
+      "selector": "Dynamic succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[1].D_n": {
+      "actual": 5,
+      "expected": "5",
+      "status": "PASS_REPORT",
+      "source": "smoke0",
+      "selector": "Dynamic succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[1].H[0]": {
+      "actual": 5,
+      "expected": "5",
+      "status": "PASS_REPORT",
+      "source": "smoke1",
+      "selector": "table hybrid_no_resolution succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[1].H[1]": {
+      "actual": 5,
+      "expected": "5",
+      "status": "PASS_REPORT",
+      "source": "smoke1",
+      "selector": "table hybrid_no_resolution succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[1].D[0]": {
+      "actual": 5,
+      "expected": "5",
+      "status": "PASS_REPORT",
+      "source": "smoke1",
+      "selector": "table dynamic succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[1].D[1]": {
+      "actual": 5,
+      "expected": "5",
+      "status": "PASS_REPORT",
+      "source": "smoke1",
+      "selector": "table dynamic succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[2].D_ok": {
+      "actual": 5,
+      "expected": "5",
+      "status": "PASS_REPORT",
+      "source": "smoke1",
+      "selector": "Dynamic succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[2].D_n": {
+      "actual": 5,
+      "expected": "5",
+      "status": "PASS_REPORT",
+      "source": "smoke1",
+      "selector": "Dynamic succeeded/planned",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[0].D_ok": {
+      "actual": 0,
+      "expected": 0,
+      "status": "PASS_REPORT",
+      "source": "first-smoke",
+      "selector": "Build failed; QA NOT EXECUTED, not observed QA failure rate",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[0].D_n": {
+      "actual": 5,
+      "expected": 5,
+      "status": "PASS_REPORT",
+      "source": "first-smoke",
+      "selector": "planned 20 QA / four strategies = 5; not an executed denominator",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[2].H[0]": {
+      "actual": 753,
+      "expected": 753,
+      "status": "PASS_REPORT",
+      "source": "phase8-report",
+      "selector": "frozen original QA outcomes (not replay success)",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[2].H[1]": {
+      "actual": 757,
+      "expected": 757,
+      "status": "PASS_REPORT",
+      "source": "phase8-report",
+      "selector": "frozen original QA outcomes (not replay success)",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[2].D[0]": {
+      "actual": 709,
+      "expected": 709,
+      "status": "PASS_REPORT",
+      "source": "phase8-report",
+      "selector": "frozen original QA outcomes (not replay success)",
+      "absolute_tolerance": 5.01e-07
+    },
+    "success.rows[2].D[1]": {
+      "actual": 757,
+      "expected": 757,
+      "status": "PASS_REPORT",
+      "source": "phase8-report",
+      "selector": "frozen original QA outcomes (not replay success)",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[3].D_ok": {
+      "actual": 709,
+      "expected": 709,
+      "status": "PASS_REPORT",
+      "source": "phase8-report",
+      "selector": "original Dynamic QA outcomes",
+      "absolute_tolerance": 5.01e-07
+    },
+    "budget_progression.rows[3].D_n": {
+      "actual": 757,
+      "expected": 757,
+      "status": "PASS_REPORT",
+      "source": "phase8-report",
+      "selector": "original Dynamic QA outcomes",
+      "absolute_tolerance": 5.01e-07
+    },
+    "cost_ratio.rows[0].H": {
+      "actual": 9.597679,
+      "expected": "9.597679",
+      "status": "PASS_REPORT",
+      "source": "paired-report",
+      "selector": "known CNY Query cost INCLUDING reported cache hit/miss pricing, not all-input-cache-miss",
+      "absolute_tolerance": 5.01e-07
+    },
+    "cost_ratio.rows[0].D": {
+      "actual": 98.930522,
+      "expected": "98.930522",
+      "status": "PASS_REPORT",
+      "source": "paired-report",
+      "selector": "known CNY Query cost INCLUDING reported cache hit/miss pricing, not all-input-cache-miss",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[1].items.完整解析输入超预算": {
+      "actual": 46,
+      "expected": 46,
+      "status": "PASS_JSON",
+      "source": "baseline-failures",
+      "selector": "count exact error code",
+      "absolute_tolerance": 5.01e-07
+    },
+    "failures.groups[1].items.其他": {
+      "actual": 2,
+      "expected": 2,
+      "status": "PASS_JSON",
+      "source": "baseline-failures",
+      "selector": "all remaining original failed items",
+      "absolute_tolerance": 5.01e-07
+    }
+  },
+  "sources": {
+    "C0": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/experiments/m5-development/level-c-results-v1/metrics-summary.json",
+      "sha256": "62ecb7708af88634043b8a5c94cc5aff4cf5dbb7d39edf40b422e6c4796442c6",
+      "bytes": 49937,
+      "status": "AVAILABLE"
+    },
+    "C1": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/experiments/m5-development/level-c-input-v2-results-v1/metrics-summary.json",
+      "sha256": "0647249bfcdce2b52cc37e987164cc2cc387420650c3fb3d92e63d43137fce10",
+      "bytes": 50296,
+      "status": "AVAILABLE"
+    },
+    "E": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/experiments/m5-development/level-e-results-v1/official-scores.json",
+      "sha256": "14e834d42cf9eeb5e0e161581f09e017bed97779fcfdb3efd6e3ce6045180455",
+      "bytes": 712125,
+      "status": "AVAILABLE"
+    },
+    "E-paired": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/experiments/m5-development/level-e-results-v1/source-review-paired.json",
+      "sha256": "267a364bc9f8fd30d42bf52540c0f62340910569fe47748c11b2f228cac70013",
+      "bytes": 183269,
+      "status": "AVAILABLE"
+    },
+    "E-runtime": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/experiments/m5-development/level-e-runtime-terminal-v1.json",
+      "sha256": "5f0f503a3c50f8895c8d316ca7799687686327c39c4f0011070470f20c32f437",
+      "bytes": 36413,
+      "status": "AVAILABLE"
+    },
+    "E-source": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/experiments/m5-development/level-e-results-v1/source-review-summary.json",
+      "sha256": "9d6f9acef7424409ccbcb889a6d17d195e67087d5c820107a7b9467e72bd92b4",
+      "bytes": 9146,
+      "status": "AVAILABLE"
+    },
+    "C1-paired": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/experiments/m5-development/level-c-input-v2-results-v1/semantic-paired-differences.json",
+      "sha256": "1fe883214ea00bb80daf4546cbc34f91266d1475f0ae78305361d8a7875aa00e",
+      "bytes": 22622,
+      "status": "AVAILABLE"
+    },
+    "C-failures": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/experiments/m5-development/level-c-results-v1/failures.json",
+      "sha256": "36e4613959700665a09f6febc730f8cf103e1cdea412ef912af200d09ccdc94d",
+      "bytes": 9897,
+      "status": "AVAILABLE"
+    },
+    "E-failures": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/experiments/m5-development/level-e-failures-terminal-v1.json",
+      "sha256": "cd73458ec11c47ad6a308470a8fab04299b0854c14bb405ce56c555a82e2bd1d",
+      "bytes": 25351,
+      "status": "AVAILABLE"
+    },
+    "conv44-recovery": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/experiments/m5-development/conv44-relation-recovery-independent-preparation-v1.json",
+      "sha256": "18a366ad8eabc029f1a4fc633cab13dd5ce92bc5765074d4f9e9be7f399ab10f",
+      "bytes": 3384,
+      "status": "AVAILABLE"
+    },
+    "phase6": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/experiments/research-v2/phase6/replay-final/summary.json",
+      "sha256": "1f2084b80d9763eb83bd0d9f5dad1f3db837734d9f301f644f1aecfdd30b237d",
+      "bytes": 96471,
+      "status": "AVAILABLE"
+    },
+    "phase8": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/experiments/research-v2/phase8/retrieval-statistics.json",
+      "sha256": "2de0ab635c734a80b2844dabb14ce4d26296bf6c3670e337d12e70ad76603d88",
+      "bytes": 15562,
+      "status": "AVAILABLE"
+    },
+    "phase7-attribution": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/experiments/research-v2/phase7/failure-attribution.json",
+      "sha256": "91368e518704d0344a48cf96e685fd401f5f517d6592418ebd04905c82a7f0f9",
+      "bytes": 11074,
+      "status": "AVAILABLE"
+    },
+    "showcase": {
+      "location": "git:3e64811ca4047192f0e3db8a587d013396f04fa8:docs/research-process/entries/SHOW-01.md",
+      "sha256": "9b5b3445a11ba926427728dd7f105af96ef3fa32528fd78db726fd5b95d7450c",
+      "bytes": 2807,
+      "status": "AVAILABLE"
+    },
+    "baseline-paired-archive": {
+      "location": "git:3e64811ca4047192f0e3db8a587d013396f04fa8:docs/research-process/entries/V2-05.md",
+      "sha256": "24f31324c3e531c5e3fa7816499b97f569237742177f62d39af0e33ae0e930a2",
+      "bytes": 2179,
+      "status": "AVAILABLE"
+    },
+    "first-build": {
+      "location": "git:3e64811ca4047192f0e3db8a587d013396f04fa8:docs/research-process/entries/R15-01.md",
+      "sha256": "716c2d797373b630b963d9a2ad52a3ac4ce978a7604e6c6498e4263b168e2e2d",
+      "bytes": 2466,
+      "status": "AVAILABLE"
+    },
+    "reader-v2": {
+      "location": "git:3e64811ca4047192f0e3db8a587d013396f04fa8:docs/research-process/entries/TOP7-04.md",
+      "sha256": "e3014a0673b5d8ae19650908649ce2667c839e4d1c2a8434c3cf44afe9b93fff",
+      "bytes": 2393,
+      "status": "AVAILABLE"
+    },
+    "thinking": {
+      "location": "git:3e64811ca4047192f0e3db8a587d013396f04fa8:docs/research-process/entries/TOP7-03.md",
+      "sha256": "5e646c7e2d2ac33bb73f2ab3829d470579e37a6b1b2bb61b9ea0dfb3d3875f5d",
+      "bytes": 2275,
+      "status": "AVAILABLE"
+    },
+    "verbatim": {
+      "location": "git:3e64811ca4047192f0e3db8a587d013396f04fa8:docs/research-process/entries/VERB-01.md",
+      "sha256": "1d576293b5ca3bfd3fa0cbacb9065fa905341b9157523804a5e994271ed7f354",
+      "bytes": 3079,
+      "status": "AVAILABLE"
+    },
+    "window": {
+      "location": "git:3e64811ca4047192f0e3db8a587d013396f04fa8:docs/research-process/entries/TOP145-01.md",
+      "sha256": "668b83d9fffd8a6449c5ea6ed3747c4790f4a9020b50b08e9d0d188838b22e3f",
+      "bytes": 2194,
+      "status": "AVAILABLE"
+    },
+    "first-check": {
+      "location": "git:3e64811ca4047192f0e3db8a587d013396f04fa8:docs/research-process/entries/TOP145-03.md",
+      "sha256": "9db54edfc18ece4fd71d094f187efc3cadb2c523d7456a42d597ac1fb1980acf",
+      "bytes": 2137,
+      "status": "AVAILABLE"
+    },
+    "patch": {
+      "location": "git:3e64811ca4047192f0e3db8a587d013396f04fa8:docs/research-process/entries/TOP145-04.md",
+      "sha256": "c6e5e4a5ad19cd01466e0f90372ae180f943d8f53e1565d3e89365719870fcd9",
+      "bytes": 2210,
+      "status": "AVAILABLE"
+    },
+    "smoke0": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/docs/research-v2/SMOKE_RETRY_32768.md",
+      "sha256": "294dfea25a99b7a7ae04a77b50b594f0236dd17deda26c3435cedb7e64de78cd",
+      "bytes": 9801,
+      "status": "AVAILABLE"
+    },
+    "smoke1": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/docs/research-v2/RESOLUTION_SMOKE_96000.md",
+      "sha256": "40e5578edf51150be5a153a0194eabc7c4f50ed880fc270aa52bcc9b69d84dae",
+      "bytes": 8996,
+      "status": "AVAILABLE"
+    },
+    "first-smoke": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/docs/research-v2/SMOKE_RESULT.md",
+      "sha256": "fb57e98813ca9c59b421afe6c37224fc77501189476d33cbb986458fb5d423eb",
+      "bytes": 9790,
+      "status": "AVAILABLE"
+    },
+    "phase8-report": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/docs/research-v2/PHASE8_RESULTS.md",
+      "sha256": "0918fb8fa9b94285c194c45c277bff5d08ba32584d9b02f1e40790d7e0236427",
+      "bytes": 9757,
+      "status": "AVAILABLE"
+    },
+    "paired-report": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/docs/research-v2/PHASE3_PAIRED_DIAGNOSIS.md",
+      "sha256": "e493ccb1c3752d5ba0277ff7a46570ddaa1174bb7697fffad68d653d9b1d466d",
+      "bytes": 6762,
+      "status": "AVAILABLE"
+    },
+    "baseline-failures": {
+      "location": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/experiments/research-v2/phase3/dynamic-failures.json",
+      "sha256": "4fcacb8c86c88c2cbf5256e07f1e49de41605b2c6e92b75d3d54101041b85096",
+      "bytes": 255838,
+      "status": "AVAILABLE"
+    }
+  },
+  "source_pattern_errors": [],
+  "metrics_sha256": "543540fe92665ad85991d85535c6e8b2fdfa5776cf85edb72a9a4aaf725550fd",
+  "limitations": [
+    "PASS_JSON compares existing public aggregates/score records; it does not re-score answers or establish semantic truth.",
+    "PASS_REPORT checks frozen published archive excerpts or local narrative tables; original historical raw runs are not re-executed.",
+    "Timeline's 26 authored date intervals, labels, kept booleans and narrative causality are not numerical-leaf checks and remain PARTIAL.",
+    "Some research summaries exist only in an uncommitted sibling worktree. Source SHA records current bytes, not an asserted Git execution commit.",
+    "cost_ratio._note overgeneralizes cache-miss pricing: E12 CNY known cost uses reported cache hit/miss pricing; M5 USD rows use peak cache-miss upper estimates.",
+    "Appendix historical conv44 distribution and E22/E23 single-variable claim require the separate Release errata."
+  ],
+  "provider_requests": 0,
+  "gold_read": false,
+  "credentials_read": false,
+  "private_logs_read": false,
+  "database_opened": false,
+  "experiment_runner_invoked": false,
+  "writes_by_verifier": 0
+}

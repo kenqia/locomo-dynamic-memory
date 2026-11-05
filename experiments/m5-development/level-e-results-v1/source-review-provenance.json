@@ -1,0 +1,447 @@
+{
+  "version": "m5-level-e-source-review-provenance-v1",
+  "reviewed": 800,
+  "quotes": 1796,
+  "partitions": [
+    {
+      "partition": "a",
+      "reviewed": 242,
+      "quotes": 529,
+      "reviewer": "final_actual_review"
+    },
+    {
+      "partition": "b",
+      "reviewed": 242,
+      "quotes": 505,
+      "reviewer": "level_e_blind_source_b"
+    },
+    {
+      "partition": "c",
+      "reviewed": 316,
+      "quotes": 762,
+      "reviewer": "level_e_blind_source_c"
+    }
+  ],
+  "completed_reviews_sha256": "5900049cd6d97f20604d09fdddc48b7288d3aedd68d382a9b9069572e360bd85",
+  "manifest_sha256": "b030f1cd63aeba84427827c9a750583fa346d8776821e8685401e9941ecde9a5",
+  "revisions": [
+    {
+      "partition": "a",
+      "initial_sha256": "43957632b26f3593f9538a3010eca12f30a911950eaf7fc3423491a66b47be12",
+      "final_sha256": "6f9387b09db341d397a0f2858a304d867e3b07acf958628945db72a07e00d114",
+      "changed_units": [
+        {
+          "unit_id": "51c8da9fb9de82290d6a10a48d7da3153125ca076605f96ddcc3b30b17b0b29e",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "abstention": {
+              "before": "correct",
+              "after": "not_applicable"
+            },
+            "wrong_person": {
+              "before": null,
+              "after": false
+            },
+            "wrong_event": {
+              "before": null,
+              "after": false
+            },
+            "wrong_time": {
+              "before": null,
+              "after": false
+            },
+            "list_omission": {
+              "before": null,
+              "after": false
+            }
+          }
+        },
+        {
+          "unit_id": "539b27949dc07dc82f6cba1b44dde5188a512abfcbb799a8ac80935dbe72114d",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            },
+            "wrong_person": {
+              "before": null,
+              "after": false
+            },
+            "wrong_event": {
+              "before": null,
+              "after": false
+            },
+            "list_omission": {
+              "before": null,
+              "after": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "partition": "b",
+      "initial_sha256": "b5f773a4e5325408ba631a8b0a02a137ef6b90de0dace41ec021c6d89ba047c0",
+      "final_sha256": "e6ce4c89f181fba0007b0bdb3868c57ef770f04cf9ebcbb51b21ee1365d93d6c",
+      "changed_units": [
+        {
+          "unit_id": "790c34fe8b6e0e1dd4f2af031694f6c35b7b668564cf7e8929b6a01b0ae0bbac",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "source_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "citation_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "83218ab559cb4bee31dffa13ce965954e3d4e471667df599dfbe781107215871",
+          "label_changes": {
+            "source_support": {
+              "before": "unsupported",
+              "after": "not_applicable"
+            },
+            "citation_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "correct"
+            }
+          }
+        },
+        {
+          "unit_id": "88e789746a845579e1247e4b8774bd858859a595844477d7696b79aa71297dbb",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "source_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "citation_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "931cd651594f0e27b1975149400a5c44ec89358478ec059ffc46930eb5cc6a6c",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "9413363a09b2678a9ffd5c878e3477a6d2416f97fa54690ce5e354b02d01ff01",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "c8a35573720e4e9f35081aa3a234a8b13c47db6380058e8ebda38656433af805",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "source_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "citation_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "d053ddbac3206a8b21d18eca887796cc778a0fb0ea3e0dc2745d1a34f70608f5",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "source_support": {
+              "before": "not_applicable",
+              "after": "supported"
+            },
+            "abstention": {
+              "before": "correct",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "dae79f8c7565f5a93775e19248759f4662b4e7836c46bdf5c8eb7dfcc2ae9deb",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "source_support": {
+              "before": "unsupported",
+              "after": "undetermined"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            },
+            "wrong_time": {
+              "before": false,
+              "after": null
+            }
+          }
+        },
+        {
+          "unit_id": "e5bf7a3d541a07eb496f087fe5d65a5c8d1842e1ca77831d8a043629a5e4881b",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "source_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "citation_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "partition": "c",
+      "initial_sha256": "69c8d6f64b57350afa18a779992c52b05a2b2a86cbee74394f5bd66f2ccba700",
+      "final_sha256": "f6f32b53ce85a078971cc48511ca89e74f4fdc0451f35c9d32912a74d08c11b7",
+      "changed_units": [
+        {
+          "unit_id": "16ab25c2f3461ac1b1ef6780f25280ea66c71c198a1dbdf430e7cd2915814b56",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "3cfb2fec521a12aecb80d8232029095432ed4cfe81631d9bc7755a4d57d73843",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "source_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "citation_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "744690f25d2864f87b18c0b459efa82a99c50c3e7c36e156c952b6fde257c089",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "75368220a86f0e9f69fb20de51031ba34241ea41c7425e4b1c104de9f7597147",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "7d5710266598588f4aa0d51bb6246c83586674a97ade454e7e35bc8c89bb24d2",
+          "label_changes": {
+            "source_support": {
+              "before": "unsupported",
+              "after": "undetermined"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "undetermined"
+            }
+          }
+        },
+        {
+          "unit_id": "8a75bb675dd7d972f62202787bcf2ca0b1d5343577774d8f13df828d3c812b26",
+          "label_changes": {
+            "source_support": {
+              "before": "unsupported",
+              "after": "undetermined"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "undetermined"
+            }
+          }
+        },
+        {
+          "unit_id": "8fa05e843f1970e72fe6bf309b31876f6e33d8499c59845037009b53aed3017b",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "source_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "citation_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "a577379abe311a6c9f3e7e7edad451baec57bd9414e3523002d5331544114051",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "source_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "citation_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "b1104bca315858ec97b12fed0ccc97201d70700da5b9cb8de994c0ba4510ad72",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        },
+        {
+          "unit_id": "b584305d50f5c143a44722b004622d172a1efb3499826410ae96adeefd202cc1",
+          "label_changes": {
+            "answer_kind": {
+              "before": "abstained",
+              "after": "answered"
+            },
+            "source_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "citation_support": {
+              "before": "unsupported",
+              "after": "supported"
+            },
+            "abstention": {
+              "before": "false",
+              "after": "not_applicable"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "review_kind": "ai_assisted_independent",
+  "each_unit_reviewers": 1,
+  "reviewers_participated_in_generation": false,
+  "gold_provided_to_reviewers": false,
+  "root_spotcheck": {
+    "root_had_scored_outputs": true,
+    "selection": "first four source-supported, first four unsupported, first four abstained B rows, deduplicated (10 units), selected by labels rather than Gold",
+    "request": "recheck existing plan-versus-occurred and full-explanation partial-answer boundaries without Gold or other reviewers labels",
+    "interrater_agreement": "not_measured"
+  },
+  "limits": [
+    "Not human or teacher truth.",
+    "No dual-review agreement measured; writing style may reveal strategy.",
+    "Initial and revised labels preserved; source judgment corrections do not change frozen generation or QA scores."
+  ],
+  "provider_requests": 0
+}

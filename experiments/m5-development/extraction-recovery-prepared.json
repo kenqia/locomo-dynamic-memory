@@ -1,0 +1,32 @@
+{
+  "status": "prepared_not_authorized",
+  "plan": {
+    "status": "prepared_not_authorized",
+    "scope": "retry one conv-44 extraction fragment; no index/relation/publish/QA",
+    "stage": "/home/kenqia/my_folder/locomo-worktrees/m5-final-development-20261104/var/m5-development/holdout-extraction-proposal-final-v2",
+    "build_id": "bef9f685957843698b3083ff4cbc79a4",
+    "fragment_ordinal": 18,
+    "max_additional_requests": 3,
+    "max_additional_reserved_usd": "0.2619648",
+    "original_global_policy": {
+      "max_requests": 204,
+      "max_usd": "18",
+      "model": "deepseek-flash",
+      "input_usd_per_million": ".30",
+      "output_usd_per_million": "1.20",
+      "max_input_bytes": 160000,
+      "max_output_tokens": 32768
+    },
+    "original_plan_sha256": "8363cb625599cd2650a89ee41c2b1773ad3528444d42d26a5ebfc254d9553c69",
+    "settings_sha256": "830bb4879747d32c16df0fc59a4cd87641c29a96c295f1eaec911a8ebd7146e7",
+    "original_database_snapshot": "48aef892f614519796a60d2116830818a33c13cdc416cff6c7056a93a19fb484",
+    "original_ledger_snapshot": "1f58d71d896a8b1bdb95bfeacd652749c4e6b36919c21bfad3e7bde324361a85",
+    "script_sha256": "439ade803fc1894c6c48ae4b20df3032b2fa44a6e7c823dc950ec959a1641260"
+  },
+  "plan_sha256": "c735a02f7051e8b4a2fc8dcfb0675373d31136c8a7dd305ea0f59fe357eb7a50",
+  "missing_authorization_rejected": true,
+  "original_database_and_ledger_unchanged": true,
+  "provider_requests": 0,
+  "authorization_file_present": false,
+  "execution_started": false
+}

@@ -1,0 +1,45 @@
+{
+  "status": "authorized_running",
+  "source": "explicit user reply in this Codex chat",
+  "answer": "授权本次 130.9824 USD / 1,500 次开发集 QA 阶段",
+  "scope": "fixed M5 development 80 ordinary + 20 diagnostic questions; Hybrid and Dynamic only; no holdout or Bonus",
+  "plan_sha256": "e7caed32203c567f5fb3ee7fb3a10250400a6da9a9ad453dbfb101eb4f03cf76",
+  "approved_max_usd": "130.9824",
+  "approved_max_physical_requests": 1500,
+  "thinking_effort": {
+    "analysis": "disabled",
+    "resolution": "low",
+    "answer": "disabled"
+  },
+  "gold_policy": "development Gold only after complete generation freeze",
+  "holdout_qa_authorized": false,
+  "bonus_enabled": false,
+  "independent_of_relation_budget": true,
+  "recorded_utc": "2026-11-04T06:30:50.024548+00:00",
+  "pricing": {
+    "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "checked_utc": "2026-11-04T06:30:50.024548+00:00",
+    "source_sha256": "45396c395f2bbe150317331dcd9e4d0b485456432e0d891af7d0c9028f6abc9d",
+    "model": "deepseek-flash",
+    "published_version": "DeepSeek-V4.1-Flash-1017",
+    "input_peak_cache_miss_usd_per_million": "0.30",
+    "output_peak_usd_per_million": "1.20",
+    "matches_approved_policy": true
+  },
+  "pre_execution_integrity": {
+    "checked_utc": "2026-11-04T06:30:50.024548+00:00",
+    "plan_sha256": "e7caed32203c567f5fb3ee7fb3a10250400a6da9a9ad453dbfb101eb4f03cf76",
+    "implementation_sha256": "3d8cb571f727099db8a0f171527052b2354449b9f9194e499e8c7e78f9d53ee0",
+    "plan_verified": true,
+    "database_snapshot_verified": true,
+    "ledger_snapshot_verified": true,
+    "source_storage_identity_verified": true,
+    "items": 200,
+    "gold_read": false,
+    "holdout_read": false
+  },
+  "stage_directory": "var/m5-development/level-c-preparation-v1/final/final-v2",
+  "generation_freeze": "pending",
+  "scores": "not_measured",
+  "automatic_recovery": false
+}

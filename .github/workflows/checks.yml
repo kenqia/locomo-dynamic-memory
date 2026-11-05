@@ -15,7 +15,7 @@ concurrency:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     env:
       LOCOMO_LIVE_MODEL: "0"
       LOCOMO_LOCAL_EMBEDDING: "0"
@@ -43,5 +43,5 @@ jobs:
         run: uv run --locked python -m compileall -q src tests
       - name: Check browser runner shell syntax
         run: bash -n tests/browser/run.sh
-      - name: Run default API and fixture regression tests
-        run: uv run --locked pytest -q --tb=short
+      - name: Run complete public offline regression suite
+        run: scripts/personal-release run-tests --public -- --tb=short --junitxml=var/public-ci-tests.xml

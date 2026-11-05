@@ -1,0 +1,38 @@
+{
+  "version": "m5-level-e-reference-metadata-v1",
+  "checked_utc": "2026-11-05T02:22:37.805102+00:00",
+  "six_independent_export_audit_sha256": "d5e7a3a723bba6816b5b8b967e8e826403fc2f35b84d03601bf1e6f58c18eefc",
+  "reference": {
+    "path": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/var/research-v2-full-baseline-20261101/memory.sqlite3",
+    "dataset_id": "f69a07a79a2d5f4c8188300a",
+    "artifact_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "storage_identity": {
+      "main": {
+        "exists": true,
+        "sha256": "ffa299c36ba1d15a6148826dd14430dca6e4ebfa27069d7a141021987cda060c"
+      },
+      "wal": {
+        "exists": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "questions": {
+      "conv-43": {
+        "count": 242,
+        "identity_sha256": "a8d8a23146b6c8eb14ce271521035555c108fe9f8662e4ca25cc1415adace6f9"
+      },
+      "conv-44": {
+        "count": 158,
+        "identity_sha256": "b9b1e62d08ab3e3621b0eda9a77eea38bd053417f4973a894e241005a15fdbb7"
+      }
+    }
+  },
+  "only_metadata_sql_projected": true,
+  "question_text_read": false,
+  "category_read": false,
+  "answer_or_evidence_read": false,
+  "reference_backup_or_table_snapshot": false,
+  "storage_identity_unchanged": true,
+  "selection": "all_original_ordinals; exact unique artifact and sample; no filtering",
+  "provider_requests": 0
+}

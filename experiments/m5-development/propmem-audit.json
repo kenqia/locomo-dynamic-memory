@@ -1,0 +1,62 @@
+{
+  "commit": "807ae6d7d8a5b76f6fe964d5a581d96c036e2ac4",
+  "license": "Apache-2.0",
+  "source_manifest": {
+    "commit": "807ae6d7d8a5b76f6fe964d5a581d96c036e2ac4",
+    "files": {
+      "LICENSE": "baaaba68aabce9e13bcbe54811addc0126b010bdb61775d02e43e06e24534861",
+      "NOTICE": "aaab3fded61f619cc0845e5758a79c37fe97018f32c1d54634e72ba71fed1ab8",
+      "PROPMEM.md": "01b4be07110a46039201c13527b586009c75328caa41f5a4e789225e1e47b096",
+      "pyproject.toml": "31e726a934397da87786e1c3e86b71a66bba84eacc1c4f93c4875434d41d2e71",
+      "src/agents_memory/propmem.py": "833301aca3e35bb6783be94cdbb83adc7df01d2540e32d22bfbbf8d075989e3d",
+      "src/agents_memory/propmem_memory.py": "7dfb9c63b6bd8bd94b56097ed53367bd8355511690892672badd65c989d666a8",
+      "src/agents_memory/systems/propmem.py": "d60e5825c88e3e76f4c21fcf7463508dd036f75e5cb6beb2fd4266a566e86e94"
+    }
+  },
+  "validation": "exact pinned AST methods only; not full backend or model extraction",
+  "model_defaults": {
+    "extraction": "gpt-4.1",
+    "embedding": "text-embedding-3-small"
+  },
+  "synthetic_results": {
+    "multi_person_target": "Ada",
+    "substring_target": "Ann",
+    "proposition_fields": [
+      "text",
+      "entity",
+      "date",
+      "session_id",
+      "date_ordinal"
+    ],
+    "native_source_turn_fields": [],
+    "similarity_only_update_scores": [
+      {
+        "text": "Ada completed a different autumn race.",
+        "score": 1.0
+      },
+      {
+        "text": "Ada planned the spring race.",
+        "score": 0.7
+      }
+    ],
+    "calls": [
+      {
+        "kind": "synthetic_embedding",
+        "count": 2
+      }
+    ]
+  },
+  "findings": [
+    "Single entity selection loses the second named participant in a joint question",
+    "Full-name substring match assigns Ann to Joanna",
+    "Similarity and report recency penalize old statements without contradiction or event identity evidence",
+    "Native propositions retain session identity but no per-fact original Source Turn IDs",
+    "Session extraction accepts recovered truncated output; incomplete facts require explicit Build status"
+  ],
+  "decision": "REJECT direct upstream adoption under current source/participant/temporal contracts",
+  "adapter": "not implemented: safe turn-attribution and participant handling would materially change the upstream method; no extraction-quality gain established",
+  "canary": "not run; no full backend installation or paid extraction",
+  "provider_requests": 0,
+  "new_builds": 0,
+  "qa_f1": "not_measured"
+}

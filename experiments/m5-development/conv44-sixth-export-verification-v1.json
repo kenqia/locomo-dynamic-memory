@@ -1,0 +1,33 @@
+{
+  "version": "m5-conv44-sixth-export-verification-v1",
+  "tool_sha256": "01dbcd6c5afbde0b13fe33e4b84279d4dcb485b709df922162a8d00445df733f",
+  "tests_sha256": "75979eace55c0783eedfd0edbb0a8b0cde79247c80180307f69c47c28aadea91",
+  "non_author_review_sha256": "ea94e98caf6f5c05cf72f727cd5693bf72d5e81934f34057b3b3a9a4463df645",
+  "author": {
+    "command": "./tools/integration/check.sh tests/test_m5_complete_conv44_export.py -q",
+    "passed": 12,
+    "seconds": 18.47,
+    "warnings": 1
+  },
+  "independent": {
+    "command": "./tools/integration/check.sh tests/test_m5_complete_conv44_export.py -q",
+    "passed": 12,
+    "seconds": 18.71,
+    "warnings": 1
+  },
+  "root": {
+    "command": "./tools/integration/check.sh tests/test_m5_complete_conv44_export.py tests/test_versions.py -q",
+    "passed": 25,
+    "deselected": 1,
+    "seconds": 40.96,
+    "warnings": 1
+  },
+  "earlier_root_collection_error": {
+    "path": "tests/test_exports.py",
+    "error": "file not found; no tests executed; corrected to existing tests/test_versions.py"
+  },
+  "warning": "existing StarletteDeprecationWarning",
+  "scope": "synthetic engineering validation only; original paid stage is still running with failed tasks; no real completion or sixth export performed",
+  "provider_requests_by_checks": 0,
+  "holdout_qa_evidence_answers_read": false
+}

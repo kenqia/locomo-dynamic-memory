@@ -62,7 +62,7 @@ def test_extraction_request_examples_are_valid_and_do_not_leak_into_saved_memori
         assert memories[0]["statement_type"] == "plan"
         assert memories[0]["time"]["event_start"] is None
         assert memories[0]["source_ids"] == [f"{dataset}/conv-a/D1:1"]
-        assert len(observed) == 4
+        assert len(observed) == 7
         # Independently expected semantic boundaries of the synthetic examples.
         assert observed[1]["output"]["memories"][0]["statement_type"] == "fact"
         assert observed[1]["output"]["memories"][1]["polarity"] == "negative"

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "main_dirty_entries": 36,
+  "main_status_sha256": "e7afa929866125a843cc257c5f0a0d95cba4e5949cbc00bd77c9a2d4d19e72ee",
+  "basis": "git status --porcelain=v1 -z raw bytes including NUL",
+  "historical_deletions": 0,
+  "worktree_prune": false,
+  "main_mutations": false,
+  "services_remaining_on_owned_ports": 0,
+  "scope": "state/path snapshot matches initial; no content reads of credentials/private logs"
+}

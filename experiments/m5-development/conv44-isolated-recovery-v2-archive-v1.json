@@ -1,0 +1,32 @@
+{
+  "version": "m5-conv44-isolated-recovery-v2-archive-v1",
+  "archive": "var/m5-development/conv44-isolated-recovery-v2-terminal-v1.tar.gz",
+  "archive_sha256": "14725365ce411c488613fb6409befb369e3154284279c470e11bb23cf810b914",
+  "archive_bytes": 350631,
+  "archive_mode": "0o600",
+  "members_sha256": {
+    "authorization-template.json": "c3aac6bd769046016140436306c9401ab286c9e1647a7ca893e8670e833d32ad",
+    "authorization.json": "5b7696f081960eeec59a474e9cb85c755c2dde2ab765aa55303aa36605b75809",
+    "execution-started.json": "fff4cdf5452ce7737a6618f704d829e8a806c89cdb87d2799daa4e2ad097e8c2",
+    "memory.sqlite3": "38837354fa892a68eae976372308e3f144e62cdae0a2e014c81ba29ac67f0869",
+    "memory.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "memory.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "outcome.json": "22b0871c0fc3885d5414659a245f327a891bbd506818a2b37feb0e56196409dd",
+    "physical-requests.sqlite3": "53528a6dbb04f86651aa170cb8b2cc73232fae56ba3af715deef6079b4471459",
+    "plan.json": "ca0b07d1633a5fb178bb9cec7061fa9ae453b8428c184ae6a2754c7931cc7425",
+    "settings.json": "830bb4879747d32c16df0fc59a4cd87641c29a96c295f1eaec911a8ebd7146e7",
+    "terminal-audit.json": "18e8b9d61a7b14e6904b282f4e8fb4025182065187aab2fee7e9f7714d2d9e80"
+  },
+  "members": 11,
+  "readback_passed": true,
+  "standalone_sqlite_backups_logically_equal": true,
+  "terminal_reexecution_rejected_before_request": true,
+  "original_terminal_database_and_ledger_unchanged": true,
+  "excluded_files": [
+    "live-process-output.txt"
+  ],
+  "private_process_output_read": false,
+  "provider_requests_added": 0,
+  "holdout_qa_read": false,
+  "main_database_immutable_reads_match_terminal_snapshots": true
+}

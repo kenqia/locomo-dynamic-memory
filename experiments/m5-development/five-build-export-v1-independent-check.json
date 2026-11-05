@@ -1,0 +1,13 @@
+{
+  "reviewer": "root, non-author of complete_export_copy.py",
+  "status": "passed",
+  "strict_roundtrips": 5,
+  "export_sha256s_match": true,
+  "original_relation_full_audit_equal": true,
+  "source_development_ledger_and_copy_logical_snapshots_match": true,
+  "historical_lineage_recomputed": true,
+  "script_sha256": "4dc064e11d4d174fd21f7037379a3382b10d85b6a218e58afd0c7c0445a8a071",
+  "report_sha256": "ba90a8cb4d5389fd18367da245b573d1876c101dac58ad04ce84603b9c284bd9",
+  "provider_requests": 0,
+  "holdout_qa_evidence_answers_read": false
+}

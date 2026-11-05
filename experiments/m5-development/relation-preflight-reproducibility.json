@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "exact_repeat_equal": true,
+  "database_unchanged": true,
+  "database_sha256": "635edc67fd6fbcda3167a0e9e7fe9f546d1998f29b33fdb853051a62eb21ac0d",
+  "script_sha256": "57c0ad265a28f73e295328c65a81d7cadf09a39f99149b414984c90664cf572f",
+  "original_artifact_sha256": "222a23b77c720f1650b596f8ae9fa73bb7dc58928cebc48aa6e8b13e6484b7c2",
+  "repeated_artifact_sha256": "222a23b77c720f1650b596f8ae9fa73bb7dc58928cebc48aa6e8b13e6484b7c2",
+  "provider_requests": 0,
+  "holdout_qa_read": false
+}

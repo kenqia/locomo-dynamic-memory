@@ -1,0 +1,65 @@
+.F....                                                                   [100%]
+=================================== FAILURES ===================================
+_________ test_recovery_retains_failure_and_caps_new_requests_at_three _________
+
+prepared = (PosixPath('/tmp/pytest-of-kenqia/pytest-27/test_recovery_retains_failure_0/stage'), PosixPath('/tmp/pytest-of-kenqia/pytest-27/test_recovery_retains_failure_0/recovery'))
+
+    def test_recovery_retains_failure_and_caps_new_requests_at_three(prepared):
+        stage, output = prepared
+        before = count(stage/'physical-requests.sqlite3')
+        authorize(output)
+        with pytest.raises(RuntimeError, match='no_automatic_retry'):
+            recovery.execute(output, httpx.MockTransport(lambda r: completion({'memories': []})))
+        assert count(stage/'physical-requests.sqlite3') == before+3
+        assert count(output/'recovery-reservations.sqlite3') == 3
+        assert json.loads((output/'outcome.json').read_text())['outcome']['status'] == 'failed'
+        with pytest.raises(FileExistsError):
+>           recovery.execute(output, httpx.MockTransport(lambda r: pytest.fail('repeat provider call')))
+
+tests/test_m5_extraction_recovery.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+output = PosixPath('/tmp/pytest-of-kenqia/pytest-27/test_recovery_retains_failure_0/recovery')
+delegate = <httpx.MockTransport object at 0x7da838f77d10>
+
+    def execute(output, delegate=None):
+        """Caller must have explicit user approval; delegate injection is for offline tests."""
+        plan = json.loads((output/'plan.json').read_text())
+        expected = dict(approved=True, scope=SCOPE, build_id=BUILD, fragment_ordinal=ORDINAL,
+            max_additional_requests=3, max_additional_reserved_usd=LIMIT_USD,
+            plan_sha256=sha(output/'plan.json'))
+        if json.loads((output/'authorization.json').read_text()) != expected:
+            raise ValueError('recovery_authorization_mismatch')
+        if (plan['status'] != 'prepared_not_authorized' or plan['scope'] != SCOPE
+                or plan['build_id'] != BUILD or plan['fragment_ordinal'] != ORDINAL
+                or plan['max_additional_requests'] != 3
+                or plan['max_additional_reserved_usd'] != LIMIT_USD
+                or plan['original_global_policy'] != POLICY
+                or plan['script_sha256'] != sha(Path(__file__))):
+            raise ValueError('recovery_plan_changed')
+        stage = Path(plan['stage']).resolve()
+        settings = check_stage(stage)
+        if (sha(stage/'plan.json') != plan['original_plan_sha256']
+                or sha(stage/'settings.json') != plan['settings_sha256']):
+            raise ValueError('recovery_original_identity_changed')
+        # Share the backend's exclusive owner lock. Never infer death from a file.
+        with backend_ownership(settings.db_path):
+            if (snapshot(settings.db_path) != plan['original_database_snapshot']
+                    or snapshot(stage/'physical-requests.sqlite3') != plan['original_ledger_snapshot']):
+>               raise ValueError('recovery_snapshot_changed')
+E               ValueError: recovery_snapshot_changed
+
+tools/m5/extraction_recovery.py:104: ValueError
+---------------------------- Captured stdout setup -----------------------------
+{"status": "prepared_not_authorized", "scope": "retry one conv-44 extraction fragment; no index/relation/publish/QA", "provider_requests": 0}
+----------------------------- Captured stdout call -----------------------------
+{"build_id": "13c5d0381962424492f783169622c044", "status": "failed", "phase": "extraction", "progress": {"total": 2, "succeeded": 1, "failed": 1, "pending": 0}}
+=============================== warnings summary ===============================
+../../locomo-dynamic-memory/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/kenqia/my_folder/locomo-dynamic-memory/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_m5_extraction_recovery.py::test_recovery_retains_failure_and_caps_new_requests_at_three
+1 failed, 5 passed, 1 warning in 4.24s

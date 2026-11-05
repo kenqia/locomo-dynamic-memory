@@ -1,0 +1,268 @@
+{
+  "status": "generation_scored_and_independent_ai_source_review_complete",
+  "plan_sha256": "e7caed32203c567f5fb3ee7fb3a10250400a6da9a9ad453dbfb101eb4f03cf76",
+  "generation_freeze_sha256": "dcd66b1d704b2c8765750afc600002f4a34e9ecf9ff9dc2cdfac7d6cf0bde5a5",
+  "items": 200,
+  "succeeded": 151,
+  "failed": 49,
+  "physical_requests": 421,
+  "reserved_usd": "19.3089549",
+  "reported_usage_peak_cache_miss_upper_usd": "1.1698209",
+  "actual_invoice": "not_accessed",
+  "unknown_usage_requests": 0,
+  "ordinary_scores": {
+    "ordinary/hybrid_no_resolution": {
+      "planned": 80,
+      "scorable": 80,
+      "succeeded": 80,
+      "all_scorable_failure_zero_mean": 0.3998827870755096,
+      "successful_only_mean": 0.3998827870755096
+    },
+    "ordinary/dynamic": {
+      "planned": 80,
+      "scorable": 80,
+      "succeeded": 41,
+      "all_scorable_failure_zero_mean": 0.22832948647686496,
+      "successful_only_mean": 0.44552094922315116
+    },
+    "diagnostic/hybrid_no_resolution": {
+      "planned": 20,
+      "scorable": 20,
+      "succeeded": 20,
+      "all_scorable_failure_zero_mean": 0.45650252525252527,
+      "successful_only_mean": 0.45650252525252527
+    },
+    "diagnostic/dynamic": {
+      "planned": 20,
+      "scorable": 20,
+      "succeeded": 10,
+      "all_scorable_failure_zero_mean": 0.2933021541950113,
+      "successful_only_mean": 0.5866043083900226
+    }
+  },
+  "paired_comparisons": {
+    "ordinary": {
+      "overall": {
+        "mean": -0.17155330059864465,
+        "bootstrap95": [
+          -0.2567276710554164,
+          -0.09283300460041861
+        ],
+        "improved": 17,
+        "regressed": 35,
+        "unchanged": 28,
+        "denominator": 80,
+        "scope": "exploratory paired question bootstrap; four exposed conversations"
+      },
+      "per_conversation": {
+        "conv-26": {
+          "mean": -0.022473355996484153,
+          "bootstrap95": [
+            -0.18948670763728584,
+            0.12422259204536627
+          ],
+          "improved": 7,
+          "regressed": 6,
+          "unchanged": 7,
+          "denominator": 20,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "conv-30": {
+          "mean": -0.3673648835045894,
+          "bootstrap95": [
+            -0.5320131800416728,
+            -0.20077037486780155
+          ],
+          "improved": 3,
+          "regressed": 13,
+          "unchanged": 4,
+          "denominator": 20,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "conv-41": {
+          "mean": -0.3116402116402116,
+          "bootstrap95": [
+            -0.48009259259259257,
+            -0.15830191798941817
+          ],
+          "improved": 0,
+          "regressed": 12,
+          "unchanged": 8,
+          "denominator": 20,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "conv-42": {
+          "mean": 0.015265248746706548,
+          "bootstrap95": [
+            -0.10319553865429824,
+            0.11650864318439445
+          ],
+          "improved": 7,
+          "regressed": 4,
+          "unchanged": 9,
+          "denominator": 20,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      },
+      "per_category": {
+        "1": {
+          "mean": -0.1081149651002592,
+          "bootstrap95": [
+            -0.307422239729225,
+            0.07511385469106027
+          ],
+          "improved": 2,
+          "regressed": 6,
+          "unchanged": 6,
+          "denominator": 14,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "2": {
+          "mean": -0.2886335886335886,
+          "bootstrap95": [
+            -0.481327086656034,
+            -0.10912746610115029
+          ],
+          "improved": 4,
+          "regressed": 11,
+          "unchanged": 4,
+          "denominator": 19,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "3": {
+          "mean": -0.10256410256410257,
+          "bootstrap95": [
+            -0.3076923076923077,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 1,
+          "unchanged": 2,
+          "denominator": 3,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "4": {
+          "mean": -0.14588463738085114,
+          "bootstrap95": [
+            -0.2570769667518607,
+            -0.032153531369534166
+          ],
+          "improved": 11,
+          "regressed": 17,
+          "unchanged": 16,
+          "denominator": 44,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      }
+    },
+    "diagnostic": {
+      "overall": {
+        "mean": -0.16320037105751392,
+        "bootstrap95": [
+          -0.36501917130488565,
+          0.028623299319727874
+        ],
+        "improved": 4,
+        "regressed": 7,
+        "unchanged": 9,
+        "denominator": 20,
+        "scope": "exploratory paired question bootstrap; four exposed conversations"
+      },
+      "per_conversation": {
+        "conv-26": {
+          "mean": -0.25306122448979596,
+          "bootstrap95": [
+            -0.653061224489796,
+            0.027210884353741492
+          ],
+          "improved": 1,
+          "regressed": 2,
+          "unchanged": 2,
+          "denominator": 5,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "conv-30": {
+          "mean": -0.2,
+          "bootstrap95": [
+            -0.6,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 1,
+          "unchanged": 4,
+          "denominator": 5,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "conv-41": {
+          "mean": -0.15974025974025974,
+          "bootstrap95": [
+            -0.6727272727272727,
+            0.36753246753246754
+          ],
+          "improved": 2,
+          "regressed": 3,
+          "unchanged": 0,
+          "denominator": 5,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "conv-42": {
+          "mean": -0.04,
+          "bootstrap95": [
+            -0.3,
+            0.18
+          ],
+          "improved": 1,
+          "regressed": 1,
+          "unchanged": 3,
+          "denominator": 5,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      },
+      "per_category": {
+        "1": {
+          "mean": -0.1380952380952381,
+          "bootstrap95": [
+            -0.4464285714285714,
+            0.14049107142857134
+          ],
+          "improved": 2,
+          "regressed": 3,
+          "unchanged": 3,
+          "denominator": 8,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "2": {
+          "mean": -0.1799371263656978,
+          "bootstrap95": [
+            -0.44696969696969696,
+            0.05869923727066584
+          ],
+          "improved": 2,
+          "regressed": 4,
+          "unchanged": 6,
+          "denominator": 12,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      }
+    }
+  },
+  "terminal_integrity": {
+    "initial_logical_snapshot_reconstructed": true,
+    "protected_snapshot_sha256": "e22f6b8189465755291391b972ffbbd7c3b41e8231759d19746a787c52914714",
+    "build_source_memory_relation_projection_index_unchanged": true,
+    "development_conversations": 4,
+    "complete_builds": 4,
+    "query_table_counts": {
+      "candidate_queries": 200,
+      "candidate_expansions": 200,
+      "query_traces": 100
+    },
+    "dynamic_trace_checkpoints_verified": 100,
+    "evaluation_tables_empty": true,
+    "no_source_database_opened": true
+  },
+  "semantic_review": "level-c-results-v1/semantic-review-summary.json",
+  "holdout_qa_read": false,
+  "bonus_enabled": false,
+  "automatic_recovery": false
+}

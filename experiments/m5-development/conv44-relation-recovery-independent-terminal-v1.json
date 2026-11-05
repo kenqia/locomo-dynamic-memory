@@ -1,0 +1,106 @@
+{
+  "version": "m5-conv44-relation-recovery-independent-terminal-v1",
+  "checked_utc": "2026-11-04T16:55:42.247694+00:00",
+  "status": "passed_failed_terminal_not_complete",
+  "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+  "build_status": "relations_failed",
+  "checks": {
+    "explicit_process_termination_and_exact_authorized_identity": true,
+    "original_facts_indexes_success_tasks_attempts_relations_and_calls_preserved": true,
+    "new_logical2_tasks_provider_metadata_and_global_calls_close_exactly": true,
+    "strict_all_relations_complete_task_coverage_and_projection_recomputation": true,
+    "new_ledger_full_output_reservation_unknown_retention_and_saved_outcome": true,
+    "root_terminal_agreement_repeat_entry_zero_dispatch_and_final_immutability": true
+  },
+  "plan_sha256": "82251c43a541f86a089dd649337930c501dcb00717debeb6786651f04b93529b",
+  "preparation_artifact_sha256": "18a366ad8eabc029f1a4fc633cab13dd5ce92bc5765074d4f9e9be7f399ab10f",
+  "script_sha256": "77cc554f9ebc94c70cb2f0f1e4674aeffdd3b659efaf997dcc5740371ac5120a",
+  "audit_script_sha256": "9632b46dbb2fe56a54a9f8bcc2ca77a2be83930be749d6258d47dc287ade8ceb",
+  "root_terminal_sha256": "c6d816a97c3f4a44743f977f9a5f2ad4223eccb72b624c5accb9994b7fcba8be",
+  "source_terminal_sha256": "ece3ef725c0bd56679809280fd9c764ed64d14197a0898cc16e5d151893ee79d",
+  "source_identity": {
+    "database": "bf747f0dba9575cf7c3d98328cfa550eab80d9b32a6304d6c9bc68553dde7f8a",
+    "ledger": "aa3fedecccb9d5f292665c44f534d26cd359732e98e35fbccff6d571d0c9bd0a",
+    "plan": "0920823b2c04d5d632df481df24ca60348b182fc760da8bb3a28f02cc5eb94cf",
+    "settings": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e"
+  },
+  "authorization_sha256": "b45a5685e984522c90f0d80924f654ff498cf481bfd72ca4dcd24a88becb0d80",
+  "execution_marker_sha256": "6d3d35c03aa9b2f564b2f4073de090d118894a34fd2add2913dd27d15a1b5756",
+  "outcome_sha256": "6272ba9dc884844bfebaaea1d688b39d60161f74fc9d1282cba60b87f1a6fef9",
+  "final_database_logical_snapshot": "aa2f5984709a3702e9e9de0a4c651b14b0c9f0fb61feb007a841a4de21f5b9ca",
+  "final_ledger_logical_snapshot": "bd2244d24c7b876f135940f17dc452e79b677c7781bf0aa2ff78dda8e18a02cf",
+  "task_identity_sha256": "4deafd6608923998538cffc0c04183fc62ef301b92422d9c573a3696443d6d7a",
+  "relation_tasks": {
+    "succeeded": 383,
+    "failed": 1
+  },
+  "original_success_tasks_preserved": 374,
+  "original_logical_attempts_preserved": 384,
+  "original_provider_calls_preserved": 417,
+  "original_relations_preserved": 6973,
+  "original_metadata_calls_prefix_preserved": 418,
+  "new_logical_attempts": 10,
+  "new_relations": 141,
+  "stored_relations": 7114,
+  "relation_labels": {
+    "undetermined": 6906,
+    "UPDATE": 95,
+    "RETAIN": 106,
+    "SUPERSEDE": 5,
+    "CONFLICT": 2
+  },
+  "new_relation_labels": {
+    "undetermined": 137,
+    "UPDATE": 4
+  },
+  "new_call_outcomes": {
+    "succeeded": 9,
+    "invalid_output": 3
+  },
+  "physical_requests": 12,
+  "reserved_usd": "0.5913375",
+  "reported_tokens": {
+    "prompt_tokens": 121592,
+    "completion_tokens": 24953,
+    "total_tokens": 146545
+  },
+  "known_usage_peak_upper_usd": "0.0664212",
+  "unknown_usage_requests": 0,
+  "unknown_reserved_usd": "0",
+  "request_statuses": {
+    "response_received": 12
+  },
+  "max_requests": 30,
+  "max_reserved_usd": "2.6196480",
+  "requested_model": "deepseek-flash",
+  "returned_models": [
+    "deepseek-flash"
+  ],
+  "immutable_model_pin": false,
+  "thinking": "disabled",
+  "reasoning_effort_sent": false,
+  "strict_all_relation_schemas_endpoints_and_task_coverage_verified": true,
+  "projection_recomputed_exactly": false,
+  "projection_fingerprint": null,
+  "projection_counts": {},
+  "input_contract_version": "relation-full-endpoint-source-ids-v1",
+  "mixed_relation_input_producers": true,
+  "wire_contract_in_build_fingerprint": false,
+  "old_budget_transferred": false,
+  "repeat_execute_rejected": true,
+  "mock_provider_calls": 0,
+  "conversation_text_reviewed_or_emitted": false,
+  "holdout_qa_evidence_answers_read": false,
+  "credentials_accessed": false,
+  "raw_provider_logs_read": false,
+  "new_live_requests_by_reviewer": 0,
+  "encoder_reloaded_or_reencoded": false,
+  "wire_messages_reconstructed": false,
+  "relation_semantic_accuracy": "not_evaluated; schema/source substring checks only",
+  "actual_invoice": "not_accessed",
+  "published": false,
+  "complete_build": false,
+  "sixth_strict_export_complete": false,
+  "level_e_executed": false
+}

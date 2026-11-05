@@ -1,0 +1,118 @@
+{
+  "version": "m5-conv44-relation-successor-independent-terminal-v1",
+  "checked_utc": "2026-11-05T02:15:12.238358+00:00",
+  "status": "passed_related_not_complete",
+  "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+  "build_status": "related",
+  "checks": {
+    "explicit_process_termination_and_exact_authorized_identity": true,
+    "original_facts_indexes_success_tasks_attempts_relations_and_calls_preserved": true,
+    "new_logical3_tasks_provider_metadata_and_global_calls_close_exactly": true,
+    "strict_all_relations_complete_task_coverage_and_projection_recomputation": true,
+    "new_ledger_full_output_reservation_unknown_retention_and_saved_outcome": true,
+    "root_terminal_agreement_repeat_entry_zero_dispatch_and_final_immutability": true
+  },
+  "plan_sha256": "699934d373556a353f837322322931cd8aec3adc76b87feada2c97a5fb9bd8a4",
+  "preparation_artifact_sha256": "32565c063892a0392fecd293cfc9a96e30b7f199cf8d473ea9ad985bbc39583b",
+  "script_sha256": "6afe3fb5a1094b4cb521fa6f05bcc3fa9d75a6173ec4fee46a28a8f375687464",
+  "audit_script_sha256": "d09d8994b9d717086ecbfa3222ac7f31ab3c79e1ec72f73ced0cf9db3944b6c0",
+  "root_terminal_sha256": "24e09a0f75418be112a23d042c13cbfd1e42fed2338db1bb67a08951e78f030f",
+  "source_terminal_sha256": "c6d816a97c3f4a44743f977f9a5f2ad4223eccb72b624c5accb9994b7fcba8be",
+  "source_identity": {
+    "database": "aa2f5984709a3702e9e9de0a4c651b14b0c9f0fb61feb007a841a4de21f5b9ca",
+    "ledger": "bd2244d24c7b876f135940f17dc452e79b677c7781bf0aa2ff78dda8e18a02cf",
+    "plan": "82251c43a541f86a089dd649337930c501dcb00717debeb6786651f04b93529b",
+    "settings": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e"
+  },
+  "ancestor_identity": {
+    "database": "bf747f0dba9575cf7c3d98328cfa550eab80d9b32a6304d6c9bc68553dde7f8a",
+    "ledger": "aa3fedecccb9d5f292665c44f534d26cd359732e98e35fbccff6d571d0c9bd0a",
+    "plan": "0920823b2c04d5d632df481df24ca60348b182fc760da8bb3a28f02cc5eb94cf",
+    "settings": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e"
+  },
+  "authorization_sha256": "494a9075ea5e386823992f3f602035dd40e6b9c74245928bf8f31596ae403c2f",
+  "execution_marker_sha256": "0d3d52b7d531dff35801512c875a3551e632fc86330423762f40d13158f9ff09",
+  "outcome_sha256": "4773185996b031477973a80e7699d288e9b6020f4c96589c12de75b9a928246b",
+  "final_database_logical_snapshot": "e44a48d165665d5965b7ccc0af0d2558a98f9387c9cf2573d3653802175e60d3",
+  "final_ledger_logical_snapshot": "ab8fad0598948514b226fff8cb0b366efcf472e8730e4836d15083a1a1668398",
+  "task_identity_sha256": "4deafd6608923998538cffc0c04183fc62ef301b92422d9c573a3696443d6d7a",
+  "relation_tasks": {
+    "succeeded": 384
+  },
+  "original_success_tasks_preserved": 383,
+  "original_logical_attempts_preserved": 394,
+  "original_provider_calls_preserved": 429,
+  "original_relations_preserved": 7114,
+  "original_metadata_calls_prefix_preserved": 430,
+  "new_logical_attempts": 1,
+  "new_relations": 20,
+  "stored_relations": 7134,
+  "relation_labels": {
+    "undetermined": 6925,
+    "UPDATE": 95,
+    "RETAIN": 107,
+    "SUPERSEDE": 5,
+    "CONFLICT": 2
+  },
+  "new_relation_labels": {
+    "RETAIN": 1,
+    "undetermined": 19
+  },
+  "new_call_outcomes": {
+    "succeeded": 1
+  },
+  "physical_requests": 1,
+  "reserved_usd": "0.0537564",
+  "reported_tokens": {
+    "prompt_tokens": 14745,
+    "completion_tokens": 2368,
+    "total_tokens": 17113
+  },
+  "known_usage_peak_upper_usd": "0.0072651",
+  "unknown_usage_requests": 0,
+  "unknown_reserved_usd": "0",
+  "request_statuses": {
+    "response_received": 1
+  },
+  "max_requests": 3,
+  "max_reserved_usd": "0.2619648",
+  "requested_model": "deepseek-flash",
+  "returned_models": [
+    "deepseek-flash"
+  ],
+  "immutable_model_pin": false,
+  "thinking": "disabled",
+  "reasoning_effort_sent": false,
+  "strict_all_relation_schemas_endpoints_and_task_coverage_verified": true,
+  "projection_recomputed_exactly": true,
+  "projection_fingerprint": "6fe8d3db8ecf077bacca3a5bacdbc24ccb9ea5301dd3a85eac85ebd89e5ee465",
+  "projection_counts": {
+    "current_states": 200,
+    "historical_states": 0,
+    "events": 108,
+    "nonfactual": 84,
+    "conflicts": 0,
+    "conditional_relations": 100
+  },
+  "input_contract_version": "relation-endpoint-label-prerequisites-v1",
+  "mixed_relation_input_producers": true,
+  "wire_contract_in_build_fingerprint": false,
+  "old_budget_transferred": false,
+  "repeat_execute_rejected": true,
+  "mock_provider_calls": 0,
+  "conversation_text_reviewed_or_emitted": false,
+  "holdout_qa_evidence_answers_read": false,
+  "credentials_accessed": false,
+  "raw_provider_logs_read": false,
+  "new_live_requests_by_reviewer": 0,
+  "encoder_reloaded_or_reencoded": false,
+  "wire_messages_reconstructed": false,
+  "relation_semantic_accuracy": "not_evaluated; schema/source substring checks only",
+  "actual_invoice": "not_accessed",
+  "published": false,
+  "complete_build": false,
+  "sixth_strict_export_complete": false,
+  "level_e_executed": false
+}

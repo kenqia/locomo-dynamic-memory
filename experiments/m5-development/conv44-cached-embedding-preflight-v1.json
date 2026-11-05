@@ -1,0 +1,18 @@
+{
+  "status": "cached_encoder_identity_verified",
+  "embedding": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "dimensions": 384,
+    "max_tokens": 256,
+    "length_policy": "reject",
+    "normalized": true,
+    "device": "cpu"
+  },
+  "wall_seconds": 4.4325649379970855,
+  "provider_requests": 0,
+  "network_disabled": true,
+  "credentials_loaded": false,
+  "build_mutations": 0,
+  "holdout_qa_read": false
+}

@@ -1,0 +1,234 @@
+{
+  "schema_version": "memory-export-v2",
+  "relation_contract_version": "relation-v2-stage-evidence",
+  "dataset": {
+    "dataset_id": "daa7e270462fb444c2cd76e4",
+    "source_sha256": "5bc8528dc2aa9405eb9935f489430900362815f2c02624a5f7cd4874cffcc997",
+    "version": "synthetic-v1",
+    "license": "CC0-1.0",
+    "conversation_count": 1,
+    "turn_count": 3
+  },
+  "build": {
+    "build_id": "2cc81c93ae4441239a929d9ba28b9268",
+    "dataset_id": "daa7e270462fb444c2cd76e4",
+    "sample_id": "conv-a",
+    "status": "complete",
+    "fingerprint": "0239267ad75451f97701d2fbff1c68c4d10aa0385896d2d21cd377b0589c1360",
+    "source_sha256": "5bc8528dc2aa9405eb9935f489430900362815f2c02624a5f7cd4874cffcc997",
+    "config": {
+      "db_path": "/tmp/locomo-release-fixture-79m3snor/memory.sqlite3",
+      "api_url": "http://127.0.0.1:8000",
+      "model_name": "deepseek-flash",
+      "model_base_url": "https://api.deepseek.com",
+      "model_timeout_seconds": 60.0,
+      "model_retries": 2,
+      "model_temperature": 0.0,
+      "model_max_tokens": 8192,
+      "relation_max_tokens": null,
+      "thinking_enabled": false,
+      "extraction_thinking_effort": "disabled",
+      "relation_thinking_effort": "high",
+      "query_analysis_thinking_effort": "disabled",
+      "resolution_thinking_effort": "low",
+      "answer_thinking_effort": "disabled",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+      "embedding_dimensions": 384,
+      "embedding_local_files_only": true,
+      "embedding_max_tokens": 256,
+      "fragment_turns": 20,
+      "bm25_k": 20,
+      "dense_k": 20,
+      "initial_k": 1,
+      "rrf_constant": 60,
+      "expansion_max_candidates": 60,
+      "expansion_depth": 1,
+      "expansion_scan_limit": 200,
+      "relation_history_limit": 20,
+      "relation_same_key_fraction": 0.8,
+      "relation_fact_fraction": 0.5,
+      "candidate_token_budget": 12000,
+      "evidence_token_budget": 6000,
+      "raw_max_hits": 3,
+      "raw_neighbor_turns": 1,
+      "raw_max_turns": 9,
+      "raw_token_budget": 2000,
+      "resolution_input_budget": 24000
+    },
+    "prompt_version": "extract-v5-literal-time-grounding",
+    "schema_version": "memory-v1",
+    "created_at": "2026-11-05T10:50:10.773243+00:00",
+    "updated_at": "2026-11-05T10:50:11.071696+00:00"
+  },
+  "memories": [
+    {
+      "content": "Alex lives in Paris.",
+      "memory_type": "state",
+      "statement_type": "fact",
+      "polarity": "positive",
+      "entity_id": "Alex",
+      "state_dimension": "residence",
+      "state_value": "Paris",
+      "source_ids": [
+        "daa7e270462fb444c2cd76e4/conv-a/D1:1"
+      ],
+      "time": {
+        "original_expression": null,
+        "anchor_source_id": null,
+        "event_start": null,
+        "event_end": null,
+        "valid_from": null,
+        "valid_to": null,
+        "basis": null
+      },
+      "memory_id": "8d86a8c606e332ec894bbbc2",
+      "build_id": "2cc81c93ae4441239a929d9ba28b9268",
+      "dataset_id": "daa7e270462fb444c2cd76e4",
+      "sample_id": "conv-a",
+      "state_key": "conv-a:Alex:residence",
+      "session_times": [
+        "1:00 pm on 1 May, 2023"
+      ]
+    },
+    {
+      "content": "Alex lives in Rome.",
+      "memory_type": "state",
+      "statement_type": "fact",
+      "polarity": "positive",
+      "entity_id": "Alex",
+      "state_dimension": "residence",
+      "state_value": "Rome",
+      "source_ids": [
+        "daa7e270462fb444c2cd76e4/conv-a/D2:1"
+      ],
+      "time": {
+        "original_expression": null,
+        "anchor_source_id": null,
+        "event_start": null,
+        "event_end": null,
+        "valid_from": null,
+        "valid_to": null,
+        "basis": null
+      },
+      "memory_id": "9fa14d0b648833d199b36de0",
+      "build_id": "2cc81c93ae4441239a929d9ba28b9268",
+      "dataset_id": "daa7e270462fb444c2cd76e4",
+      "sample_id": "conv-a",
+      "state_key": "conv-a:Alex:residence",
+      "session_times": [
+        "1:00 pm on 2 May, 2023"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "daa7e270462fb444c2cd76e4/conv-a/D1:1",
+      "dataset_id": "daa7e270462fb444c2cd76e4",
+      "sample_id": "conv-a",
+      "session_id": "session_1",
+      "dia_id": "D1:1",
+      "speaker": "Alex",
+      "session_time": "1:00 pm on 1 May, 2023",
+      "text": "I live in Paris.",
+      "position": 0
+    },
+    {
+      "source_id": "daa7e270462fb444c2cd76e4/conv-a/D2:1",
+      "dataset_id": "daa7e270462fb444c2cd76e4",
+      "sample_id": "conv-a",
+      "session_id": "session_2",
+      "dia_id": "D2:1",
+      "speaker": "Alex",
+      "session_time": "1:00 pm on 2 May, 2023",
+      "text": "I moved from Paris to Rome on 2 May 2023.",
+      "position": 2
+    }
+  ],
+  "relations": [
+    {
+      "old_memory_id": "8d86a8c606e332ec894bbbc2",
+      "new_memory_id": "9fa14d0b648833d199b36de0",
+      "label": "SUPERSEDE",
+      "reason": "Explicit move",
+      "source_ids": [
+        "daa7e270462fb444c2cd76e4/conv-a/D1:1",
+        "daa7e270462fb444c2cd76e4/conv-a/D2:1"
+      ],
+      "support_quote": "I moved from Paris to Rome on 2 May 2023.",
+      "applicability": {
+        "from_date": "2023-05-02",
+        "to_date": null,
+        "condition": null,
+        "condition_satisfied": null,
+        "condition_source_ids": [],
+        "time_anchor_source_id": "daa7e270462fb444c2cd76e4/conv-a/D2:1",
+        "original_time_expression": "2 May 2023",
+        "time_basis": "Explicit source date"
+      },
+      "update_evidence": null,
+      "relation_id": "1d0aa741dd85daddc89670d8",
+      "build_id": "2cc81c93ae4441239a929d9ba28b9268"
+    }
+  ],
+  "projection": {
+    "build_id": "2cc81c93ae4441239a929d9ba28b9268",
+    "fingerprint": "275d4835036d1d359c3a0d191547a533c9fc9f6ce58c3d164b91fa43483efcab",
+    "projection_version": "current-state-v1",
+    "cutoff": "2023-05-02T13:00:00",
+    "cutoff_source_time": "1:00 pm on 2 May, 2023",
+    "current_states": [
+      {
+        "memory_id": "9fa14d0b648833d199b36de0",
+        "status": "last_known",
+        "reason": "Last known factual claim; unknown validity does not establish continuous truth",
+        "source_ids": [
+          "daa7e270462fb444c2cd76e4/conv-a/D2:1"
+        ],
+        "relation_ids": [
+          "1d0aa741dd85daddc89670d8"
+        ]
+      }
+    ],
+    "historical_states": [
+      {
+        "memory_id": "8d86a8c606e332ec894bbbc2",
+        "status": "superseded",
+        "reason": "Evidence-backed transition applies at the known cutoff; historical evidence retained",
+        "source_ids": [
+          "daa7e270462fb444c2cd76e4/conv-a/D1:1"
+        ],
+        "relation_ids": [
+          "1d0aa741dd85daddc89670d8"
+        ]
+      }
+    ],
+    "events": [],
+    "nonfactual": [],
+    "conflicts": [],
+    "conditional_relations": [],
+    "assumptions": [
+      "Cutoff is the selected conversation's last recorded session, not the host date",
+      "Session timestamps have no asserted timezone",
+      "Unknown validity is a last-known claim, not proof of continuous applicability",
+      "RETAIN is never inferred from absence of new messages"
+    ]
+  },
+  "index": {
+    "build_id": "2cc81c93ae4441239a929d9ba28b9268",
+    "status": "ready",
+    "fingerprint": "5ac46af0b46fd745b580e61c8a56cdbeff0752ae81f995a188abb9629c8f07fb",
+    "build_fingerprint": "0239267ad75451f97701d2fbff1c68c4d10aa0385896d2d21cd377b0589c1360",
+    "memory_count": 2,
+    "embedding": {
+      "model": "controlled-test",
+      "revision": "fixture-v1",
+      "dimensions": 384,
+      "max_tokens": 256,
+      "length_policy": "reject",
+      "normalized": true,
+      "device": "test"
+    },
+    "text_schema_version": "entity-dimension-value-content-v1"
+  }
+}

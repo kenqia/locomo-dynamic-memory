@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "builds": [
+    {
+      "sample_id": "conv-26",
+      "api_export_sha": "PASS",
+      "ui_selection_metrics": "PASS",
+      "source_endpoint": "PASS",
+      "no_provider_database_network": "PASS"
+    },
+    {
+      "sample_id": "conv-30",
+      "api_export_sha": "PASS",
+      "ui_selection_metrics": "PASS",
+      "source_endpoint": "PASS",
+      "no_provider_database_network": "PASS"
+    },
+    {
+      "sample_id": "conv-41",
+      "api_export_sha": "PASS",
+      "ui_selection_metrics": "PASS",
+      "source_endpoint": "PASS",
+      "no_provider_database_network": "PASS"
+    },
+    {
+      "sample_id": "conv-42",
+      "api_export_sha": "PASS",
+      "ui_selection_metrics": "PASS",
+      "source_endpoint": "PASS",
+      "no_provider_database_network": "PASS"
+    },
+    {
+      "sample_id": "conv-43",
+      "api_export_sha": "PASS",
+      "ui_selection_metrics": "PASS",
+      "source_endpoint": "PASS",
+      "no_provider_database_network": "PASS"
+    },
+    {
+      "sample_id": "conv-44",
+      "api_export_sha": "PASS",
+      "ui_selection_metrics": "PASS",
+      "source_endpoint": "PASS",
+      "no_provider_database_network": "PASS"
+    }
+  ],
+  "provider_requests": 0,
+  "private_text_in_report": false
+}

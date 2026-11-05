@@ -5,6 +5,8 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationInfo, field_validator, model_validator
 
+from .diagnostics import domain_error
+
 
 class TemporalInfo(BaseModel):
     model_config = ConfigDict(extra="forbid")
@@ -58,10 +60,10 @@ class MemoryDraft(BaseModel):
             anchor = self.time.anchor_source_id
             if anchor is not None:
                 if anchor not in self.source_ids:
-                    raise ValueError("Time anchor must be one of the cited sources")
+                    raise domain_error("extraction_time_anchor_cited")
                 expression = self.time.original_expression
                 if expression and expression.casefold() not in sources[anchor]["text"].casefold():
-                    raise ValueError("Original time expression is absent from anchor text")
+                    raise domain_error("extraction_time_expression_required")
         return self
 
 

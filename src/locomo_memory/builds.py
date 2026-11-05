@@ -68,6 +68,7 @@ class BuildService:
             "source": source_sha256, "sample_id": sample_id, "settings": self.settings.snapshot(),
             "prompt": model_contract.EXTRACTION_PROMPT,
             "prompt_version": model_contract.EXTRACTION_PROMPT_VERSION,
+            "validation_retry_feedback_version": model_contract.VALIDATION_RETRY_FEEDBACK_VERSION,
             "schema": ExtractionBatch.model_json_schema(), "schema_version": model_contract.MEMORY_SCHEMA_VERSION,
             "relation_prompt": model_contract.RELATION_PROMPT,
             "relation_prompt_version": model_contract.RELATION_PROMPT_VERSION,

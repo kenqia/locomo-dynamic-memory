@@ -1,0 +1,32 @@
+{
+  "dataset_id": "610b0aa9bfd787ff0882a806",
+  "sources": {
+    "conv-43": {
+      "snapshot_sha256": "37fa70816f31f6987539aca3eaab472122072eb67c3a91f2d553cefff1f0b9b2",
+      "turns": 680,
+      "fragments": 34,
+      "qa_read": false
+    },
+    "conv-44": {
+      "snapshot_sha256": "bb335a65249fff834dbcb54467bc911f67e045db1da8aff9398915d1e53c289b",
+      "turns": 675,
+      "fragments": 34,
+      "qa_read": false
+    }
+  },
+  "policy": {
+    "max_requests": 204,
+    "max_usd": "18",
+    "model": "deepseek-flash",
+    "input_usd_per_million": ".30",
+    "output_usd_per_million": "1.20",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768
+  },
+  "status": "prepared_not_authorized",
+  "scope": "extract only; no index/relation/publish/QA",
+  "upper_usd": "17.8136064",
+  "request_bound": "68 fragments * 3 attempts = 204",
+  "authorization_required": true,
+  "code_stage": "M5 extraction-only proposal"
+}

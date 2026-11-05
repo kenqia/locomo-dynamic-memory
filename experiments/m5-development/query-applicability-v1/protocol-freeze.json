@@ -1,0 +1,9 @@
+{
+  "protocol_sha256": "c4cd5809c7f45112c815bb174b7be80f07e69af4389e7a83f75274a5feb5cb02",
+  "scorer_sha256": "4b94e966cfef8e7c5b6e78684655d69b6d19925e2a6dae9ac022c3c84940fde9",
+  "script_sha256": "57e3b952ab94eed08e466426590ca2fa153789a72677019f7c571c20764e1a7d",
+  "clarification": "Review full selected-Memory plus source packet; source-only fact recovery is not Memory text preservation",
+  "source_packet_clarification_shared_with_both_reviewers": true,
+  "reference_files_not_yet_complete": true,
+  "new_provider_requests": 0
+}

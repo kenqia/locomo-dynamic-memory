@@ -19,7 +19,7 @@ cp config.example.toml /tmp/locomo-local.toml
 export LOCOMO_CONFIG=/tmp/locomo-local.toml
 ```
 
-配置字段由 `src/locomo_memory/config.py` 校验；未知字段被拒绝。生成模型固定使用官方 Base URL `https://api.deepseek.com` 并关闭思考，不能通过普通配置改向其他服务或开启思考。`db_path` 相对启动目录解析。示例也列出后续模型与检索预算，来源导入不调用模型；显式发起构建、候选问题分析和完整版本问答会调用生成模型。`api_url` 不接受 URL 用户信息（用户名或密码）及查询参数，避免凭据进入配置快照；校验错误也隐藏被拒绝的 URL。配置文件不接受 API key；不要将凭据写入示例、配置、JSON 导入内容或仓库。
+配置字段由 `src/locomo_memory/config.py` 校验；未知字段被拒绝。生成模型固定使用官方 Base URL `https://api.deepseek.com`，不能通过普通配置改向其他服务。思考按阶段配置：关系默认 `high`、解析默认 `low`，抽取、查询分析和回答默认 `disabled`；`thinking_enabled=false` 仅保留旧配置兼容，实际请求由阶段字段决定。`db_path` 相对启动目录解析。示例也列出后续模型与检索预算，来源导入不调用模型；显式发起构建、候选问题分析和完整版本问答会调用生成模型。`api_url` 不接受 URL 用户信息（用户名或密码）及查询参数，避免凭据进入配置快照；校验错误也隐藏被拒绝的 URL。配置文件不接受 API key；不要将凭据写入示例、配置、JSON 导入内容或仓库。
 
 ## 启动应用
 
@@ -91,3 +91,11 @@ TDD 使用 FastAPI 测试客户端与 Pydantic 模型校验，参考 [FastAPI �
 完整 Chromium 集成复现、受控适配器范围、下载校验与真实模型未执行项见[Issue #12 验证记录](../../experiments/issue-12-integration-validation.md)。
 
 当前 CI 命令、浏览器独立环境准备与失败诊断步骤见[检查指南](checking.md)。浏览器脚本使用每次运行专属的应用环境，不再同步根目录 `.venv`。
+
+
+## Production Integration v1 的离线审查
+
+当前生产采用与回滚入口见[统一交付记录](../integration/production-v1/REPORT.md)。
+普通 Dynamic 的解析失败会保留失败 Trace，不自动切换原文策略。
+需要原文兜底时，在 API 或 UI 显式选择 `dynamic_raw_fallback`。
+研究 SourceAnswerReader、选择性前文及复核没有默认 API/UI 入口。

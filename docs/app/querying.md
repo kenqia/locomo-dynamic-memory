@@ -7,8 +7,8 @@
 先按[运行指南](running.md)启动服务，按[构建指南](building.md)、[检索指南](retrieval.md)和[历史状态指南](relations.md)完成抽取、索引、关系及完整版本发布。问答需要本地 Embedding 和受保护环境提供的 DeepSeek 凭据；不要把凭据写入配置、请求正文或仓库。
 
 1. 在页面选择完整构建版本。
-2. 在 **有效证据问答** 选择 **Dynamic** 或 **Dynamic + 原文兜底**，再输入英文问题。切换不会调用模型；默认以对话最后一次会话为已知截止时间，需要历史或未来日期时，勾选 **指定历史或未来日期** 并选择日期。
-3. 点击 **解析有效证据并回答**，检查证据支持、证据冲突或证据不足状态。
+2. 在 **问答策略** 选择 **Dynamic** 或 **Dynamic + 原文兜底**，再输入英文问题。默认是 **Dynamic**。切换不会调用模型；默认以对话最后一次会话为已知截止时间，需要历史或未来日期时，在 **指定日期，可留空** 输入 `YYYY-MM-DD`。
+3. 点击 **分析证据并回答**，检查证据支持、证据冲突或证据不足状态。
 4. 展开回答引用，查看实际来源英文原文。展开候选与有效集合，检查初始召回、历史扩展、选择和排除理由。
 5. 展开完整 Trace，检查固定版本、时间条件、关系条件、补充判断、截断、配置、模型调用和已报告 token 用量。
 
@@ -46,9 +46,32 @@
 
 解析选择后，按扩展候选的稳定顺序分配 `evidence_token_budget`。预算统计实际传给回答的 Memory 字段及对应来源文本，使用 `regex-word-punctuation-v1` 近似计数，不等于模型实际计费 token。放不下的 Memory 不传给回答；Trace 分别保留解析选择、实际送达集合、遗漏 ID 和截断原因。截断只表示交付集合不完整，不自动表示问题无法回答。回答模型根据实际交付证据判断充分性，允许将 `sufficient` 降为 `insufficient`；控制器已知的证据缺口、冲突和未来日期约束不得升级。无证据时仍强制不足，冲突仍须引用双方；混合查询中支持某子问的证据组未交付时，该子问明确记录不足。
 
+最终 RAG 回答预算使用 `unique-source-payload-v2`：按完整的 `memories` 与去重后的 `sources` 对象计量，包含 JSON 容器开销。同一原始轮次支持多条原子事实时，来源文本只计一次，事实仍分别交付。`evidence_budget.algorithm_version` 及查询指纹记录该策略。若 `conflict` 的选定证据无法全部放入，发送前返回 `conflict_evidence_budget_exceeded`，保存遗漏 ID、零次回答调用及预算诊断；不发送单边冲突，也不自动改变冲突状态。Full Text 继续完整交付原文，不受此 RAG 截断规则限制。
+
 回答只能引用实际送达的有效 Memory 及该 Memory 的来源。跨版本、跨对话、候选外或被排除的引用触发有限重试，仍无效则失败。`sufficient` 需要来源，`conflict` 需要双方引用；`insufficient` 不允许提升为确定状态。部分不足时保留已支持的事实及其引用。
 
 Trace 保存实际配置、查询提示词/schema 指纹、索引与投影身份、关系证据摘要指纹、阶段耗时、模型调用和 provider 已报告用量。缺少 provider 用量的调用单独计数，不能把已报告 token 合计当作完整费用。Trace 不保存凭据、原始 provider 响应或隐藏推理。
+
+解析提示词版本 `resolve-v2-explicit-existing-contract` 明确列出现有输出要求：对每个候选恰好作一个决定，所选 ID 与决定一致；补充关系若提供 `from_date` 或 `to_date`，同时提供 `time_anchor_source_id`、原文中的 `original_time_expression` 及 `time_basis`。不能为通过校验清除有来源支持的日期，也不能用问题日期或会话时间擅自补出真实转变日期。该版本不放宽事实、来源、时间或候选范围约束，不改变检索和扩展规模。
+
+解析候选遗漏、选择不一致、候选外端点、证据不足等失败现在分别记录固定的 `resolution_*_required` 诊断码，而非统一记为 `domain_constraint_failed`。诊断不包含未经验证的模型内容。历史通用错误缺少细节时仍保持未知，不能从新诊断追认旧失败的原因。独立两题可靠性验证见 [修复实验](../../experiments/resolution-contract-20261028/README.md)。
+
+回答阶段保留相同拒绝条件，使用下列固定诊断码。查询级错误仍为 `invalid_output`；具体原因读取 Trace 的 `operations.answer.calls` 中 `error_code`。原文兜底的模型操作名为 `answer_raw`，Trace 仍使用 `operations.answer`。这些模型级校验的 `field_path` 仍为 null，不推造字段位置。
+
+| 诊断码 | 含义 |
+|---|---|
+| `answer_nonblank_required` | 答案仅含空白 |
+| `answer_evidence_status_required` | 回答状态违反输入证据的不确定性约束 |
+| `answer_citations_required` | 充分或冲突回答缺少引用 |
+| `answer_raw_citation_scope_required` | 原文引用含未交付或重复来源 |
+| `answer_memory_citation_scope_required` | 引用了未交付 Memory、非该 Memory 来源或重复来源 |
+| `answer_conflict_sides_required` | 冲突回答未引用两个不同证据端点 |
+
+字段缺失、类型错误等继续记录 schema 诊断；其他未分类领域错误继续保留 `domain_constraint_failed`。诊断不保存无效答案正文、隐藏推理、Pydantic input/ctx 或异常文本；失败请求用量仍按原调用账本保留。JSON schema、Prompt、重试配置和证据规则未变；新增诊断不能反推历史通用错误的原因。离线验证与适用边界见[回答诊断记录](../../experiments/answer-diagnostics-20261029/README.md)。
+
+当前候选采用 `safe-validation-feedback-v2-budget-aware`，复用已授权的 `model_retries`，向解析和回答重试附带已知领域错误的固定码、已净化字段位置及静态说明。首次请求和现有校验条件保持原样；控制器不修改模型状态、时间或引用。未知错误不猜测原因，重试为 0 时仍只发送一次。完整反馈超过显式 `input_budget` 时，只保留错误码和字段位置，所有证据、Prompt/schema 和校验上下文保持不变。每次实际发送前仍检查上限；简短诊断也超限时返回 `input_budget_exceeded`，保留此前请求的诊断和用量，不产生新的 HTTP 请求。调用记录中的 `retry_feedback_mode` 区分 `full` 和 `diagnostic_only`，反馈版本进入查询指纹。受控测试只能验证反馈和计量路径，不能证明真实失败率降低；相比 v1，原本因完整反馈超限而停止的请求可能使用已有重试名额，因此总费用也需要重新验证。
+
+回答提示词 `evidence-answer-v8-event-boundaries`（混合原文路径为 `mixed-answer-v8-event-boundaries`）进一步要求：来源未证明同一具体过程时分别报告事件，不因人物、状态维度或职业相近而连接阶段；某日的报告不证明此后持续成立，未报告完成也不证明没有发生。约束同时适用于答案和解释。这是针对已复核越界的提示词候选，尚未通过新一轮真实输出盲审，不代表事件误连已经解决。
 
 ## 验证
 
@@ -81,7 +104,7 @@ Trace 仍记录 `omitted_previous_evidence`。这些结构约束不能自动证�
 查询在读取事务内核对来源清单及规范化正文摘要，不读取 QA、Observation 或 Session Summary。
 BM25 最多取3个中心，同 session 前后各1轮，去重后最多9轮；超长中心跳过，继续尝试后续匹配。
 完整原文及元信息受 `raw_token_budget=2000` 限制，并占共同 `evidence_token_budget=6000`。
-解析和回答的完整 messages 受 `resolution_input_budget=12000` 限制，包含 Prompt、schema 和载荷。
+解析和回答的完整 messages 受 `resolution_input_budget=24000` 限制，包含 Prompt、schema 和载荷。
 这些是 `regex-word-punctuation-v1` 近似单位，输出 `model_max_tokens=8192` 另计。
 
 Trace 分开记录首次解析、兜底触发理由、排名、窗口、省略、联合解析、有效来源、最终送达及引用。
@@ -136,3 +159,24 @@ Resolution 负责适用性、来源选择和各部分覆盖；Answer 按已解�
 不重新做关系推断。两个阶段均要求多项目问题列出所有已交付证据支持的不同项目，
 包括同一来源中的多个项目；保留人物归属、计划与事实、否定和部分答案约束。
 这些 Prompt 要求及合成示例不能代替真实模型语义验证。
+
+查询传输采用 `query-semantic-fields-v1`。控制器先固定 Build、对话和来源范围，保留完整对象供校验与 Trace 使用；发给解析及回答模型时，Memory 省略重复的 `build_id`、`dataset_id`、`sample_id`，来源省略 `dataset_id`、`sample_id`，关系省略 `build_id`。问题分析的调用账单元数据不作为模型证据发送。事实内容、所有来源 ID、原文、人物、会话位置与时间、极性、计划性质、状态维度和关系依据保留；未知扩展字段也保留。重试沿用同一精简规则。完整请求估算按实际传输对象计算，版本进入查询指纹及模型请求估算记录；该估算不等于 provider 计费 token。
+
+`query-semantic-fields-v2` 进一步省略输入证据中已知可选时间、适用条件字段的 `null` 值，以及未提供的 `support_quote`、`update_evidence`。省略表示未知或没有提供支持，不能推断持续有效、条件满足或同一事件。显式 `false`、实际日期、原始时间表达、引用和阶段证据全部保留；控制器仍使用完整对象校验。来源原文不压缩或截断。
+
+普通 Dynamic 解析使用 `complete-dynamic-input-v1-no-omission`，保留完整候选 Memory 和来源全文。默认 `resolution_input_budget=24000`（2026-11-01由12000提高一倍）；显式配置的旧值保持生效。完整 Prompt/schema/wire 超限时，在解析 HTTP 前返回422 `complete_resolution_input_budget_exceeded`，Trace保存全部候选ID、输入估算和未交付状态；此前分析阶段可能已经产生费用。解析不自动裁掉事实或扩充预算。重试逐次检查同一上限并保留失败用量。原文兜底继续使用独立的 `core-source-distinct-items-v4-raw-only` packing策略和省略审计，不能把它当成完整上下文。类型化引用、来源和时间校验保持严格。
+
+
+## Production Integration v1 的失败边界
+
+普通 `dynamic` 查询只执行问题分析、检索、历史扩展、完整输入解析和回答。
+解析在配置的有限重试后仍无效时，返回 `502 invalid_output` 并保存失败 Trace；
+不会自动切换 `dynamic_raw_fallback`、裁剪解析证据或启动研究 reader/复核。
+该执行策略以 `dynamic-complete-input-no-implicit-fallback-v2` 纳入查询指纹。
+完整输入超限仍返回 `422 complete_resolution_input_budget_exceeded`，不发送解析请求。
+
+需要原文兜底时，必须在请求或 UI 显式选择 `dynamic_raw_fallback`。
+该已有策略继续使用独立的 raw-only 预算和省略审计，不代表完整证据交付。
+历史 `strategy_recovery` Trace 继续可读、可展示，新的默认请求不生成此字段。
+研究接口、完整采用清单及运行回滚说明见
+[Production Integration v1](../integration/production-v1/REPORT.md)。

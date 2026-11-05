@@ -1,0 +1,46 @@
+{
+  "status": "prepared_not_authorized",
+  "proposal_version": "m5-level-c-input-v2",
+  "scope": "Level C input v2; fixed M5 development 80 ordinary + 20 diagnostic questions; Hybrid and Dynamic only; all thinking disabled; no holdout or Bonus",
+  "questions": 100,
+  "planned_items": 200,
+  "strata": {
+    "ordinary": 80,
+    "diagnostic": 20
+  },
+  "policy": {
+    "model": "deepseek-flash",
+    "input_usd_per_million": "0.30",
+    "output_usd_per_million": "1.20",
+    "max_input_bytes": 640000,
+    "max_output_tokens": 32768,
+    "max_requests": 1500,
+    "max_usd": "346.9824000"
+  },
+  "settings_sha256": "08af05ac9e8bf9555b628af8ed28d9739493693155faa7000f7f171119669ebb",
+  "inputs_sha256": "0816f9f2f60acc068a7a6bf3562c603db6545ea85920d1d6cfcfe2ba0ae7c9f0",
+  "build_identities_sha256": "050a345fe246a10e0dd8b069b5269bfb952f139c2f5c572c35e26f4c9f6787f2",
+  "sample_sha256": "f5be6536b105b78d7dc0eca44f7eecaa4b9b6a71d9d3662f115d361c6e707aeb",
+  "model_identity": {
+    "requested_alias": "deepseek-flash",
+    "published_model": "DeepSeek-V4.1-Flash-1017",
+    "immutable_provider_pin_verified": false,
+    "recheck_alias_before_execution": true
+  },
+  "authorization_boundary": "new input-v2 plan and ledger only; no v1 authorization, recovery or budget reuse",
+  "failure_policy": "each planned item runs once; bounded internal retries only; no truncation or strategy substitution; freeze all items including failures",
+  "scoring_policy": "separate command after complete generation freeze; failure zero only with scorable Gold; ordinary/diagnostic separate",
+  "observed_utc": "2026-11-04T08:42:39.236798+00:00",
+  "code_commit": "b3ba45c",
+  "plan_sha256": "3c9adc27b22d1b1da0175a508636ba51e8cdb2fd744a6faed566a963c2a79af6",
+  "provider_requests": 0,
+  "authorization_present": false,
+  "execution_marker_present": false,
+  "gold_read": false,
+  "holdout_read": false,
+  "bonus_enabled": false,
+  "source_builds_rebuilt": false,
+  "root_targeted_tests_passed": 52,
+  "independent_targeted_tests_passed": 24,
+  "independent_review": "docs/m5-development/LEVEL_C_INPUT_V2_REVIEW_V1.md"
+}

@@ -1,0 +1,187 @@
+[
+  {
+    "sample_id": "conv-26",
+    "build_id": "367c901b300440649bdc0bfba2af8010",
+    "fingerprint": "44be189a247e940d5deb6525d35b670c654cd29ccfb2a2b1cb628a356f0afae4",
+    "index": {
+      "build_id": "367c901b300440649bdc0bfba2af8010",
+      "status": "ready",
+      "fingerprint": "2b76ddfae066bf10b6f17485f4bcc6584e554b41d5a36a9b83f4dc6d4f86a1af",
+      "build_fingerprint": "44be189a247e940d5deb6525d35b670c654cd29ccfb2a2b1cb628a356f0afae4",
+      "memory_count": 259,
+      "embedding": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+        "dimensions": 384,
+        "max_tokens": 256,
+        "length_policy": "reject",
+        "normalized": true,
+        "device": "cpu"
+      },
+      "text_schema_version": "entity-dimension-value-content-v1"
+    },
+    "projection_fingerprint": "aaa939a99062515077626d12c0509189ab58efb345240e78ad2fdd35407a9a18",
+    "export_sha256": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78",
+    "memories": 259,
+    "sources": 190,
+    "relations": 4740,
+    "relation_labels": {
+      "undetermined": 4627,
+      "UPDATE": 68,
+      "RETAIN": 45
+    },
+    "compression": {
+      "original_tokens": 55434,
+      "packed_tokens": 55188,
+      "token_reduction": 0.004437709708842941,
+      "memory_coverage": 1.0,
+      "reversible": true,
+      "atomic_fact_retention": "not_measured",
+      "person_event_time_correctness": "not_measured",
+      "semantic_scope": "Exact field preservation; does not independently verify extracted facts",
+      "token_method": "regex-word-punctuation-v1",
+      "provider_tokens": "not_measured"
+    },
+    "graph_nodes": 452,
+    "graph_edges": 5270
+  },
+  {
+    "sample_id": "conv-30",
+    "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+    "fingerprint": "c0f39de6dd02e0db090d69c440c14b5bc279ee018581da4438ec0580a963bb17",
+    "index": {
+      "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+      "status": "ready",
+      "fingerprint": "c642b0a0ecfcef63d4a11ca8a6c86234fc043e04be4a4f76766fdb0bc3d74254",
+      "build_fingerprint": "c0f39de6dd02e0db090d69c440c14b5bc279ee018581da4438ec0580a963bb17",
+      "memory_count": 244,
+      "embedding": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+        "dimensions": 384,
+        "max_tokens": 256,
+        "length_policy": "reject",
+        "normalized": true,
+        "device": "cpu"
+      },
+      "text_schema_version": "entity-dimension-value-content-v1"
+    },
+    "projection_fingerprint": "db319d9616ecfa22c2695d75a83545c05f238af5cb0ffb0d92da6d2a599ed37b",
+    "export_sha256": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae",
+    "memories": 244,
+    "sources": 154,
+    "relations": 4460,
+    "relation_labels": {
+      "undetermined": 4117,
+      "RETAIN": 70,
+      "UPDATE": 273
+    },
+    "compression": {
+      "original_tokens": 51190,
+      "packed_tokens": 51274,
+      "token_reduction": -0.001640945497167312,
+      "memory_coverage": 1.0,
+      "reversible": true,
+      "atomic_fact_retention": "not_measured",
+      "person_event_time_correctness": "not_measured",
+      "semantic_scope": "Exact field preservation; does not independently verify extracted facts",
+      "token_method": "regex-word-punctuation-v1",
+      "provider_tokens": "not_measured"
+    },
+    "graph_nodes": 400,
+    "graph_edges": 4960
+  },
+  {
+    "sample_id": "conv-41",
+    "build_id": "8d459492549b4a3e88005211f036addf",
+    "fingerprint": "116fb41692285aeb29d73d620165d8c30a06297749f46a4aae6beaa46309a312",
+    "index": {
+      "build_id": "8d459492549b4a3e88005211f036addf",
+      "status": "ready",
+      "fingerprint": "be470b8702cede02d1372e3c00ff055429835c3b46e0b02ca4a99a82b8db938b",
+      "build_fingerprint": "116fb41692285aeb29d73d620165d8c30a06297749f46a4aae6beaa46309a312",
+      "memory_count": 321,
+      "embedding": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+        "dimensions": 384,
+        "max_tokens": 256,
+        "length_policy": "reject",
+        "normalized": true,
+        "device": "cpu"
+      },
+      "text_schema_version": "entity-dimension-value-content-v1"
+    },
+    "projection_fingerprint": "0115f3e11193e92e18fb3dd6973e4aa02d9dda5282aaa70456334ac4fb237403",
+    "export_sha256": "e15b30e89de463cca4ff9fcd347b332a72525f0fbfb8506a5476df120fd4b488",
+    "memories": 321,
+    "sources": 243,
+    "relations": 5767,
+    "relation_labels": {
+      "undetermined": 5566,
+      "UPDATE": 77,
+      "RETAIN": 123,
+      "SUPERSEDE": 1
+    },
+    "compression": {
+      "original_tokens": 68354,
+      "packed_tokens": 67668,
+      "token_reduction": 0.010035989115486976,
+      "memory_coverage": 1.0,
+      "reversible": true,
+      "atomic_fact_retention": "not_measured",
+      "person_event_time_correctness": "not_measured",
+      "semantic_scope": "Exact field preservation; does not independently verify extracted facts",
+      "token_method": "regex-word-punctuation-v1",
+      "provider_tokens": "not_measured"
+    },
+    "graph_nodes": 572,
+    "graph_edges": 6415
+  },
+  {
+    "sample_id": "conv-42",
+    "build_id": "c892596ac8884f43b4cf2098349a7fa5",
+    "fingerprint": "80796c954608a64e2b28d1486656a43018a2d568887f10ece4d0e9b4b0d478c2",
+    "index": {
+      "build_id": "c892596ac8884f43b4cf2098349a7fa5",
+      "status": "ready",
+      "fingerprint": "0c156cab907c1dd59a25a0ff1c52a6e52cfb0dcb6bae37de4be7945c893ff44a",
+      "build_fingerprint": "80796c954608a64e2b28d1486656a43018a2d568887f10ece4d0e9b4b0d478c2",
+      "memory_count": 413,
+      "embedding": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+        "dimensions": 384,
+        "max_tokens": 256,
+        "length_policy": "reject",
+        "normalized": true,
+        "device": "cpu"
+      },
+      "text_schema_version": "entity-dimension-value-content-v1"
+    },
+    "projection_fingerprint": "78441488ff44536d061fa65eed5fffdfd8248ac8f553dac3875fa285861fa5fc",
+    "export_sha256": "89d6bdf02e7eca10014688e0a7946fd536b846c4ff6c8b09a84bb8671680e3fd",
+    "memories": 413,
+    "sources": 297,
+    "relations": 7724,
+    "relation_labels": {
+      "undetermined": 7498,
+      "UPDATE": 148,
+      "RETAIN": 78
+    },
+    "compression": {
+      "original_tokens": 87203,
+      "packed_tokens": 87657,
+      "token_reduction": -0.005206242904487235,
+      "memory_coverage": 1.0,
+      "reversible": true,
+      "atomic_fact_retention": "not_measured",
+      "person_event_time_correctness": "not_measured",
+      "semantic_scope": "Exact field preservation; does not independently verify extracted facts",
+      "token_method": "regex-word-punctuation-v1",
+      "provider_tokens": "not_measured"
+    },
+    "graph_nodes": 715,
+    "graph_edges": 8568
+  }
+]

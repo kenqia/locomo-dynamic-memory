@@ -14,11 +14,15 @@ from .model import ModelFailure, utc_now, RESOLUTION_PROMPT, ANSWER_PROMPT, KNOW
 from .query_schemas import EffectiveResolution, EvidenceAnswer, RESOLUTION_SCHEMA_VERSION, ANSWER_SCHEMA_VERSION
 from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
 from .temporal import conversation_cutoff, explicit_question_date
+from .retry_feedback import VALIDATION_RETRY_FEEDBACK_VERSION
+from .query_payload import QUERY_PAYLOAD_VERSION
+from .resolution_delivery import complete_resolution_input, record_delivery, COMPLETE_INPUT_VERSION
 from .usage import provider_usage
 
 RESOLUTION_PROMPT_VERSION = "effective-resolution-v5-brief-decisions"
-ANSWER_PROMPT_VERSION = "evidence-answer-v7-short-item-list"
-QUERY_RECOVERY_VERSION = "bounded-raw-on-invalid-resolution-v1"
+ANSWER_PROMPT_VERSION = "evidence-answer-v8-event-boundaries"
+QUERY_EXECUTION_VERSION = "dynamic-complete-input-no-implicit-fallback-v2"
+ANSWER_EVIDENCE_BUDGET_VERSION = "unique-source-payload-v2"
 
 
 class QueryFailure(BuildError):
@@ -47,30 +51,36 @@ class QueryService:
         with self.database.connect() as db:
             db.execute("INSERT INTO query_traces VALUES (?,?,?)", (trace["trace_id"], trace["build_id"], canonical_json(trace)))
 
-    def generate_answer(self, question, time_condition, memories, sources, status, *, audit=None, raw_sources=None):
+    def generate_answer(self, question, time_condition, memories, sources, status, *, audit=None, raw_sources=None,
+                        record_input=False):
         """Shared answer contract, with bounded RAG evidence or complete raw sources.
 
         Return the validated answer, delivered memories, and budget/provider metadata.
         The caller must supply memories and sources from one already pinned version.
         """
-        delivered, used, omitted = [], 0, []
+        delivered, used, omitted, delivered_sources = [], 0, [], {}
         for memory in memories:
-            item_sources = [sources[sid] for sid in memory["source_ids"]]
-            # Include every field actually delivered, not just a shorter indexing string.
-            cost = budget_tokens(canonical_json({"memory": memory, "sources": item_sources}))
-            if used + cost > self.settings.evidence_token_budget:
+            candidate_sources = {**delivered_sources, **{sid: sources[sid] for sid in memory["source_ids"]}}
+            # Count the actual evidence object: atomic memories share source text.
+            cost = budget_tokens(canonical_json({"memories": [*delivered, memory],
+                                                 "sources": list(candidate_sources.values())}))
+            if cost > self.settings.evidence_token_budget:
                 omitted.append(memory["memory_id"])
                 continue
             delivered.append(memory)
-            used += cost
+            delivered_sources, used = candidate_sources, cost
         raw_delivered = []
         if raw_sources is not None:
             for source in raw_sources:
                 cost = budget_tokens(canonical_json(source))
                 used += cost
                 raw_delivered.append(source)
-        effective_status = "insufficient" if not (delivered or raw_delivered) else status
-        delivered_sources = {sid: sources[sid] for memory in delivered for sid in memory["source_ids"]}
+        conflict_truncated = raw_sources is None and status == "conflict" and bool(omitted)
+        if conflict_truncated:
+            # We cannot identify complete conflict sides from arbitrary surviving IDs.
+            delivered, delivered_sources, used = [], {}, 0
+            omitted = [memory["memory_id"] for memory in memories]
+        effective_status = status if conflict_truncated else "insufficient" if not (delivered or raw_delivered) else status
         if raw_sources is not None:
             delivered_sources = {s["source_id"]: s for s in raw_delivered}
         context = {"status": effective_status, "memories": {m["memory_id"]: m for m in delivered}}
@@ -79,18 +89,25 @@ class QueryService:
         payload = {"operation": "answer", "question": question, "time": time_condition, "status": effective_status,
                    "memories": delivered, "sources": list(delivered_sources.values()), "evidence_truncated": bool(omitted)}
         budget = {"token_count": used, "budget": None if raw_sources is not None else self.settings.evidence_token_budget,
+                  "algorithm_version": ANSWER_EVIDENCE_BUDGET_VERSION,
                   "scope": "complete_raw_sources" if raw_sources is not None else "rag_evidence",
                   "token_budget_method": TOKEN_BUDGET_METHOD, "truncated": bool(omitted),
                   "omitted_memory_ids": omitted, "truncation_reasons": ["evidence_token_budget"] if omitted else []}
         if raw_sources is not None:
             budget["omitted_source_ids"] = budget.pop("omitted_memory_ids")
         if audit is not None:
+            if record_input:
+                audit["answer_input"] = payload
             audit["effective_memories"], audit["evidence_budget"] = delivered, budget
             if raw_sources is not None:
                 audit["answer_context_sources"] = raw_delivered
                 audit["source_delivery"] = {"expected_source_ids": [s["source_id"] for s in raw_sources],
                     "delivered_source_ids": [], "attempted_source_ids": [],
                     "status": "not_sent", "provider_accepted": None}
+        if conflict_truncated:
+            budget["failure_reason"] = "conflict_evidence_budget_exceeded"
+            budget["model_metadata"] = {"calls": []}
+            raise ModelFailure("conflict_evidence_budget_exceeded", {"calls": []})
         try:
             generation = self.model.generate("answer", payload, EvidenceAnswer, context=context)
         except ModelFailure as error:
@@ -110,6 +127,11 @@ class QueryService:
         budget["model_metadata"] = generation.metadata
         return answer.model_dump(mode="json"), raw_delivered if raw_sources is not None else delivered, budget
 
+    def query_date(self, request, cutoff):
+        requested = request.requested_date or explicit_question_date(request.question)
+        origin = "explicit_request" if request.requested_date else "explicit_question" if requested else "conversation_cutoff"
+        return requested, origin
+
     def query(self, request):
         # Pin before analysis, embeddings or generation. Never re-read the active pointer.
         build_id = self.versions.pin(request.dataset_id, request.sample_id, request.build_id)
@@ -121,7 +143,11 @@ class QueryService:
                  "schemas": {"resolve": RESOLUTION_SCHEMA_VERSION, "answer": ANSWER_SCHEMA_VERSION},
                  "known_service_version": KNOWN_MODEL_VERSION,
                  "query_fingerprint": hashlib.sha256(canonical_json({"settings": self.settings.snapshot(),
-                     "query_recovery_version": QUERY_RECOVERY_VERSION,
+                     "query_execution_version": QUERY_EXECUTION_VERSION,
+                     "answer_evidence_budget_version": ANSWER_EVIDENCE_BUDGET_VERSION,
+                     "validation_retry_feedback_version": VALIDATION_RETRY_FEEDBACK_VERSION,
+                     "query_payload_version": QUERY_PAYLOAD_VERSION,
+                     "complete_resolution_input_version": COMPLETE_INPUT_VERSION,
                      "resolve_prompt": RESOLUTION_PROMPT, "answer_prompt": ANSWER_PROMPT,
                      "resolve_schema": EffectiveResolution.model_json_schema(), "answer_schema": EvidenceAnswer.model_json_schema()}).encode()).hexdigest()}
         stage, tick = "retrieval", started
@@ -129,14 +155,11 @@ class QueryService:
             with self.database.connect() as db:
                 cutoff, cutoff_raw = conversation_cutoff(db, request.dataset_id, request.sample_id)
                 projection = db.execute("SELECT fingerprint FROM current_state_projections WHERE build_id=?", (build_id,)).fetchone()
-            requested = request.requested_date or explicit_question_date(request.question)
-            origin = "explicit_request" if request.requested_date else "explicit_question" if requested else "conversation_cutoff"
+            requested, origin = self.query_date(request, cutoff)
             trace["time"] = {"requested_date": requested.isoformat() if requested else None, "anchor_date": (requested or cutoff.date()).isoformat(),
                              "origin": origin, "cutoff": cutoff.isoformat(), "cutoff_source_time": cutoff_raw,
                              "beyond_cutoff": bool(requested and requested > cutoff.date())}
             trace["projection_fingerprint"] = projection[0]
-            from .raw_retrieval import pinned_sources
-            snapshot = pinned_sources(self.database, build_id)
             tick = time.perf_counter()
             initial = self.retrieval.query(build_id, request.question)
             trace["initial"] = initial
@@ -171,38 +194,29 @@ class QueryService:
             trace["relation_fingerprint"] = hashlib.sha256(canonical_json(trace["relations"]).encode()).hexdigest()
             if request.strategy == "dynamic_raw_fallback":
                 from .raw_queries import run_raw_query
+                from .raw_retrieval import pinned_sources
+                snapshot = pinned_sources(self.database, build_id)
                 stage, tick = "resolve", time.perf_counter()
                 run_raw_query(self,request,trace,memories,sources,snapshot)
             else:
                 stage, tick = "resolve", time.perf_counter()
-                context = {"memories": memories, "sources": sources}
                 payload = {"operation": "resolve", "question": request.question, "time": trace["time"], "analysis": initial["analysis"],
                            "memories": list(memories.values()), "sources": list(sources.values()), "relations": trace["relations"],
                            "candidates_truncated": initial["initial_truncated"] or expanded["truncated"]}
+                context, audit = complete_resolution_input(payload, self.settings)
+                delivery = audit['source_delivery']
+                trace.setdefault('resolution_budgets', {})['resolve'] = audit
+                if not audit['within_budget']:
+                    raise BuildError('complete_resolution_input_budget_exceeded', 422)
                 try:
                     generation = self.model.generate("resolve", payload, EffectiveResolution, context=context)
                     trace["operations"][stage] = generation.metadata
                     resolution = EffectiveResolution.model_validate(generation.value.model_dump(mode="json"), context=context)
+                    record_delivery(delivery, generation.metadata, accepted=True)
                 except (ModelFailure, ValidationError) as error:
-                    if isinstance(error, ModelFailure) and error.code != "invalid_output":
-                        raise
-                    from .raw_queries import run_raw_query
-                    prior_metadata = trace["operations"].pop("resolve", {})
-                    trace["operations"]["failed_dynamic_resolve"] = getattr(error, "metadata", prior_metadata)
-                    trace["stage_seconds"]["failed_dynamic_resolve"] = time.perf_counter() - tick
-                    trace["strategy_recovery"] = {"version":QUERY_RECOVERY_VERSION,
-                        "requested_strategy":"dynamic", "executed_strategy":"dynamic_raw_fallback",
-                        "reason":"invalid_output"}
-                    trace["relations"] = [r for r in relations
-                        if {r["old_memory_id"], r["new_memory_id"]} & memories.keys()]
-                    trace["relation_fingerprint"] = hashlib.sha256(canonical_json(trace["relations"]).encode()).hexdigest()
-                    try:
-                        run_raw_query(self, request, trace, memories, sources, snapshot)
-                    finally:
-                        trace["strategy"] = "dynamic"
-                        trace["query_fingerprint"] = hashlib.sha256(canonical_json({
-                            "fingerprint":trace["query_fingerprint"],
-                            "strategy_recovery":trace["strategy_recovery"]}).encode()).hexdigest()
+                    record_delivery(delivery, getattr(error, 'metadata', trace['operations'].get(stage, {})), accepted=False,
+                                    error_code=getattr(error, 'code', 'invalid_output'))
+                    raise
                 else:
                     trace["resolution"] = resolution.model_dump(mode="json")
                     trace["stage_seconds"][stage] = time.perf_counter() - tick

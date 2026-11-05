@@ -1,0 +1,10 @@
+{
+  "repo": "kenqia/locomo-dynamic-memory",
+  "visibility": "PUBLIC",
+  "viewerPermission": "ADMIN",
+  "command": "gh repo view --json nameWithOwner,visibility,viewerPermission",
+  "remote_writes": 0,
+  "release_push": false,
+  "draft_pr": null,
+  "reason": "Public tar allowlist is narrower than inherited Git history; controlled-history disclosure and exact PR integration base have not been cleared for this release"
+}

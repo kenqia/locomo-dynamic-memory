@@ -76,8 +76,8 @@ render_saved_comparison(request, {'input':{'samples':[{'question':'When?'}]},'st
     assert any(t.value == 'I went yesterday.' for t in app.text)
 
 
-@pytest.mark.parametrize('strategy', ['dynamic_raw_fallback', 'dynamic'])
-def test_recovered_partial_answer_and_sources_survive_in_streamlit(settings, sample, monkeypatch, strategy):
+@pytest.mark.parametrize('historical_recovery', [False, True])
+def test_recovered_partial_answer_and_sources_survive_in_streamlit(settings, sample, monkeypatch, historical_recovery):
     """Render an actual query Trace after unsafe joint resolution, with no live calls."""
     import json
     import sys
@@ -110,10 +110,15 @@ def test_recovered_partial_answer_and_sources_survive_in_streamlit(settings, sam
     local = settings.model_copy(update={'model_retries': 0})
     model = DeepSeekModel(local, api_key='synthetic-ui-only', transport=httpx.MockTransport(provider))
     with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
-        query = {**published(client, sample), 'strategy':strategy, 'question': 'Where does Alex live and work?'}
+        query = {**published(client, sample), 'strategy':'dynamic_raw_fallback', 'question': 'Where does Alex live and work?'}
         response = client.post('/queries', json=query)
         assert response.status_code == 201, response.text
         trace = response.json()
+        if historical_recovery:
+            # Old stored Dynamic recovery Traces remain displayable. New queries
+            # must explicitly select raw fallback; they never generate this field.
+            trace['strategy'] = 'dynamic'
+            trace['strategy_recovery'] = {'executed_strategy': 'dynamic_raw_fallback'}
         assert trace['raw_fallback']['recovery']['code'] == 'invalid_output'
         assert trace['initial_resolution']['coverage'][0]['status'] == 'insufficient'
         app = AppTest.from_string('''
@@ -133,7 +138,7 @@ render_queries(st.session_state['request'], 'dataset', 'conv-a',
         assert any(t.value == 'Paris.' for t in app.text)
         assert any(t.value == 'I live in Paris.' for t in app.text)
         assert any('unassessed' in c.value for c in app.caption)
-        if strategy == 'dynamic':
+        if historical_recovery:
             assert any('有界原文备用策略' in c.value for c in app.caption)
         assert any(m.value == '证据不足' for m in app.markdown)
         app.selectbox[0].set_value('dynamic_raw_fallback').run()

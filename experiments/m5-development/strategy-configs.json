@@ -1,0 +1,26 @@
+{
+  "defaults": {
+    "graph_depth": 0,
+    "adaptive": false,
+    "temporal": false,
+    "compression": false
+  },
+  "experiments": {
+    "H": "frozen Hybrid",
+    "D": "frozen Dynamic candidates, no new Resolution",
+    "B1": {
+      "graph_depth": 2
+    },
+    "B2": {
+      "compression": true
+    },
+    "B3": {
+      "adaptive": true
+    },
+    "B4": {
+      "temporal": true
+    }
+  },
+  "B5_B6": "not promoted; no positive single-module delivered source evidence",
+  "P1": "direct upstream PropMem rejected; no paid canary"
+}

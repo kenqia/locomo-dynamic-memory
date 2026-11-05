@@ -49,7 +49,7 @@ class Settings(BaseModel):
     raw_neighbor_turns: int = Field(default=1, ge=0, le=3)
     raw_max_turns: int = Field(default=9, gt=0)
     raw_token_budget: int = Field(default=2000, gt=0)
-    resolution_input_budget: int = Field(default=12000, gt=0)
+    resolution_input_budget: int = Field(default=24000, gt=0)
 
     @model_validator(mode="before")
     @classmethod

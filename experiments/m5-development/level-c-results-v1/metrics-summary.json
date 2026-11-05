@@ -1,0 +1,1664 @@
+{
+  "scope": "fixed M5 development 80 ordinary + 20 diagnostic questions; Hybrid and Dynamic only; no holdout or Bonus",
+  "planned_items": 200,
+  "questions": 100,
+  "strata": {
+    "ordinary": {
+      "groups": {
+        "hybrid_no_resolution": {
+          "planned": 80,
+          "scorable": 80,
+          "succeeded": 80,
+          "failed": 0,
+          "failure_zero_mean": 0.3998827870755096,
+          "successful_only_mean": 0.3998827870755096,
+          "scoring_rules": {
+            "official_category_f1": 80
+          }
+        },
+        "dynamic": {
+          "planned": 80,
+          "scorable": 80,
+          "succeeded": 41,
+          "failed": 39,
+          "failure_zero_mean": 0.22832948647686496,
+          "successful_only_mean": 0.44552094922315116,
+          "scoring_rules": {
+            "official_category_f1": 80
+          }
+        }
+      },
+      "comparisons": {
+        "all_scorable": {
+          "mean": -0.17155330059864465,
+          "bootstrap95": [
+            -0.2567276710554164,
+            -0.09283300460041861
+          ],
+          "improved": 17,
+          "regressed": 35,
+          "unchanged": 28,
+          "denominator": 80,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "both_succeeded": {
+          "pairs": 41,
+          "hybrid_mean": 0.3680942204537652,
+          "dynamic_mean": 0.44552094922315116,
+          "comparison": {
+            "mean": 0.077426728769386,
+            "bootstrap95": [
+              0.024972476486365792,
+              0.138006653271696
+            ],
+            "improved": 17,
+            "regressed": 5,
+            "unchanged": 19,
+            "denominator": 41,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "limitation": "post-outcome subset; selected by runtime success, not a causal quality estimate"
+        }
+      }
+    },
+    "diagnostic": {
+      "groups": {
+        "hybrid_no_resolution": {
+          "planned": 20,
+          "scorable": 20,
+          "succeeded": 20,
+          "failed": 0,
+          "failure_zero_mean": 0.45650252525252527,
+          "successful_only_mean": 0.45650252525252527,
+          "scoring_rules": {
+            "official_category_f1": 20
+          }
+        },
+        "dynamic": {
+          "planned": 20,
+          "scorable": 20,
+          "succeeded": 10,
+          "failed": 10,
+          "failure_zero_mean": 0.2933021541950113,
+          "successful_only_mean": 0.5866043083900226,
+          "scoring_rules": {
+            "official_category_f1": 20
+          }
+        }
+      },
+      "comparisons": {
+        "all_scorable": {
+          "mean": -0.16320037105751392,
+          "bootstrap95": [
+            -0.36501917130488565,
+            0.028623299319727874
+          ],
+          "improved": 4,
+          "regressed": 7,
+          "unchanged": 9,
+          "denominator": 20,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "both_succeeded": {
+          "pairs": 10,
+          "hybrid_mean": 0.4766414141414142,
+          "dynamic_mean": 0.5866043083900226,
+          "comparison": {
+            "mean": 0.10996289424860854,
+            "bootstrap95": [
+              -0.0465752937538652,
+              0.2801131725417439
+            ],
+            "improved": 4,
+            "regressed": 1,
+            "unchanged": 5,
+            "denominator": 10,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "limitation": "post-outcome subset; selected by runtime success, not a causal quality estimate"
+        }
+      }
+    }
+  },
+  "per_conversation": {
+    "conv-26": {
+      "ordinary": {
+        "hybrid_no_resolution": {
+          "planned": 20,
+          "scorable": 20,
+          "succeeded": 20,
+          "failed": 0,
+          "failure_zero_mean": 0.4235603125182233,
+          "successful_only_mean": 0.4235603125182233,
+          "scoring_rules": {
+            "official_category_f1": 20
+          }
+        },
+        "dynamic": {
+          "planned": 20,
+          "scorable": 20,
+          "succeeded": 17,
+          "failed": 3,
+          "failure_zero_mean": 0.40108695652173915,
+          "successful_only_mean": 0.4718670076726343,
+          "scoring_rules": {
+            "official_category_f1": 20
+          }
+        }
+      },
+      "diagnostic": {
+        "hybrid_no_resolution": {
+          "planned": 5,
+          "scorable": 5,
+          "succeeded": 5,
+          "failed": 0,
+          "failure_zero_mean": 0.49404761904761907,
+          "successful_only_mean": 0.49404761904761907,
+          "scoring_rules": {
+            "official_category_f1": 5
+          }
+        },
+        "dynamic": {
+          "planned": 5,
+          "scorable": 5,
+          "succeeded": 4,
+          "failed": 1,
+          "failure_zero_mean": 0.24098639455782314,
+          "successful_only_mean": 0.3012329931972789,
+          "scoring_rules": {
+            "official_category_f1": 5
+          }
+        }
+      }
+    },
+    "conv-30": {
+      "ordinary": {
+        "hybrid_no_resolution": {
+          "planned": 20,
+          "scorable": 20,
+          "succeeded": 20,
+          "failed": 0,
+          "failure_zero_mean": 0.44403155017125606,
+          "successful_only_mean": 0.44403155017125606,
+          "scoring_rules": {
+            "official_category_f1": 20
+          }
+        },
+        "dynamic": {
+          "planned": 20,
+          "scorable": 20,
+          "succeeded": 3,
+          "failed": 17,
+          "failure_zero_mean": 0.07666666666666667,
+          "successful_only_mean": 0.5111111111111112,
+          "scoring_rules": {
+            "official_category_f1": 20
+          }
+        }
+      },
+      "diagnostic": {
+        "hybrid_no_resolution": {
+          "planned": 5,
+          "scorable": 5,
+          "succeeded": 5,
+          "failed": 0,
+          "failure_zero_mean": 0.4,
+          "successful_only_mean": 0.4,
+          "scoring_rules": {
+            "official_category_f1": 5
+          }
+        },
+        "dynamic": {
+          "planned": 5,
+          "scorable": 5,
+          "succeeded": 1,
+          "failed": 4,
+          "failure_zero_mean": 0.2,
+          "successful_only_mean": 1.0,
+          "scoring_rules": {
+            "official_category_f1": 5
+          }
+        }
+      }
+    },
+    "conv-41": {
+      "ordinary": {
+        "hybrid_no_resolution": {
+          "planned": 20,
+          "scorable": 20,
+          "succeeded": 20,
+          "failed": 0,
+          "failure_zero_mean": 0.35664021164021165,
+          "successful_only_mean": 0.35664021164021165,
+          "scoring_rules": {
+            "official_category_f1": 20
+          }
+        },
+        "dynamic": {
+          "planned": 20,
+          "scorable": 20,
+          "succeeded": 4,
+          "failed": 16,
+          "failure_zero_mean": 0.045,
+          "successful_only_mean": 0.225,
+          "scoring_rules": {
+            "official_category_f1": 20
+          }
+        }
+      },
+      "diagnostic": {
+        "hybrid_no_resolution": {
+          "planned": 5,
+          "scorable": 5,
+          "succeeded": 5,
+          "failed": 0,
+          "failure_zero_mean": 0.5597402597402598,
+          "successful_only_mean": 0.5597402597402598,
+          "scoring_rules": {
+            "official_category_f1": 5
+          }
+        },
+        "dynamic": {
+          "planned": 5,
+          "scorable": 5,
+          "succeeded": 2,
+          "failed": 3,
+          "failure_zero_mean": 0.4,
+          "successful_only_mean": 1.0,
+          "scoring_rules": {
+            "official_category_f1": 5
+          }
+        }
+      }
+    },
+    "conv-42": {
+      "ordinary": {
+        "hybrid_no_resolution": {
+          "planned": 20,
+          "scorable": 20,
+          "succeeded": 20,
+          "failed": 0,
+          "failure_zero_mean": 0.37529907397234763,
+          "successful_only_mean": 0.37529907397234763,
+          "scoring_rules": {
+            "official_category_f1": 20
+          }
+        },
+        "dynamic": {
+          "planned": 20,
+          "scorable": 20,
+          "succeeded": 17,
+          "failed": 3,
+          "failure_zero_mean": 0.39056432271905417,
+          "successful_only_mean": 0.45948743849300494,
+          "scoring_rules": {
+            "official_category_f1": 20
+          }
+        }
+      },
+      "diagnostic": {
+        "hybrid_no_resolution": {
+          "planned": 5,
+          "scorable": 5,
+          "succeeded": 5,
+          "failed": 0,
+          "failure_zero_mean": 0.37222222222222223,
+          "successful_only_mean": 0.37222222222222223,
+          "scoring_rules": {
+            "official_category_f1": 5
+          }
+        },
+        "dynamic": {
+          "planned": 5,
+          "scorable": 5,
+          "succeeded": 3,
+          "failed": 2,
+          "failure_zero_mean": 0.33222222222222225,
+          "successful_only_mean": 0.5537037037037037,
+          "scoring_rules": {
+            "official_category_f1": 5
+          }
+        }
+      }
+    }
+  },
+  "per_category": {
+    "ordinary": {
+      "1": {
+        "hybrid_no_resolution": {
+          "planned": 14,
+          "scorable": 14,
+          "succeeded": 14,
+          "failed": 0,
+          "failure_zero_mean": 0.3332065401918343,
+          "successful_only_mean": 0.3332065401918343,
+          "scoring_rules": {
+            "official_category_f1": 14
+          }
+        },
+        "dynamic": {
+          "planned": 14,
+          "scorable": 14,
+          "succeeded": 6,
+          "failed": 8,
+          "failure_zero_mean": 0.2250915750915751,
+          "successful_only_mean": 0.5252136752136752,
+          "scoring_rules": {
+            "official_category_f1": 14
+          }
+        }
+      },
+      "2": {
+        "hybrid_no_resolution": {
+          "planned": 19,
+          "scorable": 19,
+          "succeeded": 19,
+          "failed": 0,
+          "failure_zero_mean": 0.452601199969621,
+          "successful_only_mean": 0.452601199969621,
+          "scoring_rules": {
+            "official_category_f1": 19
+          }
+        },
+        "dynamic": {
+          "planned": 19,
+          "scorable": 19,
+          "succeeded": 8,
+          "failed": 11,
+          "failure_zero_mean": 0.16396761133603238,
+          "successful_only_mean": 0.3894230769230769,
+          "scoring_rules": {
+            "official_category_f1": 19
+          }
+        }
+      },
+      "3": {
+        "hybrid_no_resolution": {
+          "planned": 3,
+          "scorable": 3,
+          "succeeded": 3,
+          "failed": 0,
+          "failure_zero_mean": 0.10256410256410257,
+          "successful_only_mean": 0.10256410256410257,
+          "scoring_rules": {
+            "official_category_f1": 3
+          }
+        },
+        "dynamic": {
+          "planned": 3,
+          "scorable": 3,
+          "succeeded": 1,
+          "failed": 2,
+          "failure_zero_mean": 0.0,
+          "successful_only_mean": 0.0,
+          "scoring_rules": {
+            "official_category_f1": 3
+          }
+        }
+      },
+      "4": {
+        "hybrid_no_resolution": {
+          "planned": 44,
+          "scorable": 44,
+          "succeeded": 44,
+          "failed": 0,
+          "failure_zero_mean": 0.418604915823636,
+          "successful_only_mean": 0.418604915823636,
+          "scoring_rules": {
+            "official_category_f1": 44
+          }
+        },
+        "dynamic": {
+          "planned": 44,
+          "scorable": 44,
+          "succeeded": 26,
+          "failed": 18,
+          "failure_zero_mean": 0.27272027844278485,
+          "successful_only_mean": 0.46152662505702047,
+          "scoring_rules": {
+            "official_category_f1": 44
+          }
+        }
+      }
+    },
+    "diagnostic": {
+      "1": {
+        "hybrid_no_resolution": {
+          "planned": 8,
+          "scorable": 8,
+          "succeeded": 8,
+          "failed": 0,
+          "failure_zero_mean": 0.4540674603174603,
+          "successful_only_mean": 0.4540674603174603,
+          "scoring_rules": {
+            "official_category_f1": 8
+          }
+        },
+        "dynamic": {
+          "planned": 8,
+          "scorable": 8,
+          "succeeded": 5,
+          "failed": 3,
+          "failure_zero_mean": 0.3159722222222222,
+          "successful_only_mean": 0.5055555555555555,
+          "scoring_rules": {
+            "official_category_f1": 8
+          }
+        }
+      },
+      "2": {
+        "hybrid_no_resolution": {
+          "planned": 12,
+          "scorable": 12,
+          "succeeded": 12,
+          "failed": 0,
+          "failure_zero_mean": 0.45812590187590185,
+          "successful_only_mean": 0.45812590187590185,
+          "scoring_rules": {
+            "official_category_f1": 12
+          }
+        },
+        "dynamic": {
+          "planned": 12,
+          "scorable": 12,
+          "succeeded": 5,
+          "failed": 7,
+          "failure_zero_mean": 0.2781887755102041,
+          "successful_only_mean": 0.6676530612244898,
+          "scoring_rules": {
+            "official_category_f1": 12
+          }
+        }
+      }
+    }
+  },
+  "f1_categories_1_to_4": {
+    "ordinary": {
+      "hybrid_no_resolution": {
+        "planned": 80,
+        "scorable": 80,
+        "succeeded": 80,
+        "failed": 0,
+        "failure_zero_mean": 0.3998827870755096,
+        "successful_only_mean": 0.3998827870755096,
+        "scoring_rules": {
+          "official_category_f1": 80
+        }
+      },
+      "dynamic": {
+        "planned": 80,
+        "scorable": 80,
+        "succeeded": 41,
+        "failed": 39,
+        "failure_zero_mean": 0.22832948647686496,
+        "successful_only_mean": 0.44552094922315116,
+        "scoring_rules": {
+          "official_category_f1": 80
+        }
+      }
+    },
+    "diagnostic": {
+      "hybrid_no_resolution": {
+        "planned": 20,
+        "scorable": 20,
+        "succeeded": 20,
+        "failed": 0,
+        "failure_zero_mean": 0.45650252525252527,
+        "successful_only_mean": 0.45650252525252527,
+        "scoring_rules": {
+          "official_category_f1": 20
+        }
+      },
+      "dynamic": {
+        "planned": 20,
+        "scorable": 20,
+        "succeeded": 10,
+        "failed": 10,
+        "failure_zero_mean": 0.2933021541950113,
+        "successful_only_mean": 0.5866043083900226,
+        "scoring_rules": {
+          "official_category_f1": 20
+        }
+      }
+    }
+  },
+  "category_5_refusal": {
+    "ordinary": {
+      "hybrid_no_resolution": {
+        "planned": 0,
+        "scorable": 0,
+        "succeeded": 0,
+        "failed": 0,
+        "failure_zero_mean": null,
+        "successful_only_mean": null,
+        "scoring_rules": {}
+      },
+      "dynamic": {
+        "planned": 0,
+        "scorable": 0,
+        "succeeded": 0,
+        "failed": 0,
+        "failure_zero_mean": null,
+        "successful_only_mean": null,
+        "scoring_rules": {}
+      }
+    },
+    "diagnostic": {
+      "hybrid_no_resolution": {
+        "planned": 0,
+        "scorable": 0,
+        "succeeded": 0,
+        "failed": 0,
+        "failure_zero_mean": null,
+        "successful_only_mean": null,
+        "scoring_rules": {}
+      },
+      "dynamic": {
+        "planned": 0,
+        "scorable": 0,
+        "succeeded": 0,
+        "failed": 0,
+        "failure_zero_mean": null,
+        "successful_only_mean": null,
+        "scoring_rules": {}
+      }
+    }
+  },
+  "runtime": {
+    "ordinary/hybrid_no_resolution": {
+      "planned": 80,
+      "completed": 80,
+      "pending": 0,
+      "succeeded": 80,
+      "failed": 0,
+      "success_rate": 1.0,
+      "local_policy_rejected_items": 0,
+      "local_budget_rejected_items": 0,
+      "item_elapsed_seconds": {
+        "observed": 80,
+        "missing": 0,
+        "total": 266.1688801090022,
+        "p50": 2.9017440030002035,
+        "p95": 6.034015602000906
+      },
+      "stage_elapsed_seconds": {
+        "retrieval": {
+          "observed": 80,
+          "missing": 0,
+          "total": 111.55287137499363,
+          "p50": 1.0384373685001265,
+          "p95": 3.303133903649627
+        },
+        "expansion": {
+          "observed": 80,
+          "missing": 0,
+          "total": 4.854243949996089,
+          "p50": 0.0578986549999172,
+          "p95": 0.0875493424993692
+        },
+        "resolve": {
+          "observed": 0,
+          "missing": 80,
+          "total": 0,
+          "p50": null,
+          "p95": null
+        },
+        "answer": {
+          "observed": 80,
+          "missing": 0,
+          "total": 149.51719177299856,
+          "p50": 1.6935656580008072,
+          "p95": 3.0448610207498845
+        }
+      },
+      "operations": {
+        "query_analysis": {
+          "operation_traces": 80,
+          "completed_adapter_attempt_records": 88,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 88,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 24829,
+              "completion_tokens": 3014,
+              "total_tokens": 27843
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 24829,
+                "calls_with_reported_usage": 88,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 3014,
+                "calls_with_reported_usage": 88,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 27843,
+                "calls_with_reported_usage": 88,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 8,
+            "reported_provider_seconds": 98.94782759799455
+          },
+          "adapter_attempt_seconds": {
+            "observed": 88,
+            "missing": 0,
+            "total": 98.94782759799455,
+            "p50": 0.9896405255003629,
+            "p95": 2.0200141138502627
+          }
+        },
+        "resolve": {
+          "operation_traces": 0,
+          "completed_adapter_attempt_records": 0,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 0,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 0
+          },
+          "adapter_attempt_seconds": {
+            "observed": 0,
+            "missing": 0,
+            "total": 0,
+            "p50": null,
+            "p95": null
+          }
+        },
+        "answer": {
+          "operation_traces": 80,
+          "completed_adapter_attempt_records": 82,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 82,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 521502,
+              "completion_tokens": 14553,
+              "total_tokens": 536055
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 521502,
+                "calls_with_reported_usage": 82,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 14553,
+                "calls_with_reported_usage": 82,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 536055,
+                "calls_with_reported_usage": 82,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 2,
+            "reported_provider_seconds": 147.1860285820003
+          },
+          "adapter_attempt_seconds": {
+            "observed": 82,
+            "missing": 0,
+            "total": 147.1860285820003,
+            "p50": 1.6713459755001168,
+            "p95": 2.67145914560042
+          }
+        },
+        "failed_operation": {
+          "operation_traces": 0,
+          "completed_adapter_attempt_records": 0,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 0,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 0
+          },
+          "adapter_attempt_seconds": {
+            "observed": 0,
+            "missing": 0,
+            "total": 0,
+            "p50": null,
+            "p95": null
+          }
+        }
+      }
+    },
+    "ordinary/dynamic": {
+      "planned": 80,
+      "completed": 80,
+      "pending": 0,
+      "succeeded": 41,
+      "failed": 39,
+      "success_rate": 0.5125,
+      "local_policy_rejected_items": 29,
+      "local_budget_rejected_items": 0,
+      "item_elapsed_seconds": {
+        "observed": 80,
+        "missing": 0,
+        "total": 1098.3310997429962,
+        "p50": 12.654276697000569,
+        "p95": 38.01550332985016
+      },
+      "stage_elapsed_seconds": {
+        "retrieval": {
+          "observed": 80,
+          "missing": 0,
+          "total": 98.69771774200126,
+          "p50": 1.013821673000166,
+          "p95": 3.0748422723496334
+        },
+        "expansion": {
+          "observed": 80,
+          "missing": 0,
+          "total": 4.900412517010409,
+          "p50": 0.05627252399972349,
+          "p95": 0.08577657700016061
+        },
+        "resolve": {
+          "observed": 80,
+          "missing": 0,
+          "total": 921.1966796229954,
+          "p50": 10.374514865999117,
+          "p95": 32.23306858339901
+        },
+        "answer": {
+          "observed": 41,
+          "missing": 39,
+          "total": 68.29534026200963,
+          "p50": 1.534494852001444,
+          "p95": 3.6016950249995716
+        }
+      },
+      "operations": {
+        "query_analysis": {
+          "operation_traces": 80,
+          "completed_adapter_attempt_records": 88,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 88,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 24829,
+              "completion_tokens": 3009,
+              "total_tokens": 27838
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 24829,
+                "calls_with_reported_usage": 88,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 3009,
+                "calls_with_reported_usage": 88,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 27838,
+                "calls_with_reported_usage": 88,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 8,
+            "reported_provider_seconds": 93.85106439399351
+          },
+          "adapter_attempt_seconds": {
+            "observed": 88,
+            "missing": 0,
+            "total": 93.85106439399351,
+            "p50": 0.9610050860001138,
+            "p95": 2.003800774400587
+          }
+        },
+        "resolve": {
+          "operation_traces": 70,
+          "completed_adapter_attempt_records": 41,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 41,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 1644729,
+              "completion_tokens": 177567,
+              "total_tokens": 1822296
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 1644729,
+                "calls_with_reported_usage": 41,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 177567,
+                "calls_with_reported_usage": 41,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 1822296,
+                "calls_with_reported_usage": 41,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 919.0641589050028
+          },
+          "adapter_attempt_seconds": {
+            "observed": 41,
+            "missing": 0,
+            "total": 919.0641589050028,
+            "p50": 20.948517928,
+            "p95": 38.50512884699856
+          }
+        },
+        "answer": {
+          "operation_traces": 41,
+          "completed_adapter_attempt_records": 42,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 42,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 81876,
+              "completion_tokens": 7241,
+              "total_tokens": 89117
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 81876,
+                "calls_with_reported_usage": 42,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 7241,
+                "calls_with_reported_usage": 42,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 89117,
+                "calls_with_reported_usage": 42,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 1,
+            "reported_provider_seconds": 68.14326312999219
+          },
+          "adapter_attempt_seconds": {
+            "observed": 42,
+            "missing": 0,
+            "total": 68.14326312999219,
+            "p50": 1.53331828950013,
+            "p95": 2.8281559152000204
+          }
+        },
+        "failed_operation": {
+          "operation_traces": 0,
+          "completed_adapter_attempt_records": 0,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 0,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 0
+          },
+          "adapter_attempt_seconds": {
+            "observed": 0,
+            "missing": 0,
+            "total": 0,
+            "p50": null,
+            "p95": null
+          }
+        }
+      }
+    },
+    "diagnostic/hybrid_no_resolution": {
+      "planned": 20,
+      "completed": 20,
+      "pending": 0,
+      "succeeded": 20,
+      "failed": 0,
+      "success_rate": 1.0,
+      "local_policy_rejected_items": 0,
+      "local_budget_rejected_items": 0,
+      "item_elapsed_seconds": {
+        "observed": 20,
+        "missing": 0,
+        "total": 52.489915129999645,
+        "p50": 2.437693368499822,
+        "p95": 3.2583803481496045
+      },
+      "stage_elapsed_seconds": {
+        "retrieval": {
+          "observed": 20,
+          "missing": 0,
+          "total": 17.832943300993065,
+          "p50": 0.8457927919989743,
+          "p95": 1.3132137931997931
+        },
+        "expansion": {
+          "observed": 20,
+          "missing": 0,
+          "total": 1.1616745819992502,
+          "p50": 0.056128292499124655,
+          "p95": 0.07543317390000084
+        },
+        "resolve": {
+          "observed": 0,
+          "missing": 20,
+          "total": 0,
+          "p50": null,
+          "p95": null
+        },
+        "answer": {
+          "observed": 20,
+          "missing": 0,
+          "total": 33.4359008510055,
+          "p50": 1.5129719880005723,
+          "p95": 2.350082978898627
+        }
+      },
+      "operations": {
+        "query_analysis": {
+          "operation_traces": 20,
+          "completed_adapter_attempt_records": 20,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 20,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 5610,
+              "completion_tokens": 635,
+              "total_tokens": 6245
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 5610,
+                "calls_with_reported_usage": 20,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 635,
+                "calls_with_reported_usage": 20,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 6245,
+                "calls_with_reported_usage": 20,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 16.740833329999077
+          },
+          "adapter_attempt_seconds": {
+            "observed": 20,
+            "missing": 0,
+            "total": 16.740833329999077,
+            "p50": 0.7919094999997469,
+            "p95": 1.2560944805489271
+          }
+        },
+        "resolve": {
+          "operation_traces": 0,
+          "completed_adapter_attempt_records": 0,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 0,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 0
+          },
+          "adapter_attempt_seconds": {
+            "observed": 0,
+            "missing": 0,
+            "total": 0,
+            "p50": null,
+            "p95": null
+          }
+        },
+        "answer": {
+          "operation_traces": 20,
+          "completed_adapter_attempt_records": 20,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 20,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 128453,
+              "completion_tokens": 3453,
+              "total_tokens": 131906
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 128453,
+                "calls_with_reported_usage": 20,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 3453,
+                "calls_with_reported_usage": 20,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 131906,
+                "calls_with_reported_usage": 20,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 32.87371339299716
+          },
+          "adapter_attempt_seconds": {
+            "observed": 20,
+            "missing": 0,
+            "total": 32.87371339299716,
+            "p50": 1.463908424500005,
+            "p95": 2.329895556249267
+          }
+        },
+        "failed_operation": {
+          "operation_traces": 0,
+          "completed_adapter_attempt_records": 0,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 0,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 0
+          },
+          "adapter_attempt_seconds": {
+            "observed": 0,
+            "missing": 0,
+            "total": 0,
+            "p50": null,
+            "p95": null
+          }
+        }
+      }
+    },
+    "diagnostic/dynamic": {
+      "planned": 20,
+      "completed": 20,
+      "pending": 0,
+      "succeeded": 10,
+      "failed": 10,
+      "success_rate": 0.5,
+      "local_policy_rejected_items": 6,
+      "local_budget_rejected_items": 0,
+      "item_elapsed_seconds": {
+        "observed": 20,
+        "missing": 0,
+        "total": 273.8713469250015,
+        "p50": 9.150784993999878,
+        "p95": 38.76336753545056
+      },
+      "stage_elapsed_seconds": {
+        "retrieval": {
+          "observed": 20,
+          "missing": 0,
+          "total": 18.620798046002164,
+          "p50": 0.8963874545006547,
+          "p95": 1.2328935348004055
+        },
+        "expansion": {
+          "observed": 20,
+          "missing": 0,
+          "total": 1.1755062350021035,
+          "p50": 0.05598222850039747,
+          "p95": 0.08764133180047794
+        },
+        "resolve": {
+          "observed": 20,
+          "missing": 0,
+          "total": 236.12881870400633,
+          "p50": 7.176767014500001,
+          "p95": 35.74815354819994
+        },
+        "answer": {
+          "observed": 10,
+          "missing": 10,
+          "total": 16.657523435000257,
+          "p50": 1.6928831064997212,
+          "p95": 2.2558012484496426
+        }
+      },
+      "operations": {
+        "query_analysis": {
+          "operation_traces": 20,
+          "completed_adapter_attempt_records": 20,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 20,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 5610,
+              "completion_tokens": 635,
+              "total_tokens": 6245
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 5610,
+                "calls_with_reported_usage": 20,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 635,
+                "calls_with_reported_usage": 20,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 6245,
+                "calls_with_reported_usage": 20,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 17.437395739998465
+          },
+          "adapter_attempt_seconds": {
+            "observed": 20,
+            "missing": 0,
+            "total": 17.437395739998465,
+            "p50": 0.8385659260002285,
+            "p95": 1.1623258420005191
+          }
+        },
+        "resolve": {
+          "operation_traces": 16,
+          "completed_adapter_attempt_records": 10,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 10,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 402121,
+              "completion_tokens": 47333,
+              "total_tokens": 449454
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 402121,
+                "calls_with_reported_usage": 10,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 47333,
+                "calls_with_reported_usage": 10,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 449454,
+                "calls_with_reported_usage": 10,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 235.64629406600034
+          },
+          "adapter_attempt_seconds": {
+            "observed": 10,
+            "missing": 0,
+            "total": 235.64629406600034,
+            "p50": 21.98907911400056,
+            "p95": 36.755667293299666
+          }
+        },
+        "answer": {
+          "operation_traces": 10,
+          "completed_adapter_attempt_records": 10,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 10,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 21364,
+              "completion_tokens": 2180,
+              "total_tokens": 23544
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 21364,
+                "calls_with_reported_usage": 10,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 2180,
+                "calls_with_reported_usage": 10,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 23544,
+                "calls_with_reported_usage": 10,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 16.628112483998848
+          },
+          "adapter_attempt_seconds": {
+            "observed": 10,
+            "missing": 0,
+            "total": 16.628112483998848,
+            "p50": 1.6913697399995726,
+            "p95": 2.2522927758001967
+          }
+        },
+        "failed_operation": {
+          "operation_traces": 0,
+          "completed_adapter_attempt_records": 0,
+          "unresolved_started_records": 0,
+          "usage": {
+            "generation_calls": 0,
+            "unknown_attempts": 0,
+            "calls_without_reported_usage": 0,
+            "calls_with_partial_usage": 0,
+            "reported_tokens": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            },
+            "usage_fields": {
+              "prompt_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "completion_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              },
+              "total_tokens": {
+                "reported": 0,
+                "calls_with_reported_usage": 0,
+                "calls_missing_usage": 0,
+                "complete": true
+              }
+            },
+            "provider_usage_complete": true,
+            "provider_retries": 0,
+            "reported_provider_seconds": 0
+          },
+          "adapter_attempt_seconds": {
+            "observed": 0,
+            "missing": 0,
+            "total": 0,
+            "p50": null,
+            "p95": null
+          }
+        }
+      }
+    }
+  },
+  "cost_by_arm": {
+    "hybrid_no_resolution": {
+      "all_attempts": {
+        "attempts": 210,
+        "unknown_usage_attempts": 0,
+        "reported_tokens": {
+          "prompt_tokens": 680394,
+          "completion_tokens": 21655
+        },
+        "reported_usage_peak_cache_miss_upper_usd": "0.2301042"
+      },
+      "retries": {
+        "attempts": 10,
+        "unknown_usage_attempts": 0,
+        "reported_tokens": {
+          "prompt_tokens": 15266,
+          "completion_tokens": 696
+        },
+        "reported_usage_peak_cache_miss_upper_usd": "0.005415"
+      },
+      "failed_item_attempts": {
+        "attempts": 0,
+        "unknown_usage_attempts": 0,
+        "reported_tokens": {},
+        "reported_usage_peak_cache_miss_upper_usd": "0.00"
+      },
+      "by_operation": {
+        "answer": {
+          "attempts": 102,
+          "unknown_usage_attempts": 0,
+          "reported_tokens": {
+            "prompt_tokens": 649955,
+            "completion_tokens": 18006
+          },
+          "reported_usage_peak_cache_miss_upper_usd": "0.2165937"
+        },
+        "query_analysis": {
+          "attempts": 108,
+          "unknown_usage_attempts": 0,
+          "reported_tokens": {
+            "prompt_tokens": 30439,
+            "completion_tokens": 3649
+          },
+          "reported_usage_peak_cache_miss_upper_usd": "0.0135105"
+        }
+      }
+    },
+    "dynamic": {
+      "all_attempts": {
+        "attempts": 211,
+        "unknown_usage_attempts": 0,
+        "reported_tokens": {
+          "prompt_tokens": 2180529,
+          "completion_tokens": 237965
+        },
+        "reported_usage_peak_cache_miss_upper_usd": "0.9397167"
+      },
+      "retries": {
+        "attempts": 9,
+        "unknown_usage_attempts": 0,
+        "reported_tokens": {
+          "prompt_tokens": 4231,
+          "completion_tokens": 451
+        },
+        "reported_usage_peak_cache_miss_upper_usd": "0.0018105"
+      },
+      "failed_item_attempts": {
+        "attempts": 55,
+        "unknown_usage_attempts": 0,
+        "reported_tokens": {
+          "prompt_tokens": 15520,
+          "completion_tokens": 1845
+        },
+        "reported_usage_peak_cache_miss_upper_usd": "0.00687"
+      },
+      "by_operation": {
+        "answer": {
+          "attempts": 52,
+          "unknown_usage_attempts": 0,
+          "reported_tokens": {
+            "prompt_tokens": 103240,
+            "completion_tokens": 9421
+          },
+          "reported_usage_peak_cache_miss_upper_usd": "0.0422772"
+        },
+        "query_analysis": {
+          "attempts": 108,
+          "unknown_usage_attempts": 0,
+          "reported_tokens": {
+            "prompt_tokens": 30439,
+            "completion_tokens": 3644
+          },
+          "reported_usage_peak_cache_miss_upper_usd": "0.0135045"
+        },
+        "resolve": {
+          "attempts": 51,
+          "unknown_usage_attempts": 0,
+          "reported_tokens": {
+            "prompt_tokens": 2046850,
+            "completion_tokens": 224900
+          },
+          "reported_usage_peak_cache_miss_upper_usd": "0.883935"
+        }
+      }
+    }
+  },
+  "ledger": {
+    "physical_ledger_requests": 421,
+    "request_statuses": {
+      "reserved": 0,
+      "response_received": 421,
+      "response_usage_unknown": 0,
+      "transport_unknown": 0
+    },
+    "reserved_usd": "19.3089549",
+    "reservations_by_status_usd": {
+      "reserved": "0",
+      "response_received": "19.3089549",
+      "response_usage_unknown": "0",
+      "transport_unknown": "0"
+    },
+    "unknown_usage_requests": 0,
+    "partial_usage_requests": 0,
+    "unknown_usage_reserved_usd": "0",
+    "reported_usage": {
+      "prompt_tokens": 2860923,
+      "completion_tokens": 259620,
+      "total_tokens": 3120543
+    },
+    "known_complete_usage_peak_cache_miss_upper_usd": "1.1698209",
+    "all_reported_fields_peak_cache_miss_upper_usd": "1.1698209",
+    "reported_cost_scope": "reported fields only; missing usage remains unknown and fully reserved",
+    "reported_partial_usage_included_in_token_totals": true,
+    "unknown_reservations_retained": true,
+    "remaining_requests": 1079,
+    "remaining_reserved_capacity_usd": "111.6734451",
+    "actual_invoice_usd": "not_accessed",
+    "policy_verified": true
+  },
+  "model_identity": {
+    "requested_models": {
+      "deepseek-flash": 421
+    },
+    "returned_models": {
+      "deepseek-flash": 421
+    },
+    "calls_without_returned_model": 0,
+    "thinking_efforts": {
+      "disabled": 370,
+      "low": 51
+    }
+  },
+  "resources": {
+    "wall_seconds": 1697.7254083879998,
+    "cpu_seconds": 84.01829908200001,
+    "process_peak_rss_kib": 658072,
+    "gpu_used": false
+  },
+  "semantic_source_support": "pending_independent_review",
+  "interpretation": "fixed exposed development sample; failure-zero primary; category5 uses literal official refusal rule, not factuality; no holdout evaluation; not a new 757-question score",
+  "actual_invoice_usd": "not_accessed",
+  "holdout_qa_read": false,
+  "bonus_enabled": false
+}

@@ -1,0 +1,27 @@
+{
+  "version": "m5-conv44-isolated-recovery-v2-authorization-v1",
+  "authorized_utc": "2026-11-04T13:02:04.953566+00:00",
+  "user_reply": "是",
+  "antecedent": "Approve new independent conv-44 failed-fragment recovery; maximum 3 physical requests and USD 0.2619648; deepseek-flash, thinking disabled; no relations or QA",
+  "authorization": {
+    "approved": true,
+    "version": "m5-conv44-isolated-recovery-v2",
+    "scope": "independent copy; retry conv-44 failed extraction fragment only; no index/relation/publish/QA",
+    "build_id": "bef9f685957843698b3083ff4cbc79a4",
+    "fragment_ordinal": 18,
+    "policy": {
+      "max_requests": 3,
+      "max_usd": "0.2619648",
+      "model": "deepseek-flash",
+      "input_usd_per_million": ".30",
+      "output_usd_per_million": "1.20",
+      "max_input_bytes": 160000,
+      "max_output_tokens": 32768
+    },
+    "plan_sha256": "ca0b07d1633a5fb178bb9cec7061fa9ae453b8428c184ae6a2754c7931cc7425"
+  },
+  "authorization_sha256": "5b7696f081960eeec59a474e9cb85c755c2dde2ab765aa55303aa36605b75809",
+  "old_budget_transferred": false,
+  "authority_source": "explicit user approval in current Codex conversation",
+  "credential_values_recorded": false
+}

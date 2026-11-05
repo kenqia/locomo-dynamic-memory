@@ -1,0 +1,22 @@
+{
+  "version": "m5-level-e-execution-pricing-v1",
+  "checked_utc": "2026-11-05T02:56:13.597460+00:00",
+  "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "scrape_id": "01a1a9a1-04a2-7212-975a-70ff63ba1c3d",
+  "source_sha256": "616db82dd998c368b565ed295f1b8122ab3a51b6fd86ddb5b966b2ce0e03fff7",
+  "max_age_ms": 0,
+  "model": "deepseek-flash",
+  "documented_version": "DeepSeek-V4.1-Flash-1017",
+  "input_peak_cache_miss_usd_per_million": ".30",
+  "output_peak_usd_per_million": "1.20",
+  "approved_policy": {
+    "model": "deepseek-flash",
+    "max_input_bytes": 640000,
+    "max_output_tokens": 32768,
+    "input_usd_per_million": ".30",
+    "output_usd_per_million": "1.20",
+    "max_requests": 6000,
+    "max_usd": "1387.9296000"
+  },
+  "immutable_weight_pin": false
+}

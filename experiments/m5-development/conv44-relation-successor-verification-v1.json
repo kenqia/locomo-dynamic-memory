@@ -1,0 +1,41 @@
+{
+  "version": "m5-conv44-relation-successor-verification-v1",
+  "checked_utc": "2026-11-04T17:12:11.338326+00:00",
+  "status": "offline_verified_not_authorized",
+  "baseline_commit": "dd0bb18014c87a2506773e987581f57a2dba8128",
+  "files": {
+    "tools/m5/conv44_relation_successor.py": "6afe3fb5a1094b4cb521fa6f05bcc3fa9d75a6173ec4fee46a28a8f375687464",
+    "tests/test_m5_conv44_relation_successor.py": "21fe123ba9aedb8e4a6371b90574542a864c64515e559cde6acce399a44882e2",
+    "docs/m5-development/CONV44_RELATION_SUCCESSOR_V1.md": "3db627e2a2ad8e59ce6a3e39976b3e734620faf274ca2b54b8a5ee8af16b374c"
+  },
+  "author": {
+    "passed": 15,
+    "seconds": 37.56,
+    "live_requests": 0
+  },
+  "root": {
+    "command": "./tools/integration/check.sh tests/test_m5_conv44_relation_recovery.py tests/test_m5_conv44_relation_successor.py -q",
+    "passed": 54,
+    "seconds": 88.23,
+    "warnings": "one preexisting Starlette deprecation",
+    "live_requests": 0
+  },
+  "standards": {
+    "reviewer": "/root/final_code_review_v6",
+    "unresolved_findings": 0,
+    "initial_test_passed": 14,
+    "initial_fixture_failure": 1,
+    "fixed_item_fresh_passed": 1
+  },
+  "spec": {
+    "reviewer": "/root/level_e_spec",
+    "unresolved_findings": 0,
+    "method": "static review; no repeated tests or real stage reads"
+  },
+  "frozen_producers_unchanged": true,
+  "prior_relation_producers": 85,
+  "prior_recovery_producers": 87,
+  "new_producers": 88,
+  "holdout_qa_evidence_answers_read": false,
+  "provider_requests": 0
+}

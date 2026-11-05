@@ -1,0 +1,37 @@
+{
+  "worktree": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104",
+  "base_merge_commit": "bcbf479d3a24f79a87695a3d3bbbacd86974e184",
+  "full_offline": {
+    "command": "./tools/integration/check.sh tests -q",
+    "exit_code": 0,
+    "passed": 802,
+    "skipped": 1,
+    "deselected": 4,
+    "warnings": 1,
+    "elapsed_seconds": 489.7,
+    "excluded_markers": [
+      "live_model",
+      "local_embedding"
+    ],
+    "warning": "existing StarletteDeprecationWarning for httpx testclient compatibility"
+  },
+  "targeted": {
+    "command": "./tools/integration/check.sh tests/test_m5_isolated_extraction_recovery.py tests/test_m5_extraction_recovery.py tests/test_m5_budget.py tests/test_builds.py tests/test_validation_retry_feedback.py -q",
+    "passed": 60,
+    "warnings": 1,
+    "elapsed_seconds": 27.32
+  },
+  "independent_recovery": {
+    "command": "./tools/integration/check.sh tests/test_m5_isolated_extraction_recovery.py -q",
+    "passed": 13,
+    "warnings": 1,
+    "elapsed_seconds": 10.25,
+    "report": "docs/m5-development/ISOLATED_EXTRACTION_RECOVERY_REVIEW_V2.md"
+  },
+  "five_export_independent_check": "experiments/m5-development/five-build-export-v1-independent-check.json",
+  "actual_missing_authorization_gate": "experiments/m5-development/conv44-isolated-recovery-v2-authorization-gate.json",
+  "live_provider_requests_this_followup": 0,
+  "holdout_qa_evidence_answers_read": false,
+  "old_worktrees_git_status_clean": true,
+  "limitation": "offline tests and strict exports do not establish semantic QA accuracy, live recovery success or final acceptance"
+}

@@ -46,7 +46,7 @@ def test_current_and_historical_answers_use_fixed_version_sources_without_global
         state = client.get(f"/builds/{build_id}/current-state").json()
         relations = client.get(f"/builds/{build_id}/relations").json()
         for requested_date, expected in [(None, "Rome"), ("2023-05-01", "Paris"), (None, "Rome")]:
-            response = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where does Alex live?", "requested_date": requested_date})
+            response = client.post("/queries", json={"strategy": "dynamic", "dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where does Alex live?", "requested_date": requested_date})
             assert response.status_code == 201, response.text
             result = response.json()
             assert expected in result["answer"]["answer"]
@@ -80,7 +80,7 @@ def test_invalid_resolver_scope_and_answer_citations_fail_with_safe_persisted_tr
         model = DeepSeekModel(local, api_key="synthetic-test-key", transport=httpx.MockTransport(invalid_provider))
         with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
             dataset_id, build_id = complete_build(client, sample)
-            response = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where does Alex live?"})
+            response = client.post("/queries", json={"strategy": "dynamic", "dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where does Alex live?"})
             assert response.status_code == 502
             error = response.json()["error"]
             assert error["code"] == "invalid_output"
@@ -106,7 +106,7 @@ def test_future_date_and_tiny_final_budget_preserve_uncertainty(settings, sample
         model = DeepSeekModel(local, api_key="synthetic-test-key", transport=httpx.MockTransport(cautious_provider))
         with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
             dataset_id, build_id = complete_build(client, sample)
-            response = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where will Alex live?", "requested_date": "2099-01-01"})
+            response = client.post("/queries", json={"strategy": "dynamic", "dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where will Alex live?", "requested_date": "2099-01-01"})
             assert response.status_code == 201, response.text
             trace = response.json()
             assert trace["answer"]["status"] == "insufficient"
@@ -152,7 +152,7 @@ def test_conflict_insufficient_plan_and_unknown_relations_keep_evidence_semantic
         dataset_id = client.post(f"/builds/{build_id}/publish").json()["dataset_id"]
         original = client.get(f"/builds/{build_id}/relations").json()
         for question, status in [("Describe the conflict.", "conflict"), ("Answer the unknown detail.", "insufficient"), ("Where does Alex actually live?", "sufficient")]:
-            response = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": question})
+            response = client.post("/queries", json={"strategy": "dynamic", "dataset_id": dataset_id, "sample_id": "conv-a", "question": question})
             assert response.status_code == 201, response.text
             trace = response.json()
             assert trace["answer"]["status"] == status
@@ -183,7 +183,7 @@ def test_query_pins_complete_version_before_analysis_while_new_version_publishes
         dataset_id, old = complete_build(client, sample)
         pause["enabled"] = True
         with ThreadPoolExecutor(max_workers=1) as executor:
-            pending = executor.submit(client.post, "/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where does Alex live?"})
+            pending = executor.submit(client.post, "/queries", json={"strategy": "dynamic", "dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where does Alex live?"})
             try:
                 assert entered.wait(timeout=10)
                 new = client.post("/builds", json={"dataset_id": dataset_id, "sample_id": "conv-a"}).json()["build_id"]
@@ -212,7 +212,7 @@ def test_resolver_whitespace_reasons_are_rejected_as_invalid_output(settings, sa
     model = DeepSeekModel(local, api_key="synthetic-test-key", transport=httpx.MockTransport(blank_reason))
     with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
         dataset_id, _ = complete_build(client, sample)
-        result = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where does Alex live?"})
+        result = client.post("/queries", json={"strategy": "dynamic", "dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where does Alex live?"})
         assert result.status_code == 502
         assert result.json()["error"]["code"] == "invalid_output"
         trace = client.get(f"/queries/{result.json()["error"]["trace_id"]}").json()
@@ -228,7 +228,7 @@ def test_no_complete_version_and_non_english_are_explicit_errors(settings, sampl
         response = client.post("/queries", json=payload)
         assert response.status_code == 409
         assert response.json()["error"]["code"] == "no_complete_version"
-        response = client.post("/queries", json={**payload, "question": "他住在哪里？"})
+        response = client.post("/queries", json={"strategy": "dynamic", **payload, "question": "他住在哪里？"})
         assert response.status_code == 422
 
 
@@ -236,7 +236,7 @@ def test_explicit_english_question_date_overrides_default_cutoff(settings, sampl
     model = DeepSeekModel(settings, api_key="synthetic-test-key", transport=httpx.MockTransport(query_provider))
     with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
         dataset_id, _ = complete_build(client, sample)
-        result = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where did Alex live on 1 May 2023?"})
+        result = client.post("/queries", json={"strategy": "dynamic", "dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where did Alex live on 1 May 2023?"})
         assert result.status_code == 201
         trace = result.json()
         assert trace["time"]["origin"] == "explicit_question"
@@ -275,7 +275,7 @@ def test_capped_history_uses_the_same_date_for_request_english_and_iso_questions
         assert client.post(f"/builds/{build_id}/relations").status_code == 202
         dataset_id = client.post(f"/builds/{build_id}/publish").json()["dataset_id"]
         for suffix, extra in [("", {"requested_date": "2023-05-02"}), (" on 2 May 2023", {}), (" on 2023-05-02", {})]:
-            response = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where did Alex live before Paris?" + suffix, **extra})
+            response = client.post("/queries", json={"strategy": "dynamic", "dataset_id": dataset_id, "sample_id": "conv-a", "question": "Where did Alex live before Paris?" + suffix, **extra})
             assert response.status_code == 201, response.text
             trace = response.json()
             assert trace["time"]["requested_date"] == "2023-05-02"
@@ -301,7 +301,7 @@ def test_budget_omission_does_not_reject_a_supported_answer(settings, sample):
     model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
     with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
         dataset_id, _ = complete_build(client, sample)
-        response = client.post('/queries', json={'dataset_id': dataset_id, 'sample_id': 'conv-a', 'question': 'Name one city Alex has lived in.'})
+        response = client.post('/queries', json={"strategy": "dynamic", 'dataset_id': dataset_id, 'sample_id': 'conv-a', 'question': 'Name one city Alex has lived in.'})
         assert response.status_code == 201, response.text
         trace = response.json()
         assert trace['evidence_budget']['truncated'] is True
@@ -321,7 +321,7 @@ def test_answer_can_report_missing_subquestion_without_losing_supported_part(set
     model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
     with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
         dataset_id, _ = complete_build(client, sample)
-        response = client.post('/queries', json={'dataset_id': dataset_id, 'sample_id': 'conv-a', 'question': 'Where does Alex live and at what hour did Alex move in?'})
+        response = client.post('/queries', json={"strategy": "dynamic", 'dataset_id': dataset_id, 'sample_id': 'conv-a', 'question': 'Where does Alex live and at what hour did Alex move in?'})
         assert response.status_code == 201, response.text
         trace = response.json()
         assert trace['resolution']['status'] == 'sufficient'
@@ -358,7 +358,7 @@ def test_answer_cannot_upgrade_beyond_cutoff_constraint(settings, sample):
     model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
     with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
         dataset_id, _ = complete_build(client, sample)
-        response = client.post('/queries', json={'dataset_id': dataset_id, 'sample_id': 'conv-a',
+        response = client.post('/queries', json={"strategy": "dynamic", 'dataset_id': dataset_id, 'sample_id': 'conv-a',
                                                 'question': 'Where will Alex live?', 'requested_date': '2099-01-01'})
         assert response.status_code == 502
         trace = client.get('/queries/' + response.json()['error']['trace_id']).json()

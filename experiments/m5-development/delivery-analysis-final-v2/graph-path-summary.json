@@ -1,0 +1,9 @@
+{
+  "added_path_count": 7689,
+  "path_lengths": {
+    "1": 5712,
+    "2": 1977
+  },
+  "queries_with_two_hops": 444,
+  "connectivity_is_semantic_truth": false
+}

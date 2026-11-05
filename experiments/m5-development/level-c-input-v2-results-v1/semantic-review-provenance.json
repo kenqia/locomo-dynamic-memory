@@ -1,0 +1,27 @@
+{
+  "kind": "ai_assisted_independent",
+  "reviewers": [
+    "final_code_review_v6",
+    "level_c_source_a"
+  ],
+  "units": 200,
+  "full_conversation_source_turns": 2080,
+  "independent_of_generation": true,
+  "gold_read_by_reviewers": false,
+  "arm_names_and_scores_hidden_in_packets": true,
+  "all_items_reviewed_including_failures": true,
+  "per_unit_double_review": false,
+  "human_or_teacher_truth": false,
+  "reference_hashes": {
+    "packets.json": "ce83da5b451ea0683127b8fb944f932cc760984a113e3d47777ca0f2bf9f7978",
+    "manifest.json": "d5680188f396337bbe2e728e3c99abbcb42976d12ffbe8bf5911244132b3b9d0",
+    "private-mapping.json": "5f3b4c1ff1e340793a882e51f058dcfddc6c6b79a5740495fd78935526815738",
+    "review-template.json": "05efbcd4e610de51c53ff267023cd2f845f3d98ab6526b04e72e5c6690877ec9",
+    "reviews-conv26-30-v1.json": "7132574ad40262d8652b74f6d3d1ecbf5cc20153e7233522558b4aa72d543384",
+    "reviews-conv41-42-v1.json": "4cb8d85828a249052b9f3af15f941b4b2436eb549bbf1696dddcffe5f4f87189",
+    "independent-reviews.json": "3336f5427660c85e3b1ae890c1b10696aa323f76b7aaad22fe8288c8570e10a5"
+  },
+  "quote_records": 604,
+  "raw_review_quotes_committed": false,
+  "limitation": "one AI judgment per unit; style may reveal strategy; hashes and quote matching do not prove semantic truth"
+}

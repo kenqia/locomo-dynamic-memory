@@ -1,0 +1,79 @@
+7fa9dbba2d4e6779968c3aca55b7503c77e43a85 feat: add optional source-linked graph and reversible memory grouping
+cfaab0e5afe8357f9d5454930eb08ad9c85c916f feat: add explicit bonus query variants and physical request budget guards
+9b91770d5cef7a35e7f0aebf1d598da8718b97e0 test: verify actual two-hop traversal without inferred shortcuts
+ce229e7386f5c1e54e94cad06104e2f806f280ca feat: add reproducible M5 development replay and protected source validation
+51f7876326c6c3e844c0dfa235d21cbe61fd9c7d fix: preserve temporal intent and audit failed bonus queries
+18d6fea4fb3e3cfb3cead4045716ad8feac7188c fix: stop locally rejected provider calls and retain prior attempt history
+f9eb4cf2c959c35e6e74455a88828c2a21b31999 fix: bound graph rendering and add real development data browser demo
+d9a9c849d9a78739c0716b44bc9afcd576735e03 feat: prepare bounded holdout extraction stage without provider calls
+775b15e292e16550fde3063eec3562c397f2f7e8 docs: record M5 evidence boundaries and default-off adoption decisions
+08db6f356ab3bfc57e98cb11f0d81e3ab2c13ef7 feat: audit authorized extraction without exposing source text or credentials
+dd73aa0c61ec8aaf9088cdf6fe781d176de4ace0 data: preserve M5 offline evidence and authorized extraction outcomes
+1db645d54cd14f08d2fe9259a3b488a686b6ec0c docs: define explicit bounded recovery for the failed holdout fragment
+87fce8ee6adf088d0d80b31717ee1116ec3871fe fix: align optional temporal priority with the explicit query date
+797b174c9bd1e64852f703659f813c2cd1377aff test: cover cancellation and joint participants and audit relation cost bounds
+f9ee7fb90e4a4e9968b6f630a34638469b603c4c docs: record final offline regression and refresh candidate evidence manifests
+55fcaebd0105546325bbdc14d3b8db7b56f0d18f feat: prepare one-fragment recovery with local and original budget guards
+ed47868c83163485d1e276a6203bdffd871640cd docs: index bounded recovery source and verification artifacts
+bbc9dde2653cffe0ceba435cf874d09777e29250 fix: discard proven unsent relation checkpoints after local budget rejection
+a30ca9f61986520abca30438f9bd659f955e60b7 feat: score independently reviewed historical query applicability without new provider calls
+6044b709636e6860e295991a568229b87b698590 data: preserve authorized failed-fragment recovery and final offline verification
+08be26d1bf8a069191054464957a0ac6b950c8a7 feat: verify isolated holdout index and prepare bounded relation phase
+fca2bf1dc8a2765ab95ead8e96afb0f9cb959e84 feat: audit authorized relation execution against frozen source and budget
+323917c244475a32394b5d22d9df3ac1cf1c5921 feat: prepare fixed development QA with authorization and Gold isolation
+c8e5c09456c8bfc3f2ad56701a0bfb56928c12b1 docs: record independent development QA authorization and running stages
+3b8e4b4c2a45d61520dfabf98be42f300ef159b8 feat: audit frozen development QA against source and budget identity
+b9c2b913079b6960f44f5b88892adea64a93c80c feat: validate independent answer source reviews with explicit denominators
+7cee8f9a996723c62ad1290dff929591b4c869c5 feat: derive paired QA and runtime metrics from frozen generation
+3335862dba1e9658f4d5c515b602c98049826d7c docs: record frozen development QA, independent source review and final model requirement
+b3ba45c313b3f8e833525fcea809b4144dfd981d feat(m5): prepare isolated larger-input QA with thinking disabled
+c71fb93ae0f3f18724a0b7d3ef313339d2d53bc1 feat: bind offline input diagnostics to the complete frozen stage
+4aadaff8de6ae5778c042065c3bd4f04d75a453f docs(m5): record input v2 prepared identities and artifact hashes
+01f44c0cba7451233e534f7f8df3fb5cd9696ec7 docs: index reviewed input diagnostics and final delivery evidence
+73787369f3349be3ae8b6b161273377183e8f475 docs: record blocked export readiness and independent evaluation gates
+8868a58e74bbb72d24caeedc02389f8c86195ffa docs: refresh evidence indexes for blocked final evaluation gates
+fc3b1ee8ca9ce9a7c4964d0e88d69e742e31d3ec docs(m5): record completed relation phase and independently verified terminal costs
+0aae59c61d569f03d73c57ae333784ae99a8a22b docs(m5): refresh candidate identities after relation terminal audit
+2a3cd8517aad4d1af99f77c8bdae259cd1038f72 docs(m5): record explicit input v2 QA budget authorization
+a8f0e6827524a94038535888573be0ea644bdf3c docs(m5): distinguish authorized input v2 execution from historical runs
+e2af67634077c2abc8f8fc9e9af9075e4e76f61d test(m5): align semantic review fixture with isolated input v2 policy
+e45a7b34f25130fc8f1c3924a5ca3710835b6d88 docs(m5): record frozen input v2 scores and terminal costs
+aba95ca47fcafd527ef1237d4f30d23834592fe2 docs(m5): finalize input v2 source review and verified private archive
+bcbf479d3a24f79a87695a3d3bbbacd86974e184 Merge branch 'codex/m5-final-development-20261104' into codex/m5-final-build-repair-20261104
+3fa8b4fd60f6973e76f634bcd597eaabe796f4b6 feat: prepare isolated conv44 recovery with a separate approval gate
+0303c5c79aadcabb6d94f8246c9c3e79c0005f3c feat: complete conv43 in a local copy and verify five strict exports
+213a8ab3cf5272c5faf4c18a092b7526d20418b0 docs: record integrated M5 verification and remaining acceptance gates
+3f8929839e30cd085b105504ca1a6fe11fcf216f docs: record authorized conv44 recovery failure and audited terminal costs
+f0f8dfd31c16531714560374a23cbfa940e24923 fix: ground extraction times in literal source text
+fe455f5182e04f5b20fc0d9ae89424a680968dc5 feat: prepare provenance-preserving conv44 successor build
+4b03095f3a5635a13decbb6c5b6a5a5a0fba609a docs: record independently verified conv44 recovery preparation
+aed4634deb6c873ef1620d0a80bd023e2541d1a2 docs: freeze successful conv44 successor extraction and audit
+82a9d25bf866440f7e1e0214d303b33653993ce7 feat: prepare isolated disabled conv44 relation phase
+a795be451b662d482b62fb89508d7f24db2359ae docs: freeze reviewed conv44 relation preparation and budget
+271372112f380142367ead232f35ec3e0410340f docs: record approved conv44 relation budget and current pricing
+87c0cfbf7bb3c39ef02af642f7c3a338fb7e5f18 feat: strictly export a completed conv44 scratch copy
+7cd6723fbfcfabbe3e90f0b74c3868347d87a25f docs: distinguish authorized live relations from preparation evidence
+32706ff983b8a9f2d9952273fbfd036f89cfe047 feat: guard a one-shot held-out evaluation behind a final system lock
+2443e6dd9fbee99e45f7b3ad194246dcfe21f0e6 docs: archive the audited conv44 relation failure terminal
+443d16b67c15af57867c67a13a4e227bec34eb3f feat: prepare a separately authorized retry of failed conv44 relations
+12881c6f1f612430b22dc0bed8e4c3cb7d53a4fd docs: freeze the independently audited ten-task relation recovery plan
+fd10797fdb71e055f3bd3dc219301d18eda2aaab docs: record approved relation recovery budget and execution pricing
+43f9a78829ed37b35d14b728bf0fdcc714036625 docs: preserve relation recovery terminal and remaining failure
+dd0bb18014c87a2506773e987581f57a2dba8128 docs: align current M5 gates with audited recovery outcome
+1f7952456cf61c294df9051a53798d2e69023984 feat: prepare bounded final conv44 relation retry with label prerequisites
+679abb47b1aaa5d5bad7a9124a3af6b3cdb18eb7 docs: freeze audited single-task conv44 recovery preparation
+b0739c274dd2fcb4c04a305cdc56f8e8d0771006 docs: record approved single-task relation recovery execution
+0dbd98e7b296ef29d9998fa55d88d512f8ec85f1 docs: close conv44 recovery and verify six complete memory exports
+191349fa7b2851ffe7ab3d42088d14427889b2fa docs: lock final held-out system before reading question text
+41a338606e3092af82f5ad673af8963318f60ce4 docs: freeze independently audited held-out evaluation preparation
+ee546fca4ef6755f6753be5f7ceb577b3485ba6d docs: record approved held-out evaluation and execution pricing
+d713a168629c16624e6d4bfc6a03eb15f783d5ea docs: distinguish running held-out evaluation from historical checkpoints
+dc16101a79b860c7812020f4c4ea51579b4201a8 feat: audit frozen Level E runtime and independent source reviews
+aa56800c6854879d3bcbcf356e13a06562c0ed67 docs: bind verified held-out reporting and shared build costs
+3fc680e69b07f38ed4b980ff222134deff35ea78 docs: preserve one-shot evaluation process and terminal handoff
+b61e2418bf57b3708d3ba2916767b6b32d63a009 test: verify Level E analysis fallback preserves reporting attribution
+92e9015dce24fb0934a31de0e1a479d17d390fa1 docs: record analysis fallback reporting verification
+d14f82c6b9a868602455dd6d9399d4c849ebbf7f docs: index fourteen M5 delivery requirements before Level E freeze
+92763f25aa443b259da4682b90b5f589d9d044e6 docs: record audited held-out scores, failures, and runtime costs
+829af031f8129f6c5fa71208d54918eead54c174 docs: finalize source-reviewed Level E results and private archive evidence
+e369a12f2405916634e0d1b1407adb7b9110be3c docs: complete fourteen-item M5 delivery report and independent terminal review

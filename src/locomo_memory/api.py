@@ -74,11 +74,16 @@ def create_app(settings: Settings | None = None, model=None, embedder=None) -> F
     register_relation_routes(app, relations, versions, expansion)
     app.state.expansion = expansion
     register_version_routes(app, versions, retrieval, relations)
+    from .m5_api import register_m5_routes
+    register_m5_routes(app, versions)
     app.state.queries = QueryService(versions, retrieval, expansion, model)
     register_query_routes(app, app.state.queries)
     register_evaluation_routes(app, app.state.queries)
     register_evaluation_plan_routes(app, app.state.evaluation)
     register_experiment_routes(app)
+
+    from .release_viewer import DEMO, create_replay_app
+    app.mount("/replay", create_replay_app(DEMO / "manifest.json", DEMO))
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(request: Request, exc: RequestValidationError):

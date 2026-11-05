@@ -1,0 +1,12 @@
+{
+  "README.md": "a232ad8208b682f1f44ba3a374f9314661ed82870dcfd503489b75006d6b0947",
+  "failures.json": "36e4613959700665a09f6febc730f8cf103e1cdea412ef912af200d09ccdc94d",
+  "metrics-summary.json": "62ecb7708af88634043b8a5c94cc5aff4cf5dbb7d39edf40b422e6c4796442c6",
+  "per-question-metrics.json": "f70425c8c3979507bccc27bf6b0683b189690820b846c24a46ef7f2629e5efa9",
+  "raw-results-archive-manifest.json": "839c4353b458c43177e35596234637ea7e6ca4e074664377b1a642a29dd2aca1",
+  "semantic-paired-differences.json": "9daa8e9ad6d4a086d6bf94fdce98416b39bc6a4c5e530979fa93e0c2cbac6df7",
+  "semantic-review-provenance.json": "f626f894f7d787bf83dd2d7fd2da19cc7a06bcc6881bc1c6033188475e316dff",
+  "semantic-review-summary.json": "cb4855886bea032ee3e46aaac4b97e5a3d84359ddcb6d5149ebd067b93330476",
+  "sha256-manifest.json": "7d57cb2c40f2611c8f51bb3350d2a872465ff74cfac7192242c5f0a6ecd46ad7",
+  "source-manifest.json": "14d0d5f433429485c14b7cd4e687f4de2380dc03d3415af4e3aac7ce12557285"
+}

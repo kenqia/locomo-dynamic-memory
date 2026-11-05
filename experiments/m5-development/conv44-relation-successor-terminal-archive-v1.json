@@ -1,0 +1,41 @@
+{
+  "version": "m5-conv44-relation-successor-terminal-archive-v1",
+  "checked_utc": "2026-11-05T02:16:00.409562+00:00",
+  "archive": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-relation-successor-terminal-archive-v1",
+  "status": "related_not_complete",
+  "files": {
+    "authorization-template.json": "15cc17dfefe0baa0bf2a755516e9a23e53a8a8b6194a690ecfc5477ed9a43723",
+    "authorization.json": "494a9075ea5e386823992f3f602035dd40e6b9c74245928bf8f31596ae403c2f",
+    "execution-started.json": "0d3d52b7d531dff35801512c875a3551e632fc86330423762f40d13158f9ff09",
+    "independent-audit-script.py": "d09d8994b9d717086ecbfa3222ac7f31ab3c79e1ec72f73ced0cf9db3944b6c0",
+    "independent-preparation-audit-script.py": "48935b636d6f07ed96ca00b157512d31951e0ac1b82091ef88d98102212a9f1d",
+    "independent-terminal.json": "7b805b55d80548c539d6d263067ed32ba6abea5b1ee3cff303df88ce7b3e2c87",
+    "inheritance.json": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e",
+    "memory.sqlite3": "8bb144fdef8faa456b6134fc1375db73e513761e5ecb307829b5681bb238ea2a",
+    "memory.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "memory.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "outcome.json": "4773185996b031477973a80e7699d288e9b6020f4c96589c12de75b9a928246b",
+    "physical-requests.sqlite3": "3d1ba26ae5a0796a2665d15361b8f8166b640546a28933fd457dbbce5e60e602",
+    "plan.json": "699934d373556a353f837322322931cd8aec3adc76b87feada2c97a5fb9bd8a4",
+    "preparation-root-audit-script.py": "c7774aaafef66bec56e255eab8a4d2f1415216b86f977f1f7b886465a12ce123",
+    "preparation-root-audit-v1.json": "21292e1b72e27dcd0cb5c4c3c461d9c90c6c8bd99f8ba0cceab2c41cb215e1c6",
+    "settings.json": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "terminal-audit-v1.json": "24e09a0f75418be112a23d042c13cbfd1e42fed2338db1bb67a08951e78f030f",
+    "terminal-root-audit-script-v2.py": "1049e52bff478adfac15f420d77591a126434c51c2f13104d635057e55931b69",
+    "terminal-root-audit-script.py": "6d74fd6cce7190e4cfab673da5dba4425344e1ab4c88b76ea297b15322a659b1"
+  },
+  "database_copy": "SQLite read-only backup, verified logical identity; WAL folded into backup",
+  "source_logical_identity": {
+    "database": "e44a48d165665d5965b7ccc0af0d2558a98f9387c9cf2573d3653802175e60d3",
+    "ledger": "ab8fad0598948514b226fff8cb0b366efcf472e8730e4836d15083a1a1668398",
+    "plan": "699934d373556a353f837322322931cd8aec3adc76b87feada2c97a5fb9bd8a4",
+    "settings": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e"
+  },
+  "root_terminal_sha256": "24e09a0f75418be112a23d042c13cbfd1e42fed2338db1bb67a08951e78f030f",
+  "independent_terminal_sha256": "7b805b55d80548c539d6d263067ed32ba6abea5b1ee3cff303df88ce7b3e2c87",
+  "source_unchanged": true,
+  "private_execution_stdout_stderr_excluded": true,
+  "holdout_qa_evidence_answers_read": false,
+  "actual_invoice": "not_accessed"
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="6" time="4.237" timestamp="2026-11-04T12:37:45.859563+08:00" hostname="localhost"><testcase classname="tests.test_m5_extraction_recovery" name="test_recovery_only_retries_failed_fragment_and_cannot_repeat" time="0.687" /><testcase classname="tests.test_m5_extraction_recovery" name="test_recovery_retains_failure_and_caps_new_requests_at_three" time="0.929"><failure message="ValueError: recovery_snapshot_changed">prepared = (PosixPath('/tmp/pytest-of-kenqia/pytest-27/test_recovery_retains_failure_0/stage'), PosixPath('/tmp/pytest-of-kenqia/pytest-27/test_recovery_retains_failure_0/recovery'))
+
+    def test_recovery_retains_failure_and_caps_new_requests_at_three(prepared):
+        stage, output = prepared
+        before = count(stage/'physical-requests.sqlite3')
+        authorize(output)
+        with pytest.raises(RuntimeError, match='no_automatic_retry'):
+            recovery.execute(output, httpx.MockTransport(lambda r: completion({'memories': []})))
+        assert count(stage/'physical-requests.sqlite3') == before+3
+        assert count(output/'recovery-reservations.sqlite3') == 3
+        assert json.loads((output/'outcome.json').read_text())['outcome']['status'] == 'failed'
+        with pytest.raises(FileExistsError):
+&gt;           recovery.execute(output, httpx.MockTransport(lambda r: pytest.fail('repeat provider call')))
+
+tests/test_m5_extraction_recovery.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+output = PosixPath('/tmp/pytest-of-kenqia/pytest-27/test_recovery_retains_failure_0/recovery')
+delegate = &lt;httpx.MockTransport object at 0x7da838f77d10&gt;
+
+    def execute(output, delegate=None):
+        """Caller must have explicit user approval; delegate injection is for offline tests."""
+        plan = json.loads((output/'plan.json').read_text())
+        expected = dict(approved=True, scope=SCOPE, build_id=BUILD, fragment_ordinal=ORDINAL,
+            max_additional_requests=3, max_additional_reserved_usd=LIMIT_USD,
+            plan_sha256=sha(output/'plan.json'))
+        if json.loads((output/'authorization.json').read_text()) != expected:
+            raise ValueError('recovery_authorization_mismatch')
+        if (plan['status'] != 'prepared_not_authorized' or plan['scope'] != SCOPE
+                or plan['build_id'] != BUILD or plan['fragment_ordinal'] != ORDINAL
+                or plan['max_additional_requests'] != 3
+                or plan['max_additional_reserved_usd'] != LIMIT_USD
+                or plan['original_global_policy'] != POLICY
+                or plan['script_sha256'] != sha(Path(__file__))):
+            raise ValueError('recovery_plan_changed')
+        stage = Path(plan['stage']).resolve()
+        settings = check_stage(stage)
+        if (sha(stage/'plan.json') != plan['original_plan_sha256']
+                or sha(stage/'settings.json') != plan['settings_sha256']):
+            raise ValueError('recovery_original_identity_changed')
+        # Share the backend's exclusive owner lock. Never infer death from a file.
+        with backend_ownership(settings.db_path):
+            if (snapshot(settings.db_path) != plan['original_database_snapshot']
+                    or snapshot(stage/'physical-requests.sqlite3') != plan['original_ledger_snapshot']):
+&gt;               raise ValueError('recovery_snapshot_changed')
+E               ValueError: recovery_snapshot_changed
+
+tools/m5/extraction_recovery.py:104: ValueError</failure></testcase><testcase classname="tests.test_m5_extraction_recovery" name="test_recovery_refuses_missing_authority_or_changed_snapshot_before_mutation[no_authority]" time="0.713" /><testcase classname="tests.test_m5_extraction_recovery" name="test_recovery_refuses_missing_authority_or_changed_snapshot_before_mutation[changed_authority]" time="0.632" /><testcase classname="tests.test_m5_extraction_recovery" name="test_recovery_refuses_missing_authority_or_changed_snapshot_before_mutation[changed_database]" time="0.569" /><testcase classname="tests.test_m5_extraction_recovery" name="test_recovery_refuses_missing_authority_or_changed_snapshot_before_mutation[changed_ledger]" time="0.614" /></testsuite></testsuites>

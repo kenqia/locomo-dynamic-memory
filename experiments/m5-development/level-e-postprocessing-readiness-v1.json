@@ -1,0 +1,22 @@
+{
+  "version": "m5-level-e-postprocessing-readiness-v1",
+  "status": "synthetic_verified_waiting_real_generation_freeze",
+  "implementation_commit": "dc16101a79b860c7812020f4c4ea51579b4201a8",
+  "files": {
+    "tools/m5/level_e_reporting.py": "50687231bd01a603a0bd6872b07a8c64c27b89abacc7b7b41591df0f7ab6fb89",
+    "tests/test_m5_level_e_reporting.py": "bfa9c050e6c7e7344e9de88c81b69fb63ee2a9ca2debc758f0e439175fbfcee9",
+    "docs/m5-development/LEVEL_E_REPORTING_V1.md": "d76c13eb15cc5098642ab91b74bdcbc492e73530709ea77379c6d0d7ba39f6e3",
+    "docs/m5-development/LEVEL_E_REPORTING_REVIEW_V1.md": "a8959aab7b28ec33689338f52b609e7e697f5b1b9e75c4e79d90fe6216fb81ba",
+    "experiments/m5-development/level-e-shared-build-cost-v1.json": "1d522a2eaf1a4a80dc9595f286648e3650943c650e3886616837116671604701",
+    "experiments/m5-development/level-e-shared-cost-archive-independent-v1.json": "4e1b28defeb27946f44b8232984972286838ab2cb44c4bb4db3d28a6d28141f1",
+    "experiments/m5-development/level-e-execution-support-archive-v1.json": "139613988d8d875b048889fb53c6e4b1240fb0f997720c489207e6dc472bd75a"
+  },
+  "frozen_generation_producers_unchanged": true,
+  "author_tests": 20,
+  "independent_tests": 20,
+  "remaining_confirmed_p0_p1_p2": 0,
+  "actual_reporting_run": false,
+  "actual_review_packet_prepared": false,
+  "gold_read": false,
+  "provider_requests": 0
+}

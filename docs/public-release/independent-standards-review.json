@@ -1,0 +1,470 @@
+{
+  "version": "public-snapshot-independent-standards-review-v1",
+  "axis": "Standards",
+  "reviewer": "non-author /root/release_standards_review",
+  "checked_utc": "2026-11-05T14:26:02.167876+00:00",
+  "base_commit": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+  "head_at_review": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+  "branch": "m5/personal-public-core",
+  "status": "PASS_LOCAL_AWAITING_REMOTE_CI",
+  "diff_command": "git diff --cached f5a5dfd; untracked/imported content compared to801-file frozen tar manifest",
+  "standards_sources": [
+    "AGENTS.md",
+    "CONTEXT.md",
+    "docs/adr/0001-memory-architecture.md",
+    "docs/adr/0002-real-model-baseline-protocol.md",
+    ".agents/skills/code-review/SKILL.md",
+    "SAFE_PUBLIC_SNAPSHOT.md"
+  ],
+  "documented_standard_violations": [],
+  "judgment_smells": [],
+  "finding_counts": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "judgment_smells": 0
+  },
+  "resolved_during_review": [
+    "Inherited CI bare pytest/15min was incompatible with public selection and observed full runtime. CI now uses scripts/personal-release run-tests --public with45min. Final new combination result and remoteCI remain required.",
+    "Three frozen pytest outputs preserve original whitespace/SHA; .gitattributes exceptions are three precise paths and disable blank-at-eol only. Source extraction_patch.py loses one extra EOF blank line, no behavior change; cached diff --check passed."
+  ],
+  "import_identity": {
+    "initial_files": 801,
+    "same_as_main": 119,
+    "modified_from_main": 40,
+    "added": 642,
+    "initial_sha_mismatches": 0,
+    "current_declared_adaptations": [
+      "README.md: link to safe snapshot provenance",
+      "src/locomo_memory/extraction_patch.py: one extra EOF blank line removed"
+    ],
+    "extra_integration_files": [
+      ".gitattributes",
+      ".github/workflows/checks.yml",
+      "SAFE_PUBLIC_SNAPSHOT.md",
+      "docs/public-release/*"
+    ],
+    "no_tracked_deletions": true,
+    "existing_main_upstream_raw_unchanged": true
+  },
+  "history": {
+    "origin_main_at_initial_review": "f5a5dfdec5235d1c411cb5d4b525467e40fef415",
+    "commits_after_base_at_check": 0,
+    "old_research_release_history_introduced": false,
+    "final_postcommit_parentage_must_be_rechecked": true
+  },
+  "retained_main_review": {
+    "paths": 441,
+    "known_literal_scope": "retained text/Python AST/decoded JSON; official full Source Turn and question>=18 characters; official raw dataset excluded from literal self-match; no official answer or private Gold comparison",
+    "known_literal_match_path_count": 48,
+    "known_literal_matches": [
+      {
+        "path": "experiments/current-showcase/plan.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 44
+      },
+      {
+        "path": "experiments/current-showcase/results/answer-source-packets.json",
+        "official_source_full_turn_matches": 60,
+        "official_question_matches": 20
+      },
+      {
+        "path": "experiments/current-showcase/results/answer-source-review.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 20
+      },
+      {
+        "path": "experiments/current-showcase/results/dynamic-packets.json",
+        "official_source_full_turn_matches": 24,
+        "official_question_matches": 0
+      },
+      {
+        "path": "experiments/current-showcase/results/paired-differences.csv",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 20
+      },
+      {
+        "path": "experiments/current-showcase/results/paired-results.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 20
+      },
+      {
+        "path": "experiments/current-showcase/results/recall-results.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 40
+      },
+      {
+        "path": "experiments/current-showcase/web-recorded/failure-page.txt",
+        "official_source_full_turn_matches": 18,
+        "official_question_matches": 0
+      },
+      {
+        "path": "experiments/current-showcase/web-recorded/results.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 3
+      },
+      {
+        "path": "experiments/issue-15-answer-output-live/plan.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-answer-output-live/results/comparison.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-answer-output-live/results/paired-qa.csv",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-answer-output-live/results/report.md",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-answer-output-live/results/results.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-evidence-coverage-live/plan.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 15
+      },
+      {
+        "path": "experiments/issue-15-evidence-coverage-live/results/paired-qa.csv",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 15
+      },
+      {
+        "path": "experiments/issue-15-evidence-coverage-live/results/report.md",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 15
+      },
+      {
+        "path": "experiments/issue-15-evidence-coverage-live/results/results.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 15
+      },
+      {
+        "path": "experiments/issue-15-evidence-coverage-live/results/targeted-diagnostics.json",
+        "official_source_full_turn_matches": 1,
+        "official_question_matches": 2
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/citation-plan.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 1
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/citation-results/report.md",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 1
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/citation-results/results.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 1
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/citation-results/source-audit.json",
+        "official_source_full_turn_matches": 2,
+        "official_question_matches": 0
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/delivery-replay.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 20
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/followup-delivery.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 20
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/followup-plan.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 7
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/followup-results/report.md",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 7
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/followup-results/results.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 7
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/followup-results/source-audit.json",
+        "official_source_full_turn_matches": 23,
+        "official_question_matches": 0
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/live-plan.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 11
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/live-results/report.md",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 11
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/live-results/results.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 11
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/live-results/source-audit.json",
+        "official_source_full_turn_matches": 31,
+        "official_question_matches": 0
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/extraction-coverage.json",
+        "official_source_full_turn_matches": 12,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/initial-plan.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/plan.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/results/paired-qa.csv",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/results/report.md",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/results/results.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/v2-plan.json",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/v3-extraction-coverage.json",
+        "official_source_full_turn_matches": 12,
+        "official_question_matches": 10
+      },
+      {
+        "path": "experiments/issue-15-v6-gates/audit-inputs.json",
+        "official_source_full_turn_matches": 30,
+        "official_question_matches": 0
+      },
+      {
+        "path": "experiments/issue-15-v6-gates/semantic-v6-audit.json",
+        "official_source_full_turn_matches": 1,
+        "official_question_matches": 0
+      },
+      {
+        "path": "experiments/issue-15-v6-gates/semantic-v6-audit.md",
+        "official_source_full_turn_matches": 1,
+        "official_question_matches": 0
+      },
+      {
+        "path": "experiments/issue-15-v6-gates/v6.1/semantic-inputs.json",
+        "official_source_full_turn_matches": 35,
+        "official_question_matches": 0
+      },
+      {
+        "path": "tests/fixtures/answer-source-turns.json",
+        "official_source_full_turn_matches": 8,
+        "official_question_matches": 0
+      },
+      {
+        "path": "tests/test_answer_regressions.py",
+        "official_source_full_turn_matches": 0,
+        "official_question_matches": 5
+      },
+      {
+        "path": "tests/test_imports.py",
+        "official_source_full_turn_matches": 1,
+        "official_question_matches": 0
+      }
+    ],
+    "legal_public_upstream": {
+      "license": "CC-BY-NC-4.0",
+      "upstream_commit": "3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376",
+      "provenance": [
+        {
+          "path": "data/raw/locomo/locomo10.json",
+          "bytes_match": true,
+          "sha256_match": true
+        },
+        {
+          "path": "data/raw/locomo/LICENSE.txt",
+          "bytes_match": true,
+          "sha256_match": true
+        },
+        {
+          "path": "data/raw/locomo/upstream/README.MD",
+          "bytes_match": true,
+          "sha256_match": true
+        },
+        {
+          "path": "data/raw/locomo/upstream/task_eval/evaluation.py",
+          "bytes_match": true,
+          "sha256_match": true
+        },
+        {
+          "path": "data/raw/locomo/upstream/task_eval/evaluate_qa.py",
+          "bytes_match": true,
+          "sha256_match": true
+        }
+      ]
+    },
+    "frozen_plan_source_identity": [
+      {
+        "path": "experiments/current-showcase/plan.json",
+        "official_artifact_sha256_matches_verified_upstream": true
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/initial-plan.json",
+        "official_artifact_sha256_matches_verified_upstream": true
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/plan.json",
+        "official_artifact_sha256_matches_verified_upstream": true
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/v2-plan.json",
+        "official_artifact_sha256_matches_verified_upstream": true
+      },
+      {
+        "path": "experiments/issue-15-answer-output-live/plan.json",
+        "official_artifact_sha256_matches_verified_upstream": true
+      },
+      {
+        "path": "experiments/issue-15-evidence-coverage-live/plan.json",
+        "official_artifact_sha256_matches_verified_upstream": true
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/live-plan.json",
+        "official_artifact_sha256_matches_verified_upstream": true
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/followup-plan.json",
+        "official_artifact_sha256_matches_verified_upstream": true
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/citation-plan.json",
+        "official_artifact_sha256_matches_verified_upstream": true
+      }
+    ],
+    "reference_field_lineage": [
+      {
+        "path": "experiments/current-showcase/report.py",
+        "line": 31,
+        "derivation": "reference <- official_qa.answer"
+      },
+      {
+        "path": "experiments/issue-15-thinking-qa/report.py",
+        "line": 45,
+        "derivation": "gold <- official_qa.answer"
+      },
+      {
+        "path": "experiments/issue-15-evidence-coverage-live/report.py",
+        "line": 43,
+        "derivation": "reference_answer <- official_qa.answer"
+      },
+      {
+        "path": "experiments/issue-15-query-reliability/report.py",
+        "line": 33,
+        "derivation": "reference_answer <- official_qa.answer"
+      }
+    ],
+    "ai_review_boundary": "current-showcase README explicitly describes developer-assistant authored source review, not independent human/course truth. No evidence found that official QA reference fields are private controlled Gold.",
+    "synthetic_trace_boundary": "issue-15-quality/evidence-real.json, evidence-reviewed-real.json and raw-selection-scope-real.json contain explicit synthetic_provider_outputs and synthetic cases; filenames alone not used as evidence.",
+    "credential_scan": {
+      "current_retained_files": 441,
+      "current_nested_office_zip_members": 323,
+      "credential_shape_findings": 0,
+      "historical_reachable_objects": 2176,
+      "historical_unique_blobs": 1166,
+      "historical_raw_bytes": 103680578,
+      "historical_credential_shape_findings": 0,
+      "historical_sensitive_filename_candidates": 0
+    }
+  },
+  "documentation": "SAFE_PUBLIC_SNAPSHOT.md separates original tar801 scope/historical991and937 validation, retainedmain officialQA and AIreview materials, current snapshot/CI gates, controlled six exports, team dependencies and revertPR rollback. README points to it. No standards issue found.",
+  "limitations": [
+    "Only known credential shapes and known official Source/question exact matches; unknown formats, short names, paraphrases, hidden/private facts, image OCR and arbitrary semantic privacy are not certified.",
+    "Current retained Office/zip323 inner members scanned for credential shapes; historical Git raw blob scan does not decompress all historical compressed layers.",
+    "No local credential files, privateGold, SQLite, private logs or paid model calls; no remote mutations by reviewer.",
+    "Official publicly licensed QA and AI diagnostic reviews are not relabeled as privateGold; retainedmain content has a wider distribution boundary than original sanitized tar.",
+    "Whole suite and browser outcomes verified from originals and byte-identical public copies; reviewer did not independently rerun these long commands. Remote CI is not run at this cutoff."
+  ],
+  "merge_gate": "Local Standards PASS. Remote CI, independent Spec and final commit parentage / PR path equality must pass before merge; stop for actual sensitive data, overwrite or regression. No additional user privacy decision currently required.",
+  "summary": "本地Standards审查PASS，未解决P0/P1/P2与判断型smell均0。已独立核实本轮967项JUnit零失败/错误/跳过，原stdout与XML哈希及28deselected准确；普通Chromium与只读Replay证据和公开副本一致。48处上游命中有许可/来源链证据，未发现私有Gold/凭据披露。801导入及main保留边界已记录；CI尚未运行，保持PASS_LOCAL_AWAITING_REMOTE_CI，最终提交父链另行消息复核，不改冻结报告。",
+  "actual_final_validation": {
+    "independent_evidence_inspected": [
+      {
+        "path": "var/public-snapshot-tests.xml",
+        "sha256": "3cf4f9c3c5aac6dc86e712bdc4ee4bd3162db1121b2a85d6066b8aa548ff4110",
+        "testcases": 967,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "xml_seconds": 795.877
+      },
+      {
+        "path": "var/public-snapshot-tests.txt",
+        "sha256": "1052edd188bd541ed1255a015cea7447fb59277e5f9450f78d7168001b2dc7f8",
+        "original_summary": "967 passed, 28 deselected, 1 warning in 796.03s"
+      },
+      {
+        "path": "docs/public-release/browser-normal/issue-12-result.json",
+        "sha256": "840c6a8b1d1886acfbaa6ca7a5a6ff46d82c8dd537efb058313e782d3dcc4b38",
+        "original_copy_bytes_equal": true,
+        "browser": "Chromium156.0.8078.4",
+        "page_errors": 0,
+        "console_errors": 0,
+        "evaluation_rows": 8,
+        "failed_synthetic_rows": 4,
+        "download_schema": "memory-export-v2",
+        "synthetic_adapters": "controlled LLM and Embedding",
+        "png_count": 8
+      },
+      {
+        "path": "docs/public-release/browser-replay/browser-result.json",
+        "sha256": "0abd5bcc45dbb8bf10596c95b3e053d58051ef9fdd0ef96c0ecdb02d0f513670",
+        "original_copy_bytes_equal": true,
+        "page_errors": 0,
+        "external_requests": 0,
+        "http_methods": [
+          "GET"
+        ],
+        "provider_requests": 0
+      }
+    ],
+    "author_reported_checks_not_rerun_by_reviewer": {
+      "metadata": "docs/public-release/PUBLIC_SNAPSHOT_VALIDATION.json",
+      "fresh_install_and_lock_compile_shell": "PASS",
+      "release_and_main_modules_targeted": 42,
+      "EOF_followup_targeted": 11,
+      "normal_startup": "both health 200, default Hybrid, SIGTERM exit 0, new DB",
+      "six_controlled_exports": "PASS legal local read-only; no payload copied to Git"
+    },
+    "denominator": "937 old sanitized + 30 existing main tests = 967; 24 controlled_data + 4 opt-in deselected; actual stdout summary and JUnit checked",
+    "fresh_suite_source_boundary": "One EOF-only change to extraction_patch.py during full suite, followed by 11 targeted regressions (author evidence); remote CI must test final committed bytes.",
+    "remote_ci": "NOT_RUN; no pass claimed",
+    "reviewer_did_not_rerun_whole_suite_or_browser": true
+  }
+}

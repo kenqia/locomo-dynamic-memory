@@ -1,0 +1,43 @@
+{
+  "status": "local_index_verification_finished",
+  "builds": [
+    {
+      "sample_id": "conv-43",
+      "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+      "status": "indexed",
+      "memory_count": 402,
+      "index_fingerprint": "7367e858eb489c68054d5b8bf3002cb1c22239ea8796db254f191204920fb2f5",
+      "embedding": {
+        "device": "cpu",
+        "dimensions": 384,
+        "length_policy": "reject",
+        "max_tokens": 256,
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "normalized": true,
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf"
+      },
+      "vector_bytes": 617472,
+      "query_pin_rejection": "no_complete_version"
+    },
+    {
+      "sample_id": "conv-44",
+      "build_id": "bef9f685957843698b3083ff4cbc79a4",
+      "status": "failed",
+      "index_rejection": "build_not_indexable"
+    }
+  ],
+  "provider_requests": 0,
+  "holdout_qa_read": false,
+  "original_database_unchanged": true,
+  "original_logical_snapshot": "9310cd06333a4358ea688e752310c0616105e16c04dff7ab6c39686e92e7692c",
+  "copied_database_sha256": "847d69fae578683ccf39880a470318864816a4eda94cbd871d1c6589a7084fb7",
+  "source_settings_sha256": "830bb4879747d32c16df0fc59a4cd87641c29a96c295f1eaec911a8ebd7146e7",
+  "settings_sha256": "830bb4879747d32c16df0fc59a4cd87641c29a96c295f1eaec911a8ebd7146e7",
+  "storage_database": "/home/kenqia/my_folder/locomo-worktrees/m5-final-development-20261104/var/m5-development/holdout-local-index-v3/memory.sqlite3",
+  "frozen_config_database": "/home/kenqia/my_folder/locomo-worktrees/m5-final-development-20261104/var/m5-development/holdout-extraction-proposal-final-v2/memory.sqlite3",
+  "wall_seconds": 9.531751685000927,
+  "cpu_seconds": 15.354226779999998,
+  "peak_rss_kib": 692240,
+  "gpu_used": false,
+  "scope": "Real cached local MiniLM, index only; no relation, publish, query or QA; no complete export claimed"
+}

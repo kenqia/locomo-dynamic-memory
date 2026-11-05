@@ -1,0 +1,56 @@
+{
+  "version": "m5-conv44-relation-recovery-prepared-manifest-v1",
+  "checked_at_local": "2026-11-05T00:42:13.016068+08:00",
+  "checked_utc": "2026-11-04T16:42:13.016080+00:00",
+  "status": "prepared_not_authorized",
+  "code_commit": "443d16b",
+  "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+  "stage": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-relation-recovery-v1",
+  "plan_sha256": "82251c43a541f86a089dd649337930c501dcb00717debeb6786651f04b93529b",
+  "failed_tasks": 10,
+  "comparisons": 161,
+  "policy": {
+    "model": "deepseek-flash",
+    "input_usd_per_million": "0.30",
+    "output_usd_per_million": "1.20",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768,
+    "max_requests": 30,
+    "max_usd": "2.6196480"
+  },
+  "artifacts": {
+    "M5_CONV44_RELATION_RECOVERY_V1_HANDOFF.md": "b52e70f966e1719e76accc819071455ae8199edde6c83f1fdcbe075f22b95dc4",
+    "docs/m5-development/CONV44_RELATION_RECOVERY_V1_PREPARATION.md": "3cad794c7cee999561f538113335b52b30e402d2decb3625ad8431905675f1ef",
+    "docs/m5-development/CONV44_RELATION_RECOVERY_V1_PREPARATION_REVIEW.md": "3cee40c17abc3592a0ac31f82d495e36711edfc0e5b283658e2bef53b1db00ca",
+    "experiments/m5-development/conv44-relation-recovery-preparation-v1.json": "74492b8478f9a8c0ff563fafd7df21948ee0a65505432154d0a794fb7a863db0",
+    "experiments/m5-development/conv44-relation-recovery-independent-preparation-v1.json": "18a366ad8eabc029f1a4fc633cab13dd5ce92bc5765074d4f9e9be7f399ab10f",
+    "experiments/m5-development/conv44-relation-recovery-pricing-v1.json": "5195b9125786e61f9af29fafd87d77e751b70d2f2f32d9baa58b751e1d441620"
+  },
+  "private_initial_artifacts": {
+    "plan.json": "82251c43a541f86a089dd649337930c501dcb00717debeb6786651f04b93529b",
+    "settings.json": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance.json": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e",
+    "authorization-template.json": "9de3356236a40b3302da5aa0d83a2b22d0db5d89fe5f9ec3ef8b4baf88a0562a",
+    "preparation-root-audit-script.py": "d4969221a341f2fc291bc3efa8bc2c4c0e56584bfceb974126fde3d240c43a97",
+    "terminal-root-audit-script.py": "38f96552a897e20906c67615aa6b83a82c73432c6b5ea6bf8cd8d5eab328d31d"
+  },
+  "prepared_database_logical_snapshot": "2bc56f58a71190cff3f38d673f7ee75b4d1d757fed36281ed13a3762faacf342",
+  "prepared_ledger_logical_snapshot": "d01a6912ee839883aa7c90cda49453260ddd1d0163033a9251cf064b527d6bae",
+  "root_checks": 13,
+  "independent_check_groups": 6,
+  "root_final_tests": {
+    "passed": 39,
+    "seconds": 56.19
+  },
+  "provider_requests": 0,
+  "authorization_file_created": false,
+  "execution_marker_created": false,
+  "source_and_old_history_preserved": true,
+  "old_budget_transferred": false,
+  "holdout_qa_evidence_answers_read": false,
+  "sixth_export_complete": false,
+  "final_system_locked": false,
+  "level_e_executed": false,
+  "notion_sync": "no_link_identified_not_synced",
+  "manifest_excludes_itself": true
+}

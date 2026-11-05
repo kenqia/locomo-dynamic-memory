@@ -1,0 +1,23 @@
+{
+  "version": "m5-conv44-relation-recovery-verification-v1",
+  "status": "code_reviewed_not_prepared_not_authorized",
+  "artifacts": {
+    "tools/m5/conv44_relation_recovery.py": "77cc554f9ebc94c70cb2f0f1e4674aeffdd3b659efaf997dcc5740371ac5120a",
+    "tests/test_m5_conv44_relation_recovery.py": "18c803c1441a9be2bd3df58c76fb29eedd37e0e9d5d8d4f2f44f0825fa01412d",
+    "docs/m5-development/CONV44_RELATION_RECOVERY_V1.md": "47407aa7bc9d6f62f1330da9f2b3977a892f4e846da2798c79371f9b1c40b732",
+    "docs/m5-development/CONV44_RELATION_RECOVERY_V1_REVIEW.md": "428ed28cc4cfa9e72e91138020c219c4878b4af117388a21ed0875c6b521899e"
+  },
+  "root_final_tests": {
+    "passed": 39,
+    "seconds": 56.19
+  },
+  "independent_final_changed_tests": {
+    "passed": 8,
+    "seconds": 0.87
+  },
+  "standards_unresolved": 0,
+  "spec_unresolved": 0,
+  "paid_requests": 0,
+  "real_recovery_prepared": false,
+  "holdout_qa_evidence_answers_read": false
+}

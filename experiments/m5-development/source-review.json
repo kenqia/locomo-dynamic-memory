@@ -1,0 +1,11 @@
+{
+  "reference_freeze": "dynamic-review-final-v2/reference-freeze.json",
+  "aggregate": "dynamic-review-final-v2/metrics-summary.json",
+  "denominator": 60,
+  "reviewers": "two independent AI reviewers, non-overlapping 30+30",
+  "human_truth": false,
+  "double_review_agreement": "not_measured",
+  "verbatim_both_endpoints_validated": true,
+  "raw_refs": "private var/m5-development; not committed",
+  "extraction": "785 accepted holdout Memory schema/source checks, no semantic accuracy claimed"
+}
