@@ -1,0 +1,4305 @@
+{
+  "schema": "public-console-replay-v1",
+  "mode": "OFFLINE_SYNTHETIC_REPLAY",
+  "datasets": [
+    {
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "source_sha256": "d1a0b81c7ca01978eab2159995831b25fbeffb0b576c13246eeaa64e41e2af7f",
+      "version": "OFFLINE-SYNTHETIC-product-replay-v1",
+      "license": "synthetic-test-fixture",
+      "conversation_count": 1,
+      "turn_count": 7
+    }
+  ],
+  "conversations": [
+    {
+      "sample_id": "conv-a",
+      "speaker_a": "Alex",
+      "speaker_b": "Sam",
+      "session_count": 3,
+      "turn_count": 7
+    }
+  ],
+  "builds": [
+    {
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "status": "complete",
+      "phase": "complete",
+      "query_ready": true,
+      "fingerprint": "900effea0bb704538d57d1e0b16d2e1900540902fd2278d9e5cf3a4bdc7c367a",
+      "source_sha256": "d1a0b81c7ca01978eab2159995831b25fbeffb0b576c13246eeaa64e41e2af7f",
+      "prompt_version": "extract-v4-relative-time",
+      "schema_version": "memory-v1",
+      "created_at": "2026-11-05T23:58:51.994740+00:00",
+      "updated_at": "2026-11-05T23:58:53.718509+00:00",
+      "progress": {
+        "total": 1,
+        "succeeded": 1,
+        "failed": 0,
+        "pending": 0
+      }
+    },
+    {
+      "build_id": "88166f30012744a6bdea8a446c5dbff5",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "status": "complete",
+      "phase": "complete",
+      "query_ready": true,
+      "fingerprint": "900effea0bb704538d57d1e0b16d2e1900540902fd2278d9e5cf3a4bdc7c367a",
+      "source_sha256": "d1a0b81c7ca01978eab2159995831b25fbeffb0b576c13246eeaa64e41e2af7f",
+      "prompt_version": "extract-v4-relative-time",
+      "schema_version": "memory-v1",
+      "created_at": "2026-11-05T23:58:50.073967+00:00",
+      "updated_at": "2026-11-05T23:58:51.884760+00:00",
+      "progress": {
+        "total": 1,
+        "succeeded": 1,
+        "failed": 0,
+        "pending": 0
+      }
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "3630387b6f74906ed0e7f9ab/conv-a/D1:1",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "session_id": "session_1",
+      "dia_id": "D1:1",
+      "speaker": "Alex",
+      "session_time": "1:00 pm on 1 May, 2023",
+      "text": "I live in Paris.",
+      "position": 0
+    },
+    {
+      "source_id": "3630387b6f74906ed0e7f9ab/conv-a/D1:2",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "session_id": "session_1",
+      "dia_id": "D1:2",
+      "speaker": "Sam",
+      "session_time": "1:00 pm on 1 May, 2023",
+      "text": "I work in London.",
+      "position": 1
+    },
+    {
+      "source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "session_id": "session_2",
+      "dia_id": "D2:1",
+      "speaker": "Alex",
+      "session_time": "1:00 pm on 2 May, 2023",
+      "text": "I moved from Paris to Rome on 2 May 2023.",
+      "position": 2
+    },
+    {
+      "source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:2",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "session_id": "session_2",
+      "dia_id": "D2:2",
+      "speaker": "Sam",
+      "session_time": "1:00 pm on 2 May, 2023",
+      "text": "My birth year is 1990.",
+      "position": 3
+    },
+    {
+      "source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:3",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "session_id": "session_2",
+      "dia_id": "D2:3",
+      "speaker": "Sam",
+      "session_time": "1:00 pm on 2 May, 2023",
+      "text": "My birth year is 1992. These reports are contradictory and unresolved.",
+      "position": 4
+    },
+    {
+      "source_id": "3630387b6f74906ed0e7f9ab/conv-a/D3:1",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "session_id": "session_3",
+      "dia_id": "D3:1",
+      "speaker": "Alex",
+      "session_time": "1:00 pm on 3 May, 2023",
+      "text": "I plan to visit Tokyo, but no date is decided.",
+      "position": 5
+    },
+    {
+      "source_id": "3630387b6f74906ed0e7f9ab/conv-a/D3:2",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "session_id": "session_3",
+      "dia_id": "D3:2",
+      "speaker": "Alex",
+      "session_time": "1:00 pm on 3 May, 2023",
+      "text": "I do not own a car.",
+      "position": 6
+    }
+  ],
+  "memories": {
+    "88166f30012744a6bdea8a446c5dbff5": [
+      {
+        "content": "Alex lives in Paris.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "positive",
+        "entity_id": "Alex",
+        "state_dimension": "residence",
+        "state_value": "Paris",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "90fbbb5932e9f82f35516494",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Alex:residence",
+        "session_times": [
+          "1:00 pm on 1 May, 2023"
+        ]
+      },
+      {
+        "content": "Alex lives in Rome.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "positive",
+        "entity_id": "Alex",
+        "state_dimension": "residence",
+        "state_value": "Rome",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "3501552dafd994c289cc6847",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Alex:residence",
+        "session_times": [
+          "1:00 pm on 2 May, 2023"
+        ]
+      },
+      {
+        "content": "Sam's reported birth year is 1990.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "positive",
+        "entity_id": "Sam",
+        "state_dimension": "birth_year",
+        "state_value": "1990",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "563dad6a4ca652c48337537a",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Sam:birth_year",
+        "session_times": [
+          "1:00 pm on 2 May, 2023"
+        ]
+      },
+      {
+        "content": "Sam's reported birth year is 1992.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "positive",
+        "entity_id": "Sam",
+        "state_dimension": "birth_year",
+        "state_value": "1992",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "2148e5a666518cb7473c2963",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Sam:birth_year",
+        "session_times": [
+          "1:00 pm on 2 May, 2023"
+        ]
+      },
+      {
+        "content": "Alex plans to visit Tokyo.",
+        "memory_type": "state",
+        "statement_type": "plan",
+        "polarity": "positive",
+        "entity_id": "Alex",
+        "state_dimension": "travel_plan",
+        "state_value": "Tokyo",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:1"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "2b749b771690c0fc3dc34174",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Alex:travel_plan",
+        "session_times": [
+          "1:00 pm on 3 May, 2023"
+        ]
+      },
+      {
+        "content": "Alex does not own a car.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "negative",
+        "entity_id": "Alex",
+        "state_dimension": "car_ownership",
+        "state_value": "car",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:2"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "0e7f846ebe1d7b9c98fcd7e5",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Alex:car_ownership",
+        "session_times": [
+          "1:00 pm on 3 May, 2023"
+        ]
+      }
+    ],
+    "99fb4b2b702e43a79e762d4a3fd7c25c": [
+      {
+        "content": "Alex lives in Paris.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "positive",
+        "entity_id": "Alex",
+        "state_dimension": "residence",
+        "state_value": "Paris",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "b50f0b3d514debb9db5c9652",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Alex:residence",
+        "session_times": [
+          "1:00 pm on 1 May, 2023"
+        ]
+      },
+      {
+        "content": "Alex lives in Rome.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "positive",
+        "entity_id": "Alex",
+        "state_dimension": "residence",
+        "state_value": "Rome",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "fc340b1fada6b3096393ea31",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Alex:residence",
+        "session_times": [
+          "1:00 pm on 2 May, 2023"
+        ]
+      },
+      {
+        "content": "Sam's reported birth year is 1990.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "positive",
+        "entity_id": "Sam",
+        "state_dimension": "birth_year",
+        "state_value": "1990",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "97af606ec835151c5e344b03",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Sam:birth_year",
+        "session_times": [
+          "1:00 pm on 2 May, 2023"
+        ]
+      },
+      {
+        "content": "Sam's reported birth year is 1992.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "positive",
+        "entity_id": "Sam",
+        "state_dimension": "birth_year",
+        "state_value": "1992",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "171403fc76f80f8a53a2c5ea",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Sam:birth_year",
+        "session_times": [
+          "1:00 pm on 2 May, 2023"
+        ]
+      },
+      {
+        "content": "Alex plans to visit Tokyo.",
+        "memory_type": "state",
+        "statement_type": "plan",
+        "polarity": "positive",
+        "entity_id": "Alex",
+        "state_dimension": "travel_plan",
+        "state_value": "Tokyo",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:1"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "ec01f952676a789713c25d31",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Alex:travel_plan",
+        "session_times": [
+          "1:00 pm on 3 May, 2023"
+        ]
+      },
+      {
+        "content": "Alex does not own a car.",
+        "memory_type": "state",
+        "statement_type": "fact",
+        "polarity": "negative",
+        "entity_id": "Alex",
+        "state_dimension": "car_ownership",
+        "state_value": "car",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:2"
+        ],
+        "time": {
+          "original_expression": null,
+          "anchor_source_id": null,
+          "event_start": null,
+          "event_end": null,
+          "valid_from": null,
+          "valid_to": null,
+          "basis": null
+        },
+        "memory_id": "13c20207453ed561c26910d1",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "dataset_id": "3630387b6f74906ed0e7f9ab",
+        "sample_id": "conv-a",
+        "state_key": "conv-a:Alex:car_ownership",
+        "session_times": [
+          "1:00 pm on 3 May, 2023"
+        ]
+      }
+    ]
+  },
+  "relations": {
+    "88166f30012744a6bdea8a446c5dbff5": [
+      {
+        "old_memory_id": "3501552dafd994c289cc6847",
+        "new_memory_id": "2b749b771690c0fc3dc34174",
+        "label": "undetermined",
+        "reason": "The evidence does not establish a transition",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:1"
+        ],
+        "support_quote": null,
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "1ae0b31bb081babc38a0a717",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5"
+      },
+      {
+        "old_memory_id": "90fbbb5932e9f82f35516494",
+        "new_memory_id": "3501552dafd994c289cc6847",
+        "label": "SUPERSEDE",
+        "reason": "Explicit move",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D1:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+        ],
+        "support_quote": "I moved from Paris to Rome on 2 May 2023.",
+        "applicability": {
+          "from_date": "2023-05-02",
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+          "original_time_expression": "2 May 2023",
+          "time_basis": "Explicit source date"
+        },
+        "update_evidence": null,
+        "relation_id": "b58814be9f549ed44ffa4e77",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5"
+      },
+      {
+        "old_memory_id": "2b749b771690c0fc3dc34174",
+        "new_memory_id": "0e7f846ebe1d7b9c98fcd7e5",
+        "label": "undetermined",
+        "reason": "The evidence does not establish a transition",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:2"
+        ],
+        "support_quote": null,
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "b8e15ccfe008650528928538",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5"
+      },
+      {
+        "old_memory_id": "90fbbb5932e9f82f35516494",
+        "new_memory_id": "0e7f846ebe1d7b9c98fcd7e5",
+        "label": "undetermined",
+        "reason": "The evidence does not establish a transition",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D1:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:2"
+        ],
+        "support_quote": null,
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "c8870be2f12dbdaf8288427b",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5"
+      },
+      {
+        "old_memory_id": "3501552dafd994c289cc6847",
+        "new_memory_id": "0e7f846ebe1d7b9c98fcd7e5",
+        "label": "undetermined",
+        "reason": "The evidence does not establish a transition",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:2"
+        ],
+        "support_quote": null,
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "d46f1c4ff00422fa1323839b",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5"
+      },
+      {
+        "old_memory_id": "90fbbb5932e9f82f35516494",
+        "new_memory_id": "2b749b771690c0fc3dc34174",
+        "label": "undetermined",
+        "reason": "The evidence does not establish a transition",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D1:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:1"
+        ],
+        "support_quote": null,
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "d90ea8d09cd953c9fd9663c1",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5"
+      },
+      {
+        "old_memory_id": "563dad6a4ca652c48337537a",
+        "new_memory_id": "2148e5a666518cb7473c2963",
+        "label": "CONFLICT",
+        "reason": "Same birth attribute has incompatible unconditional reports, explicitly unresolved in source.",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:2",
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+        ],
+        "support_quote": "My birth year is 1992. These reports are contradictory and unresolved.",
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "e03f36420a39d780c970aca6",
+        "build_id": "88166f30012744a6bdea8a446c5dbff5"
+      }
+    ],
+    "99fb4b2b702e43a79e762d4a3fd7c25c": [
+      {
+        "old_memory_id": "fc340b1fada6b3096393ea31",
+        "new_memory_id": "13c20207453ed561c26910d1",
+        "label": "undetermined",
+        "reason": "The evidence does not establish a transition",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:2"
+        ],
+        "support_quote": null,
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "3242ac399b6041d1bd42c666",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c"
+      },
+      {
+        "old_memory_id": "b50f0b3d514debb9db5c9652",
+        "new_memory_id": "13c20207453ed561c26910d1",
+        "label": "undetermined",
+        "reason": "The evidence does not establish a transition",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D1:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:2"
+        ],
+        "support_quote": null,
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "5b52f31066ea9256a7a01835",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c"
+      },
+      {
+        "old_memory_id": "b50f0b3d514debb9db5c9652",
+        "new_memory_id": "fc340b1fada6b3096393ea31",
+        "label": "SUPERSEDE",
+        "reason": "Explicit move",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D1:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+        ],
+        "support_quote": "I moved from Paris to Rome on 2 May 2023.",
+        "applicability": {
+          "from_date": "2023-05-02",
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+          "original_time_expression": "2 May 2023",
+          "time_basis": "Explicit source date"
+        },
+        "update_evidence": null,
+        "relation_id": "681f7492942b87b23036cd63",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c"
+      },
+      {
+        "old_memory_id": "fc340b1fada6b3096393ea31",
+        "new_memory_id": "ec01f952676a789713c25d31",
+        "label": "undetermined",
+        "reason": "The evidence does not establish a transition",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:1"
+        ],
+        "support_quote": null,
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "867b0f5c99468553395358a6",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c"
+      },
+      {
+        "old_memory_id": "ec01f952676a789713c25d31",
+        "new_memory_id": "13c20207453ed561c26910d1",
+        "label": "undetermined",
+        "reason": "The evidence does not establish a transition",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:2"
+        ],
+        "support_quote": null,
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "9846d9d5ea0465609edd32c9",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c"
+      },
+      {
+        "old_memory_id": "97af606ec835151c5e344b03",
+        "new_memory_id": "171403fc76f80f8a53a2c5ea",
+        "label": "CONFLICT",
+        "reason": "Same birth attribute has incompatible unconditional reports, explicitly unresolved in source.",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:2",
+          "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+        ],
+        "support_quote": "My birth year is 1992. These reports are contradictory and unresolved.",
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "d1fbd785785fe1efef4640c4",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c"
+      },
+      {
+        "old_memory_id": "b50f0b3d514debb9db5c9652",
+        "new_memory_id": "ec01f952676a789713c25d31",
+        "label": "undetermined",
+        "reason": "The evidence does not establish a transition",
+        "source_ids": [
+          "3630387b6f74906ed0e7f9ab/conv-a/D1:1",
+          "3630387b6f74906ed0e7f9ab/conv-a/D3:1"
+        ],
+        "support_quote": null,
+        "applicability": {
+          "from_date": null,
+          "to_date": null,
+          "condition": null,
+          "condition_satisfied": null,
+          "condition_source_ids": [],
+          "time_anchor_source_id": null,
+          "original_time_expression": null,
+          "time_basis": null
+        },
+        "update_evidence": null,
+        "relation_id": "ff847480764bd51ec99435db",
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c"
+      }
+    ]
+  },
+  "projections": {
+    "88166f30012744a6bdea8a446c5dbff5": {
+      "assumptions": [
+        "Cutoff is the selected conversation's last recorded session, not the host date",
+        "Session timestamps have no asserted timezone",
+        "Unknown validity is a last-known claim, not proof of continuous applicability",
+        "RETAIN is never inferred from absence of new messages"
+      ],
+      "build_id": "88166f30012744a6bdea8a446c5dbff5",
+      "conditional_relations": [],
+      "conflicts": [
+        {
+          "memory_ids": [
+            "563dad6a4ca652c48337537a",
+            "2148e5a666518cb7473c2963"
+          ],
+          "relation_id": "e03f36420a39d780c970aca6",
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:2",
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+          ]
+        }
+      ],
+      "current_states": [
+        {
+          "memory_id": "0e7f846ebe1d7b9c98fcd7e5",
+          "reason": "Last known factual claim; unknown validity does not establish continuous truth",
+          "relation_ids": [
+            "b8e15ccfe008650528928538",
+            "c8870be2f12dbdaf8288427b",
+            "d46f1c4ff00422fa1323839b"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D3:2"
+          ],
+          "status": "negative_claim"
+        },
+        {
+          "memory_id": "2148e5a666518cb7473c2963",
+          "reason": "Unresolved contradictory claims; both sources remain visible",
+          "relation_ids": [
+            "e03f36420a39d780c970aca6"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+          ],
+          "status": "conflict"
+        },
+        {
+          "memory_id": "3501552dafd994c289cc6847",
+          "reason": "Last known factual claim; unknown validity does not establish continuous truth",
+          "relation_ids": [
+            "1ae0b31bb081babc38a0a717",
+            "b58814be9f549ed44ffa4e77",
+            "d46f1c4ff00422fa1323839b"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+          ],
+          "status": "last_known"
+        },
+        {
+          "memory_id": "563dad6a4ca652c48337537a",
+          "reason": "Unresolved contradictory claims; both sources remain visible",
+          "relation_ids": [
+            "e03f36420a39d780c970aca6"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+          ],
+          "status": "conflict"
+        }
+      ],
+      "cutoff": "2023-05-03T13:00:00",
+      "cutoff_source_time": "1:00 pm on 3 May, 2023",
+      "events": [],
+      "fingerprint": "4fd5e6fd6b872d5f23891466f32fa961e4903a7b5dc4b0af4325627976e62fb1",
+      "historical_states": [
+        {
+          "memory_id": "90fbbb5932e9f82f35516494",
+          "reason": "Evidence-backed transition applies at the known cutoff; historical evidence retained",
+          "relation_ids": [
+            "b58814be9f549ed44ffa4e77",
+            "c8870be2f12dbdaf8288427b",
+            "d90ea8d09cd953c9fd9663c1"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+          ],
+          "status": "superseded"
+        }
+      ],
+      "nonfactual": [
+        {
+          "memory_id": "2b749b771690c0fc3dc34174",
+          "reason": "Plan, intention or uncertain statement; not an accomplished factual state",
+          "relation_ids": [
+            "1ae0b31bb081babc38a0a717",
+            "b8e15ccfe008650528928538",
+            "d90ea8d09cd953c9fd9663c1"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D3:1"
+          ],
+          "status": "nonfactual"
+        }
+      ],
+      "projection_version": "current-state-v1"
+    },
+    "99fb4b2b702e43a79e762d4a3fd7c25c": {
+      "assumptions": [
+        "Cutoff is the selected conversation's last recorded session, not the host date",
+        "Session timestamps have no asserted timezone",
+        "Unknown validity is a last-known claim, not proof of continuous applicability",
+        "RETAIN is never inferred from absence of new messages"
+      ],
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "conditional_relations": [],
+      "conflicts": [
+        {
+          "memory_ids": [
+            "97af606ec835151c5e344b03",
+            "171403fc76f80f8a53a2c5ea"
+          ],
+          "relation_id": "d1fbd785785fe1efef4640c4",
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:2",
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+          ]
+        }
+      ],
+      "current_states": [
+        {
+          "memory_id": "13c20207453ed561c26910d1",
+          "reason": "Last known factual claim; unknown validity does not establish continuous truth",
+          "relation_ids": [
+            "3242ac399b6041d1bd42c666",
+            "5b52f31066ea9256a7a01835",
+            "9846d9d5ea0465609edd32c9"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D3:2"
+          ],
+          "status": "negative_claim"
+        },
+        {
+          "memory_id": "171403fc76f80f8a53a2c5ea",
+          "reason": "Unresolved contradictory claims; both sources remain visible",
+          "relation_ids": [
+            "d1fbd785785fe1efef4640c4"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+          ],
+          "status": "conflict"
+        },
+        {
+          "memory_id": "97af606ec835151c5e344b03",
+          "reason": "Unresolved contradictory claims; both sources remain visible",
+          "relation_ids": [
+            "d1fbd785785fe1efef4640c4"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+          ],
+          "status": "conflict"
+        },
+        {
+          "memory_id": "fc340b1fada6b3096393ea31",
+          "reason": "Last known factual claim; unknown validity does not establish continuous truth",
+          "relation_ids": [
+            "3242ac399b6041d1bd42c666",
+            "681f7492942b87b23036cd63",
+            "867b0f5c99468553395358a6"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+          ],
+          "status": "last_known"
+        }
+      ],
+      "cutoff": "2023-05-03T13:00:00",
+      "cutoff_source_time": "1:00 pm on 3 May, 2023",
+      "events": [],
+      "fingerprint": "0a87c302428d731b374b99338e421aa5437465478fbbd4cc0ab6a2984659e502",
+      "historical_states": [
+        {
+          "memory_id": "b50f0b3d514debb9db5c9652",
+          "reason": "Evidence-backed transition applies at the known cutoff; historical evidence retained",
+          "relation_ids": [
+            "5b52f31066ea9256a7a01835",
+            "681f7492942b87b23036cd63",
+            "ff847480764bd51ec99435db"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+          ],
+          "status": "superseded"
+        }
+      ],
+      "nonfactual": [
+        {
+          "memory_id": "ec01f952676a789713c25d31",
+          "reason": "Plan, intention or uncertain statement; not an accomplished factual state",
+          "relation_ids": [
+            "867b0f5c99468553395358a6",
+            "9846d9d5ea0465609edd32c9",
+            "ff847480764bd51ec99435db"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D3:1"
+          ],
+          "status": "nonfactual"
+        }
+      ],
+      "projection_version": "current-state-v1"
+    }
+  },
+  "traces": {
+    "86e8ffceba394bf6bdbbaa5cbea007f2": {
+      "trace_id": "86e8ffceba394bf6bdbbaa5cbea007f2",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "question": "Where does Alex live?",
+      "outcome": "succeeded",
+      "time": {
+        "anchor_date": "2023-05-03",
+        "beyond_cutoff": false,
+        "cutoff": "2023-05-03T13:00:00",
+        "cutoff_source_time": "1:00 pm on 3 May, 2023",
+        "origin": "conversation_cutoff",
+        "requested_date": null
+      },
+      "initial": {
+        "analysis": {
+          "error_code": null,
+          "prompt_version": "query-analysis-v1",
+          "result": {
+            "entities": [
+              "Alex"
+            ],
+            "keywords": [
+              "Rome"
+            ],
+            "time": null,
+            "topic": "residence"
+          },
+          "status": "succeeded"
+        },
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 11,
+        "channels": {
+          "bm25": [
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 1,
+              "score": 2.3639714870832984
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 2,
+              "score": 1.5622827499011203
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 3,
+              "score": 0.37517731642903634
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 4,
+              "score": 0.34803789903162446
+            },
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 6,
+              "score": 0.0
+            }
+          ],
+          "dense": [
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 1,
+              "score": 1.0
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 2,
+              "score": 0.0
+            },
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 3,
+              "score": 0.0
+            },
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 4,
+              "score": 0.0
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 6,
+              "score": 0.0
+            }
+          ]
+        },
+        "created_at": "2026-11-05T23:58:54.014724+00:00",
+        "executed_components": {
+          "bm25": true,
+          "dense": true,
+          "query_analysis": true,
+          "query_embedding": true,
+          "rrf": true
+        },
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 1,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03278688524590164
+          }
+        ],
+        "initial_truncated": true,
+        "query_id": "294484fecbd94b03a61c606da8003e8f",
+        "question": "Where does Alex live?",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncation_reasons": [
+          "initial_k"
+        ]
+      },
+      "expanded": {
+        "added_candidates": [
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Paris.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 1 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Paris",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": "2023-05-02",
+                  "original_time_expression": "2 May 2023",
+                  "time_anchor_source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+                  "time_basis": "Explicit source date",
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "SUPERSEDE",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "681f7492942b87b23036cd63",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "fc340b1fada6b3096393ea31",
+                "state_key": "conv-a:Alex:residence"
+              }
+            ]
+          }
+        ],
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 22,
+        "candidates": [
+          {
+            "is_initial": true,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "kind": "initial",
+                "reason": "Original hybrid candidate",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              }
+            ]
+          },
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Paris.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 1 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Paris",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": "2023-05-02",
+                  "original_time_expression": "2 May 2023",
+                  "time_anchor_source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+                  "time_basis": "Explicit source date",
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "SUPERSEDE",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "681f7492942b87b23036cd63",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "fc340b1fada6b3096393ea31",
+                "state_key": "conv-a:Alex:residence"
+              }
+            ]
+          }
+        ],
+        "created_at": "2026-11-05T23:58:54.039086+00:00",
+        "expansion_id": "3c197985b63f46cd978f4b5ba1518023",
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 1,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03278688524590164
+          }
+        ],
+        "query_id": "294484fecbd94b03a61c606da8003e8f",
+        "question": "Where does Alex live?",
+        "relation_depth": 1,
+        "scanned": 2,
+        "state_history_enabled": true,
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution": {
+        "decisions": [
+          {
+            "memory_id": "fc340b1fada6b3096393ea31",
+            "reason": "Explicit move applies as of the cutoff",
+            "selected": true
+          },
+          {
+            "memory_id": "b50f0b3d514debb9db5c9652",
+            "reason": "Explicit move applies as of the cutoff",
+            "selected": false
+          }
+        ],
+        "effective_memory_ids": [
+          "fc340b1fada6b3096393ea31"
+        ],
+        "explanation": "Source-backed temporal applicability",
+        "status": "sufficient",
+        "supplemental_relations": []
+      },
+      "effective_memories": [
+        {
+          "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+          "content": "Alex lives in Rome.",
+          "dataset_id": "3630387b6f74906ed0e7f9ab",
+          "entity_id": "Alex",
+          "memory_id": "fc340b1fada6b3096393ea31",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-a",
+          "session_times": [
+            "1:00 pm on 2 May, 2023"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+          ],
+          "state_dimension": "residence",
+          "state_key": "conv-a:Alex:residence",
+          "state_value": "Rome",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        }
+      ],
+      "answer": {
+        "answer": "Alex lives in Rome.",
+        "citations": [
+          {
+            "memory_id": "fc340b1fada6b3096393ea31",
+            "source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+            ]
+          }
+        ],
+        "explanation": null,
+        "status": "sufficient"
+      },
+      "evidence_budget": {
+        "algorithm_version": "unique-source-payload-v2",
+        "budget": 6000,
+        "omitted_memory_ids": [],
+        "scope": "rag_evidence",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "token_count": 309,
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution_budgets": {
+        "resolve": {
+          "complete_memory_ids": [
+            "fc340b1fada6b3096393ea31",
+            "b50f0b3d514debb9db5c9652"
+          ],
+          "input_budget": 24000,
+          "input_policy_version": "complete-dynamic-input-v1-no-omission",
+          "input_token_count": 3817,
+          "omitted_groups": [],
+          "source_delivery": {
+            "attempted_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "delivered_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "expected_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "provider_accepted": true,
+            "status": "accepted"
+          },
+          "truncated": false,
+          "within_budget": true
+        }
+      },
+      "stage_seconds": {
+        "answer": 0.004067500005476177,
+        "expansion": 0.02282710000872612,
+        "resolve": 0.019425800011958927,
+        "retrieval": 0.04114610003307462
+      },
+      "usage_summary": {
+        "calls": 3,
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 0.0038944000261835754,
+        "reported_tokens": {
+          "completion_tokens": 15,
+          "prompt_tokens": 30,
+          "total_tokens": 45
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 15
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 30
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 45
+          }
+        }
+      },
+      "diagnostics": {
+        "answer": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "query_analysis": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "resolve": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ]
+      }
+    },
+    "60d32f4e07564df085969fc7f763e31e": {
+      "trace_id": "60d32f4e07564df085969fc7f763e31e",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "question": "Where did Alex live?",
+      "outcome": "succeeded",
+      "time": {
+        "anchor_date": "2023-05-01",
+        "beyond_cutoff": false,
+        "cutoff": "2023-05-03T13:00:00",
+        "cutoff_source_time": "1:00 pm on 3 May, 2023",
+        "origin": "explicit_request",
+        "requested_date": "2023-05-01"
+      },
+      "initial": {
+        "analysis": {
+          "error_code": null,
+          "prompt_version": "query-analysis-v1",
+          "result": {
+            "entities": [
+              "Alex"
+            ],
+            "keywords": [
+              "Rome"
+            ],
+            "time": null,
+            "topic": "residence"
+          },
+          "status": "succeeded"
+        },
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 11,
+        "channels": {
+          "bm25": [
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 1,
+              "score": 2.3639714870832984
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 2,
+              "score": 0.37517731642903634
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 3,
+              "score": 0.34803789903162446
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 4,
+              "score": 0.3358891940880513
+            },
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 6,
+              "score": 0.0
+            }
+          ],
+          "dense": [
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 1,
+              "score": 1.0
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 2,
+              "score": 0.0
+            },
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 3,
+              "score": 0.0
+            },
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 4,
+              "score": 0.0
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 6,
+              "score": 0.0
+            }
+          ]
+        },
+        "created_at": "2026-11-05T23:58:54.170928+00:00",
+        "executed_components": {
+          "bm25": true,
+          "dense": true,
+          "query_analysis": true,
+          "query_embedding": true,
+          "rrf": true
+        },
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 1,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03278688524590164
+          }
+        ],
+        "initial_truncated": true,
+        "query_id": "c148e027465f4425b4b66753e4cc9714",
+        "question": "Where did Alex live?",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncation_reasons": [
+          "initial_k"
+        ]
+      },
+      "expanded": {
+        "added_candidates": [
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Paris.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 1 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Paris",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": "2023-05-02",
+                  "original_time_expression": "2 May 2023",
+                  "time_anchor_source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+                  "time_basis": "Explicit source date",
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "SUPERSEDE",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "681f7492942b87b23036cd63",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "fc340b1fada6b3096393ea31",
+                "state_key": "conv-a:Alex:residence"
+              }
+            ]
+          }
+        ],
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 22,
+        "candidates": [
+          {
+            "is_initial": true,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "kind": "initial",
+                "reason": "Original hybrid candidate",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              }
+            ]
+          },
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Paris.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 1 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Paris",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": "2023-05-02",
+                  "original_time_expression": "2 May 2023",
+                  "time_anchor_source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+                  "time_basis": "Explicit source date",
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "SUPERSEDE",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "681f7492942b87b23036cd63",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "fc340b1fada6b3096393ea31",
+                "state_key": "conv-a:Alex:residence"
+              }
+            ]
+          }
+        ],
+        "created_at": "2026-11-05T23:58:54.193969+00:00",
+        "expansion_id": "bd3c31f3515746a48ac97ad9685129f4",
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 1,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03278688524590164
+          }
+        ],
+        "query_id": "c148e027465f4425b4b66753e4cc9714",
+        "question": "Where did Alex live?",
+        "relation_depth": 1,
+        "scanned": 2,
+        "state_history_enabled": true,
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution": {
+        "decisions": [
+          {
+            "memory_id": "fc340b1fada6b3096393ea31",
+            "reason": "Applicable before the explicit move",
+            "selected": false
+          },
+          {
+            "memory_id": "b50f0b3d514debb9db5c9652",
+            "reason": "Applicable before the explicit move",
+            "selected": true
+          }
+        ],
+        "effective_memory_ids": [
+          "b50f0b3d514debb9db5c9652"
+        ],
+        "explanation": "Source-backed temporal applicability",
+        "status": "sufficient",
+        "supplemental_relations": []
+      },
+      "effective_memories": [
+        {
+          "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+          "content": "Alex lives in Paris.",
+          "dataset_id": "3630387b6f74906ed0e7f9ab",
+          "entity_id": "Alex",
+          "memory_id": "b50f0b3d514debb9db5c9652",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-a",
+          "session_times": [
+            "1:00 pm on 1 May, 2023"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+          ],
+          "state_dimension": "residence",
+          "state_key": "conv-a:Alex:residence",
+          "state_value": "Paris",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        }
+      ],
+      "answer": {
+        "answer": "Alex lives in Paris.",
+        "citations": [
+          {
+            "memory_id": "b50f0b3d514debb9db5c9652",
+            "source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ]
+          }
+        ],
+        "explanation": null,
+        "status": "sufficient"
+      },
+      "evidence_budget": {
+        "algorithm_version": "unique-source-payload-v2",
+        "budget": 6000,
+        "omitted_memory_ids": [],
+        "scope": "rag_evidence",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "token_count": 303,
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution_budgets": {
+        "resolve": {
+          "complete_memory_ids": [
+            "fc340b1fada6b3096393ea31",
+            "b50f0b3d514debb9db5c9652"
+          ],
+          "input_budget": 24000,
+          "input_policy_version": "complete-dynamic-input-v1-no-omission",
+          "input_token_count": 3825,
+          "omitted_groups": [],
+          "source_delivery": {
+            "attempted_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "delivered_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "expected_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "provider_accepted": true,
+            "status": "accepted"
+          },
+          "truncated": false,
+          "within_budget": true
+        }
+      },
+      "stage_seconds": {
+        "answer": 0.004602800006978214,
+        "expansion": 0.02049530000658706,
+        "resolve": 0.017728000006172806,
+        "retrieval": 0.03218520001973957
+      },
+      "usage_summary": {
+        "calls": 3,
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 0.0031726000015623868,
+        "reported_tokens": {
+          "completion_tokens": 15,
+          "prompt_tokens": 30,
+          "total_tokens": 45
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 15
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 30
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 45
+          }
+        }
+      },
+      "diagnostics": {
+        "answer": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "query_analysis": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "resolve": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ]
+      }
+    },
+    "d3b12e9517494c26b386398621133582": {
+      "trace_id": "d3b12e9517494c26b386398621133582",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "question": "What is Sam's birth year?",
+      "outcome": "succeeded",
+      "time": {
+        "anchor_date": "2023-05-03",
+        "beyond_cutoff": false,
+        "cutoff": "2023-05-03T13:00:00",
+        "cutoff_source_time": "1:00 pm on 3 May, 2023",
+        "origin": "conversation_cutoff",
+        "requested_date": null
+      },
+      "initial": {
+        "analysis": {
+          "error_code": null,
+          "prompt_version": "query-analysis-v1",
+          "result": {
+            "entities": [
+              "Sam"
+            ],
+            "keywords": [
+              "1990"
+            ],
+            "time": null,
+            "topic": "birth_year"
+          },
+          "status": "succeeded"
+        },
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 16,
+        "channels": {
+          "bm25": [
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 1,
+              "score": 4.501152994617614
+            },
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 2,
+              "score": 2.720622984044794
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 3,
+              "score": 0.0
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 4,
+              "score": 0.0
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 6,
+              "score": 0.0
+            }
+          ],
+          "dense": [
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 1,
+              "score": 1.0
+            },
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 2,
+              "score": 1.0
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 3,
+              "score": 0.0
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 4,
+              "score": 0.0
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 6,
+              "score": 0.0
+            }
+          ]
+        },
+        "created_at": "2026-11-05T23:58:54.333385+00:00",
+        "executed_components": {
+          "bm25": true,
+          "dense": true,
+          "query_analysis": true,
+          "query_embedding": true,
+          "rrf": true
+        },
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 2,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Sam's reported birth year is 1992.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Sam",
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+              ],
+              "state_dimension": "birth_year",
+              "state_key": "conv-a:Sam:birth_year",
+              "state_value": "1992",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03252247488101534
+          }
+        ],
+        "initial_truncated": true,
+        "query_id": "99a82481c6d142d7bb3b3051410fb204",
+        "question": "What is Sam's birth year?",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncation_reasons": [
+          "initial_k"
+        ]
+      },
+      "expanded": {
+        "added_candidates": [
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Sam's reported birth year is 1990.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Sam",
+              "memory_id": "97af606ec835151c5e344b03",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+              ],
+              "state_dimension": "birth_year",
+              "state_key": "conv-a:Sam:birth_year",
+              "state_value": "1990",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": null,
+                  "original_time_expression": null,
+                  "time_anchor_source_id": null,
+                  "time_basis": null,
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "CONFLICT",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "d1fbd785785fe1efef4640c4",
+                "seed_memory_id": "171403fc76f80f8a53a2c5ea"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "171403fc76f80f8a53a2c5ea",
+                "state_key": "conv-a:Sam:birth_year"
+              }
+            ]
+          }
+        ],
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 32,
+        "candidates": [
+          {
+            "is_initial": true,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Sam's reported birth year is 1992.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Sam",
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+              ],
+              "state_dimension": "birth_year",
+              "state_key": "conv-a:Sam:birth_year",
+              "state_value": "1992",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "kind": "initial",
+                "reason": "Original hybrid candidate",
+                "seed_memory_id": "171403fc76f80f8a53a2c5ea"
+              }
+            ]
+          },
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Sam's reported birth year is 1990.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Sam",
+              "memory_id": "97af606ec835151c5e344b03",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+              ],
+              "state_dimension": "birth_year",
+              "state_key": "conv-a:Sam:birth_year",
+              "state_value": "1990",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": null,
+                  "original_time_expression": null,
+                  "time_anchor_source_id": null,
+                  "time_basis": null,
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "CONFLICT",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "d1fbd785785fe1efef4640c4",
+                "seed_memory_id": "171403fc76f80f8a53a2c5ea"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "171403fc76f80f8a53a2c5ea",
+                "state_key": "conv-a:Sam:birth_year"
+              }
+            ]
+          }
+        ],
+        "created_at": "2026-11-05T23:58:54.352317+00:00",
+        "expansion_id": "20cead4d22304989a1a80adaa024c0a0",
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 2,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Sam's reported birth year is 1992.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Sam",
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+              ],
+              "state_dimension": "birth_year",
+              "state_key": "conv-a:Sam:birth_year",
+              "state_value": "1992",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03252247488101534
+          }
+        ],
+        "query_id": "99a82481c6d142d7bb3b3051410fb204",
+        "question": "What is Sam's birth year?",
+        "relation_depth": 1,
+        "scanned": 2,
+        "state_history_enabled": true,
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution": {
+        "decisions": [
+          {
+            "memory_id": "171403fc76f80f8a53a2c5ea",
+            "reason": "Unresolved incompatible birth reports",
+            "selected": true
+          },
+          {
+            "memory_id": "97af606ec835151c5e344b03",
+            "reason": "Unresolved incompatible birth reports",
+            "selected": true
+          }
+        ],
+        "effective_memory_ids": [
+          "171403fc76f80f8a53a2c5ea",
+          "97af606ec835151c5e344b03"
+        ],
+        "explanation": "Controlled external response based on the synthetic raw evidence; not model quality evidence",
+        "status": "conflict",
+        "supplemental_relations": []
+      },
+      "effective_memories": [
+        {
+          "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+          "content": "Sam's reported birth year is 1992.",
+          "dataset_id": "3630387b6f74906ed0e7f9ab",
+          "entity_id": "Sam",
+          "memory_id": "171403fc76f80f8a53a2c5ea",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-a",
+          "session_times": [
+            "1:00 pm on 2 May, 2023"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+          ],
+          "state_dimension": "birth_year",
+          "state_key": "conv-a:Sam:birth_year",
+          "state_value": "1992",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        },
+        {
+          "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+          "content": "Sam's reported birth year is 1990.",
+          "dataset_id": "3630387b6f74906ed0e7f9ab",
+          "entity_id": "Sam",
+          "memory_id": "97af606ec835151c5e344b03",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-a",
+          "session_times": [
+            "1:00 pm on 2 May, 2023"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+          ],
+          "state_dimension": "birth_year",
+          "state_key": "conv-a:Sam:birth_year",
+          "state_value": "1990",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        }
+      ],
+      "answer": {
+        "answer": "Sam reports birth years 1990 and 1992; the contradiction remains unresolved.",
+        "citations": [
+          {
+            "memory_id": "171403fc76f80f8a53a2c5ea",
+            "source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+            ]
+          },
+          {
+            "memory_id": "97af606ec835151c5e344b03",
+            "source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+            ]
+          }
+        ],
+        "explanation": null,
+        "status": "conflict"
+      },
+      "evidence_budget": {
+        "algorithm_version": "unique-source-payload-v2",
+        "budget": 6000,
+        "omitted_memory_ids": [],
+        "scope": "rag_evidence",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "token_count": 610,
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution_budgets": {
+        "resolve": {
+          "complete_memory_ids": [
+            "171403fc76f80f8a53a2c5ea",
+            "97af606ec835151c5e344b03"
+          ],
+          "input_budget": 24000,
+          "input_policy_version": "complete-dynamic-input-v1-no-omission",
+          "input_token_count": 3780,
+          "omitted_groups": [],
+          "source_delivery": {
+            "attempted_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:3",
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+            ],
+            "delivered_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:3",
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+            ],
+            "expected_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:3",
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+            ],
+            "provider_accepted": true,
+            "status": "accepted"
+          },
+          "truncated": false,
+          "within_budget": true
+        }
+      },
+      "stage_seconds": {
+        "answer": 0.0049999000038951635,
+        "expansion": 0.019677600008435547,
+        "resolve": 0.015532199991866946,
+        "retrieval": 0.029677300015464425
+      },
+      "usage_summary": {
+        "calls": 3,
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 0.00334539997857064,
+        "reported_tokens": {
+          "completion_tokens": 15,
+          "prompt_tokens": 30,
+          "total_tokens": 45
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 15
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 30
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 45
+          }
+        }
+      },
+      "diagnostics": {
+        "answer": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "query_analysis": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "resolve": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ]
+      }
+    },
+    "4f40ae4d83b54c9bb423567534e47368": {
+      "trace_id": "4f40ae4d83b54c9bb423567534e47368",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "question": "What is Alex's passport number?",
+      "outcome": "succeeded",
+      "time": {
+        "anchor_date": "2023-05-03",
+        "beyond_cutoff": false,
+        "cutoff": "2023-05-03T13:00:00",
+        "cutoff_source_time": "1:00 pm on 3 May, 2023",
+        "origin": "conversation_cutoff",
+        "requested_date": null
+      },
+      "initial": {
+        "analysis": {
+          "error_code": null,
+          "prompt_version": "query-analysis-v1",
+          "result": {
+            "entities": [
+              "Alex"
+            ],
+            "keywords": [
+              "Rome"
+            ],
+            "time": null,
+            "topic": "residence"
+          },
+          "status": "succeeded"
+        },
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 11,
+        "channels": {
+          "bm25": [
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 1,
+              "score": 1.9887941706542622
+            },
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 2,
+              "score": 0.5548119900233716
+            },
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 3,
+              "score": 0.5548119900233716
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 4,
+              "score": 0.0
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 6,
+              "score": 0.0
+            }
+          ],
+          "dense": [
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 1,
+              "score": 1.0
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 2,
+              "score": 0.0
+            },
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 3,
+              "score": 0.0
+            },
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 4,
+              "score": 0.0
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 6,
+              "score": 0.0
+            }
+          ]
+        },
+        "created_at": "2026-11-05T23:58:54.486854+00:00",
+        "executed_components": {
+          "bm25": true,
+          "dense": true,
+          "query_analysis": true,
+          "query_embedding": true,
+          "rrf": true
+        },
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 1,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03278688524590164
+          }
+        ],
+        "initial_truncated": true,
+        "query_id": "839c9fbe52d848cf94c2ac4244b11753",
+        "question": "What is Alex's passport number?",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncation_reasons": [
+          "initial_k"
+        ]
+      },
+      "expanded": {
+        "added_candidates": [
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Paris.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 1 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Paris",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": "2023-05-02",
+                  "original_time_expression": "2 May 2023",
+                  "time_anchor_source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+                  "time_basis": "Explicit source date",
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "SUPERSEDE",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "681f7492942b87b23036cd63",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "fc340b1fada6b3096393ea31",
+                "state_key": "conv-a:Alex:residence"
+              }
+            ]
+          }
+        ],
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 22,
+        "candidates": [
+          {
+            "is_initial": true,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "kind": "initial",
+                "reason": "Original hybrid candidate",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              }
+            ]
+          },
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Paris.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 1 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Paris",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": "2023-05-02",
+                  "original_time_expression": "2 May 2023",
+                  "time_anchor_source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+                  "time_basis": "Explicit source date",
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "SUPERSEDE",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "681f7492942b87b23036cd63",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "fc340b1fada6b3096393ea31",
+                "state_key": "conv-a:Alex:residence"
+              }
+            ]
+          }
+        ],
+        "created_at": "2026-11-05T23:58:54.511889+00:00",
+        "expansion_id": "94e856bd556e43fca79e6631565aa628",
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 1,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03278688524590164
+          }
+        ],
+        "query_id": "839c9fbe52d848cf94c2ac4244b11753",
+        "question": "What is Alex's passport number?",
+        "relation_depth": 1,
+        "scanned": 2,
+        "state_history_enabled": true,
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution": {
+        "decisions": [
+          {
+            "memory_id": "fc340b1fada6b3096393ea31",
+            "reason": "No passport information in evidence",
+            "selected": false
+          },
+          {
+            "memory_id": "b50f0b3d514debb9db5c9652",
+            "reason": "No passport information in evidence",
+            "selected": false
+          }
+        ],
+        "effective_memory_ids": [],
+        "explanation": "Controlled external response based on the synthetic raw evidence; not model quality evidence",
+        "status": "insufficient",
+        "supplemental_relations": []
+      },
+      "effective_memories": [],
+      "answer": {
+        "answer": "Insufficient evidence for the passport number.",
+        "citations": [],
+        "explanation": null,
+        "status": "insufficient"
+      },
+      "evidence_budget": {
+        "algorithm_version": "unique-source-payload-v2",
+        "budget": 6000,
+        "omitted_memory_ids": [],
+        "scope": "rag_evidence",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "token_count": 0,
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution_budgets": {
+        "resolve": {
+          "complete_memory_ids": [
+            "fc340b1fada6b3096393ea31",
+            "b50f0b3d514debb9db5c9652"
+          ],
+          "input_budget": 24000,
+          "input_policy_version": "complete-dynamic-input-v1-no-omission",
+          "input_token_count": 3820,
+          "omitted_groups": [],
+          "source_delivery": {
+            "attempted_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "delivered_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "expected_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "provider_accepted": true,
+            "status": "accepted"
+          },
+          "truncated": false,
+          "within_budget": true
+        }
+      },
+      "stage_seconds": {
+        "answer": 0.0028105000383220613,
+        "expansion": 0.02466260001529008,
+        "resolve": 0.019054400036111474,
+        "retrieval": 0.03174890001537278
+      },
+      "usage_summary": {
+        "calls": 3,
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 0.0033428999595344067,
+        "reported_tokens": {
+          "completion_tokens": 15,
+          "prompt_tokens": 30,
+          "total_tokens": 45
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 15
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 30
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 45
+          }
+        }
+      },
+      "diagnostics": {
+        "answer": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "query_analysis": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "resolve": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ]
+      }
+    },
+    "f0c123c9a52c48b087f4f04dea3b7837": {
+      "trace_id": "f0c123c9a52c48b087f4f04dea3b7837",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "question": "Where does Alex live? citation anomaly",
+      "outcome": "failed",
+      "time": {
+        "anchor_date": "2023-05-03",
+        "beyond_cutoff": false,
+        "cutoff": "2023-05-03T13:00:00",
+        "cutoff_source_time": "1:00 pm on 3 May, 2023",
+        "origin": "conversation_cutoff",
+        "requested_date": null
+      },
+      "initial": {
+        "analysis": {
+          "error_code": null,
+          "prompt_version": "query-analysis-v1",
+          "result": {
+            "entities": [
+              "Alex"
+            ],
+            "keywords": [
+              "Rome"
+            ],
+            "time": null,
+            "topic": "residence"
+          },
+          "status": "succeeded"
+        },
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 11,
+        "channels": {
+          "bm25": [
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 1,
+              "score": 2.3639714870832984
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 2,
+              "score": 1.5622827499011203
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 3,
+              "score": 0.37517731642903634
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 4,
+              "score": 0.34803789903162446
+            },
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 6,
+              "score": 0.0
+            }
+          ],
+          "dense": [
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 1,
+              "score": 1.0
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 2,
+              "score": 0.0
+            },
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 3,
+              "score": 0.0
+            },
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 4,
+              "score": 0.0
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 6,
+              "score": 0.0
+            }
+          ]
+        },
+        "created_at": "2026-11-05T23:58:54.634970+00:00",
+        "executed_components": {
+          "bm25": true,
+          "dense": true,
+          "query_analysis": true,
+          "query_embedding": true,
+          "rrf": true
+        },
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 1,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03278688524590164
+          }
+        ],
+        "initial_truncated": true,
+        "query_id": "74a1118871e94509861a087279c8b12e",
+        "question": "Where does Alex live? citation anomaly",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncation_reasons": [
+          "initial_k"
+        ]
+      },
+      "expanded": {
+        "added_candidates": [
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Paris.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 1 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Paris",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": "2023-05-02",
+                  "original_time_expression": "2 May 2023",
+                  "time_anchor_source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+                  "time_basis": "Explicit source date",
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "SUPERSEDE",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "681f7492942b87b23036cd63",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "fc340b1fada6b3096393ea31",
+                "state_key": "conv-a:Alex:residence"
+              }
+            ]
+          }
+        ],
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 22,
+        "candidates": [
+          {
+            "is_initial": true,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "kind": "initial",
+                "reason": "Original hybrid candidate",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              }
+            ]
+          },
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Paris.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 1 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Paris",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": "2023-05-02",
+                  "original_time_expression": "2 May 2023",
+                  "time_anchor_source_id": "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+                  "time_basis": "Explicit source date",
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "SUPERSEDE",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "681f7492942b87b23036cd63",
+                "seed_memory_id": "fc340b1fada6b3096393ea31"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "fc340b1fada6b3096393ea31",
+                "state_key": "conv-a:Alex:residence"
+              }
+            ]
+          }
+        ],
+        "created_at": "2026-11-05T23:58:54.657927+00:00",
+        "expansion_id": "69172ae96c094817beee17e3c7541749",
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 1,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Alex lives in Rome.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Alex",
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+              ],
+              "state_dimension": "residence",
+              "state_key": "conv-a:Alex:residence",
+              "state_value": "Rome",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03278688524590164
+          }
+        ],
+        "query_id": "74a1118871e94509861a087279c8b12e",
+        "question": "Where does Alex live? citation anomaly",
+        "relation_depth": 1,
+        "scanned": 2,
+        "state_history_enabled": true,
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution": {
+        "decisions": [
+          {
+            "memory_id": "fc340b1fada6b3096393ea31",
+            "reason": "Explicit move applies as of the cutoff",
+            "selected": true
+          },
+          {
+            "memory_id": "b50f0b3d514debb9db5c9652",
+            "reason": "Explicit move applies as of the cutoff",
+            "selected": false
+          }
+        ],
+        "effective_memory_ids": [
+          "fc340b1fada6b3096393ea31"
+        ],
+        "explanation": "Source-backed temporal applicability",
+        "status": "sufficient",
+        "supplemental_relations": []
+      },
+      "effective_memories": [
+        {
+          "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+          "content": "Alex lives in Rome.",
+          "dataset_id": "3630387b6f74906ed0e7f9ab",
+          "entity_id": "Alex",
+          "memory_id": "fc340b1fada6b3096393ea31",
+          "memory_type": "state",
+          "polarity": "positive",
+          "sample_id": "conv-a",
+          "session_times": [
+            "1:00 pm on 2 May, 2023"
+          ],
+          "source_ids": [
+            "3630387b6f74906ed0e7f9ab/conv-a/D2:1"
+          ],
+          "state_dimension": "residence",
+          "state_key": "conv-a:Alex:residence",
+          "state_value": "Rome",
+          "statement_type": "fact",
+          "time": {
+            "anchor_source_id": null,
+            "basis": null,
+            "event_end": null,
+            "event_start": null,
+            "original_expression": null,
+            "valid_from": null,
+            "valid_to": null
+          }
+        }
+      ],
+      "error": {
+        "code": "invalid_output",
+        "stage": "answer"
+      },
+      "evidence_budget": {
+        "algorithm_version": "unique-source-payload-v2",
+        "budget": 6000,
+        "omitted_memory_ids": [],
+        "scope": "rag_evidence",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "token_count": 309,
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution_budgets": {
+        "resolve": {
+          "complete_memory_ids": [
+            "fc340b1fada6b3096393ea31",
+            "b50f0b3d514debb9db5c9652"
+          ],
+          "input_budget": 24000,
+          "input_policy_version": "complete-dynamic-input-v1-no-omission",
+          "input_token_count": 3819,
+          "omitted_groups": [],
+          "source_delivery": {
+            "attempted_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "delivered_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "expected_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:1",
+              "3630387b6f74906ed0e7f9ab/conv-a/D1:1"
+            ],
+            "provider_accepted": true,
+            "status": "accepted"
+          },
+          "truncated": false,
+          "within_budget": true
+        }
+      },
+      "stage_seconds": {
+        "answer": 0.009553699987009168,
+        "expansion": 0.02121650002663955,
+        "resolve": 0.0208625000086613,
+        "retrieval": 0.031452099967282265
+      },
+      "usage_summary": {
+        "calls": 3,
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "generation_calls": 3,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 0.00895180000225082,
+        "reported_tokens": {
+          "completion_tokens": 15,
+          "prompt_tokens": 30,
+          "total_tokens": 45
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 15
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 30
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 3,
+            "complete": true,
+            "reported": 45
+          }
+        }
+      },
+      "diagnostics": {
+        "answer": [
+          {
+            "status": "invalid_output",
+            "error_code": "answer_memory_citation_scope_required",
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "query_analysis": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "resolve": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ]
+      }
+    },
+    "679c1d2802bd4f509081c34b688f7daa": {
+      "trace_id": "679c1d2802bd4f509081c34b688f7daa",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "dataset_id": "3630387b6f74906ed0e7f9ab",
+      "sample_id": "conv-a",
+      "question": "What is Sam's birth year?",
+      "outcome": "failed",
+      "time": {
+        "anchor_date": "2023-05-03",
+        "beyond_cutoff": false,
+        "cutoff": "2023-05-03T13:00:00",
+        "cutoff_source_time": "1:00 pm on 3 May, 2023",
+        "origin": "conversation_cutoff",
+        "requested_date": null
+      },
+      "initial": {
+        "analysis": {
+          "error_code": null,
+          "prompt_version": "query-analysis-v1",
+          "result": {
+            "entities": [
+              "Sam"
+            ],
+            "keywords": [
+              "1990"
+            ],
+            "time": null,
+            "topic": "birth_year"
+          },
+          "status": "succeeded"
+        },
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 16,
+        "channels": {
+          "bm25": [
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 1,
+              "score": 4.501152994617614
+            },
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 2,
+              "score": 2.720622984044794
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 3,
+              "score": 0.0
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 4,
+              "score": 0.0
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 6,
+              "score": 0.0
+            }
+          ],
+          "dense": [
+            {
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "rank": 1,
+              "score": 1.0
+            },
+            {
+              "memory_id": "97af606ec835151c5e344b03",
+              "rank": 2,
+              "score": 1.0
+            },
+            {
+              "memory_id": "13c20207453ed561c26910d1",
+              "rank": 3,
+              "score": 0.0
+            },
+            {
+              "memory_id": "b50f0b3d514debb9db5c9652",
+              "rank": 4,
+              "score": 0.0
+            },
+            {
+              "memory_id": "ec01f952676a789713c25d31",
+              "rank": 5,
+              "score": 0.0
+            },
+            {
+              "memory_id": "fc340b1fada6b3096393ea31",
+              "rank": 6,
+              "score": 0.0
+            }
+          ]
+        },
+        "created_at": "2026-11-05T23:58:55.032067+00:00",
+        "executed_components": {
+          "bm25": true,
+          "dense": true,
+          "query_analysis": true,
+          "query_embedding": true,
+          "rrf": true
+        },
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 2,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Sam's reported birth year is 1992.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Sam",
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+              ],
+              "state_dimension": "birth_year",
+              "state_key": "conv-a:Sam:birth_year",
+              "state_value": "1992",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03252247488101534
+          }
+        ],
+        "initial_truncated": true,
+        "query_id": "5c8b39753e90436f8c1417122cb09b1e",
+        "question": "What is Sam's birth year?",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncation_reasons": [
+          "initial_k"
+        ]
+      },
+      "expanded": {
+        "added_candidates": [
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Sam's reported birth year is 1990.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Sam",
+              "memory_id": "97af606ec835151c5e344b03",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+              ],
+              "state_dimension": "birth_year",
+              "state_key": "conv-a:Sam:birth_year",
+              "state_value": "1990",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": null,
+                  "original_time_expression": null,
+                  "time_anchor_source_id": null,
+                  "time_basis": null,
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "CONFLICT",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "d1fbd785785fe1efef4640c4",
+                "seed_memory_id": "171403fc76f80f8a53a2c5ea"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "171403fc76f80f8a53a2c5ea",
+                "state_key": "conv-a:Sam:birth_year"
+              }
+            ]
+          }
+        ],
+        "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+        "candidate_token_count": 32,
+        "candidates": [
+          {
+            "is_initial": true,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Sam's reported birth year is 1992.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Sam",
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+              ],
+              "state_dimension": "birth_year",
+              "state_key": "conv-a:Sam:birth_year",
+              "state_value": "1992",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "kind": "initial",
+                "reason": "Original hybrid candidate",
+                "seed_memory_id": "171403fc76f80f8a53a2c5ea"
+              }
+            ]
+          },
+          {
+            "is_initial": false,
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Sam's reported birth year is 1990.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Sam",
+              "memory_id": "97af606ec835151c5e344b03",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+              ],
+              "state_dimension": "birth_year",
+              "state_key": "conv-a:Sam:birth_year",
+              "state_value": "1990",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "origins": [
+              {
+                "applicability": {
+                  "condition": null,
+                  "condition_satisfied": null,
+                  "condition_source_ids": [],
+                  "from_date": null,
+                  "original_time_expression": null,
+                  "time_anchor_source_id": null,
+                  "time_basis": null,
+                  "to_date": null
+                },
+                "kind": "relation",
+                "label": "CONFLICT",
+                "reason": "One-hop evidence-backed historical relation; applicability remains explicit context",
+                "relation_id": "d1fbd785785fe1efef4640c4",
+                "seed_memory_id": "171403fc76f80f8a53a2c5ea"
+              },
+              {
+                "kind": "state_key",
+                "reason": "Same entity and state dimension historical supplement; unknown dates remain eligible",
+                "seed_memory_id": "171403fc76f80f8a53a2c5ea",
+                "state_key": "conv-a:Sam:birth_year"
+              }
+            ]
+          }
+        ],
+        "created_at": "2026-11-05T23:58:55.045660+00:00",
+        "expansion_id": "3957367c01374b4e8fe8e79586ef5dc8",
+        "index_fingerprint": "f14986f69c700b1247212c69fe4c4df407c2b7944a2798338b762a3818d2dc33",
+        "initial_candidates": [
+          {
+            "channel_ranks": {
+              "bm25": 2,
+              "dense": 1
+            },
+            "memory": {
+              "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+              "content": "Sam's reported birth year is 1992.",
+              "dataset_id": "3630387b6f74906ed0e7f9ab",
+              "entity_id": "Sam",
+              "memory_id": "171403fc76f80f8a53a2c5ea",
+              "memory_type": "state",
+              "polarity": "positive",
+              "sample_id": "conv-a",
+              "session_times": [
+                "1:00 pm on 2 May, 2023"
+              ],
+              "source_ids": [
+                "3630387b6f74906ed0e7f9ab/conv-a/D2:3"
+              ],
+              "state_dimension": "birth_year",
+              "state_key": "conv-a:Sam:birth_year",
+              "state_value": "1992",
+              "statement_type": "fact",
+              "time": {
+                "anchor_source_id": null,
+                "basis": null,
+                "event_end": null,
+                "event_start": null,
+                "original_expression": null,
+                "valid_from": null,
+                "valid_to": null
+              }
+            },
+            "rrf_score": 0.03252247488101534
+          }
+        ],
+        "query_id": "5c8b39753e90436f8c1417122cb09b1e",
+        "question": "What is Sam's birth year?",
+        "relation_depth": 1,
+        "scanned": 2,
+        "state_history_enabled": true,
+        "token_budget_method": "regex-word-punctuation-v1",
+        "truncated": false,
+        "truncation_reasons": []
+      },
+      "resolution": {
+        "decisions": [
+          {
+            "memory_id": "171403fc76f80f8a53a2c5ea",
+            "reason": "Unresolved incompatible birth reports",
+            "selected": true
+          },
+          {
+            "memory_id": "97af606ec835151c5e344b03",
+            "reason": "Unresolved incompatible birth reports",
+            "selected": true
+          }
+        ],
+        "effective_memory_ids": [
+          "171403fc76f80f8a53a2c5ea",
+          "97af606ec835151c5e344b03"
+        ],
+        "explanation": "Controlled external response based on the synthetic raw evidence; not model quality evidence",
+        "status": "conflict",
+        "supplemental_relations": []
+      },
+      "effective_memories": [],
+      "error": {
+        "code": "conflict_evidence_budget_exceeded",
+        "stage": "answer"
+      },
+      "evidence_budget": {
+        "algorithm_version": "unique-source-payload-v2",
+        "budget": 1,
+        "failure_reason": "conflict_evidence_budget_exceeded",
+        "omitted_memory_ids": [
+          "171403fc76f80f8a53a2c5ea",
+          "97af606ec835151c5e344b03"
+        ],
+        "scope": "rag_evidence",
+        "token_budget_method": "regex-word-punctuation-v1",
+        "token_count": 0,
+        "truncated": true,
+        "truncation_reasons": [
+          "evidence_token_budget"
+        ]
+      },
+      "resolution_budgets": {
+        "resolve": {
+          "complete_memory_ids": [
+            "171403fc76f80f8a53a2c5ea",
+            "97af606ec835151c5e344b03"
+          ],
+          "input_budget": 24000,
+          "input_policy_version": "complete-dynamic-input-v1-no-omission",
+          "input_token_count": 3780,
+          "omitted_groups": [],
+          "source_delivery": {
+            "attempted_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:3",
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+            ],
+            "delivered_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:3",
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+            ],
+            "expected_source_ids": [
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:3",
+              "3630387b6f74906ed0e7f9ab/conv-a/D2:2"
+            ],
+            "provider_accepted": true,
+            "status": "accepted"
+          },
+          "truncated": false,
+          "within_budget": true
+        }
+      },
+      "stage_seconds": {
+        "answer": 0.0002361999941058457,
+        "expansion": 0.0142723000026308,
+        "resolve": 0.019711999979335815,
+        "retrieval": 0.023836499953176826
+      },
+      "usage_summary": {
+        "calls": 2,
+        "calls_with_partial_usage": 0,
+        "calls_without_reported_usage": 0,
+        "generation_calls": 2,
+        "provider_retries": 0,
+        "provider_usage_complete": true,
+        "reported_provider_seconds": 0.001792200026102364,
+        "reported_tokens": {
+          "completion_tokens": 10,
+          "prompt_tokens": 20,
+          "total_tokens": 30
+        },
+        "unknown_attempts": 0,
+        "usage_fields": {
+          "completion_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 10
+          },
+          "prompt_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 20
+          },
+          "total_tokens": {
+            "calls_missing_usage": 0,
+            "calls_with_reported_usage": 2,
+            "complete": true,
+            "reported": 30
+          }
+        }
+      },
+      "diagnostics": {
+        "answer": [],
+        "query_analysis": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ],
+        "resolve": [
+          {
+            "status": "succeeded",
+            "error_code": null,
+            "field_path": null,
+            "http_status": 200,
+            "response_received": true
+          }
+        ]
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "success",
+      "trace_id": "86e8ffceba394bf6bdbbaa5cbea007f2",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "question": "Where does Alex live?",
+      "outcome": "succeeded",
+      "answer_status": "sufficient",
+      "error": null
+    },
+    {
+      "case_id": "historical",
+      "trace_id": "60d32f4e07564df085969fc7f763e31e",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "question": "Where did Alex live?",
+      "outcome": "succeeded",
+      "answer_status": "sufficient",
+      "error": null
+    },
+    {
+      "case_id": "conflict",
+      "trace_id": "d3b12e9517494c26b386398621133582",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "question": "What is Sam's birth year?",
+      "outcome": "succeeded",
+      "answer_status": "conflict",
+      "error": null
+    },
+    {
+      "case_id": "insufficient",
+      "trace_id": "4f40ae4d83b54c9bb423567534e47368",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "question": "What is Alex's passport number?",
+      "outcome": "succeeded",
+      "answer_status": "insufficient",
+      "error": null
+    },
+    {
+      "case_id": "citation_anomaly",
+      "trace_id": "f0c123c9a52c48b087f4f04dea3b7837",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "question": "Where does Alex live? citation anomaly",
+      "outcome": "failed",
+      "answer_status": null,
+      "error": {
+        "code": "invalid_output",
+        "stage": "answer"
+      }
+    },
+    {
+      "case_id": "budget_failure",
+      "trace_id": "679c1d2802bd4f509081c34b688f7daa",
+      "build_id": "99fb4b2b702e43a79e762d4a3fd7c25c",
+      "question": "What is Sam's birth year?",
+      "outcome": "failed",
+      "answer_status": null,
+      "error": {
+        "code": "conflict_evidence_budget_exceeded",
+        "stage": "answer"
+      }
+    }
+  ],
+  "runs": []
+}

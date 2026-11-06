@@ -22,8 +22,9 @@ def server_command(component, api_port, ui_port):
     if component == 'api':
         return [sys.executable, '-m', 'uvicorn', 'server:app_factory', '--factory',
                 '--host', '127.0.0.1', '--port', str(api_port)]
-    if component == 'ui':
-        return [sys.executable, '-m', 'streamlit', 'run', str(ROOT / 'tools/team_v2/demo_ui.py'),
+    if component in ('ui', 'replay'):
+        entry = 'replay_ui.py' if component == 'replay' else 'demo_ui.py'
+        return [sys.executable, '-m', 'streamlit', 'run', str(ROOT / 'tools/team_v2' / entry),
                 '--server.address', '127.0.0.1', '--server.port', str(ui_port),
                 '--server.headless', 'true', '--browser.gatherUsageStats', 'false']
     raise ValueError('unknown_demo_component')
@@ -31,11 +32,16 @@ def server_command(component, api_port, ui_port):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('component', choices=['prepare', 'api', 'ui'])
+    parser.add_argument('component', choices=['prepare', 'api', 'ui', 'replay'])
     parser.add_argument('--output', type=Path, default=ROOT / 'var/team-v2-demo')
     parser.add_argument('--api-port', type=int, default=18000)
     parser.add_argument('--ui-port', type=int, default=18501)
     args = parser.parse_args()
+    if args.component == 'replay':
+        env = demo_environment(ROOT / 'config.example.toml')
+        env.pop('LOCOMO_CONFIG', None)
+        command = server_command('replay', args.api_port, args.ui_port)
+        raise SystemExit(subprocess.call(command, env=env, cwd=ROOT))
     requested = args.output.absolute()
     # Only newly owned storage under this clone's ignored var directory is allowed.
     if any(p.is_symlink() for p in [requested, *requested.parents]):

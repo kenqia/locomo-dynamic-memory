@@ -8,21 +8,14 @@ import httpx
 import streamlit as st
 
 from locomo_memory.config import load_settings
+from locomo_memory.evidence_ui import page_items, render_memory_inspector, render_trace_inspector
+from locomo_memory.frozen_report_ui import render_experiment_comparison
 from locomo_memory.ui_theme import apply_app_theme, render_context, render_page_header
 
 
 ROOT = Path(__file__).resolve().parents[2]
 EVIDENCE = ROOT / 'docs/team-v2/research-evidence.json'
 PAGES = ('Overview', 'Memory', 'Query/Evidence', 'Experiments', 'Demo')
-
-
-def page_items(request, path, key, **params):
-    """Keep API pagination explicit; a page is never a whole-collection count."""
-    with st.popover('分页'):
-        offset = int(st.number_input('列表起始位置', min_value=0, step=20, key=key))
-    page = request('GET', path, params={**params, 'limit': 20, 'offset': offset})
-    st.caption(f"本页 {len(page['items'])} 项 / 全部 {page['total']} 项 · offset {offset}")
-    return page['items']
 
 
 def render_build_selector(request):
@@ -73,15 +66,7 @@ def render_frozen_report(evidence_path, reviewer=False, strategies=False):
             column.metric(label, baseline[field])
         st.caption(f"{baseline['questions']} QA · unknown 原样保留；缺测不填零；无独立语义真值的指标保持未评。")
         if strategies:
-            rows = []
-            for strategy, group in baseline['groups']['strategy'].items():
-                score = group['full_denominator_qa_score']
-                rows.append({'strategy': strategy, 'planned': group['planned'],
-                             **group['states'],
-                             '成功子集 QA': group['qa_successful_scorable']['mean'],
-                             '完整分母 QA': 'unknown' if score is None else str(score)})
-            st.dataframe(rows, hide_index=True, width='stretch')
-            st.caption('此处仅原 Run 策略摘要；补充/修复 Run 和多维比较待 #28 接入。')
+            render_experiment_comparison(evidence)
         if reviewer:
             with st.expander('核对冻结报告原始字段'):
                 st.json(evidence)
@@ -125,31 +110,23 @@ def render_runs(request):
 
 
 def render_memory(request, build):
-    st.subheader('Memory · 只读版本检查')
-    if build is None:
-        st.info('请先选择含有 Memory 的 Build。')
-        return
-    memories = page_items(request, f"/builds/{build['build_id']}/memories",
-                          f"console_memory_offset_{build['build_id']}")
-    if not memories:
-        st.info('当前页尚无 Memory。')
-        return
-    st.dataframe([{'memory_id': item['memory_id'], 'content': item['content'],
-                   'statement_type': item['statement_type'], 'polarity': item['polarity'],
-                   'source_ids': ', '.join(item['source_ids'])} for item in memories],
-                 hide_index=True, width='stretch')
-    st.caption('时间与关系的 Timeline、引用跳转将在 #27 完善；下方保留全部已记录字段。')
-    with st.expander('Memory 原始字段（含时间与来源）'):
-        st.json(memories)
+    render_memory_inspector(request, build)
 
 
-def render_trace(request, build):
+def render_trace(request, build, replay_cases=()):
     st.subheader('Query / Evidence · 保存的 Trace')
     if build is None:
         st.info('请先选择 Build，再读取该版本已有的 Trace。')
         return
+    cases = {case['case_id']: case for case in replay_cases if case['build_id'] == build['build_id']}
+    load_case = False
+    if cases:
+        case_id = st.selectbox('冻结案例', list(cases), key='console_replay_case')
+        load_case = st.button('载入冻结案例', key='console_load_case')
+        if load_case:
+            st.session_state['console_trace_id'] = cases[case_id]['trace_id']
     trace_id = st.text_input('Trace ID', key='console_trace_id')
-    if st.button('读取已有 Trace', key='console_load_trace', disabled=not trace_id.strip()):
+    if st.button('读取已有 Trace', key='console_load_trace', disabled=not trace_id.strip()) or load_case:
         st.session_state.pop('console_saved_trace', None)
         trace = request('GET', f'/queries/{trace_id.strip()}')
         if trace['build_id'] != build['build_id']:
@@ -158,22 +135,18 @@ def render_trace(request, build):
         st.session_state['console_saved_trace'] = trace
     trace = st.session_state.get('console_saved_trace')
     if trace and trace['build_id'] == build['build_id'] and trace['trace_id'] == trace_id.strip():
-        st.caption(f"Trace: {trace['trace_id']} · Build: {trace['build_id']} · outcome: {trace['outcome']}")
-        if trace['outcome'] == 'failed':
-            st.error('此问答执行失败，失败不代表没有证据。')
-            st.json(trace.get('error', {}))
-        else:
-            answer = trace['answer']
-            st.write({'sufficient': '证据支持', 'insufficient': '证据不足', 'conflict': '证据冲突'}.get(answer['status'], answer['status']))
-            st.text(answer['answer'])
-        with st.expander('已保存的证据与完整 Trace', expanded=True):
-            st.json(trace)
-        st.caption('仅展示已保存字段；未记录的 exact wire / event_ref 不作补造。')
+        render_trace_inspector(request, build, trace)
 
 
-def render_demo():
+def render_demo(replay_cases=()):
     st.subheader('Demo · 合成应用 Replay')
     st.info('OFFLINE SYNTHETIC DEMO 证明应用链路可运行，不代表真实模型成绩。')
+    if replay_cases:
+        st.success('当前为固定快照 Replay：无需启动 API、准备数据库或配置模型凭据。')
+        st.dataframe(replay_cases, hide_index=True, width='stretch')
+        st.code('uv run --locked python tools/team_v2/demo.py replay', language='shell')
+        st.caption('操作路线：Overview → Memory/来源 → Query/Evidence/冻结案例 → Experiments。详见 demo_fixture/README.md。')
+        return
     st.markdown('选择 `OFFLINE-SYNTHETIC-v2-kickoff` / `conv-a` 的完整 Build，'
                 '先看 Memory，再在 Query/Evidence 读取 seed 保存的 Trace ID。')
     st.dataframe([
@@ -189,9 +162,11 @@ def render_demo():
     st.caption('api 和 ui 分别在两个终端运行。prepare 拒绝覆盖已有目录；更换 output 时三个命令使用相同路径。')
 
 
-def render_backend(request, page, reviewer):
+def render_backend(request, page, reviewer, replay_cases=()):
     health = request('GET', '/health')
-    if health.get('status') == 'ok':
+    if health.get('mode') == 'REPLAY':
+        st.success('Replay 快照已载入 · 无 API / 数据库')
+    elif health.get('status') == 'ok':
         st.success('后端已连接 · Console 只读')
     else:
         st.warning('后端健康状态不是 ok，请检查服务。')
@@ -205,16 +180,16 @@ def render_backend(request, page, reviewer):
     elif page == 'Memory':
         render_memory(request, build)
     elif page == 'Query/Evidence':
-        render_trace(request, build)
+        render_trace(request, build, replay_cases)
 
 
-def render_console(request, evidence_path=EVIDENCE):
+def render_console(request, evidence_path=EVIDENCE, replay_cases=()):
     render_page_header('PRODUCT CONSOLE', 'Research Console', '选择固定版本，检查记忆、证据和实验记录。')
     reviewer = st.radio('使用场景', ('展示者', '评审者'), horizontal=True,
                         key='console_role', label_visibility='collapsed') == '评审者'
     page = st.radio('导航', PAGES, horizontal=True, key='console_page', label_visibility='collapsed')
     try:
-        render_backend(request, page, reviewer)
+        render_backend(request, page, reviewer, replay_cases)
     except httpx.HTTPStatusError as error:
         st.error(f'后端读取失败（HTTP {error.response.status_code}）。请检查资源和服务状态。')
     except httpx.HTTPError:
@@ -224,7 +199,7 @@ def render_console(request, evidence_path=EVIDENCE):
     if page in ('Overview', 'Experiments'):
         render_frozen_report(evidence_path, reviewer, strategies=page == 'Experiments')
     elif page == 'Demo':
-        render_demo()
+        render_demo(replay_cases)
 
 
 def main():

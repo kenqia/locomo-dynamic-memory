@@ -21,7 +21,7 @@ def main():
     args.output.mkdir(parents=True, exist_ok=False)
     errors = []
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(channel='msedge', headless=True)
+        browser = playwright.chromium.launch(channel='msedge', headless=True, args=['--disable-gpu'])
         page = browser.new_page(viewport={'width': 1280, 'height': 900}, device_scale_factor=1)
 
         def offline_route(route):
@@ -38,7 +38,7 @@ def main():
             # body full_page alone clips it. Desktop width remains 1280px.
             main = page.get_by_test_id('stMain')
             height = main.evaluate('(element) => element.scrollHeight')
-            page.set_viewport_size({'width': 1280, 'height': max(900, height + 20)})
+            page.set_viewport_size({'width': 1280, 'height': min(2000, max(900, height + 20))})
             main.evaluate('(element) => { element.scrollTop = 0; }')
             page.screenshot(path=str(args.output / name), full_page=True)
             page.set_viewport_size({'width': 1280, 'height': 900})
@@ -54,10 +54,8 @@ def main():
         page.get_by_text('展示者', exact=True).click()
         page.get_by_text('Memory', exact=True).click()
         expect(page.get_by_role('heading', name='Memory · 只读版本检查', exact=True)).to_be_visible()
-        page.get_by_text('Memory 原始字段（含时间与来源）', exact=True).click()
-        expect(page.get_by_text('Alex lives in Paris.', exact=False).first).to_be_visible()
-        page.get_by_text('Memory 原始字段（含时间与来源）', exact=True).click()
-        page.get_by_test_id('stJson').last.wait_for(state='hidden')
+        page.get_by_role('button', name='查看完整原文', exact=True).click()
+        expect(page.get_by_text('I live in Paris.', exact=True)).to_be_visible()
         capture('memory.png')
         page.get_by_text('Query/Evidence', exact=True).click()
         expected_answers = ('Alex lives in Rome.', 'Alex lives in Paris.',
@@ -68,11 +66,9 @@ def main():
             page.get_by_label('Trace ID', exact=True).press('Tab')
             page.get_by_role('button', name='读取已有 Trace', exact=True).click()
             expect(page.get_by_text(answer, exact=True)).to_be_visible()
-        page.get_by_text('已保存的证据与完整 Trace', exact=True).click()
-        page.get_by_test_id('stJson').last.wait_for(state='hidden')
         capture('trace.png')
         page.get_by_text('Experiments', exact=True).click()
-        expect(page.get_by_text('此处仅原 Run 策略摘要', exact=False)).to_be_visible()
+        expect(page.get_by_text('可比成功配对', exact=True)).to_be_visible()
         capture('experiments.png')
         page.get_by_text('Demo', exact=True).click()
         expect(page.get_by_role('heading', name='Demo · 合成应用 Replay', exact=True)).to_be_visible()
