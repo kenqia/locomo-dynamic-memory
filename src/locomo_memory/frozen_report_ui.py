@@ -21,14 +21,18 @@ def render_experiment_comparison(evidence):
     rows = []
     for name, group in groups.items():
         score = group['qa_successful_scorable']
+        states = group['states']
+        completion = ((states.get('succeeded', 0) + states.get('failed', 0)) / group['planned']
+                      if group['planned'] and sum(states.values()) == group['planned'] else None)
         rows.append({dimension: name, 'planned': group['planned'],
                      **{status: shown(group['states'].get(status)) for status in ('succeeded', 'failed', 'unknown')},
-                     '完成率': shown(group.get('execution_success_rate')),
+                     '已知完成率（含失败）': shown(completion),
+                     '运行成功率': shown(group.get('execution_success_rate')),
                      '成功子集 QA': shown(score.get('mean')), '计分样本': shown(score.get('measured')),
                      '未计分 / 缺测': shown(score.get('unknown')),
                      '完整分母 QA': shown(group.get('full_denominator_qa_score'))})
     st.dataframe(rows, hide_index=True, width='stretch')
-    st.caption('unknown 表示快照未提供该值，不能填零；QA 分数与证据语义正确性分别看待。')
+    st.caption('完成率包含已知成功与失败，unknown 不算已知完成；unknown 字段不填零。QA 分数与证据语义正确性分别看待。')
     st.subheader('可比子集优势与全部运行失败')
     paired = evidence['paired']
     columns = st.columns(4)

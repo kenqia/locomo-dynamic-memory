@@ -19,7 +19,7 @@ class ReplayStore:
         if manifest.get('mode') != 'OFFLINE_SYNTHETIC_REPLAY' or manifest.get('provider_calls') != 0:
             raise ValueError('synthetic_replay_required')
         for name in ('snapshot.json', 'research-evidence.json'):
-            if hashlib.sha256((directory / name).read_bytes()).hexdigest() != manifest['files'].get(name):
+            if hashlib.sha256((directory / name).read_bytes().replace(b'\r\n', b'\n')).hexdigest() != manifest['files'].get(name):
                 raise ValueError('replay_checksum_mismatch')
         self.data = json.loads((directory / 'snapshot.json').read_text(encoding='utf-8'))
         if self.data.get('schema') != 'public-console-replay-v1' or self.data.get('mode') != manifest['mode']:

@@ -18,7 +18,12 @@ OMIT = {'config', 'model_metadata', 'prompts', 'answer_input', 'operations', 're
 
 def public_record(value):
     if isinstance(value, dict):
-        return {key: public_record(item) for key, item in value.items() if key not in OMIT}
+        result = {key: public_record(item) for key, item in value.items() if key not in OMIT}
+        if isinstance(value.get('config'), dict):
+            allowed = ('candidate_token_budget', 'resolution_input_budget', 'evidence_token_budget',
+                       'expansion_max_candidates', 'initial_k')
+            result['config'] = {key: value['config'][key] for key in allowed if key in value['config']}
+        return result
     if isinstance(value, list):
         return [public_record(item) for item in value]
     return value
@@ -143,14 +148,15 @@ def export_fixture(output):
         capture_case(client, 'budget_failure', "What is Sam's birth year?")
     snapshot = public_record(snapshot)
     files = {'snapshot.json': (json.dumps(snapshot, ensure_ascii=False, indent=2) + '\n').encode('utf-8'),
-             'research-evidence.json': (ROOT / 'docs/team-v2/research-evidence.json').read_bytes()}
+             'research-evidence.json': (ROOT / 'docs/team-v2/research-evidence.json').read_bytes().replace(b'\r\n', b'\n')}
     frozen = output / 'bundle'
     frozen.mkdir()
     for name, content in files.items():
         (frozen / name).write_bytes(content)
     manifest = {'schema': 'public-console-replay-v1', 'mode': 'OFFLINE_SYNTHETIC_REPLAY', 'provider_calls': 0,
                 'generator': 'tools/team_v2/freeze_demo.py',
-                'generator_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                'generator_sha256': hashlib.sha256(Path(__file__).read_bytes().replace(b'\r\n', b'\n')).hexdigest(),
+                'checksum_basis': 'UTF-8 file bytes with CRLF normalized to LF',
                 'quality_claim': 'none; controlled synthetic application cases, not model scores',
                 'files': {name: hashlib.sha256(content).hexdigest() for name, content in files.items()}}
     (frozen / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')

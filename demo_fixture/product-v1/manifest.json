@@ -3,10 +3,11 @@
   "mode": "OFFLINE_SYNTHETIC_REPLAY",
   "provider_calls": 0,
   "generator": "tools/team_v2/freeze_demo.py",
-  "generator_sha256": "1984ba42168fbc41937cc243b91474bc58f62df8912e8bdf085a8c3731a6b5b7",
+  "generator_sha256": "7ddfac8fab3f63e7d8433d3c472896f43bab1fa36b18e30682257736bbb6cb17",
+  "checksum_basis": "UTF-8 file bytes with CRLF normalized to LF",
   "quality_claim": "none; controlled synthetic application cases, not model scores",
   "files": {
-    "snapshot.json": "790d4da611fde4d9e1bb7b7fe1172594b2cbfe78aa512739c283a717bf2ec093",
-    "research-evidence.json": "a93863db0435707f50c1a5f171336a4c088be428d53167189efb059cdf4508c0"
+    "snapshot.json": "737a34065994eca5e1be7340585ceca573bb3135877c74c7c49f0a305831f2f8",
+    "research-evidence.json": "c6fbdee83a0825de24b7f0157968b4b652ceeb38e2dda43743cf044f6a0de26b"
   }
 }

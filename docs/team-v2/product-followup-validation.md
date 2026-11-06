@@ -8,7 +8,7 @@
 
 | 验收对象 | 实际实现 / 待核对 |
 | --- | --- |
-| Memory Timeline | 来源记录顺序表；报告、事件、有效时间分列；plan、negative、unknown 保留；关系、冲突和投影可检查 |
+| Memory Timeline | API Memory 记录顺序表（不冒称事件时间排序）；报告、事件、有效时间分列；plan、negative、unknown 保留；关系、冲突和投影可检查 |
 | 来源跳转 | 选择引用后读取完整 SourceTurn；校验 dataset/sample/dia/source 身份，不一致或缺失时保留异常 |
 | Trace | 四阶段切换；初始/扩展/有效 Memory、引用、送达记录、错误、预算和耗时分开显示；无 exact wire / event_ref 不补造 |
 | 冻结案例 | success、historical、conflict、insufficient、citation_anomaly、budget_failure 六例，均来自合成 API 实际运行 |

@@ -27,6 +27,9 @@ def test_replay_serves_frozen_builds_sources_and_actual_failures_without_io(monk
         trace = store.request('GET', '/queries/' + case['trace_id'])
         assert trace['outcome'] == case['outcome']
     assert store.request('GET', '/queries/' + kinds['budget_failure']['trace_id'])['error']['code'] == 'conflict_evidence_budget_exceeded'
+    assert store.request('GET', '/queries/' + kinds['success']['trace_id'])['answer']['answer'] == 'Alex lives in Rome.'
+    assert store.request('GET', '/queries/' + kinds['historical']['trace_id'])['answer']['answer'] == 'Alex lives in Paris.'
+    assert store.request('GET', '/queries/' + kinds['budget_failure']['trace_id'])['diagnostics']['answer'] == []
     source = store.request('GET', f"/datasets/{dataset['dataset_id']}/conversations/conv-a/turns/D1:1")
     assert source['text'] == 'I live in Paris.'
     with pytest.raises(ValueError, match='read_only'):
@@ -54,6 +57,15 @@ def test_replay_rejects_modified_snapshot_and_contains_no_runtime_database_or_wi
                 inspect(item)
 
     inspect(data)
+
+
+def test_replay_checksums_survive_windows_checkout_line_endings(tmp_path):
+    from locomo_memory.console_replay import ReplayStore
+    shutil.copytree(FIXTURE, tmp_path / 'bundle')
+    for name in ('snapshot.json', 'research-evidence.json'):
+        path = tmp_path / 'bundle' / name
+        path.write_bytes(path.read_bytes().replace(b'\r\n', b'\n').replace(b'\n', b'\r\n'))
+    assert len(ReplayStore(tmp_path / 'bundle').cases) == 6
 
 
 def test_entire_replay_ui_keeps_plan_negation_unknown_and_failure_visible(monkeypatch):

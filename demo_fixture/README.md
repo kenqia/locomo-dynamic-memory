@@ -16,7 +16,7 @@ uv run --locked python tools/team_v2/demo.py replay
 已有项目环境的 Windows 可直接用 `.venv\Scripts\python.exe` 替换 `uv run --locked python`。
 Ctrl+C 停止服务。其他演示占用端口时，追加 `--ui-port 18502`。
 
-`product-v1/manifest.json` 固定两个 JSON 的 SHA-256；启动时检查一致性和来源/Memory/Build 作用域。
+`product-v1/manifest.json` 固定两个 JSON 的 SHA-256（CRLF 归一化为 LF，适配 Git 跨平台换行）；启动时检查一致性和来源/Memory/Build 作用域。
 这验证包内一致性，不是第三方签名认证。文件损坏时恢复已审查版本，不自动补造数据。
 `snapshot.json` 包含两个历史 Build、七个合成 SourceTurn、每个 Build 六条 Memory 和六个保存的 Trace。
 `research-evidence.json` 是 `docs/team-v2/research-evidence.json` 的冻结副本，原 757 QA / 3028 组合分母不变。

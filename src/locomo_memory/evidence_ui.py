@@ -64,7 +64,7 @@ def render_memory_inspector(request, build):
         return
     build_id = build['build_id']
     memories = page_items(request, f'/builds/{build_id}/memories', f'console_memory_offset_{build_id}')
-    st.caption('时间线按来源记录顺序展示；报告时间不替代事件时间。plan / intention / uncertain、negative 原样保留。')
+    st.caption('按 API Memory 记录顺序展示，不代表事件时间排序；报告时间不替代事件时间。plan / intention / uncertain、negative 原样保留。')
     if not memories:
         st.info('当前页尚无 Memory。')
         return
@@ -133,10 +133,11 @@ def render_trace_inspector(request, build, trace):
         st.json({'error': error, 'stage_seconds': trace.get('stage_seconds'),
                  'diagnostics': trace.get('diagnostics'),
                  'initial_candidate_tokens': trace.get('initial', {}).get('candidate_token_count'),
+                 'initial_candidate_budget': trace.get('initial', {}).get('config', {}).get('candidate_token_budget'),
                  'resolution_budgets': trace.get('resolution_budgets'),
                  'evidence_budget': trace.get('evidence_budget'), 'usage_summary': trace.get('usage_summary')})
-    st.caption('exact wire：未记录' if 'exact_wire' not in trace else 'exact wire：已记录，本页不展示原始 wire')
-    st.caption('event_ref：未记录' if 'event_ref' not in trace else f"event_ref：{trace['event_ref']}")
+    st.caption('exact wire：未记录' if not trace.get('exact_wire') else 'exact wire：已记录，本页不展示原始 wire')
+    st.caption('event_ref：未记录' if not trace.get('event_ref') else f"event_ref：{trace['event_ref']}")
     with st.expander('已保存的证据与完整 Trace', expanded=False):
         # No prompts, request/response wire or credential-bearing config snapshots.
         st.json({key: trace[key] for key in ('trace_id', 'build_id', 'question', 'outcome', 'time',

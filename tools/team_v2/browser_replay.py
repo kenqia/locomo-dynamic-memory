@@ -38,6 +38,9 @@ def main():
         page.route('**/*', route)
         page.on('pageerror', lambda error: errors.append(str(error)))
 
+        def settle():
+            expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=20000)
+
         def capture(name):
             main = page.get_by_test_id('stMain')
             height = main.evaluate('(element) => element.scrollHeight')
@@ -49,20 +52,28 @@ def main():
 
         def choose(label, name):
             control = page.get_by_role('combobox', name=label, exact=True)
-            control.click()
-            control.press('ArrowDown')
             try:
-                page.get_by_text(name, exact=True).last.click(timeout=10000)
+                settle()
+                control.fill(name.split(' · ')[-1])
+                if control.get_attribute('aria-expanded') != 'true':
+                    control.press('Alt+ArrowDown')
+                page.get_by_role('listbox').wait_for(state='visible', timeout=10000)
+                page.get_by_role('option').filter(has_text=name).click(timeout=10000)
+                settle()
+                expect(control).to_have_value(name)
             except Exception:
                 (args.output / 'selector-state.txt').write_text(page.locator('body').inner_text(), encoding='utf-8')
+                (args.output / 'selector-control.html').write_text(control.evaluate('(el) => el.parentElement.parentElement.outerHTML'), encoding='utf-8')
                 page.screenshot(path=str(args.output / 'selector-failure.png'))
                 raise
+            settle()
 
         page.goto(args.url)
         expect(page.get_by_text('Replay 快照已载入 · 无 API / 数据库', exact=True)).to_be_visible(timeout=60000)
         capture('replay-overview.png')
         page.get_by_text('Memory', exact=True).click()
         page.get_by_role('button', name='查看完整原文', exact=True).click()
+        settle()
         expect(page.get_by_text('I live in Paris.', exact=True)).to_be_visible()
         capture('replay-memory-source.png')
         page.get_by_text('数据 / 对话 / Build', exact=True).click()
@@ -79,6 +90,7 @@ def main():
         for case in data['cases']:
             choose('冻结案例', case['case_id'])
             page.get_by_role('button', name='载入冻结案例', exact=True).click()
+            settle()
             trace = data['traces'][case['trace_id']]
             if case['outcome'] == 'failed':
                 expect(page.get_by_text('问答执行失败：', exact=False)).to_contain_text(case['error']['code'])
@@ -90,6 +102,7 @@ def main():
                     control = page.get_by_role('radio', name=stage, exact=True)
                     control.focus()
                     control.press('Space')
+                    settle()
                 page.get_by_role('button', name='查看完整原文', exact=True).click()
                 expect(page.get_by_text('I moved from Paris to Rome on 2 May 2023.', exact=True)).to_be_visible()
             if case['case_id'] in ('success', 'insufficient', 'citation_anomaly', 'budget_failure'):

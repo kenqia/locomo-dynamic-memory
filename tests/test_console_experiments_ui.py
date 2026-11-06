@@ -20,6 +20,8 @@ render_experiment_comparison(json.loads(st.session_state['evidence']))
     assert {m.label: m.value for m in app.metric}['可比成功配对'] == '705'
     table = app.dataframe[0].value.set_index('strategy')
     assert table.loc['full_text', '完整分母 QA'] == 'unknown'
+    assert float(table.loc['dynamic', '已知完成率（含失败）']) == 1.0
+    assert float(table.loc['dynamic', '运行成功率']) < 0.94
     for dimension in ('conversation', 'category', 'strategy'):
         app.selectbox(key='experiment_dimension').set_value(dimension).run()
         assert not app.exception
