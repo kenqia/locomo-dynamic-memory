@@ -42,11 +42,17 @@ def main():
             expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=20000)
 
         def capture(name):
+            settle()
+            if name in ('replay-overview.png', 'replay-experiments.png'):
+                expect(page.get_by_text('3028', exact=True)).to_be_visible()
             main = page.get_by_test_id('stMain')
             height = main.evaluate('(element) => element.scrollHeight')
             page.set_viewport_size({'width': 1280, 'height': min(2000, max(900, height + 20))})
             main.evaluate('(element) => { element.scrollTop = 0; }')
-            page.screenshot(path=str(args.output / name), full_page=True)
+            settle()
+            if name in ('replay-overview.png', 'replay-experiments.png'):
+                expect(page.get_by_text('3028', exact=True)).to_be_visible()
+            page.screenshot(path=str(args.output / name), full_page=True, animations='disabled')
             page.set_viewport_size({'width': 1280, 'height': 900})
             screenshots.append(name)
 
@@ -54,21 +60,37 @@ def main():
             control = page.get_by_role('combobox', name=label, exact=True)
             try:
                 settle()
-                control.fill(name.split(' · ')[-1])
-                if control.get_attribute('aria-expanded') != 'true':
-                    control.press('Alt+ArrowDown')
+                control.evaluate('(el) => el.scrollIntoView({block: "center", behavior: "instant"})')
+                expect(control).to_be_in_viewport()
+                control.focus()
+                expect(control).to_be_focused()
+                control.press('Escape')
+                expect(control).to_have_attribute('aria-expanded', 'false')
+                for attempt in range(3):
+                    control.locator('..').get_by_role('button', name='Open', exact=True).click()
+                    try:
+                        expect(control).to_have_attribute('aria-expanded', 'true', timeout=1000)
+                        break
+                    except AssertionError:
+                        control.focus()
+                        control.press('ArrowDown')
+                        if control.get_attribute('aria-expanded') == 'true':
+                            break
+                expect(control).to_have_attribute('aria-expanded', 'true')
                 page.get_by_role('listbox').wait_for(state='visible', timeout=10000)
                 page.get_by_role('option').filter(has_text=name).click(timeout=10000)
                 settle()
                 expect(control).to_have_value(name)
             except Exception:
                 (args.output / 'selector-state.txt').write_text(page.locator('body').inner_text(), encoding='utf-8')
+                (args.output / 'page-errors.json').write_text(json.dumps(errors), encoding='utf-8')
                 (args.output / 'selector-control.html').write_text(control.evaluate('(el) => el.parentElement.parentElement.outerHTML'), encoding='utf-8')
                 page.screenshot(path=str(args.output / 'selector-failure.png'))
                 raise
             settle()
 
         page.goto(args.url)
+        page.add_style_tag(content='* { scroll-behavior: auto !important; }')
         expect(page.get_by_text('Replay 快照已载入 · 无 API / 数据库', exact=True)).to_be_visible(timeout=60000)
         capture('replay-overview.png')
         page.get_by_text('Memory', exact=True).click()
@@ -114,6 +136,8 @@ def main():
         page.get_by_text('补充 / 修复 Run', exact=True).click()
         expect(page.get_by_text('当前公开冻结快照未提供', exact=False)).to_be_visible()
         page.get_by_text('原 Run', exact=True).click()
+        settle()
+        expect(page.get_by_text('可比成功配对', exact=True)).to_be_visible()
         capture('replay-experiments.png')
         page.get_by_text('Demo', exact=True).click()
         expect(page.get_by_text('当前为固定快照 Replay', exact=False)).to_be_visible()

@@ -38,11 +38,30 @@ Playwright 环境准备：`uv venv var/console-browser --python 3.12`，然后
 
 ## 实际结果
 
-- 首轮相关 AppTest / Replay / 原 UI / 检索回归：23 passed。新增身份异常检查及最终浏览器结果待下方追加。
+- 最终 Console / Replay / 原 UI / 检索回归：**25 passed**；另包括错误来源身份拒绝展示和 CRLF 跨平台校验。
 - 冻结器初次发现新增合成主题与旧受控向量并列导致偶发排名失败，已通过隔离 fixture 的主题向量修复；生产检索代码未变。
   失败保留于本机 `var/product-d3-freeze-01/02`，不当作真实模型评测或已成功的案例。
 - 早期浏览器运行因选择器定位失败退出；仅修验证定位，不将失败运行记为通过。
 - 完整回归以更新后的 PR Linux CI 实际结果为准。此前 Windows 历史 POSIX / 凭据工具限制见 [首批验证记录](product-validation.md)，未扩大为本次产品核心修复。
+
+### 最终浏览器与媒体证据
+
+- `var/product-d3-browser-13`：**PASS**，六类保存案例、两个 Build 切换、Memory→Source、四阶段 Trace、引用原文、实验维度/结果集和 Demo 导航通过。
+- 只启动 Streamlit：API **未启动**、数据库 **未打开**、真实 provider 请求 **0**，页面脚本错误 **0**。
+- 控件在视口中央操作，等待 Streamlit 完成渲染；选择框首次聚焦后最多进行三次真实展开尝试，仍必须校验选项提交及最终业务状态。早期失败和加载占位截图不作为最终证据。
+- 原 API/UI 回归 `var/product-d3-live-browser-03`：**PASS**，四个合成案例、健康检查、CLI 退出码传播、原五阶段入口均通过。
+- 八张最终截图逐张检查；WebM 是 **28 秒、1280×900** 的真实合成操作素材，浏览器解码/起播检查通过。它不是正式 3–5 分钟 MP4，也不代表真实成员已全片验收。
+- 产品运行代码 `b1a91c7` 的完整 Linux CI：**599 passed / 6 deselected / 1 warning**，见 [CI 证据](https://github.com/kenqia/locomo-dynamic-memory/actions/runs/42135688652)。最终提交状态以 PR checks 为准。
+
+材料：[目录与校验清单](assets/product-followup/artifact-manifest.json)、[浏览器结果](assets/product-followup/replay-result.json)、
+[播放检查](assets/product-followup/video-playback.json)、[WebM 素材](assets/product-followup/console-replay-clip.webm)。
+截图：[Overview](assets/product-followup/replay-overview.png)、[Memory/Source](assets/product-followup/replay-memory-source.png)、
+[成功](assets/product-followup/replay-success.png)、[证据不足](assets/product-followup/replay-insufficient.png)、
+[引用异常](assets/product-followup/replay-citation_anomaly.png)、[预算失败](assets/product-followup/replay-budget_failure.png)、
+[实验比较](assets/product-followup/replay-experiments.png)、[Demo](assets/product-followup/replay-demo.png)。
+
+AI `code-review` 两轴：Standards 无明确违规或重要异味；Spec 的 API 记录排序说明发现已修复，复查后两轴 **0 项未解决发现**。
+该检查不替代非作者真人复核；保持 draft / pending。
 
 ## 回滚
 
