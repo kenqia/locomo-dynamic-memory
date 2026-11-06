@@ -1,0 +1,71 @@
+{
+  "stage": "ARCH04",
+  "source_archive_sha": "4d1d072f2c7075ebcac10879269bdcfd736e683b",
+  "requires": [
+    "ARCH01",
+    "ARCH02",
+    "ARCH03"
+  ],
+  "review_status": "pending_real_member_review",
+  "real_historical_builds_checked": 0,
+  "files": [
+    {
+      "path": "docs/adr/0003-temporal-event-sidecar.md",
+      "sha256": "3e67999b230caaa5e240f8be212fc5b44b428482fa9ec8086160943f6ad0ffe7"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-ALGORITHM.md",
+      "sha256": "e3a7d595df5a9e1827d568243ec2f9ef8e5cda42687d2bc5b62b80dc35b6a424"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-PR-DRAFT.md",
+      "sha256": "b6894e8c10174c9fcda437ea021efbb45aa4b7f8ee22a91145184b2c003838da"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-README.md",
+      "sha256": "a3b9dac169d9c346b005a8a7cc4dacbcb86fbc05513bc5841225570135730d27"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-REVIEW.md",
+      "sha256": "e93d51fc021e785c17a683677beb8efeaeff3cec9665d0b8283fd8f100bc341f"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-VALIDATION.md",
+      "sha256": "715df32f5d71b3f171bf529278172a85f89b0d2b72a4fa759ff1e9ad38a74b11"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-compatibility/compatibility.json",
+      "sha256": "4731b9f849f62fd9bf72468766f8ca3ae8718e47a77b18aea7d9dad17f216568"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-compatibility/compatibility.md",
+      "sha256": "affbd22dd160b843903058db2f2f0bff2b9f0222bce8139a218113b36d5cfd10"
+    },
+    {
+      "path": "docs/sidecar-v0/PRODUCT-EXAMPLE.json",
+      "sha256": "855bed4636e7f8c44baafb597a1744ecbab362f0a8b6fca93a006534ce7178a5"
+    },
+    {
+      "path": "tests/test_sidecar_release.py",
+      "sha256": "95a7d1e7bedbfdf9a889a1ae2801039be23d711dfdb1b32ded69e070746ffb13"
+    },
+    {
+      "path": "tools/research_v2/sidecar_compatibility.py",
+      "sha256": "91f884e1115c91704f4ed7f64492cb50aad58be477fb754a1e6b30e52400c6e5"
+    },
+    {
+      "path": "tools/research_v2/sidecar_core.py",
+      "sha256": "e131aeefbc66273393dbf2c7e0475c7a0956d21d97498709cfcceb1fd34ea3ea"
+    },
+    {
+      "path": "tests/test_sidecar_core.py",
+      "sha256": "a95e13cc34ce547922fc32d946936c656ef3a196c782b688f9711c99644f12a3"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH02-FILES.sha256",
+      "sha256": "41d85fdeac1ca7222e5a6c0408a5e242ef58dc5f812eb736674b10452a88199e"
+    }
+  ],
+  "reviewed_head": "0f470a3b3aac782b42b082b199e2fa81a12cf837",
+  "rule_version": "deterministic-sidecar-v0.3"
+}

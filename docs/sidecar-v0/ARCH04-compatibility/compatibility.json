@@ -1,0 +1,72 @@
+{
+  "mode": "SYNTHETIC_COMPATIBILITY_ONLY",
+  "fixtures": [
+    {
+      "fixture": "single-source-temporal",
+      "origin": "synthetic",
+      "build_id": "f85ec3d000fb4b4eb3399f6c471ea342",
+      "build_fingerprint": "126ef37fb65ba6b67fe94a162940e8dd9760638f9cafd65094798b6fe4d8c102",
+      "export_schema": "memory-export-v2",
+      "memory_count": 2,
+      "source_count": 2,
+      "relation_count": 1,
+      "multi_source_memory": false,
+      "database_sha256_before": "685446c3ca77aa0533ea9f0a81516ce44d236896f830cba35673c92f855a76a5",
+      "database_sha256_after": "685446c3ca77aa0533ea9f0a81516ce44d236896f830cba35673c92f855a76a5",
+      "export_sha256_before": "0b6ebf9c99eb1a2cc73bcf899be7cfdb9f463a4999c416ff68d7dc0c7e95dc6f",
+      "export_sha256_after": "0b6ebf9c99eb1a2cc73bcf899be7cfdb9f463a4999c416ff68d7dc0c7e95dc6f",
+      "checks": {
+        "complete_export_valid": true,
+        "build_fingerprint_preserved": true,
+        "memory_ids_preserved": true,
+        "database_bytes_unchanged": true,
+        "export_bytes_unchanged": true,
+        "response_identity_unchanged": true,
+        "response_value_unchanged": true,
+        "diagnostic_enabled": true,
+        "rollback_disabled": true,
+        "no_extra_controlled_calls": true
+      },
+      "controlled_setup_calls": 2,
+      "external_provider_calls": 0
+    },
+    {
+      "fixture": "multi-source-preference",
+      "origin": "synthetic",
+      "build_id": "a981ab4aa41345f39f1aafeb042000d6",
+      "build_fingerprint": "6a757be14f538dff01a43ae51732c0a03128d5a2234b28b238fdb78cbdcaf4fe",
+      "export_schema": "memory-export-v2",
+      "memory_count": 2,
+      "source_count": 2,
+      "relation_count": 1,
+      "multi_source_memory": true,
+      "database_sha256_before": "0f1b3e90db456765064dcaf0b78693b6b8d9c5095d224209f7176a62ddcc78d7",
+      "database_sha256_after": "0f1b3e90db456765064dcaf0b78693b6b8d9c5095d224209f7176a62ddcc78d7",
+      "export_sha256_before": "8610b7187b6a463b2640948be46b2766f7677655a4345a8f0f1aa81206bc3c0b",
+      "export_sha256_after": "8610b7187b6a463b2640948be46b2766f7677655a4345a8f0f1aa81206bc3c0b",
+      "checks": {
+        "complete_export_valid": true,
+        "build_fingerprint_preserved": true,
+        "memory_ids_preserved": true,
+        "database_bytes_unchanged": true,
+        "export_bytes_unchanged": true,
+        "response_identity_unchanged": true,
+        "response_value_unchanged": true,
+        "diagnostic_enabled": true,
+        "rollback_disabled": true,
+        "no_extra_controlled_calls": true
+      },
+      "controlled_setup_calls": 2,
+      "external_provider_calls": 0
+    }
+  ],
+  "all_passed": true,
+  "environment": {
+    "os": "Linux",
+    "python": "3.12.14"
+  },
+  "external_provider_calls": 0,
+  "real_historical_builds_checked": 0,
+  "limits": "Two synthetic complete Build fixtures, not two real historical research Builds. No real QA quality evaluation.",
+  "temporary_databases_removed": true
+}
