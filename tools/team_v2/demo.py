@@ -11,13 +11,37 @@ sys.path[:0] = [str(ROOT / 'tools/integration'), str(ROOT / 'tests'), str(ROOT /
 from run_local import offline_environment
 
 
+def demo_environment(config):
+    env = offline_environment(ROOT, config)
+    env['PYTHONPATH'] += os.pathsep + str(ROOT / 'tests') + os.pathsep + str(ROOT / 'tests/browser')
+    env['PYTHONUTF8'] = '1'
+    return env
+
+
+def server_command(component, api_port, ui_port):
+    if component == 'api':
+        return [sys.executable, '-m', 'uvicorn', 'server:app_factory', '--factory',
+                '--host', '127.0.0.1', '--port', str(api_port)]
+    if component in ('ui', 'replay'):
+        entry = 'replay_ui.py' if component == 'replay' else 'demo_ui.py'
+        return [sys.executable, '-m', 'streamlit', 'run', str(ROOT / 'tools/team_v2' / entry),
+                '--server.address', '127.0.0.1', '--server.port', str(ui_port),
+                '--server.headless', 'true', '--browser.gatherUsageStats', 'false']
+    raise ValueError('unknown_demo_component')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('component', choices=['prepare', 'api', 'ui'])
+    parser.add_argument('component', choices=['prepare', 'api', 'ui', 'replay'])
     parser.add_argument('--output', type=Path, default=ROOT / 'var/team-v2-demo')
     parser.add_argument('--api-port', type=int, default=18000)
     parser.add_argument('--ui-port', type=int, default=18501)
     args = parser.parse_args()
+    if args.component == 'replay':
+        env = demo_environment(ROOT / 'config.example.toml')
+        env.pop('LOCOMO_CONFIG', None)
+        command = server_command('replay', args.api_port, args.ui_port)
+        raise SystemExit(subprocess.call(command, env=env, cwd=ROOT))
     requested = args.output.absolute()
     # Only newly owned storage under this clone's ignored var directory is allowed.
     if any(p.is_symlink() for p in [requested, *requested.parents]):
@@ -29,21 +53,19 @@ def main():
         config = output / 'config.toml'
         config.write_text('db_path = ' + json.dumps(str(output / 'memory.sqlite3')) + '\n'
                           f'api_url = "http://127.0.0.1:{args.api_port}"\nmodel_retries = 0\ninitial_k = 1\n')
-        env = offline_environment(ROOT, config)
-        env['PYTHONPATH'] += os.pathsep + str(ROOT / 'tests') + os.pathsep + str(ROOT / 'tests/browser')
+        env = demo_environment(config)
         subprocess.run([sys.executable, str(Path(__file__).resolve()), '_seed', str(output)], env=env, cwd=ROOT, check=True)
     else:
         config = output / 'config.toml'
         if not (output / 'demo-manifest.json').is_file() or not config.is_file() or config.is_symlink():
             raise ValueError('run_prepare_first_in_new_owned_output')
-        env = offline_environment(ROOT, config)
-        env['PYTHONPATH'] += os.pathsep + str(ROOT / 'tests') + os.pathsep + str(ROOT / 'tests/browser')
-        if args.component == 'api':
-            command = [sys.executable, '-m', 'uvicorn', 'server:app_factory', '--factory', '--host', '127.0.0.1', '--port', str(args.api_port)]
-        else:
-            command = [sys.executable, '-m', 'streamlit', 'run', str(ROOT / 'tools/team_v2/demo_ui.py'), '--server.address', '127.0.0.1', '--server.port', str(args.ui_port), '--server.headless', 'true', '--browser.gatherUsageStats', 'false']
+        env = demo_environment(config)
+        command = server_command(args.component, args.api_port, args.ui_port)
         print('OFFLINE SYNTHETIC DEMO — controlled model adapter, zero provider calls; not QA quality evidence.', flush=True)
         os.chdir(ROOT)
+        if os.name == 'nt':
+            # Windows exec starts another PID; keep the terminal attached until exit.
+            raise SystemExit(subprocess.call(command, env=env))
         os.execve(sys.executable, command, env)
 
 
@@ -82,7 +104,8 @@ def seed(output):
             response = client.post('/queries', json={'dataset_id': dataset_id, 'sample_id': 'conv-a', 'build_id': build_id, 'question': question, **extra})
             assert response.status_code == 201, response.status_code
             assert response.json()['answer']['status'] == expected
-            cases.append({'question': question, 'expected': expected, 'status': response.json()['answer']['status']})
+            cases.append({'question': question, 'expected': expected,
+                          'status': response.json()['answer']['status'], 'trace_id': response.json()['trace_id']})
     manifest = {'mode': 'OFFLINE_SYNTHETIC', 'dataset_id': dataset_id, 'build_id': build_id,
                 'cases': cases, 'provider_calls': 0, 'quality_claim': 'none; deterministic application fixture only'}
     (output / 'demo-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')

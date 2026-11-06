@@ -33,6 +33,14 @@ uv run --locked python tools/team_v2/demo.py ui
 
 打开 [离线 UI](http://127.0.0.1:18501)，后端[健康检查](http://127.0.0.1:18000/health)。屏幕必须显示 `OFFLINE SYNTHETIC DEMO`；它证明应用链路可运行，不证明真实模型质量。启动器仅允许本 clone 的 `var/` 子目录，清除常用模型凭据变量，阻断非本机网络。通过 Ctrl+C 停止自己启动的服务。
 
+A 线新增入口与字段映射见 [Product Console](product-console.md)。离线 UI 默认打开只读
+Overview，顶部固定导航进入 Memory、Query/Evidence、Experiments、Demo；“五阶段工作流”
+开关保留原入口。Windows 原生检查会明确排除依赖 POSIX `fcntl` 的历史 relation replay
+模块；该项不计为通过，完整平台复核仍待 Reviewer。
+
+无需 API 或数据库的固定快照入口：`uv run --locked python tools/team_v2/demo.py replay`。
+无需 prepare；来源、案例、3–5 分钟操作路径和数据限制见 [Replay 说明](../../demo_fixture/README.md)。
+
 界面选择 `OFFLINE-SYNTHETIC-v2-kickoff` / `conv-a` 及完整 Build，查看 Memory/关系/历史版本，再查询：
 
 - `Where does Alex live?`：当前 Rome。
