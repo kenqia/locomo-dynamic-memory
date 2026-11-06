@@ -231,3 +231,76 @@ def test_two_repeat_phrases_do_not_recurse_or_prove_identity():
     data=case(2)
     data['sources'][0]['text']='I visited Rome again on May 1, a second trip.'
     assert run(data).record.event_links[0].decision=='unknown'
+
+
+@pytest.mark.parametrize('content', [
+    'Attended the Paris conference.',
+    'Did not attend the Berlin conference.',
+    'Plans to attend the Berlin conference.',
+    'Attended the Berlin conference on May 2.',
+])
+def test_event_claim_requires_matching_source_assertion(content):
+    data = case(1)
+    data['claims'][0]['content'] = content
+    result = run(data)
+    assert result.claims[0].attended == 'unknown'
+    assert result.claims[0].event_time.status == 'unknown'
+    assert result.record.event_links[0].decision == 'unknown'
+
+
+def test_visit_destination_mismatch_cannot_prove_distinct_event():
+    data = case(2)
+    data['claims'][0]['content'] = 'Visited Paris May 1.'
+    assert run(data).record.event_links[0].decision == 'unknown'
+
+
+@pytest.mark.parametrize('qualifier', ['before', 'after', 'around', 'by'])
+def test_qualified_day_does_not_become_exact(qualifier):
+    data = case(4)
+    expression = f'{qualifier} May 1, 2026'
+    data['sources'][0]['text'] = f'I arrived {expression}.'
+    event_time = run(data).claims[0].event_time
+    assert event_time.status == 'unknown'
+    assert event_time.start is None and event_time.end is None
+    assert event_time.original_expression == expression
+
+
+@pytest.mark.parametrize('question', [
+    'Where did Alex live on February 2026?',
+    'Where did Alex live on February 30, 2026?',
+    'Where did Alex live?',
+    'Where does Alex live as of around February 1, 2026?',
+])
+def test_unresolved_historical_date_never_falls_back_to_current(question):
+    data = case(11)
+    data.update(question=question, as_of=None)
+    result = run(data).query
+    assert result.evidence_status == 'unknown'
+    assert result.answer is None and result.as_of is None
+    assert result.cutoff.isoformat() == '2026-04-01'
+
+
+def test_conflicting_move_evidence_retains_both_sources_in_either_order():
+    data = case(11)
+    denial = deepcopy(data['sources'][1])
+    denial.update(source_id='move-denial', turn_id='turn-denial',
+                  text='I did not move from Paris to Rome on March 1, 2026.')
+    data['sources'].append(denial)
+    data['claims'][1]['source_ids'].append(denial['source_id'])
+
+    forward = run(data)
+    data['sources'].reverse()
+    data['claims'][1]['source_ids'].reverse()
+    reverse = run(data)
+    claim = forward.claims[1]
+    assert claim == reverse.claims[1]
+    assert claim.completed == 'unknown'
+    assert 'conflicting_move_completion_evidence' in claim.warnings
+    assert claim.completion_support_source_ids == ('src-2',)
+    assert claim.completion_denial_source_ids == ('move-denial',)
+    assert forward.query == reverse.query
+    assert forward.query.evidence_status == 'conflict'
+    assert set(forward.query.source_ids) == {'src-2', 'move-denial'}
+
+    data['as_of'] = '2026-02-01'
+    assert run(data).query.answer == 'Paris'

@@ -15,7 +15,7 @@
     },
     {
       "path": "docs/sidecar-v0/ARCH04-ALGORITHM.md",
-      "sha256": "d32e40e4f078efc2760ba3acb734c79a478d825dbb1ac131ee0974e0d521c7c6"
+      "sha256": "e3a7d595df5a9e1827d568243ec2f9ef8e5cda42687d2bc5b62b80dc35b6a424"
     },
     {
       "path": "docs/sidecar-v0/ARCH04-PR-DRAFT.md",
@@ -31,7 +31,7 @@
     },
     {
       "path": "docs/sidecar-v0/ARCH04-VALIDATION.md",
-      "sha256": "53d009f9f7b1750322435dad7708c7347e22bc97d322f7f8cde92538710cdfb5"
+      "sha256": "715df32f5d71b3f171bf529278172a85f89b0d2b72a4fa759ff1e9ad38a74b11"
     },
     {
       "path": "docs/sidecar-v0/ARCH04-compatibility/compatibility.json",
@@ -52,6 +52,20 @@
     {
       "path": "tools/research_v2/sidecar_compatibility.py",
       "sha256": "91f884e1115c91704f4ed7f64492cb50aad58be477fb754a1e6b30e52400c6e5"
+    },
+    {
+      "path": "tools/research_v2/sidecar_core.py",
+      "sha256": "e131aeefbc66273393dbf2c7e0475c7a0956d21d97498709cfcceb1fd34ea3ea"
+    },
+    {
+      "path": "tests/test_sidecar_core.py",
+      "sha256": "a95e13cc34ce547922fc32d946936c656ef3a196c782b688f9711c99644f12a3"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH02-FILES.sha256",
+      "sha256": "41d85fdeac1ca7222e5a6c0408a5e242ef58dc5f812eb736674b10452a88199e"
     }
-  ]
+  ],
+  "reviewed_head": "0f470a3b3aac782b42b082b199e2fa81a12cf837",
+  "rule_version": "deterministic-sidecar-v0.3"
 }
