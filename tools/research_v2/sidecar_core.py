@@ -17,7 +17,7 @@ from tools.research_v2.sidecar_schema import (
     Contract, EventLink, SidecarInput, SidecarRecord, StateClaim, TimeInterval,
 )
 
-RULE_VERSION = 'deterministic-sidecar-v0.3'
+RULE_VERSION = 'deterministic-sidecar-v0.4-research'
 MONTH = '(?:' + '|'.join(MONTHS) + ')'
 DAY_PATTERN = rf'\b(?:\d{{4}}-\d{{2}}-\d{{2}}|{MONTH}\s+\d{{1,2}}(?:,?\s+\d{{4}})?)\b'
 MONTH_PATTERN = rf'\b{MONTH}\s+\d{{4}}\b'
@@ -36,6 +36,8 @@ class ClaimDiagnostic(Contract):
     completion_support_source_ids: tuple[str, ...] = ()
     completion_denial_source_ids: tuple[str, ...] = ()
     attended: Literal['supported', 'denied', 'unknown'] = 'unknown'
+    attendance_support_source_ids: tuple[str, ...] = ()
+    attendance_denial_source_ids: tuple[str, ...] = ()
     warnings: tuple[str, ...] = ()
 
 class QueryDiagnostic(Contract):
@@ -49,8 +51,8 @@ class QueryDiagnostic(Contract):
     assumptions: tuple[str, ...] = ()
 
 class SidecarDiagnostics(Contract):
-    diagnostic_schema: Literal['sidecar-diagnostics-v0.3'] = 'sidecar-diagnostics-v0.3'
-    rule_version: Literal['deterministic-sidecar-v0.3'] = RULE_VERSION
+    diagnostic_schema: Literal['sidecar-diagnostics-v0.4-research'] = 'sidecar-diagnostics-v0.4-research'
+    rule_version: Literal['deterministic-sidecar-v0.4-research'] = RULE_VERSION
     mode: Literal['diagnostic_only'] = 'diagnostic_only'
     record: SidecarRecord
     claims: tuple[ClaimDiagnostic, ...] = ()
@@ -105,7 +107,7 @@ def _assertion(text, entity):
     return None
 
 
-def _owned_text(snapshot, claim, *, include_move_denials=False):
+def _owned_text(snapshot, claim, *, include_conflicts=False):
     # Only narrow first-person assertions by the cited speaker are eligible for
     # automatic rules. Quoted/reported speech and narrator claims stay unknown.
     expected = _assertion(claim.content, claim.entity_id)
@@ -136,10 +138,19 @@ def _owned_text(snapshot, claim, *, include_move_denials=False):
         same_object = actual[1] == expected[1] or (
             expected[:2] == ('keynote', 'conference') and actual[1].endswith(' conference')
         )
-        if not same_object:
+        if not same_object and not (include_conflicts and actual[0] == 'birth_year'):
             continue
-        if actual[3] != expected[3] and not (include_move_denials and actual[0] == 'move'):
+        if actual[3] != expected[3] and not (include_conflicts and actual[0] in ('move', 'attendance')):
             continue
+        # A dated Memory must agree with the cited source, including month and
+        # relative expressions. Different forms remain unverified, not silently
+        # replaced by the source date. Undated summaries may still use source time.
+        broad_time = rf'(?:{DAY_PATTERN}|{MONTH_PATTERN}|{REL_PATTERN})'
+        claim_times = re.findall(broad_time, claim.content, re.I)
+        if claim_times and not re.search(DAY_PATTERN, claim.content, re.I):
+            source_times = re.findall(broad_time, parts[0], re.I)
+            if [v.casefold() for v in claim_times] != [v.casefold() for v in source_times]:
+                continue
         claim_days = list(re.finditer(DAY_PATTERN, claim.content, re.I))
         if claim_days:
             source_days = list(re.finditer(DAY_PATTERN, parts[0], re.I))
@@ -171,6 +182,9 @@ def _resolve_expression(expression, source):
     basis = ''
     parsed = _parse_day(expression, anchor)
     if parsed:
+        if not re.search(r'\b\d{4}\b', expression) and parsed > anchor:
+            return TimeInterval(original_expression=expression, anchor_source_id=source.source_id,
+                                basis='Omitted year crosses the report boundary; event year unknown.')
         start = end = parsed
         basis = 'Explicit date; omitted year, if any, interpreted within source report year.'
     elif re.fullmatch(MONTH_PATTERN, expression, re.I):
@@ -202,8 +216,10 @@ def _resolve_expression(expression, source):
 
 
 def _time(snapshot, claim):
+    if len(_owned_text(snapshot, claim, include_conflicts=True)) != len(claim.source_ids):
+        return TimeInterval(basis='Not all cited assertions support the claim and its time.')
     candidates = []
-    for source,text in _owned_text(snapshot,claim):
+    for source,text in _owned_text(snapshot,claim,include_conflicts=True):
         expressions = list(re.finditer(DAY_PATTERN, text, re.I))
         expressions += list(re.finditer(MONTH_PATTERN, text, re.I))
         expressions += list(re.finditer(REL_PATTERN, text, re.I))
@@ -222,7 +238,11 @@ def _time(snapshot, claim):
             continue
         if re.search(r'\b(?:last|next)\s*$',prefix,re.I) or re.search(r'\b(?:last|next) year\b',text,re.I):
             continue
-        candidates.append(_resolve_expression(expression,source))
+        try:
+            candidates.append(_resolve_expression(expression,source))
+        except (OverflowError, ValueError):
+            candidates.append(TimeInterval(original_expression=expression, anchor_source_id=source.source_id,
+                                           basis='Calendar arithmetic outside supported range.'))
     if candidates:
         identities = {(v.status,v.start,v.end) for v in candidates}
         if len(identities) == 1:
@@ -235,17 +255,29 @@ def _time(snapshot, claim):
 
 def _claim_diagnostic(snapshot, claim):
     support, denial = set(), set()
+    attendance_support, attendance_denial = set(), set()
     attended = 'unknown'
     warnings = []
     if claim.statement_type != 'fact':
         warnings.append('plan_intention_or_uncertain_is_not_completed_fact')
     else:
-        for source, text in _owned_text(snapshot, claim, include_move_denials=True):
+        for source, text in _owned_text(snapshot, claim, include_conflicts=True):
             kind, _, _, polarity = _assertion(text, claim.entity_id)
             if kind == 'move':
                 (support if polarity == 'positive' else denial).add(source.source_id)
             elif kind == 'attendance':
-                attended = 'supported' if polarity == 'positive' else 'denied'
+                (attendance_support if polarity == 'positive' else attendance_denial).add(source.source_id)
+    if attendance_support and attendance_denial:
+        warnings.append('conflicting_attendance_evidence')
+    elif attendance_support:
+        attended = 'supported'
+    elif attendance_denial:
+        attended = 'denied'
+    audited = _owned_text(snapshot, claim, include_conflicts=True)
+    if len(audited) != len(claim.source_ids):
+        warnings.append('unverified_cited_source')
+        attended = 'unknown'
+        support, denial = set(), set()
     completed = 'unknown'
     if support and denial:
         warnings.append('conflicting_move_completion_evidence')
@@ -258,11 +290,15 @@ def _claim_diagnostic(snapshot, claim):
         reported_at=tuple(s.reported_at.isoformat() for s in sources),
         event_time=_time(snapshot,claim),statement_type=claim.statement_type,
         polarity=claim.polarity,completed=completed,attended=attended,warnings=tuple(warnings),
-        completion_support_source_ids=tuple(sorted(support)),completion_denial_source_ids=tuple(sorted(denial)))
+        completion_support_source_ids=tuple(sorted(support)),completion_denial_source_ids=tuple(sorted(denial)),
+        attendance_support_source_ids=tuple(sorted(attendance_support)),
+        attendance_denial_source_ids=tuple(sorted(attendance_denial)))
 
 
 def _event_anchor(snapshot,claim):
     values=[]
+    if len(_owned_text(snapshot,claim)) != len(claim.source_ids):
+        return None
     for source,text in _owned_text(snapshot,claim):
         # Identifiable conference occurrence with explicit calendar identity.
         m=re.match(r'^(?:I attended the|That same) (.+? conference)(?: on (.+?))?(?: had a keynote)?[.!?]?$',text,re.I)
@@ -281,6 +317,8 @@ def _link(snapshot,left,right,_allow_reverse=True):
         code,reason='not_two_event_claims','State similarity is not proof of a shared event.'
     elif left.statement_type != 'fact' or right.statement_type != 'fact' or left.polarity != 'positive' or right.polarity != 'positive':
         code,reason='nonpositive_or_nonfactual','Plan, uncertainty or negation is not a positive completed event identity.'
+    elif any(len(_owned_text(snapshot,c)) != len(c.source_ids) for c in (left,right)):
+        code,reason='unverified_cited_assertion','Every cited assertion must support the event before connecting it.'
     else:
         la,ra=_event_anchor(snapshot,left),_event_anchor(snapshot,right)
         right_text=' '.join(t for _,t in _owned_text(snapshot,right))
@@ -343,17 +381,22 @@ def _query(snapshot, diagnostics):
     times={c.memory_id:c.event_time for c in diagnostics}
     if re.fullmatch(r'What is .+?\b(?:birth year|year of birth)\s*\?',question,re.I):
         values=[]
-        if any(c.state_dimension=='birth_year' and (c.statement_type!='fact' or c.polarity!='positive' or not _owned_text(snapshot,c)) for c in relevant):
+        value_mismatch = False
+        if any(c.state_dimension=='birth_year' and (c.statement_type!='fact' or c.polarity!='positive' or len(_owned_text(snapshot,c,include_conflicts=True)) != len(c.source_ids)) for c in relevant):
             return q('unknown','Birth-year qualification or source attribution is outside supported rules.')
         for c in relevant:
             if c.statement_type!='fact' or c.polarity!='positive' or c.state_dimension!='birth_year':continue
-            for source,text in _owned_text(snapshot,c):
+            for source,text in _owned_text(snapshot,c,include_conflicts=True):
                 m=re.fullmatch(r'My birth year is (\d{4})[.]?',text,re.I)
-                if m and c.state_value==m[1]:values.append((m[1],c.memory_id,source.source_id))
+                if m:
+                    values.append((m[1],c.memory_id,source.source_id))
+                    value_mismatch |= c.state_value != m[1]
                 else:return q('unknown','Birth-year evidence is outside exact assertion grammar or conflicts with extracted value.')
         if len({v[0] for v in values})>1:
             return q('conflict','Incompatible birth-year assertions with no supported correction rule.',
                 memory_ids=_dedup(v[1] for v in values),source_ids=_dedup(v[2] for v in values))
+        if value_mismatch:
+            return q('unknown','Extracted birth-year value disagrees with source.')
         if values:
             return q('sufficient','Explicit birth-year assertion only.',answer=values[0][0],
                 memory_ids=_dedup(v[1] for v in values),source_ids=_dedup(v[2] for v in values))
@@ -371,7 +414,7 @@ def _query(snapshot, diagnostics):
                 source_ids=tuple(sorted({sid for c in conflicting
                     for sid in (*c.completion_support_source_ids, *c.completion_denial_source_ids)})))
         states=[]
-        if any(c.state_dimension=='residence' and (c.statement_type=='uncertain' or (c.statement_type=='fact' and (c.polarity!='positive' or not _owned_text(snapshot,c)))) for c in relevant):
+        if any(c.state_dimension=='residence' and (c.statement_type=='uncertain' or (c.statement_type=='fact' and (c.polarity!='positive' or len(_owned_text(snapshot,c,include_conflicts=True)) != len(c.source_ids)))) for c in relevant):
             return q('unknown','Residence evidence contains unsupported uncertainty, negation or attribution.')
         for c in relevant:
             if c.statement_type!='fact' or c.polarity!='positive' or c.state_dimension!='residence':continue
