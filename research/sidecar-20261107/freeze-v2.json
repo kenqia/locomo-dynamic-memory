@@ -1,0 +1,22 @@
+{
+  "implementation_commit": "12c20d071bb004981eeeeade2c0ed71469ba5d7e",
+  "files": {
+    "tools/research_v2/sidecar_core.py": "d884f2a697a946e658667c5389a07dcc44ab8f9c9f91d932d757bf91f232e9e8",
+    "tools/research_v2/sidecar_research.py": "4aaaf6fc9227d9497574c6b586bca2594c0878de3ae22af832a81a3bfcd9b2b2",
+    "tools/research_v2/sidecar_io.py": "3b9f138f699345bc0892c269ca7ff862323d4790e5f2c6d9c5ab7fab8d11baa1",
+    "tools/research_v2/sidecar_schema.py": "e4ddfc9f822344909c10af099ec5a8b5eb110bf262b00ee320a52d638761f6f6",
+    "research/sidecar-20261107/prepare.py": "1d3a349cb853856ca1e37be85aa8379e7c78494d39a74c30daee9fe3afec0b83",
+    "research/sidecar-20261107/run.py": "115b0a4c1067282da3718c51a50754a96c0af928d7648f38597bdda797cbc8d0",
+    "research/sidecar-20261107/PROTOCOL.md": "d450e08c6bb72f157a3918f4c573632a32eccfe72b7ee4cd34d7bddca26f82d7",
+    "research/sidecar-20261107/frozen-input-plan.json": "5b25b39b2822c5f867dae830432c49f8b507ee297d072f6b476df939c1d77d19",
+    "research/sidecar-20261107/AMENDMENT-V2.md": "c0cdaade331feb67fad4ba81a7b462bfef4fff4dcffb7eaac401e1562c38d60c",
+    "research/sidecar-20261107/analyze.py": "f5687164874412b26098a19768643333c35fd64efef5f7aa188830d4966b5652"
+  },
+  "provider_budget": 0,
+  "reference_authority": "User approved session-internal non-author AI68units; no external Provider calls",
+  "stage": "V2 safety regression, same frozen data and references; V1 retained",
+  "reference_label_hashes": {
+    "conv-26": "fd335bf1e14a456344e4ab71c45d63a31cb12e7f8f1e7cbc614a115618bea5f3",
+    "conv-30": "6e0a51d363b5232468bd66169dc1e003c3862e92d378ba94a8f47d2fdb6c54b5"
+  }
+}
