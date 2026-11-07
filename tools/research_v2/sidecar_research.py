@@ -10,7 +10,7 @@ from typing import Any, Literal
 from tools.research_v2.sidecar_core import diagnose, SidecarDiagnostics
 from tools.research_v2.sidecar_schema import SidecarInput
 
-RESEARCH_VERSION='sidecar-research-v0.4-research'
+RESEARCH_VERSION='sidecar-research-v0.5-research'
 
 
 def canonical_bytes(value):

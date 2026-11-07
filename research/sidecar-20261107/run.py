@@ -9,14 +9,23 @@ HERE=Path(__file__).resolve().parent
 
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def dump(p,x): p.write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
-def forbidden(*a,**k): raise RuntimeError('Research forbids external network and SQLite')
+class StudyAbort(BaseException):
+    """A study stop is not a recoverable diagnostic failure."""
+
+ATTEMPTS = {'network': 0, 'sqlite': 0}
+def forbidden_network(*a,**k):
+    ATTEMPTS['network'] += 1
+    raise StudyAbort('Forbidden network attempt')
+def forbidden_sqlite(*a,**k):
+    ATTEMPTS['sqlite'] += 1
+    raise StudyAbort('Forbidden SQLite attempt')
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--private',type=Path,required=True);a=ap.parse_args()
-    freeze=json.loads((HERE/'freeze.json').read_text());plan=json.loads((HERE/'frozen-input-plan.json').read_text())
+    ap=argparse.ArgumentParser();ap.add_argument('--private',type=Path,required=True);ap.add_argument('--run-id',choices=('run-v1','run-v2'),default='run-v2');ap.add_argument('--freeze',default='freeze-v2.json');a=ap.parse_args()
+    freeze=json.loads((HERE/a.freeze).read_text());plan=json.loads((HERE/'frozen-input-plan.json').read_text())
     for path,digest in freeze['files'].items(): assert sha(HERE.parents[1]/path)==digest,path
-    out=a.private/'run-v1';out.mkdir(exist_ok=False) # never overwrite or pick a better run
-    socket.socket.connect=forbidden;socket.create_connection=forbidden;sqlite3.connect=forbidden
-    signal.signal(signal.SIGALRM,lambda *args: (_ for _ in ()).throw(TimeoutError('Bounded study wall limit')))
+    out=a.private/a.run_id;out.mkdir(exist_ok=False) # never overwrite or pick a better run
+    socket.socket.connect=forbidden_network;socket.create_connection=forbidden_network;sqlite3.connect=forbidden_sqlite
+    signal.signal(signal.SIGALRM,lambda *args: (_ for _ in ()).throw(StudyAbort('Bounded study wall limit')))
     rows=[];predictions={};primary=[]
     for item in plan['builds']:
         sid=item['sample_id'];path=a.private/item['file'];before=sha(path);assert before==item['sha256']
@@ -52,6 +61,6 @@ def main():
                 predictions[uid]={'kind':kind,'sidecar':pred,'control':{'evidence_status':'unknown','answer':None}}
         rows.append({'sample_id':sid,'status':'success','build_id':item['build_id'],'input_sha256':before,'input_bytes':path.stat().st_size,'claims_planned':len(snap.claims),'claims_succeeded':len(diag.claims),'claims_failed':0,'sources':len(snap.sources),'pairs_planned':len(snap.claims)*(len(snap.claims)-1)//2,'pairs_evaluated':len(diag.record.event_links),'pairs_truncated':diag.links_truncated,'times':dict(collections.Counter(c.event_time.status for c in diag.claims)),'completion':dict(collections.Counter(c.completed for c in diag.claims)),'attendance':dict(collections.Counter(c.attended for c in diag.claims)),'links':dict(collections.Counter(c.decision for c in diag.record.event_links)),'warnings':dict(collections.Counter(w for c in diag.claims for w in c.warnings)),'validation_adapter':parse,'control_timing':baseline_time,'sidecar_timing':timing,'raw_output_bytes':(out/(sid+'-raw.json')).stat().st_size,'source_unchanged':unchanged,'off_on_off':[off.status,on.status,rollback.status],'peak_rss_kib_process_cumulative':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss})
     dump(out/'predictions.json',predictions)
-    report={'protocol_sha256':sha(HERE/'PROTOCOL.md'),'freeze_sha256':sha(HERE/'freeze.json'),'implementation_commit':freeze['implementation_commit'],'rule_version':RULE_VERSION,'python':platform.python_version(),'platform':platform.platform(),'external_provider_requests':0,'sqlite_connections':0,'sampling_scope':'exposed development/regression; no unseen test claim','builds':rows,'reference_units_planned':68,'reference_predictions':len(predictions),'private_prediction_sha256':sha(out/'predictions.json')}
-    dump(HERE/'run-summary.json',report);print(json.dumps(report,ensure_ascii=False,indent=2))
+    report={'protocol_sha256':sha(HERE/'PROTOCOL.md'),'freeze_sha256':sha(HERE/a.freeze),'implementation_commit':freeze['implementation_commit'],'rule_version':RULE_VERSION,'python':platform.python_version(),'platform':platform.platform(),'external_provider_requests':0,'forbidden_network_attempts':ATTEMPTS['network'],'sqlite_connections':0,'forbidden_sqlite_attempts':ATTEMPTS['sqlite'],'sampling_scope':'exposed development/regression; no unseen test claim','builds':rows,'reference_units_planned':68,'reference_predictions':len(predictions),'private_prediction_sha256':sha(out/'predictions.json')}
+    dump(HERE/(a.run_id+'-summary.json'),report);print(json.dumps(report,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()

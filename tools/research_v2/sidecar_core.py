@@ -17,7 +17,7 @@ from tools.research_v2.sidecar_schema import (
     Contract, EventLink, SidecarInput, SidecarRecord, StateClaim, TimeInterval,
 )
 
-RULE_VERSION = 'deterministic-sidecar-v0.4-research'
+RULE_VERSION = 'deterministic-sidecar-v0.5-research'
 MONTH = '(?:' + '|'.join(MONTHS) + ')'
 DAY_PATTERN = rf'\b(?:\d{{4}}-\d{{2}}-\d{{2}}|{MONTH}\s+\d{{1,2}}(?:,?\s+\d{{4}})?)\b'
 MONTH_PATTERN = rf'\b{MONTH}\s+\d{{4}}\b'
@@ -51,8 +51,8 @@ class QueryDiagnostic(Contract):
     assumptions: tuple[str, ...] = ()
 
 class SidecarDiagnostics(Contract):
-    diagnostic_schema: Literal['sidecar-diagnostics-v0.4-research'] = 'sidecar-diagnostics-v0.4-research'
-    rule_version: Literal['deterministic-sidecar-v0.4-research'] = RULE_VERSION
+    diagnostic_schema: Literal['sidecar-diagnostics-v0.5-research'] = 'sidecar-diagnostics-v0.5-research'
+    rule_version: Literal['deterministic-sidecar-v0.5-research'] = RULE_VERSION
     mode: Literal['diagnostic_only'] = 'diagnostic_only'
     record: SidecarRecord
     claims: tuple[ClaimDiagnostic, ...] = ()
@@ -159,6 +159,12 @@ def _owned_text(snapshot, claim, *, include_conflicts=False):
                 continue
             claim_day = _parse_day(claim_days[0].group(), anchor)
             if claim_day is None or claim_day != _parse_day(source_days[0].group(), anchor):
+                continue
+            qualifiers = []
+            for text, match in ((claim.content, claim_days[0]), (parts[0], source_days[0])):
+                q = re.search(rf'\b({TIME_QUALIFIER})\s*$', text[:match.start()], re.I)
+                qualifiers.append(q[1].casefold() if q else '')
+            if qualifiers[0] != qualifiers[1]:
                 continue
         texts.append((source, parts[0]))
     return texts

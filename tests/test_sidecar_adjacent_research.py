@@ -58,3 +58,21 @@ def test_unexpected_internal_exception_preserves_original(monkeypatch):
     original = object(); result = wrapper.research_view(original, CASES[0]['input'], enabled=True)
     assert result.response is original and result.status == 'diagnostic_failed'
     assert result.diagnostic is None and result.error_code == 'sidecar_diagnostic_failed'
+
+@pytest.mark.parametrize('qualifier', ['before', 'after', 'around', 'by'])
+def test_claim_qualifier_cannot_borrow_exact_source_day(qualifier):
+    d = deepcopy(CASES[3]['input'])
+    d['claims'][0]['content'] = f'I arrived {qualifier} May 1, 2026.'
+    d['sources'][0]['text'] = 'I arrived on May 1, 2026.'
+    assert diagnose(SidecarInput.model_validate(d), enabled=True).claims[0].event_time.status == 'unknown'
+
+@pytest.mark.parametrize('kind', ['network', 'sqlite'])
+def test_study_abort_is_not_swallowed_by_diagnostic_failure_isolation(monkeypatch, kind):
+    import runpy
+    import tools.research_v2.sidecar_research as wrapper
+    study = runpy.run_path(str(Path(__file__).parents[1] / 'research/sidecar-20261107/run.py'))
+    guard = study['forbidden_' + kind]
+    monkeypatch.setattr(wrapper, 'diagnose', guard)
+    with pytest.raises(study['StudyAbort']):
+        wrapper.research_view(object(), CASES[0]['input'], enabled=True)
+    assert study['ATTEMPTS'][kind] == 1
