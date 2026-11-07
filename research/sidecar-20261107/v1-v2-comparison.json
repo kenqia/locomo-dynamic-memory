@@ -1,0 +1,65 @@
+{
+  "v1_and_v2_prediction_units": 68,
+  "changed_units": [],
+  "same_reference_labels": true,
+  "v1_preserved": true,
+  "repairs_after_v1": "Temporal qualifier consistency and study-stop instrumentation; no coverage tuning",
+  "controlled_artifacts": {
+    "conv-26-reference-packet.json": {
+      "sha256": "60febd68e015092099b9636702cafb9e33d439e3f29ae14bebf2133ad7f67270",
+      "bytes": 830193
+    },
+    "conv-26-reference-labels.json": {
+      "sha256": "fd335bf1e14a456344e4ab71c45d63a31cb12e7f8f1e7cbc614a115618bea5f3",
+      "bytes": 19105
+    },
+    "conv-30.json": {
+      "sha256": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae",
+      "bytes": 4897537
+    },
+    "conv-26.json": {
+      "sha256": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78",
+      "bytes": 5053297
+    },
+    "conv-30-reference-labels.json": {
+      "sha256": "6e0a51d363b5232468bd66169dc1e003c3862e92d378ba94a8f47d2fdb6c54b5",
+      "bytes": 32992
+    },
+    "conv-30-reference-packet.json": {
+      "sha256": "2136e45905bb79d544e99628872b5e6cb22d53181689654a842ecdc377c71fe7",
+      "bytes": 740574
+    },
+    "run-v2/graded-units.json": {
+      "sha256": "5c3920670a7061ac22aea7c8604c65ef5300542b68af60ae288d6a1d52a14650",
+      "bytes": 51276
+    },
+    "run-v2/conv-30-raw.json": {
+      "sha256": "cad17835c9b9750b1fa64bea437b45a722432b8e4033a4189620a61e48ea42b3",
+      "bytes": 14057848
+    },
+    "run-v2/conv-26-raw.json": {
+      "sha256": "6a8cd7c9904741e5441f65d7640aa15ce15dd91a39caa83b911e2e9b70ab6c27",
+      "bytes": 15860156
+    },
+    "run-v2/predictions.json": {
+      "sha256": "516deb7bea9769a0b5ec02570e517fc1c24351bf8230fd37f66bb6bdbabe2af7",
+      "bytes": 22863
+    },
+    "run-v1/graded-units.json": {
+      "sha256": "5c3920670a7061ac22aea7c8604c65ef5300542b68af60ae288d6a1d52a14650",
+      "bytes": 51276
+    },
+    "run-v1/conv-30-raw.json": {
+      "sha256": "a702bf90b2ee89e0e2710fb6301010e9884ee2be4440ddc2adc91b90f1c5b231",
+      "bytes": 14057848
+    },
+    "run-v1/conv-26-raw.json": {
+      "sha256": "12bdbe701d526f7d576f8a28b5ef5c3612e8686051203dc71219e1840621b59c",
+      "bytes": 15860156
+    },
+    "run-v1/predictions.json": {
+      "sha256": "516deb7bea9769a0b5ec02570e517fc1c24351bf8230fd37f66bb6bdbabe2af7",
+      "bytes": 22863
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "mode": "SYNTHETIC_REVIEW_DEFECT_REPRODUCTION",
+  "exit_zero_means": "all reported defects reproduced, not product acceptance",
+  "all_defects_reproduced": false,
+  "checks": [
+    {
+      "finding": "S1",
+      "input": "I arrived before May 1, 2026.",
+      "expected": "Preserve temporal qualification or return unknown; do not assert an exact day.",
+      "observed": {
+        "status": "unknown",
+        "start": null,
+        "end": null,
+        "original_expression": "before May 1, 2026",
+        "anchor_source_id": "src-1",
+        "basis": "Qualified date; the supported grammar does not resolve this interval."
+      },
+      "defect_reproduced": false
+    },
+    {
+      "finding": "S1",
+      "input": "I arrived after May 1, 2026.",
+      "expected": "Preserve temporal qualification or return unknown; do not assert an exact day.",
+      "observed": {
+        "status": "unknown",
+        "start": null,
+        "end": null,
+        "original_expression": "after May 1, 2026",
+        "anchor_source_id": "src-1",
+        "basis": "Qualified date; the supported grammar does not resolve this interval."
+      },
+      "defect_reproduced": false
+    },
+    {
+      "finding": "S1",
+      "input": "I arrived around May 1, 2026.",
+      "expected": "Preserve temporal qualification or return unknown; do not assert an exact day.",
+      "observed": {
+        "status": "unknown",
+        "start": null,
+        "end": null,
+        "original_expression": "around May 1, 2026",
+        "anchor_source_id": "src-1",
+        "basis": "Qualified date; the supported grammar does not resolve this interval."
+      },
+      "defect_reproduced": false
+    },
+    {
+      "finding": "S1",
+      "input": "I arrived by May 1, 2026.",
+      "expected": "Preserve temporal qualification or return unknown; do not assert an exact day.",
+      "observed": {
+        "status": "unknown",
+        "start": null,
+        "end": null,
+        "original_expression": "by May 1, 2026",
+        "anchor_source_id": "src-1",
+        "basis": "Qualified date; the supported grammar does not resolve this interval."
+      },
+      "defect_reproduced": false
+    },
+    {
+      "finding": "S2",
+      "input": "Where did Alex live on February 2026?",
+      "expected": "Resolve the requested historical scope or return unknown; never silently use cutoff.",
+      "observed": {
+        "evidence_status": "unknown",
+        "reason": "Historical residence needs a supported exact calendar date or explicit as_of.",
+        "as_of": null,
+        "cutoff": "2026-04-01",
+        "answer": null,
+        "memory_ids": [],
+        "source_ids": [],
+        "assumptions": []
+      },
+      "defect_reproduced": false
+    },
+    {
+      "finding": "S2",
+      "input": "Where did Alex live on February 30, 2026?",
+      "expected": "Resolve the requested historical scope or return unknown; never silently use cutoff.",
+      "observed": {
+        "evidence_status": "unknown",
+        "reason": "Historical residence needs a supported exact calendar date or explicit as_of.",
+        "as_of": null,
+        "cutoff": "2026-04-01",
+        "answer": null,
+        "memory_ids": [],
+        "source_ids": [],
+        "assumptions": []
+      },
+      "defect_reproduced": false
+    },
+    {
+      "finding": "S3",
+      "input": {
+        "claim": "Attended the Paris conference.",
+        "source": "I attended the Berlin conference on May 1."
+      },
+      "expected": "The Berlin source cannot prove attendance at Paris or identity of the Paris memory.",
+      "observed": {
+        "attended": "unknown",
+        "link": {
+          "left_memory_id": "mem-1",
+          "right_memory_id": "mem-2",
+          "decision": "unknown",
+          "reason_code": "unverified_cited_assertion",
+          "reason": "Every cited assertion must support the event before connecting it.",
+          "source_ids": [
+            "src-1",
+            "src-2"
+          ]
+        }
+      },
+      "defect_reproduced": false
+    },
+    {
+      "finding": "N2",
+      "input": [
+        "I moved from Paris to Rome on March 1, 2026.",
+        "I did not move from Paris to Rome on March 1, 2026."
+      ],
+      "expected": "Preserve the unresolved contradiction; source order must not choose truth.",
+      "observed": [
+        {
+          "source_order": [
+            "src-a",
+            "src-b"
+          ],
+          "completed": "unknown",
+          "warnings": [
+            "conflicting_move_completion_evidence"
+          ]
+        },
+        {
+          "source_order": [
+            "src-b",
+            "src-a"
+          ],
+          "completed": "unknown",
+          "warnings": [
+            "conflicting_move_completion_evidence"
+          ]
+        }
+      ],
+      "defect_reproduced": false
+    },
+    {
+      "finding": "N1",
+      "input": "docs/sidecar-v0/ARCH04-VALIDATION.md",
+      "expected": "715df32f5d71b3f171bf529278172a85f89b0d2b72a4fa759ff1e9ad38a74b11",
+      "observed": "715df32f5d71b3f171bf529278172a85f89b0d2b72a4fa759ff1e9ad38a74b11",
+      "defect_reproduced": false
+    }
+  ]
+}

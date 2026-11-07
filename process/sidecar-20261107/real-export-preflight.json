@@ -1,0 +1,24 @@
+[
+  {
+    "sample_id": "conv-26",
+    "memories": 259,
+    "sources": 190,
+    "relations": 4740,
+    "seconds": 2.1040250390001347,
+    "build": "367c901b300440649bdc0bfba2af8010",
+    "schema": "memory-export-v2",
+    "source_time_anchors": "MemoryDraft context validation and typed roundtrip passed",
+    "file_sha": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78"
+  },
+  {
+    "sample_id": "conv-30",
+    "memories": 244,
+    "sources": 154,
+    "relations": 4460,
+    "seconds": 1.842778022999937,
+    "build": "b8f34a05c8ef4585a1fc3c917745aa53",
+    "schema": "memory-export-v2",
+    "source_time_anchors": "MemoryDraft context validation and typed roundtrip passed",
+    "file_sha": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae"
+  }
+]

@@ -1,0 +1,145 @@
+{
+  "protocol_sha256": "d450e08c6bb72f157a3918f4c573632a32eccfe72b7ee4cd34d7bddca26f82d7",
+  "reference_judges": [
+    {
+      "sample_id": "conv-26",
+      "annotator": "session agent /root/reference_conv26",
+      "reference_kind": "non-author AI, one judge per unit, not human/teacher truth",
+      "labels_sha256": "fd335bf1e14a456344e4ab71c45d63a31cb12e7f8f1e7cbc614a115618bea5f3",
+      "units": 34
+    },
+    {
+      "sample_id": "conv-30",
+      "annotator": "session agent /root/reference_conv30",
+      "reference_kind": "non-author AI, one judge per unit, not human/teacher truth",
+      "labels_sha256": "6e0a51d363b5232468bd66169dc1e003c3862e92d378ba94a8f47d2fdb6c54b5",
+      "units": 34
+    }
+  ],
+  "reference_coverage": "68/68; one independent session-AI judge per unit, not human/teacher labels",
+  "units": 68,
+  "dimensions": {
+    "claim.time_status": {
+      "control": {
+        "denominator": 40,
+        "reference_unknown": 35,
+        "predicted_unknown": 40,
+        "both_unknown": 35,
+        "reference_range": 2,
+        "abstain_on_informative_reference": 5,
+        "reference_known": 3
+      },
+      "sidecar": {
+        "denominator": 40,
+        "reference_unknown": 35,
+        "predicted_unknown": 40,
+        "both_unknown": 35,
+        "reference_range": 2,
+        "abstain_on_informative_reference": 5,
+        "reference_known": 3
+      }
+    },
+    "claim.completion": {
+      "control": {
+        "denominator": 40,
+        "reference_unknown": 30,
+        "predicted_unknown": 40,
+        "both_unknown": 30,
+        "reference_supported": 9,
+        "abstain_on_informative_reference": 10,
+        "reference_denied": 1
+      },
+      "sidecar": {
+        "denominator": 40,
+        "reference_unknown": 30,
+        "predicted_unknown": 40,
+        "both_unknown": 30,
+        "reference_supported": 9,
+        "abstain_on_informative_reference": 10,
+        "reference_denied": 1
+      }
+    },
+    "claim.attendance": {
+      "control": {
+        "denominator": 40,
+        "reference_unknown": 36,
+        "predicted_unknown": 40,
+        "both_unknown": 36,
+        "reference_supported": 4,
+        "abstain_on_informative_reference": 4
+      },
+      "sidecar": {
+        "denominator": 40,
+        "reference_unknown": 36,
+        "predicted_unknown": 40,
+        "both_unknown": 36,
+        "reference_supported": 4,
+        "abstain_on_informative_reference": 4
+      }
+    },
+    "pair.event_link": {
+      "control": {
+        "denominator": 20,
+        "reference_unknown": 3,
+        "predicted_unknown": 20,
+        "both_unknown": 3,
+        "reference_different_event": 12,
+        "abstain_on_informative_reference": 17,
+        "reference_same_event": 5
+      },
+      "sidecar": {
+        "denominator": 20,
+        "reference_unknown": 3,
+        "predicted_unknown": 20,
+        "both_unknown": 3,
+        "reference_different_event": 12,
+        "abstain_on_informative_reference": 17,
+        "reference_same_event": 5
+      }
+    },
+    "query.evidence_status": {
+      "control": {
+        "denominator": 8,
+        "reference_unknown": 7,
+        "predicted_unknown": 8,
+        "both_unknown": 7,
+        "reference_sufficient": 1,
+        "abstain_on_informative_reference": 1
+      },
+      "sidecar": {
+        "denominator": 8,
+        "reference_unknown": 7,
+        "predicted_insufficient": 8,
+        "definite_on_unknown_reference_unverified": 7,
+        "reference_sufficient": 1,
+        "definite_incorrect": 1
+      }
+    }
+  },
+  "informative_correct_units": {
+    "control": 0,
+    "sidecar": 0
+  },
+  "informative_unit_coverage": {
+    "control": 0.0,
+    "sidecar": 0.0
+  },
+  "unit_comparison": {
+    "unchanged": 68
+  },
+  "new_definite_incorrect_units": 1,
+  "source_support_context": {
+    "supported": 39,
+    "unknown": 1
+  },
+  "H1_passed": false,
+  "positive_event_link_precision": null,
+  "positive_event_link_precision_note": "undefined: no positive event links; zero asserted errors is not high accuracy",
+  "limitations": [
+    "All data exposed development/regression, not unseen test.",
+    "One AI reference per unit; no agreement estimate, human or teacher truth.",
+    "One sufficient birth-year reference uses explicit arithmetic assumptions; it is a reference-dependent regression finding, not validated birth-year truth.",
+    "Unknown-reference definite outputs are unverified, not automatically counted as false.",
+    "No QA quality/cost claim: both study arms are diagnostic or supplied fields only."
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "sample_id": "conv-26",
+    "total_claims": 259,
+    "first_rejection_reason": {
+      "memory_outside_supported_assertion_grammar": 258,
+      "no_eligible_matching_cited_source": 1
+    }
+  },
+  {
+    "sample_id": "conv-30",
+    "total_claims": 244,
+    "first_rejection_reason": {
+      "memory_outside_supported_assertion_grammar": 244
+    }
+  }
+]

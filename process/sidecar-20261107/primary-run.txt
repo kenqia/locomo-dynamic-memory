@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/kenqia/my_folder/locomo-worktrees/sidecar-research-20261107/research/sidecar-20261107/run.py", line 4, in <module>
+    from tools.research_v2.sidecar_core import RULE_VERSION
+ModuleNotFoundError: No module named 'tools'

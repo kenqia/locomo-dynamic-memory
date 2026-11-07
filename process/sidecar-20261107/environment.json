@@ -1,0 +1,13 @@
+{
+  "python": "3.12.12 (main, Nov 19 2025, 22:46:53) [Clang 21.1.4 ]",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "packages": {
+    "pydantic": "2.14.1",
+    "pytest": "9.1.1",
+    "fastapi": "0.146.0",
+    "numpy": "2.5.4",
+    "httpx": "0.28.1",
+    "streamlit": "1.66.0"
+  },
+  "dependency_install": "reused existing project venv; no dependency installation"
+}

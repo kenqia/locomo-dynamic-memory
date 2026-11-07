@@ -1,0 +1,12 @@
+{
+  "pr": 38,
+  "head": "3e0b217452477b23920d50bfafb48667eb6e84ed",
+  "merge_base": "4d1d072f2c7075ebcac10879269bdcfd736e683b",
+  "commits": [
+    "0f470a3b3aac782b42b082b199e2fa81a12cf837",
+    "3e0b217452477b23920d50bfafb48667eb6e84ed"
+  ],
+  "tree": "f2771f2fb79249a6b97697aa36d05eaee3adb780",
+  "transport": "Git direct fetch unavailable; reconstructed signed commits from GitHub API payload/signature; exact commit/tree/blob hashes matched",
+  "remote_writes_authorized_for_this_sidecar_round": false
+}

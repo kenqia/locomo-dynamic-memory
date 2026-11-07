@@ -1,0 +1,45 @@
+........................................................................ [ 42%]
+..............F......................................................... [ 85%]
+........................                                                 [100%]
+=================================== FAILURES ===================================
+_____ test_conflicting_move_evidence_retains_both_sources_in_either_order ______
+
+    def test_conflicting_move_evidence_retains_both_sources_in_either_order():
+        data = case(11)
+        denial = deepcopy(data['sources'][1])
+        denial.update(source_id='move-denial', turn_id='turn-denial',
+                      text='I did not move from Paris to Rome on March 1, 2026.')
+        data['sources'].append(denial)
+        data['claims'][1]['source_ids'].append(denial['source_id'])
+    
+        forward = run(data)
+        data['sources'].reverse()
+        data['claims'][1]['source_ids'].reverse()
+        reverse = run(data)
+        claim = forward.claims[1]
+        assert claim == reverse.claims[1]
+        assert claim.completed == 'unknown'
+        assert 'conflicting_move_completion_evidence' in claim.warnings
+        assert claim.completion_support_source_ids == ('src-2',)
+        assert claim.completion_denial_source_ids == ('move-denial',)
+        assert forward.query == reverse.query
+        assert forward.query.evidence_status == 'conflict'
+        assert set(forward.query.source_ids) == {'src-2', 'move-denial'}
+    
+        data['as_of'] = '2026-02-01'
+>       assert run(data).query.answer == 'Paris'
+E       AssertionError: assert None == 'Paris'
+E        +  where None = QueryDiagnostic(evidence_status='conflict', reason='Cited sources disagree about completion of the same residence move...off=datetime.date(2026, 4, 1), answer=None, memory_ids=('mem-2',), source_ids=('move-denial', 'src-2'), assumptions=()).answer
+E        +    where QueryDiagnostic(evidence_status='conflict', reason='Cited sources disagree about completion of the same residence move...off=datetime.date(2026, 4, 1), answer=None, memory_ids=('mem-2',), source_ids=('move-denial', 'src-2'), assumptions=()) = SidecarDiagnostics(diagnostic_schema='sidecar-diagnostics-v0.4-research', rule_version='deterministic-sidecar-v0.4-res...nial', 'src-2'), assumptions=()), retained_memory_ids=('mem-1', 'mem-2'), global_mutation=False, links_truncated=False).query
+E        +      where SidecarDiagnostics(diagnostic_schema='sidecar-diagnostics-v0.4-research', rule_version='deterministic-sidecar-v0.4-res...nial', 'src-2'), assumptions=()), retained_memory_ids=('mem-1', 'mem-2'), global_mutation=False, links_truncated=False) = run({'provenance': {'dataset_id': 'synthetic-arch01', 'sample_id': 'conv-synthetic-a', 'build_id': 'synthetic-build-a', 'b...ty_id': 'Alex', 'state_dimension': 'residence', 'state_value': 'Rome', ...}], 'question': 'Where does Alex live?', ...})
+
+tests/test_sidecar_core.py:306: AssertionError
+=============================== warnings summary ===============================
+../../locomo-dynamic-memory/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/kenqia/my_folder/locomo-dynamic-memory/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_sidecar_core.py::test_conflicting_move_evidence_retains_both_sources_in_either_order
+1 failed, 167 passed, 1 warning in 3.50s

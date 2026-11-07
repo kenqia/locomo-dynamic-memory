@@ -1,0 +1,44 @@
+[
+  {
+    "sample_id": "conv-26",
+    "status": "PASS",
+    "claims": 259,
+    "owned_claims": 0,
+    "event_times": {
+      "unknown": 259
+    },
+    "completed": {
+      "unknown": 259
+    },
+    "attended": {
+      "unknown": 259
+    },
+    "links": {
+      "unknown": 1000
+    },
+    "pair_truncated": true,
+    "seconds": 0.019926548000057664,
+    "entity_equals_speaker_claims": 258
+  },
+  {
+    "sample_id": "conv-30",
+    "status": "PASS",
+    "claims": 244,
+    "owned_claims": 0,
+    "event_times": {
+      "unknown": 244
+    },
+    "completed": {
+      "unknown": 244
+    },
+    "attended": {
+      "unknown": 244
+    },
+    "links": {
+      "unknown": 1000
+    },
+    "pair_truncated": true,
+    "seconds": 0.011666798000078415,
+    "entity_equals_speaker_claims": 243
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "number": 33,
+    "title": "[v2][6d][ARCH-04] 离线回归、ADR、可展示样例、PR",
+    "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/33"
+  },
+  {
+    "number": 32,
+    "title": "[v2][6d][ARCH-03] opt-in入口、开关/回滚、最小消融",
+    "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/32"
+  },
+  {
+    "number": 31,
+    "title": "[v2][6d][ARCH-02] 确定性 Event/Time/State Sidecar",
+    "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/31"
+  },
+  {
+    "number": 30,
+    "title": "[v2][6d][ARCH-01] 事件/时间/状态 Schema 与冻结边界案例",
+    "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/30"
+  },
+  {
+    "number": 24,
+    "title": "[v2][Architecture] 6-day Temporal Event Sidecar opt-in MVP",
+    "url": "https://github.com/kenqia/locomo-dynamic-memory/issues/24"
+  }
+]
