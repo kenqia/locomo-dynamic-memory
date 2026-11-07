@@ -1,0 +1,212 @@
+{
+  "protocol": "real-sidecar-diagnostic-v1",
+  "salt": "sidecar-diagnostic-real-v1-20261107",
+  "input_manifest_sha256": "1649229df0d7a5f19a8e1039aa7e46a821009c806d1c815d2581e5dd2672bf7c",
+  "builds": [
+    {
+      "sample_id": "conv-26",
+      "file": "conv-26.json",
+      "sha256": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78",
+      "build_id": "367c901b300440649bdc0bfba2af8010",
+      "build_fingerprint": "44be189a247e940d5deb6525d35b670c654cd29ccfb2a2b1cb628a356f0afae4",
+      "memories": 259,
+      "source_turns": 190,
+      "claim_ids": [
+        "bdb2c8ceef66743cca195037",
+        "c65afbaf6a62e646d4786e41",
+        "b07fdb6041f3aab7e5ce399e",
+        "463c2aa981c38acac85cfe15",
+        "5a81b0d5380960713f4e86a7",
+        "84d3d7acbc643ee07209bb1a",
+        "b58d7ad7e84fc31738272c74",
+        "8cfa4b959767548d2ce180c9",
+        "29b4942d38b2113ccce4d715",
+        "564794e3faf060dc8b3c35fa",
+        "642e5e0e662b42d61b34daca",
+        "6c0ba2adc32f3ebba44f3705",
+        "f9a575f317255a5ac71e6af3",
+        "7d7eecb2ed07f0453f5552f1",
+        "9c1767207793fc5bd96fac90",
+        "fb0df83562eab5741e568fb0",
+        "ee77dd2e5e6f08b8c001f05f",
+        "39c8e52fda4f355e78fd04a7",
+        "71023c6200a2fc5916d9ecad",
+        "5d3833297fdf127fa897b5ae"
+      ],
+      "pair_ids": [
+        [
+          "d144b621be924e0290e2dff6",
+          "fb0941b4cf5f6716e833fc7b"
+        ],
+        [
+          "39681e2e58961f734a36ef55",
+          "e8d617486f98889827d2c4a3"
+        ],
+        [
+          "12aa1e9d43ab923082ae2038",
+          "7f22b26a426ea83f67bd4b5a"
+        ],
+        [
+          "99e299f55573598ef5bacf55",
+          "c8e102bd91f2530a7c57ca4d"
+        ],
+        [
+          "8c751d2764f57e91d505e990",
+          "e64916cab12cef730fbfbb29"
+        ],
+        [
+          "7f22b26a426ea83f67bd4b5a",
+          "a36071e8d91c1a3b2217c770"
+        ],
+        [
+          "521a81a263f5f73e48b28498",
+          "7f22b26a426ea83f67bd4b5a"
+        ],
+        [
+          "99e299f55573598ef5bacf55",
+          "b6bc4743b4d1e8e8a224e234"
+        ],
+        [
+          "c8e102bd91f2530a7c57ca4d",
+          "dfbddcff4b69da75014b583f"
+        ],
+        [
+          "e960fa046531ee016e0104d3",
+          "fc56cf0ce9efbf0649cfaf69"
+        ]
+      ],
+      "queries": [
+        {
+          "unit_id": "conv-26|query|Caroline|residence",
+          "question": "Where does Caroline live?",
+          "dimension": "residence",
+          "entity": "Caroline"
+        },
+        {
+          "unit_id": "conv-26|query|Caroline|birth_year",
+          "question": "What is Caroline's birth year?",
+          "dimension": "birth_year",
+          "entity": "Caroline"
+        },
+        {
+          "unit_id": "conv-26|query|Melanie|residence",
+          "question": "Where does Melanie live?",
+          "dimension": "residence",
+          "entity": "Melanie"
+        },
+        {
+          "unit_id": "conv-26|query|Melanie|birth_year",
+          "question": "What is Melanie's birth year?",
+          "dimension": "birth_year",
+          "entity": "Melanie"
+        }
+      ],
+      "reference_packet_sha256": "60febd68e015092099b9636702cafb9e33d439e3f29ae14bebf2133ad7f67270"
+    },
+    {
+      "sample_id": "conv-30",
+      "file": "conv-30.json",
+      "sha256": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae",
+      "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+      "build_fingerprint": "c0f39de6dd02e0db090d69c440c14b5bc279ee018581da4438ec0580a963bb17",
+      "memories": 244,
+      "source_turns": 154,
+      "claim_ids": [
+        "b2822e3c58d15f54a54366a8",
+        "f22f55ccea7ce0e798a62a9d",
+        "979cba506e2f6938653a7e4c",
+        "de892f1c13ba41569cdc6948",
+        "aaf1cd53c0d999923fa14b5a",
+        "740b774d346eb9b7d08504b4",
+        "386794da2fff1e06b33852f9",
+        "b33b80c8e5e2e2bff9ae7270",
+        "df01d0be8425107fbb09009d",
+        "a903a895c113e562eeee3330",
+        "928293300d2eae80e6c85ced",
+        "421667fd0f630812c3487f0f",
+        "69d48e1821fe73430ea83146",
+        "aea03809f42958882a6f5670",
+        "9c8266b3d9af3d39a762ea90",
+        "248e802b879a459386ca6bf2",
+        "ebd0ed9f4ee8906e98c189f9",
+        "97a2da9b5999a67ac403bc68",
+        "89f967fa7b5e8bb2f716080e",
+        "534d7a08596d143d9f69c384"
+      ],
+      "pair_ids": [
+        [
+          "21d15f102d25c8c6dcbd9578",
+          "be8ec6c96405566248a5d04f"
+        ],
+        [
+          "64e6c7e54b2bf45048e5cf45",
+          "cfab8f3837d56a816f52faf7"
+        ],
+        [
+          "df01d0be8425107fbb09009d",
+          "f88d2d588c4369174e6accf3"
+        ],
+        [
+          "575516d9618745cd3fe09694",
+          "64e6c7e54b2bf45048e5cf45"
+        ],
+        [
+          "40be454de00633a9a72d71a9",
+          "7b7ead46fb9f5bd5767a0ae8"
+        ],
+        [
+          "7a2c8fda391420b03aeca6c2",
+          "95ef9db39a693f920e9d4d58"
+        ],
+        [
+          "0b4c074b586afec0ae030ff9",
+          "5c53f2bd9a726190aac69f3b"
+        ],
+        [
+          "5c53f2bd9a726190aac69f3b",
+          "673055a593df27d0e54c14e3"
+        ],
+        [
+          "634a61352d0becd0a8d6c1fd",
+          "c12e19503f9cded195ed37e2"
+        ],
+        [
+          "4071bfd40bc348cc30c975cd",
+          "a255c6efa52a4a0ad562890e"
+        ]
+      ],
+      "queries": [
+        {
+          "unit_id": "conv-30|query|Gina|residence",
+          "question": "Where does Gina live?",
+          "dimension": "residence",
+          "entity": "Gina"
+        },
+        {
+          "unit_id": "conv-30|query|Gina|birth_year",
+          "question": "What is Gina's birth year?",
+          "dimension": "birth_year",
+          "entity": "Gina"
+        },
+        {
+          "unit_id": "conv-30|query|Jon|residence",
+          "question": "Where does Jon live?",
+          "dimension": "residence",
+          "entity": "Jon"
+        },
+        {
+          "unit_id": "conv-30|query|Jon|birth_year",
+          "question": "What is Jon's birth year?",
+          "dimension": "birth_year",
+          "entity": "Jon"
+        }
+      ],
+      "reference_packet_sha256": "2136e45905bb79d544e99628872b5e6cb22d53181689654a842ecdc377c71fe7"
+    }
+  ],
+  "reference_units": 68,
+  "claim_reference_units": 40,
+  "pair_reference_units": 20,
+  "query_reference_units": 8,
+  "scope": "Exposed development/regression only; not unseen test; no teacher hidden data"
+}
