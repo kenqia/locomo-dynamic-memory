@@ -58,6 +58,7 @@ def main():
 
         def capture(name, focus=None):
             settle()
+            expect(page.get_by_test_id('stException')).to_have_count(0)
             main = page.get_by_test_id('stMain')
             if focus:
                 focus.scroll_into_view_if_needed()
@@ -78,7 +79,7 @@ def main():
         page.goto(args.url)
         page.add_style_tag(content='* { scroll-behavior: auto !important; }')
         expect(page.get_by_role('heading', name='Research Console', exact=True)).to_be_visible(timeout=60000)
-        expect(page.get_by_text('3028', exact=True)).to_be_visible()
+        expect(page.get_by_test_id('stMetric').filter(has=page.get_by_text('原 Run 计划组合', exact=True))).to_contain_text('3028')
         final_layout = page.get_by_role('button', name='进入Memory', exact=True).count() > 0
         capture('overview')
         if final_layout:

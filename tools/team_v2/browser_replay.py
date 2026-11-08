@@ -45,7 +45,7 @@ def main():
         def capture(name):
             settle()
             if name in ('replay-overview.png', 'replay-experiments.png'):
-                expect(page.get_by_text('3028', exact=True)).to_be_visible()
+                expect(page.get_by_test_id('stMetric').filter(has=page.get_by_text('原 Run 计划组合', exact=True))).to_contain_text('3028')
             main = page.get_by_test_id('stMain')
             main.evaluate('(element) => { element.scrollTop = 0; }')
             page.screenshot(path=str(args.output / ('viewport-' + name)), animations='disabled')
@@ -54,7 +54,7 @@ def main():
             main.evaluate('(element) => { element.scrollTop = 0; }')
             settle()
             if name in ('replay-overview.png', 'replay-experiments.png'):
-                expect(page.get_by_text('3028', exact=True)).to_be_visible()
+                expect(page.get_by_test_id('stMetric').filter(has=page.get_by_text('原 Run 计划组合', exact=True))).to_contain_text('3028')
             page.screenshot(path=str(args.output / name), full_page=True, animations='disabled')
             page.set_viewport_size({'width': 1280, 'height': 900})
             screenshots.append(name)

@@ -23,6 +23,13 @@ def completion_rate(group):
     return (states.get('succeeded', 0) + states.get('failed', 0)) / group['planned']
 
 
+def render_report_totals(baseline):
+    for column, label, field in zip(st.columns(4), ('原 Run 计划组合', '成功', '失败', 'unknown'),
+                                    ('planned_combinations', 'succeeded', 'failed', 'unknown')):
+        column.metric(label, baseline[field])
+    st.caption(f"{baseline['questions']} QA · unknown 原样保留；缺测不填零；无独立语义真值的指标保持未评。")
+
+
 def render_experiment_comparison(evidence):
     run_set = st.radio('结果集', ('original', 'supplementary'),
                        format_func=lambda value: '原 Run' if value == 'original' else '补充 / 修复 Run',
@@ -40,6 +47,7 @@ def render_experiment_comparison(evidence):
                  f"Hybrid 记录 {paired['hybrid']['states'].get('failed', 'unknown')} 项失败。请结合完整分母与 unknown 判断。")
         st.caption('不据成功子集宣称全量质量提升；证据语义正确性缺少独立真值，仍为未评。')
 
+    render_report_totals(evidence['original_baseline'])
     st.subheader('分组结果')
     dimension = st.selectbox('聚合维度', ('strategy', 'conversation', 'category'),
                              format_func={'strategy': '策略', 'conversation': '对话', 'category': '题型'}.get,

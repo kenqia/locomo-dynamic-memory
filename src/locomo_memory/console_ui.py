@@ -10,7 +10,7 @@ import streamlit as st
 
 from locomo_memory.config import load_settings
 from locomo_memory.evidence_ui import page_items, render_memory_inspector, render_trace_inspector
-from locomo_memory.frozen_report_ui import render_experiment_comparison
+from locomo_memory.frozen_report_ui import render_experiment_comparison, render_report_totals
 from locomo_memory.ui_theme import apply_app_theme
 
 
@@ -60,13 +60,10 @@ def render_frozen_report(evidence_path, reviewer=False, strategies=False):
         evidence = json.loads(Path(evidence_path).read_text(encoding='utf-8'))
         baseline = evidence['original_baseline']
         st.caption('此报告独立于上方本机 Build 和后端 Run；不是合成 Demo 成绩，也不是新运行。')
-        columns = st.columns(4)
-        for column, label, field in zip(columns, ('原 Run 计划组合', '成功', '失败', 'unknown'),
-                                         ('planned_combinations', 'succeeded', 'failed', 'unknown')):
-            column.metric(label, baseline[field])
-        st.caption(f"{baseline['questions']} QA · unknown 原样保留；缺测不填零；无独立语义真值的指标保持未评。")
         if strategies:
             render_experiment_comparison(evidence)
+        else:
+            render_report_totals(baseline)
         with st.expander('冻结报告身份与原始字段', expanded=reviewer):
             st.caption(f"原 Run: {evidence['run_id']} · Source commit: {evidence['source_commit']}")
             if not strategies:
