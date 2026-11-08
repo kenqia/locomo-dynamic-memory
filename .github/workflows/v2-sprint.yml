@@ -11,21 +11,27 @@ concurrency:
   cancel-in-progress: true
 jobs:
   offline:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
       LOCOMO_LIVE_MODEL: '0'
       LOCOMO_LOCAL_EMBEDDING: '0'
       HF_HUB_OFFLINE: '1'
       TRANSFORMERS_OFFLINE: '1'
+      UV_NO_MANAGED_PYTHON: 'true'
+      UV_PYTHON_DOWNLOADS: never
       PYTHONPATH: tools/integration/offline_guard:src:tests
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12.12'
       - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884
         with:
           version: '0.9.11'
+      - run: python --version
       - run: uv sync --locked
       - run: uv run --locked python -m compileall -q src tests tools/team_v2
       - run: uv run --locked python tools/team_v2/check.py -q --tb=short

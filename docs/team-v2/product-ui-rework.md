@@ -6,6 +6,8 @@
 [11 月 8 日 xiaozhuozi39 的试用反馈](https://github.com/kenqia/locomo-dynamic-memory/pull/39#issuecomment-6718206030)。
 修改基准：`44d20dc6779c26b89a9cd76b1b022474d380ff5d`；PR 的 production-safe 基准仍为 `3ba1954bd0c188ad84d80dd4a4f94618857b0109`。
 
+后续 CI 环境处理、成员反馈与剩余门槛见 [第一阶段收尾记录](product-closeout.md)；历史运行和截图的版本仍以下文为准。
+
 ## 本次交付边界
 
 只先交 Memory 和 Query/Evidence 两页以及它们需要的紧凑页头。沿用旧五阶段 `ui_theme.py` 的品牌、容器、按钮和问答气泡。
