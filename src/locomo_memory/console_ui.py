@@ -18,7 +18,7 @@ EVIDENCE = ROOT / 'docs/team-v2/research-evidence.json'
 PAGES = ('Overview', 'Memory', 'Query/Evidence', 'Experiments', 'Demo')
 
 
-def render_build_selector(request):
+def render_build_selector(request, compact=False):
     with st.expander('数据 / 对话 / Build', expanded=False):
         datasets = page_items(request, '/datasets', 'console_dataset_offset')
         if not datasets:
@@ -42,12 +42,19 @@ def render_build_selector(request):
             return None
         by_build = {item['build_id']: item for item in builds}
         build_id = st.selectbox('冻结 / 历史 Build', list(by_build),
-                                format_func=lambda value: f"{by_build[value]['status']} · {value}",
+                                format_func=lambda value: (f"版本 {list(by_build).index(value) + 1} · {by_build[value]['status']}"
+                                                           if compact else f"{by_build[value]['status']} · {value}"),
                                 key=f'console_build_{dataset_id}_{sample_id}')
         build = by_build[build_id]
-    render_context(dataset_id, sample_id, build_id)
-    st.caption(f"Build status: {build['status']} · phase: {build['phase']} · query_ready: {build['query_ready']}")
-    st.caption(f"Fingerprint: {build['fingerprint']}")
+        if compact:
+            st.caption('完整版本身份')
+            st.json({field: build[field] for field in ('dataset_id', 'sample_id', 'build_id', 'fingerprint', 'status', 'phase', 'query_ready')})
+    if compact:
+        st.caption(f"当前 Build：{build['status']} · {'可用于问答' if build['query_ready'] else '仅供检查'} · 只读")
+    else:
+        render_context(dataset_id, sample_id, build_id)
+        st.caption(f"Build status: {build['status']} · phase: {build['phase']} · query_ready: {build['query_ready']}")
+        st.caption(f"Fingerprint: {build['fingerprint']}")
     if not build['query_ready']:
         st.warning('此 Build 尚未完整发布，只供检查，不作为完整问答结果。')
     return build
@@ -109,33 +116,47 @@ def render_runs(request):
         st.json(run)
 
 
-def render_memory(request, build):
-    render_memory_inspector(request, build)
+def render_memory(request, build, reviewer=False):
+    render_memory_inspector(request, build, reviewer)
 
 
-def render_trace(request, build, replay_cases=()):
-    st.subheader('Query / Evidence · 保存的 Trace')
+def render_trace(request, build, replay_cases=(), reviewer=False):
+    st.subheader('选择已有问答记录')
     if build is None:
         st.info('请先选择 Build，再读取该版本已有的 Trace。')
         return
     cases = {case['case_id']: case for case in replay_cases if case['build_id'] == build['build_id']}
     load_case = False
     if cases:
-        case_id = st.selectbox('冻结案例', list(cases), key='console_replay_case')
-        load_case = st.button('载入冻结案例', key='console_load_case')
+        selection, action = st.columns([3, 1], vertical_alignment='bottom')
+        with selection:
+            case_id = st.selectbox('冻结案例', list(cases), key='console_replay_case')
+        load_case = action.button('载入冻结案例', key='console_load_case', type='primary', width='stretch')
         if load_case:
             st.session_state['console_trace_id'] = cases[case_id]['trace_id']
-    trace_id = st.text_input('Trace ID', key='console_trace_id')
-    if st.button('读取已有 Trace', key='console_load_trace', disabled=not trace_id.strip()) or load_case:
+        st.caption('选择案例后点击“载入冻结案例”。只读取已有记录，不生成新回答。')
+    with st.expander('按 Trace ID 读取已有记录', expanded=not bool(cases)):
+        trace_id = st.text_input('Trace ID', key='console_trace_id', placeholder='粘贴已有 Trace ID')
+        load_trace = st.button('读取已有 Trace', key='console_load_trace', disabled=not trace_id.strip())
+    if load_trace or load_case:
         st.session_state.pop('console_saved_trace', None)
-        trace = request('GET', f'/queries/{trace_id.strip()}')
+        try:
+            trace = request('GET', f'/queries/{trace_id.strip()}')
+        except httpx.HTTPStatusError as error:
+            if error.response.status_code != 404:
+                raise
+            st.warning('未找到此 Trace ID 对应的已保存记录。请核对 ID，或选择冻结案例后点击“载入冻结案例”。'
+                       if cases else '未找到此 Trace ID 对应的已保存记录。请核对 ID 后重试。')
+            return
         if trace['build_id'] != build['build_id']:
             st.warning('此 Trace 属于其他 Build，请切换到对应版本后读取。')
             return
         st.session_state['console_saved_trace'] = trace
     trace = st.session_state.get('console_saved_trace')
     if trace and trace['build_id'] == build['build_id'] and trace['trace_id'] == trace_id.strip():
-        render_trace_inspector(request, build, trace)
+        render_trace_inspector(request, build, trace, reviewer)
+    elif not load_trace and not load_case:
+        st.caption('载入记录后，将在这里显示回答、状态和引用来源。')
 
 
 def render_demo(replay_cases=()):
@@ -163,14 +184,17 @@ def render_demo(replay_cases=()):
 
 
 def render_backend(request, page, reviewer, replay_cases=()):
+    focused = page in ('Memory', 'Query/Evidence')
     health = request('GET', '/health')
     if health.get('mode') == 'REPLAY':
-        st.success('Replay 快照已载入 · 无 API / 数据库')
+        if not focused:
+            st.success('Replay 快照已载入 · 无 API / 数据库')
     elif health.get('status') == 'ok':
-        st.success('后端已连接 · Console 只读')
+        if not focused:
+            st.success('后端已连接 · Console 只读')
     else:
         st.warning('后端健康状态不是 ok，请检查服务。')
-    build = render_build_selector(request)
+    build = render_build_selector(request, compact=focused)
     if reviewer and build:
         with st.expander('核对 Build 身份和全部原始字段'):
             st.json(build)
@@ -178,16 +202,28 @@ def render_backend(request, page, reviewer, replay_cases=()):
         with st.expander('后端保存的 Run / 最近报告', expanded=False):
             render_runs(request)
     elif page == 'Memory':
-        render_memory(request, build)
+        render_memory(request, build, reviewer)
     elif page == 'Query/Evidence':
-        render_trace(request, build, replay_cases)
+        render_trace(request, build, replay_cases, reviewer)
 
 
 def render_console(request, evidence_path=EVIDENCE, replay_cases=()):
-    render_page_header('PRODUCT CONSOLE', 'Research Console', '选择固定版本，检查记忆、证据和实验记录。')
-    reviewer = st.radio('使用场景', ('展示者', '评审者'), horizontal=True,
-                        key='console_role', label_visibility='collapsed') == '评审者'
-    page = st.radio('导航', PAGES, horizontal=True, key='console_page', label_visibility='collapsed')
+    if st.session_state.get('console_page') in ('Memory', 'Query/Evidence'):
+        st.markdown('<div class="dm-shell-head"><div class="dm-brand">'
+                    '<div class="dm-brand-mark">DM</div><div><div class="dm-brand-title">Dynamic Memory</div>'
+                    '<div class="dm-brand-subtitle">Research Console · 记忆与证据检查</div></div></div></div>',
+                    unsafe_allow_html=True)
+        navigation, settings = st.columns([5, 1], vertical_alignment='center')
+        with navigation:
+            page = st.radio('导航', PAGES, horizontal=True, key='console_page', label_visibility='collapsed')
+        with settings:
+            with st.popover('视图设置'):
+                reviewer = st.radio('使用场景', ('展示者', '评审者'), key='console_role') == '评审者'
+    else:
+        render_page_header('PRODUCT CONSOLE', 'Research Console', '选择固定版本，检查记忆、证据和实验记录。')
+        reviewer = st.radio('使用场景', ('展示者', '评审者'), horizontal=True,
+                            key='console_role', label_visibility='collapsed') == '评审者'
+        page = st.radio('导航', PAGES, horizontal=True, key='console_page', label_visibility='collapsed')
     try:
         render_backend(request, page, reviewer, replay_cases)
     except httpx.HTTPStatusError as error:

@@ -43,10 +43,11 @@ def test_timeline_preserves_unknown_event_time_and_opens_exact_source(settings, 
         app, calls = inspector_app(client, build, monkeypatch)
         app.run()
         assert not app.exception
-        rows = app.dataframe[0].value
-        assert rows['事件起始'].tolist() == ['unknown', 'unknown']
-        assert 'Alex lives in Paris.' in rows['content'].tolist()
-        assert any('SUPERSEDE' in table.value.get('label', []).tolist() for table in app.dataframe[1:])
+        assert not app.dataframe
+        assert app.radio(key=f'console_memory_{build_id}').options == ['Alex lives in Paris.', 'Alex lives in Rome.']
+        assert any('事件时间：unknown → unknown' == item.value for item in app.caption)
+        assert any(item.value == 'Alex lives in Paris.' for item in app.text)
+        assert any('替代' in item.value for item in app.markdown)
         app.button(key=f'memory_source_{build_id}_open').click().run()
         assert not app.exception
         assert any(text.value == 'I live in Paris.' for text in app.text)
@@ -66,7 +67,7 @@ def test_trace_stages_and_answer_citations_open_delivered_source(settings, sampl
         for stage in ('initial', 'expanded', 'effective/delivered', 'answer/citations'):
             app.radio(key=f"trace_stage_{trace['trace_id']}").set_value(stage).run()
             assert not app.exception
-        app.button(key=f"trace_source_{trace['trace_id']}_answer/citations_open").click().run()
+        app.button(key=f"answer_source_{trace['trace_id']}_open").click().run()
         assert not app.exception
         assert any(text.value == 'I moved from Paris to Rome on 2 May 2023.' for text in app.text)
         assert any('exact wire：未记录' in item.value for item in app.caption)

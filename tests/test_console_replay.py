@@ -84,10 +84,15 @@ render_console(store.request, evidence_path=store.evidence_path, replay_cases=st
     app.run()
     app.radio(key='console_page').set_value('Memory').run()
     assert not app.exception
-    table = app.dataframe[0].value.set_index('content')
-    assert table.loc['Alex plans to visit Tokyo.', '陈述性质'] == 'plan'
-    assert table.loc['Alex does not own a car.', '极性'] == 'negative'
-    assert set(table['事件起始']) == {'unknown'}
+    assert not app.dataframe
+    build = store.data['builds'][0]
+    memories = store.data['memories'][build['build_id']]
+    for content, expected in (('Alex plans to visit Tokyo.', '计划 · plan'),
+                              ('Alex does not own a car.', '否定 · negative')):
+        memory = next(item for item in memories if item['content'] == content)
+        app.radio(key=f"console_memory_{build['build_id']}").set_value(memory['memory_id']).run()
+        assert any(expected in item.value for item in app.caption)
+        assert any('事件时间：unknown → unknown' == item.value for item in app.caption)
     app.radio(key='console_page').set_value('Query/Evidence').run()
     app.selectbox(key='console_replay_case').set_value('budget_failure').run()
     app.button(key='console_load_case').click().run()
@@ -96,6 +101,37 @@ render_console(store.request, evidence_path=store.evidence_path, replay_cases=st
     app.selectbox(key='console_replay_case').set_value('citation_anomaly').run()
     app.button(key='console_load_case').click().run()
     assert any('answer / invalid_output' in error.value for error in app.error)
+
+
+def test_invalid_trace_id_is_recoverable_and_replay_remains_read_only(monkeypatch):
+    from locomo_memory.console_replay import ReplayStore
+    monkeypatch.setitem(sys.modules, '__main__', sys.modules['__main__'])
+    monkeypatch.setattr(httpx, 'request', lambda *a, **kw: pytest.fail('Unexpected HTTP'))
+    monkeypatch.setattr(sqlite3, 'connect', lambda *a, **kw: pytest.fail('Unexpected database'))
+    store = ReplayStore(FIXTURE)
+    app = AppTest.from_string('''
+import streamlit as st
+from locomo_memory.console_ui import render_console
+store = st.session_state['store']
+render_console(store.request, evidence_path=store.evidence_path, replay_cases=store.cases)
+''', default_timeout=20)
+    app.session_state['store'] = store
+    app.run()
+    app.radio(key='console_page').set_value('Query/Evidence').run()
+    assert app.button(key='console_load_trace').disabled
+    assert not app.button(key='console_load_case').disabled
+    app.button(key='console_load_case').click().run()
+    assert any(text.value == 'Alex lives in Rome.' for text in app.text)
+    app.text_input(key='console_trace_id').set_value('not-a-saved-trace').run()
+    app.button(key='console_load_trace').click().run()
+    assert not app.exception and not app.error
+    assert any('未找到此 Trace ID' in warning.value for warning in app.warning)
+    assert not any(text.value == 'Alex lives in Rome.' for text in app.text)
+    app.button(key='console_load_case').click().run()
+    assert not app.exception and not app.error
+    assert any(text.value == 'Alex lives in Rome.' for text in app.text)
+    app.button(key=f"answer_source_{store.cases[0]['trace_id']}_open").click().run()
+    assert any(text.value == 'I moved from Paris to Rome on 2 May 2023.' for text in app.text)
 
 
 def test_source_inspector_does_not_display_mismatched_source_identity(monkeypatch):

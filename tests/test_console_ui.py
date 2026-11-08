@@ -60,7 +60,8 @@ def test_console_navigation_reads_memories_and_saved_trace_without_generation(se
         assert any(build_id in item.value for item in [*app.caption, *app.markdown])
         app.radio(key='console_page').set_value('Memory').run()
         assert not app.exception
-        assert any('Alex lives in Paris.' in table.value['content'].tolist() for table in app.dataframe)
+        assert 'Alex lives in Paris.' in app.radio(key=f'console_memory_{build_id}').options
+        assert not app.dataframe
         app.radio(key='console_page').set_value('Query/Evidence').run()
         app.text_input(key='console_trace_id').set_value(trace_id).run()
         app.button(key='console_load_trace').click().run()
