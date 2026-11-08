@@ -103,12 +103,26 @@ render_console(store.request, evidence_path=store.evidence_path, replay_cases=st
     assert any('answer / invalid_output' in error.value for error in app.error)
 
 
-def test_invalid_trace_id_is_recoverable_and_replay_remains_read_only(monkeypatch):
+@pytest.mark.parametrize('invalid_id, message', [
+    ('not-a-saved-trace', '未找到此 Trace ID'),
+    ('../health', 'Trace ID 格式无效'),
+    ('%2e%2e%2fhealth', 'Trace ID 格式无效'),
+    ('bad?id=private-input', 'Trace ID 格式无效'),
+])
+def test_invalid_trace_id_is_recoverable_and_replay_remains_read_only(monkeypatch, invalid_id, message):
     from locomo_memory.console_replay import ReplayStore
     monkeypatch.setitem(sys.modules, '__main__', sys.modules['__main__'])
     monkeypatch.setattr(httpx, 'request', lambda *a, **kw: pytest.fail('Unexpected HTTP'))
     monkeypatch.setattr(sqlite3, 'connect', lambda *a, **kw: pytest.fail('Unexpected database'))
     store = ReplayStore(FIXTURE)
+    calls = []
+    read = store.request
+
+    def recorded_read(method, path, **kwargs):
+        calls.append((method, path))
+        return read(method, path, **kwargs)
+
+    monkeypatch.setattr(store, 'request', recorded_read)
     app = AppTest.from_string('''
 import streamlit as st
 from locomo_memory.console_ui import render_console
@@ -122,10 +136,14 @@ render_console(store.request, evidence_path=store.evidence_path, replay_cases=st
     assert not app.button(key='console_load_case').disabled
     app.button(key='console_load_case').click().run()
     assert any(text.value == 'Alex lives in Rome.' for text in app.text)
-    app.text_input(key='console_trace_id').set_value('not-a-saved-trace').run()
+    app.text_input(key='console_trace_id').set_value(invalid_id).run()
+    calls.clear()
     app.button(key='console_load_trace').click().run()
     assert not app.exception and not app.error
-    assert any('未找到此 Trace ID' in warning.value for warning in app.warning)
+    assert any(message in warning.value for warning in app.warning)
+    if message == 'Trace ID 格式无效':
+        assert not any(path.startswith('/queries/') for _, path in calls)
+    assert all('private-input' not in item.value for item in app.warning)
     assert not any(text.value == 'Alex lives in Rome.' for text in app.text)
     app.button(key='console_load_case').click().run()
     assert not app.exception and not app.error

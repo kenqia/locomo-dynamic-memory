@@ -2,6 +2,7 @@
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+import re
 import runpy
 
 import httpx
@@ -140,6 +141,9 @@ def render_trace(request, build, replay_cases=(), reviewer=False):
         load_trace = st.button('读取已有 Trace', key='console_load_trace', disabled=not trace_id.strip())
     if load_trace or load_case:
         st.session_state.pop('console_saved_trace', None)
+        if not re.fullmatch(r'[A-Za-z0-9_-]+', trace_id.strip()):
+            st.warning('Trace ID 格式无效：只支持字母、数字、连字符和下划线。请核对 ID 后重试。')
+            return
         try:
             trace = request('GET', f'/queries/{trace_id.strip()}')
         except httpx.HTTPStatusError as error:
