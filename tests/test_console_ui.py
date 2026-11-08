@@ -57,7 +57,8 @@ def test_console_navigation_reads_memories_and_saved_trace_without_generation(se
         app, calls = console_app(client, monkeypatch)
         app.run()
         assert not app.exception
-        assert any(build_id in item.value for item in [*app.caption, *app.markdown])
+        assert app.selectbox(key=f'console_build_{dataset_id}_conv-a').value == build_id
+        assert not any(build_id in item.value for item in app.caption)
         app.radio(key='console_page').set_value('Memory').run()
         assert not app.exception
         assert 'Alex lives in Paris.' in app.radio(key=f'console_memory_{build_id}').options
@@ -101,10 +102,24 @@ def test_experiments_retains_unmeasured_full_denominator_as_unknown(client, monk
     app.run()
     app.radio(key='console_page').set_value('Experiments').run()
     assert not app.exception
-    table = app.dataframe[0].value.set_index('strategy')
-    assert table.loc['full_text', '完整分母 QA'] == 'unknown'
-    assert table.loc['hybrid_no_resolution', '完整分母 QA'] == 'unknown'
-    assert float(table.loc['dynamic', '完整分母 QA']) == pytest.approx(0.5151333813668602)
+    metrics = {item.label: item.value for item in app.metric}
+    assert metrics['完整分母 QA'] == '0.5151'
+    app.selectbox(key='experiment_group_strategy').set_value('full_text').run()
+    assert {item.label: item.value for item in app.metric}['完整分母 QA'] == 'unknown'
+    app.selectbox(key='experiment_group_strategy').set_value('hybrid_no_resolution').run()
+    assert {item.label: item.value for item in app.metric}['完整分母 QA'] == 'unknown'
+
+
+def test_overview_actions_navigate_without_generation(client, monkeypatch):
+    app, calls = console_app(client, monkeypatch)
+    app.run()
+    assert app.button(key='overview_memory').disabled
+    assert app.button(key='overview_trace').disabled
+    assert not app.button(key='overview_experiments').disabled
+    app.button(key='overview_experiments').click().run()
+    assert not app.exception
+    assert app.radio(key='console_page').value == 'Experiments'
+    assert all(method == 'GET' for method, _ in calls)
 
 
 def test_trace_from_other_build_is_rejected(settings, sample, monkeypatch):

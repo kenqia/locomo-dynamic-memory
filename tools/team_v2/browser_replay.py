@@ -94,7 +94,7 @@ def main():
 
         page.goto(args.url)
         page.add_style_tag(content='* { scroll-behavior: auto !important; }')
-        expect(page.get_by_text('Replay 快照已载入 · 无 API / 数据库', exact=True)).to_be_visible(timeout=60000)
+        expect(page.get_by_role('heading', name='Research Console', exact=True)).to_be_visible(timeout=60000)
         capture('replay-overview.png')
         page.get_by_text('Memory', exact=True).click()
         expect(page.get_by_role('heading', name=re.compile(r'^Memory ·'))).to_be_visible()
