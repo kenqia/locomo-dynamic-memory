@@ -66,6 +66,36 @@ Timeline 仍按 API Memory 记录顺序呈现，不冒称事件时间排序。�
 `viewport-*.png` 固定 1280×900；另一组扩展高度截图只用于查看完整内容，不当作相同视口比较。
 实际运行版本、环境、场景与结果以本页后续证据清单为准。历史素材和失败记录保留，不覆盖原结论。
 
+### 实际结果
+
+- 运行代码 `e6dd29a2091d35ba6201a3b2d3af3c64ad27f67a`：上述专项 **29 passed / 1 warning**（Starlette 历史弃用提示，39.34 秒）。完整 Linux 回归见 PR checks，不宣称 Windows 历史全套通过。
+- 固定旧版 `44d20dc` 从 Git 导出到新目录，`var/product-ui-rework-before-03` 六例通过，确认 `ui_reworked=false`。
+- 最终新版 `e6dd29a` 的 `var/product-ui-rework-final-02`：六类案例、两 Build、Memory/回答原文、四阶段、实验和 Demo 导航均通过；不存在 ID 与 `../health` 输入后的恢复通过。
+- Replay 仅启动 Streamlit，API 未启动、数据库未打开、真实 provider 请求 0、页面脚本错误 0。回放仍使用既有 hash-checked 合成快照。
+- `37e9910` 的 `var/product-ui-rework-live-01`：原合成 API/UI 四类案例与旧五阶段入口通过，启动器退出码检查通过，真实 provider 请求 0。后续 `e6dd29a` 仅收紧手输 ID 校验；本条旧入口浏览器证据明确绑定 `37e9910`。
+- 浏览器环境：Windows / Python 3.12.12 / Playwright 1.64.0 / Edge 157.0.4341.42。交互视口 1280×900。新旧两页默认核心内容目视检查不依赖宽表横向滚动。
+- 早期 `before-01` 被 Windows 沙箱拒绝启动 Playwright；改用获准的本地离线进程后成功。`after-01` 页面切换识别过早，`after-02` 自定义 radio 的鼠标定位失败，`after-03/04` 同名回答/来源定位歧义；修改验证脚本的等待、键盘操作和区域定位后通过。原失败目录保留在 ignored `var/`，没有计作成功。
+
+| 相同 1280×900 场景 | 修改前 `44d20dc` | 修改后 `e6dd29a` |
+| --- | --- | --- |
+| Memory：选中 Paris 并打开来源 | [旧版](assets/product-ui-rework/before-memory.png) | [新版](assets/product-ui-rework/after-memory.png) |
+| Query/Evidence：success 与来源 | [旧版](assets/product-ui-rework/before-query.png) | [新版](assets/product-ui-rework/after-query.png) |
+
+新版 [完整回答与原文截图](assets/product-ui-rework/after-query-full.png) 扩展了高度，仅用于查看内容，不属于相同视口对比。
+其他状态：[证据不足](assets/product-ui-rework/after-insufficient.png)、[引用异常](assets/product-ui-rework/after-citation-anomaly.png)、[预算失败](assets/product-ui-rework/after-budget-failure.png)。
+每份公开截图/运行结果的实际 commit、环境、场景与 SHA-256 见 [证据清单](assets/product-ui-rework/manifest.json)。
+原始结果 JSON 列出原本地运行的完整截图/视频文件名；本目录只收录清单中的截图与结果，未将本轮录像作为正式 MP4 交付。
+
+### Standards
+
+AI 规范轴：0 项明确违规，0 项重要异味。领域时间/来源边界保留；没有生产行为或数据层改动；原文继续安全文本展示。
+
+### Spec
+
+AI 需求轴最初发现 1 项 P2：任意 Trace ID 中的路径字符可能被 HTTP 客户端规范化成其他资源路径。
+`e6dd29a` 已在请求前校验安全单一路径段，并增加四类无效/不存在 ID 的恢复测试；复查 0 项未解决发现。
+两项 AI 检查均不构成人类方向确认或非作者验收。
+
 不调用真实模型，不连接研究数据库，不改 Build/Query/Prompt/模型默认值，不重建固定快照。
 合成回放不代表模型成绩，也未宣称已接入 Sidecar。
 

@@ -51,3 +51,8 @@ uv run --locked python tools/team_v2/check.py -q --tb=short tests/test_console_r
 
 浏览器验证与录屏命令见 [后续验证记录](../docs/team-v2/product-followup-validation.md)。
 当前维护的是可供成员复现的候选版本；非作者真人复核、集成和正式验收仍为 pending。
+
+2026-11-08 第一阶段 UI 返工候选：Memory 使用列表与选中详情，Query/Evidence 优先展示回答和引用。
+手工 Trace ID 读取在展开区，阶段 Trace 在“评审详情”中；两页的视图模式在“视图设置”切换。
+同视口新旧截图、实际版本和操作说明见 [第一阶段返工记录](../docs/team-v2/product-ui-rework.md)。
+负责人确认方向后再处理其余页面，目前不代表整个 Product 已验收。
