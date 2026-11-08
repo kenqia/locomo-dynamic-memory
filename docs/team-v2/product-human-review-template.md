@@ -57,4 +57,4 @@ uv run --locked python tools/team_v2/demo.py replay
 - 修复后复验版本、场景和结果：如适用，由本人填写。
 
 将实际记录留在 #23 / PR #39。组长的第一步方向确认、成员独立验收、CI、合并后集成验证分别记录；互相不替代。
-Overview/Experiments 等第二步视觉返工当前仍待方向确认，不能仅凭两页改善就记录为全 Product 返工验收通过。
+负责人已确认两页方向，Overview/Experiments 等后续候选见 [最终交接](product-final-handoff.md)。请按最终实际提交逐项核对，不预先记录全 Product 验收通过。

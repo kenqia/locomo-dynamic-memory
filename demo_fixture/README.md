@@ -56,3 +56,6 @@ uv run --locked python tools/team_v2/check.py -q --tb=short tests/test_console_r
 手工 Trace ID 读取在展开区，阶段 Trace 在“评审详情”中；两页的视图模式在“视图设置”切换。
 同视口新旧截图、实际版本和操作说明见 [第一阶段返工记录](../docs/team-v2/product-ui-rework.md)。
 负责人确认方向后再处理其余页面，目前不代表整个 Product 已验收。
+
+后续：负责人已确认方向，Overview、Experiments 与 Demo 引导的最终候选及职责说明见
+[Product 最终交接](../docs/team-v2/product-final-handoff.md)。旧证据保留；最终真人验收、合并和统一交付仍待完成。

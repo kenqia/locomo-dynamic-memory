@@ -34,6 +34,8 @@ Timeline、四阶段 Trace、完整原文跳转、六类合成案例与无数据
 2026-11-08：按负责人返工安排，先提交 Memory / Query/Evidence 两页的阅读层级修改。
 新旧同视口截图、实际运行版本及方向确认步骤见 [第一阶段返工记录](product-ui-rework.md)；其余页面重排等待负责人确认方向。
 
+负责人后续已放行；Overview、Experiments 和统一导航的后续候选、完整精度导出及 main 集成风险见 [最终交接](product-final-handoff.md)。
+
 ## 启动
 
 在自己的 clone 中安装 uv，然后运行：
