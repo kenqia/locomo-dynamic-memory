@@ -45,8 +45,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8363,
-      "sha256": "09e2b87a7e54906609bd222b07b40aaae88fd8ead851af8d8f70cdff0f2d66f9"
+      "bytes": 8535,
+      "sha256": "f324b18913e0c28d0ca56089a7a4703574d845b7d5c333ea2e22adb2c63e74a3"
     },
     {
       "path": "RELEASE_CODE_LINEAGE.md",
@@ -75,8 +75,8 @@
     },
     {
       "path": "TEAM_INTEGRATION_HANDOFF.md",
-      "bytes": 4238,
-      "sha256": "29fdbce2bdab3e7d29e1235fbef969c9a1ffb6bb439cd236d17bab6e5b791a22"
+      "bytes": 4162,
+      "sha256": "578bfc432f9a532e558051c556c9e2bf40cf9c17ac80e250b5f1c1d364a34f46"
     },
     {
       "path": "config.example.toml",
@@ -132,6 +132,16 @@
       "path": "docs/adr/0002-real-model-baseline-protocol.md",
       "bytes": 4309,
       "sha256": "bbb897a8d6af12ea053e56a26b71bee8150cb050fb3346d3d0c1b958f2c20a04"
+    },
+    {
+      "path": "docs/adr/0003-temporal-event-sidecar.md",
+      "bytes": 2219,
+      "sha256": "3e67999b230caaa5e240f8be212fc5b44b428482fa9ec8086160943f6ad0ffe7"
+    },
+    {
+      "path": "docs/adr/0004-sidecar-offline-adoption.md",
+      "bytes": 1863,
+      "sha256": "bf86106d085c5456a703a25d34b8c71dd5412ad7fef7580a64beccf1ca721485"
     },
     {
       "path": "docs/agents/domain.md",
@@ -779,6 +789,11 @@
       "sha256": "b6d49a6e8c169cadfc0d66d1790d5dc602748823d0766ae6002f1498a3292067"
     },
     {
+      "path": "docs/release/SIDECAR_FREEZE.md",
+      "bytes": 3371,
+      "sha256": "e93e214465525af187387cd7210126c925227cec067ba8de916e8ce30728a0ab"
+    },
+    {
       "path": "docs/release/SUPPLEMENT_ERRATA.md",
       "bytes": 3875,
       "sha256": "a9787148407bffd48506eec645bc59c24a4ce0ebf1857693995ffefde2356084"
@@ -827,6 +842,136 @@
       "path": "docs/release/product-integration-20261109/pre-integration-public-evidence-manifest.json",
       "bytes": 152567,
       "sha256": "8799de4e1083cfd8a4b08c6af61011c1a4e3cc4f6be5db9fbf9c5ff6e99441d4"
+    },
+    {
+      "path": "docs/release/sidecar-integration-20261109/comparison.json",
+      "bytes": 123333,
+      "sha256": "683e0706ec3c43aab65a560a6f5b901db7f2ee8d0f93c547690fb79f94e7e4d9"
+    },
+    {
+      "path": "docs/release/sidecar-integration-20261109/compatibility.json",
+      "bytes": 2960,
+      "sha256": "e55a1f77c667889c3b510c449aeda0da624ae7ae2754a376110a6029f4d121d6"
+    },
+    {
+      "path": "docs/release/sidecar-integration-20261109/human-review.md",
+      "bytes": 2488,
+      "sha256": "281e66c898d97452337f0dd454543140eddaba7d90000ee3daaf3157efe1776d"
+    },
+    {
+      "path": "docs/release/sidecar-integration-20261109/validation.json",
+      "bytes": 634,
+      "sha256": "403ffe7dacb3e6e084fb9c8590aea2314de2e10f5544bfdd74cc671d4670f315"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH01-FILES.sha256",
+      "bytes": 710,
+      "sha256": "d71d17b507037cb722dcf66a20369da5705090f6bd959def98fab5713967902c"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH01-README.md",
+      "bytes": 5051,
+      "sha256": "ea1aa114404f9059de1493e0f29eea969565b98768b16a574c5cc10e62a66d2e"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH01-VALIDATION.md",
+      "bytes": 1426,
+      "sha256": "40aa6cf08358118df737394f6cd4d0e66536b3ff14eb8dca9361e82609da47b8"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH02-FILES.sha256",
+      "bytes": 794,
+      "sha256": "31857114f099f0200aaff148b39d4ff3ed3061b22937c54cae5a383c2ba58638"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH02-README.md",
+      "bytes": 7015,
+      "sha256": "204882982033373d136f2e650e817747325359d4f7105c0b66bb44ebf1ebbd5f"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH02-SYNTHETIC-RESULT.json",
+      "bytes": 57344,
+      "sha256": "f03a02c82c23b7b669e4cde2d39c82e52699cdada8f36a5576a04e4ff2cf28c6"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH02-VALIDATION.md",
+      "bytes": 2659,
+      "sha256": "00584c349c5c5608859c04c5c75d57ce3a213a03ce094d7006d922b092aa5411"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH03-FILES.sha256",
+      "bytes": 826,
+      "sha256": "f90e707afa45da164c08f26c1acc375c2c79fcb6048910ef9b1a355407676fba"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH03-README.md",
+      "bytes": 5496,
+      "sha256": "d40f19b8526007c1b82d9ea87d0b22c8d21b2bc439ca1f6ef1300e9b55f8648b"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH03-VALIDATION.md",
+      "bytes": 2454,
+      "sha256": "25fdf408dd481a8e1ffe4d6359072daf367fd0a5d1c8f29a81be81a1687f9d4d"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH03-example/comparison.json",
+      "bytes": 118949,
+      "sha256": "b103d5811493cc40585e8634bf75a67596f1b5289d83390ce9a8905320566bb6"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH03-example/comparison.md",
+      "bytes": 2400,
+      "sha256": "e49cf59ffe8f897e14508f5a5154ec9eb6bafbfb08a15e2f4361fe89445e810c"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-ALGORITHM.md",
+      "bytes": 3261,
+      "sha256": "e3a7d595df5a9e1827d568243ec2f9ef8e5cda42687d2bc5b62b80dc35b6a424"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-DELIVERY-MANIFEST.json",
+      "bytes": 3017,
+      "sha256": "ccb132f34301b5be2839c6517b58050d279fe93ac52ebe294892672d70d07e3f"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-PR-DRAFT.md",
+      "bytes": 1509,
+      "sha256": "b6894e8c10174c9fcda437ea021efbb45aa4b7f8ee22a91145184b2c003838da"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-README.md",
+      "bytes": 2101,
+      "sha256": "a3b9dac169d9c346b005a8a7cc4dacbcb86fbc05513bc5841225570135730d27"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-REVIEW.md",
+      "bytes": 1097,
+      "sha256": "e93d51fc021e785c17a683677beb8efeaeff3cec9665d0b8283fd8f100bc341f"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-VALIDATION.md",
+      "bytes": 2650,
+      "sha256": "715df32f5d71b3f171bf529278172a85f89b0d2b72a4fa759ff1e9ad38a74b11"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-compatibility/compatibility.json",
+      "bytes": 2960,
+      "sha256": "4731b9f849f62fd9bf72468766f8ca3ae8718e47a77b18aea7d9dad17f216568"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-compatibility/compatibility.md",
+      "bytes": 675,
+      "sha256": "affbd22dd160b843903058db2f2f0bff2b9f0222bce8139a218113b36d5cfd10"
+    },
+    {
+      "path": "docs/sidecar-v0/PRODUCT-EXAMPLE.json",
+      "bytes": 7174,
+      "sha256": "855bed4636e7f8c44baafb597a1744ecbab362f0a8b6fca93a006534ce7178a5"
+    },
+    {
+      "path": "docs/sidecar-v0/sidecar-record.schema.json",
+      "bytes": 8829,
+      "sha256": "89f43d04356ac962eeae86172ceea44271c31120791c1a4a9402d82449f88d4f"
     },
     {
       "path": "docs/specs/evidence-flow-regression-20261109.md",
@@ -4224,6 +4369,16 @@
       "sha256": "60ee8dac5dafa369eb03925174342d51c4ec4705792d11968bd4d13213d84b42"
     },
     {
+      "path": "tests/fixtures/sidecar_cases.json",
+      "bytes": 30847,
+      "sha256": "429b0e0d95f18fbfbaac7b5fcbc83ef8ef740ce521d8f04ab4b2d073daaa140a"
+    },
+    {
+      "path": "tests/fixtures/sidecar_cases.sha256",
+      "bytes": 85,
+      "sha256": "d81191ac1f7fdcf4bd45019b947af465621e2fe3e902af4b3191f372366331da"
+    },
+    {
       "path": "tests/release/test_personal_release.py",
       "bytes": 8343,
       "sha256": "2c9fe738f0b8569c4e4279dc085ec459bc88534b59dbaba6aa484a85a5eb3378"
@@ -4634,6 +4789,41 @@
       "sha256": "b341f950a3ec3b6ef20f16b1ad09f587b6e3ccac0d9588d56a394f02581b3bd1"
     },
     {
+      "path": "tests/test_sidecar_adjacent_research.py",
+      "bytes": 5737,
+      "sha256": "8e9cd728153952e52edfb95be4bd4ebfcdfcc3df5d77358c42857980c4ec0168"
+    },
+    {
+      "path": "tests/test_sidecar_compare.py",
+      "bytes": 3646,
+      "sha256": "c5467380d83c840803f77d7d9c08fb2fbf1a997b8706045023a2f46959d2dd5b"
+    },
+    {
+      "path": "tests/test_sidecar_core.py",
+      "bytes": 12433,
+      "sha256": "a95e13cc34ce547922fc32d946936c656ef3a196c782b688f9711c99644f12a3"
+    },
+    {
+      "path": "tests/test_sidecar_io.py",
+      "bytes": 5760,
+      "sha256": "8749ac05320450cc7deb3f9b30df3a4754b722ce9330265ea438a5e9d3194d64"
+    },
+    {
+      "path": "tests/test_sidecar_release.py",
+      "bytes": 1043,
+      "sha256": "95a7d1e7bedbfdf9a889a1ae2801039be23d711dfdb1b32ded69e070746ffb13"
+    },
+    {
+      "path": "tests/test_sidecar_research.py",
+      "bytes": 6778,
+      "sha256": "6f7b7218e0ec664b54e720a35b981543e871c543e422e8491b70788b36922071"
+    },
+    {
+      "path": "tests/test_sidecar_schema.py",
+      "bytes": 6003,
+      "sha256": "e10db07e8ba7f7995345f84ad242deedcb23adb00cbd2b086a12ce2d97f409df"
+    },
+    {
       "path": "tests/test_source_answer_reader.py",
       "bytes": 5589,
       "sha256": "7b44825fc387bbb7b289de05c8f33283023e9c7ea935ff9aa070951263211fdf"
@@ -4964,6 +5154,41 @@
       "sha256": "301d1bb71e64766a42f87d03a42d03aad7d3beaac2b3e67bf35d0b15ea8672e9"
     },
     {
+      "path": "tools/research_v2/sidecar_cli.py",
+      "bytes": 4108,
+      "sha256": "c0b60826c3771ce65f33de131cc3b44732072a78abdd62345ad7d8a57b139d7c"
+    },
+    {
+      "path": "tools/research_v2/sidecar_compare.py",
+      "bytes": 10429,
+      "sha256": "c71788f6672fd47b87e8aead4e4917424965719eb853524133a1f960180b5934"
+    },
+    {
+      "path": "tools/research_v2/sidecar_compatibility.py",
+      "bytes": 7713,
+      "sha256": "91f884e1115c91704f4ed7f64492cb50aad58be477fb754a1e6b30e52400c6e5"
+    },
+    {
+      "path": "tools/research_v2/sidecar_core.py",
+      "bytes": 26931,
+      "sha256": "3077e1611b22c933e67c3e2fd371ef15333d2c49fcaaaf3f391deff5341ba1b0"
+    },
+    {
+      "path": "tools/research_v2/sidecar_io.py",
+      "bytes": 4351,
+      "sha256": "3b9f138f699345bc0892c269ca7ff862323d4790e5f2c6d9c5ab7fab8d11baa1"
+    },
+    {
+      "path": "tools/research_v2/sidecar_research.py",
+      "bytes": 4222,
+      "sha256": "4aaaf6fc9227d9497574c6b586bca2594c0878de3ae22af832a81a3bfcd9b2b2"
+    },
+    {
+      "path": "tools/research_v2/sidecar_schema.py",
+      "bytes": 6260,
+      "sha256": "e4ddfc9f822344909c10af099ec5a8b5eb110bf262b00ee320a52d638761f6f6"
+    },
+    {
       "path": "tools/team_v2/README.md",
       "bytes": 2169,
       "sha256": "9e18efc4a54e086c40701f4e4ea5224e80f62188fba22c114f5eacd19e177344"
@@ -5039,5 +5264,7 @@
       "sha256": "ffbc6bcee4449cb5398798e1a7285cf6c277c0582c09db82b20b820988e1981b"
     }
   ],
-  "source_product_commit": "0401155aa2c270c48b942e4b410a9f4b390156b3"
+  "source_product_commit": "0401155aa2c270c48b942e4b410a9f4b390156b3",
+  "source_sidecar_commit": "cd4db4c055d6d57256858ed3b7136ccea395122d",
+  "sidecar_adoption": "Default off; offline diagnostic only; ADR 0004; known temporal P2 deferred by owner."
 }
