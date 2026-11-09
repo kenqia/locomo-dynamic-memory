@@ -1,0 +1,14 @@
+{
+  "command": "uv run --locked --with pytest-xdist==3.8.0 python -m locomo_memory.release_cli run-tests -- --tb=short -n 4 --dist=loadfile --junitxml=/tmp/locomo-quality-20261109-backup/live-boundary-final-tests.xml",
+  "passed": 1024,
+  "skipped": 1,
+  "failures": 0,
+  "errors": 0,
+  "warnings": 5,
+  "pytest_seconds": 464.35,
+  "junit_sha256": "cba1d0e1e6798444a8ea0341b055c6d459cfd428e94d3cad2b87d98b1bbba56a",
+  "scope": "local workspace; includes 10 tests in existing untracked tests/test_top7_records.py; includes controlled_data; excludes live_model and local_embedding",
+  "skip_reason": "private M5 conversation-only snapshot unavailable",
+  "warning_reason": "existing Starlette TestClient/httpx deprecation",
+  "temporary_environment": "pytest-xdist==3.8.0 in uv overlay; no project dependency/lock changes"
+}

@@ -1,0 +1,193 @@
+{
+  "date": "2026-11-09",
+  "scope": "Source-backed entity/claim attribution audit; no global alias merge or frozen Memory edit",
+  "public_source_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+  "claims": [
+    {
+      "subject": "Nate",
+      "predicate": "owns turtles",
+      "status": "supported",
+      "source": "conv-42/D5:12",
+      "quote": "I'll be sure to send you pics of my turtles"
+    },
+    {
+      "subject": "Joanna",
+      "predicate": "owns turtles",
+      "status": "not_established",
+      "source": "conv-42/D5:11",
+      "quote": "I would get two turtles today if I could!"
+    },
+    {
+      "subject": "Joanna",
+      "predicate": "likes Nate’s turtles",
+      "status": "supported",
+      "source": "conv-42/D8:14",
+      "quote": "I love your turtles so much!"
+    }
+  ],
+  "alias_policy": "No Jo/she/Joanna identity edge asserted without explicit unambiguous original support",
+  "cases": [
+    {
+      "target_id": "conv-42/D5:11",
+      "target_speaker": "Joanna",
+      "sources": [
+        {
+          "dia_id": "D5:10",
+          "speaker": "Nate",
+          "text": "Pets definitely bring tons of joy. They are always there for us and they're so cute! Relaxing with them is a great way to chill.",
+          "session_time": "6:59 pm on 18 March, 2022"
+        },
+        {
+          "dia_id": "D5:11",
+          "speaker": "Joanna",
+          "text": "I wish I wasn't allergic! I would get two turtles today if I could! I found out recently I'm allergic to cockroaches as well, so who knows if I'll ever get a pet.",
+          "session_time": "6:59 pm on 18 March, 2022"
+        },
+        {
+          "dia_id": "D5:12",
+          "speaker": "Nate",
+          "text": "Sorry! Maybe there are other animals you could consider! In the meantime though, I'll be sure to send you pics of my turtles so you can still watch them grow without getting too close.",
+          "session_time": "6:59 pm on 18 March, 2022"
+        }
+      ],
+      "author_ai_assessment": "Nate is the supported turtle owner; Joanna liking/wishing for turtles is not ownership",
+      "human_review": "pending_user",
+      "independent_human_truth": false
+    },
+    {
+      "target_id": "conv-42/D5:12",
+      "target_speaker": "Nate",
+      "sources": [
+        {
+          "dia_id": "D5:11",
+          "speaker": "Joanna",
+          "text": "I wish I wasn't allergic! I would get two turtles today if I could! I found out recently I'm allergic to cockroaches as well, so who knows if I'll ever get a pet.",
+          "session_time": "6:59 pm on 18 March, 2022"
+        },
+        {
+          "dia_id": "D5:12",
+          "speaker": "Nate",
+          "text": "Sorry! Maybe there are other animals you could consider! In the meantime though, I'll be sure to send you pics of my turtles so you can still watch them grow without getting too close.",
+          "session_time": "6:59 pm on 18 March, 2022"
+        },
+        {
+          "dia_id": "D5:13",
+          "speaker": "Joanna",
+          "text": "Great idea! I'm already really invested in those little guys!",
+          "session_time": "6:59 pm on 18 March, 2022"
+        }
+      ],
+      "author_ai_assessment": "Nate is the supported turtle owner; Joanna liking/wishing for turtles is not ownership",
+      "human_review": "pending_user",
+      "independent_human_truth": false
+    },
+    {
+      "target_id": "conv-42/D8:14",
+      "target_speaker": "Joanna",
+      "sources": [
+        {
+          "dia_id": "D8:13",
+          "speaker": "Nate",
+          "text": "Speaking of which, here they go again!",
+          "session_time": "6:44 pm on 17 April, 2022"
+        },
+        {
+          "dia_id": "D8:14",
+          "speaker": "Joanna",
+          "text": "So cute! I love your turtles so much!",
+          "session_time": "6:44 pm on 17 April, 2022"
+        },
+        {
+          "dia_id": "D8:15",
+          "speaker": "Nate",
+          "text": "Me too! I love watching them play to simply enjoy the peaceful moments of life. Sometimes I even bring them in the kitchen so they can watch me make food like this!",
+          "session_time": "6:44 pm on 17 April, 2022"
+        }
+      ],
+      "author_ai_assessment": "Nate is the supported turtle owner; Joanna liking/wishing for turtles is not ownership",
+      "human_review": "pending_user",
+      "independent_human_truth": false
+    },
+    {
+      "target_id": "conv-42/D20:2",
+      "target_speaker": "Joanna",
+      "sources": [
+        {
+          "dia_id": "D20:1",
+          "speaker": "Nate",
+          "text": "Hey Joanna! Long time no talk. So much has happened. Look how cute they are! Hanging with them has been a big help, especially recently. Speaking of which, I just had a letdown in a video game tourney - I didn't do too great, even though I tried. It was a setback, but I'm trying to stay positive.",
+          "session_time": "6:03 pm on 5 September, 2022"
+        },
+        {
+          "dia_id": "D20:2",
+          "speaker": "Joanna",
+          "text": "Hey Nate! Cute turtles! Bummer about the setback. Any positive vibes comin' your way? I just revised on of my old recipes and made this!",
+          "session_time": "6:03 pm on 5 September, 2022"
+        },
+        {
+          "dia_id": "D20:3",
+          "speaker": "Nate",
+          "text": "Hey Joanna, yeah it's a bummer that I didn't do well. But it's all part of the learning curve, you know? Also that looks super good! Anyways, how are you holding up?",
+          "session_time": "6:03 pm on 5 September, 2022"
+        }
+      ],
+      "author_ai_assessment": "Nate is the supported turtle owner; Joanna liking/wishing for turtles is not ownership",
+      "human_review": "pending_user",
+      "independent_human_truth": false
+    },
+    {
+      "target_id": "conv-42/D24:3",
+      "target_speaker": "Nate",
+      "sources": [
+        {
+          "dia_id": "D24:2",
+          "speaker": "Joanna",
+          "text": "Hey Nate! I have been revising and perfecting the recipe I made for my family and it turned out really tasty. What's been happening with you?",
+          "session_time": "2:01 pm on 21 October, 2022"
+        },
+        {
+          "dia_id": "D24:3",
+          "speaker": "Nate",
+          "text": "Hey Joanna! That's cool. I've been getting so stressed lately because of my tournament progress - tough competitors - but my turtles always cheer me up.",
+          "session_time": "2:01 pm on 21 October, 2022"
+        },
+        {
+          "dia_id": "D24:4",
+          "speaker": "Joanna",
+          "text": "Pets have a way of brightening our days. I still have that stuffed animal dog you gave me! I named her Tilly, and she's always with me while I write.",
+          "session_time": "2:01 pm on 21 October, 2022"
+        }
+      ],
+      "author_ai_assessment": "Nate is the supported turtle owner; Joanna liking/wishing for turtles is not ownership",
+      "human_review": "pending_user",
+      "independent_human_truth": false
+    },
+    {
+      "target_id": "conv-42/D25:26",
+      "target_speaker": "Joanna",
+      "sources": [
+        {
+          "dia_id": "D25:25",
+          "speaker": "Nate",
+          "text": "Yeah, they each do. One is more adventurous while the other is more reserved, which I find cute. Having them around brings me joy and they make great companions.",
+          "session_time": "8:16 pm on 25 October, 2022"
+        },
+        {
+          "dia_id": "D25:26",
+          "speaker": "Joanna",
+          "text": "That's super cool! I never knew turtles could be so interesting until I met your turtles. Wow!",
+          "session_time": "8:16 pm on 25 October, 2022"
+        },
+        {
+          "dia_id": "D25:27",
+          "speaker": "Nate",
+          "text": "I've always liked turtles since I was a boy, so I know all about them!",
+          "session_time": "8:16 pm on 25 October, 2022"
+        }
+      ],
+      "author_ai_assessment": "Nate is the supported turtle owner; Joanna liking/wishing for turtles is not ownership",
+      "human_review": "pending_user",
+      "independent_human_truth": false
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-09",
+  "baseline_producer": "d3c4ae10fb73d70eabea42f5333e721168574190",
+  "candidate_producer": "b3c9d0f4f4929de55df714523fff2edcd28f6548",
+  "paid_runner_commit": "3be79108da8e98b1dd88180414e6f0d23fb0fb36",
+  "offline_only_validator_fix_commit": "911ed2cb7dc514563dd1904802113da332492942",
+  "paid_run_reexecuted_after_fix": false,
+  "level_e_generation_freeze_sha256": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+  "runner_hashes_at_paid_execution": {
+    "live_boundary.py": "0c765a9b07be6334a6b91cf75d3676a72907d677d6ed2dd51821fe96401b5ae1",
+    "live_boundary_worker.py": "4d190d4919b973a817b4d95a4975dda4634f71e3e8a7920307f4d3ac4250e6a3"
+  },
+  "current_code_files": {
+    "tools/m5/live_boundary.py": "0c765a9b07be6334a6b91cf75d3676a72907d677d6ed2dd51821fe96401b5ae1",
+    "tools/m5/live_boundary_worker.py": "e8f279a46854b63197c13606246cca2813d6426b6513ca462e6f80d0b96057f1",
+    "tests/test_live_boundary.py": "ff4609fae331ba612aa0bb4f9ca0bc2afaa1b835500b088f9c521f1f21072639"
+  },
+  "files": {
+    "experiments/live-boundary-20261109/HUMAN_OUTPUTS.md": "863f6b2c78d5ac9750c6ea888c66319b4b1cc902b4c6016e7b854166af8bae58",
+    "experiments/live-boundary-20261109/HUMAN_REVIEW.md": "8a16e088176e00c4a6a0798411cd6855cbe6be19f75e2a59d6931ec9e540e6a0",
+    "experiments/live-boundary-20261109/PROTOCOL.md": "983eb999080e090ab98de4a3d37d242b060234bb0055a01caff8a859959914fd",
+    "experiments/live-boundary-20261109/README.md": "36fcd55f2563051122e213b5efa696d01c18905ad95bf53d9181f5d92a794bd7",
+    "experiments/live-boundary-20261109/ai-review-summary.json": "47edf7a8c91033f674bb00c51073e0eb495c52d01ee163fd1d5518751296d228",
+    "experiments/live-boundary-20261109/ai-review.json": "17973a0a7a900758eb417c5af85d63a0f6d263fb847cb7e6aa9d544d8fd26dd5",
+    "experiments/live-boundary-20261109/author-audit.json": "26fa50cf7868583b08866bae09a25744f77b7a7c84e166d54b98e8697b65b130",
+    "experiments/live-boundary-20261109/blind-key.json": "1698f8c46cad32ff2dcba85cb79d22c48a4235797552b70ce560d221babeed5d",
+    "experiments/live-boundary-20261109/entity-source-audit.json": "fc37e956f3f339becea29adab7a57cbe084ad6b9bf2ce41750f08f984f6160f2",
+    "experiments/live-boundary-20261109/generation-freeze.json": "a971d2832ae2287cf15ec78b04837c8b7679169f85c7be5a7fdfe8921d608f19",
+    "experiments/live-boundary-20261109/human-review.csv": "dd702f4114666d7acd3a34b025d0be254a2a67d96eeec9880c567b065012febd",
+    "experiments/live-boundary-20261109/offline-tests.json": "e252100b06ca4378b38a59eb1839cabe0b63358961608a81fb9bbb8d1df5f3a2",
+    "experiments/live-boundary-20261109/outputs.json": "e53ebc2f7f4ed0163c59cf96e8ff238faa5f72a9a00d034a499daeff9de7b616",
+    "experiments/live-boundary-20261109/plan.json": "353772e45e8e771c6d2ca0fe3189c4dd68d4fc75afa21bb9360ba7339ae3f6b7",
+    "experiments/live-boundary-20261109/pricing.json": "37397e73f2a42ee1b979324c1b11289fb4e69448ddf7e45def3536b225e38e21",
+    "experiments/live-boundary-20261109/results.json": "87cc34fdfa15fd69b42e37bcd884cbe4a32b8704cb74243d233b586e16d34ae8",
+    "experiments/live-boundary-20261109/review-freeze.json": "aabdc565b8ef46a7d50d11d40c5b2a4b4f35557822c9ddcce5f003d5ae6d1dd8",
+    "experiments/live-boundary-20261109/review-packets.json": "2f18e7854380db15cf1c510d265e6ee8d37ac1caadaa9fd2d7d64a3a73335878",
+    "experiments/live-boundary-20261109/validation.md": "abf9e2a60ce1e2e9a38fb4d389173dcc45663f89565faf18546bc58f025f2083"
+  },
+  "updated_document_files": {
+    "README.md": "45b99163c09b318394528abec0eb29c4f9de2056c74d34e1f8d1118f6472c995",
+    "PERSONAL_EXPERIMENT_SUMMARY.md": "c11e1d5635f8fb8ae5145c9a509e08d2ed7fc8b127f18165a8d047c86a0551d1",
+    "EXPERIMENT_ARCHIVE_INDEX.md": "32b19c584469d87f5d61b98339aca4b55e266131d66bfd35cc47cf851fac3668",
+    "RELEASE_MANIFEST.md": "1d745fbb4773068b3320c010de211cbde9d0a88be5d0bcad59cc79e7f9962827",
+    "docs/m5-development/EXPERIMENT_RESULTS.md": "ad5cc16cb448e4bc381b61a826951def240f350053982173bf37e6bcb1f43d35",
+    "docs/m5-development/LEVEL_E_RESULTS_V1.md": "d5a365e65e6630cb35795184042b0ef53688937b2e172c08828aac5a75240415",
+    "docs/m5-development/ERROR_ANALYSIS.md": "3bc8edb29ce8b809f21bf76ff2106b8e24f881509b4f22fdf162048819946658",
+    "docs/release/SUPPLEMENT_ERRATA.md": "63555334efda7ebd000d1bb3f7feb1761d8d82f6a6cb2d82510f674a5734150f",
+    "docs/supplement/supplement.md": "653c34648ade695202b16a35803a97999dbd431ca343d62180ee8265741a5be6"
+  },
+  "supplement_pdf": {
+    "path": "docs/supplement/supplement.pdf",
+    "pages": 39,
+    "bytes": 3503510,
+    "sha256": "95f343b05c1b7299647b7db6a166d47a0877a95063e419f04f1832f0d4bc7c54"
+  },
+  "previous_pdf": {
+    "commit": "b3c9d0f4f4929de55df714523fff2edcd28f6548",
+    "pages": 38,
+    "sha256": "e72a074cd73550911fc6a310a6725061fa8d8c72b3aae8adb49a99e871b404da",
+    "preserved_manifest": "experiments/evidence-flow-20261109/provenance.json"
+  },
+  "budget": {
+    "physical_requests": 62,
+    "reserved_usd": "3.5863482",
+    "usage_unknown_requests": 1,
+    "reported_prompt_tokens": 1150920,
+    "reported_completion_tokens": 51849,
+    "reported_usage_peak_miss_upper_usd": "0.4074948",
+    "actual_invoice": "not_accessed",
+    "unknown_reservations_retained": true
+  },
+  "human_review": "pending_user",
+  "qa_improvement": "not established; ordinary mean difference negative; exploratory interval spans zero",
+  "public_secret_shape_scan_hits": 0,
+  "notion_sync": "no linked task identified; not updated",
+  "worktree_preservation": "20 original tracked paths byte-identical to pre-task binary patch; not staged"
+}

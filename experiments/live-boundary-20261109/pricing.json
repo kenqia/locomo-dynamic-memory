@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-09",
+  "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "public_extracted_text_sha256": "4ed33c955173b317e9d3d87aad0c66ad150635b3ff2ee775906e1e3d543a4828",
+  "model": "deepseek-flash",
+  "documented_version": "DeepSeek-V4.1-Flash-1017",
+  "input_peak_cache_miss_usd_per_million": "0.30",
+  "output_peak_usd_per_million": "1.20",
+  "billing": "not accessed; use conservative reservation plus peak-miss reported-usage estimate"
+}

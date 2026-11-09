@@ -1,5 +1,7 @@
 # E0–E25 实验档案索引
 
+2026-11-09 后续[真实边界回归](experiments/live-boundary-20261109/README.md)：12 题固定检索新旧对照、六组抽取窗口、四批 AI 审阅，实际 62 请求；普通题 F1 0.517381→0.456314，无整体收益证据，人工待填写。实际 runner=3be7910，candidate=b3c9d0f，baseline=d3c4ae1；本回归不追加为 E25 留出成绩。
+
 2026-11-09 新增[证据损失与边界回归](experiments/evidence-flow-20261109/README.md)：400 条冻结 Dynamic Trace 只读诊断、20 案完整证据包、21 个时间解析边界前后对比与固定决策 K 前缀回放。0 模型调用；已曝光数据上的回归，不属于 E25 独立测试，也不改变历史成绩。
 
 原件保留，未重新评分/生成。机器索引 `experiments/personal-release/experiment-archive-index.json` 逐条保存文档SHA、配置、commit、Build/Run、分母、审阅及成本原字段；缺字段不补造。历史源文档未必在公开包，明确in_public_package；它们可从固定Git对象或本机受控归档定位。

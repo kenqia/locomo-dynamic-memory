@@ -1,0 +1,362 @@
+{
+  "successful_batches": 2,
+  "planned_batches": 4,
+  "labeled_pairs": 9,
+  "planned_pairs": 18,
+  "attribution": "Same-model-family, identity-blinded AI review; not independent human truth",
+  "support_counts": {
+    "baseline": {
+      "supported": 6,
+      "not_executed": 1,
+      "unsupported": 2
+    },
+    "candidate": {
+      "supported": 9
+    }
+  },
+  "labels": [
+    {
+      "batch": "r00.json",
+      "arm": "candidate",
+      "packet_id": "e00",
+      "variant": "X",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "All four extracted memories are directly entailed by D5:11. The cockroach allergy is stated as fact; the wish not to be allergic is correctly marked negative; the two-turtles statement is correctly typed as an intention/counterfactual wish, not accomplished ownership; the uncertainty about ever getting a pet is captured. Time handling is appropriate: 'recently' left vague, 'today' anchored to the session date, 'ever' open-ended. No ownership of turtles is falsely attributed to Joanna.",
+      "quotes": [
+        {
+          "source_id": "public/conv-42/D5:11",
+          "quote": "I found out recently I'm allergic to cockroaches as well, so who knows if I'll ever get a pet."
+        },
+        {
+          "source_id": "public/conv-42/D5:11",
+          "quote": "I wish I wasn't allergic! I would get two turtles today if I could!"
+        }
+      ]
+    },
+    {
+      "batch": "r00.json",
+      "arm": "baseline",
+      "packet_id": "e00",
+      "variant": "Y",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "Content matches the source and correctly avoids treating the turtle wish as ownership. The only difference from X is the state_dimension label 'pet_acquisition' instead of 'pet_ownership', which is arguably more accurate for a hypothetical acquisition. Facts, polarity, and time anchoring are all supported by D5:11.",
+      "quotes": [
+        {
+          "source_id": "public/conv-42/D5:11",
+          "quote": "I wish I wasn't allergic! I would get two turtles today if I could!"
+        },
+        {
+          "source_id": "public/conv-42/D5:11",
+          "quote": "I found out recently I'm allergic to cockroaches as well, so who knows if I'll ever get a pet."
+        }
+      ]
+    },
+    {
+      "batch": "r00.json",
+      "arm": "baseline",
+      "packet_id": "e04",
+      "variant": "X",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "All three memories are entailed by D24:3: stress from tournament progress ('lately' left vague), tough competitors, and Nate's turtles cheering him up (correctly attributed to Nate, not Joanna). No unsupported ownership claims.",
+      "quotes": [
+        {
+          "source_id": "public/conv-42/D24:3",
+          "quote": "I've been getting so stressed lately because of my tournament progress - tough competitors - but my turtles always cheer me up."
+        }
+      ]
+    },
+    {
+      "batch": "r00.json",
+      "arm": "candidate",
+      "packet_id": "e04",
+      "variant": "Y",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "Both memories are entailed by D24:3. The stress memory merges 'tournament progress and tough competitors' into one state, which is faithful to the source. Nate's turtle ownership is correctly attributed. Slightly less granular than X but not incorrect.",
+      "quotes": [
+        {
+          "source_id": "public/conv-42/D24:3",
+          "quote": "I've been getting so stressed lately because of my tournament progress - tough competitors - but my turtles always cheer me up."
+        }
+      ]
+    },
+    {
+      "batch": "r00.json",
+      "arm": "baseline",
+      "packet_id": "q02",
+      "variant": "X",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "uncertain",
+      "missing_supported_fact": "no",
+      "reason": "Answer correctly identifies Chicago and notes the period is not fully covered, which is honest. However, the answer text 'Chicago; and he met back up with his teammates on August 15' could imply a location answer for the whole interval; the explanation does clarify the gap. The reunion on the 15th is a fact but not a location, so including it in the answer is slightly misleading. Overall support is acceptable but temporal precision for the full interval is uncertain.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-43/D6:3",
+          "quote": "I was in Chicago, it was awesome!"
+        },
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-43/D7:1",
+          "quote": "I met back up with my teammates on the 15th after my trip"
+        }
+      ]
+    },
+    {
+      "batch": "r00.json",
+      "arm": "candidate",
+      "packet_id": "q02",
+      "variant": "Y",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "Answer precisely states Chicago on August 11 and no supported location for August 12-15, correctly distinguishing the reunion fact from a location. This matches the sources and the narrower calendar constraint.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-43/D6:3",
+          "quote": "I was in Chicago, it was awesome!"
+        },
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-43/D7:1",
+          "quote": "I met back up with my teammates on the 15th after my trip"
+        }
+      ]
+    },
+    {
+      "batch": "r00.json",
+      "arm": "baseline",
+      "packet_id": "q06",
+      "variant": "X",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "uncertain",
+      "reason": "Answer 'Go hiking; Audrey planned to bring snacks' is supported by D26:20-21. However, the question asks what Andrew and Audrey planned; the sources also show trail/dog plans (D26:25, D26:29) that X omits. Within the shown union, omitting the trail plans is a missing supported fact, though the core answer is correct.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-44/D26:20",
+          "quote": "Does Saturday sound good? We can grab some snacks and have a blast exploring."
+        },
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-44/D26:21",
+          "quote": "Saturday works for me! I'm going to bring some snack."
+        }
+      ]
+    },
+    {
+      "batch": "r00.json",
+      "arm": "candidate",
+      "packet_id": "q06",
+      "variant": "Y",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "Answer includes hiking, snacks, checking out the trail, and the lakeside trail with dogs, all supported by D26:20-29. Correctly treats these as plans, not accomplished events, and anchors Saturday to the session date.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-44/D26:25",
+          "quote": "Let's check out the trail first. It's a peaceful spot to bring the fur babies for the day."
+        },
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-44/D26:29",
+          "quote": "Let's try that trail by the lake with great views, perfect for us and the pups."
+        }
+      ]
+    },
+    {
+      "batch": "r00.json",
+      "arm": "candidate",
+      "packet_id": "q10",
+      "variant": "X",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "Answer 'No' is correct: on 27 March 2023 Andrew said 'No, no pets right now,' which falls within March 2023. The explanation correctly distinguishes later dog references (Toby, adoptions) as after March and the April statement as intention only. The family dog photo is correctly not treated as Andrew's own dog.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-44/D1:12",
+          "quote": "No, no pets right now. But I do love animals."
+        },
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-44/D2:8",
+          "quote": "I'm considering getting a dog too"
+        }
+      ]
+    },
+    {
+      "batch": "r00.json",
+      "arm": "baseline",
+      "packet_id": "q10",
+      "variant": "Y",
+      "semantic_support": "not_executed",
+      "person_attribution": "not_executed",
+      "temporal_precision": "not_executed",
+      "missing_supported_fact": "not_executed",
+      "reason": "Variant Y outcome is 'failed' with no answer and no memories, so it must be judged not_executed.",
+      "quotes": []
+    },
+    {
+      "batch": "r02.json",
+      "arm": "candidate",
+      "packet_id": "e02",
+      "variant": "X",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "not_applicable",
+      "missing_supported_fact": "no",
+      "reason": "Joanna's utterance 'I love your turtles so much!' directly supports that Joanna loves Nate's turtles; the affection is attributed to Joanna and the turtles to Nate ('your'), so ownership is not misattributed. No time expression is present, so temporal precision is not applicable.",
+      "quotes": [
+        {
+          "source_id": "public/conv-42/D8:14",
+          "quote": "So cute! I love your turtles so much!"
+        }
+      ]
+    },
+    {
+      "batch": "r02.json",
+      "arm": "baseline",
+      "packet_id": "e02",
+      "variant": "Y",
+      "semantic_support": "unsupported",
+      "person_attribution": "uncertain",
+      "temporal_precision": "not_applicable",
+      "missing_supported_fact": "yes",
+      "reason": "The empty extraction discards a clearly stated affection fact: Joanna explicitly says she loves Nate's turtles. An empty extraction cannot count as correct; the supported fact (Joanna's affection toward Nate's turtles) is missing.",
+      "quotes": [
+        {
+          "source_id": "public/conv-42/D8:14",
+          "quote": "So cute! I love your turtles so much!"
+        }
+      ]
+    },
+    {
+      "batch": "r02.json",
+      "arm": "baseline",
+      "packet_id": "q00",
+      "variant": "X",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "Tim states he is learning to play the violin, and the session date is 6 December 2023, matching the December 2023 constraint. The answer 'Violin' is directly entailed and correctly attributed to Tim.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-43/D21:11",
+          "quote": "I'm learning how to play the violin now."
+        },
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-43/D21:13",
+          "quote": "I've been playing for about four months now"
+        }
+      ]
+    },
+    {
+      "batch": "r02.json",
+      "arm": "candidate",
+      "packet_id": "q00",
+      "variant": "Y",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "Same substantive answer as X: Tim is learning the violin, stated on 6 December 2023, satisfying the December 2023 constraint. The explanation correctly places the activity within December 2023.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-43/D21:11",
+          "quote": "I'm learning how to play the violin now."
+        },
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-43/D21:13",
+          "quote": "I've been playing for about four months now"
+        }
+      ]
+    },
+    {
+      "batch": "r02.json",
+      "arm": "candidate",
+      "packet_id": "q04",
+      "variant": "X",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "Tim says he went to a castle during his UK trip 'last Friday'; anchored to the 16 November 2023 session, that is 10 November 2023, within the week before 16 November. The answer 'At a castle in the UK' is entailed and attributed to Tim.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-43/D18:1",
+          "quote": "I went to a castle during my trip to the UK last Friday"
+        }
+      ]
+    },
+    {
+      "batch": "r02.json",
+      "arm": "baseline",
+      "packet_id": "q04",
+      "variant": "Y",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "Same as X: the castle visit on 'last Friday' (10 November 2023) falls within the week before 16 November 2023, and the answer is correctly attributed to Tim.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-43/D18:1",
+          "quote": "I went to a castle during my trip to the UK last Friday"
+        }
+      ]
+    },
+    {
+      "batch": "r02.json",
+      "arm": "baseline",
+      "packet_id": "q08",
+      "variant": "X",
+      "semantic_support": "unsupported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "The source only states a plan ('are going camping') for the upcoming weekend; it does not establish that Andrew actually went camping or where. Treating the plan as an accomplished trip overstates support. The temporal anchoring to 5-6 August 2023 is reasonable, and the person is Andrew.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-44/D14:1",
+          "quote": "My girlfriend, Toby and I are going camping."
+        }
+      ]
+    },
+    {
+      "batch": "r02.json",
+      "arm": "candidate",
+      "packet_id": "q08",
+      "variant": "Y",
+      "semantic_support": "supported",
+      "person_attribution": "supported",
+      "temporal_precision": "supported",
+      "missing_supported_fact": "no",
+      "reason": "Y correctly recognizes that only a plan is delivered, not a completed trip, and returns insufficient. This matches the evidence: the source states an intention to go camping, not a confirmed destination or completed outing.",
+      "quotes": [
+        {
+          "source_id": "610b0aa9bfd787ff0882a806/conv-44/D14:1",
+          "quote": "My girlfriend, Toby and I are going camping."
+        }
+      ]
+    }
+  ],
+  "human_review": "pending_user",
+  "limits": [
+    "Two review batches failed validation and have no accepted labels.",
+    "Empty-source abstention had an impossible quote requirement in runner 3be7910; fixed offline in 911ed2c, not rerun.",
+    "Author audit identifies temporal false positives among accepted AI labels; do not treat them as truth or overall benefit."
+  ]
+}

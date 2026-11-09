@@ -1,0 +1,103 @@
+{
+  "reviewer": "author AI",
+  "independent_human_truth": false,
+  "human_review": "pending_user",
+  "changes": [
+    {
+      "question_id": "conv-43:qa:24",
+      "delta": 0.015151515151515166,
+      "kind": "answer_difference"
+    },
+    {
+      "question_id": "conv-43:qa:95",
+      "delta": -0.6666666666666666,
+      "kind": "execution_failure_difference"
+    },
+    {
+      "question_id": "conv-44:qa:115",
+      "delta": -0.2091503267973856,
+      "kind": "answer_difference"
+    },
+    {
+      "question_id": "conv-44:qa:22",
+      "delta": -0.75,
+      "kind": "answer_difference"
+    },
+    {
+      "question_id": "conv-44:qa:8",
+      "delta": 1.0,
+      "kind": "execution_failure_difference"
+    }
+  ],
+  "findings": [
+    {
+      "packet_id": "q02",
+      "question_id": "conv-43:qa:24",
+      "finding": "report_time_is_not_event_day",
+      "source_ids": [
+        "conv-43/D6:1",
+        "conv-43/D6:3",
+        "conv-43/D7:1"
+      ],
+      "quote": "I was in Chicago, it was awesome!",
+      "assessment": "Both arms infer Chicago on/as of August 11 from a past-tense report. Candidate explicit day is not firmly established. Accepted AI temporal_supported label does not prove it."
+    },
+    {
+      "packet_id": "q06",
+      "question_id": "conv-44:qa:115",
+      "finding": "strict_after_day_violated_in_both_explanations",
+      "source_ids": [
+        "conv-44/D26:20",
+        "conv-44/D26:21"
+      ],
+      "quote": "Does Saturday sound good?",
+      "assessment": "October 28, 2023 is Saturday; Saturday strictly after it is November 4. Both explanations select the same October 28. Gold only says Go hiking, so F1 cannot detect this time error. AI review accepted both temporal claims incorrectly."
+    },
+    {
+      "packet_id": "q11",
+      "question_id": "conv-44:qa:81",
+      "finding": "strict_before_day_violated_in_both_explanations",
+      "source_ids": [
+        "conv-44/D13:1"
+      ],
+      "quote": "My GF and I just had a great experience volunteering at a pet shelter on Monday",
+      "assessment": "July 24, 2023 is Monday; Monday strictly before it is July 17. Both explanations anchor to July 24, and candidate calls it before the requested date. Gold/source wording may be temporally inconsistent; human review is required."
+    },
+    {
+      "packet_id": "q08",
+      "question_id": "conv-44:qa:22",
+      "finding": "plan_vs_completion_boundary",
+      "source_ids": [
+        "conv-44/D14:1"
+      ],
+      "quote": "My girlfriend, Toby and I are going camping.",
+      "assessment": "Candidate refuses to assert a completed trip from a plan. This lowers Gold F1 but the shown evidence does not establish completion; scoring loss is not sufficient to label it a factual regression."
+    },
+    {
+      "packet_id": "e02",
+      "finding": "referent_recovered_but_context_not_cited",
+      "source_ids": [
+        "conv-42/D8:13",
+        "conv-42/D8:14"
+      ],
+      "quote": "So cute! I love your turtles so much!",
+      "assessment": "Candidate extracts Joanna loves Nate’s turtles; baseline is empty. Nate is resolved using the window, but the Memory cites only D8:14 and omits context needed for the named referent."
+    },
+    {
+      "packet_id": "e05",
+      "finding": "referent_recovered_but_context_not_cited",
+      "source_ids": [
+        "conv-42/D25:25",
+        "conv-42/D25:26"
+      ],
+      "quote": "I never knew turtles could be so interesting until I met your turtles.",
+      "assessment": "Candidate recovers an attitude/knowledge statement and names Nate; baseline is empty. The cited target alone does not identify the addressee, and context is not cited. Negative polarity also requires human interpretation of the temporal change."
+    }
+  ],
+  "extraction": {
+    "pairs": 6,
+    "baseline_empty": 2,
+    "candidate_empty": 0,
+    "claim": "No Joanna-owns-turtles error observed in these six fresh paired windows; this does not repair the historical frozen Memory or establish general accuracy."
+  }
+}

@@ -1,6 +1,8 @@
 > 此分支是从main导入公开allowlist tar的安全快照，未导入个人研究分支历史。新发布身份、当前验收及main保留材料边界见[安全快照发布记录](SAFE_PUBLIC_SNAPSHOT.md)。下述运行命令适用于本快照。
 
-2026-11-09：[证据损失诊断与边界回归](experiments/evidence-flow-20261109/README.md)已增加 20 案冻结证据包、查询时间范围修复和默认关闭的新 Build 上下文窗口；[实验汇总 PDF](docs/supplement/supplement.pdf)同步更新。没有新的真实模型 QA 成绩，Level E 原结论保持不变。
+2026-11-09：[证据损失诊断与边界回归](experiments/evidence-flow-20261109/README.md)已增加 20 案冻结证据包、查询时间范围修复和默认关闭的新 Build 上下文窗口；[实验汇总 PDF](docs/supplement/supplement.pdf)同步更新。此前免费诊断没有新增模型调用；后续实测另列如下，Level E 原结论保持不变。
+
+2026-11-09 后续[真实模型回归](experiments/live-boundary-20261109/README.md)完成：62 次请求，12 道已曝光题中普通题 F1 0.517381→0.456314，没有整体收益证据。六组实体探针有局部抽取恢复，但引用仍不完整；AI 审阅存在漏检，待用户填写[人工盲核查表](experiments/live-boundary-20261109/HUMAN_REVIEW.md)。E25 冻结成绩不变。
 
 # LoCoMo Personal Core Release
 

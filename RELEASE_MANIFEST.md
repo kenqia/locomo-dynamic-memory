@@ -1,6 +1,8 @@
 # M5 Personal Core Release — pending team integration
 
-2026-11-09 增量边界：[证据损失诊断与边界回归](experiments/evidence-flow-20261109/README.md)是原安全快照之后的main修复，使用独立的工件/producer哈希和新鲜测试记录。原public-evidence-manifest及导入SHA仍描述历史Release，不是本轮新代码和38页更新PDF的当前完整性清单；不要覆盖历史清单来伪造同一冻结身份。
+2026-11-09 真实回归增量：[实验与工件](experiments/live-boundary-20261109/README.md)独立记录 62 次请求、固定检索小样本负面结果与待人工核查。运行器 3be7910，911ed2c 仅后续离线校验修复；历史 Release/E25 清单不覆盖。最新 PDF 与本轮文件身份见[新 provenance](experiments/live-boundary-20261109/provenance.json)。
+
+2026-11-09 增量边界：[证据损失诊断与边界回归](experiments/evidence-flow-20261109/README.md)是原安全快照之后的main修复，使用独立的工件/producer哈希和新鲜测试记录。原public-evidence-manifest及导入SHA仍描述历史Release，不是本轮新代码和39页更新PDF的当前完整性清单；不要覆盖历史清单来伪造同一冻结身份。
 
 日期：2026-11-05（北京时间）。个人核心交付候选，独立于队友Product、Architecture、Delivery及课程平台提交。
 
