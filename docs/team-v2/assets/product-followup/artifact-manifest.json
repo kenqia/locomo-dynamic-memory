@@ -1,0 +1,68 @@
+{
+  "runtime_commit": "b1a91c7b4b88dd2b1f79bce8c3cb4a276821cd2e",
+  "replay_run": "product-d3-browser-13",
+  "live_run": "product-d3-live-browser-03",
+  "checksum_basis": "PNG/WebM raw bytes; JSON CRLF normalized to LF",
+  "files": [
+    {
+      "file": "console-replay-clip.webm",
+      "bytes": 8047680,
+      "sha256": "02d09bfba11ff04d38c67eccf70b2a6ddf80660166af1a7129a91408cd47c4ad"
+    },
+    {
+      "file": "live-browser-result.json",
+      "bytes": 501,
+      "sha256": "084bc2598355e6ddcb4a3beff556e9d2436a1a11fa9cc8a455ee05069a2cd841"
+    },
+    {
+      "file": "replay-budget_failure.png",
+      "bytes": 155777,
+      "sha256": "b85e8441e02377ed0205c669cebe8ffdd645e826f28625ee3534864a026af18a"
+    },
+    {
+      "file": "replay-citation_anomaly.png",
+      "bytes": 154085,
+      "sha256": "d23bf2c17bf417862f40677a7606699d80abe4d4a84ed9b5d102cef0cdc07a1a"
+    },
+    {
+      "file": "replay-demo.png",
+      "bytes": 159332,
+      "sha256": "31b65c772f7922ca55210887f84a480bc856d1ed6c1eefd15b054491b42fb720"
+    },
+    {
+      "file": "replay-experiments.png",
+      "bytes": 261619,
+      "sha256": "5acd2af294f6f4afffd53445d45a1491d68542e7e8db1a2f8502d398f9466376"
+    },
+    {
+      "file": "replay-insufficient.png",
+      "bytes": 151777,
+      "sha256": "f011dee6a6accd40269449be9f9d82196ad857212fe4ccfaf5b53cd7578d0a74"
+    },
+    {
+      "file": "replay-memory-source.png",
+      "bytes": 238034,
+      "sha256": "3d389b5fc883748153f752dce514c32e52b4bc29cd00fe2628fb505d27e301a9"
+    },
+    {
+      "file": "replay-overview.png",
+      "bytes": 109878,
+      "sha256": "d23a9c683a3627f67b67ed04fbfbc9b374cccbbf6bfe72ae62515fa833122263"
+    },
+    {
+      "file": "replay-result.json",
+      "bytes": 735,
+      "sha256": "644349515b360696d3fe5f917f175b75348aa68fd61ebc3dc42b247ba50c0914"
+    },
+    {
+      "file": "replay-success.png",
+      "bytes": 143530,
+      "sha256": "d7b8281cdf4dd87515730f7c229080b2aa5acab0084bb9b1b7ff1dd709ff1bc2"
+    },
+    {
+      "file": "video-playback.json",
+      "bytes": 136,
+      "sha256": "188d5565a42e192085963535dcad49e042b856e85da6a4ff6fca53d78166875c"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "pages": [
+    "Overview",
+    "Memory",
+    "Query/Evidence",
+    "Experiments",
+    "Demo"
+  ],
+  "main_hybrid_default_preserved": true,
+  "network_database_generation_attempts": 0,
+  "python": "3.12.12",
+  "main_commit": "f18d76dc3227f0fd5b22be8bb6d7c28b516b812a",
+  "product_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+  "merge_base": null,
+  "added_product_modules": [
+    "console_ui.py",
+    "console_replay.py",
+    "evidence_ui.py",
+    "frozen_report_ui.py",
+    "console_theme.py",
+    "console_widgets.py"
+  ],
+  "unchanged_main_core_sha256": {
+    "query_ui.py": "2c5a8fdf5e419044d0019306c76139949faaae5c8db982d54ee5c9156905ccc5",
+    "queries.py": "d262c228de6f21e065a0317e9e3dde66ade7fcf415d04da5862747909b087b35",
+    "config.py": "4c0d771b6c482ecfef0543026622c9e3dd807a6c89f36da8d9d4825bf98689db",
+    "ui.py": "6fb24b7adf57097f1a85fe0dd55c8639f578c6c40dba20d923bb94e2544f82fb",
+    "api.py": "449e19070cbeec5f6c606836b599169b3f80ffe0ac5f6d3c6e0f7abf6f5bd14e"
+  },
+  "scope": "Unmerged additive source candidate smoke only; not full main regression, production acceptance or a merge recommendation."
+}
