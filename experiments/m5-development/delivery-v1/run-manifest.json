@@ -1,0 +1,20 @@
+{
+  "original_database_sha256": "ffa299c36ba1d15a6148826dd14430dca6e4ebfa27069d7a141021987cda060c",
+  "original_unchanged": true,
+  "private_output": "/home/kenqia/my_folder/locomo-worktrees/m5-final-development-20261104/var/m5-development/delivery-v1",
+  "holdout_answers_read": false,
+  "provider_requests": 0,
+  "implementation_commit": "cfaab0e5afe8357f9d5454930eb08ad9c85c916f",
+  "implementation_sha256": {
+    "src/locomo_memory/m5_adaptive.py": "2317161471f0565445fc1637ba52b539000e919eb74bc60fa84fd2c77f82120f",
+    "src/locomo_memory/m5_api.py": "b79b00cb6cd0486f689ce82a6a19b5c96396dba55563f24cc18cf9137f8f8556",
+    "src/locomo_memory/m5_budget.py": "79aa27f054726d6815996a4776da83391ca5543af8bc055b9b99851f087d3d7d",
+    "src/locomo_memory/m5_compression.py": "198058471dd1256ac49039ed1b55b944af5c595be1b33de730a2e8e48f10fc1b",
+    "src/locomo_memory/m5_graph.py": "9612d38e32f162778e9d1452d483b59bf4d9a9558a98b216fc0eb632d3e2f93e",
+    "src/locomo_memory/m5_queries.py": "f6b767f02237e1794a9210d21a97a3bd5915cfed9a795c305528512931f98cb5",
+    "src/locomo_memory/m5_review.py": "b6a60fe8d25e789d3e1233f9ec6af0170e3ab56a54cd3a722b596d632e4f5397",
+    "src/locomo_memory/m5_ui.py": "5272514c90f6ccb47d06944d152dc8927bfe5204fd33368423b55f9971b7e497",
+    "src/locomo_memory/m5_wire_compression.py": "1d853eb4faebbc0479c53015443eab481ca70db93b264aaa63dd352787a0a397"
+  },
+  "script_sha256": "6f106e1dc7d971fce6c5f4632236052dd3263afda2af210d4ccb42ec84e4deeb"
+}

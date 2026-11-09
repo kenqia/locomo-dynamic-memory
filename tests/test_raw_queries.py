@@ -74,7 +74,7 @@ def published(client, sample):
     return {'dataset_id': dataset, 'sample_id': 'conv-a', 'build_id': bid, 'strategy': 'dynamic_raw_fallback', 'question': 'Where does Alex work?'}
 
 
-def test_dynamic_invalid_resolution_uses_audited_bounded_backup(settings, sample):
+def test_dynamic_invalid_resolution_stops_with_audited_failure(settings, sample):
     base = raw_provider([], enough=True)
     def provider(request):
         payload = json.loads(json.loads(request.content)['messages'][1]['content'])
@@ -87,21 +87,18 @@ def test_dynamic_invalid_resolution_uses_audited_bounded_backup(settings, sample
         query = {**published(client, sample), 'strategy': 'dynamic', 'question': 'Where does Alex live?'}
         state = client.get(f"/builds/{query['build_id']}/current-state").json()
         response = client.post('/queries', json=query)
-        assert response.status_code == 201, response.text
-        trace = response.json()
-        assert trace['strategy'] == 'dynamic'
-        assert trace['strategy_recovery']['executed_strategy'] == 'dynamic_raw_fallback'
-        assert trace['strategy_recovery']['reason'] == 'invalid_output'
-        assert trace['operations']['failed_dynamic_resolve']['calls']
-        assert trace['answer']['answer'] == 'Alex lives in Paris.'
-        assert trace['answer']['citations'][0]['source_ids'] == [f"{query['dataset_id']}/conv-a/D1:1"]
-        assert trace['resolution_budgets']['resolve']['input_token_count'] <= local.resolution_input_budget
+        assert response.status_code == 502, response.text
+        trace = client.get('/queries/' + response.json()['error']['trace_id']).json()
+        assert trace['error'] == {'stage': 'resolve', 'code': 'invalid_output'}
+        assert 'strategy_recovery' not in trace and 'raw_fallback' not in trace
+        assert trace['operations']['resolve']['calls']
+        assert trace['resolution_budgets']['resolve']['source_delivery']['status'] == 'request_attempted'
+        assert 'answer' not in trace
         assert client.get(f"/builds/{query['build_id']}/current-state").json() == state
-        assert client.get(f"/queries/{trace['trace_id']}").json() == trace
 
 
-@pytest.mark.parametrize('failure', ['invalid_backup', 'provider_unavailable'])
-def test_dynamic_backup_does_not_accept_invalid_evidence_or_hide_provider_errors(settings, sample, failure):
+@pytest.mark.parametrize('failure', ['invalid_output', 'provider_unavailable'])
+def test_dynamic_does_not_fallback_or_hide_provider_errors(settings, sample, failure):
     base = raw_provider([])
     attempted = []
     def provider(request):
@@ -123,11 +120,11 @@ def test_dynamic_backup_does_not_accept_invalid_evidence_or_hide_provider_errors
         trace = client.get('/queries/' + response.json()['error']['trace_id']).json()
         assert trace['outcome'] == 'failed'
         assert 'answer' not in trace
-        assert attempted == (['resolve', 'resolve_raw'] if failure == 'invalid_backup' else ['resolve'])
+        assert attempted == ['resolve']
         assert trace['usage_summary']['generation_calls'] == len(attempted) + 1
 
 
-def test_evaluation_reports_raw_evidence_and_failed_calls_used_by_dynamic_backup(settings, sample):
+def test_evaluation_reports_explicit_raw_evidence_and_costs(settings, sample):
     sample[0]['conversation']['session_2'][0]['text'] = 'I work for Cedar.'
     base = raw_provider([])
     def provider(request):
@@ -140,13 +137,13 @@ def test_evaluation_reports_raw_evidence_and_failed_calls_used_by_dynamic_backup
         inputs = client.post('/evaluation-inputs', json={'dataset_id':query['dataset_id'], 'samples':[
             {'sample_id':'conv-a', 'question':'Where does Alex work?', 'answer':'Cedar', 'category':4, 'evidence':['D2:1']}]}).json()
         response = client.post('/evaluation-runs', json={'wait':True, 'input_id':inputs['input_id'],
-            'strategies':['dynamic'], 'build_ids':{'conv-a':query['build_id']}})
+            'strategies':['dynamic_raw_fallback'], 'build_ids':{'conv-a':query['build_id']}})
         assert response.status_code == 201, response.text
         row = response.json()['results'][0]
         assert row['source_sets']['answer_context'] == [f"{query['dataset_id']}/conv-a/D2:1"]
         assert row['source_coverage']['answer_context'] == 1
         assert row['ranking_units']['answer_context'] == 'Memory + SourceTurn'
-        assert row['usage_summary']['generation_calls'] == 5
+        assert row['usage_summary']['generation_calls'] == 4
 
 
 def test_source_only_list_items_have_unambiguous_legal_memory_citations(settings, sample):
@@ -388,7 +385,7 @@ def test_controller_always_exposes_known_time_boundary_even_when_model_omits_it(
     observed = []
     model = DeepSeekModel(settings,api_key='synthetic-test-key',transport=httpx.MockTransport(raw_provider(observed,enough=True)))
     with TestClient(create_app(settings,model=model,embedder=ControlledEmbedder())) as client:
-        response = client.post('/queries',json={**published(client,sample),'requested_date':requested_date})
+        response = client.post('/queries',json={"strategy": "dynamic", **published(client,sample),'requested_date':requested_date})
         assert response.status_code == 201, response.text
         trace = response.json()
         assert trace['answer']['answer'] == 'Alex lives in Paris.'
@@ -518,7 +515,7 @@ def test_final_budget_omission_of_unneeded_group_keeps_supported_coverage(settin
     local = settings.model_copy(update={'evidence_token_budget': 500})
     model = DeepSeekModel(local, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
     with TestClient(create_app(local, model=model, embedder=ControlledEmbedder())) as client:
-        response = client.post('/queries', json={**published(client, sample), 'question': 'Where does Alex live?'})
+        response = client.post('/queries', json={"strategy": "dynamic", **published(client, sample), 'question': 'Where does Alex live?'})
         assert response.status_code == 201, response.text
         trace = response.json()
         assert trace['evidence_budget']['truncated'] is True

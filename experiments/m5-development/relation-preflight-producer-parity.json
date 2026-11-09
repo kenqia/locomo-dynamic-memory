@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "builds": [
+    {
+      "sample_id": "conv-26",
+      "build_id": "367c901b300440649bdc0bfba2af8010",
+      "task_count": 256,
+      "exact_ordered_history_match": true
+    },
+    {
+      "sample_id": "conv-30",
+      "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+      "task_count": 242,
+      "exact_ordered_history_match": true
+    },
+    {
+      "sample_id": "conv-41",
+      "build_id": "8d459492549b4a3e88005211f036addf",
+      "task_count": 313,
+      "exact_ordered_history_match": true
+    },
+    {
+      "sample_id": "conv-42",
+      "build_id": "c892596ac8884f43b4cf2098349a7fa5",
+      "task_count": 408,
+      "exact_ordered_history_match": true
+    }
+  ],
+  "provider_requests": 0,
+  "scope": "same selection and producer ordering verified against four frozen actual relation task sets"
+}

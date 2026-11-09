@@ -1,0 +1,13 @@
+{
+  "recorded_utc": "2026-11-04T07:36:29.929262+00:00",
+  "source": "explicit user clarification in this chat about final evaluation",
+  "user_statement": "DeepSeek V4.1-Flash-1017 ，然后不给开思考",
+  "published_model": "DeepSeek-V4.1-Flash-1017",
+  "all_new_generation_thinking": "disabled",
+  "low_is_disabled": false,
+  "api_alias_mapping_at_original_check": "deepseek-flash",
+  "immutable_provider_pin_verified": false,
+  "existing_frozen_experiments_relabelled": false,
+  "new_paid_authorization": false,
+  "holdout_qa_read": false
+}

@@ -1,0 +1,14 @@
+{
+  "build_command": "UV_PROJECT_ENVIRONMENT=$PWD/var/supplement-build-venv bash docs/supplement/build.sh",
+  "exit_code": 0,
+  "original_sha256": "2398340833f500690b6d511756ce04d117cae755cfca4a4e5a1489a36a007da3",
+  "rebuilt_sha256": "edf15fed6daa1b328e03eb235cfe32aaf02364b84ae281ab01c2669c85fb97d4",
+  "original_bytes": 3488513,
+  "rebuilt_bytes": 3488506,
+  "text_exact_equal": true,
+  "text_without_whitespace_equal": true,
+  "pages": 37,
+  "fonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nEFUQSN+NotoSerifCJKjp-Regular-Identity-H CID Type 0C       Identity-H       yes yes yes      4  0\nSGKXRN+NotoSerifCJKjp-Bold-Identity-H CID Type 0C       Identity-H       yes yes yes      6  0\nJNYVUL+DejaVuSansMono                CID TrueType      Identity-H       yes yes yes     81  0\n",
+  "date": "2026-11-05",
+  "figure_count": 20
+}

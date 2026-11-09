@@ -50,6 +50,30 @@ class RelationAttempts:
         db.execute("UPDATE relation_attempts SET status=?,completed_at=?,error_code=? WHERE task_id=? AND logical_attempt=?",
                    (status, utc_now(), error_code, task_id, attempt))
 
+    @staticmethod
+    def discard_local_rejection(db, build_id: str, task_id: str, attempt: int):
+        """Remove a provisional dispatch checkpoint proven not to have been sent.
+
+        Call only for the transport's explicit pre-HTTP budget/policy rejection.
+        Completed and response-observed calls remain; the logical attempt keeps
+        its rejection error. Generic timeout/crash records must stay unknown.
+        """
+        rows = db.execute("""SELECT provider_attempt,metadata_json FROM relation_provider_calls
+            WHERE task_id=? AND logical_attempt=?""", (task_id, attempt)).fetchall()
+        discarded = set()
+        for row in rows:
+            call = json.loads(row['metadata_json'])
+            if call.get('status') == 'started' and not call.get('response_received'):
+                discarded.add(call['call_id'])
+                db.execute('DELETE FROM relation_provider_calls WHERE task_id=? AND logical_attempt=? AND provider_attempt=?',
+                           (task_id, attempt, row['provider_attempt']))
+        if discarded:
+            raw = db.execute('SELECT model_metadata_json FROM build_versions WHERE build_id=?', (build_id,)).fetchone()[0]
+            metadata = json.loads(raw)
+            metadata['calls'] = [call for call in metadata['calls'] if call.get('call_id') not in discarded]
+            db.execute('UPDATE build_versions SET model_metadata_json=? WHERE build_id=?',
+                       (canonical_json(metadata), build_id))
+
     def recover(self, db):
         rows = db.execute("""SELECT c.*,t.build_id FROM relation_provider_calls c
             JOIN relation_tasks t USING(task_id)

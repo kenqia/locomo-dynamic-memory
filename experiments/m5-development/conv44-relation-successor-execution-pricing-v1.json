@@ -1,0 +1,22 @@
+{
+  "version": "m5-conv44-relation-successor-execution-pricing-v1",
+  "checked_utc": "2026-11-05T02:12:54.252590+00:00",
+  "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "scrape_id": "01a1a979-fdf2-77aa-8312-c77ccd6398a7",
+  "source_sha256": "2f5eb1847872264838808bf92a198d13d435b20d33e0b7e1dec317c7a7fb3220",
+  "max_age_ms": 0,
+  "model": "deepseek-flash",
+  "documented_version": "DeepSeek-V4.1-Flash-1017",
+  "input_peak_cache_miss_usd_per_million": ".30",
+  "output_peak_usd_per_million": "1.20",
+  "approved_policy": {
+    "model": "deepseek-flash",
+    "input_usd_per_million": "0.30",
+    "output_usd_per_million": "1.20",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768,
+    "max_requests": 3,
+    "max_usd": "0.2619648"
+  },
+  "immutable_weight_pin": false
+}

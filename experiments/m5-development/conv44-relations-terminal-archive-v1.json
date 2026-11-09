@@ -1,0 +1,38 @@
+{
+  "version": "m5-conv44-relations-terminal-archive-v1",
+  "checked_utc": "2026-11-04T16:28:23.890591+00:00",
+  "archive": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-relations-terminal-archive-v1",
+  "status": "relations_failed_not_complete",
+  "files": {
+    "authorization-template.json": "c466eb97de735ecb7066287a6bbbbf8c02148febf7c1a4358bcd10b47f91fad1",
+    "authorization.json": "e9b398234690427cf970f4745595522e53e37f99291c4bbab891c2bc8302cfdb",
+    "execution-started.json": "860fa22efe9b4f9f7efd3cb3b03e955a8ba5c0e07bddafc1560fd63267e677f9",
+    "failed-safe-diagnostics.json": "5acd47cfc4a954711856d98d50cbc3e4076bc039584a0dfcee118513a926ce11",
+    "independent-audit-script.py": "88f9704b76b1ea305c11d9b17d3849df04bf57867a35743503616000d195f2b8",
+    "independent-terminal.json": "86a648f7c4b61990ecee86ce6cad66c547d178c74edee243159bfffb60ad4fa6",
+    "inheritance.json": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e",
+    "memory.sqlite3": "c0379c21346a8ce6a0df9ec8295ad075e2f3669f7998ffdd82921dde39cbf69f",
+    "memory.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "memory.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "outcome.json": "69b09a6b01aca5b43d3aa140e3a1e522c4a31fcae88ee869e98b47cdedb51e3c",
+    "physical-requests.sqlite3": "df816414785bcde5e04d2f229dc5b68e6a9c09f617e4bb1f6d8eb144bdcecc7d",
+    "plan.json": "0920823b2c04d5d632df481df24ca60348b182fc760da8bb3a28f02cc5eb94cf",
+    "root-audit-script.py": "2a969ceac34f223ef6634ab0dcdb541260f838293af2fc853c10cf1df4117b36",
+    "settings.json": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "terminal-audit-v1.json": "ece3ef725c0bd56679809280fd9c764ed64d14197a0898cc16e5d151893ee79d"
+  },
+  "database_copy": "SQLite read-only backup, verified logical identity; WAL folded into backup",
+  "source_logical_identity": {
+    "database": "bf747f0dba9575cf7c3d98328cfa550eab80d9b32a6304d6c9bc68553dde7f8a",
+    "ledger": "aa3fedecccb9d5f292665c44f534d26cd359732e98e35fbccff6d571d0c9bd0a",
+    "plan": "0920823b2c04d5d632df481df24ca60348b182fc760da8bb3a28f02cc5eb94cf",
+    "settings": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e"
+  },
+  "root_terminal_sha256": "ece3ef725c0bd56679809280fd9c764ed64d14197a0898cc16e5d151893ee79d",
+  "independent_terminal_sha256": "86a648f7c4b61990ecee86ce6cad66c547d178c74edee243159bfffb60ad4fa6",
+  "source_unchanged": true,
+  "private_execution_stdout_stderr_excluded": true,
+  "holdout_qa_evidence_answers_read": false,
+  "actual_invoice": "not_accessed"
+}

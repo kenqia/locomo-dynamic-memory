@@ -1,0 +1,28 @@
+{
+  "kind": "ai_assisted_independent",
+  "reviewers": [
+    "/root/level_c_source_a",
+    "/root/level_c_source_b"
+  ],
+  "units": 200,
+  "full_conversation_source_turns": 2080,
+  "independent_of_generation": true,
+  "gold_read_by_reviewers": false,
+  "arm_names_and_scores_hidden_in_packets": true,
+  "all_items_reviewed_including_failures": true,
+  "per_unit_double_review": false,
+  "human_or_teacher_truth": false,
+  "reference_hashes": {
+    "packets.json": "194471e7ca8673ac27fefd67f3fa4b855288d24d16e2d5015214c20d01ad44ea",
+    "private-mapping.json": "5f3b4c1ff1e340793a882e51f058dcfddc6c6b79a5740495fd78935526815738",
+    "manifest.json": "1c289b121890c8cb8df767b6e7eb151742cdc33cbd7f362bb6a5e7f1b2442212",
+    "reviewer-a-input.json": "08bafee9596be04397c5d24a60b620b7881888d77d24296ad73082d3c969b89e",
+    "reviewer-b-input.json": "18d600e91c8e9096c316cec76683c84d4406954c493bee058c3b6c17d9da801a",
+    "reviewer-a-reviews.json": "16be19f7d987dd88ba1308b3295983708cc141b6db5ebccff2d7795425562ee0",
+    "reviewer-b-reviews.json": "4d0718855a9946cf75d86e4b82a93f9421bcf9f68afac210455be335d8b0c00f",
+    "merged-reviews-v1.json": "761e7db2aa0a4f7e80062d59765c65681d075b3b66e6d680a0525b2e6c8dfb9b"
+  },
+  "quote_records": 461,
+  "raw_review_quotes_committed": false,
+  "validation": "all200 review rows accepted by fixed semantic-review score; identity/hash/verbatim checks are not semantic truth"
+}

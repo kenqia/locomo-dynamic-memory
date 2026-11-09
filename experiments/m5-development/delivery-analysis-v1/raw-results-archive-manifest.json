@@ -1,0 +1,14 @@
+{
+  "replay-v1": {
+    "raw_sha256": "05518b4e4d358e42a1defe8e9c8256473bd8d45792ec1aed782b9e5d5adf019b",
+    "compressed_sha256": "3f7f7cca2f6c93a6a6b2ccad60a0ed5cf6c6ff656ef9e9fb4f4e18450ad61156",
+    "raw_bytes": 27804840,
+    "compressed_bytes": 1719957
+  },
+  "delivery-v1": {
+    "raw_sha256": "75bf6fd046f5ac27d62f0805100359a14ebcb49e975c7e5b91cb5a51a3b32ff5",
+    "compressed_sha256": "5e78f85ff0dc2dfdf09c71e195c11f809fa256e8c2afb94f7f7b32175239a851",
+    "raw_bytes": 63301722,
+    "compressed_bytes": 2512656
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "version": "m5-conv44-relation-readonly-preflight-v1",
+  "status": "read_only_preflight_not_authorized",
+  "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+  "source_database_logical_snapshot": "07ce1ee6d2a32c9b4c310e520c328134fea00cb7fc041776425770e618034e79",
+  "memory_count": 392,
+  "relation_tasks": 384,
+  "comparisons": 7134,
+  "omitted_history_comparisons": 28644,
+  "task_selection_sha256": "3db9815038c0dcc2a543a09031612fa9978fb9da8b7215e3a505012a1557f7ab",
+  "max_first_attempt_message_bytes": 38182,
+  "min_first_attempt_message_bytes": 10462,
+  "over_cap_tasks": 0,
+  "max_input_bytes": 160000,
+  "max_output_tokens": 32768,
+  "thinking": "disabled",
+  "request_bound": 1152,
+  "worst_reserved_usd": "100.5944832",
+  "scope": "pure planner; no index, task DB writes, model calls or QA",
+  "provider_requests": 0,
+  "holdout_qa_read": false
+}

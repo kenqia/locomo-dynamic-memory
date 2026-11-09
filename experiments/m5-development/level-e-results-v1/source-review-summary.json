@@ -1,0 +1,350 @@
+{
+  "version": "m5-level-e-reporting-v1",
+  "reporting_implementation_sha256": {
+    "tools/m5/level_e_reporting.py": "50687231bd01a603a0bd6872b07a8c64c27b89abacc7b7b41591df0f7ab6fb89",
+    "tools/m5/level_c_audit.py": "c8823a95c1c5a52212fb7a9b7138da50ac30efeef2218d28510feee03c2085ab",
+    "tools/m5/level_c_semantic_review.py": "933bdeac1a9a4498b6cf74a971583e9d5e219fd38c66e290c922f65861369ba2",
+    "tools/m5/level_c_results.py": "32a3a96b7f6f97f91c7621b0e08eb9ddab0c3819ed41980d93d6e48a64d446c5"
+  },
+  "generation_freeze_sha256": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+  "review_manifest_sha256": "b030f1cd63aeba84427827c9a750583fa346d8776821e8685401e9941ecde9a5",
+  "completed": true,
+  "overall": {
+    "planned": 800,
+    "reviewed": 800,
+    "unreviewed": 0,
+    "execution_outcomes": {
+      "succeeded": 783,
+      "failed": 17
+    },
+    "answer_kinds": {
+      "answered": 483,
+      "abstained": 300,
+      "failed": 17
+    },
+    "source_support": {
+      "positive": 483,
+      "negative": 167,
+      "denominator": 650,
+      "rate": 0.7430769230769231,
+      "undetermined": 45,
+      "not_applicable": 88
+    },
+    "citation_support": {
+      "positive": 392,
+      "negative": 239,
+      "denominator": 631,
+      "rate": 0.6212361331220285,
+      "undetermined": 22,
+      "not_applicable": 130
+    },
+    "abstention": {
+      "positive": 195,
+      "negative": 82,
+      "denominator": 277,
+      "rate": 0.703971119133574,
+      "undetermined": 23,
+      "not_applicable": 483
+    },
+    "wrong_person": {
+      "positive": 5,
+      "negative": 688,
+      "denominator": 693,
+      "rate": 0.007215007215007215,
+      "undetermined_or_not_applicable": 90
+    },
+    "wrong_event": {
+      "positive": 23,
+      "negative": 668,
+      "denominator": 691,
+      "rate": 0.03328509406657019,
+      "undetermined_or_not_applicable": 92
+    },
+    "wrong_time": {
+      "positive": 28,
+      "negative": 650,
+      "denominator": 678,
+      "rate": 0.04129793510324484,
+      "undetermined_or_not_applicable": 105
+    },
+    "list_omission": {
+      "positive": 40,
+      "negative": 648,
+      "denominator": 688,
+      "rate": 0.05813953488372093,
+      "undetermined_or_not_applicable": 95
+    }
+  },
+  "by_arm": {
+    "hybrid_no_resolution": {
+      "planned": 400,
+      "reviewed": 400,
+      "unreviewed": 0,
+      "execution_outcomes": {
+        "succeeded": 394,
+        "failed": 6
+      },
+      "answer_kinds": {
+        "answered": 239,
+        "abstained": 155,
+        "failed": 6
+      },
+      "source_support": {
+        "positive": 250,
+        "negative": 93,
+        "denominator": 343,
+        "rate": 0.7288629737609329,
+        "undetermined": 20,
+        "not_applicable": 31
+      },
+      "citation_support": {
+        "positive": 195,
+        "negative": 126,
+        "denominator": 321,
+        "rate": 0.6074766355140186,
+        "undetermined": 9,
+        "not_applicable": 64
+      },
+      "abstention": {
+        "positive": 100,
+        "negative": 43,
+        "denominator": 143,
+        "rate": 0.6993006993006993,
+        "undetermined": 12,
+        "not_applicable": 239
+      },
+      "wrong_person": {
+        "positive": 3,
+        "negative": 348,
+        "denominator": 351,
+        "rate": 0.008547008547008548,
+        "undetermined_or_not_applicable": 43
+      },
+      "wrong_event": {
+        "positive": 10,
+        "negative": 341,
+        "denominator": 351,
+        "rate": 0.02849002849002849,
+        "undetermined_or_not_applicable": 43
+      },
+      "wrong_time": {
+        "positive": 17,
+        "negative": 327,
+        "denominator": 344,
+        "rate": 0.04941860465116279,
+        "undetermined_or_not_applicable": 50
+      },
+      "list_omission": {
+        "positive": 25,
+        "negative": 324,
+        "denominator": 349,
+        "rate": 0.07163323782234957,
+        "undetermined_or_not_applicable": 45
+      }
+    },
+    "dynamic": {
+      "planned": 400,
+      "reviewed": 400,
+      "unreviewed": 0,
+      "execution_outcomes": {
+        "succeeded": 389,
+        "failed": 11
+      },
+      "answer_kinds": {
+        "abstained": 145,
+        "answered": 244,
+        "failed": 11
+      },
+      "source_support": {
+        "positive": 233,
+        "negative": 74,
+        "denominator": 307,
+        "rate": 0.758957654723127,
+        "undetermined": 25,
+        "not_applicable": 57
+      },
+      "citation_support": {
+        "positive": 197,
+        "negative": 113,
+        "denominator": 310,
+        "rate": 0.635483870967742,
+        "undetermined": 13,
+        "not_applicable": 66
+      },
+      "abstention": {
+        "positive": 95,
+        "negative": 39,
+        "denominator": 134,
+        "rate": 0.7089552238805971,
+        "undetermined": 11,
+        "not_applicable": 244
+      },
+      "wrong_person": {
+        "positive": 2,
+        "negative": 340,
+        "denominator": 342,
+        "rate": 0.005847953216374269,
+        "undetermined_or_not_applicable": 47
+      },
+      "wrong_event": {
+        "positive": 13,
+        "negative": 327,
+        "denominator": 340,
+        "rate": 0.03823529411764706,
+        "undetermined_or_not_applicable": 49
+      },
+      "wrong_time": {
+        "positive": 11,
+        "negative": 323,
+        "denominator": 334,
+        "rate": 0.03293413173652695,
+        "undetermined_or_not_applicable": 55
+      },
+      "list_omission": {
+        "positive": 15,
+        "negative": 324,
+        "denominator": 339,
+        "rate": 0.04424778761061947,
+        "undetermined_or_not_applicable": 50
+      }
+    }
+  },
+  "by_conversation": {
+    "conv-43": {
+      "planned": 484,
+      "reviewed": 484,
+      "unreviewed": 0,
+      "execution_outcomes": {
+        "succeeded": 480,
+        "failed": 4
+      },
+      "answer_kinds": {
+        "answered": 298,
+        "abstained": 182,
+        "failed": 4
+      },
+      "source_support": {
+        "positive": 280,
+        "negative": 84,
+        "denominator": 364,
+        "rate": 0.7692307692307693,
+        "undetermined": 28,
+        "not_applicable": 88
+      },
+      "citation_support": {
+        "positive": 266,
+        "negative": 67,
+        "denominator": 333,
+        "rate": 0.7987987987987988,
+        "undetermined": 17,
+        "not_applicable": 130
+      },
+      "abstention": {
+        "positive": 133,
+        "negative": 40,
+        "denominator": 173,
+        "rate": 0.7687861271676301,
+        "undetermined": 9,
+        "not_applicable": 298
+      },
+      "wrong_person": {
+        "positive": 2,
+        "negative": 388,
+        "denominator": 390,
+        "rate": 0.005128205128205128,
+        "undetermined_or_not_applicable": 90
+      },
+      "wrong_event": {
+        "positive": 15,
+        "negative": 374,
+        "denominator": 389,
+        "rate": 0.038560411311053984,
+        "undetermined_or_not_applicable": 91
+      },
+      "wrong_time": {
+        "positive": 13,
+        "negative": 366,
+        "denominator": 379,
+        "rate": 0.03430079155672823,
+        "undetermined_or_not_applicable": 101
+      },
+      "list_omission": {
+        "positive": 29,
+        "negative": 356,
+        "denominator": 385,
+        "rate": 0.07532467532467532,
+        "undetermined_or_not_applicable": 95
+      }
+    },
+    "conv-44": {
+      "planned": 316,
+      "reviewed": 316,
+      "unreviewed": 0,
+      "execution_outcomes": {
+        "succeeded": 303,
+        "failed": 13
+      },
+      "answer_kinds": {
+        "abstained": 118,
+        "answered": 185,
+        "failed": 13
+      },
+      "source_support": {
+        "positive": 203,
+        "negative": 83,
+        "denominator": 286,
+        "rate": 0.7097902097902098,
+        "undetermined": 17,
+        "not_applicable": 0
+      },
+      "citation_support": {
+        "positive": 126,
+        "negative": 172,
+        "denominator": 298,
+        "rate": 0.4228187919463087,
+        "undetermined": 5,
+        "not_applicable": 0
+      },
+      "abstention": {
+        "positive": 62,
+        "negative": 42,
+        "denominator": 104,
+        "rate": 0.5961538461538461,
+        "undetermined": 14,
+        "not_applicable": 185
+      },
+      "wrong_person": {
+        "positive": 3,
+        "negative": 300,
+        "denominator": 303,
+        "rate": 0.009900990099009901,
+        "undetermined_or_not_applicable": 0
+      },
+      "wrong_event": {
+        "positive": 8,
+        "negative": 294,
+        "denominator": 302,
+        "rate": 0.026490066225165563,
+        "undetermined_or_not_applicable": 1
+      },
+      "wrong_time": {
+        "positive": 15,
+        "negative": 284,
+        "denominator": 299,
+        "rate": 0.05016722408026756,
+        "undetermined_or_not_applicable": 4
+      },
+      "list_omission": {
+        "positive": 11,
+        "negative": 292,
+        "denominator": 303,
+        "rate": 0.036303630363036306,
+        "undetermined_or_not_applicable": 0
+      }
+    }
+  },
+  "interpretation": "independent source review, not teacher truth; literal refusal score is not semantic correctness",
+  "gold_read": false,
+  "provider_requests": 0,
+  "raw_text_emitted": false
+}

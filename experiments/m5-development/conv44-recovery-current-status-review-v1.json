@@ -1,0 +1,54 @@
+{
+  "version": "m5-conv44-recovery-current-status-review-v1",
+  "checked_utc": "2026-11-04T17:03:08.334907+00:00",
+  "status": "passed",
+  "reviewer": "/root/final_actual_review",
+  "checks": {
+    "all_five_documents_and_local_links": true,
+    "cumulative_cost_decimal_addition_and_nontransferable_budgets": true,
+    "archive_all_file_hashes_exact_and_immutable_logical_identity": true,
+    "manual_current_checkpoint_failure_qa_unlocked_level_e_boundaries": true
+  },
+  "documents_sha256": {
+    "docs/m5-development/CONV44_RELATION_RECOVERY_V1_RESULTS.md": "2689441051eed9501b23d796b22d5d44f528820efe30a8def578138b1aeb85f0",
+    "M5_CONV44_RELATION_RECOVERY_V1_HANDOFF.md": "c2e4976f14dd470d08747569a31880bc863b4de42d8d07c2628f03b19adec3b6",
+    "docs/m5-development/FINAL_DELIVERY_CHECKLIST.md": "962c24bab9b39e23b350e22f51841d28d7d1c7baeefcf21d8549da50e349e8d7",
+    "docs/m5-development/LEVEL_E_GATE.md": "ee1ea853be633c29557565f0042c00a5b91feb62fa464bc447561bd368529143",
+    "docs/m5-development/M5_CANDIDATE_DECISION.md": "83b429e1d2ec0f4b2eb964c792467d541ca96d3feb9bc344e21f731b15fd55b2"
+  },
+  "local_links_checked": 72,
+  "archive_manifest_sha256": "f65c4de088606fc82c0af347d5ef9114fe6f66532d7289498261c49ffc233d39",
+  "archive_files_checked": 19,
+  "archive_logical_identity": {
+    "database": "aa2f5984709a3702e9e9de0a4c651b14b0c9f0fb61feb007a841a4de21f5b9ca",
+    "ledger": "bd2244d24c7b876f135940f17dc452e79b677c7781bf0aa2ff78dda8e18a02cf",
+    "plan": "82251c43a541f86a089dd649337930c501dcb00717debeb6786651f04b93529b",
+    "settings": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e"
+  },
+  "cost_ledger_sha256": "b21010b2f766d23f8240f3265183c70b17563e89a3570bf2261d728cf7b76f4d",
+  "relation_tasks": {
+    "succeeded": 383,
+    "failed": 1
+  },
+  "stored_relations": 7114,
+  "approved_paid_phases": 8,
+  "cumulative_requests": 1862,
+  "cumulative_reserved_usd": "92.1054516",
+  "cumulative_known_usage_peak_upper_usd": "10.3629372",
+  "unknown_usage_requests": 7,
+  "unknown_reserved_usd": "0.3500316",
+  "failure_terminal_only": true,
+  "budget_transferred": false,
+  "holdout_qa_evidence_answers_read": false,
+  "configuration_locked": false,
+  "level_e_prepared": false,
+  "level_e_executed": false,
+  "sixth_export_complete": false,
+  "provider_requests_by_reviewer": 0,
+  "original_tests_rerun": false,
+  "new_successor_code_reviewed": false,
+  "archive_records_emitted": false,
+  "private_logs_read": false,
+  "audit_script_sha256": "120b9e1a5763f3c061550576e6d9a9a5e81ce907ec0d2a14c12b00be358fa2cd"
+}

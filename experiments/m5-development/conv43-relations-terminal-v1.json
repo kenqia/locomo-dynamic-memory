@@ -1,0 +1,65 @@
+{
+  "status": "related",
+  "scope": "conv-43 existing indexed Build relation phase only; no conv-44/rebuild/publish/query/QA",
+  "relation_tasks": {
+    "succeeded": 400
+  },
+  "task_error_codes": {},
+  "stored_relations": {
+    "undetermined": 7465,
+    "RETAIN": 60,
+    "UPDATE": 94,
+    "SUPERSEDE": 1
+  },
+  "projection_contract_verified": true,
+  "source_memory_fragments_indexes_unchanged": true,
+  "protected_tables_sha256": "7fb769de068529544249b061c248edf6549c4f70cef10a9cfee0bbb8eccea01d",
+  "other_builds_unchanged": true,
+  "published": false,
+  "query_or_evaluation_run": false,
+  "physical_requests": 408,
+  "request_statuses": {
+    "response_received": 401,
+    "transport_unknown": 7
+  },
+  "conservative_reserved_usd": "20.2028820",
+  "reported_usage": {
+    "prompt_tokens": 4044162,
+    "completion_tokens": 2255596,
+    "total_tokens": 6299758
+  },
+  "reported_usage_peak_cache_miss_upper_usd": "3.9199638",
+  "unknown_usage_requests": 7,
+  "remaining_requests": 792,
+  "remaining_reserved_capacity_usd": "84.5830380",
+  "call_outcomes": {
+    "succeeded": 400,
+    "model_timeout": 5,
+    "model_http_error": 2,
+    "invalid_output": 1
+  },
+  "call_error_codes": {
+    "model_timeout": 5,
+    "model_http_error": 2,
+    "known_source_required": 1
+  },
+  "attempt_elapsed_seconds_p50_p95": [
+    21.895177098000204,
+    63.22707729929933
+  ],
+  "elapsed_scope": "completed model-adapter physical attempts; excludes entire Build and query latency",
+  "actual_bill_usd": "not_measured",
+  "holdout_qa_read": false,
+  "relation_semantic_accuracy": "not_measured; source/schema validation is not independent truth",
+  "policy": {
+    "input_rate": "0.30",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768,
+    "max_requests": 1200,
+    "max_usd": "104.7859200",
+    "model": "deepseek-flash",
+    "output_rate": "1.20"
+  },
+  "plan_sha256": "3ecc4142916a7959b2c4fde9d421214ee872d0401bc5bf82f8d07b10478495c6",
+  "terminal": true
+}

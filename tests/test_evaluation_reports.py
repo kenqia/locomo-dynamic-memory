@@ -193,7 +193,7 @@ def test_query_trace_does_not_turn_unreported_usage_fields_into_zero(settings, s
     model = DeepSeekModel(settings, api_key='synthetic-test-key', transport=httpx.MockTransport(provider))
     with TestClient(create_app(settings, model=model, embedder=ControlledEmbedder())) as client:
         dataset_id, _ = complete_build(client, sample)
-        trace = client.post('/queries', json={'dataset_id': dataset_id, 'sample_id': 'conv-a', 'question': 'Where does Alex live?'}).json()
+        trace = client.post('/queries', json={"strategy": "dynamic", 'dataset_id': dataset_id, 'sample_id': 'conv-a', 'question': 'Where does Alex live?'}).json()
         usage = trace['usage_summary']
         assert usage['reported_tokens'] == {'prompt_tokens': 27, 'completion_tokens': 10, 'total_tokens': 30}
         assert usage['calls_with_partial_usage'] == 1

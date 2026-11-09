@@ -1,0 +1,39 @@
+{
+  "deleted_files": 0,
+  "reclaimed_bytes": 0,
+  "candidates": [
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105/.venv",
+      "category": "E",
+      "estimated_bytes": 437003858,
+      "reason": "rebuildable environment/cache candidate; no verified restoration proof",
+      "restoration_verified": false,
+      "delete_authorized": false
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/var/research-v2-phase9-20261104/venv",
+      "category": "E",
+      "estimated_bytes": 1069455851,
+      "reason": "rebuildable environment/cache candidate; no verified restoration proof",
+      "restoration_verified": false,
+      "delete_authorized": false
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/var/research-v2-phase9-20261104/ollama-models",
+      "category": "E",
+      "estimated_bytes": 522679201,
+      "reason": "rebuildable environment/cache candidate; no verified restoration proof",
+      "restoration_verified": false,
+      "delete_authorized": false
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/v2-6d-clean-clone/.venv",
+      "category": "E",
+      "estimated_bytes": 427130588,
+      "reason": "rebuildable environment/cache candidate; no verified restoration proof",
+      "restoration_verified": false,
+      "delete_authorized": false
+    }
+  ],
+  "estimated_candidate_bytes": 2456269498
+}

@@ -1,0 +1,146 @@
+{
+  "relation_accuracy": 0.8333333333333334,
+  "macro_f1": 0.7665130568356374,
+  "per_class_f1": {
+    "RETAIN": 0.8709677419354839,
+    "UPDATE": 0.5714285714285714,
+    "SUPERSEDE": null,
+    "CONFLICT": null,
+    "undetermined": 0.8571428571428571
+  },
+  "label_coverage": {
+    "RETAIN": 33,
+    "UPDATE": 4,
+    "SUPERSEDE": 0,
+    "CONFLICT": 0,
+    "undetermined": 23
+  },
+  "effective_selection_accuracy": 0.0,
+  "effective_denominator": 60,
+  "reviewed": 60,
+  "scorable": 60,
+  "planned": 60,
+  "missing_predictions": 0,
+  "undetermined_rate": 0.4666666666666667,
+  "reference_kinds": [
+    "ai_assisted_independent"
+  ],
+  "query_specific_effective_accuracy": "not_measured",
+  "pair_local_effective_accuracy": "not_measured",
+  "effective_limitation": "Frozen global projection is not a pair-local or query-specific prediction; no invented comparison",
+  "scope": "60 prediction-blind state pairs; independent AI reference, not human or course truth",
+  "per_conversation": {
+    "conv-26": {
+      "relation_accuracy": 0.8,
+      "macro_f1": 0.64,
+      "per_class_f1": {
+        "RETAIN": 0.88,
+        "UPDATE": null,
+        "SUPERSEDE": null,
+        "CONFLICT": null,
+        "undetermined": 0.4
+      },
+      "label_coverage": {
+        "RETAIN": 14,
+        "UPDATE": 0,
+        "SUPERSEDE": 0,
+        "CONFLICT": 0,
+        "undetermined": 1
+      },
+      "effective_selection_accuracy": 0.0,
+      "effective_denominator": 15,
+      "reviewed": 15,
+      "scorable": 15,
+      "planned": 15,
+      "missing_predictions": 0,
+      "undetermined_rate": 0.26666666666666666,
+      "reference_kinds": [
+        "ai_assisted_independent"
+      ]
+    },
+    "conv-30": {
+      "relation_accuracy": 0.8,
+      "macro_f1": 0.8640350877192983,
+      "per_class_f1": {
+        "RETAIN": 0.8421052631578947,
+        "UPDATE": 1.0,
+        "SUPERSEDE": null,
+        "CONFLICT": null,
+        "undetermined": 0.75
+      },
+      "label_coverage": {
+        "RETAIN": 10,
+        "UPDATE": 1,
+        "SUPERSEDE": 0,
+        "CONFLICT": 0,
+        "undetermined": 4
+      },
+      "effective_selection_accuracy": 0.0,
+      "effective_denominator": 15,
+      "reviewed": 15,
+      "scorable": 15,
+      "planned": 15,
+      "missing_predictions": 0,
+      "undetermined_rate": 0.3333333333333333,
+      "reference_kinds": [
+        "ai_assisted_independent"
+      ]
+    },
+    "conv-41": {
+      "relation_accuracy": 0.8666666666666667,
+      "macro_f1": 0.8063492063492063,
+      "per_class_f1": {
+        "RETAIN": 0.8,
+        "UPDATE": 0.6666666666666666,
+        "SUPERSEDE": null,
+        "CONFLICT": null,
+        "undetermined": 0.9523809523809523
+      },
+      "label_coverage": {
+        "RETAIN": 3,
+        "UPDATE": 2,
+        "SUPERSEDE": 0,
+        "CONFLICT": 0,
+        "undetermined": 10
+      },
+      "effective_selection_accuracy": 0.0,
+      "effective_denominator": 15,
+      "reviewed": 15,
+      "scorable": 15,
+      "planned": 15,
+      "missing_predictions": 0,
+      "undetermined_rate": 0.8,
+      "reference_kinds": [
+        "ai_assisted_independent"
+      ]
+    },
+    "conv-42": {
+      "relation_accuracy": 0.8666666666666667,
+      "macro_f1": 0.6188034188034188,
+      "per_class_f1": {
+        "RETAIN": 0.9230769230769231,
+        "UPDATE": 0.0,
+        "SUPERSEDE": null,
+        "CONFLICT": null,
+        "undetermined": 0.9333333333333333
+      },
+      "label_coverage": {
+        "RETAIN": 6,
+        "UPDATE": 1,
+        "SUPERSEDE": 0,
+        "CONFLICT": 0,
+        "undetermined": 8
+      },
+      "effective_selection_accuracy": 0.0,
+      "effective_denominator": 15,
+      "reviewed": 15,
+      "scorable": 15,
+      "planned": 15,
+      "missing_predictions": 0,
+      "undetermined_rate": 0.4666666666666667,
+      "reference_kinds": [
+        "ai_assisted_independent"
+      ]
+    }
+  }
+}

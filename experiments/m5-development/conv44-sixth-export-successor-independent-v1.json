@@ -1,0 +1,171 @@
+{
+  "version": "m5-conv44-sixth-export-successor-independent-v1",
+  "checked_utc": "2026-11-05T02:21:33.258558+00:00",
+  "status": "six_strict_exports_verified_local_copy_only",
+  "reviewer": "/root/final_actual_review",
+  "checks": {
+    "explicit_finished_export_and_all_source_sql_gates": true,
+    "copy_all_old_rowids_and_schema_preserved_only_completion_and_pin": true,
+    "actual_strict_v2_export_exactly_matches_allowlisted_copy_sql_and_projection": true,
+    "three_generation_wire_producers_ledgers_plans_terminals_and_inheritance_bound": true,
+    "all_six_actual_json_hashes_and_strict_contracts_revalidated": true,
+    "all_original_sources_ledgers_and_frozen_terminals_unchanged_after_review": true
+  },
+  "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+  "export_sha256": "1006ce3d855ffb496cb8a2c029276511707427bb7129474013f4b1768639611f",
+  "provenance_sha256": "19d1272ceb3482db11b3698d9e9c1ea4e260dd280b80e226dae14e2e29d18580",
+  "summary_sha256": "54a7d6fb31a8bb0d2ab7b832f13eea784f3c6610c5ae57443d5fe73b5fceaade",
+  "source_terminal_sha256": "24e09a0f75418be112a23d042c13cbfd1e42fed2338db1bb67a08951e78f030f",
+  "source_independent_terminal_sha256": "7b805b55d80548c539d6d263067ed32ba6abea5b1ee3cff303df88ce7b3e2c87",
+  "source_identity": {
+    "database": "e44a48d165665d5965b7ccc0af0d2558a98f9387c9cf2573d3653802175e60d3",
+    "ledger": "ab8fad0598948514b226fff8cb0b366efcf472e8730e4836d15083a1a1668398",
+    "plan": "699934d373556a353f837322322931cd8aec3adc76b87feada2c97a5fb9bd8a4",
+    "settings": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e"
+  },
+  "previous_relation_identity": {
+    "database": "aa2f5984709a3702e9e9de0a4c651b14b0c9f0fb61feb007a841a4de21f5b9ca",
+    "ledger": "bd2244d24c7b876f135940f17dc452e79b677c7781bf0aa2ff78dda8e18a02cf",
+    "plan": "82251c43a541f86a089dd649337930c501dcb00717debeb6786651f04b93529b",
+    "settings": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e"
+  },
+  "original_relation_identity": {
+    "database": "bf747f0dba9575cf7c3d98328cfa550eab80d9b32a6304d6c9bc68553dde7f8a",
+    "ledger": "aa3fedecccb9d5f292665c44f534d26cd359732e98e35fbccff6d571d0c9bd0a",
+    "plan": "0920823b2c04d5d632df481df24ca60348b182fc760da8bb3a28f02cc5eb94cf",
+    "settings": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e"
+  },
+  "copy_database_logical_snapshot": "192eb8cb866c2e9fbf0c52b496454cbd661235d6705693140804bdd4b60d4324",
+  "copy_changed_columns": [
+    "status",
+    "phase",
+    "updated_at"
+  ],
+  "copy_added_tables": [
+    "active_versions"
+  ],
+  "source_status": "related",
+  "copy_status": "complete",
+  "provider_requests": 0,
+  "six_exports": [
+    {
+      "sample_id": "conv-26",
+      "build_id": "367c901b300440649bdc0bfba2af8010",
+      "export": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-26.json",
+      "export_sha256": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78",
+      "memories": 259,
+      "sources": 190,
+      "relations": 4740,
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-30",
+      "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+      "export": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-30.json",
+      "export_sha256": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae",
+      "memories": 244,
+      "sources": 154,
+      "relations": 4460,
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-41",
+      "build_id": "8d459492549b4a3e88005211f036addf",
+      "export": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-41.json",
+      "export_sha256": "e15b30e89de463cca4ff9fcd347b332a72525f0fbfb8506a5476df120fd4b488",
+      "memories": 321,
+      "sources": 243,
+      "relations": 5767,
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-42",
+      "build_id": "c892596ac8884f43b4cf2098349a7fa5",
+      "export": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-42.json",
+      "export_sha256": "89d6bdf02e7eca10014688e0a7946fd536b846c4ff6c8b09a84bb8671680e3fd",
+      "memories": 413,
+      "sources": 297,
+      "relations": 7724,
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-43",
+      "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+      "export": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-43.json",
+      "export_sha256": "2ae95deb13dcf22e1bb91cff44db88feba7c3bcf1b753e907ba121f4ac972f17",
+      "memories": 402,
+      "sources": 300,
+      "relations": 7620,
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-44",
+      "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+      "export": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-sixth-export-successor-v1/exports/conv-44.json",
+      "export_sha256": "1006ce3d855ffb496cb8a2c029276511707427bb7129474013f4b1768639611f",
+      "memories": 392,
+      "sources": 281,
+      "relations": 7134,
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "strict_roundtrip": true
+    }
+  ],
+  "three_relation_stages": [
+    {
+      "logical_attempt": 1,
+      "stage": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-relations-v1",
+      "terminal_sha256": "ece3ef725c0bd56679809280fd9c764ed64d14197a0898cc16e5d151893ee79d",
+      "ledger_snapshot": "aa3fedecccb9d5f292665c44f534d26cd359732e98e35fbccff6d571d0c9bd0a",
+      "plan_sha256": "0920823b2c04d5d632df481df24ca60348b182fc760da8bb3a28f02cc5eb94cf",
+      "input_contract": "original-core-relation-payload"
+    },
+    {
+      "logical_attempt": 2,
+      "stage": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-relation-recovery-v1",
+      "terminal_sha256": "c6d816a97c3f4a44743f977f9a5f2ad4223eccb72b624c5accb9994b7fcba8be",
+      "ledger_snapshot": "bd2244d24c7b876f135940f17dc452e79b677c7781bf0aa2ff78dda8e18a02cf",
+      "plan_sha256": "82251c43a541f86a089dd649337930c501dcb00717debeb6786651f04b93529b",
+      "input_contract": "relation-full-endpoint-source-ids-v1",
+      "wrapper_sha256": "77cc554f9ebc94c70cb2f0f1e4674aeffdd3b659efaf997dcc5740371ac5120a"
+    },
+    {
+      "logical_attempt": 3,
+      "stage": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-relation-successor-v1",
+      "terminal_sha256": "24e09a0f75418be112a23d042c13cbfd1e42fed2338db1bb67a08951e78f030f",
+      "ledger_snapshot": "ab8fad0598948514b226fff8cb0b366efcf472e8730e4836d15083a1a1668398",
+      "plan_sha256": "699934d373556a353f837322322931cd8aec3adc76b87feada2c97a5fb9bd8a4",
+      "input_contract": "relation-endpoint-label-prerequisites-v1",
+      "wrapper_sha256": "6afe3fb5a1094b4cb521fa6f05bcc3fa9d75a6173ec4fee46a28a8f375687464"
+    }
+  ],
+  "all_old_rows_and_rowids_preserved": true,
+  "complete_export_exactly_matches_copy_sql": true,
+  "projection_recomputed_exactly": true,
+  "index_vectors_text_and_fingerprint_verified": true,
+  "encoder_reloaded_or_reencoded": false,
+  "all_six_strict_roundtrip_verified": true,
+  "all_source_ledgers_unchanged": true,
+  "holdout_qa_evidence_answers_read": false,
+  "credentials_or_raw_logs_read": false,
+  "conversation_or_relation_text_emitted": false,
+  "wire_messages_reassembled": false,
+  "semantic_accuracy_reviewed": false,
+  "actual_invoice": "not_accessed",
+  "configuration_locked": false,
+  "level_e_executed": false,
+  "audit_script_sha256": "13d17b5675a8220c479f0cfb4dc6b786e4a922ee774e30264dbb57b3980f0139"
+}

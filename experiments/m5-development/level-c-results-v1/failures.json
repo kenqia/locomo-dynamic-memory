@@ -1,0 +1,394 @@
+[
+  {
+    "question_id": "conv-26:qa:141",
+    "sample_id": "conv-26",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-26:qa:22",
+    "sample_id": "conv-26",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-26:qa:3",
+    "sample_id": "conv-26",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:70",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:52",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:15",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:74",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:58",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:48",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:34",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:8",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:35",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:12",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:38",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:42",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:26",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:23",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:29",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:32",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:5",
+    "sample_id": "conv-30",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:6",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:10",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:51",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:140",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:72",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:85",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:87",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:4",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:111",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:11",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:83",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:80",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:62",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:28",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:68",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:90",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-42:qa:140",
+    "sample_id": "conv-42",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-42:qa:85",
+    "sample_id": "conv-42",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-42:qa:99",
+    "sample_id": "conv-42",
+    "stratum": "ordinary",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-26:qa:0",
+    "sample_id": "conv-26",
+    "stratum": "diagnostic",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:31",
+    "sample_id": "conv-30",
+    "stratum": "diagnostic",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:21",
+    "sample_id": "conv-30",
+    "stratum": "diagnostic",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:7",
+    "sample_id": "conv-30",
+    "stratum": "diagnostic",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-30:qa:14",
+    "sample_id": "conv-30",
+    "stratum": "diagnostic",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:34",
+    "sample_id": "conv-41",
+    "stratum": "diagnostic",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:25",
+    "sample_id": "conv-41",
+    "stratum": "diagnostic",
+    "arm": "dynamic",
+    "error_code": "complete_resolution_input_budget_exceeded",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-41:qa:12",
+    "sample_id": "conv-41",
+    "stratum": "diagnostic",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-42:qa:33",
+    "sample_id": "conv-42",
+    "stratum": "diagnostic",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  },
+  {
+    "question_id": "conv-42:qa:26",
+    "sample_id": "conv-42",
+    "stratum": "diagnostic",
+    "arm": "dynamic",
+    "error_code": "physical_request_policy_rejected",
+    "stage": "resolve"
+  }
+]

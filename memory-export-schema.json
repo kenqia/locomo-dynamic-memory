@@ -1,0 +1,1203 @@
+{
+  "$defs": {
+    "Applicability": {
+      "additionalProperties": false,
+      "properties": {
+        "from_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "From Date"
+        },
+        "to_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "To Date"
+        },
+        "condition": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Condition"
+        },
+        "condition_satisfied": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Condition Satisfied"
+        },
+        "condition_source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Condition Source Ids",
+          "type": "array"
+        },
+        "time_anchor_source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Time Anchor Source Id"
+        },
+        "original_time_expression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Time Expression"
+        },
+        "time_basis": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Time Basis"
+        }
+      },
+      "title": "Applicability",
+      "type": "object"
+    },
+    "ConditionalRelation": {
+      "additionalProperties": false,
+      "properties": {
+        "relation_id": {
+          "title": "Relation Id",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "relation_id",
+        "reason"
+      ],
+      "title": "ConditionalRelation",
+      "type": "object"
+    },
+    "Conflict": {
+      "additionalProperties": false,
+      "properties": {
+        "relation_id": {
+          "title": "Relation Id",
+          "type": "string"
+        },
+        "memory_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Memory Ids",
+          "type": "array"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "relation_id",
+        "memory_ids",
+        "source_ids"
+      ],
+      "title": "Conflict",
+      "type": "object"
+    },
+    "Dataset": {
+      "properties": {
+        "dataset_id": {
+          "title": "Dataset Id",
+          "type": "string"
+        },
+        "source_sha256": {
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "license": {
+          "title": "License",
+          "type": "string"
+        },
+        "conversation_count": {
+          "title": "Conversation Count",
+          "type": "integer"
+        },
+        "turn_count": {
+          "title": "Turn Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "dataset_id",
+        "source_sha256",
+        "version",
+        "license",
+        "conversation_count",
+        "turn_count"
+      ],
+      "title": "Dataset",
+      "type": "object"
+    },
+    "EmbeddingIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "revision": {
+          "title": "Revision",
+          "type": "string"
+        },
+        "dimensions": {
+          "title": "Dimensions",
+          "type": "integer"
+        },
+        "max_tokens": {
+          "title": "Max Tokens",
+          "type": "integer"
+        },
+        "length_policy": {
+          "const": "reject",
+          "title": "Length Policy",
+          "type": "string"
+        },
+        "normalized": {
+          "const": true,
+          "title": "Normalized",
+          "type": "boolean"
+        },
+        "device": {
+          "title": "Device",
+          "type": "string"
+        }
+      },
+      "required": [
+        "model",
+        "revision",
+        "dimensions",
+        "max_tokens",
+        "length_policy",
+        "normalized",
+        "device"
+      ],
+      "title": "EmbeddingIdentity",
+      "type": "object"
+    },
+    "ExportBuild": {
+      "additionalProperties": false,
+      "properties": {
+        "build_id": {
+          "title": "Build Id",
+          "type": "string"
+        },
+        "dataset_id": {
+          "title": "Dataset Id",
+          "type": "string"
+        },
+        "sample_id": {
+          "title": "Sample Id",
+          "type": "string"
+        },
+        "status": {
+          "const": "complete",
+          "title": "Status",
+          "type": "string"
+        },
+        "fingerprint": {
+          "title": "Fingerprint",
+          "type": "string"
+        },
+        "source_sha256": {
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "config": {
+          "$ref": "#/$defs/Settings"
+        },
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "string"
+        },
+        "schema_version": {
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "updated_at": {
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "build_id",
+        "dataset_id",
+        "sample_id",
+        "status",
+        "fingerprint",
+        "source_sha256",
+        "config",
+        "prompt_version",
+        "schema_version",
+        "created_at",
+        "updated_at"
+      ],
+      "title": "ExportBuild",
+      "type": "object"
+    },
+    "ExportIndex": {
+      "additionalProperties": false,
+      "properties": {
+        "build_id": {
+          "title": "Build Id",
+          "type": "string"
+        },
+        "status": {
+          "const": "ready",
+          "title": "Status",
+          "type": "string"
+        },
+        "fingerprint": {
+          "title": "Fingerprint",
+          "type": "string"
+        },
+        "build_fingerprint": {
+          "title": "Build Fingerprint",
+          "type": "string"
+        },
+        "memory_count": {
+          "title": "Memory Count",
+          "type": "integer"
+        },
+        "embedding": {
+          "$ref": "#/$defs/EmbeddingIdentity"
+        },
+        "text_schema_version": {
+          "title": "Text Schema Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "build_id",
+        "status",
+        "fingerprint",
+        "build_fingerprint",
+        "memory_count",
+        "embedding",
+        "text_schema_version"
+      ],
+      "title": "ExportIndex",
+      "type": "object"
+    },
+    "ExportProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "build_id": {
+          "title": "Build Id",
+          "type": "string"
+        },
+        "fingerprint": {
+          "title": "Fingerprint",
+          "type": "string"
+        },
+        "projection_version": {
+          "title": "Projection Version",
+          "type": "string"
+        },
+        "cutoff": {
+          "title": "Cutoff",
+          "type": "string"
+        },
+        "cutoff_source_time": {
+          "title": "Cutoff Source Time",
+          "type": "string"
+        },
+        "current_states": {
+          "items": {
+            "$ref": "#/$defs/StateItem"
+          },
+          "title": "Current States",
+          "type": "array"
+        },
+        "historical_states": {
+          "items": {
+            "$ref": "#/$defs/StateItem"
+          },
+          "title": "Historical States",
+          "type": "array"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/$defs/StateItem"
+          },
+          "title": "Events",
+          "type": "array"
+        },
+        "nonfactual": {
+          "items": {
+            "$ref": "#/$defs/StateItem"
+          },
+          "title": "Nonfactual",
+          "type": "array"
+        },
+        "conflicts": {
+          "items": {
+            "$ref": "#/$defs/Conflict"
+          },
+          "title": "Conflicts",
+          "type": "array"
+        },
+        "conditional_relations": {
+          "items": {
+            "$ref": "#/$defs/ConditionalRelation"
+          },
+          "title": "Conditional Relations",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "build_id",
+        "fingerprint",
+        "projection_version",
+        "cutoff",
+        "cutoff_source_time",
+        "current_states",
+        "historical_states",
+        "events",
+        "nonfactual",
+        "conflicts",
+        "conditional_relations",
+        "assumptions"
+      ],
+      "title": "ExportProjection",
+      "type": "object"
+    },
+    "Memory": {
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "minLength": 1,
+          "title": "Content",
+          "type": "string"
+        },
+        "memory_type": {
+          "enum": [
+            "event",
+            "state"
+          ],
+          "title": "Memory Type",
+          "type": "string"
+        },
+        "statement_type": {
+          "enum": [
+            "fact",
+            "plan",
+            "intention",
+            "uncertain"
+          ],
+          "title": "Statement Type",
+          "type": "string"
+        },
+        "polarity": {
+          "enum": [
+            "positive",
+            "negative"
+          ],
+          "title": "Polarity",
+          "type": "string"
+        },
+        "entity_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$",
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "state_dimension": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "State Dimension",
+          "type": "string"
+        },
+        "state_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "State Value"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "time": {
+          "$ref": "#/$defs/TemporalInfo"
+        },
+        "memory_id": {
+          "title": "Memory Id",
+          "type": "string"
+        },
+        "build_id": {
+          "title": "Build Id",
+          "type": "string"
+        },
+        "dataset_id": {
+          "title": "Dataset Id",
+          "type": "string"
+        },
+        "sample_id": {
+          "title": "Sample Id",
+          "type": "string"
+        },
+        "state_key": {
+          "title": "State Key",
+          "type": "string"
+        },
+        "session_times": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Session Times",
+          "type": "array"
+        }
+      },
+      "required": [
+        "content",
+        "memory_type",
+        "statement_type",
+        "polarity",
+        "entity_id",
+        "state_dimension",
+        "source_ids",
+        "memory_id",
+        "build_id",
+        "dataset_id",
+        "sample_id",
+        "state_key",
+        "session_times"
+      ],
+      "title": "Memory",
+      "type": "object"
+    },
+    "MemoryRelation": {
+      "additionalProperties": false,
+      "properties": {
+        "old_memory_id": {
+          "title": "Old Memory Id",
+          "type": "string"
+        },
+        "new_memory_id": {
+          "title": "New Memory Id",
+          "type": "string"
+        },
+        "label": {
+          "enum": [
+            "RETAIN",
+            "UPDATE",
+            "SUPERSEDE",
+            "CONFLICT",
+            "undetermined"
+          ],
+          "title": "Label",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "support_quote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Support Quote"
+        },
+        "applicability": {
+          "$ref": "#/$defs/Applicability"
+        },
+        "update_evidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/UpdateEvidence"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "relation_id": {
+          "title": "Relation Id",
+          "type": "string"
+        },
+        "build_id": {
+          "title": "Build Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "old_memory_id",
+        "new_memory_id",
+        "label",
+        "reason",
+        "source_ids",
+        "relation_id",
+        "build_id"
+      ],
+      "title": "MemoryRelation",
+      "type": "object"
+    },
+    "Settings": {
+      "additionalProperties": false,
+      "properties": {
+        "db_path": {
+          "default": "var/memory.sqlite3",
+          "format": "path",
+          "title": "Db Path",
+          "type": "string"
+        },
+        "api_url": {
+          "default": "http://127.0.0.1:8000",
+          "title": "Api Url",
+          "type": "string"
+        },
+        "model_name": {
+          "default": "deepseek-flash",
+          "title": "Model Name",
+          "type": "string"
+        },
+        "model_base_url": {
+          "const": "https://api.deepseek.com",
+          "default": "https://api.deepseek.com",
+          "title": "Model Base Url",
+          "type": "string"
+        },
+        "model_timeout_seconds": {
+          "default": 60,
+          "exclusiveMinimum": 0,
+          "title": "Model Timeout Seconds",
+          "type": "number"
+        },
+        "model_retries": {
+          "default": 2,
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Model Retries",
+          "type": "integer"
+        },
+        "model_temperature": {
+          "default": 0,
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Model Temperature",
+          "type": "number"
+        },
+        "model_max_tokens": {
+          "default": 8192,
+          "exclusiveMinimum": 0,
+          "title": "Model Max Tokens",
+          "type": "integer"
+        },
+        "relation_max_tokens": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relation Max Tokens"
+        },
+        "thinking_enabled": {
+          "const": false,
+          "default": false,
+          "title": "Thinking Enabled",
+          "type": "boolean"
+        },
+        "extraction_thinking_effort": {
+          "default": "disabled",
+          "enum": [
+            "disabled",
+            "low",
+            "high"
+          ],
+          "title": "Extraction Thinking Effort",
+          "type": "string"
+        },
+        "relation_thinking_effort": {
+          "default": "high",
+          "enum": [
+            "disabled",
+            "low",
+            "high"
+          ],
+          "title": "Relation Thinking Effort",
+          "type": "string"
+        },
+        "query_analysis_thinking_effort": {
+          "default": "disabled",
+          "enum": [
+            "disabled",
+            "low",
+            "high"
+          ],
+          "title": "Query Analysis Thinking Effort",
+          "type": "string"
+        },
+        "resolution_thinking_effort": {
+          "default": "low",
+          "enum": [
+            "disabled",
+            "low",
+            "high"
+          ],
+          "title": "Resolution Thinking Effort",
+          "type": "string"
+        },
+        "answer_thinking_effort": {
+          "default": "disabled",
+          "enum": [
+            "disabled",
+            "low",
+            "high"
+          ],
+          "title": "Answer Thinking Effort",
+          "type": "string"
+        },
+        "embedding_model": {
+          "const": "sentence-transformers/all-MiniLM-L6-v2",
+          "default": "sentence-transformers/all-MiniLM-L6-v2",
+          "title": "Embedding Model",
+          "type": "string"
+        },
+        "embedding_revision": {
+          "default": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+          "pattern": "^[a-f0-9]{40}$",
+          "title": "Embedding Revision",
+          "type": "string"
+        },
+        "embedding_dimensions": {
+          "const": 384,
+          "default": 384,
+          "title": "Embedding Dimensions",
+          "type": "integer"
+        },
+        "embedding_local_files_only": {
+          "default": true,
+          "title": "Embedding Local Files Only",
+          "type": "boolean"
+        },
+        "embedding_max_tokens": {
+          "default": 256,
+          "exclusiveMinimum": 0,
+          "title": "Embedding Max Tokens",
+          "type": "integer"
+        },
+        "fragment_turns": {
+          "default": 20,
+          "exclusiveMinimum": 0,
+          "title": "Fragment Turns",
+          "type": "integer"
+        },
+        "bm25_k": {
+          "default": 20,
+          "exclusiveMinimum": 0,
+          "title": "Bm25 K",
+          "type": "integer"
+        },
+        "dense_k": {
+          "default": 20,
+          "exclusiveMinimum": 0,
+          "title": "Dense K",
+          "type": "integer"
+        },
+        "initial_k": {
+          "default": 20,
+          "exclusiveMinimum": 0,
+          "title": "Initial K",
+          "type": "integer"
+        },
+        "rrf_constant": {
+          "default": 60,
+          "exclusiveMinimum": 0,
+          "title": "Rrf Constant",
+          "type": "integer"
+        },
+        "expansion_max_candidates": {
+          "default": 60,
+          "exclusiveMinimum": 0,
+          "title": "Expansion Max Candidates",
+          "type": "integer"
+        },
+        "expansion_depth": {
+          "default": 1,
+          "enum": [
+            0,
+            1
+          ],
+          "title": "Expansion Depth",
+          "type": "integer"
+        },
+        "expansion_scan_limit": {
+          "default": 200,
+          "exclusiveMinimum": 0,
+          "title": "Expansion Scan Limit",
+          "type": "integer"
+        },
+        "relation_history_limit": {
+          "default": 20,
+          "exclusiveMinimum": 0,
+          "title": "Relation History Limit",
+          "type": "integer"
+        },
+        "relation_same_key_fraction": {
+          "default": 0.8,
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "title": "Relation Same Key Fraction",
+          "type": "number"
+        },
+        "relation_fact_fraction": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Relation Fact Fraction",
+          "type": "number"
+        },
+        "candidate_token_budget": {
+          "default": 12000,
+          "exclusiveMinimum": 0,
+          "title": "Candidate Token Budget",
+          "type": "integer"
+        },
+        "evidence_token_budget": {
+          "default": 6000,
+          "exclusiveMinimum": 0,
+          "title": "Evidence Token Budget",
+          "type": "integer"
+        },
+        "raw_max_hits": {
+          "default": 3,
+          "exclusiveMinimum": 0,
+          "title": "Raw Max Hits",
+          "type": "integer"
+        },
+        "raw_neighbor_turns": {
+          "default": 1,
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Raw Neighbor Turns",
+          "type": "integer"
+        },
+        "raw_max_turns": {
+          "default": 9,
+          "exclusiveMinimum": 0,
+          "title": "Raw Max Turns",
+          "type": "integer"
+        },
+        "raw_token_budget": {
+          "default": 2000,
+          "exclusiveMinimum": 0,
+          "title": "Raw Token Budget",
+          "type": "integer"
+        },
+        "resolution_input_budget": {
+          "default": 24000,
+          "exclusiveMinimum": 0,
+          "title": "Resolution Input Budget",
+          "type": "integer"
+        }
+      },
+      "title": "Settings",
+      "type": "object"
+    },
+    "SourceTurn": {
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "dataset_id": {
+          "title": "Dataset Id",
+          "type": "string"
+        },
+        "sample_id": {
+          "title": "Sample Id",
+          "type": "string"
+        },
+        "session_id": {
+          "title": "Session Id",
+          "type": "string"
+        },
+        "dia_id": {
+          "title": "Dia Id",
+          "type": "string"
+        },
+        "speaker": {
+          "title": "Speaker",
+          "type": "string"
+        },
+        "session_time": {
+          "title": "Session Time",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "position": {
+          "title": "Position",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "source_id",
+        "dataset_id",
+        "sample_id",
+        "session_id",
+        "dia_id",
+        "speaker",
+        "session_time",
+        "text",
+        "position"
+      ],
+      "title": "SourceTurn",
+      "type": "object"
+    },
+    "StageEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "source_id",
+        "quote"
+      ],
+      "title": "StageEvidence",
+      "type": "object"
+    },
+    "StateItem": {
+      "additionalProperties": false,
+      "properties": {
+        "memory_id": {
+          "title": "Memory Id",
+          "type": "string"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "relation_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Relation Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "memory_id",
+        "status",
+        "reason",
+        "source_ids",
+        "relation_ids"
+      ],
+      "title": "StateItem",
+      "type": "object"
+    },
+    "TemporalInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "original_expression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Expression"
+        },
+        "anchor_source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Anchor Source Id"
+        },
+        "event_start": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event Start"
+        },
+        "event_end": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Event End"
+        },
+        "valid_from": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Valid From"
+        },
+        "valid_to": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Valid To"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        }
+      },
+      "title": "TemporalInfo",
+      "type": "object"
+    },
+    "UpdateEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "same_process": {
+          "title": "Same Process",
+          "type": "boolean"
+        },
+        "real_stage_changed": {
+          "title": "Real Stage Changed",
+          "type": "boolean"
+        },
+        "old_stage": {
+          "$ref": "#/$defs/StageEvidence"
+        },
+        "new_stage": {
+          "$ref": "#/$defs/StageEvidence"
+        }
+      },
+      "required": [
+        "same_process",
+        "real_stage_changed",
+        "old_stage",
+        "new_stage"
+      ],
+      "title": "UpdateEvidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "default": "memory-export-v2",
+      "enum": [
+        "memory-export-v1",
+        "memory-export-v2"
+      ],
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "relation_contract_version": {
+      "default": "relation-v1",
+      "enum": [
+        "relation-v1",
+        "relation-v2-stage-evidence"
+      ],
+      "title": "Relation Contract Version",
+      "type": "string"
+    },
+    "dataset": {
+      "$ref": "#/$defs/Dataset"
+    },
+    "build": {
+      "$ref": "#/$defs/ExportBuild"
+    },
+    "memories": {
+      "items": {
+        "$ref": "#/$defs/Memory"
+      },
+      "title": "Memories",
+      "type": "array"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/SourceTurn"
+      },
+      "title": "Sources",
+      "type": "array"
+    },
+    "relations": {
+      "items": {
+        "$ref": "#/$defs/MemoryRelation"
+      },
+      "title": "Relations",
+      "type": "array"
+    },
+    "projection": {
+      "$ref": "#/$defs/ExportProjection"
+    },
+    "index": {
+      "$ref": "#/$defs/ExportIndex"
+    }
+  },
+  "required": [
+    "dataset",
+    "build",
+    "memories",
+    "sources",
+    "relations",
+    "projection",
+    "index"
+  ],
+  "title": "MemoryExport",
+  "type": "object"
+}

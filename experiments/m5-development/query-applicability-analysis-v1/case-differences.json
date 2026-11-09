@@ -1,0 +1,923 @@
+[
+  {
+    "unit_id": "0011da2225ab268afd834ae30c9f80d53151d80e65bf21d45ed18fe9ba87803c",
+    "question_id": "conv-26:qa:67",
+    "sample_id": "conv-26",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "12634df814ab5a3c65abc886"
+    ],
+    "predicted_ids": [
+      "12634df814ab5a3c65abc886"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "008dcf9a167e29ff0b440ea4edd85ffb6de73530c9a63fa2c4d202883558f624",
+    "question_id": "conv-26:qa:10",
+    "sample_id": "conv-26",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "c23a0f38f601b73f891b859e"
+    ],
+    "predicted_ids": [
+      "c23a0f38f601b73f891b859e"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "00fc55465f3555b0ebd890f2a75edca8f88bebdd97df59388d87a84161bf75f3",
+    "question_id": "conv-26:qa:95",
+    "sample_id": "conv-26",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "2b1d8467b3e2f38ac0952b72",
+      "721b8dac318bfe2658f828d9",
+      "bb5a2d0dfd5e404ad1d6a37e",
+      "fb0941b4cf5f6716e833fc7b"
+    ],
+    "predicted_ids": [
+      "2b1d8467b3e2f38ac0952b72",
+      "721b8dac318bfe2658f828d9",
+      "bb5a2d0dfd5e404ad1d6a37e"
+    ],
+    "reference_only_ids": [
+      "fb0941b4cf5f6716e833fc7b"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": false,
+    "difference_kind": "subset"
+  },
+  {
+    "unit_id": "04e4090f873d475f2bab7f50fee196c9505ed82b0b617c77a4a1ab4827e563c4",
+    "question_id": "conv-26:qa:195",
+    "sample_id": "conv-26",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "insufficient",
+    "predicted_status": "insufficient",
+    "prediction_present": true,
+    "reference_ids": [],
+    "predicted_ids": [],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "04fe1168aa0330a8c60ebb750140e1e6bb6114fb1bf6df85040b00fa6d2a716c",
+    "question_id": "conv-26:qa:111",
+    "sample_id": "conv-26",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "196ff420461a497217af909e",
+      "28cc6327fdf2580dd4f3fc47"
+    ],
+    "predicted_ids": [
+      "196ff420461a497217af909e",
+      "28cc6327fdf2580dd4f3fc47"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "083ba47d6aacdfc446ddda477614d45ef35445b983635bde4a64f3d7e7d08590",
+    "question_id": "conv-26:qa:118",
+    "sample_id": "conv-26",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "2b1d8467b3e2f38ac0952b72"
+    ],
+    "predicted_ids": [
+      "2b1d8467b3e2f38ac0952b72"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "0d58b3b57670030d31f7f64ff454883e2ca5bcbf44e0246678934781a1ae6153",
+    "question_id": "conv-26:qa:52",
+    "sample_id": "conv-26",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "85b5627ede7462e0873d7d45",
+      "881fa00f93a4d79e5f05e2c9"
+    ],
+    "predicted_ids": [
+      "194e2bac4ba9dd85fbfa4415",
+      "85b5627ede7462e0873d7d45",
+      "881fa00f93a4d79e5f05e2c9",
+      "b5b1ebdc0165477a9510709d"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [
+      "194e2bac4ba9dd85fbfa4415",
+      "b5b1ebdc0165477a9510709d"
+    ],
+    "exact_match": false,
+    "difference_kind": "superset"
+  },
+  {
+    "unit_id": "0de2060a3282027ee794c90c007e8cec81e25f75b5a30929b527124b33cd8080",
+    "question_id": "conv-26:qa:22",
+    "sample_id": "conv-26",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": true,
+    "reference_status": "insufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "770a501a84620ab3d69a0f83"
+    ],
+    "predicted_ids": [
+      "3324cafba5c5f09b0afd34db",
+      "770a501a84620ab3d69a0f83"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [
+      "3324cafba5c5f09b0afd34db"
+    ],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "0df05b69d16abe06e86b9b195a0ece2878875719911735c836f3fd37c25d9150",
+    "question_id": "conv-26:qa:192",
+    "sample_id": "conv-26",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "insufficient",
+    "predicted_status": "insufficient",
+    "prediction_present": true,
+    "reference_ids": [],
+    "predicted_ids": [],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "0e3839a7e41e7878051e9728995866abf7fc29cadb438958571da180c3dc9c98",
+    "question_id": "conv-26:qa:60",
+    "sample_id": "conv-26",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "0b164f0f4aa004cb6c1e45d6",
+      "29b4942d38b2113ccce4d715"
+    ],
+    "predicted_ids": [
+      "0b164f0f4aa004cb6c1e45d6",
+      "29b4942d38b2113ccce4d715"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "021d52f7afa96c2296472c72731845253e7a3f96d8c61388ef0b6ab18468f1ee",
+    "question_id": "conv-30:qa:72",
+    "sample_id": "conv-30",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": null,
+    "prediction_present": false,
+    "reference_ids": [
+      "b53bb3e192afe50f00ad02da",
+      "c1ee20f60d0423e063b8cf18"
+    ],
+    "predicted_ids": null,
+    "reference_only_ids": [
+      "b53bb3e192afe50f00ad02da",
+      "c1ee20f60d0423e063b8cf18"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": false,
+    "difference_kind": "missing_prediction"
+  },
+  {
+    "unit_id": "047cc8f8083e90b07a732c490a4b100f8c18516cdef6188d31a42568d1c97d46",
+    "question_id": "conv-30:qa:10",
+    "sample_id": "conv-30",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "0de1b9dacacc12094d971cf2"
+    ],
+    "predicted_ids": [
+      "0de1b9dacacc12094d971cf2",
+      "19cc8e71437fa6ace3eb3570"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [
+      "19cc8e71437fa6ace3eb3570"
+    ],
+    "exact_match": false,
+    "difference_kind": "superset"
+  },
+  {
+    "unit_id": "0c2050a1b2bdd843a95981154e8986147a7a921d3e7fa48e2d3cc677800d6bfb",
+    "question_id": "conv-30:qa:83",
+    "sample_id": "conv-30",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": null,
+    "prediction_present": false,
+    "reference_ids": [
+      "eb1209fdc1d06088b186197c"
+    ],
+    "predicted_ids": null,
+    "reference_only_ids": [
+      "eb1209fdc1d06088b186197c"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "0ccf61101415caa2e7c636a818418ae42c925f61d05793036574a1c03bf7fe78",
+    "question_id": "conv-30:qa:31",
+    "sample_id": "conv-30",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": true,
+    "reference_status": "conflict",
+    "predicted_status": null,
+    "prediction_present": false,
+    "reference_ids": [
+      "10ff94b70a3189ec35fa420e",
+      "55f6aae2b7d05ce150b16b6a",
+      "b896cc9a4175f0d22817e2a9"
+    ],
+    "predicted_ids": null,
+    "reference_only_ids": [
+      "10ff94b70a3189ec35fa420e",
+      "55f6aae2b7d05ce150b16b6a",
+      "b896cc9a4175f0d22817e2a9"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "102888987b94a4872ddcd647011e5660269449a680e49d76ee73142a018025dc",
+    "question_id": "conv-30:qa:73",
+    "sample_id": "conv-30",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "062520077b40eee28e0d25e3",
+      "93be854f180dd1be25383b8d"
+    ],
+    "predicted_ids": [
+      "062520077b40eee28e0d25e3",
+      "1b858172e0788bca990ee8fd",
+      "93be854f180dd1be25383b8d",
+      "e1bdce3c6d6a5832b8400bec"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [
+      "1b858172e0788bca990ee8fd",
+      "e1bdce3c6d6a5832b8400bec"
+    ],
+    "exact_match": false,
+    "difference_kind": "superset"
+  },
+  {
+    "unit_id": "11de4dd0c1261a95d570596d0b358b50d0debc1b94efb33861ab18b6afa12953",
+    "question_id": "conv-30:qa:48",
+    "sample_id": "conv-30",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "0de1b9dacacc12094d971cf2",
+      "1ba0dfc38fe06e07a131098c"
+    ],
+    "predicted_ids": [
+      "1ba0dfc38fe06e07a131098c"
+    ],
+    "reference_only_ids": [
+      "0de1b9dacacc12094d971cf2"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "16f0e062d5b37167958bddcdc88b3422b7c6f1e8a7c1e1cdc8e22340a88787b2",
+    "question_id": "conv-30:qa:58",
+    "sample_id": "conv-30",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "6a2d8f5f3439804bcddf23eb"
+    ],
+    "predicted_ids": [
+      "3fcd91148bc4ed9236230314",
+      "6a2d8f5f3439804bcddf23eb",
+      "8b01d682a711477b7a8761ef"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [
+      "3fcd91148bc4ed9236230314",
+      "8b01d682a711477b7a8761ef"
+    ],
+    "exact_match": false,
+    "difference_kind": "superset"
+  },
+  {
+    "unit_id": "18baddc857cde52868f5fc6ab306acbf02d0886c56a528658cdf270c76b639ac",
+    "question_id": "conv-30:qa:76",
+    "sample_id": "conv-30",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": null,
+    "prediction_present": false,
+    "reference_ids": [
+      "7a2c8fda391420b03aeca6c2",
+      "c1ee20f60d0423e063b8cf18"
+    ],
+    "predicted_ids": null,
+    "reference_only_ids": [
+      "7a2c8fda391420b03aeca6c2",
+      "c1ee20f60d0423e063b8cf18"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "18d8e72f81076f06d0ffde29ca0fe8934ecde5bb02c28a63bed74551fa7139c8",
+    "question_id": "conv-30:qa:84",
+    "sample_id": "conv-30",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "insufficient",
+    "predicted_status": null,
+    "prediction_present": false,
+    "reference_ids": [
+      "49c17e8861c336e213041a34"
+    ],
+    "predicted_ids": null,
+    "reference_only_ids": [
+      "49c17e8861c336e213041a34"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": false,
+    "difference_kind": "missing_prediction"
+  },
+  {
+    "unit_id": "1bb795f90a3a7a9a9fdf3a3394e675f5cad82961c460c5e92fbd0c83a61122c6",
+    "question_id": "conv-30:qa:52",
+    "sample_id": "conv-30",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "insufficient",
+    "predicted_status": "insufficient",
+    "prediction_present": true,
+    "reference_ids": [],
+    "predicted_ids": [],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "0036b19aeecf8837ecde0b5cb09f49e740cb739eecc89a1c5a206b66e2b25fa1",
+    "question_id": "conv-41:qa:19",
+    "sample_id": "conv-41",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "18a3c3982f75dd42e2c455e6"
+    ],
+    "predicted_ids": [
+      "18a3c3982f75dd42e2c455e6"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "050cacaa3da946444ceeac7f67e1c51c5775e3224af31845bf790b25393d5990",
+    "question_id": "conv-41:qa:128",
+    "sample_id": "conv-41",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "526e738916a309f8251222cf",
+      "559477ee14f9d10c4a433ffd",
+      "b469f1f26dca51b73ac0fc79"
+    ],
+    "predicted_ids": [
+      "526e738916a309f8251222cf",
+      "b469f1f26dca51b73ac0fc79"
+    ],
+    "reference_only_ids": [
+      "559477ee14f9d10c4a433ffd"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "065a2a2fcfb72f86abb46b9c8ec64f27fbf25f3148c936dd36c12bbf1eae6d22",
+    "question_id": "conv-41:qa:139",
+    "sample_id": "conv-41",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "7bb37e5ecf992d37f931a4d2"
+    ],
+    "predicted_ids": [
+      "7bb37e5ecf992d37f931a4d2"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "07a2d48ab1ddd436bf50d7c81edc4bf89e299aec78acbbeb7f94dd4ac8727c1a",
+    "question_id": "conv-41:qa:100",
+    "sample_id": "conv-41",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "6d74cf64fe10b1ac1bc045f6",
+      "f25ea05af63742305129df98"
+    ],
+    "predicted_ids": [
+      "f25ea05af63742305129df98"
+    ],
+    "reference_only_ids": [
+      "6d74cf64fe10b1ac1bc045f6"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "0a68f1626217c19ac9af76f2f44dca4c6a1b9311fc0e9235a4b942d6588d2527",
+    "question_id": "conv-41:qa:126",
+    "sample_id": "conv-41",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "136e0eb04ce8eb156866fb9c",
+      "9239ba1007e3134363740f90",
+      "a44283690fc47ab4863e99d3"
+    ],
+    "predicted_ids": [
+      "136e0eb04ce8eb156866fb9c",
+      "9239ba1007e3134363740f90",
+      "a44283690fc47ab4863e99d3"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "0ca4765354381f8fa51b32c251cc9fd51e18feae6bc6f5e7283159e0e7205cd9",
+    "question_id": "conv-41:qa:11",
+    "sample_id": "conv-41",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "02b6987c457098ac5ee090c6",
+      "27e7d9ff3a0a5b0fee790a16",
+      "40bd59f0caa024eaf2888f69",
+      "aefa4b4860e7ac43c5ff6e06",
+      "eceb51e5f510a53c3638bc25"
+    ],
+    "predicted_ids": [
+      "02b6987c457098ac5ee090c6",
+      "27e7d9ff3a0a5b0fee790a16",
+      "40bd59f0caa024eaf2888f69",
+      "aefa4b4860e7ac43c5ff6e06",
+      "eceb51e5f510a53c3638bc25"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "0cb29777bec2a1072aa570e12863a749cb93d48a1b7c5fc386f8353501637d05",
+    "question_id": "conv-41:qa:92",
+    "sample_id": "conv-41",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "9e4ec8d767bbff680635a2c2"
+    ],
+    "predicted_ids": [
+      "9e4ec8d767bbff680635a2c2"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "0cbf9f692acdb615d40f8d9443c8522dd8a4d5992dfcea84cfe3fa8e534d9f84",
+    "question_id": "conv-41:qa:112",
+    "sample_id": "conv-41",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "084f70d0d15f0c4a294f4695",
+      "1a18815a2f007bbacbcbcf3a"
+    ],
+    "predicted_ids": [
+      "084f70d0d15f0c4a294f4695",
+      "1a18815a2f007bbacbcbcf3a"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "0e8a326612577a9e0c07d43b14ff999e7030dba21fbe6926af6a3ba535cc166e",
+    "question_id": "conv-41:qa:111",
+    "sample_id": "conv-41",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "727564fe6d844c4cf96ef6de",
+      "87abbeacf5c394eee90e10e7"
+    ],
+    "predicted_ids": [
+      "727564fe6d844c4cf96ef6de",
+      "87abbeacf5c394eee90e10e7"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "0fbf113c2d3e2431c0e9dee57e5f96fa75692443476bc458a8718c09ef27ef4f",
+    "question_id": "conv-41:qa:115",
+    "sample_id": "conv-41",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "b831dadd45aef352680c8816"
+    ],
+    "predicted_ids": [
+      "b831dadd45aef352680c8816"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "00174da10140b3a44752f451779a7120919619b700e937b2996015240d924d4c",
+    "question_id": "conv-42:qa:3",
+    "sample_id": "conv-42",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "28c9172df08acdbafab9eab7"
+    ],
+    "predicted_ids": [
+      "28c9172df08acdbafab9eab7"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "012b7e2840057ad2548e046962b92843c19703f80a2180464845dfd3b689cc2f",
+    "question_id": "conv-42:qa:108",
+    "sample_id": "conv-42",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "1c958564ea8acc8e96d41246",
+      "e784c623b108b696d3d20411"
+    ],
+    "predicted_ids": [
+      "1c958564ea8acc8e96d41246",
+      "88db4563736642249aae6f3d",
+      "e784c623b108b696d3d20411",
+      "f02fe2233201b0722a3c1c26"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [
+      "88db4563736642249aae6f3d",
+      "f02fe2233201b0722a3c1c26"
+    ],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "01e34307bff636b39b7dd45202913a0eb128079a01130dbeaf60c620899a0a46",
+    "question_id": "conv-42:qa:100",
+    "sample_id": "conv-42",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": true,
+    "reference_status": "insufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "18cfff7ff366229a07d4bd36",
+      "353f68046d1deacd7f187e3b"
+    ],
+    "predicted_ids": [
+      "353f68046d1deacd7f187e3b"
+    ],
+    "reference_only_ids": [
+      "18cfff7ff366229a07d4bd36"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "02772bea3203d24e3414d6340c4305db4ad6eccf55868912a48629c33536d674",
+    "question_id": "conv-42:qa:183",
+    "sample_id": "conv-42",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "3871a8685c37ab491fa10855"
+    ],
+    "predicted_ids": [
+      "3871a8685c37ab491fa10855"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "0403645ea82d5db2192bc7c67ba24a426cba50b274b45a7877e66ef8faa99699",
+    "question_id": "conv-42:qa:153",
+    "sample_id": "conv-42",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "insufficient",
+    "predicted_status": "insufficient",
+    "prediction_present": true,
+    "reference_ids": [],
+    "predicted_ids": [],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  },
+  {
+    "unit_id": "05794e8752d9037ae2ba09d22f78638e126a4523c122b1c4ff2b8ddd297215ad",
+    "question_id": "conv-42:qa:104",
+    "sample_id": "conv-42",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "3e14963082241646fa7ff9a4",
+      "91943e6215f2a9a3ee6ae4fd",
+      "d125e15bfe85a23c8dd49b32",
+      "ee444c75d6253e8e3fbefa20"
+    ],
+    "predicted_ids": [
+      "91943e6215f2a9a3ee6ae4fd",
+      "d125e15bfe85a23c8dd49b32",
+      "ee444c75d6253e8e3fbefa20"
+    ],
+    "reference_only_ids": [
+      "3e14963082241646fa7ff9a4"
+    ],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "05a131aa5ff26ed249d0fbbcd823ed77bba4388f2831f53655fbcbdf412f83f5",
+    "question_id": "conv-42:qa:35",
+    "sample_id": "conv-42",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": true,
+    "reference_status": "insufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "31bdad67ccd215794918e1a5"
+    ],
+    "predicted_ids": [
+      "31bdad67ccd215794918e1a5"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "0611d450f4e61531c41d6e72394bb81ec4d73acf139c5c07512119ec2d225cf8",
+    "question_id": "conv-42:qa:197",
+    "sample_id": "conv-42",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "1c958564ea8acc8e96d41246",
+      "780a4a664e4f5f14ce1f90d6",
+      "876e81321a6ecfa4492c500f"
+    ],
+    "predicted_ids": [
+      "1c958564ea8acc8e96d41246",
+      "780a4a664e4f5f14ce1f90d6",
+      "876e81321a6ecfa4492c500f",
+      "9409b869d839a1e18bde53f7",
+      "c2edb63c56b50b7a2fa8b2d0",
+      "c7006f87e554b5f65bd535b7",
+      "e784c623b108b696d3d20411"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [
+      "9409b869d839a1e18bde53f7",
+      "c2edb63c56b50b7a2fa8b2d0",
+      "c7006f87e554b5f65bd535b7",
+      "e784c623b108b696d3d20411"
+    ],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "07763e8a9cfdd465502f307d1f7b865ceffcd4c7625bee9df04b1437f19cb275",
+    "question_id": "conv-42:qa:91",
+    "sample_id": "conv-42",
+    "scorable": false,
+    "uncertain": true,
+    "unresolvable": false,
+    "reference_status": "sufficient",
+    "predicted_status": "sufficient",
+    "prediction_present": true,
+    "reference_ids": [
+      "b37f09adac4fefdb13f4d4dd"
+    ],
+    "predicted_ids": [
+      "b37f09adac4fefdb13f4d4dd"
+    ],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": null,
+    "difference_kind": "not_scorable"
+  },
+  {
+    "unit_id": "0868228c49d3f951970efdbe048d0a3c95758525607798d420b319f88de40ac1",
+    "question_id": "conv-42:qa:89",
+    "sample_id": "conv-42",
+    "scorable": true,
+    "uncertain": false,
+    "unresolvable": false,
+    "reference_status": "insufficient",
+    "predicted_status": "insufficient",
+    "prediction_present": true,
+    "reference_ids": [],
+    "predicted_ids": [],
+    "reference_only_ids": [],
+    "prediction_only_ids": [],
+    "exact_match": true,
+    "difference_kind": "exact"
+  }
+]

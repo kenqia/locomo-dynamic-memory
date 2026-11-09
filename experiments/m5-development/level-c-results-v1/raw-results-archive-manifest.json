@@ -1,0 +1,11 @@
+{
+  "private_archive": "var/m5-development/level-c-results-raw-v1.tar.gz",
+  "archive_sha256": "b436ab450ed37eee60e5e4b537509eb30d0f82bf361956b3f938838825656724",
+  "members": 206,
+  "frozen_item_files": 200,
+  "raw_bytes": 79869672,
+  "compressed_bytes": 6351216,
+  "roundtrip_all_member_sha256_verified": true,
+  "generation_freeze_sha256": "dcd66b1d704b2c8765750afc600002f4a34e9ecf9ff9dc2cdfac7d6cf0bde5a5",
+  "raw_results_committed": false
+}

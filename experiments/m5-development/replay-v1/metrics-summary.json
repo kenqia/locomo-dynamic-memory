@@ -1,0 +1,2415 @@
+{
+  "denominator": 757,
+  "source_proxy_applicable": 753,
+  "arms": {
+    "H": {
+      "successes": 757,
+      "failures": {},
+      "recall": {
+        "5": 0.6151331183203693,
+        "10": 0.7226206285967242,
+        "20": 0.7825660321676258
+      },
+      "p50_seconds": 0.0004563449983834289,
+      "p95_seconds": 0.000668433397368062,
+      "paired_vs_D": {
+        "5": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "10": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "20": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      },
+      "per_conversation": {
+        "conv-26": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-30": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-41": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-42": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      },
+      "per_category": {
+        "1": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "2": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "3": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "4": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "5": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      }
+    },
+    "D": {
+      "successes": 757,
+      "failures": {},
+      "recall": {
+        "5": 0.6151331183203693,
+        "10": 0.7226206285967242,
+        "20": 0.7825660321676258
+      },
+      "p50_seconds": 0.000863381996168755,
+      "p95_seconds": 0.001551164402917493,
+      "paired_vs_D": {
+        "5": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "10": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "20": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      },
+      "per_conversation": {
+        "conv-26": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-30": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-41": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-42": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      },
+      "per_category": {
+        "1": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "2": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "3": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "4": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "5": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      }
+    },
+    "B1": {
+      "successes": 757,
+      "failures": {},
+      "recall": {
+        "5": 0.6151331183203693,
+        "10": 0.7226206285967242,
+        "20": 0.7825660321676258
+      },
+      "p50_seconds": 0.01397165499656694,
+      "p95_seconds": 0.03551041379832893,
+      "paired_vs_D": {
+        "5": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "10": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "20": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      },
+      "per_conversation": {
+        "conv-26": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-30": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-41": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-42": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      },
+      "per_category": {
+        "1": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "2": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "3": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "4": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "5": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      }
+    },
+    "B2": {
+      "successes": 757,
+      "failures": {},
+      "recall": {
+        "5": 0.6151331183203693,
+        "10": 0.7226206285967242,
+        "20": 0.7825660321676258
+      },
+      "p50_seconds": 0.00828515000466723,
+      "p95_seconds": 0.014451830605685244,
+      "paired_vs_D": {
+        "5": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "10": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "20": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      },
+      "per_conversation": {
+        "conv-26": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-30": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-41": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-42": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      },
+      "per_category": {
+        "1": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "2": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "3": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "4": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "5": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      }
+    },
+    "B3": {
+      "successes": 757,
+      "failures": {},
+      "recall": {
+        "5": 0.5231012458104092,
+        "10": 0.5919580935517191,
+        "20": 0.6744798583444002
+      },
+      "p50_seconds": 0.0008572949955123477,
+      "p95_seconds": 0.001535355199303011,
+      "paired_vs_D": {
+        "5": {
+          "mean": -0.09203187250996016,
+          "bootstrap95": [
+            -0.11328021248339973,
+            -0.07171314741035857
+          ],
+          "improved": 3,
+          "regressed": 72,
+          "unchanged": 678,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "10": {
+          "mean": -0.13066253504500516,
+          "bootstrap95": [
+            -0.15471631990556292,
+            -0.10660137228862333
+          ],
+          "improved": 5,
+          "regressed": 102,
+          "unchanged": 646,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "20": {
+          "mean": -0.1080861738232256,
+          "bootstrap95": [
+            -0.13243599675372586,
+            -0.08436623874870887
+          ],
+          "improved": 13,
+          "regressed": 91,
+          "unchanged": 649,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      },
+      "per_conversation": {
+        "conv-26": {
+          "5": {
+            "mean": -0.10152284263959391,
+            "bootstrap95": [
+              -0.14720812182741116,
+              -0.06091370558375635
+            ],
+            "improved": 0,
+            "regressed": 20,
+            "unchanged": 177,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": -0.14720812182741116,
+            "bootstrap95": [
+              -0.20050761421319796,
+              -0.09644670050761421
+            ],
+            "improved": 2,
+            "regressed": 30,
+            "unchanged": 165,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": -0.12267343485617598,
+            "bootstrap95": [
+              -0.17258883248730963,
+              -0.07360406091370558
+            ],
+            "improved": 4,
+            "regressed": 27,
+            "unchanged": 166,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-30": {
+          "5": {
+            "mean": -0.09523809523809523,
+            "bootstrap95": [
+              -0.1523809523809524,
+              -0.0380952380952381
+            ],
+            "improved": 0,
+            "regressed": 10,
+            "unchanged": 95,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": -0.14285714285714285,
+            "bootstrap95": [
+              -0.20952380952380953,
+              -0.0761904761904762
+            ],
+            "improved": 0,
+            "regressed": 15,
+            "unchanged": 90,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": -0.11428571428571428,
+            "bootstrap95": [
+              -0.17142857142857143,
+              -0.05714285714285714
+            ],
+            "improved": 0,
+            "regressed": 12,
+            "unchanged": 93,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-41": {
+          "5": {
+            "mean": -0.07512953367875648,
+            "bootstrap95": [
+              -0.11398963730569948,
+              -0.03626943005181347
+            ],
+            "improved": 1,
+            "regressed": 15,
+            "unchanged": 177,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": -0.10103626943005181,
+            "bootstrap95": [
+              -0.14773316062176164,
+              -0.054404145077720206
+            ],
+            "improved": 2,
+            "regressed": 21,
+            "unchanged": 170,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": -0.11269430051813471,
+            "bootstrap95": [
+              -0.1645077720207254,
+              -0.06347150259067358
+            ],
+            "improved": 3,
+            "regressed": 24,
+            "unchanged": 166,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-42": {
+          "5": {
+            "mean": -0.09612403100775194,
+            "bootstrap95": [
+              -0.13490310077519377,
+              -0.0604554263565892
+            ],
+            "improved": 2,
+            "regressed": 27,
+            "unchanged": 229,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": -0.13522825150732126,
+            "bootstrap95": [
+              -0.17786391042204994,
+              -0.09453057708871662
+            ],
+            "improved": 1,
+            "regressed": 36,
+            "unchanged": 221,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": -0.09097760551248923,
+            "bootstrap95": [
+              -0.1294331395348837,
+              -0.05262704565030159
+            ],
+            "improved": 6,
+            "regressed": 28,
+            "unchanged": 224,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      },
+      "per_category": {
+        "1": {
+          "5": {
+            "mean": -0.0027272727272727275,
+            "bootstrap95": [
+              -0.025454545454545452,
+              0.015454545454545453
+            ],
+            "improved": 2,
+            "regressed": 1,
+            "unchanged": 107,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": -0.0035353535353535356,
+            "bootstrap95": [
+              -0.026262626262626262,
+              0.013636363636363636
+            ],
+            "improved": 2,
+            "regressed": 1,
+            "unchanged": 107,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.012373737373737374,
+            "bootstrap95": [
+              -0.012121212121212123,
+              0.03636994949494946
+            ],
+            "improved": 6,
+            "regressed": 1,
+            "unchanged": 103,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "2": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": -0.011538461538461539,
+            "bootstrap95": [
+              -0.03461538461538462,
+              0.007692307692307693
+            ],
+            "improved": 1,
+            "regressed": 2,
+            "unchanged": 127,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": -0.015384615384615385,
+            "bootstrap95": [
+              -0.038461538461538464,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 2,
+            "unchanged": 128,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "3": {
+          "5": {
+            "mean": 0.03333333333333333,
+            "bootstrap95": [
+              0.0,
+              0.1
+            ],
+            "improved": 1,
+            "regressed": 0,
+            "unchanged": 29,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.016666666666666666,
+            "bootstrap95": [
+              0.0,
+              0.05
+            ],
+            "improved": 1,
+            "regressed": 0,
+            "unchanged": 29,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.058333333333333334,
+            "bootstrap95": [
+              0.0,
+              0.13333333333333333
+            ],
+            "improved": 3,
+            "regressed": 0,
+            "unchanged": 27,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "4": {
+          "5": {
+            "mean": -0.02258064516129032,
+            "bootstrap95": [
+              -0.041935483870967745,
+              -0.0064516129032258064
+            ],
+            "improved": 0,
+            "regressed": 7,
+            "unchanged": 303,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": -0.02258064516129032,
+            "bootstrap95": [
+              -0.041935483870967745,
+              -0.0032258064516129032
+            ],
+            "improved": 1,
+            "regressed": 8,
+            "unchanged": 301,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": -0.00967741935483871,
+            "bootstrap95": [
+              -0.02903225806451613,
+              0.0064516129032258064
+            ],
+            "improved": 3,
+            "regressed": 6,
+            "unchanged": 301,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "5": {
+          "5": {
+            "mean": -0.36416184971098264,
+            "bootstrap95": [
+              -0.4393063583815029,
+              -0.2947976878612717
+            ],
+            "improved": 0,
+            "regressed": 64,
+            "unchanged": 109,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": -0.5202312138728323,
+            "bootstrap95": [
+              -0.5953757225433526,
+              -0.4479768786127168
+            ],
+            "improved": 0,
+            "regressed": 91,
+            "unchanged": 82,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": -0.4595375722543353,
+            "bootstrap95": [
+              -0.5346820809248555,
+              -0.38439306358381503
+            ],
+            "improved": 1,
+            "regressed": 82,
+            "unchanged": 90,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      }
+    },
+    "B4": {
+      "successes": 757,
+      "failures": {},
+      "recall": {
+        "5": 0.6151331183203693,
+        "10": 0.7226206285967242,
+        "20": 0.7825660321676258
+      },
+      "p50_seconds": 0.0008519969996996224,
+      "p95_seconds": 0.001536211598431691,
+      "paired_vs_D": {
+        "5": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "10": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        },
+        "20": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 753,
+          "denominator": 753,
+          "scope": "exploratory paired question bootstrap; four exposed conversations"
+        }
+      },
+      "per_conversation": {
+        "conv-26": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 197,
+            "denominator": 197,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-30": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 105,
+            "denominator": 105,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-41": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 193,
+            "denominator": 193,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "conv-42": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 258,
+            "denominator": 258,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      },
+      "per_category": {
+        "1": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 110,
+            "denominator": 110,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "2": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 130,
+            "denominator": 130,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "3": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 30,
+            "denominator": 30,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "4": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 310,
+            "denominator": 310,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        },
+        "5": {
+          "5": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "10": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          },
+          "20": {
+            "mean": 0.0,
+            "bootstrap95": [
+              0.0,
+              0.0
+            ],
+            "improved": 0,
+            "regressed": 0,
+            "unchanged": 173,
+            "denominator": 173,
+            "scope": "exploratory paired question bootstrap; four exposed conversations"
+          }
+        }
+      }
+    }
+  },
+  "new_qa_f1": "not_measured",
+  "fact_recall": "not_measured",
+  "answer_support": "not_measured",
+  "dynamic_accuracy": "not_measured",
+  "provider_requests": 0,
+  "provider_cost_cny": 0,
+  "historical_baseline": {
+    "full_text": 0.464869,
+    "vector": 0.519714,
+    "hybrid": 0.521886,
+    "dynamic": 0.515133
+  },
+  "compression": {
+    "roundtrips": 757,
+    "original_tokens": 6201514,
+    "packed_tokens": 5943122,
+    "token_reduction": 0.04166595447498789,
+    "decoded_memory_coverage": 1,
+    "atomic_fact_retention": "not_measured"
+  },
+  "dynamic_review": {
+    "units": 60,
+    "independent_reviews": 0,
+    "accuracy": "not_measured",
+    "per_conversation": {
+      "conv-26": 15,
+      "conv-30": 15,
+      "conv-41": 15,
+      "conv-42": 15
+    },
+    "predicted_labels_hidden": true
+  },
+  "resources": {
+    "wall_seconds": 67.06182107899804,
+    "cpu_seconds": 73.10188583,
+    "peak_rss_kib": 1840168,
+    "gpu_used": false,
+    "latency_scope": "local candidate transformation only, excludes provider and full pipeline"
+  }
+}

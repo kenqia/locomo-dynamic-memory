@@ -1,0 +1,33 @@
+7fa9dbb feat: add optional source-linked graph and reversible memory grouping
+cfaab0e feat: add explicit bonus query variants and physical request budget guards
+9b91770 test: verify actual two-hop traversal without inferred shortcuts
+ce229e7 feat: add reproducible M5 development replay and protected source validation
+51f7876 fix: preserve temporal intent and audit failed bonus queries
+18d6fea fix: stop locally rejected provider calls and retain prior attempt history
+f9eb4cf fix: bound graph rendering and add real development data browser demo
+d9a9c84 feat: prepare bounded holdout extraction stage without provider calls
+775b15e docs: record M5 evidence boundaries and default-off adoption decisions
+08db6f3 feat: audit authorized extraction without exposing source text or credentials
+dd73aa0 data: preserve M5 offline evidence and authorized extraction outcomes
+1db645d docs: define explicit bounded recovery for the failed holdout fragment
+87fce8e fix: align optional temporal priority with the explicit query date
+797b174 test: cover cancellation and joint participants and audit relation cost bounds
+f9ee7fb docs: record final offline regression and refresh candidate evidence manifests
+55fcaeb feat: prepare one-fragment recovery with local and original budget guards
+ed47868 docs: index bounded recovery source and verification artifacts
+bbc9dde fix: discard proven unsent relation checkpoints after local budget rejection
+a30ca9f feat: score independently reviewed historical query applicability without new provider calls
+6044b70 data: preserve authorized failed-fragment recovery and final offline verification
+08be26d feat: verify isolated holdout index and prepare bounded relation phase
+fca2bf1 feat: audit authorized relation execution against frozen source and budget
+323917c feat: prepare fixed development QA with authorization and Gold isolation
+c8e5c09 docs: record independent development QA authorization and running stages
+3b8e4b4 feat: audit frozen development QA against source and budget identity
+b9c2b91 feat: validate independent answer source reviews with explicit denominators
+7cee8f9 feat: derive paired QA and runtime metrics from frozen generation
+3335862 docs: record frozen development QA, independent source review and final model requirement
+c71fb93 feat: bind offline input diagnostics to the complete frozen stage
+01f44c0 docs: index reviewed input diagnostics and final delivery evidence
+7378736 docs: record blocked export readiness and independent evaluation gates
+8868a58 docs: refresh evidence indexes for blocked final evaluation gates
+fc3b1ee docs(m5): record completed relation phase and independently verified terminal costs

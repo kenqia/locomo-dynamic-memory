@@ -1,0 +1,14 @@
+{
+  "status": "PARTIAL",
+  "tool": "scripts/verify_supplement_metrics.py",
+  "authored_by": "/root/release_spec_review",
+  "numeric_fields": 282,
+  "checked_numeric_fields": 282,
+  "numeric_mismatches": [],
+  "unverified_numeric_fields": [],
+  "provider_requests": 0,
+  "gold_read": false,
+  "credentials_read": false,
+  "private_logs_read": false,
+  "scope": "Root repeat of numeric comparison; original non-author review identity remains in independent-metrics-audit.json"
+}

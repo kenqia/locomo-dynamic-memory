@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "files": 710,
+  "known_upstream_literal_catalog_available": true,
+  "findings": [],
+  "scope": "All staged changes and integration metadata; credential shapes plus known upstream Source/question literal. Does not certify unknown secrets, paraphrases or OCR; main inherited tree/history scanned separately by independent Standards."
+}

@@ -1,0 +1,79 @@
+{
+  "status": "running",
+  "scope": "conversation-only extraction, not complete Build or independent evaluation",
+  "builds": [
+    {
+      "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+      "sample_id": "conv-43",
+      "status": "extracted",
+      "phase": "extraction",
+      "fingerprint": "e7bf70017616b07b0e9d12c8fca8aa681cc4fbdc58d64e0568bf435ec8a66a25",
+      "source_sha256": "f3088c2c7cd5062f0459bb26c1c3aec6bd0b8e0b9f4c442d72b170f554be319d",
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "fragments": {
+        "succeeded": 34
+      },
+      "fragment_error_codes": {},
+      "memories": 402,
+      "referenced_source_turns": 300
+    },
+    {
+      "build_id": "bef9f685957843698b3083ff4cbc79a4",
+      "sample_id": "conv-44",
+      "status": "running",
+      "phase": "extraction",
+      "fingerprint": "9820e3a7d9dd0186434409f1d1436390f39325c05bfef731a6708256e2fd7220",
+      "source_sha256": "f3088c2c7cd5062f0459bb26c1c3aec6bd0b8e0b9f4c442d72b170f554be319d",
+      "returned_models": [
+        "deepseek-flash"
+      ],
+      "fragments": {
+        "failed": 1,
+        "pending": 3,
+        "running": 1,
+        "succeeded": 29
+      },
+      "fragment_error_codes": {
+        "invalid_output": 1
+      },
+      "memories": 332,
+      "referenced_source_turns": 240
+    }
+  ],
+  "physical_requests": 72,
+  "request_statuses": {
+    "response_received": 71,
+    "reserved": 1
+  },
+  "conservative_reserved_usd": "3.1964574",
+  "reported_usage": {
+    "prompt_tokens": 344082,
+    "completion_tokens": 84984,
+    "total_tokens": 429066
+  },
+  "unknown_usage_requests": 1,
+  "approved_requests_remaining": 132,
+  "approved_reservation_usd_remaining": "14.8035426",
+  "model_attempt_outcomes": {
+    "succeeded": 63,
+    "invalid_output": 8
+  },
+  "reported_usage_peak_cache_miss_upper_usd": "0.2052054",
+  "actual_bill_usd": "not_measured; cache/time-of-day discounts and account bill not accessed",
+  "policy": {
+    "input_rate": "0.30",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768,
+    "max_requests": 204,
+    "max_usd": "18",
+    "model": "deepseek-flash",
+    "output_rate": "1.20"
+  },
+  "holdout_answers_read": false,
+  "relation_index_qa_not_run": true,
+  "memory_and_source_contract": "validated; no claim of semantic factual correctness",
+  "plan_sha256": "8363cb625599cd2650a89ee41c2b1773ad3528444d42d26a5ebfc254d9553c69",
+  "authorization_sha256": "ebca86faf5329b5d7ad11670832c55b5f706822d8888f9c582efe0302bb1c9ee"
+}

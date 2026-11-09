@@ -1,0 +1,119 @@
+{
+  "version": "m5-conv44-isolated-recovery-v2-terminal-v1",
+  "audited_utc": "2026-11-04T13:04:48.803586+00:00",
+  "process_exit_code": 1,
+  "process_exit_reason": "isolated_recovery_incomplete_no_automatic_retry",
+  "authorization_file": "experiments/m5-development/conv44-isolated-recovery-v2-authorization-v1.json",
+  "plan_sha256": "ca0b07d1633a5fb178bb9cec7061fa9ae453b8428c184ae6a2754c7931cc7425",
+  "outcome_sha256": "22b0871c0fc3885d5414659a245f327a891bbd506818a2b37feb0e56196409dd",
+  "authorization_sha256": "5b7696f081960eeec59a474e9cb85c755c2dde2ab765aa55303aa36605b75809",
+  "execution_marker_sha256": "fff4cdf5452ce7737a6618f704d829e8a806c89cdb87d2799daa4e2ad097e8c2",
+  "final_database_logical_snapshot": "231fda945dc3a1482aea4c814603088e1ad0648ae32941450476e5f537c361e1",
+  "final_ledger_logical_snapshot": "655874bd4d710d8ae1d87c6255400f1e882fc83d5e56ac5321a4dc9739a64e09",
+  "outcome": {
+    "scope": "independent copy; retry conv-44 failed extraction fragment only; no index/relation/publish/QA",
+    "status": "failed",
+    "phase": "extraction",
+    "progress": {
+      "total": 34,
+      "succeeded": 33,
+      "failed": 1,
+      "pending": 0
+    },
+    "new_memories": 0,
+    "physical_requests": 3,
+    "protected_rows_unchanged": true,
+    "original_stage_and_ledger_unchanged": true,
+    "original_build_fingerprint_preserved": true,
+    "thinking": "disabled",
+    "holdout_qa_read": false,
+    "complete_build": false,
+    "automatic_recovery": false,
+    "ledger": {
+      "reserved_usd": "0.1335687",
+      "request_statuses": {
+        "response_received": 3
+      },
+      "reported_tokens": {
+        "prompt_tokens": 14832,
+        "completion_tokens": 4706,
+        "total_tokens": 19538
+      },
+      "unknown_usage_requests": 0,
+      "unknown_usage_reserved_usd": "0",
+      "reported_fields_peak_upper_usd": "0.0100968",
+      "actual_invoice": "not_accessed",
+      "remaining_capacity_authorizes_extra_attempts": false
+    }
+  },
+  "safe_attempt_diagnostics": [
+    {
+      "attempt": 1,
+      "error_code": "extraction_time_expression_required",
+      "failure_stage": "domain_validation",
+      "field_path": "memories[12]",
+      "thinking": {
+        "type": "disabled"
+      },
+      "reasoning_effort": null,
+      "requested_model": "deepseek-flash",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 1921,
+        "prompt_tokens": 4794,
+        "total_tokens": 6715
+      },
+      "outcome": "invalid_output",
+      "finish_reason": "stop"
+    },
+    {
+      "attempt": 2,
+      "error_code": "extraction_time_expression_required",
+      "failure_stage": "domain_validation",
+      "field_path": "memories[9]",
+      "thinking": {
+        "type": "disabled"
+      },
+      "reasoning_effort": null,
+      "requested_model": "deepseek-flash",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 1318,
+        "prompt_tokens": 5019,
+        "total_tokens": 6337
+      },
+      "outcome": "invalid_output",
+      "finish_reason": "stop"
+    },
+    {
+      "attempt": 3,
+      "error_code": "extraction_time_expression_required",
+      "failure_stage": "domain_validation",
+      "field_path": "memories[9]",
+      "thinking": {
+        "type": "disabled"
+      },
+      "reasoning_effort": null,
+      "requested_model": "deepseek-flash",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "completion_tokens": 1467,
+        "prompt_tokens": 5019,
+        "total_tokens": 6486
+      },
+      "outcome": "invalid_output",
+      "finish_reason": "stop"
+    }
+  ],
+  "source_and_ledger_identity_unchanged": true,
+  "protected_snapshot_unchanged": true,
+  "producer_hashes_unchanged": true,
+  "memories": 383,
+  "succeeded_fragments": 33,
+  "total_fragments": 34,
+  "holdout_qa_evidence_answers_read": false,
+  "additional_retry_authorized": false,
+  "remaining_monetary_ceiling_usd": "0.1283961",
+  "remaining_physical_requests": 0,
+  "limitation": "All three new attempts repeat the strict time-expression failure; no successful repair was demonstrated; private process output was not read"
+}

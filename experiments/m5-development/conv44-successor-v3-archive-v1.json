@@ -1,0 +1,48 @@
+{
+  "version": "m5-conv44-successor-v3-archive-v1",
+  "archive": "var/m5-development/conv44-successor-v3-terminal-v1.tar.gz",
+  "sha256": "a240fcf7b78f1af07ddd1aa7379aea0ecd2ba74f34dee24d877cad088598db0e",
+  "bytes": 484067,
+  "members": {
+    "plan.json": {
+      "sha256": "27fbb376bbd493c7911b55124c3a6e71930428fe86e10d65f1533af208114bbd",
+      "bytes": 13365
+    },
+    "execution-started.json": {
+      "sha256": "c9cb08507253b9ce669abc6dd4f6bdb8363781b6d71c49d2637f09e6f68cc6bb",
+      "bytes": 227
+    },
+    "physical-requests.sqlite3": {
+      "sha256": "68a109024680e7ba1638faf7397f58587cfe834a5f55fd2e218363e75a69d5b2",
+      "bytes": 16384
+    },
+    "inheritance.json": {
+      "sha256": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e",
+      "bytes": 107142
+    },
+    "authorization.json": {
+      "sha256": "37f08da570dbd3577cc85bd8c64051b9b73f65e93fa0360b165e676e486ecb74",
+      "bytes": 523
+    },
+    "memory.sqlite3": {
+      "sha256": "fbaf568dff9ed183b08574c1c3af51d48c8e3644989b49e551c97caf2052accd",
+      "bytes": 2609152
+    },
+    "outcome.json": {
+      "sha256": "255bfd54b5f5fd49ca48c8dbfa6a67c15a5df203bac1a82282c7b1d0e24c4fce",
+      "bytes": 1106
+    },
+    "settings.json": {
+      "sha256": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+      "bytes": 1383
+    }
+  },
+  "member_count": 8,
+  "roundtrip_sha_verified": true,
+  "sqlite_backup_logical_identity_verified": true,
+  "sqlite_immutable_integrity_verified": true,
+  "excludes_process_output": true,
+  "mode": "0o600",
+  "terminal_sha256": "10ed0eefa87bfc18db000218c4d889feb0855c133ff3fa089111c41fd297df32",
+  "holdout_qa_read": false
+}

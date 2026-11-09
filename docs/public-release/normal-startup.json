@@ -1,0 +1,9 @@
+{
+  "api_health": 200,
+  "ui_health": 200,
+  "query_default": "hybrid_no_resolution",
+  "status": "PASS",
+  "launcher_exit": 0,
+  "provider_requests": 0,
+  "database": "new var/personal-app/memory.sqlite3; existing research SQLite untouched"
+}

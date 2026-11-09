@@ -1,3 +1,4 @@
+import pytest
 """Development planning through the public API, without generation or builds."""
 import httpx
 from fastapi.testclient import TestClient
@@ -7,6 +8,7 @@ from locomo_memory.model import DeepSeekModel
 from test_retrieval import ControlledEmbedder
 
 
+@pytest.mark.controlled_data
 def test_official_development_plan_is_complete_stable_and_offline(settings):
     calls = []
 
@@ -44,6 +46,7 @@ def test_official_development_plan_is_complete_stable_and_offline(settings):
         assert calls == []
 
 
+@pytest.mark.controlled_data
 def test_smoke_plan_uses_first_original_question_per_category(client):
     imported = client.post('/imports/official').json()
     response = client.post('/evaluation-plans', json={'dataset_id': imported['dataset_id'], 'artifact_sha256': imported['artifact_sha256'], 'scope': 'smoke'})
@@ -91,6 +94,7 @@ def test_smoke_rejects_missing_categories_and_keeps_duplicate_questions(client, 
     assert 'ANNOTATION ONLY' not in str(turns)
 
 
+@pytest.mark.controlled_data
 def test_plan_requires_explicit_artifact_and_survives_restart(settings):
     with TestClient(create_app(settings, embedder=ControlledEmbedder())) as client:
         imported = client.post('/imports/official').json()
@@ -108,6 +112,7 @@ def test_plan_requires_explicit_artifact_and_survives_restart(settings):
         assert inputs['plan_id'] == plan['plan_id']
 
 
+@pytest.mark.controlled_data
 def test_raw_fallback_is_opt_in_for_five_question_smoke_only(client):
     imported = client.post('/imports/official').json()
     body = {'dataset_id': imported['dataset_id'], 'artifact_sha256': imported['artifact_sha256'], 'scope': 'smoke'}

@@ -50,7 +50,7 @@ def test_browser_fixture_retrieves_and_expands_evidence_across_fresh_builds(sett
                 ("What is Sam's birth year?", {}, "conflict"),
                 ("What is Alex's passport number?", {}, "insufficient"),
             ]:
-                response = client.post("/queries", json={"dataset_id": dataset_id, "sample_id": "conv-a", "build_id": build_id, "question": question, **extra})
+                response = client.post("/queries", json={"strategy": "dynamic", "dataset_id": dataset_id, "sample_id": "conv-a", "build_id": build_id, "question": question, **extra})
                 assert response.status_code == 201, response.text
                 trace = response.json()
                 assert trace["build_id"] == build_id

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="16" time="10.776" timestamp="2026-11-04T10:34:43.420900+08:00" hostname="localhost"><testcase classname="tests.test_m5_adaptive" name="test_routes_explain_actual_channels_without_gold" time="0.001"><failure message="assert 0 == 1">def test_routes_explain_actual_channels_without_gold():
+&gt;       assert route('What is her status now?')['graph_depth'] == 1
+E       assert 0 == 1
+
+tests/test_m5_adaptive.py:7: AssertionError</failure></testcase><testcase classname="tests.test_m5_adaptive" name="test_intervals_anchor_to_conversation_and_keep_unknown" time="0.001"><failure message="AssertionError: assert None == '2023-10-21'">def test_intervals_anchor_to_conversation_and_keep_unknown():
+        cutoff = date(2023, 10, 22)
+&gt;       assert query_interval('What happened yesterday?', cutoff)['start'] == '2023-10-21'
+E       AssertionError: assert None == '2023-10-21'
+
+tests/test_m5_adaptive.py:16: AssertionError</failure></testcase><testcase classname="tests.test_m5_adaptive" name="test_priority_preserves_other_people_plans_and_unknown_dates" time="0.001"><failure message="AssertionError: assert ['a', 'c', 'b'] == ['c', 'a', 'b']&#10;  &#10;  At index 0 diff: 'a' != 'c'&#10;  Use -v to get more diff">def test_priority_preserves_other_people_plans_and_unknown_dates():
+        memories = {'a': dict(entity_id='Alex', time={}, statement_type='plan'),
+                    'b': dict(entity_id='Ben', time={}, statement_type='fact'),
+                    'c': dict(entity_id='Alex', time={'valid_from': '2023-01-01'})}
+        ids = ['b', 'a', 'c']
+&gt;       assert prioritize(ids, memories, route('Alex now?', {'entities': ['Alex']}),
+                          query_interval('now', date(2023, 2, 1))) == ['c', 'a', 'b']
+E       AssertionError: assert ['a', 'c', 'b'] == ['c', 'a', 'b']
+E         
+E         At index 0 diff: 'a' != 'c'
+E         Use -v to get more diff
+
+tests/test_m5_adaptive.py:28: AssertionError</failure></testcase><testcase classname="tests.test_m5_graph_compression" name="test_graph_structural_edges_and_sources" time="0.747" /><testcase classname="tests.test_m5_graph_compression" name="test_graph_disabled_identity_and_scope" time="0.734" /><testcase classname="tests.test_m5_graph_compression" name="test_graph_exact_path_and_budget" time="0.719" /><testcase classname="tests.test_m5_graph_compression" name="test_compression_roundtrip_preserves_every_field_and_order" time="0.725" /><testcase classname="tests.test_m5_graph_compression" name="test_compression_tampering_rejected[content]" time="0.797" /><testcase classname="tests.test_m5_graph_compression" name="test_compression_tampering_rejected[order]" time="0.784" /><testcase classname="tests.test_m5_graph_compression" name="test_compression_tampering_rejected[shared]" time="0.760" /><testcase classname="tests.test_m5_graph_compression" name="test_compression_scope_rejected" time="0.734" /><testcase classname="tests.test_m5_api" name="test_bonus_inspection_is_readonly_and_build_pinned" time="1.119" /><testcase classname="tests.test_production_paths" name="test_default_build_api_ui_use_only_approved_operations[False]" time="0.807" /><testcase classname="tests.test_production_paths" name="test_default_build_api_ui_use_only_approved_operations[True]" time="0.981" /><testcase classname="tests.test_production_paths" name="test_invalid_default_resolution_never_invokes_research_or_raw_fallback" time="0.787" /><testcase classname="tests.test_production_paths" name="test_service_validation_failure_keeps_completed_provider_usage" time="0.789" /></testsuite></testsuites>

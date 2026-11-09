@@ -1,0 +1,150 @@
+{
+  "version": "release-export-catalog-v1",
+  "kind": "Controlled MemoryExport / Real Experimental Artifact",
+  "license_status": "CC-BY-NC-4.0 upstream; redistribution channel and course authorization pending; local-only candidate",
+  "builds": [
+    {
+      "sample_id": "conv-26",
+      "build_id": "367c901b300440649bdc0bfba2af8010",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "sha256": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78",
+      "memories": 259,
+      "relations": 4740,
+      "source_turns": 190,
+      "file": "conv-26.json",
+      "bytes": 5053297,
+      "build_fingerprint": "44be189a247e940d5deb6525d35b670c654cd29ccfb2a2b1cb628a356f0afae4",
+      "index_fingerprint": "2b76ddfae066bf10b6f17485f4bcc6584e554b41d5a36a9b83f4dc6d4f86a1af",
+      "projection_fingerprint": "aaa939a99062515077626d12c0509189ab58efb345240e78ad2fdd35407a9a18",
+      "embedding": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+        "dimensions": 384,
+        "max_tokens": 256,
+        "length_policy": "reject",
+        "normalized": true,
+        "device": "cpu"
+      }
+    },
+    {
+      "sample_id": "conv-30",
+      "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "sha256": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae",
+      "memories": 244,
+      "relations": 4460,
+      "source_turns": 154,
+      "file": "conv-30.json",
+      "bytes": 4897537,
+      "build_fingerprint": "c0f39de6dd02e0db090d69c440c14b5bc279ee018581da4438ec0580a963bb17",
+      "index_fingerprint": "c642b0a0ecfcef63d4a11ca8a6c86234fc043e04be4a4f76766fdb0bc3d74254",
+      "projection_fingerprint": "db319d9616ecfa22c2695d75a83545c05f238af5cb0ffb0d92da6d2a599ed37b",
+      "embedding": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+        "dimensions": 384,
+        "max_tokens": 256,
+        "length_policy": "reject",
+        "normalized": true,
+        "device": "cpu"
+      }
+    },
+    {
+      "sample_id": "conv-41",
+      "build_id": "8d459492549b4a3e88005211f036addf",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "sha256": "e15b30e89de463cca4ff9fcd347b332a72525f0fbfb8506a5476df120fd4b488",
+      "memories": 321,
+      "relations": 5767,
+      "source_turns": 243,
+      "file": "conv-41.json",
+      "bytes": 6147480,
+      "build_fingerprint": "116fb41692285aeb29d73d620165d8c30a06297749f46a4aae6beaa46309a312",
+      "index_fingerprint": "be470b8702cede02d1372e3c00ff055429835c3b46e0b02ca4a99a82b8db938b",
+      "projection_fingerprint": "0115f3e11193e92e18fb3dd6973e4aa02d9dda5282aaa70456334ac4fb237403",
+      "embedding": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+        "dimensions": 384,
+        "max_tokens": 256,
+        "length_policy": "reject",
+        "normalized": true,
+        "device": "cpu"
+      }
+    },
+    {
+      "sample_id": "conv-42",
+      "build_id": "c892596ac8884f43b4cf2098349a7fa5",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "sha256": "89d6bdf02e7eca10014688e0a7946fd536b846c4ff6c8b09a84bb8671680e3fd",
+      "memories": 413,
+      "relations": 7724,
+      "source_turns": 297,
+      "file": "conv-42.json",
+      "bytes": 8229528,
+      "build_fingerprint": "80796c954608a64e2b28d1486656a43018a2d568887f10ece4d0e9b4b0d478c2",
+      "index_fingerprint": "0c156cab907c1dd59a25a0ff1c52a6e52cfb0dcb6bae37de4be7945c893ff44a",
+      "projection_fingerprint": "78441488ff44536d061fa65eed5fffdfd8248ac8f553dac3875fa285861fa5fc",
+      "embedding": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+        "dimensions": 384,
+        "max_tokens": 256,
+        "length_policy": "reject",
+        "normalized": true,
+        "device": "cpu"
+      }
+    },
+    {
+      "sample_id": "conv-43",
+      "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+      "dataset_id": "610b0aa9bfd787ff0882a806",
+      "sha256": "2ae95deb13dcf22e1bb91cff44db88feba7c3bcf1b753e907ba121f4ac972f17",
+      "memories": 402,
+      "relations": 7620,
+      "source_turns": 300,
+      "file": "conv-43.json",
+      "bytes": 8027134,
+      "build_fingerprint": "e7bf70017616b07b0e9d12c8fca8aa681cc4fbdc58d64e0568bf435ec8a66a25",
+      "index_fingerprint": "7367e858eb489c68054d5b8bf3002cb1c22239ea8796db254f191204920fb2f5",
+      "projection_fingerprint": "254608d6164226d1c2c30f92cd9f764f224d51af1863f1489c1d64112333a70d",
+      "embedding": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+        "dimensions": 384,
+        "max_tokens": 256,
+        "length_policy": "reject",
+        "normalized": true,
+        "device": "cpu"
+      }
+    },
+    {
+      "sample_id": "conv-44",
+      "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+      "dataset_id": "610b0aa9bfd787ff0882a806",
+      "sha256": "1006ce3d855ffb496cb8a2c029276511707427bb7129474013f4b1768639611f",
+      "memories": 392,
+      "relations": 7134,
+      "source_turns": 281,
+      "file": "conv-44.json",
+      "bytes": 7416236,
+      "build_fingerprint": "f1a98a9483c1825b741c0941978f60f8cf21f170297ac45be2c881cbb3e5d966",
+      "index_fingerprint": "3f25073f0cb8ebdd6897490a7640bf4b3a58703de4d42ceff987f481ef5654ca",
+      "projection_fingerprint": "6fe8d3db8ecf077bacca3a5bacdbc24ccb9ea5301dd3a85eac85ebd89e5ee465",
+      "embedding": {
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+        "dimensions": 384,
+        "max_tokens": 256,
+        "length_policy": "reject",
+        "normalized": true,
+        "device": "cpu"
+      }
+    }
+  ],
+  "totals": {
+    "memories": 2031,
+    "relations": 37445,
+    "source_turns": 1465
+  }
+}

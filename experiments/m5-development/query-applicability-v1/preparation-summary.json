@@ -1,0 +1,31 @@
+{
+  "status": "prepared_not_reviewed",
+  "planned": 40,
+  "original_query_denominator": 757,
+  "existing_resolution_predictions": 35,
+  "missing_resolution_predictions": 5,
+  "historical_item_statuses": {
+    "succeeded": 35,
+    "failed": 5
+  },
+  "per_conversation": {
+    "conv-26": 10,
+    "conv-30": 10,
+    "conv-41": 10,
+    "conv-42": 10
+  },
+  "units_sha256": "e06ce7b3f9ccd6b34b89934e0dcb6ea037f546abecb3c3c70f000dde81540911",
+  "predictions_sha256": "38e48679cb870c5a74471ad759605c820958cc1e00add26fc9d63741431ebcee",
+  "provider_requests": 0,
+  "source_database_unchanged": true,
+  "holdout_qa_read": false,
+  "metric": "not_measured; independent references absent",
+  "reviewer_packet_excludes": [
+    "stored relations",
+    "resolver choices",
+    "generated answer",
+    "QA answer/evidence",
+    "item success/failure"
+  ],
+  "limitation": "Historical Dynamic applicability audit, not new M5 QA or a temporal-stratified benchmark"
+}

@@ -1,0 +1,245 @@
+{
+  "status": "PASS",
+  "archive_path": "/home/kenqia/my_folder/locomo-private-delivery/m5-personal-candidate-20261105/archive-source-v2/research-evidence.tar.gz",
+  "archive_sha256": "546a29a16cf4a7cffd40200a7a82cdb03112eb43833f83320e676f2e77200eef",
+  "archive_bytes": 5880956,
+  "members": 2446,
+  "member_bytes": 18719075,
+  "omitted_files": 12,
+  "deletions": 0,
+  "restore_verification": "all member bytes streamed and SHA/size/order compared to source snapshot inventory",
+  "worktrees": [
+    {
+      "path": "/home/kenqia/my_folder/locomo-dynamic-memory",
+      "head": "3392faf861b36862ffa876c39e162d5108e2d023",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e7afa929866125a843cc257c5f0a0d95cba4e5949cbc00bd77c9a2d4d19e72ee",
+      "dirty_entries": 36,
+      "category": "C"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/browser-env",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/context",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/current-showcase-five-strategies-frozen-20261021",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/current-showcase-frozen-20261021",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104",
+      "head": "3f8929839e30cd085b105504ca1a6fe11fcf216f",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-completion-20261104",
+      "head": "bb9f678b23665cf0650838c716b4922a6363eb7b",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-recovery-v3-20261104",
+      "head": "aed4634deb6c873ef1620d0a80bd023e2541d1a2",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104",
+      "head": "28ce63d73d6736c7812aa0be4425a0d9650dd09e",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-development-20261104",
+      "head": "0aae59c61d569f03d73c57ae333784ae99a8a22b",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-input-v2-20261104",
+      "head": "aba95ca47fcafd527ef1237d4f30d23834592fe2",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-release-integration-20261105",
+      "head": "267d58078f962522272ecab180b9c841c62b165d",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "40261eb630edfb0e3172e3a62a6ded19470423f91ba7c4e5eff1598fd3c63793",
+      "dirty_entries": 38,
+      "category": "A"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/production-integration-20261101",
+      "head": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-answer-output-conv26",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-citation-followup-frozen",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-evidence-coverage-ab",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-query-followup-frozen",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-query-reliability-frozen",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v5",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-relations-v6",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v2",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/real-baseline-issue15-thinking-conv26-v3",
+      "head": "unavailable",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101",
+      "head": "97bfaaaa46061a27153dd55b16882cb9f6a2d437",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "17a76a2a3459d4dfd80539821eabdf4cff5c59143d33404a3b79f42dc573c2fa",
+      "dirty_entries": 97,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/research-process-archive-20261103",
+      "head": "3e64811ca4047192f0e3db8a587d013396f04fa8",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/v2-6d-clean-clone",
+      "head": "068eb23ec72e90913e5748022f1fd638949dc0fb",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/v2-6d-production-safe",
+      "head": "3ba1954bd0c188ad84d80dd4a4f94618857b0109",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/v2-6d-research-safe",
+      "head": "4d1d072f2c7075ebcac10879269bdcfd736e683b",
+      "status_sha256_basis": "git status --porcelain=v1 -z raw bytes",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty_entries": 0,
+      "category": "B"
+    }
+  ]
+}

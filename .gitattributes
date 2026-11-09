@@ -1,2 +1,8 @@
 # Preserve PDF offsets and hashes across Windows and Linux checkouts.
 deliverables/m4/*.pdf binary
+
+# Frozen historical pytest reports: preserve original bytes and recorded SHA.
+# Limit the exception to original traceback trailing spaces; code stays checked.
+experiments/m5-development/test-results/extraction-recovery-v1.txt whitespace=-blank-at-eol
+experiments/m5-development/test-results/extraction-recovery-v1.xml whitespace=-blank-at-eol
+experiments/m5-development/test-results/first-integration.xml whitespace=-blank-at-eol

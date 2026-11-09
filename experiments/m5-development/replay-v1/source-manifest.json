@@ -1,0 +1,35 @@
+{
+  "database": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/var/research-v2-full-baseline-20261101/memory.sqlite3",
+  "sha256": "ffa299c36ba1d15a6148826dd14430dca6e4ebfa27069d7a141021987cda060c",
+  "original_unchanged": true,
+  "implementation_commit": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
+  "dirty_files": [
+    " M src/locomo_memory/api.py",
+    " M src/locomo_memory/ui.py",
+    "?? experiments/m5-development/",
+    "?? src/locomo_memory/m5_adaptive.py",
+    "?? src/locomo_memory/m5_api.py",
+    "?? src/locomo_memory/m5_compression.py",
+    "?? src/locomo_memory/m5_graph.py",
+    "?? src/locomo_memory/m5_queries.py",
+    "?? src/locomo_memory/m5_review.py",
+    "?? src/locomo_memory/m5_ui.py",
+    "?? tests/test_m5_adaptive.py",
+    "?? tests/test_m5_api.py",
+    "?? tests/test_m5_graph_compression.py",
+    "?? tests/test_m5_review.py",
+    "?? tools/m5/"
+  ],
+  "implementation_sha256": {
+    "src/locomo_memory/m5_adaptive.py": "2317161471f0565445fc1637ba52b539000e919eb74bc60fa84fd2c77f82120f",
+    "src/locomo_memory/m5_api.py": "b79b00cb6cd0486f689ce82a6a19b5c96396dba55563f24cc18cf9137f8f8556",
+    "src/locomo_memory/m5_compression.py": "198058471dd1256ac49039ed1b55b944af5c595be1b33de730a2e8e48f10fc1b",
+    "src/locomo_memory/m5_graph.py": "9612d38e32f162778e9d1452d483b59bf4d9a9558a98b216fc0eb632d3e2f93e",
+    "src/locomo_memory/m5_queries.py": "a1b64765e6b71a4925fecbe895d5f26229f2419580cf0e6d3e04dd65dd745d6f",
+    "src/locomo_memory/m5_review.py": "766d70f04b5384325dcc869b0b88e96d220ecf4b93b41cd3172c0f06f0650ae4",
+    "src/locomo_memory/m5_ui.py": "5272514c90f6ccb47d06944d152dc8927bfe5204fd33368423b55f9971b7e497"
+  },
+  "runtime_private": "/home/kenqia/my_folder/locomo-worktrees/m5-final-development-20261104/var/m5-development/replay-v1",
+  "complete_exports": 4,
+  "holdout_qa_read": false
+}

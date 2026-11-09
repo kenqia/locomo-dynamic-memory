@@ -1,0 +1,88 @@
+{
+  "version": "m5-level-e-prepared-manifest-v1",
+  "checked_utc": "2026-11-05T02:38:17.669079+00:00",
+  "status": "prepared_not_authorized",
+  "stage_path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1",
+  "implementation_commit": "0dbd98e7b296ef29d9998fa55d88d512f8ec85f1",
+  "configuration_lock_commit": "191349f",
+  "producer_files": 82,
+  "all_producer_real_commit_blobs_verified": true,
+  "stage_files": {
+    "plan.json": "5d99378868a5aed92889ff3995ae7771270b91d8effb373fb6d7e85672484c92",
+    "final-system-lock.json": "3b6e3fbcad1670226f1f9d8e1c9fa96436b104893a875527d078dc4948671ac6",
+    "inputs.json": "ced0d3c79e0009de49394544a61d6d4478d9d0c7ce400a5e8aade3adabd06718",
+    "authorization-template.json": "84024471f8baf3031dac0598788fe3a189f5ecdfd6eda30f518bdee0295bcaff"
+  },
+  "evidence_sha256": {
+    "experiments/m5-development/level-e-final-lock-independent-v1.json": "769ba761764ffc2d11ce0c7ab5b518fee034338b263ff30319c4f80f6b52801c",
+    "docs/m5-development/LEVEL_E_FINAL_LOCK_REVIEW_V1.md": "e4cb4451f18ad323756576d8d9e0724420b42ee112d6c3c5326755eb6a263f05",
+    "experiments/m5-development/level-e-preparation-root-v1.json": "6fc08d17a720764851f7f20f10ab59386ea7a633d02c4cc0493ddf6d2f241fff",
+    "experiments/m5-development/level-e-preparation-independent-v1.json": "4e8a9d1a031b3a0dc2a79efade8546d46094907890b32c40b30837593d7069b8",
+    "docs/m5-development/LEVEL_E_PREPARATION_REVIEW_V1.md": "0c292030bd8d120600b2b77142330d5055e560b62c2e529ead47d7e7de23e02c",
+    "docs/m5-development/LEVEL_E_ENTRY_REVIEW_V1.md": "07018aae95ac5d8c91ec23660476cefdd3ecc739c6043bfb8423647f72d4c857",
+    "tests/test_m5_level_e.py": "a96df547dd93028f50b5c714965ef5e6aa2c20bb3cdc5a28aa66907bb586a7e4",
+    "docs/m5-development/LEVEL_E_FINAL_CONFIGURATION_V1.md": "cc25edcc475cad61a64d52ef802f4438ba6927deaf64bef1b93a97d111085c52",
+    "docs/m5-development/LEVEL_E_PREPARATION_V1.md": "d7ab6a540e2b689719d1ecd791e971bc77fbdc23c2a86437360919d219df1075",
+    "docs/m5-development/LEVEL_E_GATE.md": "2ce0b6ced09eacf049262c8725b6511c514bd68896909f31f8f9d87c8a87b9cf",
+    "M5_LEVEL_E_V1_HANDOFF.md": "a2dcc95ce380ee731bf6470153ab88085a5c2b38e8c896d46db9b1530b320ec7"
+  },
+  "execution_storage_identities": {
+    "conv-43": {
+      "main": {
+        "exists": true,
+        "sha256": "9577daf6b0c155d02155c658ba2a97663ab573cdf3a8a64d3ad4273aadde4670"
+      },
+      "wal": {
+        "exists": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "conv-44": {
+      "main": {
+        "exists": true,
+        "sha256": "e4a8ce30355eecdb2928ff104e16fbf2d349e69e8132c0f99f9db8c11b6460ea"
+      },
+      "wal": {
+        "exists": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "ledger_storage_identity": {
+    "main": {
+      "exists": true,
+      "sha256": "9012ff9db11111e9cc6c73ebcb179a446ea92e10ac69293eed6e0abb6364cbfb"
+    },
+    "wal": {
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "root_audit_script_sha256": "e83891049452fb84dd5e12cc0105618a33a9316dcfaba05df688e0b51123580c",
+  "questions": 400,
+  "questions_by_sample": {
+    "conv-43": 242,
+    "conv-44": 158
+  },
+  "planned_items": 800,
+  "policy": {
+    "model": "deepseek-flash",
+    "max_input_bytes": 640000,
+    "max_output_tokens": 32768,
+    "input_usd_per_million": ".30",
+    "output_usd_per_million": "1.20",
+    "max_requests": 6000,
+    "max_usd": "1387.9296000"
+  },
+  "root_checks": 25,
+  "independent_check_groups": 6,
+  "provider_requests": 0,
+  "gold_read": false,
+  "reference_backup_or_full_table_snapshot": false,
+  "authorization_present": false,
+  "execution_marker_present": false,
+  "bonus_enabled": false,
+  "old_budget_transferred": false,
+  "actual_invoice": "not_accessed",
+  "complete_experiment_report": false
+}

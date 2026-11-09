@@ -1,0 +1,9 @@
+{
+  "units_sha256": "9a70cecd9358d52f5cf9d040083d8de05ecba2ba55296d7173c05b3d9f227450",
+  "reviews": {
+    "var/m5-development/review-independent-a.json": "b4e4315afa7f59684a2b93e9ae8aa5aa43709c852265365f1aef8036aa075c2e",
+    "var/m5-development/replay-v1/review-independent-b.json": "ae60fe1752375bcff2b7be9589091ceb2625a297a87bb90a8a02e363bd8b2bf9"
+  },
+  "protocol": "m5-dynamic-review-v1",
+  "independent_ai": true
+}

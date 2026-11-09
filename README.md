@@ -1,117 +1,93 @@
-# locomo-dynamic-memory
+> 此分支是从main导入公开allowlist tar的安全快照，未导入个人研究分支历史。新发布身份、当前验收及main保留材料边界见[安全快照发布记录](SAFE_PUBLIC_SNAPSHOT.md)。下述运行命令适用于本快照。
 
-软件需求工程课程项目仓库。
+# LoCoMo Personal Core Release
 
-## 代码实现准备
+个人核心系统的 M5 交付候选，等待团队整合。课程截止：2026-11-09 24:00（北京时间）。
+当前冻结实验与工程验收分开记录，最新状态见 [Release清单](RELEASE_MANIFEST.md)。
+这不是团队最终报告、PPTX、MP4或课程平台提交。
 
-- [核心课程课件](docs/sources/0%20-%20Project%20%282026%29.pdf)
-- [M3/M4 实现决策与待定项](docs/adr/0001-memory-architecture.md)
-- [M3/M4 代码实现 spec](docs/specs/issue-4-m3-m4-dynamic-memory.md)，已发布为 [GitHub Issue #4](https://github.com/kenqia/locomo-dynamic-memory/issues/4)，标签为 `ready-for-agent`
-- [真实 DeepSeek 开发集基线评测 spec](docs/specs/issue-15-real-deepseek-baseline.md)，已发布为 [GitHub Issue #15](https://github.com/kenqia/locomo-dynamic-memory/issues/15)，标签为 `ready-for-agent`；开发集计划、完整全文、可恢复评测与失败报告已实现并完成离线验证，真实模型运行待执行
-- [真实基线 tickets 与依赖](docs/decisions/real-deepseek-evaluation-interview.md#实现-tickets-发布记录)，对应 GitHub Issues #16–#21；原 T2、T3 已合并为 #17，正文副本位于 `process/tickets/`
-- [实现 tickets 原样副本](process/tickets/)，对应 GitHub Issues #5–#12；每张票声明阻塞关系，并建立 GitHub 原生阻塞链接
-- [本地 LoCoMo 原始数据与版本校验](data/raw/locomo/README.md)
+## 从零开始
 
-本地 FastAPI、Streamlit、SQLite 应用已支持来源导入、原子 Memory 抽取、混合检索、历史关系和完整版本问答。启动见 [本地应用运行指南](docs/app/running.md)，抽取、失败重试与来源检查见 [构建指南](docs/app/building.md)。初始混合检索已提供 [候选检查](docs/app/retrieval.md)，[历史关系、状态、扩展与完整版本发布](docs/app/relations.md) 已接入；[有效证据问答](docs/app/querying.md)、[完整版本与导出](docs/app/versions.md) 和 [独立评测与基线比较](docs/app/evaluation.md) 已接入。根据用户转述的教师新说明，开发集为 `conv-26`、`conv-30`、`conv-41`、`conv-42`，最终评分集不公开；本组预先固定本地测试集为 `conv-43`、`conv-44`，系统冻结后再查看其模型成绩。公开 API 与页面可预览开发集全量和五题 smoke 计划，无需完整构建或模型调用。隔离准备、真实预检和全量入口见[真实基线运行指南](docs/app/real-baseline.md)。`conv-26` 前轮[答案优化复验](experiments/issue-15-answer-output-live/results/comparison.md)的 40 项全部执行成功，Dynamic 可回答题 F1 为 0.334；[拒答短语与原文遗漏仍需改进](experiments/issue-15-answer-output-live/results/analysis.md)。前轮 16 项输出校验失败的[历史结果](experiments/issue-15-thinking-qa/results/report.md)保留。开发集全量运行尚未完成，原始约束见[本次访谈](docs/decisions/real-deepseek-evaluation-interview.md)。spec 的准备标签不代表实现或验收完成。
-
-## 本地启动与验证
-
-在仓库根目录创建独立环境，再分别在两个终端启动后端与页面：
+需要 Linux/WSL、Python 3.12、uv。在仓库或公开代码包根目录执行：
 
 ```sh
-uv sync --locked
+uv sync --locked --python 3.12
+scripts/personal-release doctor
+scripts/personal-release replay-offline-demo
+```
+
+打开 `http://127.0.0.1:18510`；只读API为 `http://127.0.0.1:18010/docs`。
+这条路径无须key、本地embedding、互联网或研究SQLite，不创建Build/Resolve/Answer。
+页面明确区分 Synthetic / Offline Replay 和 Real Experimental Result。
+按顺序选择Build、Memory、历史/关系、Graph、Source Turn、预录问题与引用、Trace、评测对照，再下载JSON。
+Graph和分组checkbox默认关闭；失败Trace可直接选择演练。
+
+`Ctrl+C` 或向启动器发送 SIGTERM 会停止两个自有进程组。端口占用/启动失败以非零退出，保留诊断目录；数据库不删除。
+端口可用 `--api-port 18020 --ui-port 18520` 修改。UI、API均只绑定127.0.0.1。
+
+## 正常应用
+
+```sh
+scripts/personal-release start
+```
+
+后端 `http://127.0.0.1:8000`，页面 `http://127.0.0.1:8501`。
+统一启动器默认使用新的 `var/personal-app/memory.sqlite3`，不会指向研究数据库。
+`--config /absolute/path/to/local.toml` 读取自选配置，启动时仅新建快照，不改配置原件。
+正常应用启动本身不调用模型；点击真实Build/问答/评测可能收费，需要用户自己的授权和Provider配置。本次Release验收未调用真实付费模型。
+
+也保留原入口，分别在两个终端执行（此方式默认数据库是 `var/memory.sqlite3`）：
+
+```sh
 uv run --locked uvicorn locomo_memory.api:create_app --factory --host 127.0.0.1 --port 8000
 uv run --locked streamlit run src/locomo_memory/ui.py --server.address 127.0.0.1
+curl --fail http://127.0.0.1:8000/health
+curl --fail http://127.0.0.1:8501/_stcore/health
 ```
 
-`uv sync --locked` 不包含本地 Embedding 模型运行依赖。构建索引前，运行
-`uv sync --locked --extra embedding` 并准备固定 revision 的 MiniLM 本地缓存；
-真实生成还需要进程环境中的 `DEEPSEEK_API_KEY`。配置文件不接受凭据。
-证据覆盖优化后的 [A/B 真实实验](experiments/issue-15-evidence-coverage-live/results/analysis.md)已执行 30 项，全部运行成功，但仍有证据遗漏、枚举退化和时间错误；新问题组的 Raw Fallback F1 低于 Hybrid，尚不支持切换默认策略。现已按用户要求[暂时回退 P0/P1](experiments/issue-15-evidence-coverage/rollback-p0-p1.md)，保留 P2 的拒答与部分答案约定。
+本地Dense构建需额外安装锁定依赖 `uv sync --locked --extra embedding`，并事先合法取得固定MiniLM缓存。
+模型 `sentence-transformers/all-MiniLM-L6-v2`，revision `c9745ed1d9f207416be6d2e6f8de32d1f16199bf`，384维、256tokens、local_files_only=true。
+`doctor`报告包/缓存是否具备；不会下载模型或读取凭据。无缓存时使用只读Replay；不要把合成Embedding当真实索引。
+DeepSeek官方Provider是可选项；认证发现遵循 [本地凭据说明](docs/agents/local-credentials.md)，不把key写进TOML或仓库。
 
-详细步骤见[运行指南](docs/app/running.md)。
-CI、夹具回归、独立浏览器环境和失败诊断见[检查指南](docs/app/checking.md)。
+页面流程：上传许可允许的LoCoMo格式数据 → 选择对话 → 抽取 → Index → 关系/Projection → 发布完整Build → Memory/Source检查 → 问答 → 引用Source Turn/Trace → JSON导出。
+全流程见 [运行/数据入口](docs/release/RUNBOOK.md)，原有接口和数据模型见 [应用文档](docs/app/running.md) 与 [JSON Schema](memory-export-schema.json)。
+公开包不附LoCoMo原文/QA/Gold；“导入官方”在缺原件时明确失败，可上传合成或合法受控文件。请勿把MemoryExport上传到LoCoMo原始conversation导入入口。
 
-生成输出上限 `model_max_tokens` 默认 8192 tokens；可用 `relation_max_tokens` 单独覆盖关系阶段。
-默认关系判断使用 `high` 思考、有效证据解析使用 `low`，抽取、查询分析和答案生成关闭思考。
-字段、回滚和版本规则见[分阶段配置](docs/app/building.md#分阶段思考配置)；已有构建保留原配置快照。
+## 默认策略与回滚
+
+Release页面和公共 `POST /queries` 默认 **hybrid_no_resolution**；内部历史 `QueryRequest` 的Dynamic默认保持，用于旧工具复现。
+Hybrid复用已有QA评测基线：BM25+Dense+RRF、历史扩展、Answer；它不执行Dynamic Resolution，也不把回答上下文称为有效Memory真值。
+显式 `strategy=dynamic` 启用有效证据解析；`dynamic_raw_fallback` 是已有可选原文兜底。
+Graph两跳检索、compression wire、adaptive、temporal soft priority均不进入默认路径；Graph浏览为只读显式入口。
+[默认变更与回滚](docs/release/DEFAULTS_AND_ROLLBACK.md)记录实现、日期修复、测试和身份边界。
+
+## 导出与免费验证
 
 ```sh
-uv run --locked pytest -q
-LOCOMO_LOCAL_EMBEDDING=1 HF_HUB_OFFLINE=1 uv run --locked --extra embedding pytest -m local_embedding -q
+scripts/personal-release run-tests           # 合法含原件的工作树全仓
+scripts/personal-release run-tests --public  # 无受控原文的公开包
+scripts/personal-release validate-six-exports --directory /absolute/path/to/controlled/memory-exports
+scripts/personal-release verify-public-evidence --manifest public-evidence-manifest.json --directory .
+scripts/personal-release verify-private-archive --manifest /absolute/path/to/private-archive-manifest.json --directory /absolute/path/to/archive
 ```
 
-默认测试不调用付费服务。`local_embedding` 检查真实缓存模型；`live_model`
-需要显式设置 `LOCOMO_LIVE_MODEL=1` 和受保护凭据，才运行真实 DeepSeek 调用。
-真实浏览器、受控外部适配器和未执行项分别记录在
-[本地集成验证](experiments/issue-12-integration-validation.md)。
+六份真实JSON的 [清单](six-memory-exports-manifest.json) 公开；原件仅在本地受控区。
+验真后可用同一只读页面查看，API与页面共用相同Catalog：
 
-## 目录
+```sh
+scripts/personal-release replay-offline-demo --manifest six-memory-exports-manifest.json --directory /absolute/path/to/controlled/memory-exports
+```
 
-| 目录 | 预计内容 |
-| --- | --- |
-| `docs/sources/` | 经确认可共享的课程原始材料、来源说明 |
-| `docs/requirements/` | 审阅后的 Team Workflow、Vision & Scope，后续需求规格 |
-| `docs/specs/` | skills 生成并成功发布到 GitHub Issues 的 spec 正文副本 |
-| `docs/design/` | 后续模块设计、接口约定、数据结构和实现方案 |
-| `docs/decisions/` | 团队协作、工作流程和项目范围等决定的背景、理由及待确认项 |
-| `docs/agents/` | Agent 的项目约定，包括 Issue tracker、标签、领域文档和本地 skills 使用说明 |
-| `.agents/` | 仓库内置的 Agent 资源；`skills/` 保存 workflow skills 及其依赖 |
-| `process/tickets/` | skills 生成并成功发布到 GitHub Issues 的 ticket 正文副本，每个 ticket 单独保存 |
-| `process/meetings/` | 会议纪要模板、真实会议记录及经检查的截图 |
-| `process/snapshots/` | Notion 阶段任务快照、阶段复盘和提交记录 |
-| `presentations/` | 审阅后的汇报源文件与导出 PDF |
-| `src/` | FastAPI、Streamlit 与记忆构建、检索、问答、评测模块 |
-| `tests/` | 公开 API 行为测试与本地浏览器 smoke |
-| `experiments/` | 分票实验记录、集成验证与非敏感截图 |
+该模式没有预录问答时只展示真实Memory/关系，不创建新答案。目录必须显式指定，SHA、Build、来源、时间、索引和Projection不一致即拒绝。
+课程许可/受控渠道尚须负责人确认；不要把完整六份JSON或整个var上传公开仓库。
 
-`docs/decisions/` 记录为什么作出某项决定，`docs/design/` 说明具体如何设计。两者可以通过链接关联，同一份决策正文只保留在一个位置。架构与领域决策按现有 Agent 约定存入 `docs/adr/`，在首次需要时创建。
+## 实验、交付与团队接入
 
-空目录用 `.gitkeep` 保留。spec 和 ticket 正文副本原样复制，不做润色。
+- [个人实验摘要](PERSONAL_EXPERIMENT_SUMMARY.md)：历史757题、开发100题两版、留出400题严格分开；E类1–4 H=.402606/D=.409151，差值区间跨零。
+- [37页研究附录](docs/supplement/supplement.pdf)、[重建源码](docs/supplement/supplement.md)、[勘误和构建验证](docs/release/SUPPLEMENT_ERRATA.md)。附录独立于团队总报告。
+- [组件与Bonus矩阵](RELEASE_COMPONENT_MATRIX.md)、[完整实验索引](EXPERIMENT_ARCHIVE_INDEX.md)、[代码血缘](RELEASE_CODE_LINEAGE.md)。
+- [个人交付staging](deliverables/m5-personal-candidate/README.md)、[新鲜验收](docs/release/ACCEPTANCE.md)、[对抗性审查](docs/release/ADVERSARIAL_REVIEW.md)。
+- [团队接入契约](TEAM_INTEGRATION_HANDOFF.md)、[本地归档及仅拟删除清单](LOCAL_ARCHIVE_AND_CLEANUP_PLAN.md)。
 
-## 材料
-
-预计材料见 `docs/upload-plan.md`。
-
-- Notion 保存实时任务状态；仓库只保存注明导出时间的阶段快照。
-
-## M1 Team Workflow
-
-- [Markdown 源稿](docs/requirements/team-workflow.md)
-- [可编辑 Word](docs/requirements/team-workflow.docx)
-- [PDF](docs/requirements/team-workflow.pdf)
-
-M1 源稿修改后运行 `python scripts/build_m1_report.py` 重建 Word，PDF 使用 LibreOffice 导出。
-
-## M2 项目提案
-
-本轮制作中文报告和过程材料，暂不制作汇报文件。宏观方案由组长确认全组接受；当前文件属于本地制作版本，成员非作者复核、远端同步与正式提交按真实进度另行完成。
-
-- [Markdown 源稿](docs/requirements/vision-and-scope.md)
-- [可编辑 Word](docs/requirements/vision-and-scope.docx)
-- [报告 PDF](docs/requirements/vision-and-scope.pdf)
-- [方案确认记录](docs/decisions/m2-proposal-interview.md)
-- [过程材料说明](process/m2-process-index.md)
-- [过程材料离线阅读页](process/m2/index.html)
-- [仓库与 ZIP 文件清单](process/m2/file-manifest.csv)
-- [本地制作与打包验证](process/m2/validation-record.md)
-- [报告与图示制作脚本](scripts/build_m2_report.py)
-
-报告内两张简化图的 PNG 与可编辑 SVG 位于 `docs/requirements/assets/m2/`。过程材料、阅读页、文件清单与校验值全部在仓库留档，再通过 `python scripts/package_m2_materials.py` 整合为 ZIP；包内保留仓库路径和原始内容。报告 Word/PDF 独立提供，交付文件存放于 `deliverables/m2/`。
-
-修改源稿后可运行 `python scripts/build_m2_report.py` 重建 Word 和图示，所需环境及 PDF 渲染方式见验证记录。当前分支 `codex/m2-proposal-materials` 用于本轮留档，正式合并、推送和提交仍按复核及授权执行。
-
-M2 联网调研依据见 [现实系统与基准调研](docs/sources/m2-real-world-memory-research.md)。报告采用一手资料修订问题、可行性与评测边界；调研前快照保存在 `process/m2/iterations/vision-and-scope-before-research.md`。两者均进入过程 ZIP，不代表已运行系统实验。
-
-## M4 中期报告
-
-- [报告 Markdown v0.6](docs/design/m4-midterm-report.md)、[可编辑 Word](docs/design/m4-midterm-report.docx)和[报告 PDF](deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-报告.pdf)，实现依据 `main@ffb2657`、文档引用依据 `main@cf422fe`；已引用 [M3 需求规格 v0.3](docs/requirements/software-requirements-specification.md)，M3/M4 均待成员复核。
-- PDF 含结果索引共 **5 页**，见[页数与校验值](process/m4/pdf-validation.json)。Word 保留编辑能力，其分页未独立渲染，页数上限以 PDF 为准。
-- [报告修订记录](process/m4/draft-evidence.md)；重建命令和工具依赖见[导出与校验说明](process/m4/validation-record.md)，人工待办和意见见[复核与交付登记](process/m4/member-review-record.md)。
-- [M4 过程材料说明](process/m4-process-index.md)、[离线阅读页](process/m4/index.html)与[过程 ZIP](deliverables/m4/PROJECT-MILESTONE4-3-在阴雨天游泳-过程材料.zip)。版本、来源、实验、页面证据和待复核记录按仓库路径整理，清单与检查见 `process/m4/`；重建使用 `python scripts/package_m4_materials.py`。
-
-## 过程材料同步与打包
-
-修改任务快照或成员反馈后，运行 `python scripts/build_process_documents.py` 重建对应 Word，再使用 LibreOffice 导出同名 PDF。执行 `python scripts/package_m1_materials.py` 与 `python scripts/package_m2_materials.py` 重建两个过程包。
-
-包内包含检查结果、文件清单和 SHA-256。版本记录仅保存演进，当前哈希由脚本生成；M1 另附独立报告校验。新任务快照不覆盖历史 CSV，成员反馈表只记录真实结果。
+公开包验收命令/受控数据测试排除边界见RUNBOOK。禁止重新执行历史一次性付费runner、复用旧预算、用已曝光E调参后再次声称独立验证。

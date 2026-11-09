@@ -147,6 +147,9 @@ class RelationService:
             code = error.code if isinstance(error, ModelFailure) else "invalid_relation_output"
             metadata = error.metadata if isinstance(error, ModelFailure) else metadata
             with self.database.connect() as db:
+                if isinstance(error, ModelFailure) and code in {
+                        'physical_request_budget_exhausted', 'physical_request_policy_rejected'}:
+                    self.attempts.discard_local_rejection(db, build_id, task['task_id'], attempt)
                 db.execute("UPDATE relation_tasks SET status='failed',error_code=?,metadata_json=? WHERE task_id=?", (code, canonical_json(metadata), task["task_id"]))
                 self.builds._append_metadata(db, build_id, metadata)
                 self.attempts.finish(db, task["task_id"], attempt, "failed", code)

@@ -1,0 +1,4158 @@
+{
+  "version": "m5-level-c-semantic-review-v1",
+  "generation_freeze_sha256": "dcd66b1d704b2c8765750afc600002f4a34e9ecf9ff9dc2cdfac7d6cf0bde5a5",
+  "completed": true,
+  "summary": {
+    "overall": {
+      "planned": 200,
+      "reviewed": 200,
+      "unreviewed": 0,
+      "failed": 49,
+      "undetermined": 19,
+      "error_undetermined_or_not_applicable": 24,
+      "answer_kinds": {
+        "answered": 125,
+        "abstained": 26,
+        "failed": 49
+      },
+      "source_support": {
+        "positive": 105,
+        "negative": 36,
+        "denominator": 141,
+        "rate": 0.7446808510638298,
+        "undetermined": 10,
+        "not_applicable": 0
+      },
+      "citation_support": {
+        "positive": 93,
+        "negative": 29,
+        "denominator": 122,
+        "rate": 0.7622950819672131,
+        "undetermined": 18,
+        "not_applicable": 11
+      },
+      "abstention": {
+        "positive": 10,
+        "negative": 14,
+        "denominator": 24,
+        "rate": 0.4166666666666667,
+        "undetermined": 2,
+        "not_applicable": 125
+      },
+      "wrong_person": {
+        "positive": 0,
+        "negative": 151,
+        "denominator": 151,
+        "rate": 0.0,
+        "undetermined_or_not_applicable": 0
+      },
+      "wrong_event": {
+        "positive": 1,
+        "negative": 145,
+        "denominator": 146,
+        "rate": 0.00684931506849315,
+        "undetermined_or_not_applicable": 5
+      },
+      "wrong_time": {
+        "positive": 4,
+        "negative": 140,
+        "denominator": 144,
+        "rate": 0.027777777777777776,
+        "undetermined_or_not_applicable": 7
+      },
+      "list_omission": {
+        "positive": 20,
+        "negative": 119,
+        "denominator": 139,
+        "rate": 0.14388489208633093,
+        "undetermined_or_not_applicable": 12
+      }
+    },
+    "by_arm": {
+      "hybrid_no_resolution": {
+        "planned": 100,
+        "reviewed": 100,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 15,
+        "error_undetermined_or_not_applicable": 19,
+        "answer_kinds": {
+          "answered": 81,
+          "abstained": 19
+        },
+        "source_support": {
+          "positive": 64,
+          "negative": 28,
+          "denominator": 92,
+          "rate": 0.6956521739130435,
+          "undetermined": 8,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 53,
+          "negative": 26,
+          "denominator": 79,
+          "rate": 0.6708860759493671,
+          "undetermined": 14,
+          "not_applicable": 7
+        },
+        "abstention": {
+          "positive": 8,
+          "negative": 9,
+          "denominator": 17,
+          "rate": 0.47058823529411764,
+          "undetermined": 2,
+          "not_applicable": 81
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 100,
+          "denominator": 100,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 1,
+          "negative": 95,
+          "denominator": 96,
+          "rate": 0.010416666666666666,
+          "undetermined_or_not_applicable": 4
+        },
+        "wrong_time": {
+          "positive": 4,
+          "negative": 90,
+          "denominator": 94,
+          "rate": 0.0425531914893617,
+          "undetermined_or_not_applicable": 6
+        },
+        "list_omission": {
+          "positive": 14,
+          "negative": 77,
+          "denominator": 91,
+          "rate": 0.15384615384615385,
+          "undetermined_or_not_applicable": 9
+        }
+      },
+      "dynamic": {
+        "planned": 100,
+        "reviewed": 100,
+        "unreviewed": 0,
+        "failed": 49,
+        "undetermined": 4,
+        "error_undetermined_or_not_applicable": 5,
+        "answer_kinds": {
+          "answered": 44,
+          "failed": 49,
+          "abstained": 7
+        },
+        "source_support": {
+          "positive": 41,
+          "negative": 8,
+          "denominator": 49,
+          "rate": 0.8367346938775511,
+          "undetermined": 2,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 40,
+          "negative": 3,
+          "denominator": 43,
+          "rate": 0.9302325581395349,
+          "undetermined": 4,
+          "not_applicable": 4
+        },
+        "abstention": {
+          "positive": 2,
+          "negative": 5,
+          "denominator": 7,
+          "rate": 0.2857142857142857,
+          "undetermined": 0,
+          "not_applicable": 44
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 51,
+          "denominator": 51,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 50,
+          "denominator": 50,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 1
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 50,
+          "denominator": 50,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 1
+        },
+        "list_omission": {
+          "positive": 6,
+          "negative": 42,
+          "denominator": 48,
+          "rate": 0.125,
+          "undetermined_or_not_applicable": 3
+        }
+      }
+    },
+    "by_stratum_arm": {
+      "ordinary/hybrid_no_resolution": {
+        "planned": 80,
+        "reviewed": 80,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 11,
+        "error_undetermined_or_not_applicable": 14,
+        "answer_kinds": {
+          "answered": 66,
+          "abstained": 14
+        },
+        "source_support": {
+          "positive": 52,
+          "negative": 23,
+          "denominator": 75,
+          "rate": 0.6933333333333334,
+          "undetermined": 5,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 42,
+          "negative": 22,
+          "denominator": 64,
+          "rate": 0.65625,
+          "undetermined": 11,
+          "not_applicable": 5
+        },
+        "abstention": {
+          "positive": 5,
+          "negative": 9,
+          "denominator": 14,
+          "rate": 0.35714285714285715,
+          "undetermined": 0,
+          "not_applicable": 66
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 80,
+          "denominator": 80,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 1,
+          "negative": 76,
+          "denominator": 77,
+          "rate": 0.012987012987012988,
+          "undetermined_or_not_applicable": 3
+        },
+        "wrong_time": {
+          "positive": 3,
+          "negative": 74,
+          "denominator": 77,
+          "rate": 0.03896103896103896,
+          "undetermined_or_not_applicable": 3
+        },
+        "list_omission": {
+          "positive": 13,
+          "negative": 59,
+          "denominator": 72,
+          "rate": 0.18055555555555555,
+          "undetermined_or_not_applicable": 8
+        }
+      },
+      "ordinary/dynamic": {
+        "planned": 80,
+        "reviewed": 80,
+        "unreviewed": 0,
+        "failed": 39,
+        "undetermined": 3,
+        "error_undetermined_or_not_applicable": 4,
+        "answer_kinds": {
+          "answered": 35,
+          "failed": 39,
+          "abstained": 6
+        },
+        "source_support": {
+          "positive": 32,
+          "negative": 8,
+          "denominator": 40,
+          "rate": 0.8,
+          "undetermined": 1,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 32,
+          "negative": 3,
+          "denominator": 35,
+          "rate": 0.9142857142857143,
+          "undetermined": 3,
+          "not_applicable": 3
+        },
+        "abstention": {
+          "positive": 1,
+          "negative": 5,
+          "denominator": 6,
+          "rate": 0.16666666666666666,
+          "undetermined": 0,
+          "not_applicable": 35
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 41,
+          "denominator": 41,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 40,
+          "denominator": 40,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 1
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 41,
+          "denominator": 41,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 6,
+          "negative": 32,
+          "denominator": 38,
+          "rate": 0.15789473684210525,
+          "undetermined_or_not_applicable": 3
+        }
+      },
+      "diagnostic/hybrid_no_resolution": {
+        "planned": 20,
+        "reviewed": 20,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 4,
+        "error_undetermined_or_not_applicable": 5,
+        "answer_kinds": {
+          "abstained": 5,
+          "answered": 15
+        },
+        "source_support": {
+          "positive": 12,
+          "negative": 5,
+          "denominator": 17,
+          "rate": 0.7058823529411765,
+          "undetermined": 3,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 11,
+          "negative": 4,
+          "denominator": 15,
+          "rate": 0.7333333333333333,
+          "undetermined": 3,
+          "not_applicable": 2
+        },
+        "abstention": {
+          "positive": 3,
+          "negative": 0,
+          "denominator": 3,
+          "rate": 1.0,
+          "undetermined": 2,
+          "not_applicable": 15
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 20,
+          "denominator": 20,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 19,
+          "denominator": 19,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 1
+        },
+        "wrong_time": {
+          "positive": 1,
+          "negative": 16,
+          "denominator": 17,
+          "rate": 0.058823529411764705,
+          "undetermined_or_not_applicable": 3
+        },
+        "list_omission": {
+          "positive": 1,
+          "negative": 18,
+          "denominator": 19,
+          "rate": 0.05263157894736842,
+          "undetermined_or_not_applicable": 1
+        }
+      },
+      "diagnostic/dynamic": {
+        "planned": 20,
+        "reviewed": 20,
+        "unreviewed": 0,
+        "failed": 10,
+        "undetermined": 1,
+        "error_undetermined_or_not_applicable": 1,
+        "answer_kinds": {
+          "failed": 10,
+          "answered": 9,
+          "abstained": 1
+        },
+        "source_support": {
+          "positive": 9,
+          "negative": 0,
+          "denominator": 9,
+          "rate": 1.0,
+          "undetermined": 1,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 8,
+          "negative": 0,
+          "denominator": 8,
+          "rate": 1.0,
+          "undetermined": 1,
+          "not_applicable": 1
+        },
+        "abstention": {
+          "positive": 1,
+          "negative": 0,
+          "denominator": 1,
+          "rate": 1.0,
+          "undetermined": 0,
+          "not_applicable": 9
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 10,
+          "denominator": 10,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 10,
+          "denominator": 10,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 9,
+          "denominator": 9,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 1
+        },
+        "list_omission": {
+          "positive": 0,
+          "negative": 10,
+          "denominator": 10,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        }
+      }
+    },
+    "by_conversation": {
+      "conv-26": {
+        "planned": 50,
+        "reviewed": 50,
+        "unreviewed": 0,
+        "failed": 4,
+        "undetermined": 1,
+        "error_undetermined_or_not_applicable": 2,
+        "answer_kinds": {
+          "answered": 38,
+          "abstained": 8,
+          "failed": 4
+        },
+        "source_support": {
+          "positive": 32,
+          "negative": 13,
+          "denominator": 45,
+          "rate": 0.7111111111111111,
+          "undetermined": 1,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 20,
+          "negative": 17,
+          "denominator": 37,
+          "rate": 0.5405405405405406,
+          "undetermined": 1,
+          "not_applicable": 8
+        },
+        "abstention": {
+          "positive": 4,
+          "negative": 4,
+          "denominator": 8,
+          "rate": 0.5,
+          "undetermined": 0,
+          "not_applicable": 38
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 46,
+          "denominator": 46,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 44,
+          "denominator": 44,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 2
+        },
+        "wrong_time": {
+          "positive": 1,
+          "negative": 45,
+          "denominator": 46,
+          "rate": 0.021739130434782608,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 11,
+          "negative": 35,
+          "denominator": 46,
+          "rate": 0.2391304347826087,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-30": {
+        "planned": 50,
+        "reviewed": 50,
+        "unreviewed": 0,
+        "failed": 21,
+        "undetermined": 5,
+        "error_undetermined_or_not_applicable": 6,
+        "answer_kinds": {
+          "answered": 23,
+          "failed": 21,
+          "abstained": 6
+        },
+        "source_support": {
+          "positive": 16,
+          "negative": 9,
+          "denominator": 25,
+          "rate": 0.64,
+          "undetermined": 4,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 13,
+          "negative": 9,
+          "denominator": 22,
+          "rate": 0.5909090909090909,
+          "undetermined": 4,
+          "not_applicable": 3
+        },
+        "abstention": {
+          "positive": 3,
+          "negative": 2,
+          "denominator": 5,
+          "rate": 0.6,
+          "undetermined": 1,
+          "not_applicable": 23
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 29,
+          "denominator": 29,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 1,
+          "negative": 25,
+          "denominator": 26,
+          "rate": 0.038461538461538464,
+          "undetermined_or_not_applicable": 3
+        },
+        "wrong_time": {
+          "positive": 1,
+          "negative": 25,
+          "denominator": 26,
+          "rate": 0.038461538461538464,
+          "undetermined_or_not_applicable": 3
+        },
+        "list_omission": {
+          "positive": 3,
+          "negative": 26,
+          "denominator": 29,
+          "rate": 0.10344827586206896,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-41": {
+        "planned": 50,
+        "reviewed": 50,
+        "unreviewed": 0,
+        "failed": 19,
+        "undetermined": 6,
+        "error_undetermined_or_not_applicable": 9,
+        "answer_kinds": {
+          "answered": 25,
+          "failed": 19,
+          "abstained": 6
+        },
+        "source_support": {
+          "positive": 21,
+          "negative": 7,
+          "denominator": 28,
+          "rate": 0.75,
+          "undetermined": 3,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 23,
+          "negative": 2,
+          "denominator": 25,
+          "rate": 0.92,
+          "undetermined": 6,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 2,
+          "negative": 4,
+          "denominator": 6,
+          "rate": 0.3333333333333333,
+          "undetermined": 0,
+          "not_applicable": 25
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 31,
+          "denominator": 31,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 31,
+          "denominator": 31,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 1,
+          "negative": 27,
+          "denominator": 28,
+          "rate": 0.03571428571428571,
+          "undetermined_or_not_applicable": 3
+        },
+        "list_omission": {
+          "positive": 3,
+          "negative": 22,
+          "denominator": 25,
+          "rate": 0.12,
+          "undetermined_or_not_applicable": 6
+        }
+      },
+      "conv-42": {
+        "planned": 50,
+        "reviewed": 50,
+        "unreviewed": 0,
+        "failed": 5,
+        "undetermined": 7,
+        "error_undetermined_or_not_applicable": 7,
+        "answer_kinds": {
+          "answered": 39,
+          "failed": 5,
+          "abstained": 6
+        },
+        "source_support": {
+          "positive": 36,
+          "negative": 7,
+          "denominator": 43,
+          "rate": 0.8372093023255814,
+          "undetermined": 2,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 37,
+          "negative": 1,
+          "denominator": 38,
+          "rate": 0.9736842105263158,
+          "undetermined": 7,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 1,
+          "negative": 4,
+          "denominator": 5,
+          "rate": 0.2,
+          "undetermined": 1,
+          "not_applicable": 39
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 45,
+          "denominator": 45,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 45,
+          "denominator": 45,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 1,
+          "negative": 43,
+          "denominator": 44,
+          "rate": 0.022727272727272728,
+          "undetermined_or_not_applicable": 1
+        },
+        "list_omission": {
+          "positive": 3,
+          "negative": 36,
+          "denominator": 39,
+          "rate": 0.07692307692307693,
+          "undetermined_or_not_applicable": 6
+        }
+      }
+    },
+    "by_conversation_stratum_arm": {
+      "conv-26/ordinary/hybrid_no_resolution": {
+        "planned": 20,
+        "reviewed": 20,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 0,
+        "error_undetermined_or_not_applicable": 0,
+        "answer_kinds": {
+          "answered": 17,
+          "abstained": 3
+        },
+        "source_support": {
+          "positive": 12,
+          "negative": 8,
+          "denominator": 20,
+          "rate": 0.6,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 3,
+          "negative": 14,
+          "denominator": 17,
+          "rate": 0.17647058823529413,
+          "undetermined": 0,
+          "not_applicable": 3
+        },
+        "abstention": {
+          "positive": 1,
+          "negative": 2,
+          "denominator": 3,
+          "rate": 0.3333333333333333,
+          "undetermined": 0,
+          "not_applicable": 17
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 20,
+          "denominator": 20,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 20,
+          "denominator": 20,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 1,
+          "negative": 19,
+          "denominator": 20,
+          "rate": 0.05,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 7,
+          "negative": 13,
+          "denominator": 20,
+          "rate": 0.35,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-26/ordinary/dynamic": {
+        "planned": 20,
+        "reviewed": 20,
+        "unreviewed": 0,
+        "failed": 3,
+        "undetermined": 1,
+        "error_undetermined_or_not_applicable": 1,
+        "answer_kinds": {
+          "answered": 14,
+          "failed": 3,
+          "abstained": 3
+        },
+        "source_support": {
+          "positive": 13,
+          "negative": 3,
+          "denominator": 16,
+          "rate": 0.8125,
+          "undetermined": 1,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 12,
+          "negative": 1,
+          "denominator": 13,
+          "rate": 0.9230769230769231,
+          "undetermined": 1,
+          "not_applicable": 3
+        },
+        "abstention": {
+          "positive": 1,
+          "negative": 2,
+          "denominator": 3,
+          "rate": 0.3333333333333333,
+          "undetermined": 0,
+          "not_applicable": 14
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 17,
+          "denominator": 17,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 16,
+          "denominator": 16,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 1
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 17,
+          "denominator": 17,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 4,
+          "negative": 13,
+          "denominator": 17,
+          "rate": 0.23529411764705882,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-26/diagnostic/hybrid_no_resolution": {
+        "planned": 5,
+        "reviewed": 5,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 0,
+        "error_undetermined_or_not_applicable": 1,
+        "answer_kinds": {
+          "answered": 4,
+          "abstained": 1
+        },
+        "source_support": {
+          "positive": 3,
+          "negative": 2,
+          "denominator": 5,
+          "rate": 0.6,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 2,
+          "negative": 2,
+          "denominator": 4,
+          "rate": 0.5,
+          "undetermined": 0,
+          "not_applicable": 1
+        },
+        "abstention": {
+          "positive": 1,
+          "negative": 0,
+          "denominator": 1,
+          "rate": 1.0,
+          "undetermined": 0,
+          "not_applicable": 4
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 4,
+          "denominator": 4,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 1
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-26/diagnostic/dynamic": {
+        "planned": 5,
+        "reviewed": 5,
+        "unreviewed": 0,
+        "failed": 1,
+        "undetermined": 0,
+        "error_undetermined_or_not_applicable": 0,
+        "answer_kinds": {
+          "answered": 3,
+          "failed": 1,
+          "abstained": 1
+        },
+        "source_support": {
+          "positive": 4,
+          "negative": 0,
+          "denominator": 4,
+          "rate": 1.0,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 3,
+          "negative": 0,
+          "denominator": 3,
+          "rate": 1.0,
+          "undetermined": 0,
+          "not_applicable": 1
+        },
+        "abstention": {
+          "positive": 1,
+          "negative": 0,
+          "denominator": 1,
+          "rate": 1.0,
+          "undetermined": 0,
+          "not_applicable": 3
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 4,
+          "denominator": 4,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 4,
+          "denominator": 4,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 4,
+          "denominator": 4,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 0,
+          "negative": 4,
+          "denominator": 4,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-30/ordinary/hybrid_no_resolution": {
+        "planned": 20,
+        "reviewed": 20,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 4,
+        "error_undetermined_or_not_applicable": 5,
+        "answer_kinds": {
+          "answered": 17,
+          "abstained": 3
+        },
+        "source_support": {
+          "positive": 10,
+          "negative": 6,
+          "denominator": 16,
+          "rate": 0.625,
+          "undetermined": 4,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 8,
+          "negative": 6,
+          "denominator": 14,
+          "rate": 0.5714285714285714,
+          "undetermined": 4,
+          "not_applicable": 2
+        },
+        "abstention": {
+          "positive": 1,
+          "negative": 2,
+          "denominator": 3,
+          "rate": 0.3333333333333333,
+          "undetermined": 0,
+          "not_applicable": 17
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 20,
+          "denominator": 20,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 1,
+          "negative": 16,
+          "denominator": 17,
+          "rate": 0.058823529411764705,
+          "undetermined_or_not_applicable": 3
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 18,
+          "denominator": 18,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 2
+        },
+        "list_omission": {
+          "positive": 3,
+          "negative": 17,
+          "denominator": 20,
+          "rate": 0.15,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-30/ordinary/dynamic": {
+        "planned": 20,
+        "reviewed": 20,
+        "unreviewed": 0,
+        "failed": 17,
+        "undetermined": 0,
+        "error_undetermined_or_not_applicable": 0,
+        "answer_kinds": {
+          "failed": 17,
+          "answered": 3
+        },
+        "source_support": {
+          "positive": 2,
+          "negative": 1,
+          "denominator": 3,
+          "rate": 0.6666666666666666,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 2,
+          "negative": 1,
+          "denominator": 3,
+          "rate": 0.6666666666666666,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 0,
+          "negative": 0,
+          "denominator": 0,
+          "rate": null,
+          "undetermined": 0,
+          "not_applicable": 3
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 3,
+          "denominator": 3,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 3,
+          "denominator": 3,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 3,
+          "denominator": 3,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 0,
+          "negative": 3,
+          "denominator": 3,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-30/diagnostic/hybrid_no_resolution": {
+        "planned": 5,
+        "reviewed": 5,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 1,
+        "error_undetermined_or_not_applicable": 1,
+        "answer_kinds": {
+          "abstained": 3,
+          "answered": 2
+        },
+        "source_support": {
+          "positive": 3,
+          "negative": 2,
+          "denominator": 5,
+          "rate": 0.6,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 2,
+          "negative": 2,
+          "denominator": 4,
+          "rate": 0.5,
+          "undetermined": 0,
+          "not_applicable": 1
+        },
+        "abstention": {
+          "positive": 2,
+          "negative": 0,
+          "denominator": 2,
+          "rate": 1.0,
+          "undetermined": 1,
+          "not_applicable": 2
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 1,
+          "negative": 3,
+          "denominator": 4,
+          "rate": 0.25,
+          "undetermined_or_not_applicable": 1
+        },
+        "list_omission": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-30/diagnostic/dynamic": {
+        "planned": 5,
+        "reviewed": 5,
+        "unreviewed": 0,
+        "failed": 4,
+        "undetermined": 0,
+        "error_undetermined_or_not_applicable": 0,
+        "answer_kinds": {
+          "failed": 4,
+          "answered": 1
+        },
+        "source_support": {
+          "positive": 1,
+          "negative": 0,
+          "denominator": 1,
+          "rate": 1.0,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 1,
+          "negative": 0,
+          "denominator": 1,
+          "rate": 1.0,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 0,
+          "negative": 0,
+          "denominator": 0,
+          "rate": null,
+          "undetermined": 0,
+          "not_applicable": 1
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 1,
+          "denominator": 1,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 1,
+          "denominator": 1,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 1,
+          "denominator": 1,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 0,
+          "negative": 1,
+          "denominator": 1,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-41/ordinary/hybrid_no_resolution": {
+        "planned": 20,
+        "reviewed": 20,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 4,
+        "error_undetermined_or_not_applicable": 6,
+        "answer_kinds": {
+          "answered": 15,
+          "abstained": 5
+        },
+        "source_support": {
+          "positive": 14,
+          "negative": 5,
+          "denominator": 19,
+          "rate": 0.7368421052631579,
+          "undetermined": 1,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 15,
+          "negative": 1,
+          "denominator": 16,
+          "rate": 0.9375,
+          "undetermined": 4,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 2,
+          "negative": 3,
+          "denominator": 5,
+          "rate": 0.4,
+          "undetermined": 0,
+          "not_applicable": 15
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 20,
+          "denominator": 20,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 20,
+          "denominator": 20,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 1,
+          "negative": 18,
+          "denominator": 19,
+          "rate": 0.05263157894736842,
+          "undetermined_or_not_applicable": 1
+        },
+        "list_omission": {
+          "positive": 2,
+          "negative": 13,
+          "denominator": 15,
+          "rate": 0.13333333333333333,
+          "undetermined_or_not_applicable": 5
+        }
+      },
+      "conv-41/ordinary/dynamic": {
+        "planned": 20,
+        "reviewed": 20,
+        "unreviewed": 0,
+        "failed": 16,
+        "undetermined": 0,
+        "error_undetermined_or_not_applicable": 1,
+        "answer_kinds": {
+          "failed": 16,
+          "abstained": 1,
+          "answered": 3
+        },
+        "source_support": {
+          "positive": 2,
+          "negative": 2,
+          "denominator": 4,
+          "rate": 0.5,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 3,
+          "negative": 1,
+          "denominator": 4,
+          "rate": 0.75,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 0,
+          "negative": 1,
+          "denominator": 1,
+          "rate": 0.0,
+          "undetermined": 0,
+          "not_applicable": 3
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 4,
+          "denominator": 4,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 4,
+          "denominator": 4,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 4,
+          "denominator": 4,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 1,
+          "negative": 2,
+          "denominator": 3,
+          "rate": 0.3333333333333333,
+          "undetermined_or_not_applicable": 1
+        }
+      },
+      "conv-41/diagnostic/hybrid_no_resolution": {
+        "planned": 5,
+        "reviewed": 5,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 1,
+        "error_undetermined_or_not_applicable": 1,
+        "answer_kinds": {
+          "answered": 5
+        },
+        "source_support": {
+          "positive": 4,
+          "negative": 0,
+          "denominator": 4,
+          "rate": 1.0,
+          "undetermined": 1,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 4,
+          "negative": 0,
+          "denominator": 4,
+          "rate": 1.0,
+          "undetermined": 1,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 0,
+          "negative": 0,
+          "denominator": 0,
+          "rate": null,
+          "undetermined": 0,
+          "not_applicable": 5
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 4,
+          "denominator": 4,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 1
+        },
+        "list_omission": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-41/diagnostic/dynamic": {
+        "planned": 5,
+        "reviewed": 5,
+        "unreviewed": 0,
+        "failed": 3,
+        "undetermined": 1,
+        "error_undetermined_or_not_applicable": 1,
+        "answer_kinds": {
+          "failed": 3,
+          "answered": 2
+        },
+        "source_support": {
+          "positive": 1,
+          "negative": 0,
+          "denominator": 1,
+          "rate": 1.0,
+          "undetermined": 1,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 1,
+          "negative": 0,
+          "denominator": 1,
+          "rate": 1.0,
+          "undetermined": 1,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 0,
+          "negative": 0,
+          "denominator": 0,
+          "rate": null,
+          "undetermined": 0,
+          "not_applicable": 2
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 2,
+          "denominator": 2,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 2,
+          "denominator": 2,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 1,
+          "denominator": 1,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 1
+        },
+        "list_omission": {
+          "positive": 0,
+          "negative": 2,
+          "denominator": 2,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        }
+      },
+      "conv-42/ordinary/hybrid_no_resolution": {
+        "planned": 20,
+        "reviewed": 20,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 3,
+        "error_undetermined_or_not_applicable": 3,
+        "answer_kinds": {
+          "answered": 17,
+          "abstained": 3
+        },
+        "source_support": {
+          "positive": 16,
+          "negative": 4,
+          "denominator": 20,
+          "rate": 0.8,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 16,
+          "negative": 1,
+          "denominator": 17,
+          "rate": 0.9411764705882353,
+          "undetermined": 3,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 1,
+          "negative": 2,
+          "denominator": 3,
+          "rate": 0.3333333333333333,
+          "undetermined": 0,
+          "not_applicable": 17
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 20,
+          "denominator": 20,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 20,
+          "denominator": 20,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 1,
+          "negative": 19,
+          "denominator": 20,
+          "rate": 0.05,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 1,
+          "negative": 16,
+          "denominator": 17,
+          "rate": 0.058823529411764705,
+          "undetermined_or_not_applicable": 3
+        }
+      },
+      "conv-42/ordinary/dynamic": {
+        "planned": 20,
+        "reviewed": 20,
+        "unreviewed": 0,
+        "failed": 3,
+        "undetermined": 2,
+        "error_undetermined_or_not_applicable": 2,
+        "answer_kinds": {
+          "failed": 3,
+          "answered": 15,
+          "abstained": 2
+        },
+        "source_support": {
+          "positive": 15,
+          "negative": 2,
+          "denominator": 17,
+          "rate": 0.8823529411764706,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 15,
+          "negative": 0,
+          "denominator": 15,
+          "rate": 1.0,
+          "undetermined": 2,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 0,
+          "negative": 2,
+          "denominator": 2,
+          "rate": 0.0,
+          "undetermined": 0,
+          "not_applicable": 15
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 17,
+          "denominator": 17,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 17,
+          "denominator": 17,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 17,
+          "denominator": 17,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 1,
+          "negative": 14,
+          "denominator": 15,
+          "rate": 0.06666666666666667,
+          "undetermined_or_not_applicable": 2
+        }
+      },
+      "conv-42/diagnostic/hybrid_no_resolution": {
+        "planned": 5,
+        "reviewed": 5,
+        "unreviewed": 0,
+        "failed": 0,
+        "undetermined": 2,
+        "error_undetermined_or_not_applicable": 2,
+        "answer_kinds": {
+          "answered": 4,
+          "abstained": 1
+        },
+        "source_support": {
+          "positive": 2,
+          "negative": 1,
+          "denominator": 3,
+          "rate": 0.6666666666666666,
+          "undetermined": 2,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 3,
+          "negative": 0,
+          "denominator": 3,
+          "rate": 1.0,
+          "undetermined": 2,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 0,
+          "negative": 0,
+          "denominator": 0,
+          "rate": null,
+          "undetermined": 1,
+          "not_applicable": 4
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 5,
+          "denominator": 5,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 4,
+          "denominator": 4,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 1
+        },
+        "list_omission": {
+          "positive": 1,
+          "negative": 3,
+          "denominator": 4,
+          "rate": 0.25,
+          "undetermined_or_not_applicable": 1
+        }
+      },
+      "conv-42/diagnostic/dynamic": {
+        "planned": 5,
+        "reviewed": 5,
+        "unreviewed": 0,
+        "failed": 2,
+        "undetermined": 0,
+        "error_undetermined_or_not_applicable": 0,
+        "answer_kinds": {
+          "failed": 2,
+          "answered": 3
+        },
+        "source_support": {
+          "positive": 3,
+          "negative": 0,
+          "denominator": 3,
+          "rate": 1.0,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "citation_support": {
+          "positive": 3,
+          "negative": 0,
+          "denominator": 3,
+          "rate": 1.0,
+          "undetermined": 0,
+          "not_applicable": 0
+        },
+        "abstention": {
+          "positive": 0,
+          "negative": 0,
+          "denominator": 0,
+          "rate": null,
+          "undetermined": 0,
+          "not_applicable": 3
+        },
+        "wrong_person": {
+          "positive": 0,
+          "negative": 3,
+          "denominator": 3,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_event": {
+          "positive": 0,
+          "negative": 3,
+          "denominator": 3,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "wrong_time": {
+          "positive": 0,
+          "negative": 3,
+          "denominator": 3,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        },
+        "list_omission": {
+          "positive": 0,
+          "negative": 3,
+          "denominator": 3,
+          "rate": 0.0,
+          "undetermined_or_not_applicable": 0
+        }
+      }
+    }
+  },
+  "units": [
+    {
+      "unit_id": "018e543059e55ac219266f89472b622f5a5717ef3eff05bf0cd31ccdfeb1757e",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "01f9d9c6b1947bfbc30266ddb1555a3971a6e0e1e0bda889dc31b1222e4c9a4f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "055c993c078a62d4c6bc0c1e2bb3749517d1a37b0bccf713ef6e44091121964f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "05f2e0b0319266a2bcd1cbe8e0492a56d0743bb91bf24b8bb3c8c09d851d218a",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "not_applicable",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "0651e86a5bb49e0fdbaacdbf04f5c54dff030ce19e64466cc1f54ce0d1d96d59",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "07655f20d854971e0ae43e1ebe7eb35ca74bdb465d2f7510644af1dfa981c191",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "undetermined",
+      "citation_support": "undetermined",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": null,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "07be8723ed9b81e6a5a3683b0b1b4e460302ca71e69f8bc300e08094e569b2a8",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "08e43dfd16153e78066c0b693b95c96dc0f888847b4559a7f354dd0dc2aa18cd",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "not_applicable",
+      "abstention": "undetermined",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": null,
+      "list_omission": false
+    },
+    {
+      "unit_id": "097c40f28614b346be9f89e943ba4565f62902fb21a33b613f32435c608f91f1",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "097dcce6f7aa37747919d7e7caa8d14039a503ac4563eb1b01a6890f70230308",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "09db3e92145bb563e6beb3aa6058191a875c7d18736ca9122fd6a4ebb5746ef5",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "0b3c2c91a020758b99000bb079184a97a24d7d8edfcf0a97de6420aeb40fa8b0",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "0ca31e293bb19e4d78830c849c606159e012e07f19537c614395be6db53407ef",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "0ce3412ce600925cdc5c96decff3b4190c2489f62b79683f78b8e9b04793204a",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "supported",
+      "citation_support": "not_applicable",
+      "abstention": "correct",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "0d14caa78c3fb6ab5948e86bab3f2319a67631d945bfe010a61076ffe1f6eb90",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "0e1c0296ad7f14f86cce478c91d31123bf211574929639900c5f367df699f7e4",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "11342fde35344fd2726a8fcaa0415e8cec994c9c59f2fb8686ead14b68b8f75a",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "11ee7493e2824bcec09060e0000dfff80b8c6a44f0934e8309c2df0c784cf02a",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "130f2d4b745a569a8e5b6bc3cc7749a0c0bad3e335899584e750e147bb61e069",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "132c908c718ba87e0a364a362193aca5c8d93bd68d415d6037f6a078b54d44e4",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "supported",
+      "citation_support": "not_applicable",
+      "abstention": "correct",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "151280a09567cd98ba23287f52e567480b41be74a4789c45eabd34ea92dbd0e5",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "not_applicable",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "159373320050cae00c1e8d32f0efcb5946747b4d5ffe9a4dcc0dd78a261e5def",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "16af0d968c703c1c4c2c7ea200172a68208384534ea2fa83651b1de677ac9440",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "undetermined",
+      "citation_support": "undetermined",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": null,
+      "list_omission": false
+    },
+    {
+      "unit_id": "189595b37b977418d21d9388d8bfeb6ad609520111b244ccd3e6060713a2a4f0",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "19b9c0e4a5cd1f6408940f2a058b77dc42081034e738f2bbb7203410b8bb8f42",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "19c9601375585d590928bd3b9de5cd625ab703c1fc7a7c7875b7bb552afaee4c",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "1bc6e053fd1693b128f361399466437d28e5a3e3cf6c95985cf8847c04bfb3b5",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "1d5a6fbf725ef1822ca15eb756cac03c8b9b171defc04a3a312360ab8b6d57ca",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "1fbd8bb1d5373ddf802de052d71d631fa806c1fb69e64742a65c362604f6d689",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "231d0f87d4d4dae40d2d413e29776814e1a89b515c98ec24792204e9b9804876",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "23a2c61035d5d5882b26f8e04ed691a037b38c6ba715e564006f3a5a2e5e5b47",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "283f49fc5c331433e561dbf0137c2bb84f398616eb78a22219fa5d8c3fa376af",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "29bad1170c59d51040157776bbd823fd310648a4fdca4dc054406180beeb8c4a",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "2b136bc36837460c9ecb983baf45d655675a9a543d7f198c5ff1bfbbcba0ea7f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "2b32b74dec73895e02a7f5ae2eedce94877a254b1a22050c0ea76189e45a6f4f",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "supported",
+      "citation_support": "undetermined",
+      "abstention": "correct",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "2b58f46bf5708207162e525385f9f019d88413c2465353da5e12549deedc5c9d",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "2b960d30d65ae0045a32d9ad384ba378056a0d04c3005a54596683fff2e6ebfe",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "2c4d9e8dec1658fb33a89d049a2537829d9253ae13360532b9e7d19e0084029c",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "2c4e1e6571956c252447b7758f3c11c5570538b134467ddcde0ee6692308f9ca",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "2ecddbf77506d1d76e07e5ac06f778191d0992acd1a12ca008ee30aeeaaf7079",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "2fc4daf34b390d613b760f9aa75a2bf55eb8382c4a184e25c827f5b513c86649",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "33b967875dbcb2878ea0502bcfcaaed10430c0bbd6cd3a159cec5fcaf2b4ceb2",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "347bdff664431f1f7e4519384ac113cbf9785f520cfe5b5dceaae16ced3d055f",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "359f78c746733ad366b7b48b557fcb179272eb4901afd882828ce857adb96f31",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "374e19e688ee3dfe7683272af66263ce47cb2077b740373b78603c85b4c1570d",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "3948c787230cabd5cd3834a05fc824e0e130e1679d90aa38a041a7f2c929b6c7",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "39a33c3d89deafe99a59f3d40d8e04098341ff35d06f6395f88972c5e910db2e",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "3a7f45f7612a668c27f36008d5e11cf10ce4e9b7ce9de3d36c2a12b7102090b5",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "correct",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "3b07e29f42563deda14e14d47a6c5e43003988a4acd2bc1562507cef7b7b59fa",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "3c14052f88debfee4eaffaa69b7bbcd4126793bd33d6d34ec8ef1f48afce992d",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "3c4347e00a50881d8cfb5167cb3a77e38d0fe79fbb5bf8e87d271d1b2eb3a356",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "3c68ab65fc8de3f1cb34c61bc231f2d21dd2df9088600d4a5a23453815e095bf",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "3ca36f84aa77de6cdfd21b381ff1804d67730c907ddd31f83c66205918cf9a6d",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "3e17150e204fa2ad09af2086b4908acb684212722a29778eefb57178ba89f3b4",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "3e2d9126e748b8ccc2042dc070d227c338ca9caf1ddd2d0c36b3ec810e9169bc",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "42860942f97637ea3013c58492c5b7e08ebd555768a4408f5b66128d0a056ba3",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "44a70df78a8fd3a72393d7ada97ee212dfe2370c3fec47177ef2744469435890",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "undetermined",
+      "citation_support": "undetermined",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": null,
+      "list_omission": false
+    },
+    {
+      "unit_id": "46696d2d557318f94926ee7406fcac9e932c0a2a166496d39e076ec7bef44666",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "4932d7f6485698933f1a74884a94e0575de25fe9c721209852146b96918829e3",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "4ac2e5330aa357e4396768a7fd2fc70b3b6fde4ef88eee1c883a40fa35ccde1a",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "4b4813307ab0bedf3485d176e6d2673feed2b90a85ef08a19cd0b45b9085484f",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "4e1a8eace15205d03b0960db42857a3968177a9fa4f344893b135941f54ea0c0",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "4ef660804f07fb825e08ef28a9de8c0ab666069febdf14df94a4737076c6cfae",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "4ef836f3c4554e28b8a643951b3973f1867a9ce6f5167f3e32fe678763e13531",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "503a93102dcb80e740129a3dcd281c0f6d94a06935b4a0511505672f3bae129a",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "545c989ed491041c9ce09da82c19834fd2a51d2e61edb363a4de68c1689835d0",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "54c40221b0f2cc3549e40b881d180747fc5276a2f9733826db3d7edc138ec867",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "5516d16e2f2629dd72602ba75d41a09993f0428f8cc2b451ff9b0b92345f1d3d",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "55c9e8f0cbe4d5014e8fc845cdd55dd1135e1f9d9c8c0dbca3ab20d7589a7ef9",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "not_applicable",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "55f76f1176920c44ab91344bfb238b0188ebca17d4dd640861e55968609df60e",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "undetermined",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "5725303d63b9752c6b4ab0f77ca0bc3fcf9a66533de2a19297bfa13040eca8c8",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "undetermined",
+      "citation_support": "undetermined",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": null,
+      "list_omission": false
+    },
+    {
+      "unit_id": "57641deb1a9ddbd59c6656b817061346aa12cf18dd06dddef63603a387af8988",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "57e0b4462826fb39e0d2580c302a9c11a754f6c66df4007acad702465ec55828",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "5847039a2c5c58dc83c85cc230cabd97c3d9478ad0812d925cd79e9c0111826a",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "5a51c46e8627b2595b1cfd8a55d03bc87d5456ca7b6fb04d63a83584739f6063",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "5ac962a8fcae61af516d3d1b2a84d9391777dde3fe2261b20cdda985347b392c",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "5b7819b0edb2c2f16c2c973e3715f4b05ffb7ce1499c78257f7f14cdfe895d63",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "5c4f7e4a146a915e74786453dc5a56602c19aba83b3d4715a70e73dbb59f5b92",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "5d39a7d941ef0f3f699ae8d575da75337790090990998b92f2cd23eea376e1df",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "5fd9fb6a410665d65f762876f1a2988999437e802f96efdaca43f6ab331b6b03",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "629ca57ad5ba00e1d0d6dad58ee81c3b832dcc671d1d489d9e32b9919da93925",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "640b5475b114d9609daf7bc60ad94945f96bcc2466cd034db8067c81c8638038",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "undetermined",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "644763beb4d96f8658f8e382639dfbf7af36aa7e8c930354ec8cbd068ede795f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "64fcb69798fb5478395b6ce9b612ffe3a362b83a72b675e14bb73633e64e99fb",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "6531a6377bb40f07be4c5b9809f32c19d29d0098a0b954d1fa4834be8227dfca",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "661f69544607c3dadfb498d1d8b8a28209d7f70d4a73e0d442a63fa345bf518e",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "66ca6680af3a4ce67506abffb7edd7168b9a0c5e30bd58b6ef7dd7e87e83f92e",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "6937715b6d91f5c7c701803e0267536dd7095da7eab509fff2de49a8fa45ed60",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "69c6b970c5560c65f663d12c1162d7987ae543c0788d3d614ff0893dcb59544d",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "6bb263c596cda1c25460e02b2ee432ff11122c85a85421ca173b5d0a8998dee2",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "6bd00b2f6defed6dcc54586728ebd90af78cac02f81b4a64524389b9a828e3ec",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "6cd5ad57a0b3025f8a2301a7e8b08f26a82544c05cdd104dea120488ba19406d",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "correct",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "6cf05f08c147034692b163101875c8179e456b01f9964226351ebe5e193542cc",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "undetermined",
+      "citation_support": "undetermined",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": null,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "704e310c9d9ed3fe5bfd71d79818092c4dc1e4b9dd377419ffca70a275bd5ec1",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "72007ce4737a6388a5e55824fc3dc3de680d2ad14d082d834856b14a14a80676",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "729a873448139c5eae78ac986f8d3d7393ff95da13a7016aae53e8a71307804b",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "72f284c0263ea21313a9241c41a8ac27191b977cc7b9acbd1a945d1bbe96bb30",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "732f54e5911c31bcee806088d7d15425289bd6f7f4ec2659b865459d2a8a7d21",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "738a3c9a3b1e7fecf05e80b997a62ac9cc26f53fcdc05260669ef582d66a7605",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "73bcd51b5f278bd6db98bb1f43fe8257eee1ee3808f2a3aadb2f9e88116142ca",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "73ec549a93283bbfe0213ce42a20d29d64119e8c64837d6b95175876e0153267",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": true,
+      "wrong_time": null,
+      "list_omission": false
+    },
+    {
+      "unit_id": "7499abcd2531685dbb39c3327ba1321f718f2d44ada6dde8329005e89e9691da",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "74f77b8e4d50ee69155262d30141c6d4d1411cf608aef61c584054e1917f06b6",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "751a178e966fd04780250f07c63b6e8500174e8588d0e237af00bd7145e083e5",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "7567c941a08fabe7ca29ca99d23c9da4d8f9ee3f3800867c16de6465885ade74",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "7612d3b3a4a50a3838b5b01667cb8e38dd87c0cabd0bdf830038d140acfb1ce0",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "76c4739838f9f2a4d02d141132064aa56d71063dd65c5f7aa6ab7e5c74570d0f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "785b47226b3fc32caf807ef3a102f85c206aebe8160c8cbff59e383eaf178c3a",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "7ba39b7f800b319932bf517e42af32771dee2453286ab5c6f6089e516aa8f85d",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": true,
+      "list_omission": false
+    },
+    {
+      "unit_id": "7be5f29cb6ff0085a0169b931a0cd75c88f4565eb452c5480478fb579966cbc0",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "7ebf0636e04ca9ebd2ee9ac76e50cf954e19d7807b777f2e8b48fddd03e4a1de",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "80ac9a98ac9ca7dc9ac455a472339c9bab610fa30bde8d9459d88914bc5ddb1f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "8278bcc795b916aa338ef4811b56b9e03d11d9c38785fd3de3e1a7026033f873",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "84c6b4bbdb800f8f99ea8898941ff96a30039dcd0117b06744837c63e0e7f1c3",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "undetermined",
+      "citation_support": "undetermined",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": null,
+      "list_omission": false
+    },
+    {
+      "unit_id": "86a8ea354de1411a656162e6a6547784d6fe5e07db43cee68699af57f1e48b9f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "8765909fee2f7140f8f50325385ff78f22763f0879a516fa7d5a71de85ed55c8",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "8a6f13f6c0a6f197502fcf896b1ed1b980a7d86722e3318d6e71af4a935804e8",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "8bf753434e91e74e54a10dce5edf9edbdb76fba2d03bb9f8bf5c2d20d769ee5d",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "undetermined",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "8cac04973c17de3ec19c71c8827fdb9e9f3204eb309b1e73c52c0c5aa0b6dfaa",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "undetermined",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "8d14f942bf3fcb1cd93da3fd0937ea7a278074bfd02efe38676fc6b89866639e",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "undetermined",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "8e194e2e7c29d1e4c92f4b661c1ad314041dd96672319e305d4f1425288197fa",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "8e710b2c36f8ac1e075db47cc35e570592f15a3f5f36a8f0d1de852326d77546",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "8f85fcc7575a12f82b500accb881cf32898ceae513b297674b658f1994b2bf8b",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "8fb41a0d963cce1a2e5e057cb30b2ea4a086326e086531291f601f0e507fbd43",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "not_applicable",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "8ff67a5475cca7d339b8fdb0c7ee02f412b9278f2b4afc56dfaacef91f4926bf",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "9075f3bb946b2a2193981b3593ebd78f1ec301fde5c2b6ca584097e0af0a73dc",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "9296a0b16f874dc371ea42fc2c667b71a31285f5dbd6066eb2341a3c06eae811",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "9433b67663e68f8eb95b33f2011d4dd52a8f00003dcb3ec9eb3de19b6fddd6a7",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "94c64ad63d6dbcbf1b252be63f4ed0b3d7046b1227afedfea657ce18554c5be7",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "9520dfae5149535830bd1ba0bd9cbdff2cdba72d9608e6767c662523c5f441ab",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "95ac9b013a1ba7ee334d59d0b46d8330e418f3c3b8cb5eb95098a60e7a3d70cc",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "964de68a7152f0b04e366f7d8f508ea9c642806b947782638975d3c8c0d95046",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "967b66ed58582d5ca677ba8df6b77e2be7323a9806e64d26b62b29fc7cb5f914",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "supported",
+      "citation_support": "not_applicable",
+      "abstention": "correct",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "99b4f7dd29d87872b85ff4d8ab1fbee16bb42ff51c099cd21a93c289b87bc353",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "9b842c58e37426f9e3495e5a998baff73ce42fc6095cbdf0c4a444cdb1a47e4d",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "supported",
+      "citation_support": "undetermined",
+      "abstention": "correct",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "9bfde60b59504df9717ca984843051221017abb905535b82ec5271fcf6428213",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "9fb8d03320b73ae5a0bfcc7d499125819d83f9ed64b0cc1e91e402fe622461a8",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "a289856ccf6766d899e2f1c0de8eae942767b30e5ee134ef42d873f8c4178b89",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "a6fd19b171898dd7d3a69358cb995b2c5d893d4ea95c81b81cd2eb0bef9cd700",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "a74df93bd1c70ba85a643d6e593fcb2a87a2f7a692098b26aa69e5e87e8a276c",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "a8d6e2b3bc1eb0ae4f452a99753cecb70fe8e51b2b06552f783effe31ec056d2",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "undetermined",
+      "citation_support": "undetermined",
+      "abstention": "undetermined",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": null
+    },
+    {
+      "unit_id": "aad625993e1d2973ea7b2c3e99602b8e4f2c56d64869f01bfdc51248f324ea29",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "ab135139b07c880b8d4f5c4149fa0ed30ff8d00ee3dffd76f3b06ae5541bcb2c",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "ac3e2d0c166384062c598996ba9d237608efa1515b222e092d38d3e69a772274",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "undetermined",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": true,
+      "list_omission": null
+    },
+    {
+      "unit_id": "ad02009410d745b7f6af2b1690a65a779fbc2358ea171eab184c03ff377c8653",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "ae05b8fdadb92611312a6fecdcea63151cda2ea1481f286d75af051d61882bdd",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "b0364431ecf57948645971ee80c7c7c5ce5e469bbf5f5ba151d34924ef5a53bf",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "b212c7de2ac4cfce53970ac09875ce225c7b55702a7869dc75d541dd2f4101fe",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "b4a536ddeb4217c5084b057da3fd0446b597022733ae7f25912887f9030af91e",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "b711b74efaf73b20ecdb342ef8cce1f4961a24a05e24a4ad463a9a9dcdc837f4",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": true,
+      "list_omission": false
+    },
+    {
+      "unit_id": "b830088ec04bdb6e8c3b495229a445ae06bde34e10da9a535a8126f35ad1f719",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "correct",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "b885299622ce005b22d70ec657591939fc962a7abf04c1e04de26048adb55f27",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "ba0b3e6d0139494086b54885e54b7f1ef7314aaae22b0f704bda593c5a808359",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "bb8abea37c5915ec3db10af26af1df4eeb352b56d25e85da2aa5c6d2a2b4d551",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "not_applicable",
+      "abstention": "correct",
+      "wrong_person": false,
+      "wrong_event": null,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "bc20ec1a114285aa4a3f2810d9abec3772a7b5208285393de9ea92cdbbe9ae20",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "bc5ce7699b0ea18382a09d2e011c5df3685a34ff3ff9a8b85f2a181fbc805164",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "undetermined",
+      "citation_support": "undetermined",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": null,
+      "list_omission": false
+    },
+    {
+      "unit_id": "bcaf47a2017ba7e638d010e3129e1001b7baa3707f9b7554ccee0c3d2feeec82",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "be2b3d7fefc1f64363c0c6754f4287eb7c52511b49defa775bdcc7db2049425f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "bf0ac8321fdd2f8e1bff017ebc1cd9da9032c485779b5a6812f539c49d7bd9ce",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "c0a2265eddce7c1e913cd0367d67ebf8bef0d4070ea179f040a3419b317dbbb7",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "c25c6393df5947499ced3cda1ae1813254db8d476aba54df61515cbd211e58c0",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": true,
+      "list_omission": false
+    },
+    {
+      "unit_id": "c2b47265350c994d28956e82eb560546021785ec0bc9d5cdc4a724d2317d04f3",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "c5b7484873995c65784c3b3a699fc2a4849d0dde903e7ac45449e0316cc3ab31",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "c8142043608ecb3c096f48718c556574fb621832831f07696ddb22783d7a150c",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "cd484e38830a993525c16e2c33d3552924e7e1a5a88a29ecae3f7691436bd861",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "ce356553b804b961e9d9c700161c1b95af856e74db6e4edc66f4182b8e07b43b",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "ce8047856dedfcbe5f37860c8a32abf46e51d92555d9d14b2e823ac7b029701f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "ce9fc927d78d0bfb730e60d5db04096f02fd0174bc197e94cffd931379465a04",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "cf715f843d7f3ddd63a25e8d4b84e6278aff9b725de2836de9139a822bf8c72f",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "unsupported",
+      "citation_support": "not_applicable",
+      "abstention": "false",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "d2228795034c333ed0fe76d9c8ba206bfac35f25bcb7840e66d988e83d4c9614",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "d69bc47fbffbdd35363716785e6561f3b8f624f83435124ec2d1dbe87023061f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "d81c1cc0401d19aba228f32a90ad1cda71241e12a1d7860f5a3b6f1baca0966a",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "d828ef5e58954f64d2c7e0c8138f7451b45e232b8672894a44b5ffe68122765a",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "d8a4e9737a884a09fb7afbacecb8ff1d4aeb13d1a9b075ad8c731d713bb1c798",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "d9081ef8098def335663dec8ec076d2015dd52b4a5b720a6390301b662e19237",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "daad93a359a406cf3096564cb3e3d0588a30625298926dd86f289931c23fc3f8",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "de1d3ff3f5caf34cf3b3a0d2b062141e8b59f014d88f45472eee4ce5fee8845d",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "dffb16d194ee6879aaefdf5a257beaca2997f32d602a060d45d56020bac5f7ab",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "e125fbd0094def804a2a0497f0bea4231099dd4825f5a673050fbd435cf8b6a6",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "e300d4b7ed803b7a14bef35a75e7074969a07f85e3152ba2a0107551477265ae",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "e3e7e17744185240d204f4da8abae92c834138d5da80673abad384927e5594b2",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "e56bc87f4a7c6f6b94b2f6bb8fba55dd677ea4b13ec947bcdde4cffc132e23cb",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "undetermined",
+      "citation_support": "undetermined",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": null,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "e5783e5cfae34b8ff8a2b573bc71186ed2972b22ee8f3bb3270e861dc9612d68",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "e606029abb53ca7e8e2cd3a7496d0f4da948297dcbf5a6153cb66f6754960443",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "e980975086aedd1688c5d1b9e48d3f268c0044cd933e4c2d262364bb4fddfef8",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "eba178f12414e05ed293f7545c07d16d6bb66b4d1edea4dd9dfae411983d3fac",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "ec440a322b5d6ac4d728ba7392197c176e4595e63cec8dbadcd7845af9b5229d",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "ec6aa35609d25066d844d347bb616d082252ecadfbf0321b7d42bea197e68f3f",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "edb1a2ea51901e0034dbc6554ef59904806da9cd9cb4af87b83bc1f9a76216b0",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "ee3aa844b1c11d3891a5ac54363e255aac5163f0556243f7c5775c8a57c0ec46",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "eecd33b70f8cf2f0a346d514f2667416113420ad23cb7716068c7d27324bbf65",
+      "reviewed": true,
+      "answer_kind": "abstained",
+      "source_support": "supported",
+      "citation_support": "not_applicable",
+      "abstention": "correct",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "f0e01d5003ae6e461d126e0d7be344fa880948447c34989ff533a5eefecc961c",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "unsupported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": true
+    },
+    {
+      "unit_id": "f3dbae7982530485bddbef4150c3c7c2b5e300385b87ca7873dc1f06f46f565c",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "f55f7dfb74939be1ced419f29ac883a5d24a0ac0ce1df841c1241b8061baae5b",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "f9d09b80f6a981c905c5ae31dc1a55c391b4fa2c5bcdd3e25ec51a3fb81f5484",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "fa32aa79fcbf9a6ee656af39eff7a6802bd354e647e76e57f702153957a18ec1",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "undetermined",
+      "citation_support": "undetermined",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": null,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "fb04c1567baaf31a94fb4ecbd60687a775dd0bdfc7bc20ea4727ead48c96d4d3",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "fb2daa12db67fc5d38a60835f96b349e24f4616dec528564606514f4e7188142",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "supported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    },
+    {
+      "unit_id": "fbc8adfd6ccf4ed41ba827ed6e554e2d26420e2c33c3a1fa92bbb521d7bf6686",
+      "reviewed": true,
+      "answer_kind": "failed",
+      "source_support": "not_applicable",
+      "citation_support": "not_applicable",
+      "abstention": "not_applicable",
+      "wrong_person": null,
+      "wrong_event": null,
+      "wrong_time": null,
+      "list_omission": null
+    },
+    {
+      "unit_id": "fe4ae138902697d527ded738caf4f660f4fff1e59eb82d74219e15a365412309",
+      "reviewed": true,
+      "answer_kind": "answered",
+      "source_support": "unsupported",
+      "citation_support": "supported",
+      "abstention": "not_applicable",
+      "wrong_person": false,
+      "wrong_event": false,
+      "wrong_time": false,
+      "list_omission": false
+    }
+  ],
+  "gold_read": false,
+  "provider_calls": 0
+}

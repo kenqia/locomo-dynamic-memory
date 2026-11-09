@@ -1,0 +1,66 @@
+{
+  "version": "m5-conv44-relation-successor-terminal-v1",
+  "checked_utc": "2026-11-05T02:13:49.836853+00:00",
+  "status": "related_not_complete",
+  "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+  "checks": {
+    "all_old_rows_source_and_success_tasks_preserved": true,
+    "full_old_call_prefix_unchanged": true,
+    "new_attempts_complete_relations_projection_and_ledger_audited": true,
+    "exact_approved_plan": true,
+    "saved_outcome_matches_recomputed_audit": true,
+    "only_one_failed_task_authorized_independent_ledger": true,
+    "disabled_mixed_input_provenance_explicit": true,
+    "single_use_refused_zero_provider_and_no_mutation": true,
+    "384_tasks_and_terminal_status": true,
+    "integrity_and_foreign_keys": true
+  },
+  "plan_sha256": "699934d373556a353f837322322931cd8aec3adc76b87feada2c97a5fb9bd8a4",
+  "settings_sha256": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+  "inheritance_sha256": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e",
+  "authorization_sha256": "494a9075ea5e386823992f3f602035dd40e6b9c74245928bf8f31596ae403c2f",
+  "outcome_sha256": "4773185996b031477973a80e7699d288e9b6020f4c96589c12de75b9a928246b",
+  "final_database_logical_snapshot": "e44a48d165665d5965b7ccc0af0d2558a98f9387c9cf2573d3653802175e60d3",
+  "final_ledger_logical_snapshot": "ab8fad0598948514b226fff8cb0b366efcf472e8730e4836d15083a1a1668398",
+  "script_sha256": "6afe3fb5a1094b4cb521fa6f05bcc3fa9d75a6173ec4fee46a28a8f375687464",
+  "audit_script_sha256": "1049e52bff478adfac15f420d77591a126434c51c2f13104d635057e55931b69",
+  "parent_terminal_sha256": "c6d816a97c3f4a44743f977f9a5f2ad4223eccb72b624c5accb9994b7fcba8be",
+  "tasks": {
+    "succeeded": 384
+  },
+  "relations": 7134,
+  "new_phase_accounting": {
+    "version": "m5-conv44-relation-successor-v1",
+    "scope": "conv-44 single closed logical-2 relation failure only; independent logical-3 retry; no publish/query/QA",
+    "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+    "status": "related",
+    "phase": "relations",
+    "failed_tasks": 1,
+    "physical_requests": 1,
+    "reserved_usd": "0.0537564",
+    "reported_tokens": {
+      "prompt_tokens": 14745,
+      "completion_tokens": 2368,
+      "total_tokens": 17113
+    },
+    "known_usage_peak_upper_usd": "0.0072651",
+    "unknown_usage_requests": 0,
+    "unknown_reserved_usd": "0",
+    "request_statuses": {
+      "response_received": 1
+    },
+    "thinking": "disabled",
+    "mixed_relation_input_producers": true,
+    "wire_contract_in_build_fingerprint": false,
+    "original_calls_prefix_unchanged": true,
+    "source_and_success_rows_unchanged": true,
+    "published": false,
+    "holdout_qa_read": false,
+    "automatic_retry": false,
+    "actual_invoice": "not_accessed"
+  },
+  "complete_build": false,
+  "sixth_export_complete": false,
+  "holdout_qa_evidence_answers_read": false,
+  "actual_invoice": "not_accessed"
+}

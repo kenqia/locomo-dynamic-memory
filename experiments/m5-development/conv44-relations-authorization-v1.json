@@ -1,0 +1,11 @@
+{
+  "user_reply": "授权",
+  "approved_scope": "conv-44 explicit successor relation phase only; no publish/query/QA",
+  "approved_requests": 1152,
+  "approved_usd": "100.5944832",
+  "plan_sha256": "0920823b2c04d5d632df481df24ca60348b182fc760da8bb3a28f02cc5eb94cf",
+  "authorization_sha256": "e9b398234690427cf970f4745595522e53e37f99291c4bbab891c2bc8302cfdb",
+  "thinking": "disabled",
+  "prior_stage_balance_transferred": false,
+  "pricing_sha256": "55cad8eaab9969a0dd65de73d7eb9f9ae28251ecbddc6a35aabbe09e569c39b4"
+}

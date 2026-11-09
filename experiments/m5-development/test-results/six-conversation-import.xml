@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.826" timestamp="2026-11-04T11:24:08.494668+08:00" hostname="localhost"><testcase classname="tests.test_m5_six_conversations" name="test_six_conversation_only_import_keeps_every_source_identity" time="0.705"><failure message="KeyError: 'dataset'">tmp_path = PosixPath('/tmp/pytest-of-kenqia/pytest-11/test_six_conversation_only_imp0')
+
+    def test_six_conversation_only_import_keeps_every_source_identity(tmp_path):
+        raw = ROOT/'var/m5-development/replay-v1/conversation-only'
+        assert raw.is_dir(), 'Run tools.m5.offline to create protected conversation-only snapshots'
+        originals = {}
+        samples = []
+        for conv in ('conv-26','conv-30','conv-41','conv-42','conv-43','conv-44'):
+            sources = json.loads((raw/(conv+'.json')).read_text())
+            originals[conv] = sources
+            speakers = list(dict.fromkeys(s['speaker'] for s in sources))
+            assert len(speakers) == 2
+            conversation = dict(speaker_a=speakers[0],speaker_b=speakers[1])
+            for source in sources:
+                session = source['session_id']
+                conversation[session+'_date_time'] = source['session_time']
+                conversation.setdefault(session,[]).append({k:source[k] for k in ('dia_id','speaker','text')})
+            samples.append(dict(sample_id=conv,conversation=conversation))
+        app = create_app(Settings(db_path=tmp_path/'six-only.sqlite3'))
+        with TestClient(app) as client:
+            imported = client.post('/imports',json=dict(data=samples,version='m5-conversation-only',license='LoCoMo upstream; original provenance retained separately'))
+            assert imported.status_code == 201
+&gt;           dataset = imported.json()['dataset']['dataset_id']
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'dataset'
+
+tests/test_m5_six_conversations.py:34: KeyError</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "command": "scripts/personal-release verify-private-archive",
+  "checks": [
+    {
+      "archive": "primary",
+      "status": "PASS",
+      "files": [
+        {
+          "path": "research-evidence.tar.gz",
+          "sha256": "bfb7f58a42cf5f76e35db580f06e215a3bc15beb691892d781a02fa0251f5ddd",
+          "status": "PASS"
+        }
+      ],
+      "provider_requests": 0,
+      "scope": "SHA/size/JSON; private mode adds SQLite quick_check and safe tar/member SHA"
+    },
+    {
+      "archive": "source",
+      "status": "PASS",
+      "files": [
+        {
+          "path": "research-evidence.tar.gz",
+          "sha256": "546a29a16cf4a7cffd40200a7a82cdb03112eb43833f83320e676f2e77200eef",
+          "status": "PASS"
+        }
+      ],
+      "provider_requests": 0,
+      "scope": "SHA/size/JSON; private mode adds SQLite quick_check and safe tar/member SHA"
+    }
+  ],
+  "provider_requests": 0
+}

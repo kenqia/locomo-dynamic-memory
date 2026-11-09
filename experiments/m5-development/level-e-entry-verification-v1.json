@@ -1,0 +1,29 @@
+{
+  "version": "m5-level-e-entry-verification-v1",
+  "status": "code_reviewed_not_prepared_not_authorized",
+  "artifacts": {
+    "tools/m5/level_e.py": "f9627d91610f7cf36a3c6a0f2b179d7a1dda08f1fee88b728e9831b6d07d0fd4",
+    "tests/test_m5_level_e.py": "a96df547dd93028f50b5c714965ef5e6aa2c20bb3cdc5a28aa66907bb586a7e4",
+    "docs/m5-development/LEVEL_E_ENTRY_REVIEW_V1.md": "07018aae95ac5d8c91ec23660476cefdd3ecc739c6043bfb8423647f72d4c857"
+  },
+  "standards_unresolved": 0,
+  "spec_unresolved": 0,
+  "author_final_tests": {
+    "passed": 21,
+    "seconds": 97.59
+  },
+  "independent_fix_tests": {
+    "passed": 5,
+    "deselected": 16,
+    "seconds": 22.07
+  },
+  "root_prior_revision_tests": {
+    "passed": 16,
+    "seconds": 93.13
+  },
+  "provider_requests": 0,
+  "real_final_lock_created": false,
+  "real_holdout_qa_evidence_answers_read": false,
+  "implementation_commit_blob_audit": "pending_actual_final_lock",
+  "complete_experiment_report": false
+}

@@ -19,6 +19,7 @@ def evidence(count=8):
 
 
 def test_core_fact_survives_large_same_state_history_at_fixed_budget(settings):
+    settings = settings.model_copy(update={"resolution_input_budget": 12000})
     memories, sources = evidence()
     base = dict(question='What did Alex research?', relations=[], coverage=[])
     payload, audit = pack_payload(base, memories, [], sources, settings)
@@ -74,6 +75,7 @@ def test_joint_packing_reserves_partial_prior_support_before_new_windows(setting
 
 
 def test_update_history_does_not_make_atomic_fact_an_indivisible_component(settings):
+    settings = settings.model_copy(update={"resolution_input_budget": 12000})
     memories, sources = evidence(8)
     relations = [dict(old_memory_id=f'm{i}', new_memory_id=f'm{i+1}', label='UPDATE') for i in range(7)]
     payload, audit = pack_payload(dict(question='What did Alex research?', relations=relations),

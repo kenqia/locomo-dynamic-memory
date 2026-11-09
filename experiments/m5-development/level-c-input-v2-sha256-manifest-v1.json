@@ -1,0 +1,11 @@
+{
+  "tools/m5/level_c.py": "def5898c6afe2c6e9a5c5cf419bd9e2e12b11bf2878300929f305b04917e5334",
+  "tools/m5/level_c_audit.py": "c8823a95c1c5a52212fb7a9b7138da50ac30efeef2218d28510feee03c2085ab",
+  "tests/test_m5_level_c.py": "57a5997207a7b7094dac20e2bce714d1777c8bf5bc7c1bdc00c001c439e90303",
+  "tests/test_m5_level_c_audit.py": "8957cd0ee403d57fe7a82e31b6249688a8b7692605621ae2a23303d1d047b8c7",
+  "docs/m5-development/LEVEL_C_INPUT_V2_PREPARATION.md": "67ef8c605ca577507fddb4b46438cbc4b8e6108db2a993215b9665b4aab2e33e",
+  "docs/m5-development/LEVEL_C_INPUT_V2_REVIEW_V1.md": "c7b217b84898ba305853278418f6d13786c42e50228df310271e33132321d99d",
+  "experiments/m5-development/pricing-input-v2-20261104.json": "098d020a08cf63f9ceb12a6304b0e7beea60dbe2b7bcfc0afafc9a10b6a5b8d7",
+  "experiments/m5-development/test-results/level-c-input-v2-targeted-root.txt": "41aebb576bfe54bd2a30030fffad568e587cb43a1b8626a2adbfc2591c8e2856",
+  "experiments/m5-development/level-c-input-v2-prepared-v1.json": "5a00ba18ec7ee2341ffd124d71808763901fabba77f5a69e81db5be923abfb33"
+}

@@ -5,6 +5,7 @@ No authenticated browser profile, secret files, or direct database access is use
 """
 import argparse
 import json
+import os
 import re
 import subprocess
 import time
@@ -28,7 +29,8 @@ def get(path):
 
 sample = json.loads(Path(__file__).with_name("sample.json").read_text())
 with sync_playwright() as playwright:
-    browser = playwright.chromium.launch(headless=True, args=['--no-sandbox'])
+    executable = os.environ.get('LOCOMO_CHROMIUM_EXECUTABLE')
+    browser = playwright.chromium.launch(headless=True, **({'executable_path': executable} if executable else {}), args=['--no-sandbox'])
     with browser_diagnostics(browser, args.output) as (page, errors, console_errors):
         def settle():
             page.wait_for_timeout(300)
@@ -73,7 +75,7 @@ with sync_playwright() as playwright:
         click('开始构建 Memory')
         page.wait_for_timeout(1500)
         click('刷新当前状态')
-        expect(page.get_by_text('抽取失败', exact=True)).to_be_visible(timeout=20000)
+        expect(page.get_by_text('Memory 抽取失败', exact=True)).to_be_visible(timeout=20000)
         build = get('/builds')['items'][0]['build_id']
         assert get(f'/builds/{build}')['progress']['failed'] == 1
         page.screenshot(path=str(args.output / 'issue-12-build-failure.png'), full_page=True)
@@ -102,6 +104,8 @@ with sync_playwright() as playwright:
         conflict_sources = {f'{dataset}/conv-a/D2:2', f'{dataset}/conv-a/D2:3'}
         assert set(conflicts[0]['source_ids']) == conflict_sources
         click('进入证据问答')
+        page.get_by_label('问答策略', exact=True).press('ArrowDown')
+        page.get_by_role('option', name='Dynamic', exact=True).click()
         for question, date, expected in [('Where does Alex live?', None, 'Rome'), ('Where did Alex live?', '2023-05-01', 'Paris'), ("What is Sam's birth year?", None, '证据冲突'), ("What is Alex's passport number?", None, '证据不足')]:
             fill('英文问题', question)
             fill('指定日期，可留空', date or '')
@@ -143,6 +147,13 @@ with sync_playwright() as playwright:
         assert get(f'/builds/{build}/current-state') == state
         assert get(f'/builds/{build}/relations') == relations
         assert get(f'/datasets/{dataset}/conversations/conv-a/turns') == original
+        page.get_by_text('Bonus · 状态演化与 Graph Memory', exact=True).click()
+        page.get_by_text('开启只读图浏览', exact=True).click()
+        expect(page.get_by_text('查看节点及原文来源', exact=True)).to_be_visible(timeout=20000)
+        expect(page.get_by_text('状态维度', exact=True)).to_be_visible(timeout=20000)
+        expect(page.get_by_text('下载所选图 JSON', exact=True)).to_be_visible(timeout=20000)
+        page.screenshot(path=str(args.output / 'm5-graph-timeline.png'), full_page=True)
+        page.get_by_text('开启只读图浏览', exact=True).click()
         click('进入评测与报告')
         click('准备所选版本 JSON')
         with page.expect_download() as download:
@@ -177,8 +188,13 @@ with sync_playwright() as playwright:
         assert all(row.get('error') is None for row in run['results'] if row['sample_index'] == 0)
         assert run['course_metrics']['status'] == 'unavailable'
         assert all(summary['qa']['scored'] == 1 and summary['qa']['unscored'] == 1 for summary in run['summary'].values())
-        page.get_by_text('样本 1 · 完整动态系统 · 结果与失败检查', exact=True).click()
-        page.get_by_text('固定版本、实际配置、共享 Prompt 与完整记录', exact=True).click()
+        failed_detail = page.get_by_text('样本 1 · 完整动态系统 · 结果与失败检查', exact=True)
+        failed_detail.click()
+        settle()
+        failed_detail.click()
+        settle()
+        # Expanding the complete run renders all eight full traces.
+        page.get_by_text('固定版本、实际配置、共享 Prompt 与完整记录', exact=True).click(timeout=120000)
         page.get_by_text('课程正式指标未评：', exact=False).scroll_into_view_if_needed()
         page.mouse.wheel(0, 300)
         page.screenshot(path=str(args.output / 'issue-12-evaluation.png'), full_page=True)

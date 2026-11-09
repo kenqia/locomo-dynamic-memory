@@ -1,0 +1,7201 @@
+{
+  "version": "m5-level-e-semantic-paired-v1",
+  "generation_freeze_sha256": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+  "review_manifest_sha256": "b030f1cd63aeba84427827c9a750583fa346d8776821e8685401e9941ecde9a5",
+  "reviews_sha256": "5900049cd6d97f20604d09fdddc48b7288d3aedd68d382a9b9069572e360bd85",
+  "derivation_sha256": "33be2ccf1cdb1b8e97e8344297ca5bf2fa1a83969ab9d1837721dbd0f6d25082",
+  "planned_units": 800,
+  "reviewed_units": 800,
+  "planned_pairs": 400,
+  "overall": {
+    "source_support": {
+      "planned_pairs": 400,
+      "determinate_pairs": 297,
+      "excluded_pairs": 103,
+      "metric": {
+        "mean": 0.03367003367003367,
+        "bootstrap95": [
+          -0.010101010101010102,
+          0.07752525252525207
+        ],
+        "improved": 28,
+        "regressed": 18,
+        "unchanged": 251,
+        "denominator": 297,
+        "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+      },
+      "positive_difference_means": "more support or correct abstentions"
+    },
+    "citation_support": {
+      "planned_pairs": 400,
+      "determinate_pairs": 297,
+      "excluded_pairs": 103,
+      "metric": {
+        "mean": 0.026936026936026935,
+        "bootstrap95": [
+          -0.020202020202020204,
+          0.07407407407407407
+        ],
+        "improved": 31,
+        "regressed": 23,
+        "unchanged": 243,
+        "denominator": 297,
+        "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+      },
+      "positive_difference_means": "more support or correct abstentions"
+    },
+    "abstention": {
+      "planned_pairs": 400,
+      "determinate_pairs": 124,
+      "excluded_pairs": 276,
+      "metric": {
+        "mean": -0.016129032258064516,
+        "bootstrap95": [
+          -0.04032258064516129,
+          0.0
+        ],
+        "improved": 0,
+        "regressed": 2,
+        "unchanged": 122,
+        "denominator": 124,
+        "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+      },
+      "positive_difference_means": "more support or correct abstentions"
+    },
+    "wrong_person": {
+      "planned_pairs": 400,
+      "determinate_pairs": 320,
+      "excluded_pairs": 80,
+      "metric": {
+        "mean": -0.003125,
+        "bootstrap95": [
+          -0.015625,
+          0.009375
+        ],
+        "improved": 2,
+        "regressed": 3,
+        "unchanged": 315,
+        "denominator": 320,
+        "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+      },
+      "positive_difference_means": "more errors"
+    },
+    "wrong_event": {
+      "planned_pairs": 400,
+      "determinate_pairs": 319,
+      "excluded_pairs": 81,
+      "metric": {
+        "mean": 0.009404388714733543,
+        "bootstrap95": [
+          -0.01567398119122257,
+          0.034482758620689655
+        ],
+        "improved": 9,
+        "regressed": 6,
+        "unchanged": 304,
+        "denominator": 319,
+        "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+      },
+      "positive_difference_means": "more errors"
+    },
+    "wrong_time": {
+      "planned_pairs": 400,
+      "determinate_pairs": 308,
+      "excluded_pairs": 92,
+      "metric": {
+        "mean": -0.012987012987012988,
+        "bootstrap95": [
+          -0.03571428571428571,
+          0.00974025974025974
+        ],
+        "improved": 4,
+        "regressed": 8,
+        "unchanged": 296,
+        "denominator": 308,
+        "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+      },
+      "positive_difference_means": "more errors"
+    },
+    "list_omission": {
+      "planned_pairs": 400,
+      "determinate_pairs": 317,
+      "excluded_pairs": 83,
+      "metric": {
+        "mean": -0.01892744479495268,
+        "bootstrap95": [
+          -0.03785488958990536,
+          0.0
+        ],
+        "improved": 2,
+        "regressed": 8,
+        "unchanged": 307,
+        "denominator": 317,
+        "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+      },
+      "positive_difference_means": "more errors"
+    }
+  },
+  "per_conversation": {
+    "conv-43": {
+      "source_support": {
+        "planned_pairs": 242,
+        "determinate_pairs": 157,
+        "excluded_pairs": 85,
+        "metric": {
+          "mean": 0.0,
+          "bootstrap95": [
+            -0.05732484076433121,
+            0.06369426751592357
+          ],
+          "improved": 12,
+          "regressed": 12,
+          "unchanged": 133,
+          "denominator": 157,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more support or correct abstentions"
+      },
+      "citation_support": {
+        "planned_pairs": 242,
+        "determinate_pairs": 151,
+        "excluded_pairs": 91,
+        "metric": {
+          "mean": -0.006622516556291391,
+          "bootstrap95": [
+            -0.0728476821192053,
+            0.059602649006622516
+          ],
+          "improved": 12,
+          "regressed": 13,
+          "unchanged": 126,
+          "denominator": 151,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more support or correct abstentions"
+      },
+      "abstention": {
+        "planned_pairs": 242,
+        "determinate_pairs": 77,
+        "excluded_pairs": 165,
+        "metric": {
+          "mean": -0.025974025974025976,
+          "bootstrap95": [
+            -0.06493506493506493,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 2,
+          "unchanged": 75,
+          "denominator": 77,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more support or correct abstentions"
+      },
+      "wrong_person": {
+        "planned_pairs": 242,
+        "determinate_pairs": 170,
+        "excluded_pairs": 72,
+        "metric": {
+          "mean": 0.0,
+          "bootstrap95": [
+            -0.01764705882352941,
+            0.01764705882352941
+          ],
+          "improved": 1,
+          "regressed": 1,
+          "unchanged": 168,
+          "denominator": 170,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      },
+      "wrong_event": {
+        "planned_pairs": 242,
+        "determinate_pairs": 170,
+        "excluded_pairs": 72,
+        "metric": {
+          "mean": -0.0058823529411764705,
+          "bootstrap95": [
+            -0.041176470588235294,
+            0.029411764705882353
+          ],
+          "improved": 4,
+          "regressed": 5,
+          "unchanged": 161,
+          "denominator": 170,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      },
+      "wrong_time": {
+        "planned_pairs": 242,
+        "determinate_pairs": 161,
+        "excluded_pairs": 81,
+        "metric": {
+          "mean": 0.006211180124223602,
+          "bootstrap95": [
+            -0.018633540372670808,
+            0.037267080745341616
+          ],
+          "improved": 3,
+          "regressed": 2,
+          "unchanged": 156,
+          "denominator": 161,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      },
+      "list_omission": {
+        "planned_pairs": 242,
+        "determinate_pairs": 167,
+        "excluded_pairs": 75,
+        "metric": {
+          "mean": -0.023952095808383235,
+          "bootstrap95": [
+            -0.059880239520958084,
+            0.005988023952095809
+          ],
+          "improved": 2,
+          "regressed": 6,
+          "unchanged": 159,
+          "denominator": 167,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      }
+    },
+    "conv-44": {
+      "source_support": {
+        "planned_pairs": 158,
+        "determinate_pairs": 140,
+        "excluded_pairs": 18,
+        "metric": {
+          "mean": 0.07142857142857142,
+          "bootstrap95": [
+            0.007142857142857143,
+            0.1357142857142857
+          ],
+          "improved": 16,
+          "regressed": 6,
+          "unchanged": 118,
+          "denominator": 140,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more support or correct abstentions"
+      },
+      "citation_support": {
+        "planned_pairs": 158,
+        "determinate_pairs": 146,
+        "excluded_pairs": 12,
+        "metric": {
+          "mean": 0.06164383561643835,
+          "bootstrap95": [
+            -0.00684931506849315,
+            0.13013698630136986
+          ],
+          "improved": 19,
+          "regressed": 10,
+          "unchanged": 117,
+          "denominator": 146,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more support or correct abstentions"
+      },
+      "abstention": {
+        "planned_pairs": 158,
+        "determinate_pairs": 47,
+        "excluded_pairs": 111,
+        "metric": {
+          "mean": 0.0,
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 0,
+          "unchanged": 47,
+          "denominator": 47,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more support or correct abstentions"
+      },
+      "wrong_person": {
+        "planned_pairs": 158,
+        "determinate_pairs": 150,
+        "excluded_pairs": 8,
+        "metric": {
+          "mean": -0.006666666666666667,
+          "bootstrap95": [
+            -0.02666666666666667,
+            0.013333333333333334
+          ],
+          "improved": 1,
+          "regressed": 2,
+          "unchanged": 147,
+          "denominator": 150,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      },
+      "wrong_event": {
+        "planned_pairs": 158,
+        "determinate_pairs": 149,
+        "excluded_pairs": 9,
+        "metric": {
+          "mean": 0.026845637583892617,
+          "bootstrap95": [
+            0.0,
+            0.06040268456375839
+          ],
+          "improved": 5,
+          "regressed": 1,
+          "unchanged": 143,
+          "denominator": 149,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      },
+      "wrong_time": {
+        "planned_pairs": 158,
+        "determinate_pairs": 147,
+        "excluded_pairs": 11,
+        "metric": {
+          "mean": -0.034013605442176874,
+          "bootstrap95": [
+            -0.07482993197278912,
+            0.0
+          ],
+          "improved": 1,
+          "regressed": 6,
+          "unchanged": 140,
+          "denominator": 147,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      },
+      "list_omission": {
+        "planned_pairs": 158,
+        "determinate_pairs": 150,
+        "excluded_pairs": 8,
+        "metric": {
+          "mean": -0.013333333333333334,
+          "bootstrap95": [
+            -0.03333333333333333,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 2,
+          "unchanged": 148,
+          "denominator": 150,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      }
+    }
+  },
+  "pairs": [
+    {
+      "question_id": "conv-43:qa:0",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:1",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:10",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:100",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:101",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:102",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:103",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:104",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:105",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:106",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:107",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:108",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:109",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:11",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:110",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": null,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:111",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:112",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:113",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:114",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:115",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:116",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:117",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:118",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:119",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:12",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:120",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:121",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:122",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 1
+      }
+    },
+    {
+      "question_id": "conv-43:qa:123",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:124",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:125",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:126",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:127",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:128",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": -1,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:129",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:13",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:130",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:131",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:132",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:133",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:134",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:135",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:136",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:137",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:138",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:139",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:14",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:140",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:141",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:142",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:143",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:144",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": null,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:145",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:146",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:147",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:148",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:149",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:15",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:150",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:151",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:152",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:153",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:154",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": -1,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:155",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:156",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:157",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:158",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:159",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:16",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:160",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:161",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:162",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:163",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:164",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:165",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:166",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 1,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:167",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:168",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:169",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:17",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:170",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:171",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": 1,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:172",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:173",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:174",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:175",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:176",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:177",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:178",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:179",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:18",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:180",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:181",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:182",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:183",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:184",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:185",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:186",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:187",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:188",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:189",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:19",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:190",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:191",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:192",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:193",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": -1,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:194",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:195",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:196",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:197",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:198",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": -1,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:199",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:2",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": -1
+      }
+    },
+    {
+      "question_id": "conv-43:qa:20",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:200",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:201",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:202",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:203",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:204",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:205",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:206",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:207",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:208",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:209",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:21",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:210",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:211",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:212",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:213",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:214",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:215",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:216",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:217",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:218",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:219",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:22",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:220",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 1,
+        "wrong_event": 1,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:221",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:222",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:223",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:224",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:225",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:226",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:227",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:228",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:229",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:23",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:230",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:231",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:232",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:233",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:234",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:235",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:236",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:237",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:238",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:239",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:24",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:240",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:241",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:25",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:26",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:27",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:28",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:29",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:3",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:30",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": -1,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:31",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:32",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": -1,
+        "abstention": -1,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:33",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:34",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:35",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": -1,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:36",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": -1
+      }
+    },
+    {
+      "question_id": "conv-43:qa:37",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:38",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:39",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:4",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:40",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:41",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:42",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:43",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": -1
+      }
+    },
+    {
+      "question_id": "conv-43:qa:44",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:45",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:46",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:47",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:48",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:49",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:5",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": null,
+        "abstention": -1,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:50",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:51",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:52",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:53",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:54",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:55",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:56",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:57",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 1,
+        "wrong_time": 1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:58",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:59",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": null,
+        "list_omission": -1
+      }
+    },
+    {
+      "question_id": "conv-43:qa:6",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:60",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:61",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": -1
+      }
+    },
+    {
+      "question_id": "conv-43:qa:62",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:63",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:64",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:65",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:66",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:67",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:68",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:69",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:7",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "failed",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:70",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:71",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:72",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:73",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:74",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:75",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:76",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:77",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:78",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 1
+      }
+    },
+    {
+      "question_id": "conv-43:qa:79",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:8",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:80",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:81",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:82",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": -1
+      }
+    },
+    {
+      "question_id": "conv-43:qa:83",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:84",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:85",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:86",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:87",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:88",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:89",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:9",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:90",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:91",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:92",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:93",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:94",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:95",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": -1,
+        "wrong_time": -1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:96",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-43:qa:97",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:98",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-43:qa:99",
+      "sample_id": "conv-43",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:0",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:1",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:10",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:100",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:101",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:102",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:103",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:104",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:105",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:106",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:107",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:108",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:109",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:11",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": -1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:110",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:111",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:112",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:113",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": -1,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:114",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:115",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:116",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:117",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": -1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:118",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:119",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:12",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 1,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:120",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:121",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:122",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:123",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:124",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:125",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:126",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:127",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:128",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:129",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:13",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:130",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:131",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:132",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:133",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": -1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:134",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": -1,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:135",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:136",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:137",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": -1,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:138",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:139",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 1,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:14",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:140",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:141",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:142",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:143",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:144",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:145",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:146",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 1,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:147",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:148",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:149",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:15",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:150",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:151",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:152",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:153",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-44:qa:154",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "failed",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-44:qa:155",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "failed",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-44:qa:156",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "failed",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-44:qa:157",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "failed",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-44:qa:16",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:17",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:18",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:19",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:2",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": -1,
+        "wrong_time": 0,
+        "list_omission": -1
+      }
+    },
+    {
+      "question_id": "conv-44:qa:20",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:21",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 1,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:22",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": 0,
+        "wrong_person": -1,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:23",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:24",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:25",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:26",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:27",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:28",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:29",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": -1
+      }
+    },
+    {
+      "question_id": "conv-44:qa:3",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 1,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:30",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": -1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:31",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-44:qa:32",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:33",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:34",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:35",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:36",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:37",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": null,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:38",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:39",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:4",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:40",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:41",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "failed",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-44:qa:42",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:43",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:44",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": -1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:45",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:46",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 1,
+        "wrong_time": 1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:47",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 1,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:48",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:49",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:5",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:50",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:51",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:52",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": -1,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:53",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:54",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:55",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:56",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": -1,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:57",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:58",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:59",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:6",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:60",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": -1,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:61",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:62",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:63",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:64",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:65",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:66",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:67",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 1,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:68",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:69",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:7",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:70",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:71",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:72",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:73",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:74",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:75",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:76",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:77",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:78",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:79",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:8",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:80",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:81",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:82",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:83",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:84",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:85",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:86",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:87",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:88",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:89",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:9",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": -1,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:90",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:91",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:92",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:93",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:94",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "failed"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": null,
+        "citation_support": null,
+        "abstention": null,
+        "wrong_person": null,
+        "wrong_event": null,
+        "wrong_time": null,
+        "list_omission": null
+      }
+    },
+    {
+      "question_id": "conv-44:qa:95",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:96",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:97",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:98",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": 0,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    },
+    {
+      "question_id": "conv-44:qa:99",
+      "sample_id": "conv-44",
+      "outcomes": {
+        "hybrid_no_resolution": "succeeded",
+        "dynamic": "succeeded"
+      },
+      "dynamic_minus_hybrid": {
+        "source_support": 0,
+        "citation_support": 0,
+        "abstention": null,
+        "wrong_person": 0,
+        "wrong_event": 0,
+        "wrong_time": 0,
+        "list_omission": 0
+      }
+    }
+  ],
+  "interpretation": "AI-assisted source review, one reviewer per unit; not human or teacher truth; no dual-review agreement measured.",
+  "gold_read": false,
+  "provider_requests": 0
+}

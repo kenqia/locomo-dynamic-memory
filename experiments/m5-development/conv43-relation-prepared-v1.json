@@ -1,0 +1,27 @@
+{
+  "status": "prepared_not_authorized",
+  "scope": "conv-43 existing indexed Build relation phase only; no conv-44/rebuild/publish/query/QA",
+  "policy": {
+    "model": "deepseek-flash",
+    "input_usd_per_million": "0.30",
+    "output_usd_per_million": "1.20",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768,
+    "max_requests": 1200,
+    "max_usd": "104.7859200"
+  },
+  "relation_tasks": 400,
+  "comparisons": 7620,
+  "relation_thinking_effort": "high",
+  "plan_sha256": "3ecc4142916a7959b2c4fde9d421214ee872d0401bc5bf82f8d07b10478495c6",
+  "script_sha256": "960de2683e341966e13217a1a07ef4ef5a1b1e0dada840822f0d32e2865ae5d7",
+  "prepared_database_snapshot": "48cc7cfb068f8b9105443cf6c99e42493586b936dd3c8a2ede6d1856cdfe5b4b",
+  "task_identity_sha256": "5e7332318fcc1f3f7da809fb52695718eb78ccee4036a0124a54380a0a1ff689",
+  "unauthorized_execution_rejected": true,
+  "database_and_ledger_unchanged": true,
+  "authorization_present": false,
+  "execution_marker_present": false,
+  "provider_requests": 0,
+  "output": "/home/kenqia/my_folder/locomo-worktrees/m5-final-development-20261104/var/m5-development/conv43-relation-proposal-v1",
+  "holdout_qa_read": false
+}

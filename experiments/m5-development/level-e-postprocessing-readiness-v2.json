@@ -1,0 +1,27 @@
+{
+  "version": "m5-level-e-postprocessing-readiness-v2",
+  "status": "synthetic_verified_waiting_real_generation_freeze",
+  "test_commit": "b61e2418bf57b3708d3ba2916767b6b32d63a009",
+  "files": {
+    "tools/m5/level_e_reporting.py": "50687231bd01a603a0bd6872b07a8c64c27b89abacc7b7b41591df0f7ab6fb89",
+    "tests/test_m5_level_e_reporting.py": "7f9a6fdf9a3ada047db01d6693513af7ca8feca3534ab641f15ca925b1a1c707",
+    "docs/m5-development/LEVEL_E_REPORTING_REVIEW_V1.md": "a8959aab7b28ec33689338f52b609e7e697f5b1b9e75c4e79d90fe6216fb81ba",
+    "docs/m5-development/LEVEL_E_REPORTING_REVIEW_V2.md": "3a972720fbf2f91928c2e026c31ead8ea131790ff1dd01d563f21d1df5e4da63",
+    "experiments/m5-development/level-e-postprocessing-readiness-v1.json": "27d2f6e041bb4d666355e29ca77623860b0c895864351fd760f67f99b7e2a2de"
+  },
+  "tool_unchanged_from_v1": true,
+  "frozen_generation_producers_unchanged": true,
+  "author_tests": 21,
+  "independent_tests": 21,
+  "candidate_retrieval_operation_risk": "not_reproduced; analysis ModelFailure caught by frozen RetrievalService and metadata preserved as query_analysis",
+  "synthetic_fallback_items": 8,
+  "synthetic_physical_requests": 36,
+  "synthetic_failed_analysis_attempts": 24,
+  "synthetic_retry_attempts": 16,
+  "remaining_confirmed_p0_p1_p2": 0,
+  "actual_reporting_run": false,
+  "actual_review_packet_prepared": false,
+  "gold_read": false,
+  "provider_requests": 0,
+  "v1_evidence_preserved": true
+}

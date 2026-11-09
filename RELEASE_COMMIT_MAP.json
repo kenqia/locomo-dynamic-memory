@@ -1,0 +1,1354 @@
+{
+  "production_baseline": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
+  "m5_base": "28ce63d73d6736c7812aa0be4425a0d9650dd09e",
+  "refs": {
+    "codex/production-integration-20261101": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
+    "codex/research-next-20261101": "97bfaaaa46061a27153dd55b16882cb9f6a2d437",
+    "codex/research-process-archive-20261103": "3e64811ca4047192f0e3db8a587d013396f04fa8",
+    "codex/m5-final-development-20261104": "0aae59c61d569f03d73c57ae333784ae99a8a22b",
+    "codex/m5-final-input-v2-20261104": "aba95ca47fcafd527ef1237d4f30d23834592fe2",
+    "codex/m5-final-build-repair-20261104": "3f8929839e30cd085b105504ca1a6fe11fcf216f",
+    "codex/m5-final-completion-20261104": "bb9f678b23665cf0650838c716b4922a6363eb7b",
+    "codex/m5-final-conv44-recovery-v3-20261104": "aed4634deb6c873ef1620d0a80bd023e2541d1a2",
+    "codex/m5-final-conv44-relations-20261104": "28ce63d73d6736c7812aa0be4425a0d9650dd09e",
+    "docs/experiment-supplement": "3392faf861b36862ffa876c39e162d5108e2d023"
+  },
+  "source_file_lineage": [
+    {
+      "file": "src/locomo_memory/__init__.py",
+      "m5_origin_commit": "d03725440ed13dd30bdc688959b46c4ec0e00620",
+      "release_changed": false,
+      "sha256": "84759eeab9121155bd63d2aaad005103edc1fdafddd4dfa8c539e564a2805d5a",
+      "release_last_commit": "d03725440ed13dd30bdc688959b46c4ec0e00620"
+    },
+    {
+      "file": "src/locomo_memory/ablation.py",
+      "m5_origin_commit": "a2528d6eb4d2a1dd96a021902063dbf6917dc7ee",
+      "release_changed": false,
+      "sha256": "e6880a0a083771c255cfa77b29e1382fda891ddd31beae18def98168173da009",
+      "release_last_commit": "a2528d6eb4d2a1dd96a021902063dbf6917dc7ee"
+    },
+    {
+      "file": "src/locomo_memory/api.py",
+      "m5_origin_commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85",
+      "release_changed": true,
+      "sha256": "89c5b5d2e5da8fe95f75594954950a4dce92776c5a0fb23d7e9f326377f42729",
+      "release_last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "src/locomo_memory/build_api.py",
+      "m5_origin_commit": "8f84db6cd3bfba242bd50dceff23704e8c5d561b",
+      "release_changed": false,
+      "sha256": "b1089e83907d22ce906e5b43428ea84b548234a4f8ce186aa49730d2b19eb09f",
+      "release_last_commit": "8f84db6cd3bfba242bd50dceff23704e8c5d561b"
+    },
+    {
+      "file": "src/locomo_memory/build_progress.py",
+      "m5_origin_commit": "de06b56c40a7becf38740a190d61e01be251f5f7",
+      "release_changed": false,
+      "sha256": "1ec8b7e23ad8e23a03b790ca4aef780192f60c86667da759f59f1e3d1e0f8f15",
+      "release_last_commit": "de06b56c40a7becf38740a190d61e01be251f5f7"
+    },
+    {
+      "file": "src/locomo_memory/builds.py",
+      "m5_origin_commit": "2ef08df771b44cb788b94897c0ae423716ba9a1c",
+      "release_changed": false,
+      "sha256": "7279575b2c5aaedd6a716f3f20fa07b3d1adb5c596cc917916f30b74dcc89b53",
+      "release_last_commit": "2ef08df771b44cb788b94897c0ae423716ba9a1c"
+    },
+    {
+      "file": "src/locomo_memory/config.py",
+      "m5_origin_commit": "5d7e9b75c3d452d76db9ce0c860ea614d117b55d",
+      "release_changed": false,
+      "sha256": "d3ccd90d4d49bc30164871726f1fd0efcb731d415ff0bd19d9244962d5f5e8cc",
+      "release_last_commit": "5d7e9b75c3d452d76db9ce0c860ea614d117b55d"
+    },
+    {
+      "file": "src/locomo_memory/database.py",
+      "m5_origin_commit": "de06b56c40a7becf38740a190d61e01be251f5f7",
+      "release_changed": false,
+      "sha256": "79669243905c25ce724c8b361a2289fb18dcb3db79644b19fd7197468a6a9086",
+      "release_last_commit": "de06b56c40a7becf38740a190d61e01be251f5f7"
+    },
+    {
+      "file": "src/locomo_memory/diagnostics.py",
+      "m5_origin_commit": "908c9c32c50d7712e69ef6f9fbb2b51324315af2",
+      "release_changed": false,
+      "sha256": "3395e755613864c3853a6a9f484ccca6d03070572fe7beb25ae4c73c03c07762",
+      "release_last_commit": "908c9c32c50d7712e69ef6f9fbb2b51324315af2"
+    },
+    {
+      "file": "src/locomo_memory/embeddings.py",
+      "m5_origin_commit": "d7188d2bb467443da9b7c6a4185b77c1d2c69e5a",
+      "release_changed": false,
+      "sha256": "4d8f26b8b32ef9474259ddb1586fe753f959c2144ad7cc7b5f9e22580b4f3e15",
+      "release_last_commit": "d7188d2bb467443da9b7c6a4185b77c1d2c69e5a"
+    },
+    {
+      "file": "src/locomo_memory/evaluation.py",
+      "m5_origin_commit": "9cd3aa1d657b6bdc688a3d87ea75ad873efa8c84",
+      "release_changed": true,
+      "sha256": "338c8f38a9c1f20291f8e624b5af2d95cd9b338b26b764ac6512f6181fd73364",
+      "release_last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "src/locomo_memory/evaluation_execution.py",
+      "m5_origin_commit": "97fb606a2ded66b2942266dbd166df941e919ada",
+      "release_changed": false,
+      "sha256": "6963b221e2c9caad1eb2cb1210e415293d99a708a100bb26d94e941e36f2b2e7",
+      "release_last_commit": "97fb606a2ded66b2942266dbd166df941e919ada"
+    },
+    {
+      "file": "src/locomo_memory/evaluation_metrics.py",
+      "m5_origin_commit": "52a461e9c93e6abfa70c882fab34913e3008a792",
+      "release_changed": false,
+      "sha256": "dc73df532621309c97fcd4b142fb8f1170272a0f6b45894631c854a6f4497af6",
+      "release_last_commit": "52a461e9c93e6abfa70c882fab34913e3008a792"
+    },
+    {
+      "file": "src/locomo_memory/evaluation_plans.py",
+      "m5_origin_commit": "aeccdff8002ab9fef81b7abd2ecbbfe314dd96b7",
+      "release_changed": false,
+      "sha256": "5b3adeb59346c0d9534b3ccb929063e4f7201f31c370f7f473c47070bd792bbf",
+      "release_last_commit": "aeccdff8002ab9fef81b7abd2ecbbfe314dd96b7"
+    },
+    {
+      "file": "src/locomo_memory/evaluation_reports.py",
+      "m5_origin_commit": "876829720a0340a8141b96c36b48b5937a998cac",
+      "release_changed": false,
+      "sha256": "950e5146caa59969fac16f0b9c544fa3ca726a9449957a8ea3b6874290b5eb60",
+      "release_last_commit": "876829720a0340a8141b96c36b48b5937a998cac"
+    },
+    {
+      "file": "src/locomo_memory/evaluation_ui.py",
+      "m5_origin_commit": "de06b56c40a7becf38740a190d61e01be251f5f7",
+      "release_changed": false,
+      "sha256": "f06f4eb1a53482014110d9ef2ccdb939125210b9b394d5b5f8d81673059d7a8d",
+      "release_last_commit": "de06b56c40a7becf38740a190d61e01be251f5f7"
+    },
+    {
+      "file": "src/locomo_memory/evidence_catalog.py",
+      "m5_origin_commit": "4bb36d976136c5ca20923585cb819a74ebd285ff",
+      "release_changed": false,
+      "sha256": "814721f20b27e69e5fcf78dbbfa9b879b08c5f6f36ac109f65734892648888e1",
+      "release_last_commit": "4bb36d976136c5ca20923585cb819a74ebd285ff"
+    },
+    {
+      "file": "src/locomo_memory/evidence_selection.py",
+      "m5_origin_commit": "9cd3aa1d657b6bdc688a3d87ea75ad873efa8c84",
+      "release_changed": false,
+      "sha256": "a88a1afaf6c122f2e4b4d3d4fdb93c58e9543aa2208f1fed10fb1d16c07b6277",
+      "release_last_commit": "9cd3aa1d657b6bdc688a3d87ea75ad873efa8c84"
+    },
+    {
+      "file": "src/locomo_memory/expansion.py",
+      "m5_origin_commit": "876610ddd45d9f15b23f9750b1f7e1dbd51988f7",
+      "release_changed": false,
+      "sha256": "48e89c79018413620d52e96785fcf718e8d8ff8197ca83b3a18ff458211baa5c",
+      "release_last_commit": "876610ddd45d9f15b23f9750b1f7e1dbd51988f7"
+    },
+    {
+      "file": "src/locomo_memory/experiment.py",
+      "m5_origin_commit": "de06b56c40a7becf38740a190d61e01be251f5f7",
+      "release_changed": false,
+      "sha256": "42c6a02b3d34c1522a1021871df170cb2d25da3061e7760f58189a4825ba7ff7",
+      "release_last_commit": "de06b56c40a7becf38740a190d61e01be251f5f7"
+    },
+    {
+      "file": "src/locomo_memory/experiment_api.py",
+      "m5_origin_commit": "8f84db6cd3bfba242bd50dceff23704e8c5d561b",
+      "release_changed": false,
+      "sha256": "411cad39815af26e500d04737ef4c459e2d06aa727d60bb45d1b3c37b3030ecb",
+      "release_last_commit": "8f84db6cd3bfba242bd50dceff23704e8c5d561b"
+    },
+    {
+      "file": "src/locomo_memory/experiment_report.py",
+      "m5_origin_commit": "0a935d77f7dd8afd6b4950eb5a9833883d1d5c10",
+      "release_changed": false,
+      "sha256": "740493b1572fc9af8c4912da32d0541256ad20ef1c87280d5774bf66debd0a90",
+      "release_last_commit": "0a935d77f7dd8afd6b4950eb5a9833883d1d5c10"
+    },
+    {
+      "file": "src/locomo_memory/export_schemas.py",
+      "m5_origin_commit": "549e13b9a11161e8f728b840e63bd9e6595f88f8",
+      "release_changed": false,
+      "sha256": "b7e715952c13ef70027cb7b7b605a344c849944a1ca76b563ac8bdd11476aed0",
+      "release_last_commit": "549e13b9a11161e8f728b840e63bd9e6595f88f8"
+    },
+    {
+      "file": "src/locomo_memory/exports.py",
+      "m5_origin_commit": "549e13b9a11161e8f728b840e63bd9e6595f88f8",
+      "release_changed": false,
+      "sha256": "dac20c0156417d8d80084340cd0cd1a0c3ef1f646ac6c6bd85a79a60cc87696e",
+      "release_last_commit": "549e13b9a11161e8f728b840e63bd9e6595f88f8"
+    },
+    {
+      "file": "src/locomo_memory/extraction_examples.py",
+      "m5_origin_commit": "f0f8dfd31c16531714560374a23cbfa940e24923",
+      "release_changed": false,
+      "sha256": "7d90f6d6031571b5f1d0108c5b3016dab36a02339c0808967f555b2b1553ee95",
+      "release_last_commit": "f0f8dfd31c16531714560374a23cbfa940e24923"
+    },
+    {
+      "file": "src/locomo_memory/extraction_patch.py",
+      "m5_origin_commit": "85f36d1b96148e76deddb135782cf6566c5a0f6c",
+      "release_changed": false,
+      "sha256": "e57bcda67f0abaf1510ddbc12cb80b3680325112553b8d6768f7cd5ce74b2a89",
+      "release_last_commit": "85f36d1b96148e76deddb135782cf6566c5a0f6c"
+    },
+    {
+      "file": "src/locomo_memory/extraction_time_diagnostics.py",
+      "m5_origin_commit": "f0f8dfd31c16531714560374a23cbfa940e24923",
+      "release_changed": false,
+      "sha256": "bf2b5055cb4b78a395929395a60b0a91a4f1ec46eca7472b9271c1bdbd3534f9",
+      "release_last_commit": "f0f8dfd31c16531714560374a23cbfa940e24923"
+    },
+    {
+      "file": "src/locomo_memory/implementation_identity.py",
+      "m5_origin_commit": "8f84db6cd3bfba242bd50dceff23704e8c5d561b",
+      "release_changed": false,
+      "sha256": "9554358e4c79d4336f1af8373f1ca4d9f319ebedea1ea2cbabefb8b05f414bf8",
+      "release_last_commit": "8f84db6cd3bfba242bd50dceff23704e8c5d561b"
+    },
+    {
+      "file": "src/locomo_memory/imports.py",
+      "m5_origin_commit": "d03725440ed13dd30bdc688959b46c4ec0e00620",
+      "release_changed": false,
+      "sha256": "94d25065cf2ff02630a06599870b9dcc152c03b9ab0b9ab641a64f79be4dfc2e",
+      "release_last_commit": "d03725440ed13dd30bdc688959b46c4ec0e00620"
+    },
+    {
+      "file": "src/locomo_memory/layered_contracts.py",
+      "m5_origin_commit": "4bb36d976136c5ca20923585cb819a74ebd285ff",
+      "release_changed": false,
+      "sha256": "267d3f25c533088e895dda3bc63dd7718a2416cca7d2e7ee7e4545e84d19f317",
+      "release_last_commit": "4bb36d976136c5ca20923585cb819a74ebd285ff"
+    },
+    {
+      "file": "src/locomo_memory/layered_evidence.py",
+      "m5_origin_commit": "4bb36d976136c5ca20923585cb819a74ebd285ff",
+      "release_changed": false,
+      "sha256": "954640e23c77339b0c0e616fbdabcaf81940a5cb2e5dce03f8057e08ef9cadaa",
+      "release_last_commit": "4bb36d976136c5ca20923585cb819a74ebd285ff"
+    },
+    {
+      "file": "src/locomo_memory/m5_adaptive.py",
+      "m5_origin_commit": "51f7876326c6c3e844c0dfa235d21cbe61fd9c7d",
+      "release_changed": false,
+      "sha256": "d13b6599258cb54926b1c968c8d136ef29dfe31f7900f6253b8fa383dc96b587",
+      "release_last_commit": "51f7876326c6c3e844c0dfa235d21cbe61fd9c7d"
+    },
+    {
+      "file": "src/locomo_memory/m5_api.py",
+      "m5_origin_commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85",
+      "release_changed": false,
+      "sha256": "b79b00cb6cd0486f689ce82a6a19b5c96396dba55563f24cc18cf9137f8f8556",
+      "release_last_commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85"
+    },
+    {
+      "file": "src/locomo_memory/m5_budget.py",
+      "m5_origin_commit": "18d6fea4fb3e3cfb3cead4045716ad8feac7188c",
+      "release_changed": false,
+      "sha256": "1734357d07b1fc932e078ca1f5a15cf3f08fddd02a588b2bf55d93d9ac13f0ee",
+      "release_last_commit": "18d6fea4fb3e3cfb3cead4045716ad8feac7188c"
+    },
+    {
+      "file": "src/locomo_memory/m5_compression.py",
+      "m5_origin_commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85",
+      "release_changed": false,
+      "sha256": "198058471dd1256ac49039ed1b55b944af5c595be1b33de730a2e8e48f10fc1b",
+      "release_last_commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85"
+    },
+    {
+      "file": "src/locomo_memory/m5_graph.py",
+      "m5_origin_commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85",
+      "release_changed": false,
+      "sha256": "9612d38e32f162778e9d1452d483b59bf4d9a9558a98b216fc0eb632d3e2f93e",
+      "release_last_commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85"
+    },
+    {
+      "file": "src/locomo_memory/m5_queries.py",
+      "m5_origin_commit": "87fce8ee6adf088d0d80b31717ee1116ec3871fe",
+      "release_changed": false,
+      "sha256": "d0aa18f0a2fb537902a2ebeddeb10f7c5195002aa4d1ece0e51cf96de17c4332",
+      "release_last_commit": "87fce8ee6adf088d0d80b31717ee1116ec3871fe"
+    },
+    {
+      "file": "src/locomo_memory/m5_query_review.py",
+      "m5_origin_commit": "a30ca9f61986520abca30438f9bd659f955e60b7",
+      "release_changed": false,
+      "sha256": "4b94e966cfef8e7c5b6e78684655d69b6d19925e2a6dae9ac022c3c84940fde9",
+      "release_last_commit": "a30ca9f61986520abca30438f9bd659f955e60b7"
+    },
+    {
+      "file": "src/locomo_memory/m5_review.py",
+      "m5_origin_commit": "51f7876326c6c3e844c0dfa235d21cbe61fd9c7d",
+      "release_changed": false,
+      "sha256": "d6ac60fe890b5631419942cb138c8fedb4e5ac705d185ad0ec8fbe754fded3d0",
+      "release_last_commit": "51f7876326c6c3e844c0dfa235d21cbe61fd9c7d"
+    },
+    {
+      "file": "src/locomo_memory/m5_ui.py",
+      "m5_origin_commit": "f9eb4cf2c959c35e6e74455a88828c2a21b31999",
+      "release_changed": false,
+      "sha256": "e4f194404d39ae30626077ed53f9087c643a820ef51f62cbc6669d961c171784",
+      "release_last_commit": "f9eb4cf2c959c35e6e74455a88828c2a21b31999"
+    },
+    {
+      "file": "src/locomo_memory/m5_wire_compression.py",
+      "m5_origin_commit": "cfaab0e5afe8357f9d5454930eb08ad9c85c916f",
+      "release_changed": false,
+      "sha256": "1d853eb4faebbc0479c53015443eab481ca70db93b264aaa63dd352787a0a397",
+      "release_last_commit": "cfaab0e5afe8357f9d5454930eb08ad9c85c916f"
+    },
+    {
+      "file": "src/locomo_memory/memory_schemas.py",
+      "m5_origin_commit": "2ef08df771b44cb788b94897c0ae423716ba9a1c",
+      "release_changed": false,
+      "sha256": "8a345797a8ed26e3ee1d5331fc6196330202f1651e12148c36ff09d8819374e9",
+      "release_last_commit": "2ef08df771b44cb788b94897c0ae423716ba9a1c"
+    },
+    {
+      "file": "src/locomo_memory/model.py",
+      "m5_origin_commit": "f0f8dfd31c16531714560374a23cbfa940e24923",
+      "release_changed": false,
+      "sha256": "3eb285d6283e09decda40635af842eeb40d31f993e5c9a6d3db7cedddb2bb368",
+      "release_last_commit": "f0f8dfd31c16531714560374a23cbfa940e24923"
+    },
+    {
+      "file": "src/locomo_memory/projection.py",
+      "m5_origin_commit": "48b399a27d37b44973c41d481d97f2bc4d9af740",
+      "release_changed": false,
+      "sha256": "2e0bc6fe8ba0595b236588dc33dd1564b77d4cf3b343219b8eed829e531eaa40",
+      "release_last_commit": "48b399a27d37b44973c41d481d97f2bc4d9af740"
+    },
+    {
+      "file": "src/locomo_memory/proposition_extraction.py",
+      "m5_origin_commit": "5ad9064549f130433dcfbb511ef367c5e2c2469f",
+      "release_changed": false,
+      "sha256": "8128f1e11d4a753e9139679cdb5acf3f424171be1c10f8c8ac9d669aacb70482",
+      "release_last_commit": "5ad9064549f130433dcfbb511ef367c5e2c2469f"
+    },
+    {
+      "file": "src/locomo_memory/queries.py",
+      "m5_origin_commit": "51f7876326c6c3e844c0dfa235d21cbe61fd9c7d",
+      "release_changed": false,
+      "sha256": "201bfb8622889fd811b0355ad02f2764a76a9e3cc04344b699b5966f8feec0cc",
+      "release_last_commit": "51f7876326c6c3e844c0dfa235d21cbe61fd9c7d"
+    },
+    {
+      "file": "src/locomo_memory/query_api.py",
+      "m5_origin_commit": "f5f4396526350ce89977639fd5f0c264ddf7ca24",
+      "release_changed": true,
+      "sha256": "79607529ffea42c4883f192288f7559797429b869f0056d33f09c932c0063855",
+      "release_last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "src/locomo_memory/query_payload.py",
+      "m5_origin_commit": "a5501591aa49b28411dbd91af5b084b90d58dbb5",
+      "release_changed": false,
+      "sha256": "5a8cc5bb147b338424defafc9e7b61ed1aedaf337647f3f3ab642f5246016386",
+      "release_last_commit": "a5501591aa49b28411dbd91af5b084b90d58dbb5"
+    },
+    {
+      "file": "src/locomo_memory/query_schemas.py",
+      "m5_origin_commit": "b4c0c400dfbd8ca2985f9d7b81acc3e75eddbb18",
+      "release_changed": false,
+      "sha256": "97aba1df2422085bef0c68b612c95a323fabb84c5f1f3468a0c2b25aadbecad6",
+      "release_last_commit": "b4c0c400dfbd8ca2985f9d7b81acc3e75eddbb18"
+    },
+    {
+      "file": "src/locomo_memory/query_ui.py",
+      "m5_origin_commit": "de06b56c40a7becf38740a190d61e01be251f5f7",
+      "release_changed": true,
+      "sha256": "5458cd8e912818b527b725a46830cb58839766e7ae8e0ab07a6485c7c394eac5",
+      "release_last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "src/locomo_memory/raw_queries.py",
+      "m5_origin_commit": "a2528d6eb4d2a1dd96a021902063dbf6917dc7ee",
+      "release_changed": false,
+      "sha256": "bd09a2e71c111b7a9df7e7baba822ceaf6455c53b47ffbdb4ddcbdcb34912e0e",
+      "release_last_commit": "a2528d6eb4d2a1dd96a021902063dbf6917dc7ee"
+    },
+    {
+      "file": "src/locomo_memory/raw_retrieval.py",
+      "m5_origin_commit": "fe13a723efd16f901378ad500d397d83c8e906ec",
+      "release_changed": false,
+      "sha256": "56cf2b6567394627c256a987e860df250890989ff0079517d4096b18ab8c24ba",
+      "release_last_commit": "fe13a723efd16f901378ad500d397d83c8e906ec"
+    },
+    {
+      "file": "src/locomo_memory/raw_schemas.py",
+      "m5_origin_commit": "a5ace7bb67d7007b23952def06797a5a48c18a64",
+      "release_changed": false,
+      "sha256": "abf95c2592ec00a4530aaf6d50fc7efa2fb1a5e0be5a6d48b5a64fca25642ea5",
+      "release_last_commit": "a5ace7bb67d7007b23952def06797a5a48c18a64"
+    },
+    {
+      "file": "src/locomo_memory/relation_api.py",
+      "m5_origin_commit": "dae8fc4616aff9187121946c88d3c2984fef6264",
+      "release_changed": false,
+      "sha256": "9fe07220aca7b6958502c468dbe1612eea69ef6af3fe5e312251fd2de87379b0",
+      "release_last_commit": "dae8fc4616aff9187121946c88d3c2984fef6264"
+    },
+    {
+      "file": "src/locomo_memory/relation_diagnostics.py",
+      "m5_origin_commit": "bbc9dde2653cffe0ceba435cf874d09777e29250",
+      "release_changed": false,
+      "sha256": "1778028ded92529eb6501e8ef49bd21aca6a99187097094f5d647f0e701bf4ea",
+      "release_last_commit": "bbc9dde2653cffe0ceba435cf874d09777e29250"
+    },
+    {
+      "file": "src/locomo_memory/relation_replay.py",
+      "m5_origin_commit": "4413c11fe81007d1380e23fb829ebc5483557c9b",
+      "release_changed": false,
+      "sha256": "ad2e6406163d38c8063dffe43d6eeb1c205641874d0b7965464475ba4ec5d66c",
+      "release_last_commit": "4413c11fe81007d1380e23fb829ebc5483557c9b"
+    },
+    {
+      "file": "src/locomo_memory/relation_schemas.py",
+      "m5_origin_commit": "92fff467e78e25d3bab393d89389c5ff020a4a20",
+      "release_changed": false,
+      "sha256": "633d043b905418edb065c2fd09decb8ffb7fc74291cbcd51887f53cd9d5c398d",
+      "release_last_commit": "92fff467e78e25d3bab393d89389c5ff020a4a20"
+    },
+    {
+      "file": "src/locomo_memory/relation_selection.py",
+      "m5_origin_commit": "dae8fc4616aff9187121946c88d3c2984fef6264",
+      "release_changed": false,
+      "sha256": "ab636ee8323d60cbc49cae8da451d8fbdbe80ba071484f18eecdce598a5cb616",
+      "release_last_commit": "dae8fc4616aff9187121946c88d3c2984fef6264"
+    },
+    {
+      "file": "src/locomo_memory/relations.py",
+      "m5_origin_commit": "bbc9dde2653cffe0ceba435cf874d09777e29250",
+      "release_changed": false,
+      "sha256": "7f909ce169756c70d9f4415811e1436518a5e6c61b4e47e4fe50f9b63b9ac7a6",
+      "release_last_commit": "bbc9dde2653cffe0ceba435cf874d09777e29250"
+    },
+    {
+      "file": "src/locomo_memory/release_cli.py",
+      "m5_origin_commit": null,
+      "release_changed": true,
+      "sha256": "40405d24f75a8a246add2de0f493722b45be99ddc9eddc134f049de61d96257c",
+      "release_last_commit": "036c506eb5edaad6a1b02032ec185e1ff4ec8693"
+    },
+    {
+      "file": "src/locomo_memory/release_evidence.py",
+      "m5_origin_commit": null,
+      "release_changed": true,
+      "sha256": "828f678ccfae941cb6f4a80d9e0310911a0155f744a5d278dd5dcdb46fcdf54d",
+      "release_last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "src/locomo_memory/release_queries.py",
+      "m5_origin_commit": null,
+      "release_changed": true,
+      "sha256": "6510dd187c63a3e388c9294153925b05f32e3da6289f4c27180dd2e6ee6ceb65",
+      "release_last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "src/locomo_memory/release_viewer.py",
+      "m5_origin_commit": null,
+      "release_changed": true,
+      "sha256": "d4924f5df522d1e9cc6b715b33e9cf6a226250cbbf39f5f65ccd0dcfad6b13d2",
+      "release_last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "src/locomo_memory/replay_ui.py",
+      "m5_origin_commit": null,
+      "release_changed": true,
+      "sha256": "e059d341519ef12f7d4d9d5cafb381854451f4c3c57253773915e706826d2ab8",
+      "release_last_commit": "c7eae7a2f4ed667e83f2520e000e33aee7314e2b"
+    },
+    {
+      "file": "src/locomo_memory/report_html.py",
+      "m5_origin_commit": "de06b56c40a7becf38740a190d61e01be251f5f7",
+      "release_changed": false,
+      "sha256": "c7bbdf67785855a72bb7ad95edeada8745bbba8dd1835a9c0f1dd0b80c44918d",
+      "release_last_commit": "de06b56c40a7becf38740a190d61e01be251f5f7"
+    },
+    {
+      "file": "src/locomo_memory/resolution_delivery.py",
+      "m5_origin_commit": "a2528d6eb4d2a1dd96a021902063dbf6917dc7ee",
+      "release_changed": false,
+      "sha256": "56acc17719c8b8e500c4b5bf2d94a3757e1d993fd098adb3930f80730fb3ba60",
+      "release_last_commit": "a2528d6eb4d2a1dd96a021902063dbf6917dc7ee"
+    },
+    {
+      "file": "src/locomo_memory/retrieval.py",
+      "m5_origin_commit": "fcf55bf3f6abcaa1d2db2aa83d11ba14a0148d7a",
+      "release_changed": false,
+      "sha256": "743adc94ce4458eaaf2398419df7b8978cbe0931e84e0302532cecafe364efd1",
+      "release_last_commit": "fcf55bf3f6abcaa1d2db2aa83d11ba14a0148d7a"
+    },
+    {
+      "file": "src/locomo_memory/retrieval_api.py",
+      "m5_origin_commit": "d7188d2bb467443da9b7c6a4185b77c1d2c69e5a",
+      "release_changed": false,
+      "sha256": "ac71297568d9a8e041443e6b475dc2b699f3570b8b6f404068b1576b69057f59",
+      "release_last_commit": "d7188d2bb467443da9b7c6a4185b77c1d2c69e5a"
+    },
+    {
+      "file": "src/locomo_memory/retrieval_schemas.py",
+      "m5_origin_commit": "a883f0ec960ad50f81a9cac4043ca55d4ee639f8",
+      "release_changed": false,
+      "sha256": "34787823546fa27842fca11dcdff17c475e94dee10659f413fd1419f13d90492",
+      "release_last_commit": "a883f0ec960ad50f81a9cac4043ca55d4ee639f8"
+    },
+    {
+      "file": "src/locomo_memory/retry_feedback.py",
+      "m5_origin_commit": "f56b77bb1be11155e21b555836a9d1d6da95cef9",
+      "release_changed": false,
+      "sha256": "cf11e6bda6cec395c425d3f0d8befd03090dd52f90503d629abb3c00b9490525",
+      "release_last_commit": "f56b77bb1be11155e21b555836a9d1d6da95cef9"
+    },
+    {
+      "file": "src/locomo_memory/revised_source_reader.py",
+      "m5_origin_commit": "6d6d7cffad853bc01119ced1bbb0c1de143c197f",
+      "release_changed": false,
+      "sha256": "cdcb5f85ca73c8012cdf90ba4acb52273fb3188ab8f45c3ad5876be9b683d165",
+      "release_last_commit": "6d6d7cffad853bc01119ced1bbb0c1de143c197f"
+    },
+    {
+      "file": "src/locomo_memory/schemas.py",
+      "m5_origin_commit": "d03725440ed13dd30bdc688959b46c4ec0e00620",
+      "release_changed": false,
+      "sha256": "e7a8aa19a024a98ec8863f7df033b4c353b60cccf4c4b5f3db8f6875a94c4e93",
+      "release_last_commit": "d03725440ed13dd30bdc688959b46c4ec0e00620"
+    },
+    {
+      "file": "src/locomo_memory/selective_context.py",
+      "m5_origin_commit": "6d6d7cffad853bc01119ced1bbb0c1de143c197f",
+      "release_changed": false,
+      "sha256": "de63c41e493efe17b2f9fb46b8746becc54256a394074dbb6193cd2fde669e63",
+      "release_last_commit": "6d6d7cffad853bc01119ced1bbb0c1de143c197f"
+    },
+    {
+      "file": "src/locomo_memory/source_answer_reader.py",
+      "m5_origin_commit": "a2cbdd05dfdb9473c5fed50e0b6d43d0a026fef7",
+      "release_changed": false,
+      "sha256": "9581f265f09d12ea2784f55a0f7dd30e3d62a6d2a5eddf43eed596db3db4df5c",
+      "release_last_commit": "a2cbdd05dfdb9473c5fed50e0b6d43d0a026fef7"
+    },
+    {
+      "file": "src/locomo_memory/source_context.py",
+      "m5_origin_commit": "6d6d7cffad853bc01119ced1bbb0c1de143c197f",
+      "release_changed": false,
+      "sha256": "4c13487b4faf0c409976c147e2459661829f833b2ab953babdef9368553073ae",
+      "release_last_commit": "6d6d7cffad853bc01119ced1bbb0c1de143c197f"
+    },
+    {
+      "file": "src/locomo_memory/source_reader.py",
+      "m5_origin_commit": "11cfd882465463098ca5cfe3f8e70a5c2c1445b3",
+      "release_changed": false,
+      "sha256": "e14178818a632d394e68474f38f2f581e42153149fa487e2c136e164bf000d4c",
+      "release_last_commit": "11cfd882465463098ca5cfe3f8e70a5c2c1445b3"
+    },
+    {
+      "file": "src/locomo_memory/temporal.py",
+      "m5_origin_commit": "7546b412be6c3b12e4ff5862a2a5505cd08b0051",
+      "release_changed": false,
+      "sha256": "c2de5e20abb47b9ec2d694af1631cf2221e666bebe6296968c47af0cf011f332",
+      "release_last_commit": "7546b412be6c3b12e4ff5862a2a5505cd08b0051"
+    },
+    {
+      "file": "src/locomo_memory/ui.py",
+      "m5_origin_commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85",
+      "release_changed": false,
+      "sha256": "e26bf64f4ef174a12a626444912425bd1348fac71e1d7a0876c418eba16f229e",
+      "release_last_commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85"
+    },
+    {
+      "file": "src/locomo_memory/ui_theme.py",
+      "m5_origin_commit": "de06b56c40a7becf38740a190d61e01be251f5f7",
+      "release_changed": false,
+      "sha256": "e389f3cfcc9cab7ec43250e635daafc62a578bbe72ddcfea22acf6996b86877c",
+      "release_last_commit": "de06b56c40a7becf38740a190d61e01be251f5f7"
+    },
+    {
+      "file": "src/locomo_memory/usage.py",
+      "m5_origin_commit": "876829720a0340a8141b96c36b48b5937a998cac",
+      "release_changed": false,
+      "sha256": "28691e82a154461eb99bb52a9f470b01ccda516a05d492a7d4d2f75c84d15bad",
+      "release_last_commit": "876829720a0340a8141b96c36b48b5937a998cac"
+    },
+    {
+      "file": "src/locomo_memory/version_api.py",
+      "m5_origin_commit": "d7188d2bb467443da9b7c6a4185b77c1d2c69e5a",
+      "release_changed": false,
+      "sha256": "b9ea800f018f06f08eabf11f065e27bd4bf26160fe66b45c530957efc6af43c3",
+      "release_last_commit": "d7188d2bb467443da9b7c6a4185b77c1d2c69e5a"
+    },
+    {
+      "file": "src/locomo_memory/version_ui.py",
+      "m5_origin_commit": "d7188d2bb467443da9b7c6a4185b77c1d2c69e5a",
+      "release_changed": false,
+      "sha256": "6bc5845f65a216705dea55c5bb05acc2fcd7de08f80e139a8568b65a70655173",
+      "release_last_commit": "d7188d2bb467443da9b7c6a4185b77c1d2c69e5a"
+    },
+    {
+      "file": "src/locomo_memory/versions.py",
+      "m5_origin_commit": "4bd4565c1b13d34961a6092911c4af3bace4811b",
+      "release_changed": false,
+      "sha256": "be71512d1704e7adff758e0846a3665ba10b3ebbf03027cf68367f0142a86057",
+      "release_last_commit": "4bd4565c1b13d34961a6092911c4af3bace4811b"
+    },
+    {
+      "file": "tools/acceptance/audit.py",
+      "m5_origin_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+      "release_changed": false,
+      "sha256": "736ca2650724b48a11af61b25af93b856f8bb828fc0ad703f40f78b33b1dea47",
+      "release_last_commit": "5fc33a9611565711ba175a807f19881d0ae748fb"
+    },
+    {
+      "file": "tools/acceptance/blind.py",
+      "m5_origin_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+      "release_changed": false,
+      "sha256": "099987b0f8498786145cfc6aaba8e2ca9084b50ea25e8cde3568c2753c036388",
+      "release_last_commit": "5fc33a9611565711ba175a807f19881d0ae748fb"
+    },
+    {
+      "file": "tools/acceptance/meter.py",
+      "m5_origin_commit": "1a551f1d1ddb40920dea265def1574779fa9ba81",
+      "release_changed": false,
+      "sha256": "89af471555b3498af11bbd2dab2afffaa1a89d811a2cdd041a58e6ea51753c54",
+      "release_last_commit": "1a551f1d1ddb40920dea265def1574779fa9ba81"
+    },
+    {
+      "file": "tools/acceptance/preflight.py",
+      "m5_origin_commit": "1a551f1d1ddb40920dea265def1574779fa9ba81",
+      "release_changed": false,
+      "sha256": "99a001ce1fc0963204fa197cdc7ecbb0b50d458ae76ac192db462638a0f0e7e9",
+      "release_last_commit": "1a551f1d1ddb40920dea265def1574779fa9ba81"
+    },
+    {
+      "file": "tools/acceptance/prepare.py",
+      "m5_origin_commit": "1a551f1d1ddb40920dea265def1574779fa9ba81",
+      "release_changed": false,
+      "sha256": "e046ad20607d382b82bb0bab039d5b79cd686ea4ced77ad6d5073262d5d982bd",
+      "release_last_commit": "1a551f1d1ddb40920dea265def1574779fa9ba81"
+    },
+    {
+      "file": "tools/acceptance/run.py",
+      "m5_origin_commit": "1a551f1d1ddb40920dea265def1574779fa9ba81",
+      "release_changed": false,
+      "sha256": "38d6ee02d0fcdb34440398f70f6e02404121a8b87b7654fcc892d6043114dcea",
+      "release_last_commit": "1a551f1d1ddb40920dea265def1574779fa9ba81"
+    },
+    {
+      "file": "tools/acceptance/score.py",
+      "m5_origin_commit": "5fc33a9611565711ba175a807f19881d0ae748fb",
+      "release_changed": false,
+      "sha256": "2688b1cc89de23ce28b743c44c64b61beb2b263f7b291d13ce402a99f6c0fc58",
+      "release_last_commit": "5fc33a9611565711ba175a807f19881d0ae748fb"
+    },
+    {
+      "file": "tools/integration/audit_database_ledgers.py",
+      "m5_origin_commit": "3cd2ab032550de9551ee26b40be573c32548f849",
+      "release_changed": false,
+      "sha256": "ae8fd9f7ed69b2b4fe3247392fdebc11c50a2e00ada052b4d60dde458aac9fe1",
+      "release_last_commit": "3cd2ab032550de9551ee26b40be573c32548f849"
+    },
+    {
+      "file": "tools/integration/history_smoke_worker.py",
+      "m5_origin_commit": "3cd2ab032550de9551ee26b40be573c32548f849",
+      "release_changed": false,
+      "sha256": "eeec8f4dc12c4d4c5f617adb302bbc7393b58e7c8a74a863f3541dc6950200d1",
+      "release_last_commit": "3cd2ab032550de9551ee26b40be573c32548f849"
+    },
+    {
+      "file": "tools/integration/offline_guard/sitecustomize.py",
+      "m5_origin_commit": "8fa6f8ed0f3b9d0643760c3a7ca797a61aed3786",
+      "release_changed": false,
+      "sha256": "b048a4769c681e54acaa304b44deb6408dbc0b344dbd1b469de35f98f32523af",
+      "release_last_commit": "8fa6f8ed0f3b9d0643760c3a7ca797a61aed3786"
+    },
+    {
+      "file": "tools/integration/replay_legacy_delivery.py",
+      "m5_origin_commit": "3aabece1aac9bf5da0f35a43e3a281a43ee3de92",
+      "release_changed": false,
+      "sha256": "beecf384fd0e35451f4580fde6b63b7776b45ed178101b90d2937f3bc621e8b7",
+      "release_last_commit": "3aabece1aac9bf5da0f35a43e3a281a43ee3de92"
+    },
+    {
+      "file": "tools/integration/replay_rejected_packing.py",
+      "m5_origin_commit": "3cd2ab032550de9551ee26b40be573c32548f849",
+      "release_changed": false,
+      "sha256": "584a091bc94a0f1c7413e7d7135d4a3f01a0f29521b9bfe7aca0d438a748b169",
+      "release_last_commit": "3cd2ab032550de9551ee26b40be573c32548f849"
+    },
+    {
+      "file": "tools/integration/replay_selective.py",
+      "m5_origin_commit": "3cd2ab032550de9551ee26b40be573c32548f849",
+      "release_changed": false,
+      "sha256": "e022604057258d156884fd3ad931c5ba59dc58bbeb31b2cf7bd0ccb41ccf03e3",
+      "release_last_commit": "3cd2ab032550de9551ee26b40be573c32548f849"
+    },
+    {
+      "file": "tools/integration/run_local.py",
+      "m5_origin_commit": "a2cbdd05dfdb9473c5fed50e0b6d43d0a026fef7",
+      "release_changed": false,
+      "sha256": "9756c8b2433d799a46b797697b52841173828fa31cd8442f5acb9e2a91cee377",
+      "release_last_commit": "a2cbdd05dfdb9473c5fed50e0b6d43d0a026fef7"
+    },
+    {
+      "file": "tools/integration/smoke_local.py",
+      "m5_origin_commit": "1a551f1d1ddb40920dea265def1574779fa9ba81",
+      "release_changed": false,
+      "sha256": "74d98a57b87fcba07771eaf09c8cf841a8eb01d03d09c279740b321fe82791a9",
+      "release_last_commit": "1a551f1d1ddb40920dea265def1574779fa9ba81"
+    },
+    {
+      "file": "tools/integration/verify_contracts.py",
+      "m5_origin_commit": "3cd2ab032550de9551ee26b40be573c32548f849",
+      "release_changed": false,
+      "sha256": "6d1c6245bc071f498ab5c26d65374a35194df0bd98bdb93a4bfb451b2b9705d7",
+      "release_last_commit": "3cd2ab032550de9551ee26b40be573c32548f849"
+    },
+    {
+      "file": "tools/integration/verify_history.py",
+      "m5_origin_commit": "3cd2ab032550de9551ee26b40be573c32548f849",
+      "release_changed": false,
+      "sha256": "e54ce062aa3133a8a61da5888aa13cb63c1827ca6298b9845c0e4e0c87d0393c",
+      "release_last_commit": "3cd2ab032550de9551ee26b40be573c32548f849"
+    },
+    {
+      "file": "tools/integration/verify_isolation.py",
+      "m5_origin_commit": "5d7e9b75c3d452d76db9ce0c860ea614d117b55d",
+      "release_changed": false,
+      "sha256": "6ca9409ea2a51ad9c31dd0b1ed88d8bf321611a5b17a615cd6d43b6573aaead0",
+      "release_last_commit": "5d7e9b75c3d452d76db9ce0c860ea614d117b55d"
+    },
+    {
+      "file": "tools/integration/verify_launcher.py",
+      "m5_origin_commit": "a2cbdd05dfdb9473c5fed50e0b6d43d0a026fef7",
+      "release_changed": false,
+      "sha256": "148cd98d8eaaae0f69a18be3fb4d3aa55b48a55707d2b9b511fe57fc76cc24f2",
+      "release_last_commit": "a2cbdd05dfdb9473c5fed50e0b6d43d0a026fef7"
+    },
+    {
+      "file": "tools/integration/verify_originals.py",
+      "m5_origin_commit": "3cd2ab032550de9551ee26b40be573c32548f849",
+      "release_changed": false,
+      "sha256": "85044910e67b0780578747b418976e5a18023bc0b09463c98f99bdd937d01314",
+      "release_last_commit": "3cd2ab032550de9551ee26b40be573c32548f849"
+    },
+    {
+      "file": "tools/m5/complete_conv44_export.py",
+      "m5_origin_commit": "87c0cfbf7bb3c39ef02af642f7c3a338fb7e5f18",
+      "release_changed": false,
+      "sha256": "01dbcd6c5afbde0b13fe33e4b84279d4dcb485b709df922162a8d00445df733f",
+      "release_last_commit": "87c0cfbf7bb3c39ef02af642f7c3a338fb7e5f18"
+    },
+    {
+      "file": "tools/m5/complete_export_copy.py",
+      "m5_origin_commit": "0303c5c79aadcabb6d94f8246c9c3e79c0005f3c",
+      "release_changed": false,
+      "sha256": "4dc064e11d4d174fd21f7037379a3382b10d85b6a218e58afd0c7c0445a8a071",
+      "release_last_commit": "0303c5c79aadcabb6d94f8246c9c3e79c0005f3c"
+    },
+    {
+      "file": "tools/m5/conv44_relation_recovery.py",
+      "m5_origin_commit": "443d16b67c15af57867c67a13a4e227bec34eb3f",
+      "release_changed": false,
+      "sha256": "77cc554f9ebc94c70cb2f0f1e4674aeffdd3b659efaf997dcc5740371ac5120a",
+      "release_last_commit": "443d16b67c15af57867c67a13a4e227bec34eb3f"
+    },
+    {
+      "file": "tools/m5/conv44_relation_successor.py",
+      "m5_origin_commit": "1f7952456cf61c294df9051a53798d2e69023984",
+      "release_changed": false,
+      "sha256": "6afe3fb5a1094b4cb521fa6f05bcc3fa9d75a6173ec4fee46a28a8f375687464",
+      "release_last_commit": "1f7952456cf61c294df9051a53798d2e69023984"
+    },
+    {
+      "file": "tools/m5/conv44_relations.py",
+      "m5_origin_commit": "82a9d25bf866440f7e1e0214d303b33653993ce7",
+      "release_changed": false,
+      "sha256": "d82f8fc0bd0bc0562700a37d1c168a3276b8762936ead2d188c888f79b7bde7a",
+      "release_last_commit": "82a9d25bf866440f7e1e0214d303b33653993ce7"
+    },
+    {
+      "file": "tools/m5/conv44_successor.py",
+      "m5_origin_commit": "fe455f5182e04f5b20fc0d9ae89424a680968dc5",
+      "release_changed": false,
+      "sha256": "8d2aba66c44c77844d7c597e11c3027f586b47a128d475ab25b2c2652b2b0c6a",
+      "release_last_commit": "fe455f5182e04f5b20fc0d9ae89424a680968dc5"
+    },
+    {
+      "file": "tools/m5/delivery_replay.py",
+      "m5_origin_commit": "ce229e7386f5c1e54e94cad06104e2f806f280ca",
+      "release_changed": false,
+      "sha256": "6f106e1dc7d971fce6c5f4632236052dd3263afda2af210d4ccb42ec84e4deeb",
+      "release_last_commit": "ce229e7386f5c1e54e94cad06104e2f806f280ca"
+    },
+    {
+      "file": "tools/m5/demo.py",
+      "m5_origin_commit": "f9eb4cf2c959c35e6e74455a88828c2a21b31999",
+      "release_changed": false,
+      "sha256": "51464d8c0dfe9ec31dda2b548bb9b6b27059873ba326455ad251f1b1f258de0b",
+      "release_last_commit": "f9eb4cf2c959c35e6e74455a88828c2a21b31999"
+    },
+    {
+      "file": "tools/m5/demo_backend.py",
+      "m5_origin_commit": "d9a9c849d9a78739c0716b44bc9afcd576735e03",
+      "release_changed": false,
+      "sha256": "8889dc6bcab6362fe9cbd71550255866b322c60fbf71f830ed0022350e6ead58",
+      "release_last_commit": "d9a9c849d9a78739c0716b44bc9afcd576735e03"
+    },
+    {
+      "file": "tools/m5/demo_smoke.py",
+      "m5_origin_commit": "f9eb4cf2c959c35e6e74455a88828c2a21b31999",
+      "release_changed": false,
+      "sha256": "107a30c3f77c0856f6e309a3ffa076e6eff3842dbe37e03abbf8b96c72b4eea5",
+      "release_last_commit": "f9eb4cf2c959c35e6e74455a88828c2a21b31999"
+    },
+    {
+      "file": "tools/m5/extraction_audit.py",
+      "m5_origin_commit": "08db6f356ab3bfc57e98cb11f0d81e3ab2c13ef7",
+      "release_changed": false,
+      "sha256": "2b29411a59119164a692971ed584ffcf1b30ae7c2b045852be2044a8d3696996",
+      "release_last_commit": "08db6f356ab3bfc57e98cb11f0d81e3ab2c13ef7"
+    },
+    {
+      "file": "tools/m5/extraction_recovery.py",
+      "m5_origin_commit": "55fcaebd0105546325bbdc14d3b8db7b56f0d18f",
+      "release_changed": false,
+      "sha256": "439ade803fc1894c6c48ae4b20df3032b2fa44a6e7c823dc950ec959a1641260",
+      "release_last_commit": "55fcaebd0105546325bbdc14d3b8db7b56f0d18f"
+    },
+    {
+      "file": "tools/m5/holdout_extraction.py",
+      "m5_origin_commit": "d9a9c849d9a78739c0716b44bc9afcd576735e03",
+      "release_changed": false,
+      "sha256": "22088dc31b85dabf0994ea112ce93721957b75e438c92a66e0ac5f0a2ea42f37",
+      "release_last_commit": "d9a9c849d9a78739c0716b44bc9afcd576735e03"
+    },
+    {
+      "file": "tools/m5/holdout_index.py",
+      "m5_origin_commit": "08be26d1bf8a069191054464957a0ac6b950c8a7",
+      "release_changed": false,
+      "sha256": "344b320970bd947f217189820c9bd421999775618dc083daf42b53e339e3c9c2",
+      "release_last_commit": "08be26d1bf8a069191054464957a0ac6b950c8a7"
+    },
+    {
+      "file": "tools/m5/holdout_relations.py",
+      "m5_origin_commit": "08be26d1bf8a069191054464957a0ac6b950c8a7",
+      "release_changed": false,
+      "sha256": "960de2683e341966e13217a1a07ef4ef5a1b1e0dada840822f0d32e2865ae5d7",
+      "release_last_commit": "08be26d1bf8a069191054464957a0ac6b950c8a7"
+    },
+    {
+      "file": "tools/m5/isolated_extraction_recovery.py",
+      "m5_origin_commit": "3fa8b4fd60f6973e76f634bcd597eaabe796f4b6",
+      "release_changed": false,
+      "sha256": "9d53ab4837757bedc0b3258ec4ef1be841cc05fec74358b9559bb650ab055ea3",
+      "release_last_commit": "3fa8b4fd60f6973e76f634bcd597eaabe796f4b6"
+    },
+    {
+      "file": "tools/m5/level_c.py",
+      "m5_origin_commit": "b3ba45c313b3f8e833525fcea809b4144dfd981d",
+      "release_changed": false,
+      "sha256": "def5898c6afe2c6e9a5c5cf419bd9e2e12b11bf2878300929f305b04917e5334",
+      "release_last_commit": "b3ba45c313b3f8e833525fcea809b4144dfd981d"
+    },
+    {
+      "file": "tools/m5/level_c_audit.py",
+      "m5_origin_commit": "b3ba45c313b3f8e833525fcea809b4144dfd981d",
+      "release_changed": false,
+      "sha256": "c8823a95c1c5a52212fb7a9b7138da50ac30efeef2218d28510feee03c2085ab",
+      "release_last_commit": "b3ba45c313b3f8e833525fcea809b4144dfd981d"
+    },
+    {
+      "file": "tools/m5/level_c_embedding_preflight.py",
+      "m5_origin_commit": "323917c244475a32394b5d22d9df3ac1cf1c5921",
+      "release_changed": false,
+      "sha256": "638b39743803ecc2adbd212f9396e672be8b88424fc1e10cd0eddbbc2229db25",
+      "release_last_commit": "323917c244475a32394b5d22d9df3ac1cf1c5921"
+    },
+    {
+      "file": "tools/m5/level_c_input_diagnostics.py",
+      "m5_origin_commit": "c71fb93ae0f3f18724a0b7d3ef313339d2d53bc1",
+      "release_changed": false,
+      "sha256": "2d8fff7bd6a97a120ec8c0a777f1fdbde13e26a0f0e17eb4502d51f0b5c85b02",
+      "release_last_commit": "c71fb93ae0f3f18724a0b7d3ef313339d2d53bc1"
+    },
+    {
+      "file": "tools/m5/level_c_results.py",
+      "m5_origin_commit": "7cee8f9a996723c62ad1290dff929591b4c869c5",
+      "release_changed": false,
+      "sha256": "32a3a96b7f6f97f91c7621b0e08eb9ddab0c3819ed41980d93d6e48a64d446c5",
+      "release_last_commit": "7cee8f9a996723c62ad1290dff929591b4c869c5"
+    },
+    {
+      "file": "tools/m5/level_c_semantic_review.py",
+      "m5_origin_commit": "b9c2b913079b6960f44f5b88892adea64a93c80c",
+      "release_changed": false,
+      "sha256": "933bdeac1a9a4498b6cf74a971583e9d5e219fd38c66e290c922f65861369ba2",
+      "release_last_commit": "b9c2b913079b6960f44f5b88892adea64a93c80c"
+    },
+    {
+      "file": "tools/m5/level_e.py",
+      "m5_origin_commit": "32706ff983b8a9f2d9952273fbfd036f89cfe047",
+      "release_changed": false,
+      "sha256": "f9627d91610f7cf36a3c6a0f2b179d7a1dda08f1fee88b728e9831b6d07d0fd4",
+      "release_last_commit": "32706ff983b8a9f2d9952273fbfd036f89cfe047"
+    },
+    {
+      "file": "tools/m5/level_e_reporting.py",
+      "m5_origin_commit": "dc16101a79b860c7812020f4c4ea51579b4201a8",
+      "release_changed": false,
+      "sha256": "50687231bd01a603a0bd6872b07a8c64c27b89abacc7b7b41591df0f7ab6fb89",
+      "release_last_commit": "dc16101a79b860c7812020f4c4ea51579b4201a8"
+    },
+    {
+      "file": "tools/m5/offline.py",
+      "m5_origin_commit": "ce229e7386f5c1e54e94cad06104e2f806f280ca",
+      "release_changed": false,
+      "sha256": "e1f7914d7ad764668259bdc520eb7ddff7401c0243bd437a57990fd00eb1ec63",
+      "release_last_commit": "ce229e7386f5c1e54e94cad06104e2f806f280ca"
+    },
+    {
+      "file": "tools/m5/package_evidence.py",
+      "m5_origin_commit": "d9a9c849d9a78739c0716b44bc9afcd576735e03",
+      "release_changed": false,
+      "sha256": "2444467cb1a5191beee8d70a4af8f7a9680039e81e49d1820fd165245960d8d3",
+      "release_last_commit": "d9a9c849d9a78739c0716b44bc9afcd576735e03"
+    },
+    {
+      "file": "tools/m5/propmem_audit.py",
+      "m5_origin_commit": "ce229e7386f5c1e54e94cad06104e2f806f280ca",
+      "release_changed": false,
+      "sha256": "4a15962f53227ec891d60d988819ee90009df166ce1f7fe6b8429ea2e15a2213",
+      "release_last_commit": "ce229e7386f5c1e54e94cad06104e2f806f280ca"
+    },
+    {
+      "file": "tools/m5/query_review.py",
+      "m5_origin_commit": "a30ca9f61986520abca30438f9bd659f955e60b7",
+      "release_changed": false,
+      "sha256": "57e3b952ab94eed08e466426590ca2fa153789a72677019f7c571c20764e1a7d",
+      "release_last_commit": "a30ca9f61986520abca30438f9bd659f955e60b7"
+    },
+    {
+      "file": "tools/m5/query_review_analysis.py",
+      "m5_origin_commit": "a30ca9f61986520abca30438f9bd659f955e60b7",
+      "release_changed": false,
+      "sha256": "66426c189ca95253f197e6f0b49afc9b483ae7d5e1be8c7cbb198210d5b0c515",
+      "release_last_commit": "a30ca9f61986520abca30438f9bd659f955e60b7"
+    },
+    {
+      "file": "tools/m5/relation_audit.py",
+      "m5_origin_commit": "fca2bf1dc8a2765ab95ead8e96afb0f9cb959e84",
+      "release_changed": false,
+      "sha256": "039c02b6390eab5366745514524428f9b28a39f7e6962ed7f852da5ff4d25bc8",
+      "release_last_commit": "fca2bf1dc8a2765ab95ead8e96afb0f9cb959e84"
+    },
+    {
+      "file": "tools/m5/relation_preflight.py",
+      "m5_origin_commit": "797b174c9bd1e64852f703659f813c2cd1377aff",
+      "release_changed": false,
+      "sha256": "57c0ad265a28f73e295328c65a81d7cadf09a39f99149b414984c90664cf572f",
+      "release_last_commit": "797b174c9bd1e64852f703659f813c2cd1377aff"
+    },
+    {
+      "file": "tools/m5/score_review.py",
+      "m5_origin_commit": "ce229e7386f5c1e54e94cad06104e2f806f280ca",
+      "release_changed": false,
+      "sha256": "88c71f44d75244f168ed396906e047fc0fa18157b767003209b2b62363989c61",
+      "release_last_commit": "ce229e7386f5c1e54e94cad06104e2f806f280ca"
+    },
+    {
+      "file": "tools/production/smoke.py",
+      "m5_origin_commit": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
+      "release_changed": false,
+      "sha256": "301d1bb71e64766a42f87d03a42d03aad7d3beaac2b3e67bf35d0b15ea8672e9",
+      "release_last_commit": "915fac02f6b9296e331f913a1e78717cfa7e2df1"
+    }
+  ],
+  "m5_commits_after_production": [
+    {
+      "commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85",
+      "subject": "feat: add optional source-linked graph and reversible memory grouping"
+    },
+    {
+      "commit": "cfaab0e5afe8357f9d5454930eb08ad9c85c916f",
+      "subject": "feat: add explicit bonus query variants and physical request budget guards"
+    },
+    {
+      "commit": "9b91770d5cef7a35e7f0aebf1d598da8718b97e0",
+      "subject": "test: verify actual two-hop traversal without inferred shortcuts"
+    },
+    {
+      "commit": "ce229e7386f5c1e54e94cad06104e2f806f280ca",
+      "subject": "feat: add reproducible M5 development replay and protected source validation"
+    },
+    {
+      "commit": "51f7876326c6c3e844c0dfa235d21cbe61fd9c7d",
+      "subject": "fix: preserve temporal intent and audit failed bonus queries"
+    },
+    {
+      "commit": "18d6fea4fb3e3cfb3cead4045716ad8feac7188c",
+      "subject": "fix: stop locally rejected provider calls and retain prior attempt history"
+    },
+    {
+      "commit": "f9eb4cf2c959c35e6e74455a88828c2a21b31999",
+      "subject": "fix: bound graph rendering and add real development data browser demo"
+    },
+    {
+      "commit": "d9a9c849d9a78739c0716b44bc9afcd576735e03",
+      "subject": "feat: prepare bounded holdout extraction stage without provider calls"
+    },
+    {
+      "commit": "775b15e292e16550fde3063eec3562c397f2f7e8",
+      "subject": "docs: record M5 evidence boundaries and default-off adoption decisions"
+    },
+    {
+      "commit": "08db6f356ab3bfc57e98cb11f0d81e3ab2c13ef7",
+      "subject": "feat: audit authorized extraction without exposing source text or credentials"
+    },
+    {
+      "commit": "dd73aa0c61ec8aaf9088cdf6fe781d176de4ace0",
+      "subject": "data: preserve M5 offline evidence and authorized extraction outcomes"
+    },
+    {
+      "commit": "1db645d54cd14f08d2fe9259a3b488a686b6ec0c",
+      "subject": "docs: define explicit bounded recovery for the failed holdout fragment"
+    },
+    {
+      "commit": "87fce8ee6adf088d0d80b31717ee1116ec3871fe",
+      "subject": "fix: align optional temporal priority with the explicit query date"
+    },
+    {
+      "commit": "797b174c9bd1e64852f703659f813c2cd1377aff",
+      "subject": "test: cover cancellation and joint participants and audit relation cost bounds"
+    },
+    {
+      "commit": "f9ee7fb90e4a4e9968b6f630a34638469b603c4c",
+      "subject": "docs: record final offline regression and refresh candidate evidence manifests"
+    },
+    {
+      "commit": "55fcaebd0105546325bbdc14d3b8db7b56f0d18f",
+      "subject": "feat: prepare one-fragment recovery with local and original budget guards"
+    },
+    {
+      "commit": "ed47868c83163485d1e276a6203bdffd871640cd",
+      "subject": "docs: index bounded recovery source and verification artifacts"
+    },
+    {
+      "commit": "bbc9dde2653cffe0ceba435cf874d09777e29250",
+      "subject": "fix: discard proven unsent relation checkpoints after local budget rejection"
+    },
+    {
+      "commit": "a30ca9f61986520abca30438f9bd659f955e60b7",
+      "subject": "feat: score independently reviewed historical query applicability without new provider calls"
+    },
+    {
+      "commit": "6044b709636e6860e295991a568229b87b698590",
+      "subject": "data: preserve authorized failed-fragment recovery and final offline verification"
+    },
+    {
+      "commit": "08be26d1bf8a069191054464957a0ac6b950c8a7",
+      "subject": "feat: verify isolated holdout index and prepare bounded relation phase"
+    },
+    {
+      "commit": "fca2bf1dc8a2765ab95ead8e96afb0f9cb959e84",
+      "subject": "feat: audit authorized relation execution against frozen source and budget"
+    },
+    {
+      "commit": "323917c244475a32394b5d22d9df3ac1cf1c5921",
+      "subject": "feat: prepare fixed development QA with authorization and Gold isolation"
+    },
+    {
+      "commit": "c8e5c09456c8bfc3f2ad56701a0bfb56928c12b1",
+      "subject": "docs: record independent development QA authorization and running stages"
+    },
+    {
+      "commit": "3b8e4b4c2a45d61520dfabf98be42f300ef159b8",
+      "subject": "feat: audit frozen development QA against source and budget identity"
+    },
+    {
+      "commit": "b9c2b913079b6960f44f5b88892adea64a93c80c",
+      "subject": "feat: validate independent answer source reviews with explicit denominators"
+    },
+    {
+      "commit": "7cee8f9a996723c62ad1290dff929591b4c869c5",
+      "subject": "feat: derive paired QA and runtime metrics from frozen generation"
+    },
+    {
+      "commit": "3335862dba1e9658f4d5c515b602c98049826d7c",
+      "subject": "docs: record frozen development QA, independent source review and final model requirement"
+    },
+    {
+      "commit": "b3ba45c313b3f8e833525fcea809b4144dfd981d",
+      "subject": "feat(m5): prepare isolated larger-input QA with thinking disabled"
+    },
+    {
+      "commit": "c71fb93ae0f3f18724a0b7d3ef313339d2d53bc1",
+      "subject": "feat: bind offline input diagnostics to the complete frozen stage"
+    },
+    {
+      "commit": "4aadaff8de6ae5778c042065c3bd4f04d75a453f",
+      "subject": "docs(m5): record input v2 prepared identities and artifact hashes"
+    },
+    {
+      "commit": "01f44c0cba7451233e534f7f8df3fb5cd9696ec7",
+      "subject": "docs: index reviewed input diagnostics and final delivery evidence"
+    },
+    {
+      "commit": "73787369f3349be3ae8b6b161273377183e8f475",
+      "subject": "docs: record blocked export readiness and independent evaluation gates"
+    },
+    {
+      "commit": "8868a58e74bbb72d24caeedc02389f8c86195ffa",
+      "subject": "docs: refresh evidence indexes for blocked final evaluation gates"
+    },
+    {
+      "commit": "fc3b1ee8ca9ce9a7c4964d0e88d69e742e31d3ec",
+      "subject": "docs(m5): record completed relation phase and independently verified terminal costs"
+    },
+    {
+      "commit": "0aae59c61d569f03d73c57ae333784ae99a8a22b",
+      "subject": "docs(m5): refresh candidate identities after relation terminal audit"
+    },
+    {
+      "commit": "2a3cd8517aad4d1af99f77c8bdae259cd1038f72",
+      "subject": "docs(m5): record explicit input v2 QA budget authorization"
+    },
+    {
+      "commit": "a8f0e6827524a94038535888573be0ea644bdf3c",
+      "subject": "docs(m5): distinguish authorized input v2 execution from historical runs"
+    },
+    {
+      "commit": "e2af67634077c2abc8f8fc9e9af9075e4e76f61d",
+      "subject": "test(m5): align semantic review fixture with isolated input v2 policy"
+    },
+    {
+      "commit": "e45a7b34f25130fc8f1c3924a5ca3710835b6d88",
+      "subject": "docs(m5): record frozen input v2 scores and terminal costs"
+    },
+    {
+      "commit": "aba95ca47fcafd527ef1237d4f30d23834592fe2",
+      "subject": "docs(m5): finalize input v2 source review and verified private archive"
+    },
+    {
+      "commit": "bcbf479d3a24f79a87695a3d3bbbacd86974e184",
+      "subject": "Merge branch 'codex/m5-final-development-20261104' into codex/m5-final-build-repair-20261104"
+    },
+    {
+      "commit": "3fa8b4fd60f6973e76f634bcd597eaabe796f4b6",
+      "subject": "feat: prepare isolated conv44 recovery with a separate approval gate"
+    },
+    {
+      "commit": "0303c5c79aadcabb6d94f8246c9c3e79c0005f3c",
+      "subject": "feat: complete conv43 in a local copy and verify five strict exports"
+    },
+    {
+      "commit": "213a8ab3cf5272c5faf4c18a092b7526d20418b0",
+      "subject": "docs: record integrated M5 verification and remaining acceptance gates"
+    },
+    {
+      "commit": "3f8929839e30cd085b105504ca1a6fe11fcf216f",
+      "subject": "docs: record authorized conv44 recovery failure and audited terminal costs"
+    },
+    {
+      "commit": "f0f8dfd31c16531714560374a23cbfa940e24923",
+      "subject": "fix: ground extraction times in literal source text"
+    },
+    {
+      "commit": "fe455f5182e04f5b20fc0d9ae89424a680968dc5",
+      "subject": "feat: prepare provenance-preserving conv44 successor build"
+    },
+    {
+      "commit": "4b03095f3a5635a13decbb6c5b6a5a5a0fba609a",
+      "subject": "docs: record independently verified conv44 recovery preparation"
+    },
+    {
+      "commit": "aed4634deb6c873ef1620d0a80bd023e2541d1a2",
+      "subject": "docs: freeze successful conv44 successor extraction and audit"
+    },
+    {
+      "commit": "82a9d25bf866440f7e1e0214d303b33653993ce7",
+      "subject": "feat: prepare isolated disabled conv44 relation phase"
+    },
+    {
+      "commit": "a795be451b662d482b62fb89508d7f24db2359ae",
+      "subject": "docs: freeze reviewed conv44 relation preparation and budget"
+    },
+    {
+      "commit": "271372112f380142367ead232f35ec3e0410340f",
+      "subject": "docs: record approved conv44 relation budget and current pricing"
+    },
+    {
+      "commit": "87c0cfbf7bb3c39ef02af642f7c3a338fb7e5f18",
+      "subject": "feat: strictly export a completed conv44 scratch copy"
+    },
+    {
+      "commit": "7cd6723fbfcfabbe3e90f0b74c3868347d87a25f",
+      "subject": "docs: distinguish authorized live relations from preparation evidence"
+    },
+    {
+      "commit": "32706ff983b8a9f2d9952273fbfd036f89cfe047",
+      "subject": "feat: guard a one-shot held-out evaluation behind a final system lock"
+    },
+    {
+      "commit": "2443e6dd9fbee99e45f7b3ad194246dcfe21f0e6",
+      "subject": "docs: archive the audited conv44 relation failure terminal"
+    },
+    {
+      "commit": "443d16b67c15af57867c67a13a4e227bec34eb3f",
+      "subject": "feat: prepare a separately authorized retry of failed conv44 relations"
+    },
+    {
+      "commit": "12881c6f1f612430b22dc0bed8e4c3cb7d53a4fd",
+      "subject": "docs: freeze the independently audited ten-task relation recovery plan"
+    },
+    {
+      "commit": "fd10797fdb71e055f3bd3dc219301d18eda2aaab",
+      "subject": "docs: record approved relation recovery budget and execution pricing"
+    },
+    {
+      "commit": "43f9a78829ed37b35d14b728bf0fdcc714036625",
+      "subject": "docs: preserve relation recovery terminal and remaining failure"
+    },
+    {
+      "commit": "dd0bb18014c87a2506773e987581f57a2dba8128",
+      "subject": "docs: align current M5 gates with audited recovery outcome"
+    },
+    {
+      "commit": "1f7952456cf61c294df9051a53798d2e69023984",
+      "subject": "feat: prepare bounded final conv44 relation retry with label prerequisites"
+    },
+    {
+      "commit": "679abb47b1aaa5d5bad7a9124a3af6b3cdb18eb7",
+      "subject": "docs: freeze audited single-task conv44 recovery preparation"
+    },
+    {
+      "commit": "b0739c274dd2fcb4c04a305cdc56f8e8d0771006",
+      "subject": "docs: record approved single-task relation recovery execution"
+    },
+    {
+      "commit": "0dbd98e7b296ef29d9998fa55d88d512f8ec85f1",
+      "subject": "docs: close conv44 recovery and verify six complete memory exports"
+    },
+    {
+      "commit": "191349fa7b2851ffe7ab3d42088d14427889b2fa",
+      "subject": "docs: lock final held-out system before reading question text"
+    },
+    {
+      "commit": "41a338606e3092af82f5ad673af8963318f60ce4",
+      "subject": "docs: freeze independently audited held-out evaluation preparation"
+    },
+    {
+      "commit": "ee546fca4ef6755f6753be5f7ceb577b3485ba6d",
+      "subject": "docs: record approved held-out evaluation and execution pricing"
+    },
+    {
+      "commit": "d713a168629c16624e6d4bfc6a03eb15f783d5ea",
+      "subject": "docs: distinguish running held-out evaluation from historical checkpoints"
+    },
+    {
+      "commit": "dc16101a79b860c7812020f4c4ea51579b4201a8",
+      "subject": "feat: audit frozen Level E runtime and independent source reviews"
+    },
+    {
+      "commit": "aa56800c6854879d3bcbcf356e13a06562c0ed67",
+      "subject": "docs: bind verified held-out reporting and shared build costs"
+    },
+    {
+      "commit": "3fc680e69b07f38ed4b980ff222134deff35ea78",
+      "subject": "docs: preserve one-shot evaluation process and terminal handoff"
+    },
+    {
+      "commit": "b61e2418bf57b3708d3ba2916767b6b32d63a009",
+      "subject": "test: verify Level E analysis fallback preserves reporting attribution"
+    },
+    {
+      "commit": "92e9015dce24fb0934a31de0e1a479d17d390fa1",
+      "subject": "docs: record analysis fallback reporting verification"
+    },
+    {
+      "commit": "d14f82c6b9a868602455dd6d9399d4c849ebbf7f",
+      "subject": "docs: index fourteen M5 delivery requirements before Level E freeze"
+    },
+    {
+      "commit": "92763f25aa443b259da4682b90b5f589d9d044e6",
+      "subject": "docs: record audited held-out scores, failures, and runtime costs"
+    },
+    {
+      "commit": "829af031f8129f6c5fa71208d54918eead54c174",
+      "subject": "docs: finalize source-reviewed Level E results and private archive evidence"
+    },
+    {
+      "commit": "e369a12f2405916634e0d1b1407adb7b9110be3c",
+      "subject": "docs: complete fourteen-item M5 delivery report and independent terminal review"
+    },
+    {
+      "commit": "28ce63d73d6736c7812aa0be4425a0d9650dd09e",
+      "subject": "docs: bind final delivery commit range and file SHA inventory"
+    }
+  ],
+  "supplement_scope": "3392faf:docs/supplement/**",
+  "frozen_e_producer": "0dbd98e7b296ef29d9998fa55d88d512f8ec85f1",
+  "release_identity": "git rev-parse HEAD; package source commit separately bound in package manifest",
+  "executable_test_cutoff": "c7eae7a2f4ed667e83f2520e000e33aee7314e2b",
+  "release_commits": [
+    "267d58078f962522272ecab180b9c841c62b165d docs: integrate scoped research supplement and pin personal release requirements",
+    "2a289d9e37cd35a2951acfdb20c570665fd37b1d feat: deliver Hybrid default, isolated replay, and safe release tooling",
+    "312cc476de4f980ff51e6734a8f2c827da2658d7 docs: preserve rebuildable experiment appendix and audited errata",
+    "036c506eb5edaad6a1b02032ec185e1ff4ec8693 fix: finish owned service cleanup during repeated interrupts",
+    "66e53fb2592d87f54a7a22765913884edb0b407c test: declare retained question dependencies and tolerate loaded UI startup",
+    "c7eae7a2f4ed667e83f2520e000e33aee7314e2b fix: distinguish controlled exports from synthetic replay"
+  ],
+  "release_commits_through": "c7eae7a",
+  "delivery_history_through": "f31ad0fe3f758fe8d87b5c0445b12b34f5a09002",
+  "delivery_commits_after_app_cutoff": [
+    "cc9571df10b3570f3132631a35eacdca797a60aa docs: bind personal release components, evidence, and controlled delivery boundaries",
+    "f1cbd7d77e2b4f3727ccac000f2ab26dc3be9f4e fix: exclude controlled source cases from public packaging",
+    "47560e38b1ed5188ac29b44f0556a321652a8209 fix: identify repeatable audit tool without assigning reviewer identity",
+    "f31ad0fe3f758fe8d87b5c0445b12b34f5a09002 fix: disclose unavailable upstream literal catalogs in privacy scans"
+  ],
+  "delivery_tool_lineage": [
+    {
+      "file": "scripts/personal-release",
+      "sha256": "f553a4f306dfb70f8585a313cccf2c3c082cfdc6e4d7929745b8efaa47985550",
+      "last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "scripts/package_personal_release.py",
+      "sha256": "65c8ba7b5cbfd80c5a604de579006c42b72e65f5e316ccf9f9dd7194be14a046",
+      "last_commit": "f31ad0fe3f758fe8d87b5c0445b12b34f5a09002"
+    },
+    {
+      "file": "scripts/archive_personal_evidence.py",
+      "sha256": "a86be8f7056d320276e01e5de053ed6f66da0e0b45464b23e3ae87aa17772ef8",
+      "last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "scripts/build_release_indexes.py",
+      "sha256": "4f99e3e5b292cfd326f05ccec06720162abcdbd025990e677d21d3711c2758f6",
+      "last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "scripts/verify_supplement_metrics.py",
+      "sha256": "f414b662abe2f3b1d031381e784cf32fa32fe71406fb7dde63b9b2b33c50664f",
+      "last_commit": "47560e38b1ed5188ac29b44f0556a321652a8209"
+    },
+    {
+      "file": "tests/browser/personal_replay.py",
+      "sha256": "f203a7944ab6cff4fd7b75f725190d5be37710ba41461142b5bc429bdf085ddf",
+      "last_commit": "2a289d9e37cd35a2951acfdb20c570665fd37b1d"
+    },
+    {
+      "file": "tests/browser/run.sh",
+      "sha256": "06d949202912d12591a2c6a68d978a9cda461106d2048c13f24c19fd14f8c16e",
+      "last_commit": "b7f7007cb531d518c62edac813d9b005d0647b06"
+    },
+    {
+      "file": "tests/browser/smoke.py",
+      "sha256": "2bc198c5262136ae9f9461eb11dda24c5b60156f2fbb50f9e77aa270f02d6278",
+      "last_commit": "036c506eb5edaad6a1b02032ec185e1ff4ec8693"
+    }
+  ]
+}

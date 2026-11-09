@@ -1,0 +1,2296 @@
+{
+  "status": "real frozen development artifact inventory; no provider or QA access",
+  "cases": [
+    {
+      "sample_id": "conv-26",
+      "build_id": "367c901b300440649bdc0bfba2af8010",
+      "scope": "course adoption source turns",
+      "memories": [
+        {
+          "memory_id": "2f54120468d08f71d6717015",
+          "entity_id": "Caroline",
+          "state_dimension": "adoption_status",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D19:1"
+          ]
+        },
+        {
+          "memory_id": "463c2aa981c38acac85cfe15",
+          "entity_id": "Caroline",
+          "state_dimension": "adoption_status",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D2:8"
+          ]
+        },
+        {
+          "memory_id": "80fd4c5a307035eaf93a785b",
+          "entity_id": "Caroline",
+          "state_dimension": "adoption_status",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D13:1"
+          ]
+        },
+        {
+          "memory_id": "e960fa046531ee016e0104d3",
+          "entity_id": "Caroline",
+          "state_dimension": "adoption_status",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D13:1"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "1cfcb6e8449ea64d025085aa",
+          "old_memory_id": "e960fa046531ee016e0104d3",
+          "new_memory_id": "2f54120468d08f71d6717015",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "748ead37576dbc7e4926b5f4",
+          "old_memory_id": "463c2aa981c38acac85cfe15",
+          "new_memory_id": "e960fa046531ee016e0104d3",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "8bfaf3844dc4afe774ca09b1",
+          "old_memory_id": "80fd4c5a307035eaf93a785b",
+          "new_memory_id": "e960fa046531ee016e0104d3",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9f0a3b3c457ef3cdc3bb6dda",
+          "old_memory_id": "80fd4c5a307035eaf93a785b",
+          "new_memory_id": "2f54120468d08f71d6717015",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "c013d7f52e367c92f8ef7113",
+          "old_memory_id": "463c2aa981c38acac85cfe15",
+          "new_memory_id": "80fd4c5a307035eaf93a785b",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "e17d9adf5ecfab1134320d56",
+          "old_memory_id": "463c2aa981c38acac85cfe15",
+          "new_memory_id": "2f54120468d08f71d6717015",
+          "label": "UPDATE"
+        }
+      ]
+    },
+    {
+      "sample_id": "conv-30",
+      "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+      "scope": "Gina employment/business keyword inventory, not semantic judgement",
+      "memories": [
+        {
+          "memory_id": "081cf5ac4b5e0626349e802e",
+          "entity_id": "Gina",
+          "state_dimension": "trend_finding",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D8:6"
+          ]
+        },
+        {
+          "memory_id": "0b4c074b586afec0ae030ff9",
+          "entity_id": "Gina",
+          "state_dimension": "employment",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D10:4"
+          ]
+        },
+        {
+          "memory_id": "14658a8a9afa615034452ec7",
+          "entity_id": "Gina",
+          "state_dimension": "business_ownership",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D8:6",
+            "D8:8",
+            "D8:21"
+          ]
+        },
+        {
+          "memory_id": "1afaac17c63ab75a2ca07b34",
+          "entity_id": "Gina",
+          "state_dimension": "business_creation",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D10:2"
+          ]
+        },
+        {
+          "memory_id": "1ba0dfc38fe06e07a131098c",
+          "entity_id": "Gina",
+          "state_dimension": "store_design",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D3:4",
+            "D3:6"
+          ]
+        },
+        {
+          "memory_id": "1d0e0323b3f340d9bef418d5",
+          "entity_id": "Gina",
+          "state_dimension": "motivation",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D10:4"
+          ]
+        },
+        {
+          "memory_id": "21d15f102d25c8c6dcbd9578",
+          "entity_id": "Gina",
+          "state_dimension": "store_inventory",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D16:1"
+          ]
+        },
+        {
+          "memory_id": "28fe952ff6af00e29d2b7da3",
+          "entity_id": "Gina",
+          "state_dimension": "business_activity",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D8:4"
+          ]
+        },
+        {
+          "memory_id": "4cd33e778a589a0a753d9f2f",
+          "entity_id": "Gina",
+          "state_dimension": "business",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D14:8"
+          ]
+        },
+        {
+          "memory_id": "519f48350e91e2a894681267",
+          "entity_id": "Gina",
+          "state_dimension": "business_experience",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D7:2"
+          ]
+        },
+        {
+          "memory_id": "5c53f2bd9a726190aac69f3b",
+          "entity_id": "Gina",
+          "state_dimension": "employment",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D14:8"
+          ]
+        },
+        {
+          "memory_id": "62ae1e49f7e063890e68e817",
+          "entity_id": "Gina",
+          "state_dimension": "business_ownership",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D2:1"
+          ]
+        },
+        {
+          "memory_id": "64f6f6069699ba3537f89a34",
+          "entity_id": "Gina",
+          "state_dimension": "business_experience",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D7:4"
+          ]
+        },
+        {
+          "memory_id": "673055a593df27d0e54c14e3",
+          "entity_id": "Gina",
+          "state_dimension": "employment",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D1:3"
+          ]
+        },
+        {
+          "memory_id": "69d48e1821fe73430ea83146",
+          "entity_id": "Gina",
+          "state_dimension": "business_status",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D6:6"
+          ]
+        },
+        {
+          "memory_id": "740b774d346eb9b7d08504b4",
+          "entity_id": "Gina",
+          "state_dimension": "business_effort",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D5:5"
+          ]
+        },
+        {
+          "memory_id": "772e567e3710399349e5fdef",
+          "entity_id": "Gina",
+          "state_dimension": "business_aspiration",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D6:6"
+          ]
+        },
+        {
+          "memory_id": "8044f240bb498a731eb6f676",
+          "entity_id": "Gina",
+          "state_dimension": "ad_campaign",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D2:1"
+          ]
+        },
+        {
+          "memory_id": "8e13a24d8f3e454865dc2331",
+          "entity_id": "Gina",
+          "state_dimension": "store_expansion",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D3:2"
+          ]
+        },
+        {
+          "memory_id": "9427508066c365185ee0c12b",
+          "entity_id": "Gina",
+          "state_dimension": "store_decor",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D3:6"
+          ]
+        },
+        {
+          "memory_id": "991767d2a618b49481a314c7",
+          "entity_id": "Gina",
+          "state_dimension": "business_activity",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D14:2"
+          ]
+        },
+        {
+          "memory_id": "9ad0defa8ee9fe78a36ab148",
+          "entity_id": "Gina",
+          "state_dimension": "business_ownership",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D7:2"
+          ]
+        },
+        {
+          "memory_id": "9ed870730ce4b004e1853955",
+          "entity_id": "Gina",
+          "state_dimension": "business_focus",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D8:12"
+          ]
+        },
+        {
+          "memory_id": "9ef6f05309db075ba2d2e81b",
+          "entity_id": "Gina",
+          "state_dimension": "business_activity",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D7:6"
+          ]
+        },
+        {
+          "memory_id": "ad6fb04516c7df29d2f80d95",
+          "entity_id": "Gina",
+          "state_dimension": "marketing_plan",
+          "memory_type": "event",
+          "statement_type": "plan",
+          "polarity": "positive",
+          "source_turns": [
+            "D8:12"
+          ]
+        },
+        {
+          "memory_id": "b309cd7f14912853cdff68bb",
+          "entity_id": "Gina",
+          "state_dimension": "business_challenges",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D18:5"
+          ]
+        },
+        {
+          "memory_id": "b8605ada442122035cf21e85",
+          "entity_id": "Gina",
+          "state_dimension": "store_performance",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D4:2"
+          ]
+        },
+        {
+          "memory_id": "be8ec6c96405566248a5d04f",
+          "entity_id": "Gina",
+          "state_dimension": "store_inventory",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D5:1"
+          ]
+        },
+        {
+          "memory_id": "bfaf38ac9b873cae02cbed47",
+          "entity_id": "Gina",
+          "state_dimension": "employment",
+          "memory_type": "event",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D6:4"
+          ]
+        },
+        {
+          "memory_id": "c4d619f8e61cb089a17027aa",
+          "entity_id": "Gina",
+          "state_dimension": "business_status",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D7:4"
+          ]
+        },
+        {
+          "memory_id": "c5d8c3b640718940df3e64df",
+          "entity_id": "Gina",
+          "state_dimension": "business_ownership",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D16:1"
+          ]
+        },
+        {
+          "memory_id": "fb82a377dd4919883ca158d7",
+          "entity_id": "Gina",
+          "state_dimension": "store_product_type",
+          "memory_type": "state",
+          "statement_type": "fact",
+          "polarity": "positive",
+          "source_turns": [
+            "D8:8"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "relation_id": "002f085713c5146f13362625",
+          "old_memory_id": "21d15f102d25c8c6dcbd9578",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "03bea6cfbb485b6814fa9643",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "042ef6fda5b16e553e2a3667",
+          "old_memory_id": "64f6f6069699ba3537f89a34",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "059a1b265f24465adffb05fc",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "05e9a74b50e1586a38b6932a",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "740b774d346eb9b7d08504b4",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "06653222394ba75dfb9fceff",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "740b774d346eb9b7d08504b4",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "078f2072a3037db991b44c38",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "fb82a377dd4919883ca158d7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "078fa28bd54476c31fa0affd",
+          "old_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "0889a092509853d99747e682",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "08de8120de96723e1d85e781",
+          "old_memory_id": "991767d2a618b49481a314c7",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "0a78ec1802637622c2cd448d",
+          "old_memory_id": "c4d619f8e61cb089a17027aa",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "0a8a006f6bd2a9e26e2f4166",
+          "old_memory_id": "9ed870730ce4b004e1853955",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "0b0d6cd1a6e77704c4f84d0c",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "9ed870730ce4b004e1853955",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "0b338bdc66170a8b7699dc6e",
+          "old_memory_id": "64f6f6069699ba3537f89a34",
+          "new_memory_id": "1d0e0323b3f340d9bef418d5",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "0c05a0a6b231f9de0045100b",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "bfaf38ac9b873cae02cbed47",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "0cbf62f239aa98c16844d16d",
+          "old_memory_id": "519f48350e91e2a894681267",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "RETAIN"
+        },
+        {
+          "relation_id": "0d9f7e8fa22d3d109c9c21c5",
+          "old_memory_id": "081cf5ac4b5e0626349e802e",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "0ebec3abfe8da53a86419a11",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "0ec640b3aa466b288c297568",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "0f8bfd3e4f05b21fca0ac39b",
+          "old_memory_id": "9ef6f05309db075ba2d2e81b",
+          "new_memory_id": "ad6fb04516c7df29d2f80d95",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "1399aaa6c147cd5c9be84e83",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "1519ff1a587db33465f46fdb",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "16a52bfcd43261e064a953fc",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "69d48e1821fe73430ea83146",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "171488f9950c743dfdab8474",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "bfaf38ac9b873cae02cbed47",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "17324c5ee47aebd5c12150ac",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "1747687781bfd525efe2fb68",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "1bf4808755ef598a5b585821",
+          "old_memory_id": "28fe952ff6af00e29d2b7da3",
+          "new_memory_id": "ad6fb04516c7df29d2f80d95",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "1c2096398a6dc62506454e5d",
+          "old_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "1cb07f60433b699716985724",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "1cca6cb2140587abc2aa763d",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "be8ec6c96405566248a5d04f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "1e3d746b12924cf842942e69",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "9427508066c365185ee0c12b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "220ccde283e34eb0ef4b2125",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "69d48e1821fe73430ea83146",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "227c0093e2f5d64215cee750",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "740b774d346eb9b7d08504b4",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "22d6a2a690bad6ee06f0c94c",
+          "old_memory_id": "1afaac17c63ab75a2ca07b34",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "2373ff11a4e214aae6caf6b7",
+          "old_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "23d977121781ce6b880de41f",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "246df8395656372a8e00e833",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "25a2ccc361018113eb1b3536",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "25c87363b4c48bacf14e95da",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "fb82a377dd4919883ca158d7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "27dd41da7f8f9945408286b1",
+          "old_memory_id": "c4d619f8e61cb089a17027aa",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "2914ed18b52d14a7a0c25b98",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "2b23a4031098742fe4301e5d",
+          "old_memory_id": "9ed870730ce4b004e1853955",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "2ba23ddeda01d6fae7eb8104",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "2cbd44b9e43b608c58f0258b",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "2cdaabc0e2be118b7b3e23de",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "fb82a377dd4919883ca158d7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "2d6f8df44baf7335d15c991d",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "2d76bbdfd68e230da78a4a65",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "2e99613e06088ee2b6e33882",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "2eb3d495b0a539bdd53e621c",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "2f0be56374ea7359680d8ee4",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "2feb3ac92b47b993c8724b97",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "9ef6f05309db075ba2d2e81b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "3293474494db675a5930bcae",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "33719f09e9be08a4e4742b61",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "772e567e3710399349e5fdef",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "34222623fef9e834c5b770fa",
+          "old_memory_id": "9ef6f05309db075ba2d2e81b",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "3628caa58005adf8e3ec9f0c",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "772e567e3710399349e5fdef",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "36daad7cb2cb87faebac5800",
+          "old_memory_id": "bfaf38ac9b873cae02cbed47",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "3747f3800f32f3348b50e06b",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "375092a72029b08ee7c3fc27",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "fb82a377dd4919883ca158d7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "37b076d896627618d429085f",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "9427508066c365185ee0c12b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "38cf3843efe2bdf935bf3f2c",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "38f0d6a0082cb253834a38d0",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "69d48e1821fe73430ea83146",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "39358b54d40315be36bf4c6f",
+          "old_memory_id": "c4d619f8e61cb089a17027aa",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "39cf601d6daa74890305909d",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "9ed870730ce4b004e1853955",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "39d340a161fae8c8fe7492e7",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "772e567e3710399349e5fdef",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "3b261c89672f20f6e99bec97",
+          "old_memory_id": "c4d619f8e61cb089a17027aa",
+          "new_memory_id": "9ef6f05309db075ba2d2e81b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "3b34e6194c2ca7875f0014b7",
+          "old_memory_id": "081cf5ac4b5e0626349e802e",
+          "new_memory_id": "fb82a377dd4919883ca158d7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "3bb8f85dcdcbd2c2baeb979f",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "740b774d346eb9b7d08504b4",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "3c39068e43aa09746ad4694d",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "3d050a8e79ee6e6f4e7d6797",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "9ef6f05309db075ba2d2e81b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "3d66b59f0cbab61267e7fb02",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "28fe952ff6af00e29d2b7da3",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "3e7b32f6b6c8cd63e220a2dc",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "RETAIN"
+        },
+        {
+          "relation_id": "3f9edc8921586b15ccb01c87",
+          "old_memory_id": "4cd33e778a589a0a753d9f2f",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "406a71282b65009c2b04734b",
+          "old_memory_id": "fb82a377dd4919883ca158d7",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "40ca2fc2019ab723811856d8",
+          "old_memory_id": "081cf5ac4b5e0626349e802e",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "40e6d319f2b9c5efb2f6324d",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "28fe952ff6af00e29d2b7da3",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "41e13b6fb680ce966f2a84ce",
+          "old_memory_id": "bfaf38ac9b873cae02cbed47",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "4462d5221b49126fa9af5d12",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "ad6fb04516c7df29d2f80d95",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "4478fac16cce1208ce7a0fb0",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "4490d2e73242093ed77e2fdd",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "69d48e1821fe73430ea83146",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "46ba5568e1fe093d3768e32f",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "740b774d346eb9b7d08504b4",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "47187bda1af5d252c5ea9a69",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "477a9d9009fed0c8afa3cf3b",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "ad6fb04516c7df29d2f80d95",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "488cfe96f2125e2e7987c9ff",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "48d4a509e9d4d226eac07dc8",
+          "old_memory_id": "991767d2a618b49481a314c7",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "4a6eba6eade97c1d95cc0262",
+          "old_memory_id": "64f6f6069699ba3537f89a34",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "4b837f1e89142e92de70d524",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "4ce10ac69938aa085a894199",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "4d86c9d491ec28659a42e1d4",
+          "old_memory_id": "14658a8a9afa615034452ec7",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "507a12681583ac5d683f3c51",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "5394d0404828574347219f0a",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "772e567e3710399349e5fdef",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "5651dd10f5a06b6ef160b64e",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "8e13a24d8f3e454865dc2331",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "576539fe34f9af1a36476422",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "be8ec6c96405566248a5d04f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "57a2904d907e336bc4dcad31",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "bfaf38ac9b873cae02cbed47",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "57c1a19515feb68c93e6c1e4",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "598dc0dd9ea5ba082d0eae56",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "69d48e1821fe73430ea83146",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "5a9ce4f8341d39b84f0e971b",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "69d48e1821fe73430ea83146",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "5ed30864251b27d1bbd41c01",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "605902c2e6f7df858360acd0",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "RETAIN"
+        },
+        {
+          "relation_id": "6090b63008375d7cb3b156b3",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "b8605ada442122035cf21e85",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "60ae47eb81c8837ed26fbedb",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "61cf7cb795f480539c5f46dd",
+          "old_memory_id": "64f6f6069699ba3537f89a34",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "61ffb801c6c43ac530b6a706",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "639af7d83423f02bee020923",
+          "old_memory_id": "c5d8c3b640718940df3e64df",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "63a0e353f4de299b01fcfb4e",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6452ffa36eaaabfbcc005475",
+          "old_memory_id": "fb82a377dd4919883ca158d7",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6499543078cc8f8ba71d6956",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "65974a1294c1cdb678a01f8e",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6616e1396eae801c3a238904",
+          "old_memory_id": "519f48350e91e2a894681267",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "68a12f30dced91aa0d53b7f0",
+          "old_memory_id": "14658a8a9afa615034452ec7",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "68f259e40b36d9c504ef4760",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "69024678efabdec4480daafc",
+          "old_memory_id": "bfaf38ac9b873cae02cbed47",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "RETAIN"
+        },
+        {
+          "relation_id": "69feb51163380b582d7fbb98",
+          "old_memory_id": "14658a8a9afa615034452ec7",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6a9123998aaf19d8474f0ad8",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "1ba0dfc38fe06e07a131098c",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6a9f1c7bf41a763ac530d301",
+          "old_memory_id": "9ef6f05309db075ba2d2e81b",
+          "new_memory_id": "28fe952ff6af00e29d2b7da3",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6ad4085b325e3d418f61a121",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "be8ec6c96405566248a5d04f",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "6ade621413e244839cb5796e",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "1d0e0323b3f340d9bef418d5",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6b3657deae3a16b910d079bd",
+          "old_memory_id": "fb82a377dd4919883ca158d7",
+          "new_memory_id": "1d0e0323b3f340d9bef418d5",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6b51ff0ce425f65c18616eb4",
+          "old_memory_id": "519f48350e91e2a894681267",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6bda640abd937280e8a9378c",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6d145bd8927d775194b021d1",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "6d2d7a74a75af955c744ddac",
+          "old_memory_id": "081cf5ac4b5e0626349e802e",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "6e4c2ca29a0451a6f756f10d",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "9427508066c365185ee0c12b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "7027e61bfbd8aa8e0ae72609",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "705e2e89450e11035044f4be",
+          "old_memory_id": "0b4c074b586afec0ae030ff9",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "RETAIN"
+        },
+        {
+          "relation_id": "70e8f4fe0cd2d842c50654b5",
+          "old_memory_id": "c4d619f8e61cb089a17027aa",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "7117bd4bd1d7276f41f242f3",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "9ef6f05309db075ba2d2e81b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "7118264bcb22d1b1180692db",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "717c064c5052f889b6c41ba7",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "772e567e3710399349e5fdef",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "7189f4eab84bc30464aa2667",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "28fe952ff6af00e29d2b7da3",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "71dba43a7554b8e7dcbfc2a0",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "bfaf38ac9b873cae02cbed47",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "7213599d8d2af598031066a6",
+          "old_memory_id": "519f48350e91e2a894681267",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "721a582a8a32431304c96261",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "74eef908845e2dfb66fc87a3",
+          "old_memory_id": "081cf5ac4b5e0626349e802e",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "7544d907e658025671f0ce01",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "76397a5d95502fa3d1976fe2",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "9427508066c365185ee0c12b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "780b99711b65ccda10ac8deb",
+          "old_memory_id": "28fe952ff6af00e29d2b7da3",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "789efd739a2de7dd9e57c414",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "78d01025c7533a773a0c1010",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "79a86ae3018703858a93c06d",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "79ee59324201e0e62ef0c29f",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "28fe952ff6af00e29d2b7da3",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "7c7d731c21ebbffdd2babc60",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "bfaf38ac9b873cae02cbed47",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "7d125a3036f2013d430d1344",
+          "old_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "7daeb09c3e43fcc525efee1d",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "772e567e3710399349e5fdef",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "7f153f8c7ff0fbcca09f8f5a",
+          "old_memory_id": "14658a8a9afa615034452ec7",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "7fba836ec186c7f08a45c1a5",
+          "old_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "817de8be1a5160844eb58bba",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "82220c5580dce19f04763688",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "825e0e54f68bbc13dc67392e",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "848963b58a0314f4f17445ab",
+          "old_memory_id": "bfaf38ac9b873cae02cbed47",
+          "new_memory_id": "1d0e0323b3f340d9bef418d5",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8490776c747df7c12fb20528",
+          "old_memory_id": "28fe952ff6af00e29d2b7da3",
+          "new_memory_id": "9ed870730ce4b004e1853955",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "849fd366dda1fc3f19c1e60d",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "1ba0dfc38fe06e07a131098c",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "858151623d560ed8c525b612",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8635a3abd012150a34cd0063",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8652db0397bc77de2fad0c1c",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "62ae1e49f7e063890e68e817",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "86c14465b5784fe69d06aa90",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "9ef6f05309db075ba2d2e81b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8808fb5411cfc43c6734d666",
+          "old_memory_id": "1afaac17c63ab75a2ca07b34",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "890cb5808083aeeaa312d998",
+          "old_memory_id": "bfaf38ac9b873cae02cbed47",
+          "new_memory_id": "69d48e1821fe73430ea83146",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8948501995be78b68f91f470",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "896738c02ec246a995a6066c",
+          "old_memory_id": "081cf5ac4b5e0626349e802e",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "89e711e93237ef269362718f",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8a28bcd07df61c2dc9d0fb96",
+          "old_memory_id": "28fe952ff6af00e29d2b7da3",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8d22196ad1c4f06b211606e4",
+          "old_memory_id": "ad6fb04516c7df29d2f80d95",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8e4b8f4e826e6b308864cd26",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "28fe952ff6af00e29d2b7da3",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8e54f918a169a3536217289d",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8eb83ae284a717b4e72f8935",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "fb82a377dd4919883ca158d7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8f3ce0cc896bd08598a2800b",
+          "old_memory_id": "9ef6f05309db075ba2d2e81b",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8fb0325b6a9a83334c1e1ae8",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "8fdd0934b615ce8031e2673f",
+          "old_memory_id": "9ef6f05309db075ba2d2e81b",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "90144189884dcd3a6c863e94",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "ad6fb04516c7df29d2f80d95",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9061d6be84a9ee84fe0b06df",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "be8ec6c96405566248a5d04f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9282060871a8b6bdf3421fc7",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "8e13a24d8f3e454865dc2331",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "93a7231f4ff262b3e2aff99b",
+          "old_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "943bdcd2b276654404941f22",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9454e82e3c283f16f34fa361",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "69d48e1821fe73430ea83146",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "949823185a0bf4efb7af1f86",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "be8ec6c96405566248a5d04f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9611d19e34ffd47d84125195",
+          "old_memory_id": "14658a8a9afa615034452ec7",
+          "new_memory_id": "fb82a377dd4919883ca158d7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "969d3d17588081ae594d683e",
+          "old_memory_id": "1d0e0323b3f340d9bef418d5",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "98c44c903a1e032f1faee98d",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "99e015451db719ce42e20866",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9ae19b7f62db728bb4df74b1",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "772e567e3710399349e5fdef",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9bc5e0ca5bfda00905e6d241",
+          "old_memory_id": "519f48350e91e2a894681267",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9c2d42fd39b413981201df5e",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9caf7f5310325261ff4713c2",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9d2687e3ecd67c4ca8da4aae",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9d42b364d193f3e522518c04",
+          "old_memory_id": "28fe952ff6af00e29d2b7da3",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9d572329196480d6e272a6ea",
+          "old_memory_id": "64f6f6069699ba3537f89a34",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9f173bcd6b11e7c51818b8b1",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "740b774d346eb9b7d08504b4",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9f19965d2c93e004468afc4d",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "9f7371d440329d13760130b5",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "9fa15c5cc605981b7cfac819",
+          "old_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a072960f286ff5bbf9db149a",
+          "old_memory_id": "28fe952ff6af00e29d2b7da3",
+          "new_memory_id": "fb82a377dd4919883ca158d7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a0a37f8358eb028a67a3ae33",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a114e22bf749cedbaa4e6837",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a1be662065ced10ca6ec65c6",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "ad6fb04516c7df29d2f80d95",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a1f3a18652a4aeb92ac63a5a",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a2041391e72efc6c474c31c0",
+          "old_memory_id": "0b4c074b586afec0ae030ff9",
+          "new_memory_id": "1d0e0323b3f340d9bef418d5",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a21c64093d77a4c596676b6b",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "8e13a24d8f3e454865dc2331",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a23264ba98ea4d76a8934e9c",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "740b774d346eb9b7d08504b4",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a313531ac242e89f5ff22854",
+          "old_memory_id": "519f48350e91e2a894681267",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a42b0a2e63c3f7e00c475b8f",
+          "old_memory_id": "9ed870730ce4b004e1853955",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a4d87023632365df649a428c",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a506ab6a036c4e7f1a0d22d1",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a599823303f47d9bb0b371c3",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "9ef6f05309db075ba2d2e81b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a652e2022e69fc7c4a7bbb70",
+          "old_memory_id": "64f6f6069699ba3537f89a34",
+          "new_memory_id": "9ef6f05309db075ba2d2e81b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a863f30228c140afc2325136",
+          "old_memory_id": "519f48350e91e2a894681267",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "a89de6e536700734a16c5343",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "bfaf38ac9b873cae02cbed47",
+          "label": "RETAIN"
+        },
+        {
+          "relation_id": "aa3d4085114c9052446b84e2",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "740b774d346eb9b7d08504b4",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "aaed8c74fd4a28df53b41966",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ab2d6b8682c998dfb08dac20",
+          "old_memory_id": "081cf5ac4b5e0626349e802e",
+          "new_memory_id": "9ed870730ce4b004e1853955",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ab90a05a055ede11d4c56e88",
+          "old_memory_id": "c4d619f8e61cb089a17027aa",
+          "new_memory_id": "28fe952ff6af00e29d2b7da3",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ac1b5c440bce136cf34121c6",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "69d48e1821fe73430ea83146",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "acc3574ce9e3bee01b89a153",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "adb7de9d713f793cc9c82212",
+          "old_memory_id": "c4d619f8e61cb089a17027aa",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "af22c756eb7fa01121b2660c",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "af7151ed9266fa7fdd03d103",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "b16f8736bff24c9a59231725",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "RETAIN"
+        },
+        {
+          "relation_id": "b37f85b3e0d1c617f926fe97",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "b46bd663515d8cca9786ddf7",
+          "old_memory_id": "64f6f6069699ba3537f89a34",
+          "new_memory_id": "ad6fb04516c7df29d2f80d95",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "b4b29672512feb3d406d3709",
+          "old_memory_id": "c4d619f8e61cb089a17027aa",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "b5b07a84572b3ece69705db6",
+          "old_memory_id": "9ef6f05309db075ba2d2e81b",
+          "new_memory_id": "9ed870730ce4b004e1853955",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "b80bd5edbb168311e4b4c5d2",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "b8605ada442122035cf21e85",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "b982be36975a77d9f38a9c81",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "8044f240bb498a731eb6f676",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "bc0eb20d4198eeba2ae03f3d",
+          "old_memory_id": "28fe952ff6af00e29d2b7da3",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "bc8a51825d64f75cf34c9a70",
+          "old_memory_id": "081cf5ac4b5e0626349e802e",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "bcdca0d90395421e2a8b8421",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "b8605ada442122035cf21e85",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "bce0c5a11b05189360aabb6c",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "1d0e0323b3f340d9bef418d5",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "bce27536e7022a6da040ade8",
+          "old_memory_id": "ad6fb04516c7df29d2f80d95",
+          "new_memory_id": "1d0e0323b3f340d9bef418d5",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "bd792363965db2ebd6cdf303",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "be73c2e9d9b4284598c14f01",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "beb4961d4d83be143fbafba8",
+          "old_memory_id": "64f6f6069699ba3537f89a34",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "bec878486d1f2384e8f16c5c",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "bf16f6054b041c535efafc90",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "bf46d1a192a565f57b5d9bcc",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "bf8b15387cc58f46562d08d7",
+          "old_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "RETAIN"
+        },
+        {
+          "relation_id": "bfff14e0fe5d1cb7755f79bc",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "b8605ada442122035cf21e85",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c01446cd2e0880655f947866",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c0329b002a020af3dc611e55",
+          "old_memory_id": "28fe952ff6af00e29d2b7da3",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c0f30252a2821ffac8c286db",
+          "old_memory_id": "ad6fb04516c7df29d2f80d95",
+          "new_memory_id": "9ed870730ce4b004e1853955",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c1241faad020af69b134b013",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c2c51623bbce9893def1cdde",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "62ae1e49f7e063890e68e817",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c3caa7e6b7201bb6e43c44fc",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c3f44ce6247dc5c932a42732",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c4b379b7554a615d0a00224f",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "0b4c074b586afec0ae030ff9",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c4cecc1a3f3ddca67f7bacaa",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "c52635fae984f0280dc2f6c9",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c58262c78d885f485dba3ba8",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c61b28d2249401682406f932",
+          "old_memory_id": "bfaf38ac9b873cae02cbed47",
+          "new_memory_id": "772e567e3710399349e5fdef",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c654783418f770bc2e70490c",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "1ba0dfc38fe06e07a131098c",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "c9950ed351ed7c3ec32ccc8b",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "be8ec6c96405566248a5d04f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "c9cce6997889a1bdab7f0d25",
+          "old_memory_id": "1afaac17c63ab75a2ca07b34",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ca239f7888da3c1d75987d1a",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "9427508066c365185ee0c12b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ca8a20d06c6d31b2afdc6361",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "9ef6f05309db075ba2d2e81b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "cbf2f58dfc31616bff5da1ce",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "cc6ff4e0f3325b867150890f",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ccbc5c9d3ff962a3855080ca",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "b8605ada442122035cf21e85",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "cd37bd7760baa44c051056e5",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "fb82a377dd4919883ca158d7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "cea5d3d32ecb55c7d0a3dca7",
+          "old_memory_id": "1afaac17c63ab75a2ca07b34",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "cee928651bb79ed2f63caa88",
+          "old_memory_id": "fb82a377dd4919883ca158d7",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "d26d46eedcda55b0bb3da113",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "d2d5fede06e127297bced302",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "d3d6e613893ae2d4c857c36b",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "d6a2f79342d897230d6be4d2",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "d71983e369a0e027454e1075",
+          "old_memory_id": "081cf5ac4b5e0626349e802e",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "d7efb3031451cbc2ba1cdbeb",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "da12f18e8323c219fd097771",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "772e567e3710399349e5fdef",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "db423c2cab09dffc18b9be55",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "db4a8d32cfd281a6d57ce04a",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "bfaf38ac9b873cae02cbed47",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "dc83ef3287e2fd1e09a778bb",
+          "old_memory_id": "8044f240bb498a731eb6f676",
+          "new_memory_id": "be8ec6c96405566248a5d04f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "dce13ecb2c18ff4cf8b890cf",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "dd31502ef10760296677f932",
+          "old_memory_id": "14658a8a9afa615034452ec7",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "RETAIN"
+        },
+        {
+          "relation_id": "ddbf5663170a5895b39ad270",
+          "old_memory_id": "8e13a24d8f3e454865dc2331",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "de432195efed9ef010711dca",
+          "old_memory_id": "62ae1e49f7e063890e68e817",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "RETAIN"
+        },
+        {
+          "relation_id": "e00951fe6168a0ed08868851",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "9ef6f05309db075ba2d2e81b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "e176efefdc5a85fa05da78c7",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "e23f438edaa04eaa3c4f455b",
+          "old_memory_id": "1afaac17c63ab75a2ca07b34",
+          "new_memory_id": "1d0e0323b3f340d9bef418d5",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "e27806bd0855751401776cc9",
+          "old_memory_id": "9ef6f05309db075ba2d2e81b",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "e2b4e837393e52c71564e384",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "e467e3c4f61bf5f1ff287e8f",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "e63d79ac570e2d0cae0eba67",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "e8b084ed7ffdcadcf0ec3073",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "e9c194f522d75701a7ddecf5",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "772e567e3710399349e5fdef",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ea7f2c4f8c42bafa386ab4fe",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "eadbfb823e315270b7370128",
+          "old_memory_id": "740b774d346eb9b7d08504b4",
+          "new_memory_id": "bfaf38ac9b873cae02cbed47",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "eb4d2397849895a19d464b09",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "519f48350e91e2a894681267",
+          "label": "UPDATE"
+        },
+        {
+          "relation_id": "eb6809a90b135c39e01aaaaa",
+          "old_memory_id": "14658a8a9afa615034452ec7",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ebf54aaa72d4dae7a85ad00e",
+          "old_memory_id": "9ed870730ce4b004e1853955",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ec677bbfb09c0171a658697b",
+          "old_memory_id": "9ef6f05309db075ba2d2e81b",
+          "new_memory_id": "21d15f102d25c8c6dcbd9578",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ed44ea14ef8101f133eca71f",
+          "old_memory_id": "519f48350e91e2a894681267",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ed7086979027dee5af57aba6",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "bfaf38ac9b873cae02cbed47",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ee62f02cadae0c1023c2070d",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "64f6f6069699ba3537f89a34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ee718c6ec785a6092191169a",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "9ef6f05309db075ba2d2e81b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "f15da5df8f281c19aeaa2a9b",
+          "old_memory_id": "1ba0dfc38fe06e07a131098c",
+          "new_memory_id": "081cf5ac4b5e0626349e802e",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "f1d69e20daea7a52162d32be",
+          "old_memory_id": "9ad0defa8ee9fe78a36ab148",
+          "new_memory_id": "28fe952ff6af00e29d2b7da3",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "f2073aa944b5497e23fe6a5c",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "1ba0dfc38fe06e07a131098c",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "f37166f1df27e913369ff1c2",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "c5d8c3b640718940df3e64df",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "f3f9a7e9c1c24dfc84df2352",
+          "old_memory_id": "519f48350e91e2a894681267",
+          "new_memory_id": "1afaac17c63ab75a2ca07b34",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "f555922c912be1efb7fa395f",
+          "old_memory_id": "519f48350e91e2a894681267",
+          "new_memory_id": "28fe952ff6af00e29d2b7da3",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "f5e021b0de0e1b19e98acbb8",
+          "old_memory_id": "c4d619f8e61cb089a17027aa",
+          "new_memory_id": "991767d2a618b49481a314c7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "f5fa46d706d390a5c49bf154",
+          "old_memory_id": "772e567e3710399349e5fdef",
+          "new_memory_id": "4cd33e778a589a0a753d9f2f",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "f7878bd4d381e5aabefe1479",
+          "old_memory_id": "69d48e1821fe73430ea83146",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "f8d1fdcc591e0ff17c7e3c3a",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "b8605ada442122035cf21e85",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "fa971da7994d63702cff481f",
+          "old_memory_id": "be8ec6c96405566248a5d04f",
+          "new_memory_id": "b309cd7f14912853cdff68bb",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "fae95bf09fb617e965e193a5",
+          "old_memory_id": "673055a593df27d0e54c14e3",
+          "new_memory_id": "1d0e0323b3f340d9bef418d5",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "fbe612e4f22129c007691e61",
+          "old_memory_id": "fb82a377dd4919883ca158d7",
+          "new_memory_id": "5c53f2bd9a726190aac69f3b",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "fc2e0967370086e754449f14",
+          "old_memory_id": "9427508066c365185ee0c12b",
+          "new_memory_id": "14658a8a9afa615034452ec7",
+          "label": "undetermined"
+        },
+        {
+          "relation_id": "ff472207fb2d86b6e28d0ca3",
+          "old_memory_id": "b8605ada442122035cf21e85",
+          "new_memory_id": "c4d619f8e61cb089a17027aa",
+          "label": "undetermined"
+        }
+      ]
+    }
+  ],
+  "semantic_validation": "not_measured; stored labels are predictions",
+  "lesson": "Gina job loss and store opening are different dimensions; a global replacement is not inferred from inventory"
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "question_id": "conv-41:qa:140",
+    "sample_id": "conv-41",
+    "stratum": "ordinary",
+    "arm": "hybrid_no_resolution",
+    "error_code": "invalid_output",
+    "stage": null
+  }
+]

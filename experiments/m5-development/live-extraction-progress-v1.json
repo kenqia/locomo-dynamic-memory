@@ -1,0 +1,50 @@
+{
+  "status": "running",
+  "scope": "conversation-only extraction, not complete Build or independent evaluation",
+  "builds": [
+    {
+      "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+      "sample_id": "conv-43",
+      "status": "running",
+      "phase": "extraction",
+      "fingerprint": "e7bf70017616b07b0e9d12c8fca8aa681cc4fbdc58d64e0568bf435ec8a66a25",
+      "source_sha256": "f3088c2c7cd5062f0459bb26c1c3aec6bd0b8e0b9f4c442d72b170f554be319d",
+      "fragments": {
+        "pending": 5,
+        "running": 1,
+        "succeeded": 28
+      },
+      "fragment_error_codes": {},
+      "memories": 331,
+      "referenced_source_turns": 242
+    }
+  ],
+  "physical_requests": 31,
+  "request_statuses": {
+    "response_received": 30,
+    "reserved": 1
+  },
+  "conservative_reserved_usd": "1.3772454",
+  "reported_usage": {
+    "prompt_tokens": 145775,
+    "completion_tokens": 36223,
+    "total_tokens": 181998
+  },
+  "unknown_usage_requests": 1,
+  "reported_usage_peak_cache_miss_upper_usd": "0.0872001",
+  "actual_bill_usd": "not_measured; cache/time-of-day discounts and account bill not accessed",
+  "policy": {
+    "input_rate": "0.30",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768,
+    "max_requests": 204,
+    "max_usd": "18",
+    "model": "deepseek-flash",
+    "output_rate": "1.20"
+  },
+  "holdout_answers_read": false,
+  "relation_index_qa_not_run": true,
+  "memory_and_source_contract": "validated; no claim of semantic factual correctness",
+  "plan_sha256": "8363cb625599cd2650a89ee41c2b1773ad3528444d42d26a5ebfc254d9553c69",
+  "authorization_sha256": "ebca86faf5329b5d7ad11670832c55b5f706822d8888f9c582efe0302bb1c9ee"
+}

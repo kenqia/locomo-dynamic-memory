@@ -1,0 +1,9 @@
+{
+  "status": "killed",
+  "mutation": "Disable authorization equality check in isolated script copy",
+  "test": "changed_authority recovery rejection",
+  "exit_code": 1,
+  "original_source_modified": false,
+  "provider_requests": 0,
+  "script_sha256": "439ade803fc1894c6c48ae4b20df3032b2fa44a6e7c823dc950ec959a1641260"
+}

@@ -1,0 +1,282 @@
+{
+  "version": "m5-level-e-v1",
+  "status": "locked",
+  "locked_utc": "2026-11-05T02:24:42.170528+00:00",
+  "scope": "one held-out evaluation; all conv-43/44 questions; Hybrid/Dynamic; no Bonus",
+  "arms": [
+    "hybrid_no_resolution",
+    "dynamic"
+  ],
+  "bonus_enabled": false,
+  "question_selection": "all_original_ordinals",
+  "implementation_commit": "0dbd98e7b296ef29d9998fa55d88d512f8ec85f1",
+  "implementation_sha256": {
+    "src/locomo_memory/__init__.py": "84759eeab9121155bd63d2aaad005103edc1fdafddd4dfa8c539e564a2805d5a",
+    "src/locomo_memory/ablation.py": "e6880a0a083771c255cfa77b29e1382fda891ddd31beae18def98168173da009",
+    "src/locomo_memory/api.py": "9d099424ad644888c60973a3b242f91498b80ad325bc98291458e8f9b2f30180",
+    "src/locomo_memory/build_api.py": "b1089e83907d22ce906e5b43428ea84b548234a4f8ce186aa49730d2b19eb09f",
+    "src/locomo_memory/build_progress.py": "1ec8b7e23ad8e23a03b790ca4aef780192f60c86667da759f59f1e3d1e0f8f15",
+    "src/locomo_memory/builds.py": "7279575b2c5aaedd6a716f3f20fa07b3d1adb5c596cc917916f30b74dcc89b53",
+    "src/locomo_memory/config.py": "d3ccd90d4d49bc30164871726f1fd0efcb731d415ff0bd19d9244962d5f5e8cc",
+    "src/locomo_memory/database.py": "79669243905c25ce724c8b361a2289fb18dcb3db79644b19fd7197468a6a9086",
+    "src/locomo_memory/diagnostics.py": "3395e755613864c3853a6a9f484ccca6d03070572fe7beb25ae4c73c03c07762",
+    "src/locomo_memory/embeddings.py": "4d8f26b8b32ef9474259ddb1586fe753f959c2144ad7cc7b5f9e22580b4f3e15",
+    "src/locomo_memory/evaluation.py": "bb692981de015522e9e9d0696072fd8e5bc5c1876b1323ab59be6fd61e6db813",
+    "src/locomo_memory/evaluation_execution.py": "6963b221e2c9caad1eb2cb1210e415293d99a708a100bb26d94e941e36f2b2e7",
+    "src/locomo_memory/evaluation_metrics.py": "dc73df532621309c97fcd4b142fb8f1170272a0f6b45894631c854a6f4497af6",
+    "src/locomo_memory/evaluation_plans.py": "5b3adeb59346c0d9534b3ccb929063e4f7201f31c370f7f473c47070bd792bbf",
+    "src/locomo_memory/evaluation_reports.py": "950e5146caa59969fac16f0b9c544fa3ca726a9449957a8ea3b6874290b5eb60",
+    "src/locomo_memory/evaluation_ui.py": "f06f4eb1a53482014110d9ef2ccdb939125210b9b394d5b5f8d81673059d7a8d",
+    "src/locomo_memory/evidence_catalog.py": "814721f20b27e69e5fcf78dbbfa9b879b08c5f6f36ac109f65734892648888e1",
+    "src/locomo_memory/evidence_selection.py": "a88a1afaf6c122f2e4b4d3d4fdb93c58e9543aa2208f1fed10fb1d16c07b6277",
+    "src/locomo_memory/expansion.py": "48e89c79018413620d52e96785fcf718e8d8ff8197ca83b3a18ff458211baa5c",
+    "src/locomo_memory/experiment.py": "42c6a02b3d34c1522a1021871df170cb2d25da3061e7760f58189a4825ba7ff7",
+    "src/locomo_memory/experiment_api.py": "411cad39815af26e500d04737ef4c459e2d06aa727d60bb45d1b3c37b3030ecb",
+    "src/locomo_memory/experiment_report.py": "740493b1572fc9af8c4912da32d0541256ad20ef1c87280d5774bf66debd0a90",
+    "src/locomo_memory/export_schemas.py": "b7e715952c13ef70027cb7b7b605a344c849944a1ca76b563ac8bdd11476aed0",
+    "src/locomo_memory/exports.py": "dac20c0156417d8d80084340cd0cd1a0c3ef1f646ac6c6bd85a79a60cc87696e",
+    "src/locomo_memory/extraction_examples.py": "7d90f6d6031571b5f1d0108c5b3016dab36a02339c0808967f555b2b1553ee95",
+    "src/locomo_memory/extraction_patch.py": "e57bcda67f0abaf1510ddbc12cb80b3680325112553b8d6768f7cd5ce74b2a89",
+    "src/locomo_memory/extraction_time_diagnostics.py": "bf2b5055cb4b78a395929395a60b0a91a4f1ec46eca7472b9271c1bdbd3534f9",
+    "src/locomo_memory/implementation_identity.py": "9554358e4c79d4336f1af8373f1ca4d9f319ebedea1ea2cbabefb8b05f414bf8",
+    "src/locomo_memory/imports.py": "94d25065cf2ff02630a06599870b9dcc152c03b9ab0b9ab641a64f79be4dfc2e",
+    "src/locomo_memory/layered_contracts.py": "267d3f25c533088e895dda3bc63dd7718a2416cca7d2e7ee7e4545e84d19f317",
+    "src/locomo_memory/layered_evidence.py": "954640e23c77339b0c0e616fbdabcaf81940a5cb2e5dce03f8057e08ef9cadaa",
+    "src/locomo_memory/m5_adaptive.py": "d13b6599258cb54926b1c968c8d136ef29dfe31f7900f6253b8fa383dc96b587",
+    "src/locomo_memory/m5_api.py": "b79b00cb6cd0486f689ce82a6a19b5c96396dba55563f24cc18cf9137f8f8556",
+    "src/locomo_memory/m5_budget.py": "1734357d07b1fc932e078ca1f5a15cf3f08fddd02a588b2bf55d93d9ac13f0ee",
+    "src/locomo_memory/m5_compression.py": "198058471dd1256ac49039ed1b55b944af5c595be1b33de730a2e8e48f10fc1b",
+    "src/locomo_memory/m5_graph.py": "9612d38e32f162778e9d1452d483b59bf4d9a9558a98b216fc0eb632d3e2f93e",
+    "src/locomo_memory/m5_queries.py": "d0aa18f0a2fb537902a2ebeddeb10f7c5195002aa4d1ece0e51cf96de17c4332",
+    "src/locomo_memory/m5_query_review.py": "4b94e966cfef8e7c5b6e78684655d69b6d19925e2a6dae9ac022c3c84940fde9",
+    "src/locomo_memory/m5_review.py": "d6ac60fe890b5631419942cb138c8fedb4e5ac705d185ad0ec8fbe754fded3d0",
+    "src/locomo_memory/m5_ui.py": "e4f194404d39ae30626077ed53f9087c643a820ef51f62cbc6669d961c171784",
+    "src/locomo_memory/m5_wire_compression.py": "1d853eb4faebbc0479c53015443eab481ca70db93b264aaa63dd352787a0a397",
+    "src/locomo_memory/memory_schemas.py": "8a345797a8ed26e3ee1d5331fc6196330202f1651e12148c36ff09d8819374e9",
+    "src/locomo_memory/model.py": "3eb285d6283e09decda40635af842eeb40d31f993e5c9a6d3db7cedddb2bb368",
+    "src/locomo_memory/projection.py": "2e0bc6fe8ba0595b236588dc33dd1564b77d4cf3b343219b8eed829e531eaa40",
+    "src/locomo_memory/proposition_extraction.py": "8128f1e11d4a753e9139679cdb5acf3f424171be1c10f8c8ac9d669aacb70482",
+    "src/locomo_memory/queries.py": "201bfb8622889fd811b0355ad02f2764a76a9e3cc04344b699b5966f8feec0cc",
+    "src/locomo_memory/query_api.py": "fc2625afbdebe049ab045f18503c897efe386abf3b3f5c76849a8a2197a21297",
+    "src/locomo_memory/query_payload.py": "5a8cc5bb147b338424defafc9e7b61ed1aedaf337647f3f3ab642f5246016386",
+    "src/locomo_memory/query_schemas.py": "97aba1df2422085bef0c68b612c95a323fabb84c5f1f3468a0c2b25aadbecad6",
+    "src/locomo_memory/query_ui.py": "3689cd9eaa4e92041089028fb412f6305346fa701424a093722f6e66cf8bf6c7",
+    "src/locomo_memory/raw_queries.py": "bd09a2e71c111b7a9df7e7baba822ceaf6455c53b47ffbdb4ddcbdcb34912e0e",
+    "src/locomo_memory/raw_retrieval.py": "56cf2b6567394627c256a987e860df250890989ff0079517d4096b18ab8c24ba",
+    "src/locomo_memory/raw_schemas.py": "abf95c2592ec00a4530aaf6d50fc7efa2fb1a5e0be5a6d48b5a64fca25642ea5",
+    "src/locomo_memory/relation_api.py": "9fe07220aca7b6958502c468dbe1612eea69ef6af3fe5e312251fd2de87379b0",
+    "src/locomo_memory/relation_diagnostics.py": "1778028ded92529eb6501e8ef49bd21aca6a99187097094f5d647f0e701bf4ea",
+    "src/locomo_memory/relation_replay.py": "ad2e6406163d38c8063dffe43d6eeb1c205641874d0b7965464475ba4ec5d66c",
+    "src/locomo_memory/relation_schemas.py": "633d043b905418edb065c2fd09decb8ffb7fc74291cbcd51887f53cd9d5c398d",
+    "src/locomo_memory/relation_selection.py": "ab636ee8323d60cbc49cae8da451d8fbdbe80ba071484f18eecdce598a5cb616",
+    "src/locomo_memory/relations.py": "7f909ce169756c70d9f4415811e1436518a5e6c61b4e47e4fe50f9b63b9ac7a6",
+    "src/locomo_memory/report_html.py": "c7bbdf67785855a72bb7ad95edeada8745bbba8dd1835a9c0f1dd0b80c44918d",
+    "src/locomo_memory/resolution_delivery.py": "56acc17719c8b8e500c4b5bf2d94a3757e1d993fd098adb3930f80730fb3ba60",
+    "src/locomo_memory/retrieval.py": "743adc94ce4458eaaf2398419df7b8978cbe0931e84e0302532cecafe364efd1",
+    "src/locomo_memory/retrieval_api.py": "ac71297568d9a8e041443e6b475dc2b699f3570b8b6f404068b1576b69057f59",
+    "src/locomo_memory/retrieval_schemas.py": "34787823546fa27842fca11dcdff17c475e94dee10659f413fd1419f13d90492",
+    "src/locomo_memory/retry_feedback.py": "cf11e6bda6cec395c425d3f0d8befd03090dd52f90503d629abb3c00b9490525",
+    "src/locomo_memory/revised_source_reader.py": "cdcb5f85ca73c8012cdf90ba4acb52273fb3188ab8f45c3ad5876be9b683d165",
+    "src/locomo_memory/schemas.py": "e7a8aa19a024a98ec8863f7df033b4c353b60cccf4c4b5f3db8f6875a94c4e93",
+    "src/locomo_memory/selective_context.py": "de63c41e493efe17b2f9fb46b8746becc54256a394074dbb6193cd2fde669e63",
+    "src/locomo_memory/source_answer_reader.py": "9581f265f09d12ea2784f55a0f7dd30e3d62a6d2a5eddf43eed596db3db4df5c",
+    "src/locomo_memory/source_context.py": "4c13487b4faf0c409976c147e2459661829f833b2ab953babdef9368553073ae",
+    "src/locomo_memory/source_reader.py": "e14178818a632d394e68474f38f2f581e42153149fa487e2c136e164bf000d4c",
+    "src/locomo_memory/temporal.py": "c2de5e20abb47b9ec2d694af1631cf2221e666bebe6296968c47af0cf011f332",
+    "src/locomo_memory/ui.py": "e26bf64f4ef174a12a626444912425bd1348fac71e1d7a0876c418eba16f229e",
+    "src/locomo_memory/ui_theme.py": "e389f3cfcc9cab7ec43250e635daafc62a578bbe72ddcfea22acf6996b86877c",
+    "src/locomo_memory/usage.py": "28691e82a154461eb99bb52a9f470b01ccda516a05d492a7d4d2f75c84d15bad",
+    "src/locomo_memory/version_api.py": "b9ea800f018f06f08eabf11f065e27bd4bf26160fe66b45c530957efc6af43c3",
+    "src/locomo_memory/version_ui.py": "6bc5845f65a216705dea55c5bb05acc2fcd7de08f80e139a8568b65a70655173",
+    "src/locomo_memory/versions.py": "be71512d1704e7adff758e0846a3665ba10b3ebbf03027cf68367f0142a86057",
+    "tools/m5/level_c.py": "def5898c6afe2c6e9a5c5cf419bd9e2e12b11bf2878300929f305b04917e5334",
+    "tools/m5/offline.py": "e1f7914d7ad764668259bdc520eb7ddff7401c0243bd437a57990fd00eb1ec63",
+    "tools/m5/extraction_recovery.py": "439ade803fc1894c6c48ae4b20df3032b2fa44a6e7c823dc950ec959a1641260",
+    "tools/m5/level_e.py": "f9627d91610f7cf36a3c6a0f2b179d7a1dda08f1fee88b728e9831b6d07d0fd4"
+  },
+  "settings": {
+    "db_path": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/var/research-v2-full-baseline-20261101/memory.sqlite3",
+    "api_url": "http://127.0.0.1:8000",
+    "model_name": "deepseek-flash",
+    "model_base_url": "https://api.deepseek.com",
+    "model_timeout_seconds": 60.0,
+    "model_retries": 2,
+    "model_temperature": 0.0,
+    "model_max_tokens": 32768,
+    "relation_max_tokens": null,
+    "thinking_enabled": false,
+    "extraction_thinking_effort": "disabled",
+    "relation_thinking_effort": "disabled",
+    "query_analysis_thinking_effort": "disabled",
+    "resolution_thinking_effort": "disabled",
+    "answer_thinking_effort": "disabled",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "embedding_dimensions": 384,
+    "embedding_local_files_only": true,
+    "embedding_max_tokens": 256,
+    "fragment_turns": 20,
+    "bm25_k": 20,
+    "dense_k": 20,
+    "initial_k": 20,
+    "rrf_constant": 60,
+    "expansion_max_candidates": 60,
+    "expansion_depth": 1,
+    "expansion_scan_limit": 200,
+    "relation_history_limit": 20,
+    "relation_same_key_fraction": 0.8,
+    "relation_fact_fraction": 0.5,
+    "candidate_token_budget": 12000,
+    "evidence_token_budget": 6000,
+    "raw_max_hits": 3,
+    "raw_neighbor_turns": 1,
+    "raw_max_turns": 9,
+    "raw_token_budget": 2000,
+    "resolution_input_budget": 192000
+  },
+  "exports": {
+    "conv-26": {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-26.json",
+      "sha256": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78",
+      "build_id": "367c901b300440649bdc0bfba2af8010",
+      "dataset_id": "f69a07a79a2d5f4c8188300a"
+    },
+    "conv-30": {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-30.json",
+      "sha256": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae",
+      "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+      "dataset_id": "f69a07a79a2d5f4c8188300a"
+    },
+    "conv-41": {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-41.json",
+      "sha256": "e15b30e89de463cca4ff9fcd347b332a72525f0fbfb8506a5476df120fd4b488",
+      "build_id": "8d459492549b4a3e88005211f036addf",
+      "dataset_id": "f69a07a79a2d5f4c8188300a"
+    },
+    "conv-42": {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-42.json",
+      "sha256": "89d6bdf02e7eca10014688e0a7946fd536b846c4ff6c8b09a84bb8671680e3fd",
+      "build_id": "c892596ac8884f43b4cf2098349a7fa5",
+      "dataset_id": "f69a07a79a2d5f4c8188300a"
+    },
+    "conv-43": {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/exports/conv-43.json",
+      "sha256": "2ae95deb13dcf22e1bb91cff44db88feba7c3bcf1b753e907ba121f4ac972f17",
+      "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+      "dataset_id": "610b0aa9bfd787ff0882a806"
+    },
+    "conv-44": {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-sixth-export-successor-v1/exports/conv-44.json",
+      "sha256": "1006ce3d855ffb496cb8a2c029276511707427bb7129474013f4b1768639611f",
+      "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+      "dataset_id": "610b0aa9bfd787ff0882a806"
+    }
+  },
+  "build_sources": {
+    "conv-43": {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-build-repair-20261104/var/m5-development/five-build-export-v1/memory.sqlite3",
+      "storage_identity": {
+        "main": {
+          "exists": true,
+          "sha256": "2c6bee0e76cf398ba657fcece992993a9250e7fb32d9a88b746beaab6348de12"
+        },
+        "wal": {
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "conv-44": {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-sixth-export-successor-v1/memory.sqlite3",
+      "storage_identity": {
+        "main": {
+          "exists": true,
+          "sha256": "2012e1f0151b9f6f84fd3db4cbf5fb5a5165872b8b97e6c74480b3ad74c62303"
+        },
+        "wal": {
+          "exists": true,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    }
+  },
+  "reference": {
+    "path": "/home/kenqia/my_folder/locomo-worktrees/research-next-20261101/var/research-v2-full-baseline-20261101/memory.sqlite3",
+    "dataset_id": "f69a07a79a2d5f4c8188300a",
+    "artifact_sha256": "79fa87e90f04081343b8c8debecb80a9a6842b76a7aa537dc9fdf651ea698ff4",
+    "storage_identity": {
+      "main": {
+        "exists": true,
+        "sha256": "ffa299c36ba1d15a6148826dd14430dca6e4ebfa27069d7a141021987cda060c"
+      },
+      "wal": {
+        "exists": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "questions": {
+      "conv-43": {
+        "count": 242,
+        "identity_sha256": "a8d8a23146b6c8eb14ce271521035555c108fe9f8662e4ca25cc1415adace6f9"
+      },
+      "conv-44": {
+        "count": 158,
+        "identity_sha256": "b9b1e62d08ab3e3621b0eda9a77eea38bd053417f4973a894e241005a15fdbb7"
+      }
+    }
+  },
+  "default_candidate": "hybrid_no_resolution",
+  "dynamic": "explicit optional candidate; evaluate without post-holdout retuning",
+  "all_bonus_switches": {
+    "conflict_extension": false,
+    "graph_retrieval": false,
+    "compression": false,
+    "adaptive_routing": false,
+    "temporal_priority": false
+  },
+  "new_generation_thinking": "disabled",
+  "model_identity": {
+    "request_alias": "deepseek-flash",
+    "documented_service_version": "DeepSeek-V4.1-Flash-1017",
+    "immutable_weight_pin": false,
+    "historical_build_thinking": "retained as recorded; no claim of all historical calls disabled"
+  },
+  "evaluation_policy": {
+    "planned_questions": 400,
+    "planned_items": 800,
+    "physical_budget": {
+      "model": "deepseek-flash",
+      "max_input_bytes": 640000,
+      "max_output_tokens": 32768,
+      "input_usd_per_million": ".30",
+      "output_usd_per_million": "1.20",
+      "max_requests": 6000,
+      "max_usd": "1387.9296000"
+    },
+    "failed_scorable_items": "zero in complete denominator; successful subset separate",
+    "unknown": "keep separate; retain full reservation",
+    "category_1_to_4": "token F1; complete and successful denominators",
+    "category_5": "literal refusal score separate; not factual accuracy",
+    "gold_access": "only after every planned item generated/failure/unknown and freeze verifies authorization/marker/ledger/outputs/producer/reference",
+    "source_metrics": "stage Source Recall proxies; not semantic truth",
+    "bootstrap": "exploratory paired question bootstrap within selected two holdout conversations; no conversation-level generalization",
+    "no_automatic_restart": true,
+    "no_post_holdout_retuning": true
+  },
+  "decision_evidence": {
+    "development_results": "53ae13e7a060a211dede21ce72d8e75372a588eff653cb1b077909ca64188305",
+    "six_exports": "d4a9cda9fbf6460382424dd8f37326182212cef78575f8be2fba1992e3624f08",
+    "independent_six_exports": "d5e7a3a723bba6816b5b8b967e8e826403fc2f35b84d03601bf1e6f58c18eefc",
+    "metadata_only_reference": "e36e5f232c1b09df931887408010fc70dbd010085d0425c79116ca3a206045e8",
+    "settings_source_sha256": "08af05ac9e8bf9555b628af8ed28d9739493693155faa7000f7f171119669ebb"
+  },
+  "dependency_files": {
+    "pyproject.toml": "37aff3483cd5edeee76c17ddc1c69007ccef2854b7a37c5880d543a9e3b0fd28",
+    "uv.lock": "ffbc6bcee4449cb5398798e1a7285cf6c277c0582c09db82b20b820988e1981b"
+  },
+  "runtime_python": "3.12.12 (main, Nov 19 2025, 22:46:53) [Clang 21.1.4 ]",
+  "question_text_read_at_lock": false,
+  "gold_read_at_lock": false,
+  "production_default_changed": false,
+  "remote_write": false
+}

@@ -1,0 +1,3876 @@
+{
+  "version": "m5-final-delivery-inventory-v1",
+  "branch": "codex/m5-final-conv44-relations-20261104",
+  "baseline_commit": "915fac02f6b9296e331f913a1e78717cfa7e2df1",
+  "content_cutoff_commit": "e369a12f2405916634e0d1b1407adb7b9110be3c",
+  "commit_count": 79,
+  "changed_file_count": 460,
+  "commits": [
+    {
+      "commit": "7fa9dbba2d4e6779968c3aca55b7503c77e43a85",
+      "parents": [
+        "915fac02f6b9296e331f913a1e78717cfa7e2df1"
+      ],
+      "committed_at": "2026-11-04T11:05:04+08:00",
+      "subject": "feat: add optional source-linked graph and reversible memory grouping"
+    },
+    {
+      "commit": "cfaab0e5afe8357f9d5454930eb08ad9c85c916f",
+      "parents": [
+        "7fa9dbba2d4e6779968c3aca55b7503c77e43a85"
+      ],
+      "committed_at": "2026-11-04T11:06:43+08:00",
+      "subject": "feat: add explicit bonus query variants and physical request budget guards"
+    },
+    {
+      "commit": "9b91770d5cef7a35e7f0aebf1d598da8718b97e0",
+      "parents": [
+        "cfaab0e5afe8357f9d5454930eb08ad9c85c916f"
+      ],
+      "committed_at": "2026-11-04T11:17:54+08:00",
+      "subject": "test: verify actual two-hop traversal without inferred shortcuts"
+    },
+    {
+      "commit": "ce229e7386f5c1e54e94cad06104e2f806f280ca",
+      "parents": [
+        "9b91770d5cef7a35e7f0aebf1d598da8718b97e0"
+      ],
+      "committed_at": "2026-11-04T11:25:58+08:00",
+      "subject": "feat: add reproducible M5 development replay and protected source validation"
+    },
+    {
+      "commit": "51f7876326c6c3e844c0dfa235d21cbe61fd9c7d",
+      "parents": [
+        "ce229e7386f5c1e54e94cad06104e2f806f280ca"
+      ],
+      "committed_at": "2026-11-04T11:52:44+08:00",
+      "subject": "fix: preserve temporal intent and audit failed bonus queries"
+    },
+    {
+      "commit": "18d6fea4fb3e3cfb3cead4045716ad8feac7188c",
+      "parents": [
+        "51f7876326c6c3e844c0dfa235d21cbe61fd9c7d"
+      ],
+      "committed_at": "2026-11-04T12:01:11+08:00",
+      "subject": "fix: stop locally rejected provider calls and retain prior attempt history"
+    },
+    {
+      "commit": "f9eb4cf2c959c35e6e74455a88828c2a21b31999",
+      "parents": [
+        "18d6fea4fb3e3cfb3cead4045716ad8feac7188c"
+      ],
+      "committed_at": "2026-11-04T12:01:59+08:00",
+      "subject": "fix: bound graph rendering and add real development data browser demo"
+    },
+    {
+      "commit": "d9a9c849d9a78739c0716b44bc9afcd576735e03",
+      "parents": [
+        "f9eb4cf2c959c35e6e74455a88828c2a21b31999"
+      ],
+      "committed_at": "2026-11-04T12:02:34+08:00",
+      "subject": "feat: prepare bounded holdout extraction stage without provider calls"
+    },
+    {
+      "commit": "775b15e292e16550fde3063eec3562c397f2f7e8",
+      "parents": [
+        "d9a9c849d9a78739c0716b44bc9afcd576735e03"
+      ],
+      "committed_at": "2026-11-04T12:07:17+08:00",
+      "subject": "docs: record M5 evidence boundaries and default-off adoption decisions"
+    },
+    {
+      "commit": "08db6f356ab3bfc57e98cb11f0d81e3ab2c13ef7",
+      "parents": [
+        "775b15e292e16550fde3063eec3562c397f2f7e8"
+      ],
+      "committed_at": "2026-11-04T12:08:58+08:00",
+      "subject": "feat: audit authorized extraction without exposing source text or credentials"
+    },
+    {
+      "commit": "dd73aa0c61ec8aaf9088cdf6fe781d176de4ace0",
+      "parents": [
+        "08db6f356ab3bfc57e98cb11f0d81e3ab2c13ef7"
+      ],
+      "committed_at": "2026-11-04T12:14:23+08:00",
+      "subject": "data: preserve M5 offline evidence and authorized extraction outcomes"
+    },
+    {
+      "commit": "1db645d54cd14f08d2fe9259a3b488a686b6ec0c",
+      "parents": [
+        "dd73aa0c61ec8aaf9088cdf6fe781d176de4ace0"
+      ],
+      "committed_at": "2026-11-04T12:16:09+08:00",
+      "subject": "docs: define explicit bounded recovery for the failed holdout fragment"
+    },
+    {
+      "commit": "87fce8ee6adf088d0d80b31717ee1116ec3871fe",
+      "parents": [
+        "1db645d54cd14f08d2fe9259a3b488a686b6ec0c"
+      ],
+      "committed_at": "2026-11-04T12:23:56+08:00",
+      "subject": "fix: align optional temporal priority with the explicit query date"
+    },
+    {
+      "commit": "797b174c9bd1e64852f703659f813c2cd1377aff",
+      "parents": [
+        "87fce8ee6adf088d0d80b31717ee1116ec3871fe"
+      ],
+      "committed_at": "2026-11-04T12:31:02+08:00",
+      "subject": "test: cover cancellation and joint participants and audit relation cost bounds"
+    },
+    {
+      "commit": "f9ee7fb90e4a4e9968b6f630a34638469b603c4c",
+      "parents": [
+        "797b174c9bd1e64852f703659f813c2cd1377aff"
+      ],
+      "committed_at": "2026-11-04T12:34:37+08:00",
+      "subject": "docs: record final offline regression and refresh candidate evidence manifests"
+    },
+    {
+      "commit": "55fcaebd0105546325bbdc14d3b8db7b56f0d18f",
+      "parents": [
+        "f9ee7fb90e4a4e9968b6f630a34638469b603c4c"
+      ],
+      "committed_at": "2026-11-04T12:41:03+08:00",
+      "subject": "feat: prepare one-fragment recovery with local and original budget guards"
+    },
+    {
+      "commit": "ed47868c83163485d1e276a6203bdffd871640cd",
+      "parents": [
+        "55fcaebd0105546325bbdc14d3b8db7b56f0d18f"
+      ],
+      "committed_at": "2026-11-04T12:41:24+08:00",
+      "subject": "docs: index bounded recovery source and verification artifacts"
+    },
+    {
+      "commit": "bbc9dde2653cffe0ceba435cf874d09777e29250",
+      "parents": [
+        "ed47868c83163485d1e276a6203bdffd871640cd"
+      ],
+      "committed_at": "2026-11-04T12:59:11+08:00",
+      "subject": "fix: discard proven unsent relation checkpoints after local budget rejection"
+    },
+    {
+      "commit": "a30ca9f61986520abca30438f9bd659f955e60b7",
+      "parents": [
+        "bbc9dde2653cffe0ceba435cf874d09777e29250"
+      ],
+      "committed_at": "2026-11-04T13:00:11+08:00",
+      "subject": "feat: score independently reviewed historical query applicability without new provider calls"
+    },
+    {
+      "commit": "6044b709636e6860e295991a568229b87b698590",
+      "parents": [
+        "a30ca9f61986520abca30438f9bd659f955e60b7"
+      ],
+      "committed_at": "2026-11-04T13:07:04+08:00",
+      "subject": "data: preserve authorized failed-fragment recovery and final offline verification"
+    },
+    {
+      "commit": "08be26d1bf8a069191054464957a0ac6b950c8a7",
+      "parents": [
+        "6044b709636e6860e295991a568229b87b698590"
+      ],
+      "committed_at": "2026-11-04T13:44:32+08:00",
+      "subject": "feat: verify isolated holdout index and prepare bounded relation phase"
+    },
+    {
+      "commit": "fca2bf1dc8a2765ab95ead8e96afb0f9cb959e84",
+      "parents": [
+        "08be26d1bf8a069191054464957a0ac6b950c8a7"
+      ],
+      "committed_at": "2026-11-04T13:57:17+08:00",
+      "subject": "feat: audit authorized relation execution against frozen source and budget"
+    },
+    {
+      "commit": "323917c244475a32394b5d22d9df3ac1cf1c5921",
+      "parents": [
+        "fca2bf1dc8a2765ab95ead8e96afb0f9cb959e84"
+      ],
+      "committed_at": "2026-11-04T14:24:27+08:00",
+      "subject": "feat: prepare fixed development QA with authorization and Gold isolation"
+    },
+    {
+      "commit": "c8e5c09456c8bfc3f2ad56701a0bfb56928c12b1",
+      "parents": [
+        "323917c244475a32394b5d22d9df3ac1cf1c5921"
+      ],
+      "committed_at": "2026-11-04T14:37:34+08:00",
+      "subject": "docs: record independent development QA authorization and running stages"
+    },
+    {
+      "commit": "3b8e4b4c2a45d61520dfabf98be42f300ef159b8",
+      "parents": [
+        "c8e5c09456c8bfc3f2ad56701a0bfb56928c12b1"
+      ],
+      "committed_at": "2026-11-04T15:27:32+08:00",
+      "subject": "feat: audit frozen development QA against source and budget identity"
+    },
+    {
+      "commit": "b9c2b913079b6960f44f5b88892adea64a93c80c",
+      "parents": [
+        "3b8e4b4c2a45d61520dfabf98be42f300ef159b8"
+      ],
+      "committed_at": "2026-11-04T15:27:32+08:00",
+      "subject": "feat: validate independent answer source reviews with explicit denominators"
+    },
+    {
+      "commit": "7cee8f9a996723c62ad1290dff929591b4c869c5",
+      "parents": [
+        "b9c2b913079b6960f44f5b88892adea64a93c80c"
+      ],
+      "committed_at": "2026-11-04T15:27:33+08:00",
+      "subject": "feat: derive paired QA and runtime metrics from frozen generation"
+    },
+    {
+      "commit": "3335862dba1e9658f4d5c515b602c98049826d7c",
+      "parents": [
+        "7cee8f9a996723c62ad1290dff929591b4c869c5"
+      ],
+      "committed_at": "2026-11-04T15:38:30+08:00",
+      "subject": "docs: record frozen development QA, independent source review and final model requirement"
+    },
+    {
+      "commit": "b3ba45c313b3f8e833525fcea809b4144dfd981d",
+      "parents": [
+        "3335862dba1e9658f4d5c515b602c98049826d7c"
+      ],
+      "committed_at": "2026-11-04T16:37:40+08:00",
+      "subject": "feat(m5): prepare isolated larger-input QA with thinking disabled"
+    },
+    {
+      "commit": "c71fb93ae0f3f18724a0b7d3ef313339d2d53bc1",
+      "parents": [
+        "3335862dba1e9658f4d5c515b602c98049826d7c"
+      ],
+      "committed_at": "2026-11-04T16:40:05+08:00",
+      "subject": "feat: bind offline input diagnostics to the complete frozen stage"
+    },
+    {
+      "commit": "4aadaff8de6ae5778c042065c3bd4f04d75a453f",
+      "parents": [
+        "b3ba45c313b3f8e833525fcea809b4144dfd981d"
+      ],
+      "committed_at": "2026-11-04T16:42:39+08:00",
+      "subject": "docs(m5): record input v2 prepared identities and artifact hashes"
+    },
+    {
+      "commit": "01f44c0cba7451233e534f7f8df3fb5cd9696ec7",
+      "parents": [
+        "c71fb93ae0f3f18724a0b7d3ef313339d2d53bc1"
+      ],
+      "committed_at": "2026-11-04T16:47:20+08:00",
+      "subject": "docs: index reviewed input diagnostics and final delivery evidence"
+    },
+    {
+      "commit": "73787369f3349be3ae8b6b161273377183e8f475",
+      "parents": [
+        "01f44c0cba7451233e534f7f8df3fb5cd9696ec7"
+      ],
+      "committed_at": "2026-11-04T16:50:46+08:00",
+      "subject": "docs: record blocked export readiness and independent evaluation gates"
+    },
+    {
+      "commit": "8868a58e74bbb72d24caeedc02389f8c86195ffa",
+      "parents": [
+        "73787369f3349be3ae8b6b161273377183e8f475"
+      ],
+      "committed_at": "2026-11-04T16:51:23+08:00",
+      "subject": "docs: refresh evidence indexes for blocked final evaluation gates"
+    },
+    {
+      "commit": "fc3b1ee8ca9ce9a7c4964d0e88d69e742e31d3ec",
+      "parents": [
+        "8868a58e74bbb72d24caeedc02389f8c86195ffa"
+      ],
+      "committed_at": "2026-11-04T17:24:30+08:00",
+      "subject": "docs(m5): record completed relation phase and independently verified terminal costs"
+    },
+    {
+      "commit": "0aae59c61d569f03d73c57ae333784ae99a8a22b",
+      "parents": [
+        "fc3b1ee8ca9ce9a7c4964d0e88d69e742e31d3ec"
+      ],
+      "committed_at": "2026-11-04T17:25:23+08:00",
+      "subject": "docs(m5): refresh candidate identities after relation terminal audit"
+    },
+    {
+      "commit": "2a3cd8517aad4d1af99f77c8bdae259cd1038f72",
+      "parents": [
+        "4aadaff8de6ae5778c042065c3bd4f04d75a453f"
+      ],
+      "committed_at": "2026-11-04T19:45:35+08:00",
+      "subject": "docs(m5): record explicit input v2 QA budget authorization"
+    },
+    {
+      "commit": "a8f0e6827524a94038535888573be0ea644bdf3c",
+      "parents": [
+        "2a3cd8517aad4d1af99f77c8bdae259cd1038f72"
+      ],
+      "committed_at": "2026-11-04T19:51:08+08:00",
+      "subject": "docs(m5): distinguish authorized input v2 execution from historical runs"
+    },
+    {
+      "commit": "e2af67634077c2abc8f8fc9e9af9075e4e76f61d",
+      "parents": [
+        "a8f0e6827524a94038535888573be0ea644bdf3c"
+      ],
+      "committed_at": "2026-11-04T19:52:53+08:00",
+      "subject": "test(m5): align semantic review fixture with isolated input v2 policy"
+    },
+    {
+      "commit": "e45a7b34f25130fc8f1c3924a5ca3710835b6d88",
+      "parents": [
+        "e2af67634077c2abc8f8fc9e9af9075e4e76f61d"
+      ],
+      "committed_at": "2026-11-04T20:16:55+08:00",
+      "subject": "docs(m5): record frozen input v2 scores and terminal costs"
+    },
+    {
+      "commit": "aba95ca47fcafd527ef1237d4f30d23834592fe2",
+      "parents": [
+        "e45a7b34f25130fc8f1c3924a5ca3710835b6d88"
+      ],
+      "committed_at": "2026-11-04T20:29:27+08:00",
+      "subject": "docs(m5): finalize input v2 source review and verified private archive"
+    },
+    {
+      "commit": "bcbf479d3a24f79a87695a3d3bbbacd86974e184",
+      "parents": [
+        "aba95ca47fcafd527ef1237d4f30d23834592fe2",
+        "0aae59c61d569f03d73c57ae333784ae99a8a22b"
+      ],
+      "committed_at": "2026-11-04T20:32:22+08:00",
+      "subject": "Merge branch 'codex/m5-final-development-20261104' into codex/m5-final-build-repair-20261104"
+    },
+    {
+      "commit": "3fa8b4fd60f6973e76f634bcd597eaabe796f4b6",
+      "parents": [
+        "bcbf479d3a24f79a87695a3d3bbbacd86974e184"
+      ],
+      "committed_at": "2026-11-04T20:58:45+08:00",
+      "subject": "feat: prepare isolated conv44 recovery with a separate approval gate"
+    },
+    {
+      "commit": "0303c5c79aadcabb6d94f8246c9c3e79c0005f3c",
+      "parents": [
+        "3fa8b4fd60f6973e76f634bcd597eaabe796f4b6"
+      ],
+      "committed_at": "2026-11-04T20:59:29+08:00",
+      "subject": "feat: complete conv43 in a local copy and verify five strict exports"
+    },
+    {
+      "commit": "213a8ab3cf5272c5faf4c18a092b7526d20418b0",
+      "parents": [
+        "0303c5c79aadcabb6d94f8246c9c3e79c0005f3c"
+      ],
+      "committed_at": "2026-11-04T21:00:19+08:00",
+      "subject": "docs: record integrated M5 verification and remaining acceptance gates"
+    },
+    {
+      "commit": "3f8929839e30cd085b105504ca1a6fe11fcf216f",
+      "parents": [
+        "213a8ab3cf5272c5faf4c18a092b7526d20418b0"
+      ],
+      "committed_at": "2026-11-04T21:09:17+08:00",
+      "subject": "docs: record authorized conv44 recovery failure and audited terminal costs"
+    },
+    {
+      "commit": "f0f8dfd31c16531714560374a23cbfa940e24923",
+      "parents": [
+        "3f8929839e30cd085b105504ca1a6fe11fcf216f"
+      ],
+      "committed_at": "2026-11-04T21:56:58+08:00",
+      "subject": "fix: ground extraction times in literal source text"
+    },
+    {
+      "commit": "fe455f5182e04f5b20fc0d9ae89424a680968dc5",
+      "parents": [
+        "f0f8dfd31c16531714560374a23cbfa940e24923"
+      ],
+      "committed_at": "2026-11-04T21:58:10+08:00",
+      "subject": "feat: prepare provenance-preserving conv44 successor build"
+    },
+    {
+      "commit": "4b03095f3a5635a13decbb6c5b6a5a5a0fba609a",
+      "parents": [
+        "fe455f5182e04f5b20fc0d9ae89424a680968dc5"
+      ],
+      "committed_at": "2026-11-04T22:01:21+08:00",
+      "subject": "docs: record independently verified conv44 recovery preparation"
+    },
+    {
+      "commit": "aed4634deb6c873ef1620d0a80bd023e2541d1a2",
+      "parents": [
+        "4b03095f3a5635a13decbb6c5b6a5a5a0fba609a"
+      ],
+      "committed_at": "2026-11-04T22:19:29+08:00",
+      "subject": "docs: freeze successful conv44 successor extraction and audit"
+    },
+    {
+      "commit": "82a9d25bf866440f7e1e0214d303b33653993ce7",
+      "parents": [
+        "aed4634deb6c873ef1620d0a80bd023e2541d1a2"
+      ],
+      "committed_at": "2026-11-04T22:51:21+08:00",
+      "subject": "feat: prepare isolated disabled conv44 relation phase"
+    },
+    {
+      "commit": "a795be451b662d482b62fb89508d7f24db2359ae",
+      "parents": [
+        "82a9d25bf866440f7e1e0214d303b33653993ce7"
+      ],
+      "committed_at": "2026-11-04T23:01:27+08:00",
+      "subject": "docs: freeze reviewed conv44 relation preparation and budget"
+    },
+    {
+      "commit": "271372112f380142367ead232f35ec3e0410340f",
+      "parents": [
+        "a795be451b662d482b62fb89508d7f24db2359ae"
+      ],
+      "committed_at": "2026-11-04T23:19:53+08:00",
+      "subject": "docs: record approved conv44 relation budget and current pricing"
+    },
+    {
+      "commit": "87c0cfbf7bb3c39ef02af642f7c3a338fb7e5f18",
+      "parents": [
+        "271372112f380142367ead232f35ec3e0410340f"
+      ],
+      "committed_at": "2026-11-04T23:19:53+08:00",
+      "subject": "feat: strictly export a completed conv44 scratch copy"
+    },
+    {
+      "commit": "7cd6723fbfcfabbe3e90f0b74c3868347d87a25f",
+      "parents": [
+        "87c0cfbf7bb3c39ef02af642f7c3a338fb7e5f18"
+      ],
+      "committed_at": "2026-11-04T23:30:17+08:00",
+      "subject": "docs: distinguish authorized live relations from preparation evidence"
+    },
+    {
+      "commit": "32706ff983b8a9f2d9952273fbfd036f89cfe047",
+      "parents": [
+        "7cd6723fbfcfabbe3e90f0b74c3868347d87a25f"
+      ],
+      "committed_at": "2026-11-05T00:27:14+08:00",
+      "subject": "feat: guard a one-shot held-out evaluation behind a final system lock"
+    },
+    {
+      "commit": "2443e6dd9fbee99e45f7b3ad194246dcfe21f0e6",
+      "parents": [
+        "32706ff983b8a9f2d9952273fbfd036f89cfe047"
+      ],
+      "committed_at": "2026-11-05T00:31:16+08:00",
+      "subject": "docs: archive the audited conv44 relation failure terminal"
+    },
+    {
+      "commit": "443d16b67c15af57867c67a13a4e227bec34eb3f",
+      "parents": [
+        "2443e6dd9fbee99e45f7b3ad194246dcfe21f0e6"
+      ],
+      "committed_at": "2026-11-05T00:32:53+08:00",
+      "subject": "feat: prepare a separately authorized retry of failed conv44 relations"
+    },
+    {
+      "commit": "12881c6f1f612430b22dc0bed8e4c3cb7d53a4fd",
+      "parents": [
+        "443d16b67c15af57867c67a13a4e227bec34eb3f"
+      ],
+      "committed_at": "2026-11-05T00:42:13+08:00",
+      "subject": "docs: freeze the independently audited ten-task relation recovery plan"
+    },
+    {
+      "commit": "fd10797fdb71e055f3bd3dc219301d18eda2aaab",
+      "parents": [
+        "12881c6f1f612430b22dc0bed8e4c3cb7d53a4fd"
+      ],
+      "committed_at": "2026-11-05T00:51:44+08:00",
+      "subject": "docs: record approved relation recovery budget and execution pricing"
+    },
+    {
+      "commit": "43f9a78829ed37b35d14b728bf0fdcc714036625",
+      "parents": [
+        "fd10797fdb71e055f3bd3dc219301d18eda2aaab"
+      ],
+      "committed_at": "2026-11-05T01:00:13+08:00",
+      "subject": "docs: preserve relation recovery terminal and remaining failure"
+    },
+    {
+      "commit": "dd0bb18014c87a2506773e987581f57a2dba8128",
+      "parents": [
+        "43f9a78829ed37b35d14b728bf0fdcc714036625"
+      ],
+      "committed_at": "2026-11-05T01:03:49+08:00",
+      "subject": "docs: align current M5 gates with audited recovery outcome"
+    },
+    {
+      "commit": "1f7952456cf61c294df9051a53798d2e69023984",
+      "parents": [
+        "dd0bb18014c87a2506773e987581f57a2dba8128"
+      ],
+      "committed_at": "2026-11-05T01:12:11+08:00",
+      "subject": "feat: prepare bounded final conv44 relation retry with label prerequisites"
+    },
+    {
+      "commit": "679abb47b1aaa5d5bad7a9124a3af6b3cdb18eb7",
+      "parents": [
+        "1f7952456cf61c294df9051a53798d2e69023984"
+      ],
+      "committed_at": "2026-11-05T01:14:44+08:00",
+      "subject": "docs: freeze audited single-task conv44 recovery preparation"
+    },
+    {
+      "commit": "b0739c274dd2fcb4c04a305cdc56f8e8d0771006",
+      "parents": [
+        "679abb47b1aaa5d5bad7a9124a3af6b3cdb18eb7"
+      ],
+      "committed_at": "2026-11-05T10:13:16+08:00",
+      "subject": "docs: record approved single-task relation recovery execution"
+    },
+    {
+      "commit": "0dbd98e7b296ef29d9998fa55d88d512f8ec85f1",
+      "parents": [
+        "b0739c274dd2fcb4c04a305cdc56f8e8d0771006"
+      ],
+      "committed_at": "2026-11-05T10:23:55+08:00",
+      "subject": "docs: close conv44 recovery and verify six complete memory exports"
+    },
+    {
+      "commit": "191349fa7b2851ffe7ab3d42088d14427889b2fa",
+      "parents": [
+        "0dbd98e7b296ef29d9998fa55d88d512f8ec85f1"
+      ],
+      "committed_at": "2026-11-05T10:26:34+08:00",
+      "subject": "docs: lock final held-out system before reading question text"
+    },
+    {
+      "commit": "41a338606e3092af82f5ad673af8963318f60ce4",
+      "parents": [
+        "191349fa7b2851ffe7ab3d42088d14427889b2fa"
+      ],
+      "committed_at": "2026-11-05T10:40:02+08:00",
+      "subject": "docs: freeze independently audited held-out evaluation preparation"
+    },
+    {
+      "commit": "ee546fca4ef6755f6753be5f7ceb577b3485ba6d",
+      "parents": [
+        "41a338606e3092af82f5ad673af8963318f60ce4"
+      ],
+      "committed_at": "2026-11-05T10:58:03+08:00",
+      "subject": "docs: record approved held-out evaluation and execution pricing"
+    },
+    {
+      "commit": "d713a168629c16624e6d4bfc6a03eb15f783d5ea",
+      "parents": [
+        "ee546fca4ef6755f6753be5f7ceb577b3485ba6d"
+      ],
+      "committed_at": "2026-11-05T11:03:08+08:00",
+      "subject": "docs: distinguish running held-out evaluation from historical checkpoints"
+    },
+    {
+      "commit": "dc16101a79b860c7812020f4c4ea51579b4201a8",
+      "parents": [
+        "d713a168629c16624e6d4bfc6a03eb15f783d5ea"
+      ],
+      "committed_at": "2026-11-05T11:09:43+08:00",
+      "subject": "feat: audit frozen Level E runtime and independent source reviews"
+    },
+    {
+      "commit": "aa56800c6854879d3bcbcf356e13a06562c0ed67",
+      "parents": [
+        "dc16101a79b860c7812020f4c4ea51579b4201a8"
+      ],
+      "committed_at": "2026-11-05T11:10:36+08:00",
+      "subject": "docs: bind verified held-out reporting and shared build costs"
+    },
+    {
+      "commit": "3fc680e69b07f38ed4b980ff222134deff35ea78",
+      "parents": [
+        "aa56800c6854879d3bcbcf356e13a06562c0ed67"
+      ],
+      "committed_at": "2026-11-05T11:15:07+08:00",
+      "subject": "docs: preserve one-shot evaluation process and terminal handoff"
+    },
+    {
+      "commit": "b61e2418bf57b3708d3ba2916767b6b32d63a009",
+      "parents": [
+        "3fc680e69b07f38ed4b980ff222134deff35ea78"
+      ],
+      "committed_at": "2026-11-05T11:46:13+08:00",
+      "subject": "test: verify Level E analysis fallback preserves reporting attribution"
+    },
+    {
+      "commit": "92e9015dce24fb0934a31de0e1a479d17d390fa1",
+      "parents": [
+        "b61e2418bf57b3708d3ba2916767b6b32d63a009"
+      ],
+      "committed_at": "2026-11-05T11:46:45+08:00",
+      "subject": "docs: record analysis fallback reporting verification"
+    },
+    {
+      "commit": "d14f82c6b9a868602455dd6d9399d4c849ebbf7f",
+      "parents": [
+        "92e9015dce24fb0934a31de0e1a479d17d390fa1"
+      ],
+      "committed_at": "2026-11-05T11:55:31+08:00",
+      "subject": "docs: index fourteen M5 delivery requirements before Level E freeze"
+    },
+    {
+      "commit": "92763f25aa443b259da4682b90b5f589d9d044e6",
+      "parents": [
+        "d14f82c6b9a868602455dd6d9399d4c849ebbf7f"
+      ],
+      "committed_at": "2026-11-05T12:28:16+08:00",
+      "subject": "docs: record audited held-out scores, failures, and runtime costs"
+    },
+    {
+      "commit": "829af031f8129f6c5fa71208d54918eead54c174",
+      "parents": [
+        "92763f25aa443b259da4682b90b5f589d9d044e6"
+      ],
+      "committed_at": "2026-11-05T12:57:16+08:00",
+      "subject": "docs: finalize source-reviewed Level E results and private archive evidence"
+    },
+    {
+      "commit": "e369a12f2405916634e0d1b1407adb7b9110be3c",
+      "parents": [
+        "829af031f8129f6c5fa71208d54918eead54c174"
+      ],
+      "committed_at": "2026-11-05T13:00:51+08:00",
+      "subject": "docs: complete fourteen-item M5 delivery report and independent terminal review"
+    }
+  ],
+  "files": [
+    {
+      "status": "A",
+      "path": "M5_BUILD_REPAIR_HANDOFF.md",
+      "bytes": 5054,
+      "sha256": "b7b20db319053a53be7f93bf56d794f8ba428b71db0b9cd0bf3d94818d64509c",
+      "git_blob": "7739356758cc5da6e65ff22671f788974ce040a5"
+    },
+    {
+      "status": "A",
+      "path": "M5_CONV44_RELATIONS_V1_HANDOFF.md",
+      "bytes": 4573,
+      "sha256": "a15d1e6d4c16935fd960644e3286269a3cd89944bd73fcb811ae46b4c7bea8c5",
+      "git_blob": "b236205060bce9f7684480ddbcecbf8c48cb07d2"
+    },
+    {
+      "status": "A",
+      "path": "M5_CONV44_RELATION_RECOVERY_V1_HANDOFF.md",
+      "bytes": 5546,
+      "sha256": "d4a5a4d398a506af3a14fd8dbebfcd9a5e9bff8a550ba32d54dc5f10a7e8647a",
+      "git_blob": "cf732256eb5ab2fd626098d3db1f15e11e186eaf"
+    },
+    {
+      "status": "A",
+      "path": "M5_CONV44_RELATION_SUCCESSOR_V1_HANDOFF.md",
+      "bytes": 6577,
+      "sha256": "164500c0a06db6a5025c08f05154f932767b50f2fc577a21a244f76c8e009f30",
+      "git_blob": "fc7e52bff3f7e1b6c5892320dba6c227d5beb023"
+    },
+    {
+      "status": "A",
+      "path": "M5_CONV44_SUCCESSOR_V3_HANDOFF.md",
+      "bytes": 5556,
+      "sha256": "d6ee11049e1be78527f99e22982e7f27803005802ca22c3dc204c4106852ee4f",
+      "git_blob": "3df94645efb9d0b965d56cf6ee59f9358172977b"
+    },
+    {
+      "status": "A",
+      "path": "M5_INPUT_V2_HANDOFF.md",
+      "bytes": 3820,
+      "sha256": "851e6fbf06f720518c2154a5639b7552c37142318e64948848f19deae044992b",
+      "git_blob": "6d2bb0347e0b021cb2eb90c2f658bb4008ae9491"
+    },
+    {
+      "status": "A",
+      "path": "M5_LEVEL_E_RUNNING_HANDOFF.md",
+      "bytes": 4598,
+      "sha256": "421efe9dddd6eeba7b79c4e52a75a99f2e9155a75beebbc469ec7cda1f645a53",
+      "git_blob": "d611cdff39b727fd01f5162160fbeba64207ad59"
+    },
+    {
+      "status": "A",
+      "path": "M5_LEVEL_E_V1_HANDOFF.md",
+      "bytes": 2879,
+      "sha256": "a2dcc95ce380ee731bf6470153ab88085a5c2b38e8c896d46db9b1530b320ec7",
+      "git_blob": "ffa3edca445be663fbd7e65a3c4ede0fb5ba7585"
+    },
+    {
+      "status": "M",
+      "path": "README.md",
+      "bytes": 12537,
+      "sha256": "67db829e8612c1d15871c0a5e4c9fae786e2206fe258009b92ade56cc25ab6fb",
+      "git_blob": "bae1bf1c6684926388985f26d89f087e38323754"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/ADAPTIVE_TEMPORAL_DESIGN.md",
+      "bytes": 1686,
+      "sha256": "1638ec3ff589abba5d9e788c50fd59e6e8993254cdb3e9a5da4e343c607aa681",
+      "git_blob": "494d6e231857647f50fac2f7ec8a22dbba7e2434"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/BONUS_FEATURES.md",
+      "bytes": 1625,
+      "sha256": "2404345c3a25cc04bf9716c35ae9e747f178676772f2361ec1f80d52517bb439",
+      "git_blob": "4a54229b059e1c77ced5fb18a1ed8f9fb7796079"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CODE_REVIEW_V6.md",
+      "bytes": 11504,
+      "sha256": "0b01a9bc9c2f439d8b40bce1b9c21641468e7bec329aa213cfb2c6fc60a21f95",
+      "git_blob": "7a2d61085e77f0fd60b65a765f7e7c8960caae19"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/COMPLETION_AUDIT.md",
+      "bytes": 8918,
+      "sha256": "ca1c15d993954629a8ba57d330a71239bbe3c1da2ea8e7a783101fc54c66fc70",
+      "git_blob": "fb40697a8b13660c9c814eb16090443da1d06247"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/COMPRESSION_DESIGN.md",
+      "bytes": 1525,
+      "sha256": "7d71496d2c1e360094574c9818d58baa785c1dde3bc1250ed1b110d3dbda1152",
+      "git_blob": "275b40782272a2559398c19f97c935a54b0f2c5d"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATIONS_V1.md",
+      "bytes": 8868,
+      "sha256": "5f95b2c55cb53aa3918f55c82f3ec975d940c9a2a250cad5d8a673e818888a4c",
+      "git_blob": "edddb5087289ee71b71a0151e97f5ce6e6eb66e3"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATIONS_V1_PREPARATION_REVIEW.md",
+      "bytes": 8404,
+      "sha256": "2f2c1c336b73ed6a9f3c1f01a37c0f5333207ef0e6559a4ca60ae9e1126b6046",
+      "git_blob": "24f16cfac277fe4ba84781e6e90d2471003b2cb0"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATIONS_V1_RESULTS.md",
+      "bytes": 2983,
+      "sha256": "03de1eb4847782b33c71ee68c4cace4e1755419335a813826fc9a4cbd7a8a8ce",
+      "git_blob": "c87c0f9f8a700add3fb7224ed5c2e5e756c29d88"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATIONS_V1_REVIEW.md",
+      "bytes": 7413,
+      "sha256": "7721f26a4ae472df50a0f852365361829649cb5c212161322a606044ca92990f",
+      "git_blob": "f3a4c26382c8ad884fd36cbf054d71a9ca9c65cb"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATIONS_V1_TERMINAL_REVIEW.md",
+      "bytes": 8178,
+      "sha256": "c09e09ea083c5a10c43fbc829e57ed8acd3b5b69a51234053085d0de7006f114",
+      "git_blob": "83f78f61dc2d8e60a59c4f9cfdf257772e980fe5"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_RECOVERY_V1.md",
+      "bytes": 5353,
+      "sha256": "6bc13bbd483ef20be716fa60e5ac23a469739fbfd48f2693ba7d3731ee77ee3f",
+      "git_blob": "ffc3dbb7701436ffe52e381ceb62e4781366cad0"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_RECOVERY_V1_PREPARATION.md",
+      "bytes": 4304,
+      "sha256": "3cad794c7cee999561f538113335b52b30e402d2decb3625ad8431905675f1ef",
+      "git_blob": "fed18fcf7df4c447161bd7c14c2c5d682a226951"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_RECOVERY_V1_PREPARATION_REVIEW.md",
+      "bytes": 7844,
+      "sha256": "3cee40c17abc3592a0ac31f82d495e36711edfc0e5b283658e2bef53b1db00ca",
+      "git_blob": "421c45b04a57575665d9391ea8db8439e02b6f9a"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_RECOVERY_V1_RESULTS.md",
+      "bytes": 3615,
+      "sha256": "2689441051eed9501b23d796b22d5d44f528820efe30a8def578138b1aeb85f0",
+      "git_blob": "ad95929dd2cc4d10c783cf9310b1a8606a3f8c9f"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_RECOVERY_V1_REVIEW.md",
+      "bytes": 8152,
+      "sha256": "428ed28cc4cfa9e72e91138020c219c4878b4af117388a21ed0875c6b521899e",
+      "git_blob": "e86a7e2c83aecde6c3d069cf0dac1b22198224eb"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_RECOVERY_V1_TERMINAL_REVIEW.md",
+      "bytes": 8182,
+      "sha256": "ccab5dce35b950aa5ad5c42976de11450dfff96df1fc8bb80b07d76896d8a25d",
+      "git_blob": "facfdd268c40f7bc9f11bfcd7f466f001a45c6d5"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_SUCCESSOR_V1.md",
+      "bytes": 4149,
+      "sha256": "3db627e2a2ad8e59ce6a3e39976b3e734620faf274ca2b54b8a5ee8af16b374c",
+      "git_blob": "c7f46274d40056c29f5021a589f468777cc3e2a7"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_SUCCESSOR_V1_PREPARATION_REVIEW.md",
+      "bytes": 5167,
+      "sha256": "6cb3a3eceb7f0d83631cd5c569571a3d34b82693f892771f40b94d4f37a825cf",
+      "git_blob": "8e5161b888be8e12a05f95b2fd73c0ce23b1c180"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_SUCCESSOR_V1_RESULTS.md",
+      "bytes": 2706,
+      "sha256": "776f78e3d158266962146a10c0bd7f215a5dcd5e54e02aedba267fdbe804a455",
+      "git_blob": "2dfeae112ab9aae4aee00e7d66d7022a75ee2c62"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_SUCCESSOR_V1_REVIEW.md",
+      "bytes": 2674,
+      "sha256": "f92664797e6ad9a3880a844871f32bea191d268a7c51d227f543525ae500883f",
+      "git_blob": "bcf1bae608f5ba0377fe157526b31c4ec1fcffc0"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_RELATION_SUCCESSOR_V1_TERMINAL_REVIEW.md",
+      "bytes": 4320,
+      "sha256": "913ea6e744271774b6935cafa7b20d3b34073706f8be27c04d507c12776302c6",
+      "git_blob": "b2bd3f0ce5bc4048bb2c13b19e1c96e0f46e07f2"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_SIXTH_EXPORT_REVIEW.md",
+      "bytes": 5038,
+      "sha256": "ea94e98caf6f5c05cf72f727cd5693bf72d5e81934f34057b3b3a9a4463df645",
+      "git_blob": "fa01509dd9878e629e75f062951cb8c7fe7c946c"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_SIXTH_EXPORT_SUCCESSOR_V1_REVIEW.md",
+      "bytes": 5385,
+      "sha256": "4125e07d895d0d662ce303cee4d1db2e251b2b9dbde2cac7a481290872c52651",
+      "git_blob": "74b1a4546a4bb81ae9662b20bf796c75eafc6094"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_SUCCESSOR_V3.md",
+      "bytes": 5485,
+      "sha256": "2e4e2bc760c1e32f7a94ac7a2dc6ae375e040dcc4b1924a92a0545104c2fa3a7",
+      "git_blob": "853999f51e8a2befb518d64ca02640f4222817a6"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_SUCCESSOR_V3_PREPARATION_REVIEW.md",
+      "bytes": 6623,
+      "sha256": "e40ded00ca80f9822136af1b7fe069c08bf5753b39304491e30564d6427944c2",
+      "git_blob": "a630b68fe07e61b84c0cddc9c31b5348227c217c"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_SUCCESSOR_V3_RESULTS.md",
+      "bytes": 4936,
+      "sha256": "8e40e9e1c5798b5747c9ee9705cf909b498da518acad61843eb6fa5912f326f2",
+      "git_blob": "7a0554a436fa2af52e1d44176cc84d3bb7102c63"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_SUCCESSOR_V3_REVIEW.md",
+      "bytes": 5926,
+      "sha256": "5629aa9f03191f8852a23579eafb2919e8710d5e8225f9496b6627e6b8b8324e",
+      "git_blob": "b8cc4f63e5face8cf4c5b3d995bcdc6810bedcf5"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/CONV44_SUCCESSOR_V3_TERMINAL_REVIEW.md",
+      "bytes": 7098,
+      "sha256": "6c1b4b93bb10917978b84dd673d9391c8d17eb39e20c390296229939b7e174da",
+      "git_blob": "d04053fc11cafd8277f5d99c098fdcc5a00543a9"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/COST_ANALYSIS.md",
+      "bytes": 8281,
+      "sha256": "a1b886449cc42fe726f5837cf503fbde6f3c8275cc774871e0e1f62f01ac3306",
+      "git_blob": "4a2176842ef9d7d160318e3ddaf5863b3d8f458c"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/DELIVERY_STATUS_REVIEW_V1.md",
+      "bytes": 7808,
+      "sha256": "40b17b63ebcc84eb7de93581c85196d7226adf56eb0a7ff8fc9147e4179008a4",
+      "git_blob": "b0ab6587082f669ee102c9b343959a5e1626ae61"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/DYNAMIC_TRUTH_PROTOCOL.md",
+      "bytes": 4476,
+      "sha256": "c4cd5809c7f45112c815bb174b7be80f07e69af4389e7a83f75274a5feb5cb02",
+      "git_blob": "5d492f38109f47cb9b674bb7793f986ca6eceb37"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/ERROR_ANALYSIS.md",
+      "bytes": 6626,
+      "sha256": "8890272574e70ce1eef20acf9e90604de3119b4fac58a114e78d11c9457a2a06",
+      "git_blob": "9d3b009daab4c9e60a984e94b7c8813b2d32a9d9"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/EXPERIMENT_PROTOCOL.md",
+      "bytes": 8418,
+      "sha256": "7cfc29cb711b626aa37a60ae86e691577b7ef297c7e12319a0bb6c89d941b8e0",
+      "git_blob": "88b54945095f4a64075c33568cc74ae39c69a6da"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/EXPERIMENT_RESULTS.md",
+      "bytes": 12780,
+      "sha256": "691fbec317cca5245c04a40db2b83e102811516c0de644c3d10ea3aafe3c5ce1",
+      "git_blob": "224dc95ce26dd48676b0c16992383fbb2ae120f0"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/EXPORT_READINESS.md",
+      "bytes": 4908,
+      "sha256": "1e397dc7e2ee525a627385081b2bbd8a51560d376534cec58604dbb149a88ea6",
+      "git_blob": "87d16fe29b965a6729498e8282a8a29c18f4e1bf"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/EXTRACTION_RECOVERY.md",
+      "bytes": 5802,
+      "sha256": "5475dd089dcafe141d63e1ff21d351203d4fa1531687a96c0419119308f018c5",
+      "git_blob": "6162d0432eef85b7eb53110cf6b56391f7482a5e"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/FINAL_DELIVERY_CHECKLIST.md",
+      "bytes": 9015,
+      "sha256": "d30fefb9abf9798fcfcb8bffa4b6d394e0581c4ecf78f6561c9e3b73c883abbf",
+      "git_blob": "7912cc3a07677ff0887db8976b47d00a5a362f82"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/FINAL_DELIVERY_EVIDENCE_INDEX_V1.md",
+      "bytes": 15158,
+      "sha256": "a904801ad2aef12fa198ff055cf6c3a31205b3c0da305b71cc41aacf64db902c",
+      "git_blob": "880b08080bd3fa0609e893f5cc4112702251ca9c"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/FIVE_BUILD_EXPORT_V1.md",
+      "bytes": 10929,
+      "sha256": "b4e45381fb2f089f70ca18a5a83e8821a04baa663bbf5744a0c2a62ab4a2c8a0",
+      "git_blob": "a2be7f16020d003312f78ba6d830f55f6a561a9a"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/GRAPH_MEMORY_DESIGN.md",
+      "bytes": 2258,
+      "sha256": "8b40f10f02cce4504588c1e8f80aaad0993acef360e46f84b15df57110d0148c",
+      "git_blob": "3ff85567b80b2794328ddfff9988b45966120b12"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/HANDOFF.md",
+      "bytes": 13731,
+      "sha256": "d3c215dee957fd3a5b88e3cd31ad2e10a4e6cfdf91c125b9db2777421c513092",
+      "git_blob": "aa1e762f1675bc87cf31eabfae901c205138c22e"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/HOLDOUT_RELATIONS.md",
+      "bytes": 8100,
+      "sha256": "3e325729c69d4d874048476cdb9a0d7f048037cf80b0d728240f21213cac5dd0",
+      "git_blob": "f20d9f8c7f6b27973de5ee52c11c434835c7f615"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/IMPLEMENTATION_MATRIX.md",
+      "bytes": 6660,
+      "sha256": "e233b5ff3c069dee7f614d4a36eab37563babc385d82650f250fb4835b49c623",
+      "git_blob": "7e919fcacce53e06970aa6b8f5a9b1a701ca6e6e"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/ISOLATED_EXTRACTION_RECOVERY_REVIEW_V2.md",
+      "bytes": 9589,
+      "sha256": "dc3494d041838c4df3292570d7300f173e6e58fc189079135c5bddafee646868",
+      "git_blob": "6f3a35cd19e0fc35e3cacb863a2ca3e02de2c424"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/ISOLATED_EXTRACTION_RECOVERY_V2.md",
+      "bytes": 5424,
+      "sha256": "b25f4b528655c686cb63879a390959406e5e512343e7afa0fe59a565ec26254b",
+      "git_blob": "1f4557642ef309dbef2ef2275ae61823665c26a7"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/ISOLATED_EXTRACTION_RECOVERY_V2_RESULTS.md",
+      "bytes": 5246,
+      "sha256": "00dd224435901eb62d63c6f2ff23c9f7a465b973b5772176eb2079e079ad361a",
+      "git_blob": "6b55d94d4acdecab18d4188d37310831b1ff28fb"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/ISOLATED_EXTRACTION_RECOVERY_V2_TERMINAL_REVIEW.md",
+      "bytes": 8475,
+      "sha256": "2adf26a64244d0340e0363d79eeecb983647af7b34464b659149f32fe58d65ae",
+      "git_blob": "46e14faec6ade431739fe01f0f15532f0cbc58d9"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_AUDIT_CODE_REVIEW_V1.md",
+      "bytes": 7267,
+      "sha256": "4a7de488a8a8cee80e9ff533be0f276dedc6e42e40ebddabfb0b46857a4e987c",
+      "git_blob": "c7022ead4318ab2f09e329be8b5b142e4351e11a"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_CODE_REVIEW_V1.md",
+      "bytes": 12373,
+      "sha256": "88bd2b9d1dab2d4d97d80a280336e49f7b1c36a54f6720514e84138b85cfd77c",
+      "git_blob": "1d4c999b4d19f55d2fbd212977f0a3621371ded2"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_INPUT_DIAGNOSTICS_REVIEW_V1.md",
+      "bytes": 9747,
+      "sha256": "2720711d7b04f7d47162e470d97c47b2c920b2f9608e9e6bfec0dc379e1ebd4a",
+      "git_blob": "1760b7ae7491566bedde382defd8615440b814b1"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_INPUT_V2_EXECUTION.md",
+      "bytes": 3122,
+      "sha256": "5bfc1cf13def8366819a61fc3d6a633a6792e4cfa8d144a57c3c4f1c1ad2953b",
+      "git_blob": "266407e195aeb0a1483ec8e0fb5e04d041c83b2d"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_INPUT_V2_PREPARATION.md",
+      "bytes": 10424,
+      "sha256": "67ef8c605ca577507fddb4b46438cbc4b8e6108db2a993215b9665b4aab2e33e",
+      "git_blob": "9d287fb8fdd7e68fa54f176fae0c0fb10f181c71"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_INPUT_V2_RESULTS.md",
+      "bytes": 10418,
+      "sha256": "53ae13e7a060a211dede21ce72d8e75372a588eff653cb1b077909ca64188305",
+      "git_blob": "7c1e8d2933779083b49b95a65d9619e4869965c7"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_INPUT_V2_REVIEW_V1.md",
+      "bytes": 5059,
+      "sha256": "c7b217b84898ba305853278418f6d13786c42e50228df310271e33132321d99d",
+      "git_blob": "1d23f227dc8e47498bc31c780a6e21a167dc8c77"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_INPUT_V2_TERMINAL_REVIEW_V1.md",
+      "bytes": 18227,
+      "sha256": "85ba4fdc23b59ff8a61caed38fdc5c5c0ee73d3a8a1684c6c44c8c9c18655113",
+      "git_blob": "55449c7258a4814842b393bbbef086520dbf7f2c"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_PREPARATION.md",
+      "bytes": 8091,
+      "sha256": "78e0515c2a9968b42c9dc63beac7b46ec9d3ecc8ff58ad9f7684f7fae0fac952",
+      "git_blob": "7f58fe6e4f334c447a67cd86d7aea321f2d548b4"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_RESULTS.md",
+      "bytes": 8543,
+      "sha256": "7829e615a9f685ab4c9fbdb5576ddc5752b47239fc181c25c50c11b3ee3fe664",
+      "git_blob": "d58dbd6ca18d8cca67aeb4d3db9b265b5aa93067"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_RESULTS_REVIEW_V1.md",
+      "bytes": 11026,
+      "sha256": "3df1fb8d9a7658b7173411026bc7be127b6f715eed522c8ae981e9ac2c3e1b54",
+      "git_blob": "60d9e25e47a9ac4b008db69355d9fa7038a3b36b"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_SEMANTIC_CODE_REVIEW_V1.md",
+      "bytes": 5053,
+      "sha256": "da82cf66d6e138dda4d5108743e3c0701d257cdd1d7f37d3351bf441758695b5",
+      "git_blob": "9950b978a4f36850932c1633929d23dce2a41cec"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_C_SOURCE_REVIEW_PROTOCOL.md",
+      "bytes": 4832,
+      "sha256": "015ec8e8b54a9ff9e4cdad435c000cd954eb7e95fdad8407a1c46a15e8676131",
+      "git_blob": "ec50190f2096cb0c47c743e6097ac5b60f1f1f6e"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_ENTRY_REVIEW_V1.md",
+      "bytes": 4063,
+      "sha256": "07018aae95ac5d8c91ec23660476cefdd3ecc739c6043bfb8423647f72d4c857",
+      "git_blob": "8e7784f5fb8a41d206897ea54c5fef49bd8a4e71"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_EXECUTION_V1.md",
+      "bytes": 3946,
+      "sha256": "610ab50772e33bfb00c8c6063fd7b8fa1ec7f0284e6e824dada006375f2db44c",
+      "git_blob": "40a2681de79d84a42ade4c8285fe0503751bfb1e"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_FINAL_CONFIGURATION_V1.md",
+      "bytes": 4479,
+      "sha256": "cc25edcc475cad61a64d52ef802f4438ba6927deaf64bef1b93a97d111085c52",
+      "git_blob": "04b65d466d2b16a957d52509f0b35e05c3eb48a0"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_FINAL_LOCK_REVIEW_V1.md",
+      "bytes": 2737,
+      "sha256": "e4cb4451f18ad323756576d8d9e0724420b42ee112d6c3c5326755eb6a263f05",
+      "git_blob": "35b93fa7f5e2acb090c435e3cf49beab9e5be50b"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_GATE.md",
+      "bytes": 3652,
+      "sha256": "2ce0b6ced09eacf049262c8725b6511c514bd68896909f31f8f9d87c8a87b9cf",
+      "git_blob": "48b6df87a5f8420ebbd5e2c9d680efdcdf6dc959"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_NUMERIC_REVIEW_V1.md",
+      "bytes": 10444,
+      "sha256": "a38e59bba71e742c7f87b4ea3b01f5ca2765086cee9fa0081af80f5b26c578ac",
+      "git_blob": "1d59ebba0adc829d720c9c544a8757f241f17843"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_POSTPROCESSING_REVIEW_V1.md",
+      "bytes": 11082,
+      "sha256": "368d6deca4f2354c4957f5c4b1626a576640bd6d3da23662274f88920c48aa6d",
+      "git_blob": "8e92425d097a595c4aa2a504faf9d837e7ec39bc"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_PREPARATION_REVIEW_V1.md",
+      "bytes": 4927,
+      "sha256": "0c292030bd8d120600b2b77142330d5055e560b62c2e529ead47d7e7de23e02c",
+      "git_blob": "ce60adc9a5c8126566148af42cf71182ea47a931"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_PREPARATION_V1.md",
+      "bytes": 3681,
+      "sha256": "d7ab6a540e2b689719d1ecd791e971bc77fbdc23c2a86437360919d219df1075",
+      "git_blob": "70a25dcd2a5df486e8cc639b4507c1139d0a3711"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_REPORTING_REVIEW_V1.md",
+      "bytes": 6669,
+      "sha256": "a8959aab7b28ec33689338f52b609e7e697f5b1b9e75c4e79d90fe6216fb81ba",
+      "git_blob": "3d0bda9a10efb4ce10abb03869d7cd5d5ad199e8"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_REPORTING_REVIEW_V2.md",
+      "bytes": 4292,
+      "sha256": "3a972720fbf2f91928c2e026c31ead8ea131790ff1dd01d563f21d1df5e4da63",
+      "git_blob": "13bad610ec3ad802091c494c4eac8a78ca877e42"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_REPORTING_V1.md",
+      "bytes": 4581,
+      "sha256": "d76c13eb15cc5098642ab91b74bdcbc492e73530709ea77379c6d0d7ba39f6e3",
+      "git_blob": "fd5010a68bf1c7906848cd49f80c49fa038c40a2"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/LEVEL_E_RESULTS_V1.md",
+      "bytes": 14485,
+      "sha256": "62b13b4f23b0e9446d09236ae985076406e4f2d23112b7e6b5b31e58b08775bb",
+      "git_blob": "5f065d33971dd05f9fc2061342d0fa805cf6be4e"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/M5_CANDIDATE_DECISION.md",
+      "bytes": 5008,
+      "sha256": "bc393a02ff6338810b40d663db78c6779bbb2f7d8bf85b1aba89e53171b8ee9f",
+      "git_blob": "4627e42f5a807f7452ad23887cdc8b328f07a4e3"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/MODEL_REQUIREMENTS.md",
+      "bytes": 1991,
+      "sha256": "f82e50bd93e6c23130b762d67ece5b7cca082888f58f29a07fda68aa7da0d281",
+      "git_blob": "e4e157e4269bd6784e26c08c8b396a7e09c73d8d"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/RELATION_AUDIT_REVIEW_V1.md",
+      "bytes": 8366,
+      "sha256": "169355bc50892463df0e9aad65a6ab06f26021bf219d73f014b2115ab75fab04",
+      "git_blob": "69ed8346f639c193bc7461855bc8f90069769345"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/RELATION_STAGE_REVIEW_V1.md",
+      "bytes": 7517,
+      "sha256": "48e1506753a1f1d5bf8acffd6f8c7fc70a1cd5887e9d593a8673a0b00bffdefb",
+      "git_blob": "69797378392e0ea65f96ee9653b65aca896004fe"
+    },
+    {
+      "status": "A",
+      "path": "docs/m5-development/RELATION_TERMINAL_REVIEW_V1.md",
+      "bytes": 6178,
+      "sha256": "8bbb557e240041f1ddeecf964b7299cd7a13f4ff231e4931a10ce9ecb44e417b",
+      "git_blob": "b360c26332eb42a094af453bbf42bb9d61105b15"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/.gitignore",
+      "bytes": 277,
+      "sha256": "7d18859099f8c21577e4fa6fe251e9cfff2acbe895b6b3fe95ed00c160dbc802",
+      "git_blob": "66de50835731eb0c1ff51a8b70a9c2ca8086c625"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/build-repair-manifest-v1.json",
+      "bytes": 4319,
+      "sha256": "749a863bdb5a2b62337ec735f252ae3a7b281b8f27af64d73249f2191d3a0e79",
+      "git_blob": "4504877ad29a391d7134bad9afa082a981021571"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/build-repair-verification-v1.json",
+      "bytes": 1606,
+      "sha256": "74c86a560c68b92db424287da14ba713508ee63f7ad809291a4e07cab0d614ea",
+      "git_blob": "208dd4636e888c6c469a8b98e88b03c03927c039"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/candidate-integrity-after-review-v1.json",
+      "bytes": 524,
+      "sha256": "765c94f1d2a2a93351ed12bacea24ae0828d25239bc1875958fa8b8d81ee09e8",
+      "git_blob": "d6776d11247431ae8f803e063ace11e349257a01"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/changed-files.txt",
+      "bytes": 14907,
+      "sha256": "d69a929834c670bde7afd1c0992746aaba52f03b2d2bac80d55088882dc15e1b",
+      "git_blob": "871484a2081681a11820180a8e43ff4e4c46bc6e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/code-review-status.json",
+      "bytes": 1271,
+      "sha256": "389ab04aeb55ce12d2ac7baf40395d14404d1ae9ba771e4cfe0e1fbb50635159",
+      "git_blob": "bfa25565150d7c80e21588a7d64fec6292991b8e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/commit-history.txt",
+      "bytes": 2678,
+      "sha256": "9ce98722f12e07df300addefa2f47aca2c10d348e16bc929f935128de964dc0c",
+      "git_blob": "61f8ffc66d8f900d7b36a5e40aae1fbb2160d97a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv43-relation-authorization-v1.json",
+      "bytes": 1426,
+      "sha256": "8cabac9b1af193506a8fa35ecdbc96c3dd088014eb45fdcab1a234c671b7da26",
+      "git_blob": "84af1fb6342ade93c56650907aa26583238e93c6"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv43-relation-prepared-v1.json",
+      "bytes": 1180,
+      "sha256": "61602225bf86be2c90c0b654e0c61dde40a603d50f26042049b6369cabf7a3db",
+      "git_blob": "68f8389ba57e6651792530e441ec431c333e4872"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv43-relations-raw-archive-v1.json",
+      "bytes": 1990,
+      "sha256": "1fceef0eb7688d5607866e7d697f50378d2ec1cd98176eca669f16e5df434210",
+      "git_blob": "7bca9406fe0d5f186bd35051f059b03f82aa9826"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv43-relations-raw-archive-v2.json",
+      "bytes": 2104,
+      "sha256": "75a0c44b426d909e6b022c33f27e872db6a5f509605f80da62ab7c3b71284c74",
+      "git_blob": "ad8bab3a2de58bac0de25e7ddc83622c3de69e90"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv43-relations-terminal-v1.json",
+      "bytes": 1961,
+      "sha256": "93ba6dd8a92e2f95985d3eb2aa00928e0e9ed507314f2458c1e56970e86ce793",
+      "git_blob": "915556cc87e2ed85eb4ff0489dc5e67046d1c475"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-cached-embedding-preflight-v1.json",
+      "bytes": 484,
+      "sha256": "fa3b41815b29ca56d702e1ad93b2d14bd0b56b1cee4099e5b765b013986903c8",
+      "git_blob": "1eb120868e7e6313dccba5a8ca20efae562c52a1"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-embedding-input-preflight-v1.json",
+      "bytes": 608,
+      "sha256": "d254f7ecb550cf1b202e2a75d3ee4758a8b50481e6f52a0a2e03d8f9b3fe5af9",
+      "git_blob": "e942361cddc1518b0c8914638b76e887c02937ab"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-isolated-recovery-v2-archive-v1.json",
+      "bytes": 1777,
+      "sha256": "dba40d9d6a1d0a5f146107c34248704dfc1e4a9bc53d98b882c15f4a560156fe",
+      "git_blob": "f0f1d9b8f6ecd3fbaee9577b700eb1b31b045ce1"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-isolated-recovery-v2-authorization-gate.json",
+      "bytes": 348,
+      "sha256": "001e076e2ccccdaf11d15d85dffd972a19559ba3e40874c5d75708bd46ccceb3",
+      "git_blob": "d6a50106bf3ac1ed8a749636c5488e6f3b37f771"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-isolated-recovery-v2-authorization-v1.json",
+      "bytes": 1198,
+      "sha256": "c03595cde51c72ca2d43bc826bc3c4765b4c63bd36c50276b1d28f0a1ab6f551",
+      "git_blob": "35ceb0c3754911a5f24c869e52ca5c53cec1314d"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-isolated-recovery-v2-prepared.json",
+      "bytes": 10615,
+      "sha256": "445674bd03add8cdc1ba6d3a074c2f11fdfcf67a1d24ae88416efc4e4ca09e51",
+      "git_blob": "7310260ae46aefb7c67e62d8e047033665c06dfa"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-isolated-recovery-v2-pricing.json",
+      "bytes": 581,
+      "sha256": "ae1cb4884b36d241d8fc04704c0a7785a4eb78212770fb9b5846ab2d6f3a5d0e",
+      "git_blob": "16d2eddbbd1585394a2b1628c4fef967c0604522"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-isolated-recovery-v2-terminal-manifest-v1.json",
+      "bytes": 5326,
+      "sha256": "45c8d086ec4c7632e6bbe80ac5bc6263bb7b1791cfa176e08870983625a61329",
+      "git_blob": "c5d9c771383d50ba446327a44e5779f4454f4791"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-isolated-recovery-v2-terminal-v1.json",
+      "bytes": 4129,
+      "sha256": "18e8b9d61a7b14e6904b282f4e8fb4025182065187aab2fee7e9f7714d2d9e80",
+      "git_blob": "0523c35076895e02f3ce3d0466b0aa3992bd193f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-recovery-current-status-review-v1.json",
+      "bytes": 2635,
+      "sha256": "19b0a7e595ae26c1106e5cdd31ea63530def637a3457c16390461fd94fcf7d77",
+      "git_blob": "0bd20d762773b82e417af8f4f9ad27d620183ab2"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-recovery-authorization-v1.json",
+      "bytes": 703,
+      "sha256": "a18a435aa8c86417313708bb6670d1abd93239bb71a03980edd81656c584373b",
+      "git_blob": "06076cc974191ae54972be4be7566d4d30982b97"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-recovery-execution-pricing-v1.json",
+      "bytes": 645,
+      "sha256": "5eafca759758e65514e1db83791271cea9710047e399fd0acd17474907505f75",
+      "git_blob": "583eae9daaf82bf82206344a671d2183c262ea1b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-recovery-independent-preparation-v1.json",
+      "bytes": 3384,
+      "sha256": "18a366ad8eabc029f1a4fc633cab13dd5ce92bc5765074d4f9e9be7f399ab10f",
+      "git_blob": "6f41f444f7fbe9912e32124d8d37657ab269f80e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-recovery-independent-terminal-v1.json",
+      "bytes": 4541,
+      "sha256": "8a2daa79aa81551577a1039f323843fa1bd5d1886dc086300ca5b962dc82a6ea",
+      "git_blob": "6fcccd0ff9c25294de3ab7cbb71280043ff28552"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-recovery-preparation-v1.json",
+      "bytes": 1795,
+      "sha256": "74492b8478f9a8c0ff563fafd7df21948ee0a65505432154d0a794fb7a863db0",
+      "git_blob": "41b36fe912f338e68e4cc31503a233be1f15aea0"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-recovery-prepared-manifest-v1.json",
+      "bytes": 3032,
+      "sha256": "24b798aac5c7b28312f54bae6c7c383a99c0695935dfaa2bdaf5621254f4f795",
+      "git_blob": "0b78398eba4ec0a4df012412a59b94ff746b998e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-recovery-pricing-v1.json",
+      "bytes": 942,
+      "sha256": "5195b9125786e61f9af29fafd87d77e751b70d2f2f32d9baa58b751e1d441620",
+      "git_blob": "0a050c0350a33232c28d1e54a09ec5c4eb7c4db4"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-recovery-terminal-archive-v1.json",
+      "bytes": 3110,
+      "sha256": "f65c4de088606fc82c0af347d5ef9114fe6f66532d7289498261c49ffc233d39",
+      "git_blob": "d568f090d9088328ed129c7acb71730dec045d57"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-recovery-terminal-v1.json",
+      "bytes": 2919,
+      "sha256": "c6d816a97c3f4a44743f977f9a5f2ad4223eccb72b624c5accb9994b7fcba8be",
+      "git_blob": "2ca8e6fc80b7d8c39b3af2b411e61064929a4ff6"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-recovery-verification-v1.json",
+      "bytes": 933,
+      "sha256": "4bf7c755949fcebcb2f8040213cafd447e4da479f0d4c7473b1033de38f61b77",
+      "git_blob": "0c92d6cf4da28370549a0aead19a0ce121e80b95"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-successor-authorization-v1.json",
+      "bytes": 1486,
+      "sha256": "28b274216855fcbb58bc9a19b1c5a9252b1c669973d94272eb2ca18658cfcfc1",
+      "git_blob": "03c8a50cd5537fc28cb9c98147e8892c6e93c4a5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-successor-execution-pricing-v1.json",
+      "bytes": 805,
+      "sha256": "fbe370996bfd30e1eeca8398d533f56fab4f51fcb59b5241957ec33d29d42abd",
+      "git_blob": "277449d42815eda9edb5aff8545947f0c3159e15"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-successor-independent-preparation-v1.json",
+      "bytes": 3891,
+      "sha256": "32565c063892a0392fecd293cfc9a96e30b7f199cf8d473ea9ad985bbc39583b",
+      "git_blob": "5f7fd0206d76a58e3827421c4d40bdee2ab0b9c7"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-successor-independent-terminal-v1.json",
+      "bytes": 5137,
+      "sha256": "7b805b55d80548c539d6d263067ed32ba6abea5b1ee3cff303df88ce7b3e2c87",
+      "git_blob": "d8fcb447a97d77bef8f1d1b93bdccb3a63dd89d7"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-successor-preparation-pricing-v1.json",
+      "bytes": 813,
+      "sha256": "565879db97ce2c0c270411ec2e0393326aa786c6b5eb1759ca28df95228422f4",
+      "git_blob": "242e5180dae40e2dc5128210274d00e5d6789686"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-successor-preparation-v1.json",
+      "bytes": 1793,
+      "sha256": "21292e1b72e27dcd0cb5c4c3c461d9c90c6c8bd99f8ba0cceab2c41cb215e1c6",
+      "git_blob": "d808dd347a2a474cdd0af0712c992fbb80394843"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-successor-prepared-manifest-v1.json",
+      "bytes": 2949,
+      "sha256": "abe3bb346d04af8878af73eeb0786ee1c7b02944a4906cc6974c05edc703e1b1",
+      "git_blob": "abb46f7a1e9613dff50c6f69d292ac16e5ce535d"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-successor-terminal-archive-v1.json",
+      "bytes": 3107,
+      "sha256": "befe8b2e7c9a9e1e3b7e0c2d5a32599a3a1a923717fbb0a1b7377f2535ede906",
+      "git_blob": "73035388202339f26ddb71e18a32c377a89a84cb"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-successor-terminal-v1.json",
+      "bytes": 2901,
+      "sha256": "24e09a0f75418be112a23d042c13cbfd1e42fed2338db1bb67a08951e78f030f",
+      "git_blob": "7ec8ca43c8df0648d92a851b83434db830713a37"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relation-successor-verification-v1.json",
+      "bytes": 1508,
+      "sha256": "48c6ce406454f1f1dbf1889213eac2b3ffd92abfefa9a307490b4fd30f834bf6",
+      "git_blob": "256bfdd9cf2b514452a69a5793ce2324a3a1bc82"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-authorization-v1.json",
+      "bytes": 519,
+      "sha256": "5cfcf00adb3a2ea8530773d5dde7700b6f26f1d5e6c45223561d93f794c2fd16",
+      "git_blob": "be207500cfaf803d94bb5f04cb4b5e988ec55179"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-independent-preparation-v1.json",
+      "bytes": 5090,
+      "sha256": "f2e283765f3f0d2faeac295dc56d201b86dc4919b06cffbf00889d9b5283d334",
+      "git_blob": "fcae101fe26e9d06a18373e677a6444d0c29702b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-independent-terminal-v1.json",
+      "bytes": 3840,
+      "sha256": "86a648f7c4b61990ecee86ce6cad66c547d178c74edee243159bfffb60ad4fa6",
+      "git_blob": "58771a4ae873ef6bfcf17764966d8793f38d9df5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-preparation-manifest-v1.json",
+      "bytes": 15046,
+      "sha256": "41df4927ee3142dbd201236404573cb566b7ebe1c223d2c7ab38298b236f4830",
+      "git_blob": "f7f0a09f90cda90fb4ebbffb38e6d5cbb9957648"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-preparation-v1.json",
+      "bytes": 2798,
+      "sha256": "85c80727f1a5be991912f55b811e640e3df565d0fbecd85d7f15c562f86a3fff",
+      "git_blob": "68ca6ade33a800b84068e33f2bc5c7e7d06b3c1e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-pricing-v1.json",
+      "bytes": 620,
+      "sha256": "55cad8eaab9969a0dd65de73d7eb9f9ae28251ecbddc6a35aabbe09e569c39b4",
+      "git_blob": "27ac99927874ad3b2afa1fc28fa884b7bfdccaae"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-readonly-preflight-v1.json",
+      "bytes": 858,
+      "sha256": "4ebde8dce6023c51e812fdca3e0cbb979f9941fa388cf3712deb1b61eb6ef433",
+      "git_blob": "1d88d06434f3a5cdffa499ca28b9ec3a8f8359f5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-terminal-archive-v1.json",
+      "bytes": 2756,
+      "sha256": "4db6d49c2b2f6a0e15cf40cc05b054beee04665a474b3b17557981f3b78a6e44",
+      "git_blob": "94ebcc589a337c6ac043519e02f041430596202e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-terminal-v1.json",
+      "bytes": 2982,
+      "sha256": "ece3ef725c0bd56679809280fd9c764ed64d14197a0898cc16e5d151893ee79d",
+      "git_blob": "77f38e65e328a5ce662da756467fd14c12852e59"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-verification-v1.json",
+      "bytes": 1193,
+      "sha256": "797a5c6462635a1e8b0050bf6921467b24c310e616d6d7b943721ade0daad004",
+      "git_blob": "78b6747cc9f7d248097d36f7e9887948e5f72db1"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-relations-verification-v2.json",
+      "bytes": 1598,
+      "sha256": "5655d719e365ffc7ea297de6c19211bd99b5e3e1d92935d765968df815832adf",
+      "git_blob": "25a5c42d2fd5476e65c8a42d95f5c5c8b1b78a6e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-sixth-export-successor-independent-v1.json",
+      "bytes": 8734,
+      "sha256": "d5e7a3a723bba6816b5b8b967e8e826403fc2f35b84d03601bf1e6f58c18eefc",
+      "git_blob": "d724090352618a950da3e227a3c38d90e628229d"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-sixth-export-successor-v1.json",
+      "bytes": 901,
+      "sha256": "54a7d6fb31a8bb0d2ab7b832f13eea784f3c6610c5ae57443d5fe73b5fceaade",
+      "git_blob": "4a531f62acc25f57161d806716ced720060bdc98"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-sixth-export-verification-v1.json",
+      "bytes": 1337,
+      "sha256": "91bdd7868f1f8aaa9c8702c783dc203cb123b25436282727c80521ad4d57fc14",
+      "git_blob": "55a34f8c974e9eb9d20fbab6ecf510786098f559"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-successor-v3-archive-v1.json",
+      "bytes": 1671,
+      "sha256": "a6f0ff9d07f33be60f4d9ac83438fdf145c792ebfffd4410a506787a51603115",
+      "git_blob": "00e27be3e20dbd07d4c414f7f4a2e5b05c662c4a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-successor-v3-authorization-v1.json",
+      "bytes": 1139,
+      "sha256": "39dc013fcb4c0bf981260942575c764dd9020db2a5add5a96883340365b3d24e",
+      "git_blob": "010c376b0b0057beb3cb966a77db9e9e921c1837"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-successor-v3-independent-check.json",
+      "bytes": 3382,
+      "sha256": "a60ea7417070418455e458ac39e6b3b8e9fa74f4e3239161679ffb29bae7dce1",
+      "git_blob": "a9293de3c636e08480d65b128676972879975805"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-successor-v3-independent-terminal-v1.json",
+      "bytes": 4030,
+      "sha256": "03ae0702fbec79fff228b3cbb2ec6ab7a655933077ff2baa7c417aea7504181e",
+      "git_blob": "2c0034763c7509bfe552919f5d19942b7695e702"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-successor-v3-preparation-v1.json",
+      "bytes": 2560,
+      "sha256": "1ddb8ba2fc81bb3824731614a6106c77c374edf1080d9400e5565769243e001c",
+      "git_blob": "7d314b33589e4506c40d730d50f11736690a8f2f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-successor-v3-pricing-v1.json",
+      "bytes": 553,
+      "sha256": "753b20d8aa5bcf9d6be07039b9acb88b952a4cc639ad4efeb34ae7a294488b66",
+      "git_blob": "a243cd61087ae54db1d242f5cf05eee6a76d2864"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-successor-v3-terminal-manifest-v1.json",
+      "bytes": 2828,
+      "sha256": "3701b5070cbf7b49c93272e32fb8f901f57364b47793b339a93b7f0c58804d44",
+      "git_blob": "f0a8c213e55b4fe4263c7c223843b7d06bd83fa1"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/conv44-successor-v3-terminal-v1.json",
+      "bytes": 3413,
+      "sha256": "10ed0eefa87bfc18db000218c4d889feb0855c133ff3fa089111c41fd297df32",
+      "git_blob": "98060b34611edda68041dde58ef21114c48a74df"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/cost-ledger-including-conv44-relation-recovery-terminal-v1.json",
+      "bytes": 894,
+      "sha256": "b21010b2f766d23f8240f3265183c70b17563e89a3570bf2261d728cf7b76f4d",
+      "git_blob": "a8b7d862f7dda9985ce7add8f2c01adc9805753e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/cost-ledger-including-conv44-relation-successor-terminal-v1.json",
+      "bytes": 893,
+      "sha256": "713688cd9eb1950d2cbad3c9870cfd6b374b07b9597e65905b936c351791948a",
+      "git_blob": "ee5d1531cca25d2b29ff75da89915e1d960a7bec"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/cost-ledger-including-conv44-relations-terminal-v1.json",
+      "bytes": 880,
+      "sha256": "f725bc6a9f74d7fa8d84de94fffa88a4fb5e62021876702f1f402e490ae982f9",
+      "git_blob": "6532ccb0f4fb43557632b2cf6b09eb9feb3c5dbe"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/cost-ledger-including-input-v2-terminal-v1.json",
+      "bytes": 1874,
+      "sha256": "225310c36fdbb5d0c3a160ad2458af3e07362e816028a4b39920beff463763ee",
+      "git_blob": "212941713b585ec96532189868b53e675aeba29e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/cost-ledger-terminal-v1.json",
+      "bytes": 6571,
+      "sha256": "667de1e2d51c2b8ef6a9e6b7a08ec7c3f850c65bb123beedaf0b61cb7637b91c",
+      "git_blob": "3b6fed5e192f3c8fdeeec98a4fe1b22ed397ae24"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/cost-ledger.json",
+      "bytes": 5086,
+      "sha256": "98aa5da175ed4102014bc0b268fa6bc905efd1a1e858cee5d3b8a33945d4df99",
+      "git_blob": "58c5c5d6633077ac15b90d27dc2a95bcc4666a6a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/course-case-inventory.json",
+      "bytes": 79952,
+      "sha256": "1aaad924a90a5b53072af4ab2b513143b865784ea1627442f9e05373df586767",
+      "git_blob": "405ccfa47642111f07d571329ebd058bd5317d04"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/date-priority-mutation.json",
+      "bytes": 270,
+      "sha256": "b7f08ce44615fe9b117776db7a6d37004902407c751b8167c69a34a2a444cccc",
+      "git_blob": "16a3ab7ff1b8e0abac30fbfe479709dcdf9f3f77"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-final-v2/browser-diagnostics.json",
+      "bytes": 69,
+      "sha256": "e860dadd9fe3b236754d740518f176edb42b2828c9d655ee4b8cfa90ad52fc71",
+      "git_blob": "a156d5cb9895714ecdab2d52bac56aafd0c36181"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-final-v2/browser-result.json",
+      "bytes": 438,
+      "sha256": "fdc90e16ee237e3e88b6fa3a70e07acfe2375f384f64e91b30cfe9590a1ffc6a",
+      "git_blob": "2bf941232ee64c36f5ad95d403f2c105bd44f9d5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-final-v2/failure-and-change-cases.json",
+      "bytes": 14148,
+      "sha256": "1c67e9961ee660ac47a070eed6c157cb7498b6bd1a8c796ba719703cf9c22d42",
+      "git_blob": "6928aa811a4b9d2c3d5e4386bcf5a9b696b6134f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-final-v2/graph-path-summary.json",
+      "bytes": 160,
+      "sha256": "f9b5276238a707191b27d54fc15e447f012a4d450ed8558600ae5bacd357c86b",
+      "git_blob": "7830dd3adefd2692b8fef91fa2bd1fde545735cd"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-final-v2/hybrid-packet-parity.json",
+      "bytes": 167965,
+      "sha256": "0b823d115a095ddf9e57d5e21f7ca3a79a549ba710b2162a78f5dd778cf0946b",
+      "git_blob": "9beca916d056888f3b6e3146fbde9b9496db3b49"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-final-v2/m5-graph-timeline.png",
+      "bytes": 115779,
+      "sha256": "740a2ade6fb8b8a94e232e7fcabe9c3c0e1a6603589ec22504c2bbd106a5b6f2",
+      "git_blob": "dd99dee21a6773f1a755d71588911e940af866fa"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-final-v2/per-question-metrics.json",
+      "bytes": 2038368,
+      "sha256": "2a432cefd98b3b45c94700cbdb1c3870d134b2f045e811938e5db21020771b68",
+      "git_blob": "9a6c2da668266b0d8903c89c1aa6f1ed57b01284"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-final-v2/raw-results-archive-manifest.json",
+      "bytes": 531,
+      "sha256": "27fe897bee43a1e39e93cf9fa8a831a07024a4f66368c1cc34f4b144d39098ca",
+      "git_blob": "dbe94915e54e411b34b1d03a39bf2e3f0703ca4e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-final-v2/sha256-manifest.json",
+      "bytes": 1008,
+      "sha256": "30a75c281fc62435aa95b4fdca4f4cc6026ab6126c966e77fedadc33e073b75e",
+      "git_blob": "e3a6945b9474a6db5b7bec011dc5bf432beed042"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-v1/browser-diagnostics.json",
+      "bytes": 69,
+      "sha256": "e860dadd9fe3b236754d740518f176edb42b2828c9d655ee4b8cfa90ad52fc71",
+      "git_blob": "a156d5cb9895714ecdab2d52bac56aafd0c36181"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-v1/browser-result.json",
+      "bytes": 438,
+      "sha256": "fdc90e16ee237e3e88b6fa3a70e07acfe2375f384f64e91b30cfe9590a1ffc6a",
+      "git_blob": "2bf941232ee64c36f5ad95d403f2c105bd44f9d5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-v1/failure-and-change-cases.json",
+      "bytes": 14148,
+      "sha256": "1c67e9961ee660ac47a070eed6c157cb7498b6bd1a8c796ba719703cf9c22d42",
+      "git_blob": "6928aa811a4b9d2c3d5e4386bcf5a9b696b6134f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-v1/graph-path-summary.json",
+      "bytes": 160,
+      "sha256": "f9b5276238a707191b27d54fc15e447f012a4d450ed8558600ae5bacd357c86b",
+      "git_blob": "7830dd3adefd2692b8fef91fa2bd1fde545735cd"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-v1/hybrid-packet-parity.json",
+      "bytes": 167965,
+      "sha256": "0b823d115a095ddf9e57d5e21f7ca3a79a549ba710b2162a78f5dd778cf0946b",
+      "git_blob": "9beca916d056888f3b6e3146fbde9b9496db3b49"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-v1/m5-graph-timeline.png",
+      "bytes": 115779,
+      "sha256": "740a2ade6fb8b8a94e232e7fcabe9c3c0e1a6603589ec22504c2bbd106a5b6f2",
+      "git_blob": "dd99dee21a6773f1a755d71588911e940af866fa"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-v1/per-question-metrics.json",
+      "bytes": 2038289,
+      "sha256": "6568b1acd013a3651f8fbcfc52cd399c19a5ad7c8ce6580bbea4e28e0cc47582",
+      "git_blob": "31135ef1086e9e3d0ebb3c955a1d1be46661556c"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-v1/raw-results-archive-manifest.json",
+      "bytes": 525,
+      "sha256": "fcf36c8a172e4851f9d5a7f69e91c886d6560cbde90c7618f0891408f76b8797",
+      "git_blob": "d1135e1df5c793a5ed207fc7f3d3d973aee96897"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-analysis-v1/sha256-manifest.json",
+      "bytes": 1002,
+      "sha256": "77cb9f87800016ed5482083f56bc00c398e774bb586d4465bc1f250586fe58f8",
+      "git_blob": "ed17561dd4ad4e94485dcb64cabc80ea0f91bcd6"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-final-v2/metrics-summary.json",
+      "bytes": 23511,
+      "sha256": "94334b4feea8ba397737ec8e511b52c4550521fb45e0cdf1a139e26ad029bb01",
+      "git_blob": "25de4bf1dc03309e7fc13a4557b1fb8fc306c0a5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-final-v2/protocol.json",
+      "bytes": 2575,
+      "sha256": "ea7a53e207f4b876dab39f097b9fe8d2e254fdacae5d9849e02d1b3b43be59a7",
+      "git_blob": "15cd0bce963e5f17c885e6444b966276c43ad485"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-final-v2/run-manifest.json",
+      "bytes": 1475,
+      "sha256": "28ed880ed36792860d039b028e25a7ef79c9742ef49f6c469d36c0fb7b83311b",
+      "git_blob": "586775a2f1a7ee37068a3ab1f5f2fcf37d565f04"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-final-v2/sha256-manifest.json",
+      "bytes": 374,
+      "sha256": "50d3763a57681bd6b64817b4f6769314a4e2834b097c5debf0ac8b4865a40148",
+      "git_blob": "5dd69aba6f9cd381fa7fb5e981ebabaed751dcd5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-v1/metrics-summary.json",
+      "bytes": 23512,
+      "sha256": "b6749da4df6a91b3ba705bce69204f5d7fdfdc60404607aa2c8b02fcf78b26d8",
+      "git_blob": "44ef826568da6b71555c1f3c80741c72a0dfde38"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-v1/protocol.json",
+      "bytes": 2575,
+      "sha256": "ea7a53e207f4b876dab39f097b9fe8d2e254fdacae5d9849e02d1b3b43be59a7",
+      "git_blob": "15cd0bce963e5f17c885e6444b966276c43ad485"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-v1/run-manifest.json",
+      "bytes": 1469,
+      "sha256": "a7f7a616ce20176a61241dfd59f2366713b97ee0f50f3e35366dbd9323c22fc5",
+      "git_blob": "086e6281294a5713f30030554949cb6119353113"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/delivery-v1/sha256-manifest.json",
+      "bytes": 374,
+      "sha256": "8ea8d9de1699fe175dcebde02c3a70f9a1825a11a21a309961ce291fc1f7273a",
+      "git_blob": "14e07917300b3ca5513e37426821df95a483e3cb"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/dynamic-review-final-v2/metrics-summary.json",
+      "bytes": 3906,
+      "sha256": "7afba4b5c78c8c4c331e88ba56cb9be88712c29be43bf5695826dcb025679c9c",
+      "git_blob": "19281d584b7ea5346f5a93b873cfde7c798ad118"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/dynamic-review-final-v2/per-unit-results.json",
+      "bytes": 11699,
+      "sha256": "a0b54d56ef0cc29d0c263dc5987f0ccfac1167147334d3e878b234e94a6e73d9",
+      "git_blob": "f313b31567c9c4700870cf6e29adf4d8009ac323"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/dynamic-review-final-v2/reference-freeze.json",
+      "bytes": 422,
+      "sha256": "22c10330099e59dd8065a03291d2546337064a43e97bab4a3b4e27d36a3d57b2",
+      "git_blob": "69321e336af47429716cf703e58b8b38dfef27ca"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/dynamic-review-v1/metrics-summary.json",
+      "bytes": 3856,
+      "sha256": "21141d1d6310ebebe4a004d21aff1d236577db7801dd1c7f7d82deb7b0461a15",
+      "git_blob": "e1db0fec7f5e629d0df485ebc876ec5bd9b09ce3"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/dynamic-review-v1/per-unit-results.json",
+      "bytes": 11699,
+      "sha256": "a0b54d56ef0cc29d0c263dc5987f0ccfac1167147334d3e878b234e94a6e73d9",
+      "git_blob": "f313b31567c9c4700870cf6e29adf4d8009ac323"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/dynamic-review-v1/reference-freeze.json",
+      "bytes": 422,
+      "sha256": "22c10330099e59dd8065a03291d2546337064a43e97bab4a3b4e27d36a3d57b2",
+      "git_blob": "69321e336af47429716cf703e58b8b38dfef27ca"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/environment-lock-application.json",
+      "bytes": 2226,
+      "sha256": "6f8d75f053f82da4af85d64acd78b1ecc37cb005dacd7a47d47d70323f7f7e08",
+      "git_blob": "7e82f4f00c313be630e33dc5d241addda974468c"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/environment-lock-correction.json",
+      "bytes": 359,
+      "sha256": "430ad9993517f1fb119f94d9205630b7b89420a1c546237067d9730418849d2e",
+      "git_blob": "646460c18565e908302e3aef93255a2a2b81884c"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/environment-lock.json",
+      "bytes": 4601,
+      "sha256": "29001ec5b73f906de9da9278d6b0ae29f92e51119cffb50592a629775f89fff0",
+      "git_blob": "54ae305c3133d5c27118db70387a8c24df1532db"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/extraction-recovery-mutation.json",
+      "bytes": 321,
+      "sha256": "cb7a4ded338199ead2ce9a470d8868b1dce4352a2d74065ef3bc62b059332712",
+      "git_blob": "fe5957082cffe570ae3662f808cff6a466d4b273"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/extraction-recovery-outcome-v1.json",
+      "bytes": 1816,
+      "sha256": "19fa91e69bf8a8b9e7968119ac9ae48a729b807b65d849a96412168f8b3b63a3",
+      "git_blob": "529d0b6f9678aa5f313b761ed44537b26cfb99c0"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/extraction-recovery-prepared.json",
+      "bytes": 1503,
+      "sha256": "0fa0ad81e99cff0387101b44f6635ffb94f6639e6145727ff7161f3e5165a7b1",
+      "git_blob": "f2d7c5a1b0f3ce685af88c75ca7fd06414a3fdbd"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/failed-fragment-recovery-proposal.json",
+      "bytes": 929,
+      "sha256": "8f5a3ca894e58c7bf199fe1e2f1eeccae83aa1b08aab3253622e05c94ab60ab2",
+      "git_blob": "6c789fae08d105503157e2ce4be525fade08e7c2"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/final-model-requirement-v1.json",
+      "bytes": 548,
+      "sha256": "683e52ff3382104292e830fe39a1ad7637b9f72b638d6d9cd83905e89bd11fee",
+      "git_blob": "41058cef6dc6784d49cf23bc128cd497abc9597f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/five-build-export-v1-independent-check.json",
+      "bytes": 546,
+      "sha256": "08cc91a8c508d9e25c34ec7e7ff191a69e81f2462b267c503bb52dc1a7dd4462",
+      "git_blob": "53309b643ecb4a3c68ef7b2858c7bf33bc657e74"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/five-build-export-v1.json",
+      "bytes": 29398,
+      "sha256": "ba90a8cb4d5389fd18367da245b573d1876c101dac58ad04ce84603b9c284bd9",
+      "git_blob": "cfc94c07c15f59f04a638c95cda62378435b571e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/holdout-extraction-proposal-final.json",
+      "bytes": 1574,
+      "sha256": "8363cb625599cd2650a89ee41c2b1773ad3528444d42d26a5ebfc254d9553c69",
+      "git_blob": "db0943b85ddb9380c6b46fbdf4b8b90b2af58a3a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/holdout-extraction-proposal.json",
+      "bytes": 924,
+      "sha256": "c69939a5bbac89645c02ac7c178ff1b4edfc201330ca831d7a5c8457d6319e2c",
+      "git_blob": "8becc4e1dd2083f3a38e9e0d7b88dc823a11dcf9"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/holdout-extraction-synthetic-smoke-final.json",
+      "bytes": 408,
+      "sha256": "f9c900fe1d0034ea6ca4fd72ea06cbcc7fa1a38bd34ccf5bf2599cde4d1b59db",
+      "git_blob": "5c6d4fd591b899fa496a8ad173d458e4fb04efab"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/holdout-extraction-synthetic-smoke.json",
+      "bytes": 486,
+      "sha256": "cd497000eb6cfeed38a66ffc6db33f8669953cca3f52c79c6001b2f67a40c5e8",
+      "git_blob": "bf137e30b0f02c39eac7aa97af4eb7b30c856296"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/holdout-local-index-v3.json",
+      "bytes": 1893,
+      "sha256": "6a901359632c58eddbf6ba752369e74d20645519da56670b789d1ac465d79152",
+      "git_blob": "ecfd962857943d4295067cc30bcea41919bb4141"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/input-limit-followup-request-v1.json",
+      "bytes": 934,
+      "sha256": "9b7303ea5dc08c0f41317f7d6dd29a8907eb552e80266f5d52acc3fa1258dc0b",
+      "git_blob": "619a055ffbcac3fef77d3dcef2b4efcf8e3131b5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-authorization-v1.json",
+      "bytes": 1896,
+      "sha256": "afbc3357741b6f04f156a3c6be36706e5d293c17e44853cf5baf560981201924",
+      "git_blob": "34eac3737cc0e66a218ca99061eb051c63c13077"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-diagnostics-final-v2.json",
+      "bytes": 164975,
+      "sha256": "e129ae0caec789b640533c3a863aa20646213b45859278770c34f6f0721f14af",
+      "git_blob": "4215bd07ef6456f3070a5af2a1d6eb4bb895d586"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-diagnostics-v1.json",
+      "bytes": 161456,
+      "sha256": "24efafb219916ca320fb9e2ba451bd9f62564b93ae137fa88dfafa2472dfa2d9",
+      "git_blob": "c9b07069a37c58ca69f0c595be7501f72602cf35"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-authorization-v1.json",
+      "bytes": 1946,
+      "sha256": "44beebfc5901fdb14d2445692cb5ace5e7baa095aa81975e6ae5cb215a95b219",
+      "git_blob": "f61f8990280d9741993a5aa56a21112f4df67a0a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-prepared-v1.json",
+      "bytes": 2101,
+      "sha256": "5a00ba18ec7ee2341ffd124d71808763901fabba77f5a69e81db5be923abfb33",
+      "git_blob": "30e35e6ae663939f065ae6e15862e02e6f88ed63"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/README.md",
+      "bytes": 1522,
+      "sha256": "45ab5a8ec99035926062ee708dc77ef509d38b5ff28bd0f770344235b412a294",
+      "git_blob": "c475c55ae4ac01a25e0b518cfceffb75d13f81ef"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/archive-private.py",
+      "bytes": 6238,
+      "sha256": "74a624d19f917c949ce2d794e076aca20acb8f5c39096c3212f3c91f43e87f75",
+      "git_blob": "597a118ef0b66bad588e40623612d9d05d78d664"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/failures.json",
+      "bytes": 193,
+      "sha256": "537fd5ea748c2aabcf14e39c4fdac4da29730977daaa05c6426d20d6ac97e4de",
+      "git_blob": "27ff743fc9eb149003ed4ac19f7cc8565e1d510a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/metrics-summary.json",
+      "bytes": 50296,
+      "sha256": "0647249bfcdce2b52cc37e987164cc2cc387420650c3fb3d92e63d43137fce10",
+      "git_blob": "8c671a8715cfba2c2d2c37d9c7cee2796b54dfd5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/per-question-metrics.json",
+      "bytes": 61500,
+      "sha256": "b441df5dfd41fcca13fffbce5eea24b42a8ec79a0485175be07398cbd375660c",
+      "git_blob": "02756211f66fee4f36fd425c04df2fb15f6f704e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/private-archive-report.json",
+      "bytes": 36403,
+      "sha256": "4903b6a5a258db9df8374c75a918c98ae099b57af1e2454895a85d134ce141d4",
+      "git_blob": "273bbb1e125d3e4c87e46c43ab98bacd15d25e76"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/reproducibility-commands.md",
+      "bytes": 3487,
+      "sha256": "d7711df1eec4e4b7c2f37ba5dd8d5e5dbd064cfe5b68bb3ead4adc13dfde07cf",
+      "git_blob": "433c73e164bdac252625ffa006713de47cdb1c97"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/semantic-paired-differences.json",
+      "bytes": 22622,
+      "sha256": "1fe883214ea00bb80daf4546cbc34f91266d1475f0ae78305361d8a7875aa00e",
+      "git_blob": "c1c5dcd5f99255dc4e9ce9505149912de72c7775"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/semantic-review-provenance.json",
+      "bytes": 1301,
+      "sha256": "fc7a84e4d01ce6502f7122914dc07d9da1c70887f80a987d100955c103486e54",
+      "git_blob": "cc54bdb75f83b4fe3db7d5966e2e34d92d95e6d9"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/semantic-review-summary.json",
+      "bytes": 121693,
+      "sha256": "ad53d68fd2d63ff9108ff0f4d9cc46fa19dc9c3872e9e3fd71ded5b676984e8a",
+      "git_blob": "ce631f9280b28d7a4e582c7967cda67f8d27342b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/sha256-manifest.json",
+      "bytes": 377,
+      "sha256": "ad83589d5bec330f6fccfaaa1197fc384fff3b82fece994e4db9e47a484ef811",
+      "git_blob": "5904551856e6b55384f67cd49937e6c756805f7f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/source-manifest.json",
+      "bytes": 914,
+      "sha256": "fcc0cc0014fabf209e6c76f47b5f1dfe3f047ab95ae4c939360e0e4a40334172",
+      "git_blob": "d97a3bafd51a48aa3a6a62bf1203c6bb97105546"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-results-v1/summarize-review.py",
+      "bytes": 4173,
+      "sha256": "ed92dcf9f8d16608d733d2771cae0a061d1a87c748fbae27ea8a4f2d53c878d6",
+      "git_blob": "c32de591c32af17f870b83c679d108d301b249cd"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-run-manifest-v1.json",
+      "bytes": 11535,
+      "sha256": "e327e1e50dc3c94ed2e6c5975c7d9729584606d00ae795b40481e91a3f769ea6",
+      "git_blob": "50792ce623d3462321c5c6704dab5e45a1d2425b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-sha256-manifest-v1.json",
+      "bytes": 1058,
+      "sha256": "3d10f5843d2ae60e6f0abf28bc540394455b67d37b9090d362343fa0a582618b",
+      "git_blob": "f0717dfdf2576d6aa66c480bc3fce93c078b24ee"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-input-v2-terminal-manifest-v1.json",
+      "bytes": 18962,
+      "sha256": "6a3992f34c742283ab728cf6dd64bd8b80703d08db4885c6a60b89b9d2edc2ff",
+      "git_blob": "2f4b091207af56f4582905237cb96d19dc40d6f2"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-outcome-v1.json",
+      "bytes": 8066,
+      "sha256": "c7c057831e95ef21be6bea3a9e0cf5a790193b83fc13c683cfb9a9a664f388ba",
+      "git_blob": "757af378203dece96578ea644d33c61c6031494d"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-prepared-v1.json",
+      "bytes": 2291,
+      "sha256": "6080eaf3ab54b2550c1a7763fb2b56db237714464618bf76a89c7e0cb93bf6c7",
+      "git_blob": "f4e88cd0a83845fd37231da4aded65dd509c4ba3"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/README.md",
+      "bytes": 1089,
+      "sha256": "a232ad8208b682f1f44ba3a374f9314661ed82870dcfd503489b75006d6b0947",
+      "git_blob": "c64d225341eda24717b7b57cab6e27822e6a6614"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/complete-sha256-manifest.json",
+      "bytes": 974,
+      "sha256": "c481a3d0cec01376928fbe659ed6d4aa8d823d31c14bffe033f23bd8713963b3",
+      "git_blob": "10bf24a2d7673b7eef67a4c1cd08fd13dfb8e4c4"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/failures.json",
+      "bytes": 9897,
+      "sha256": "36e4613959700665a09f6febc730f8cf103e1cdea412ef912af200d09ccdc94d",
+      "git_blob": "daf28e5f7ae73c94273cb64dd5a1991c82324909"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/metrics-summary.json",
+      "bytes": 49937,
+      "sha256": "62ecb7708af88634043b8a5c94cc5aff4cf5dbb7d39edf40b422e6c4796442c6",
+      "git_blob": "5ad7f71450f40cb8de4482fa3e827fb83871d515"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/per-question-metrics.json",
+      "bytes": 61136,
+      "sha256": "f70425c8c3979507bccc27bf6b0683b189690820b846c24a46ef7f2629e5efa9",
+      "git_blob": "86efb5fba007b014d5390aaa8efa8470632fea74"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/raw-results-archive-manifest.json",
+      "bytes": 446,
+      "sha256": "839c4353b458c43177e35596234637ea7e6ca4e074664377b1a642a29dd2aca1",
+      "git_blob": "39e434cf96f0d1d7318e9efb907fd8795e108501"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/semantic-paired-differences.json",
+      "bytes": 59376,
+      "sha256": "9daa8e9ad6d4a086d6bf94fdce98416b39bc6a4c5e530979fa93e0c2cbac6df7",
+      "git_blob": "0f28b55e86c30396dd32465146c52d67c54aa4ae"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/semantic-review-provenance.json",
+      "bytes": 1407,
+      "sha256": "f626f894f7d787bf83dd2d7fd2da19cc7a06bcc6881bc1c6033188475e316dff",
+      "git_blob": "388e9792da5a610f7ebcf8c1eab43ff7e4488e1d"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/semantic-review-summary.json",
+      "bytes": 122440,
+      "sha256": "cb4855886bea032ee3e46aaac4b97e5a3d84359ddcb6d5149ebd067b93330476",
+      "git_blob": "424a7ef83603814601cffffa9b2d76aee09ed96f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/sha256-manifest.json",
+      "bytes": 377,
+      "sha256": "7d57cb2c40f2611c8f51bb3350d2a872465ff74cfac7192242c5f0a6ecd46ad7",
+      "git_blob": "3b316a582896e45b111e315c9fd7834200dcb7a1"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-results-v1/source-manifest.json",
+      "bytes": 914,
+      "sha256": "14d0d5f433429485c14b7cd4e687f4de2380dc03d3415af4e3aac7ce12557285",
+      "git_blob": "e2e57c2917078a840c19b80f2c40a1649386fd0d"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-c-semantic-review-tool-20261104.md",
+      "bytes": 9006,
+      "sha256": "432e5f600d0245b14ab0bb46bbb5af90cfa8b00155ff52e802dcec710aac2d83",
+      "git_blob": "65732f3628bb80da3640bd03e4cf2592814a120b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-derived-results-v1.json",
+      "bytes": 90558,
+      "sha256": "3ed5acbc1ff471de4d83129b40d17bc3a9fae24467c0c5309c7855ddf3181fad",
+      "git_blob": "333d8b82f3abad3922535fbb626a75529f766bae"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-entry-verification-v1.json",
+      "bytes": 959,
+      "sha256": "c19727a023fda801b5ad1f71283448f1ec0ca1c496ceca52ad419dfbc98ccae1",
+      "git_blob": "28631b0ae68852814d65ab449530c6c66243922b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-execution-pricing-v1.json",
+      "bytes": 792,
+      "sha256": "91a5b937eb5d35a2c20c04f595291977f31bfea29a4ffc8e551ecf435cef6fe0",
+      "git_blob": "9fffa012da4824f82a31b15f26264a39f0924225"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-execution-support-archive-v1.json",
+      "bytes": 1669,
+      "sha256": "139613988d8d875b048889fb53c6e4b1240fb0f997720c489207e6dc472bd75a",
+      "git_blob": "c593ff5a2c1bdd742c08ebb6417ea96ea9faade8"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-explicit-authorization-v1.json",
+      "bytes": 1384,
+      "sha256": "5c7d0001f7552be25c2e8c0bdf7c5d97079fb9e0f626e009084e50dfc8f794e4",
+      "git_blob": "b804e2b8f0be5e3392d52dabae833b933d55c042"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-failures-terminal-v1.json",
+      "bytes": 25351,
+      "sha256": "cd73458ec11c47ad6a308470a8fab04299b0854c14bb405ce56c555a82e2bd1d",
+      "git_blob": "8cfa0b4812d005a599b80aca27ed483127852933"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-final-lock-independent-v1.json",
+      "bytes": 2440,
+      "sha256": "769ba761764ffc2d11ce0c7ab5b518fee034338b263ff30319c4f80f6b52801c",
+      "git_blob": "56d59bbaef83d60c9be1136eb87fd888448d976a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-final-system-lock-v1.json",
+      "bytes": 17536,
+      "sha256": "3b6e3fbcad1670226f1f9d8e1c9fa96436b104893a875527d078dc4948671ac6",
+      "git_blob": "54f234cc5d4ad09e6370b122691e3e8aa0abdfdc"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-independent-terminal-v1.json",
+      "bytes": 8596,
+      "sha256": "ac1003b7d2c2d6ef2e469c07c65cdd4849cea781952d10de1d3b04919877ab23",
+      "git_blob": "661293225451151e2be13dfcba8fa80b31279a5a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-numeric-independent-v1.json",
+      "bytes": 25786,
+      "sha256": "751549250b64477e6bcb2e653e9176cf18ec062f4bd1f0ab9b7b383b51e0c6a1",
+      "git_blob": "2ea5a5abfd5f5e034f71b86e81170b2cd3854b85"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-postprocessing-independent-v1.json",
+      "bytes": 24941,
+      "sha256": "b6bc113049924ab66293dd8f42551e002d85cce084c3744c967a60c6eea6fc6a",
+      "git_blob": "64559fd9bb489a2937c926d5fe53bce895634bb7"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-postprocessing-readiness-v1.json",
+      "bytes": 1359,
+      "sha256": "27d2f6e041bb4d666355e29ca77623860b0c895864351fd760f67f99b7e2a2de",
+      "git_blob": "2d9ffdc44cbc69b7437851eaa80d20272f109305"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-postprocessing-readiness-v2.json",
+      "bytes": 1440,
+      "sha256": "ba4b185c025ba45ba6d39c048b6d0930990affe70b3041a77fe46f8c09cffae2",
+      "git_blob": "5a8737fa278dbca79f59293532e9f92256e06fdd"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-preparation-independent-v1.json",
+      "bytes": 5208,
+      "sha256": "4e8a9d1a031b3a0dc2a79efade8546d46094907890b32c40b30837593d7069b8",
+      "git_blob": "2846edf593f55313162406e8260b75651975a588"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-preparation-root-v1.json",
+      "bytes": 1739,
+      "sha256": "6fc08d17a720764851f7f20f10ab59386ea7a633d02c4cc0493ddf6d2f241fff",
+      "git_blob": "9bad0c205506d5ffeae746472288f64b54825a57"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-prepared-manifest-v1.json",
+      "bytes": 3908,
+      "sha256": "c20fa4de2baaa259967b1e587f464cc9a5ce493cfd37e909badcfc288c0e641c",
+      "git_blob": "200ce83fd8d0808e522262a33ab6f1282c911578"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-prepared-plan-v1.json",
+      "bytes": 1320,
+      "sha256": "5d99378868a5aed92889ff3995ae7771270b91d8effb373fb6d7e85672484c92",
+      "git_blob": "022705c8003b0b65286ce191c8315fc7bab4678b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-reference-metadata-v1.json",
+      "bytes": 1447,
+      "sha256": "e36e5f232c1b09df931887408010fc70dbd010085d0425c79116ca3a206045e8",
+      "git_blob": "a64d4befa58f4a341026674893017744d8c551ec"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-results-v1/official-scores.json",
+      "bytes": 712125,
+      "sha256": "14e834d42cf9eeb5e0e161581f09e017bed97779fcfdb3efd6e3ce6045180455",
+      "git_blob": "abeaf95a804f4679ae612b52adb52e0f4f86442f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-results-v1/private-archive-report.json",
+      "bytes": 884,
+      "sha256": "83127a9a5214e5a922ce8ea3564d36da5e42b14b2608984a021c6409aeca639c",
+      "git_blob": "fa2d8812f66a099d0d0c227a6ac7ff651e355860"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-results-v1/source-review-labels.json",
+      "bytes": 754727,
+      "sha256": "4e1698ef8a0ce76527fdc3be8fd5e2e9a5d5dcd8b209e8124dccc52fd6898cdb",
+      "git_blob": "28423821fa1c131609f606704d0430e7fe1a01e4"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-results-v1/source-review-paired.json",
+      "bytes": 183269,
+      "sha256": "267a364bc9f8fd30d42bf52540c0f62340910569fe47748c11b2f228cac70013",
+      "git_blob": "9db702fcd5a8f0e883d94b0a1f027ed674ff5af2"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-results-v1/source-review-provenance.json",
+      "bytes": 13468,
+      "sha256": "198a31c4f6c06454692fb68ede22713b63e906d3116e6f4322dbef4f5c34ef3a",
+      "git_blob": "3bee43229376d095495937b2fb360ad9f86368a3"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-results-v1/source-review-summary.json",
+      "bytes": 9146,
+      "sha256": "9d6f9acef7424409ccbcb889a6d17d195e67087d5c820107a7b9467e72bd92b4",
+      "git_blob": "4f169e3722e5de0a45299602a7b5017fd03d79bd"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-root-terminal-v1.json",
+      "bytes": 1256,
+      "sha256": "650c511723247d42f70f8f205d8222fe24180e70389ea446a53bda96e1eea862",
+      "git_blob": "1035e0c68887c1984422e1937c6637c74a096ae1"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-runner-prelaunch-v1.json",
+      "bytes": 363,
+      "sha256": "19ee6d5d97d12ba363e8ed9a9cd75e0fd2ee0f6708a785d742f054ad36062e81",
+      "git_blob": "da3fb1e765e2d9664caceb3aa3941e3294ea791e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-runtime-terminal-v1.json",
+      "bytes": 36413,
+      "sha256": "5f0f503a3c50f8895c8d316ca7799687686327c39c4f0011070470f20c32f437",
+      "git_blob": "26a3f8b7f63a941bb9e6180fd2af236745ee1fc7"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-shared-build-cost-v1.json",
+      "bytes": 3248,
+      "sha256": "1d522a2eaf1a4a80dc9595f286648e3650943c650e3886616837116671604701",
+      "git_blob": "ea59cacd9208f0e3c399b01e6cf681b264da3a72"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/level-e-shared-cost-archive-independent-v1.json",
+      "bytes": 2787,
+      "sha256": "4e1b28defeb27946f44b8232984972286838ab2cb44c4bb4db3d28a6d28141f1",
+      "git_blob": "6435adc6a92d1c2363b8e5b0b238776a94bc8a45"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/live-extraction-failures.json",
+      "bytes": 1810,
+      "sha256": "0d97572e49abc0a9d6c87270e663615d34c55552a395c57e3a32a31e56647ea2",
+      "git_blob": "086f532084a98fb207034ff6159bb1b03220b28b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/live-extraction-post-recovery-v1.json",
+      "bytes": 2441,
+      "sha256": "2b285fc31796c2a8bc6cd382d797725db295f9bff34fe98ee704d005bd0441b9",
+      "git_blob": "45972df41b892a47bb00bc44992b00e842a2ffc2"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/live-extraction-progress-v1.json",
+      "bytes": 1653,
+      "sha256": "5be8372ae0822b20b81671afea1464b3aea9e0080738d8b9cde7cecd6fd4250a",
+      "git_blob": "5d22003308f9bd5187ac0cd289388bee57ded409"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/live-extraction-progress-v2.json",
+      "bytes": 2429,
+      "sha256": "56a5df387872f093e0aad6501522628e6f6a15756474b0f2c0c391d2dda674ec",
+      "git_blob": "e3e035450c227a68c7e19a988be48a44a79c2cf9"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/live-extraction-progress-v3.json",
+      "bytes": 2431,
+      "sha256": "706d0b99438c7d2c6f5b45fad7388da564893cabe299016e0bd1ca644e1966ec",
+      "git_blob": "d89e1bfa8fff32c11c579a4e46f0ac5bc8034942"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/live-extraction-progress-v4.json",
+      "bytes": 2486,
+      "sha256": "08115b1191dce7539bcc79028283d916c06dbe3a9f53f4d37bf58c1f0bf1178c",
+      "git_blob": "69dd86f3de6e4d8936f032cda1d9969cc1cca544"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/live-extraction-summary.json",
+      "bytes": 2440,
+      "sha256": "46f13cda72cbf6d715a4605275828d5b617bb71f6883ce7a0a0a498aaa44487c",
+      "git_blob": "c8d05062a47ae830a60bc2e048d6eadb5d151b6c"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/local-rejection-checkpoint-mutation.json",
+      "bytes": 252,
+      "sha256": "167b4e587c652d5eb542b3c6130a1f38657bfe6612e53cb2ef7ed1997009b511",
+      "git_blob": "7e3de65de292ac4a5b655b7542f5f44d8f9e42e6"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/metrics-summary.json",
+      "bytes": 28422,
+      "sha256": "26904f3cd4a83141508d160d06bd82ac8442de3898f017a676dfbd314985f26a",
+      "git_blob": "3e47ed2d495a924d40a6f6eecdae8d5271e013d3"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/pricing-20261104.json",
+      "bytes": 652,
+      "sha256": "431cf42e8cc5871c41571790b071447da62198ba412d3b1d9cc940da10b80200",
+      "git_blob": "b0569660cbf3f2db59beebd26c16651e8f877533"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/pricing-input-v2-20261104.json",
+      "bytes": 896,
+      "sha256": "098d020a08cf63f9ceb12a6304b0e7beea60dbe2b7bcfc0afafc9a10b6a5b8d7",
+      "git_blob": "496309f425848d234941df7cd1f473298b1704c9"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/propmem-audit.json",
+      "bytes": 2514,
+      "sha256": "98765698e71c36e990eb69e44aa33dd996ae5d3388b2892e9b643a9dd567abec",
+      "git_blob": "0b1db816fecf50ef3ffa460963f2e826f835d433"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-applicability-analysis-v1/case-differences.json",
+      "bytes": 26031,
+      "sha256": "a5a0879216a088f6c2790866a0fa4c7d9dafce46be4a8696dd1d3c9f3c8262d7",
+      "git_blob": "52b201115fabd4ce7efdd1136a9dee989f1fc689"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-applicability-analysis-v1/diagnostic-summary.json",
+      "bytes": 960,
+      "sha256": "f1330341fe019016cd606fb44b8be7c260d373a5d00f12fc134e64914cb30c9b",
+      "git_blob": "a086ae804cfaa486f86c3a73545848c2425fb5b3"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-applicability-v1/case-differences.json",
+      "bytes": 26031,
+      "sha256": "a5a0879216a088f6c2790866a0fa4c7d9dafce46be4a8696dd1d3c9f3c8262d7",
+      "git_blob": "52b201115fabd4ce7efdd1136a9dee989f1fc689"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-applicability-v1/diagnostic-summary.json",
+      "bytes": 926,
+      "sha256": "a9f32d12dfefd0a1a75a66141b5ae2b4fb4ff4022151b1339a4f5f3b92556b72",
+      "git_blob": "a28cc69d7c8f3a5f811aa5786133d63bf5f1de5c"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-applicability-v1/metrics-summary.json",
+      "bytes": 2600,
+      "sha256": "a664971a637f3714b93ec7d99a02653be8de44597b9f98638391a2d7c82c89c0",
+      "git_blob": "50f48e416882aa4113ad53c36fcfb9b64119b90f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-applicability-v1/per-unit-results.json",
+      "bytes": 4949,
+      "sha256": "3e96c00cfd6c0205f64a016f87dd66e3778cba03a2a55ec53dfab76629f44372",
+      "git_blob": "ab81b4fe5d71189797be68f7198e597e729ef961"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-applicability-v1/preparation-summary.json",
+      "bytes": 950,
+      "sha256": "647425a85791ee63a85b895463b8e6d8f9da236ef2704c9934d3df12e705b3b4",
+      "git_blob": "7432c9fb136ca02c2fe4a1b0e578156bd9b2fed6"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-applicability-v1/protocol-freeze.json",
+      "bytes": 534,
+      "sha256": "8c442b49358bace874e9bdb24626b745e025ccd46e48bb7572495ae13a880afb",
+      "git_blob": "24c3f6ea5b3df954ad102e9f2a4268c578ec80fb"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-applicability-v1/reference-freeze.json",
+      "bytes": 586,
+      "sha256": "56805d1de946e50decf38b53b295e549036b4c7e8a4642f409eb3a93ed02b06d",
+      "git_blob": "b670e204d430c12d1129dfa7390776a8997d4ea1"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-applicability-v1/selection-freeze.json",
+      "bytes": 3561,
+      "sha256": "af3e6aa1941b4dc0ea45e47c513899c88defea37170892afc7ac873263fd102f",
+      "git_blob": "99f95ce365fd5b85744f340ab36194ddde1254cc"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/query-review-mutation.json",
+      "bytes": 257,
+      "sha256": "bebcf9689a0e98167b386f57f0c07b8889fe0a233c480ea5d5ce4aeae93954dc",
+      "git_blob": "d69d8b7069088a887ddcc8014ad2994957fc550f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/real-demo-v4/result.json",
+      "bytes": 236,
+      "sha256": "54baeaecf76ec32b8ac65d186d431245171449dfb70bc6d5d4e53f9b96f47998",
+      "git_blob": "abe8c34abdc1d2f08c6163c13133f142b61a1faa"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/real-demo-v4/source-identity.json",
+      "bytes": 209,
+      "sha256": "41337ef6b3442187a54516dd562ad796531a6860cf80e015da43fa0af03561ad",
+      "git_blob": "9ad2ed19a2182c8c3b6901fe9db496856f00b211"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/relation-preflight-post-recovery-v1.json",
+      "bytes": 2333,
+      "sha256": "222a23b77c720f1650b596f8ae9fa73bb7dc58928cebc48aa6e8b13e6484b7c2",
+      "git_blob": "a7c24d8d3c1a5473d6275fa299b1705e2913c404"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/relation-preflight-producer-parity.json",
+      "bytes": 831,
+      "sha256": "0ea1b1370107401d444dc034ae26b01a01d654f12df32c98884d65d21ef3a3fe",
+      "git_blob": "41591014e64dd6c1c2570af95e22b62f949e9ce6"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/relation-preflight-reproducibility.json",
+      "bytes": 511,
+      "sha256": "3c71c994a6fbdcf4596eb926a0254d9a5c936aa38cf627ddbdfdaed6da871954",
+      "git_blob": "d0ebeb9705b5147aa852a5ea1fb2693c96b98f45"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/relation-preflight-v1.json",
+      "bytes": 2333,
+      "sha256": "222a23b77c720f1650b596f8ae9fa73bb7dc58928cebc48aa6e8b13e6484b7c2",
+      "git_blob": "a7c24d8d3c1a5473d6275fa299b1705e2913c404"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/replay-final-parity.json",
+      "bytes": 199,
+      "sha256": "967fdb9a14c0d06e6af7d39d05c8f1b27c5ee809a62eb6947909d4e13537446c",
+      "git_blob": "f344c5ab023a531c64d09b9e25e15656ae3e0b77"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/replay-v1/build-identities.json",
+      "bytes": 6950,
+      "sha256": "04b4dc03bc7bd998b87c266315173523d00f121715fef3d6a0b62ff8acd24023",
+      "git_blob": "979637a2c8b8c03420c04c736dc880ac7defa9ed"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/replay-v1/cost-ledger.json",
+      "bytes": 202,
+      "sha256": "e49c38f8481c51ab0cabde411b6a5f0b7f8f1e66a16ea98ecc89b1e6be7590e6",
+      "git_blob": "5b7ba36ec245b7518411e136606116c76b4740b7"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/replay-v1/dataset-split.json",
+      "bytes": 1557,
+      "sha256": "a3bfc6eb77bb94c53bf508b07e2fb281d12fbe6dc90b0a9c7c4807ddd3412d8e",
+      "git_blob": "b37e2751599b3f78952de04d8e267a26b66b1f8c"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/replay-v1/fixed-live-sample.json",
+      "bytes": 2425,
+      "sha256": "f5be6536b105b78d7dc0eca44f7eecaa4b9b6a71d9d3662f115d361c6e707aeb",
+      "git_blob": "751f958bccb6dcb7fb18185ed6f132858716221a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/replay-v1/metrics-summary.json",
+      "bytes": 67480,
+      "sha256": "10c26e64cd2d070dac5065d4944f8cf2e40224684af2d78e1f2e03de9d8fc26f",
+      "git_blob": "4081fa33a4ecd2289146619b9b1ac777a19a2365"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/replay-v1/protocol.json",
+      "bytes": 1334,
+      "sha256": "79f4307dd85fce700926e7fd3b6fa8f10c08974395f4eec5565621473908737d",
+      "git_blob": "a7c69f22ef75b6af56e7398d3c4ad36fcaa3016b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/replay-v1/sha256-manifest.json",
+      "bytes": 750,
+      "sha256": "c014784dbfeca3821d26d6fc9083953f6e8f6cda4ee109335e3924f93675de9b",
+      "git_blob": "a05518b709ea25036bd4f506a925c6495cb45cf6"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/replay-v1/source-manifest.json",
+      "bytes": 1852,
+      "sha256": "f577886ec75ed8f70fa69997b6c1e5584ddcd55e2d0cadc06d663714b1f87f22",
+      "git_blob": "efe6090ff8d11c1aaf31510ff771a51ab9f7be81"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/reproducibility-commands.md",
+      "bytes": 5227,
+      "sha256": "de923815e0ceb2884f9e5dbe59ced93470f7fcc215aad95ccdb8f5969d75605b",
+      "git_blob": "0287d71a1c7e945f3bd59250a1e775c0c2fede0d"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/run-manifest.json",
+      "bytes": 9178,
+      "sha256": "5793021178272ad8ce2869bbdd48155b2040712a610c33497105925d4a9c0cd3",
+      "git_blob": "b2c9defc8d7da4bcbb2d4b0d486fdf47affe087d"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/sha256-manifest.json",
+      "bytes": 19986,
+      "sha256": "6856aaddbf284be3bb1aed2f9929b04294444d8cf5efaf375b0b65cb20c3dd90",
+      "git_blob": "a91e7ca7dbd9be577bf4fff176aebce361922732"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/six-build-exports-v1.json",
+      "bytes": 4057,
+      "sha256": "d4a9cda9fbf6460382424dd8f37326182212cef78575f8be2fba1992e3624f08",
+      "git_blob": "74b66270286a082b34d7f3d91ba6899e217cfdb7"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/source-review.json",
+      "bytes": 499,
+      "sha256": "6c2a3897d9008d19d29747a66d05ed071050f822e4c7ed412e9f1ab9d0c450ce",
+      "git_blob": "5c2cf5f32489b770f26273efa1d311e04bc1f08c"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/strategy-configs.json",
+      "bytes": 534,
+      "sha256": "c481416bd3de23653e19ba57c0ba8fd7719ccc7c91311879605edf0635976083",
+      "git_blob": "ddb740acb7bed2606bb9018840aac878aace6757"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/adaptive-review-api-corrected.xml",
+      "bytes": 864,
+      "sha256": "c3b9e93da44d18991c24b2d107aa7fdc48e74e4e9e4ba23aa44624b6b568400c",
+      "git_blob": "f33c7274ca3e267f7b1d7b4fff04080c8dfb8ae5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/all-bonus-v2.xml",
+      "bytes": 2909,
+      "sha256": "991cab89ebe7567fe2ab4ef93b0484d120033582aab73e9f918ae53bcb2e720c",
+      "git_blob": "23c9e27ae187ad5d08ec2690406696fbc39a17c3"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/bonus-contracts.xml",
+      "bytes": 2377,
+      "sha256": "5e306f3c8847b540ecde4671ee86d3c8d7fcf05be3457b693feea0abd8a67df4",
+      "git_blob": "2b2458d27b5820035d4e51511c0f5bf444a82b84"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/budget-compression.xml",
+      "bytes": 777,
+      "sha256": "15ea0e81b4f3f8cfb036f6c9b2906413a4be8ba50e1fcaa1ce5cf4757c84a92d",
+      "git_blob": "98e6864f56c63a49c0ab846c2462e41667bd4f71"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/budget-final-no-retry.txt",
+      "bytes": 641,
+      "sha256": "2dde8cd0cff8af3886b049bee41ac338ad6a9a22aa9d92ca9dcd636997396efa",
+      "git_blob": "6729ebc8dd344706c49ec37856a815a2c2bed75c"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/budget-final-no-retry.xml",
+      "bytes": 2574,
+      "sha256": "e34f4ca3fecf3bdd2da19eeba841b8af69dc5d3bf7425b74592d77703a255e6c",
+      "git_blob": "516f7ff3e24bb8db1300391029897d4784832531"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/budget-history-final.txt",
+      "bytes": 639,
+      "sha256": "2186167df0c611de1d8cdbdcd7e6b373c1428985506a366e7c62225f0fdd1c64",
+      "git_blob": "2d44504e6dac58989372e278eea6afe36971fd88"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/budget-history-final.xml",
+      "bytes": 635,
+      "sha256": "9d4997bb2f7d45838e2795335e3271568845f2aa6069a847b1c363ecd5ebf94c",
+      "git_blob": "9cc56c59077cd7093e71f8b181a92f2ff1fdb460"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/budget-model-final-corrected.txt",
+      "bytes": 812,
+      "sha256": "a1a96872c240112b8ce8b30c1d4b231ddf98f7ca29a3ff31c70bf182772e367e",
+      "git_blob": "eb1ab66a25aa769fd5e9e1fe2751e1a4a17deca4"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/budget-model-final-corrected.xml",
+      "bytes": 25219,
+      "sha256": "baf848e7f675948870886ae397d05c9dc6a4ac1adcc6951e2f00d58c5d108c27",
+      "git_blob": "27ed0f914b377ba3c4fef8445076562ab93e0339"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/budget-model-final.txt",
+      "bytes": 615,
+      "sha256": "fd6b88bf6080893b68c5baba3566b20727bd4d635834a2b9dc7d3ad67898bbb9",
+      "git_blob": "82bdb6a57a9a74d16c557bedf78b08dcd1c8e2df"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/budget-model-final.xml",
+      "bytes": 235,
+      "sha256": "3c73765d6b17250897ef50380efb0a932f7ded24145cbc38d3ac346f10e858f6",
+      "git_blob": "45edff2962e0cb1c7fb03013ab66420d466db83b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/compression-query-v1.xml",
+      "bytes": 1084,
+      "sha256": "c48b6dea581317f36fd08558d9116c6c569925b1fee9e3d26081a3760edfa762",
+      "git_blob": "986540c63cb72331d6e22755bc9e8b15c40797df"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/course-boundaries-collection-failure.txt",
+      "bytes": 2592,
+      "sha256": "7aa93668ccdaf128d314395b95aab73b6661751833c88eb7dab948c49b2bd9f7",
+      "git_blob": "ef22c84549ba64c27e0d14b6508b44eb5ed7546c"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/course-boundaries.txt",
+      "bytes": 639,
+      "sha256": "f46ac3609b06a7d50f4194ca5c3b4ccb63ea842ab73751d2d33481cccdd577b0",
+      "git_blob": "7ed0edeaf77794a6b61d5bfb63f0498dad079bff"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/course-boundaries.xml",
+      "bytes": 1325,
+      "sha256": "f37b428b2cbb7cc532b4e52cc74122ae482ee298c086df7a8ee9df1f12b46390",
+      "git_blob": "d3cdf09099aa856a50cced1cddc68101f162b615"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/delivery-final-v2.txt",
+      "bytes": 346,
+      "sha256": "b2491a48cd76da10cabe057a2b6b1fc2da5eef147862a24e94f0f505f088ad67",
+      "git_blob": "493bd5f0936c7b74d5bd742783cf253251b86788"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/delivery-v1.txt",
+      "bytes": 346,
+      "sha256": "b2491a48cd76da10cabe057a2b6b1fc2da5eef147862a24e94f0f505f088ad67",
+      "git_blob": "493bd5f0936c7b74d5bd742783cf253251b86788"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/dynamic-review-final-v2.txt",
+      "bytes": 3034,
+      "sha256": "53aa660ef927e41fab5317d82ffb485b0f70efec8b92a2a892d6acb07ee8c80e",
+      "git_blob": "bdf50fc2ba70f71c9e1df96ab023da1a2c6c43eb"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/extraction-recovery-v1.txt",
+      "bytes": 4479,
+      "sha256": "928b92096cdd0ecc04e1b0ea9fa01eab2dbe2a61dee0ee60fadb5b86722f5c17",
+      "git_blob": "5b4b7f3299c39a3bb468d50249a65d598a420a9f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/extraction-recovery-v1.xml",
+      "bytes": 4308,
+      "sha256": "f8078a53f815af117315d80053218a2fc655e5446b4e24ab6a40f4ebbc75de21",
+      "git_blob": "5ac227fda0a35f9ace5ccef2234f2ef134878d4e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/extraction-recovery-v2.txt",
+      "bytes": 640,
+      "sha256": "ef4bff9ee2f498c1199879b0e03f030fa75a95d898f12c91995cdf470d8c06e2",
+      "git_blob": "62c80910a0722933a08a766e3799f275ca8584fc"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/extraction-recovery-v2.xml",
+      "bytes": 1859,
+      "sha256": "f0df5643d7e97f50f66d0fba98f7315e55670a4c577821b2a756c79fecb96bd0",
+      "git_blob": "baf87696fb719c04e38a2b53155afa6392503d41"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/extraction-recovery-v3.txt",
+      "bytes": 641,
+      "sha256": "e1aa4ccd7ef1e524d260a08edf0063d55fac1dea7b4d5d35150789f701cb3842",
+      "git_blob": "ca3d3124c1f24e8564e301a30b560b2ddc2b1881"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/extraction-recovery-v3.xml",
+      "bytes": 4139,
+      "sha256": "3207afb85b1b4e52325f02e5fe36db14809112cdae7e2574b9e8a849229dd874",
+      "git_blob": "2e49b079252e768cbfb186e32e96a72d47082042"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/failure-audit-v1.txt",
+      "bytes": 641,
+      "sha256": "3d6b503183d95a9b8b260b4215f3255f9c732f473ff5c2587ca4bfa8b84ae642",
+      "git_blob": "3091c16da066f04a1585e9fe96d7cf0294a6157a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/failure-audit-v1.xml",
+      "bytes": 4053,
+      "sha256": "18aa490996e47b0fcbf7b57b344997d9768b531a7d6b7254efcc23853429fe6a",
+      "git_blob": "4fc63f2c0514bd58e2f229e3a5060fa7d56472f3"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/final-review-corrections.txt",
+      "bytes": 640,
+      "sha256": "91faa7622a782009e733a7a96a3a9b5b065a130d6bef325b200bbcde5c4a25c1",
+      "git_blob": "46962b222a852a91c01da5431de43720e9840c93"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/final-review-corrections.xml",
+      "bytes": 2321,
+      "sha256": "e2696be55f58c1f56e03b4e278cb34fa25668d0e7e65df98f3fe4ebcddddd598",
+      "git_blob": "ec6e77a0ba4db8414e28fbcbc5f53c5be29cf0f5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/final-ui-review-contracts.txt",
+      "bytes": 640,
+      "sha256": "c3f45c7c95a329588ef75329bfb017317395d53f3dc402a311b8418b18ae8f77",
+      "git_blob": "74b560e42607e71de5216bb146bd4b3471cfcb20"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/final-ui-review-contracts.xml",
+      "bytes": 1418,
+      "sha256": "7d14930886fe4202a2e4d12dfd57850c41e088f953c37887db977c8c0beb053e",
+      "git_blob": "2db32c9cc182ea151c1395a130b274b88ea50a17"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/first-integration.xml",
+      "bytes": 3708,
+      "sha256": "9ba96645eeb315b82342ae5c0f899db2b49760e2369b6f6743afdda067522ad8",
+      "git_blob": "0dba836b02fb2bee9e62820c3a381fd13a4a8d89"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-final-v3.txt",
+      "bytes": 1307,
+      "sha256": "8fc6e20386f431abab7cf33c6851f2690d4f6f3c6ac004a4684d49a582579f65",
+      "git_blob": "4cfc2e585325acb91e0b55346f145480176b6733"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-final-v3.xml",
+      "bytes": 94767,
+      "sha256": "f5cd6c9300811cace8453e08d0112621e18a46530d29bb070a5d49c69ad80c12",
+      "git_blob": "63fb0a7284db18d685c41b013703d9dd77ea057c"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-final-v4.txt",
+      "bytes": 1307,
+      "sha256": "a145875c81c478f1a2922af7fabf6450243d66ab11a5a06185ee93f9937c1466",
+      "git_blob": "499d3cbf71185a6f00891b02af938941b9fdfb7f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-final-v4.xml",
+      "bytes": 94767,
+      "sha256": "b9d0473a7c276820c1f79dd7c3f5d63fa93b4b1f122b5131d7164f9e79ed5bda",
+      "git_blob": "dc364b805e18bc0a7414b97223273468cbeb8bea"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-final-v5.txt",
+      "bytes": 1307,
+      "sha256": "e65e96aada28c7db67f36cf4f28a9cafe8f00be4a53ec44a8d6501d6ab19a8da",
+      "git_blob": "fe23b5a60831742ef9eed36cd5e1fcc7be04c4e1"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-final-v5.xml",
+      "bytes": 96375,
+      "sha256": "8f1fc064109450eb48afc8f82b7fa9d85a84939a1a4f4d0af236f294c2b2d202",
+      "git_blob": "88aee77b018e5ba549ed7acc45070fb43f3b52fa"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-final-v6.txt",
+      "bytes": 1387,
+      "sha256": "032d63d682a4bdf473d8cc242aa391078d5f43349dcd1381bc576619527fad3e",
+      "git_blob": "e3094287ce1d385f278129f9cec49b7dc9999998"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-final-v6.xml",
+      "bytes": 98947,
+      "sha256": "3d14fe0e38d8a1b5f0826fe1125015f013082f82656a0ba72196f39dcccc98cd",
+      "git_blob": "74f5e9103b8adb22eb066e8c4dffa8108f2394c3"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-final-v7.txt",
+      "bytes": 1387,
+      "sha256": "4ab55a72bc8e1746e2045518e1a554e3053d20ebc94c34560a7410fc35384c52",
+      "git_blob": "5a17d92ae19e887b42fba631586eeb596abb331f"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-final-v7.xml",
+      "bytes": 99263,
+      "sha256": "45958232aab5a59bf9dff8c4c3359232e34e773c7aa3d62dc54cc4516d8839e0",
+      "git_blob": "3c6f5d63a607d09719f93042b7a2a5f156cad92a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-v2.txt",
+      "bytes": 1307,
+      "sha256": "323ff19f67e018a6e883565de50c316e3a2df01229960765f6714704d7c2ff6d",
+      "git_blob": "df6bbb176e2c52d3ee313c045280b694ca149407"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/full-offline-v2.xml",
+      "bytes": 93622,
+      "sha256": "80106c51dfe9dc7eb5eeb777179de02ccc86e6b42a331d1b48ccced102a22364",
+      "git_blob": "acb3a65fa0d6a8973e5a3463c2cc33c9a22d3b90"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/graph-two-hop.xml",
+      "bytes": 1312,
+      "sha256": "3a466e871ea09013a2a2e1a76d284c21d027c16be0b078bedf82f287c516241f",
+      "git_blob": "6d757180a318da3b66b71b5f3ac71b258a1e1be5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/level-c-input-v2-postprocessing-v1.json",
+      "bytes": 831,
+      "sha256": "0f78e719d2736bbcae27c5b5556625401d1ab91cce2264fc49c749aeadacac05",
+      "git_blob": "c75186b0eb47e35d8bf66d93ebab2b3adb19b524"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/level-c-input-v2-targeted-root.txt",
+      "bytes": 652,
+      "sha256": "41aebb576bfe54bd2a30030fffad568e587cb43a1b8626a2adbfc2591c8e2856",
+      "git_blob": "c1c0428a4d3cf6cec2c7a67a6808c86702f759ec"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/level-c-preparation-v1.json",
+      "bytes": 292,
+      "sha256": "c22d03ff3705f4d56c1be3d044fafbe8d40bf734eb7a22790a272664018664b2",
+      "git_blob": "eccf644006bc407744a39853543eb07a22e20484"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/local-embedding-v1.txt",
+      "bytes": 639,
+      "sha256": "fa4d742839f448e004613ea19c169db46f9e0e4b7c56319073b892fc97460b85",
+      "git_blob": "5d964b1eaba226864b81c80689ccc6f308818e53"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/local-rejection-checkpoint-v1.txt",
+      "bytes": 641,
+      "sha256": "ba7994d6d25d4acdc5b50360024519bbc6299cda0d5194a8e2a2e25389fac930",
+      "git_blob": "943d8b90dbf320589be20f27ff3278b82100d02b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/local-rejection-checkpoint-v1.xml",
+      "bytes": 3061,
+      "sha256": "d72f38a618f0e7c516c778857e79228ba15a19fc26f9dc00985fbff4f00f3953",
+      "git_blob": "695be6baa95fd99b1ab1a340832331c3ebd0d9a0"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/query-review-v1.txt",
+      "bytes": 639,
+      "sha256": "72ed1ece08ae20496608fb3c9d1f60c4c6eebdb6561aec09d7c92b73378a5b1d",
+      "git_blob": "0b1cc138c326e139150aa57e219d351c516b849d"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/query-review-v1.xml",
+      "bytes": 1449,
+      "sha256": "ae02b980bf294fe98d100f3f08451bfad4abc3126bb880840c915593e0f9aa2b",
+      "git_blob": "2bb6d81b68234ec9f42dd76f6a08e4042c6fcfd8"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/query-review-v2.txt",
+      "bytes": 640,
+      "sha256": "3c0511b5f5f76fa2fe7323419286003e6844eb5231280506169ed3860052436a",
+      "git_blob": "b5df38c93ea27437ae95bab1cc64f6bdc0ff4f67"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/query-review-v2.xml",
+      "bytes": 1712,
+      "sha256": "6f2dae17423551491c5939d8e08709648712aa00743d9084f5f3011b6b2f1494",
+      "git_blob": "3e3e044d22c661766c433441cea7735387a3c47a"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/relation-audit-v1.txt",
+      "bytes": 641,
+      "sha256": "d61fa26786631ebee661dc72be2f1058ae52bce71b72ab1a42b4daa09066f82b",
+      "git_blob": "c36563a43fe96ee6456f24114ecc4d802db8ba1e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/relation-stage-v1.txt",
+      "bytes": 641,
+      "sha256": "5f76cb6a9e3967685eea7d8374971267a8a7398ee02c6fe0b9912c57f1bf36b8",
+      "git_blob": "82e27c27a28701a37be74d0e84a0e7f3bfd07cca"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/request-date-priority.txt",
+      "bytes": 640,
+      "sha256": "43fd27f1884138e50aa9d959fa90525daa121f72353c18ae4eda368b6b1de51f",
+      "git_blob": "32a38ce8c59e6286b339ef924fea5865f75b8c13"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/request-date-priority.xml",
+      "bytes": 1669,
+      "sha256": "ac4600fb480e418d46ce2d4c78434fae7588be779dd3da11bb25379d7708e875",
+      "git_blob": "1c88c7535843c5d4a2929138e2c0566e9af20fe1"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/research-paths-v3.xml",
+      "bytes": 1485,
+      "sha256": "31d5948b934a52bbf20d6f07c4128671fb894bf2f1da3af9a809d34bc1483a70",
+      "git_blob": "5841dc267ab26ca34fc9a36614a4e2345097707d"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/resume-contracts.xml",
+      "bytes": 2377,
+      "sha256": "2c6874f3ef63d9a836f109af5b6ad3fcbf2b6a38ef5309bfbf066e73a28de0c7",
+      "git_blob": "40ea3dbbb521eb124e21cab8a5e3db2c97a41c81"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/review-audit-final.txt",
+      "bytes": 639,
+      "sha256": "0ae20d2ee046896c5815e00afbd0519b771212ee6373b1125a88042692cd901b",
+      "git_blob": "4d2daf11c3374353d1f1876680b99f218fafc3d5"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/review-audit-final.xml",
+      "bytes": 998,
+      "sha256": "0ea5c9e2fb65755ff031c511473d6d89654e51c21b0dc8c967a8f3db6bfa2906",
+      "git_blob": "d897902c99ea60968a0c965a9aa378bc17540c6e"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/six-conversation-import-corrected.xml",
+      "bytes": 383,
+      "sha256": "2b8de7a17bfb514d0a4498e542ad187d3ebed057d181affb28a6b1bce151d93b",
+      "git_blob": "31364eac1f02484358e579080fcf5551b1a4137b"
+    },
+    {
+      "status": "A",
+      "path": "experiments/m5-development/test-results/six-conversation-import.xml",
+      "bytes": 2067,
+      "sha256": "977111e921af77429a10dcccadf3d43212ec2ef538d82850cda3c879c55a6a47",
+      "git_blob": "56243bfe7714df71e180f7e04a01ee5d08ae0519"
+    },
+    {
+      "status": "M",
+      "path": "src/locomo_memory/api.py",
+      "bytes": 11517,
+      "sha256": "9d099424ad644888c60973a3b242f91498b80ad325bc98291458e8f9b2f30180",
+      "git_blob": "c74e014305c4c79ddeb3a42a87814d55b1491bc5"
+    },
+    {
+      "status": "M",
+      "path": "src/locomo_memory/extraction_examples.py",
+      "bytes": 5094,
+      "sha256": "7d90f6d6031571b5f1d0108c5b3016dab36a02339c0808967f555b2b1553ee95",
+      "git_blob": "e1e7406a5863e16608cf690877eb906c4f335923"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/extraction_time_diagnostics.py",
+      "bytes": 3439,
+      "sha256": "bf2b5055cb4b78a395929395a60b0a91a4f1ec46eca7472b9271c1bdbd3534f9",
+      "git_blob": "7742bb40d50e86e24bc249d13f88088456f4ef64"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/m5_adaptive.py",
+      "bytes": 3831,
+      "sha256": "d13b6599258cb54926b1c968c8d136ef29dfe31f7900f6253b8fa383dc96b587",
+      "git_blob": "7088a9cbaf538e09c87439625165bf36d6b2d5dc"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/m5_api.py",
+      "bytes": 3009,
+      "sha256": "b79b00cb6cd0486f689ce82a6a19b5c96396dba55563f24cc18cf9137f8f8556",
+      "git_blob": "a80f79989d6c8288f7956effbd906b2de944940b"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/m5_budget.py",
+      "bytes": 4556,
+      "sha256": "1734357d07b1fc932e078ca1f5a15cf3f08fddd02a588b2bf55d93d9ac13f0ee",
+      "git_blob": "89a49482c973288bcd07cbab88c07c8ceec2a0e4"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/m5_compression.py",
+      "bytes": 2967,
+      "sha256": "198058471dd1256ac49039ed1b55b944af5c595be1b33de730a2e8e48f10fc1b",
+      "git_blob": "6a639858abee2405afa0f4202558e3e91184c1a4"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/m5_graph.py",
+      "bytes": 6830,
+      "sha256": "9612d38e32f162778e9d1452d483b59bf4d9a9558a98b216fc0eb632d3e2f93e",
+      "git_blob": "c64edbbcdf2df20da42e6720ce609459c6631c8f"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/m5_queries.py",
+      "bytes": 7672,
+      "sha256": "d0aa18f0a2fb537902a2ebeddeb10f7c5195002aa4d1ece0e51cf96de17c4332",
+      "git_blob": "f5b177de40f323931b30d9dd8254609b3f157865"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/m5_query_review.py",
+      "bytes": 4362,
+      "sha256": "4b94e966cfef8e7c5b6e78684655d69b6d19925e2a6dae9ac022c3c84940fde9",
+      "git_blob": "4f56f414100fdcd7b7d98720387deb1c0ebb9f73"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/m5_review.py",
+      "bytes": 6643,
+      "sha256": "d6ac60fe890b5631419942cb138c8fedb4e5ac705d185ad0ec8fbe754fded3d0",
+      "git_blob": "46b810a758809c25b2b0f02cf4edb2c8e8d15f3e"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/m5_ui.py",
+      "bytes": 4147,
+      "sha256": "e4f194404d39ae30626077ed53f9087c643a820ef51f62cbc6669d961c171784",
+      "git_blob": "ff52b4f646a2a3784f1480d45268b74a767badde"
+    },
+    {
+      "status": "A",
+      "path": "src/locomo_memory/m5_wire_compression.py",
+      "bytes": 5544,
+      "sha256": "1d853eb4faebbc0479c53015443eab481ca70db93b264aaa63dd352787a0a397",
+      "git_blob": "41ffb1a8ce4c6c4b7fc6a47131d87358bcd77aa5"
+    },
+    {
+      "status": "M",
+      "path": "src/locomo_memory/model.py",
+      "bytes": 32157,
+      "sha256": "3eb285d6283e09decda40635af842eeb40d31f993e5c9a6d3db7cedddb2bb368",
+      "git_blob": "63fd4ac2e21d08f58bdec4878e3de8e5a8210bca"
+    },
+    {
+      "status": "M",
+      "path": "src/locomo_memory/queries.py",
+      "bytes": 16760,
+      "sha256": "201bfb8622889fd811b0355ad02f2764a76a9e3cc04344b699b5966f8feec0cc",
+      "git_blob": "4a7abc3488acdb7adf3eacef74c1b61f4493ae89"
+    },
+    {
+      "status": "M",
+      "path": "src/locomo_memory/relation_diagnostics.py",
+      "bytes": 6078,
+      "sha256": "1778028ded92529eb6501e8ef49bd21aca6a99187097094f5d647f0e701bf4ea",
+      "git_blob": "3d62f9db9b1cab91c58b6aeb16dcf897f2baa529"
+    },
+    {
+      "status": "M",
+      "path": "src/locomo_memory/relations.py",
+      "bytes": 12966,
+      "sha256": "7f909ce169756c70d9f4415811e1436518a5e6c61b4e47e4fe50f9b63b9ac7a6",
+      "git_blob": "a373a9ff46b9ec974adf7fc96cf1c152708478b6"
+    },
+    {
+      "status": "M",
+      "path": "src/locomo_memory/ui.py",
+      "bytes": 25298,
+      "sha256": "e26bf64f4ef174a12a626444912425bd1348fac71e1d7a0876c418eba16f229e",
+      "git_blob": "7178aaeb2dc1a6b79914da3c551d0dab24cd1a97"
+    },
+    {
+      "status": "M",
+      "path": "tests/browser/smoke.py",
+      "bytes": 12906,
+      "sha256": "897d6edcf6f55626fbcf29caf1775ffaad46fc2f877d62330e3c9ce8d89a9774",
+      "git_blob": "7785652bd234419b9adc2eed0a75019cc692f17f"
+    },
+    {
+      "status": "M",
+      "path": "tests/test_extraction_examples.py",
+      "bytes": 3911,
+      "sha256": "2598132f6487981034d95f0bb42610038ec049f8df77f15dad86361888971149",
+      "git_blob": "4e866bc828592decff1188197c6b02994df9ab12"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_extraction_time_diagnostics.py",
+      "bytes": 12193,
+      "sha256": "a681107ba22ce0b70354ae6731329731d387b6f00fa172da05e6a98eaef9d263",
+      "git_blob": "f01113b3c721e27a979c684e98213d45cd7b098a"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_adaptive.py",
+      "bytes": 1530,
+      "sha256": "b03700caa50ef8fdfc0190ed31cbb000c773e2b237227935a04a5e2633092392",
+      "git_blob": "59a012fa8cf124dd5c5c86d7686f302edca61c8b"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_api.py",
+      "bytes": 1612,
+      "sha256": "b6f6cd81397fbc5946baf82eacb6c75ed12dc581f680f3538c89958ae3dbc98d",
+      "git_blob": "7ddfef39ebda8ef630acb3be6a3ca0d6b03df4a3"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_budget.py",
+      "bytes": 5887,
+      "sha256": "a63c898d541ccf060284dac46c1da5baeb233e28757d8e0a0795e3a60f7ca0c5",
+      "git_blob": "8385c62e61c61e5f8c452f7af94e9308c244729b"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_complete_conv44_export.py",
+      "bytes": 6495,
+      "sha256": "75979eace55c0783eedfd0edbb0a8b0cde79247c80180307f69c47c28aadea91",
+      "git_blob": "0702386b929c7c5b0444a421a7b74f6650d5861c"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_conv44_relation_recovery.py",
+      "bytes": 20053,
+      "sha256": "18c803c1441a9be2bd3df58c76fb29eedd37e0e9d5d8d4f2f44f0825fa01412d",
+      "git_blob": "56aaca1530ddb54ada6983a649597cf613935e42"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_conv44_relation_successor.py",
+      "bytes": 13063,
+      "sha256": "21fe123ba9aedb8e4a6371b90574542a864c64515e559cde6acce399a44882e2",
+      "git_blob": "f9071681416c62202392b0fbd37aa616457bd938"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_conv44_relations.py",
+      "bytes": 14031,
+      "sha256": "eef56ec88f6972a8239c5dfd18a6dbce292a58b580257641dd152ba9d8b7f4d6",
+      "git_blob": "47f01891cdfe6abd88f1029e7ba5c07c9ed2acde"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_conv44_successor.py",
+      "bytes": 7704,
+      "sha256": "c62a1b851976183bb18cbd6b44d90eafd853abe6aa9a9834e228cf3c27065f08",
+      "git_blob": "776d0b6628053299ea82c632381c83db9e759073"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_course_boundaries.py",
+      "bytes": 6044,
+      "sha256": "4feeb2ffaa62680a081e75d78f1568401ee4a3d2f306483f1cf42bf6dc763d35",
+      "git_blob": "f79d4a1f0747cda5df0be62db57f9112dd6a26c8"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_extraction_recovery.py",
+      "bytes": 7754,
+      "sha256": "c8393cb97054bfd402a04edd9127a0e392fab79ae40f56db25b63f17cb86da09",
+      "git_blob": "c8f6226748621b6b661f4cd58d845d523443dabe"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_failure_audit.py",
+      "bytes": 3588,
+      "sha256": "225564c417dbeec5a75a8153381792b60428398809fcc002ed5477647e03bf5d",
+      "git_blob": "8030e41e8e12f9d673248cfb62d8b97f9d2cbd2a"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_graph_compression.py",
+      "bytes": 5093,
+      "sha256": "1d795473dc5c1d5427795e73910b5f4256e0fc71acffe18be2341244ef85e596",
+      "git_blob": "8bad44ac5c3c92b06a4a1b52e6007d758af70697"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_holdout_relations.py",
+      "bytes": 9080,
+      "sha256": "a0cd41166103958f8f62a2c99ff9ef151077afc486400833ae559aad26a92cc6",
+      "git_blob": "77afdd16b6c6e109b9680d275458537e70d03135"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_isolated_extraction_recovery.py",
+      "bytes": 7667,
+      "sha256": "2a45286d2f8d8cbd92bfe35300f401bc4abd4840c359b389a513cebf18a0595a",
+      "git_blob": "020acd50adfd730a28c6adc5d12761ebb7345ac3"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_level_c.py",
+      "bytes": 17582,
+      "sha256": "57a5997207a7b7094dac20e2bce714d1777c8bf5bc7c1bdc00c001c439e90303",
+      "git_blob": "9ba2a23485e5fad862bb09ff2df5391925314221"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_level_c_audit.py",
+      "bytes": 15074,
+      "sha256": "8957cd0ee403d57fe7a82e31b6249688a8b7692605621ae2a23303d1d047b8c7",
+      "git_blob": "00b6ccd14de313ad2b51d2fa8e40cfa50a8ddbb9"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_level_c_input_diagnostics.py",
+      "bytes": 19923,
+      "sha256": "81b44247cc6bcc5612d51b5815d72d32b7cc7aacd0a61af18e814b32fd5beca1",
+      "git_blob": "16667857ae67f7975a82dfcf98e2c8458c059662"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_level_c_results.py",
+      "bytes": 3236,
+      "sha256": "09040352bc8d3ae5a53f8039d01023cc78663628afcae045066645b90799c310",
+      "git_blob": "936be7e009c8d815b525c6431600f2aef7aa0cef"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_level_c_semantic_review.py",
+      "bytes": 24955,
+      "sha256": "b36ac68c63a56c77ce6620ab4ae3dcbf67472ae0da6303fe65ced2072258b976",
+      "git_blob": "9692219bc598c91731d6902493cd8bb573c4fcaf"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_level_e.py",
+      "bytes": 20668,
+      "sha256": "a96df547dd93028f50b5c714965ef5e6aa2c20bb3cdc5a28aa66907bb586a7e4",
+      "git_blob": "7c340d6a70589851b10116315466eb48a1a82b1b"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_level_e_reporting.py",
+      "bytes": 17652,
+      "sha256": "7f9a6fdf9a3ada047db01d6693513af7ca8feca3534ab641f15ca925b1a1c707",
+      "git_blob": "2f1b63b34016faac831c211175a78bd564dcddee"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_queries.py",
+      "bytes": 3267,
+      "sha256": "4e854efdfb3fbef6bae9ff6425ec4f6f91c091d796e145a7c6faeaf5cdeb208d",
+      "git_blob": "504f1e292bfad9e2524648a438256dbea6c6faba"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_query_review.py",
+      "bytes": 3987,
+      "sha256": "5c112195998b5d54aa7641a738eea94c4dab92f5e8d2cb9ddb6f9903123576b9",
+      "git_blob": "6554f70b42a62b1614ee5025084a078f0b80e897"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_review.py",
+      "bytes": 1911,
+      "sha256": "e38befe72c6f054673d73dea75a748a20a076a4ee5f038762811cbb971bc4984",
+      "git_blob": "ba09aa965be67ecd9e983b2bf9192c382975938e"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_six_conversations.py",
+      "bytes": 2520,
+      "sha256": "3cf17c5598b0df56c3d663c7acba17168c6d684f1f6d16c82f5a0eefa38020e1",
+      "git_blob": "91678de34e1e52ee167486b89cd3d3732f0907be"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_m5_wire_compression.py",
+      "bytes": 2957,
+      "sha256": "a8b5918c1019772a9335f65cb59df54ea12d73132591c67ffa85ebfa7202641d",
+      "git_blob": "f5c741d24c824a66efaf8e0b2e763fa9e3581d38"
+    },
+    {
+      "status": "M",
+      "path": "tests/test_relation_diagnostics.py",
+      "bytes": 19635,
+      "sha256": "ffe71de2454fa957282f00a191bc9711a9402643f2f23fe4d9fbfc121667c00a",
+      "git_blob": "6379908f48c31375a9d9f23685d0e7c5fae6009a"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/complete_conv44_export.py",
+      "bytes": 12100,
+      "sha256": "01dbcd6c5afbde0b13fe33e4b84279d4dcb485b709df922162a8d00445df733f",
+      "git_blob": "c64469bd2edee7cb58ae5c4ee3cdb8aca1fd2bb1"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/complete_export_copy.py",
+      "bytes": 15973,
+      "sha256": "4dc064e11d4d174fd21f7037379a3382b10d85b6a218e58afd0c7c0445a8a071",
+      "git_blob": "d6af6cb41b46164fbe721ae55e36470d9cd8bd36"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/conv44_relation_recovery.py",
+      "bytes": 28833,
+      "sha256": "77cc554f9ebc94c70cb2f0f1e4674aeffdd3b659efaf997dcc5740371ac5120a",
+      "git_blob": "c6f1b78f89eeda17e6aec8e9a07abc095040078f"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/conv44_relation_successor.py",
+      "bytes": 20617,
+      "sha256": "6afe3fb5a1094b4cb521fa6f05bcc3fa9d75a6173ec4fee46a28a8f375687464",
+      "git_blob": "94efccd16a7f41fa2213432a0e4e80b0344527d3"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/conv44_relations.py",
+      "bytes": 24336,
+      "sha256": "d82f8fc0bd0bc0562700a37d1c168a3276b8762936ead2d188c888f79b7bde7a",
+      "git_blob": "6ec5f5f5765c91842e863039a91bbb02037d7eeb"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/conv44_successor.py",
+      "bytes": 20435,
+      "sha256": "8d2aba66c44c77844d7c597e11c3027f586b47a128d475ab25b2c2652b2b0c6a",
+      "git_blob": "20e673828d28783e060fa7cac8bfa7d12f333458"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/delivery_replay.py",
+      "bytes": 14275,
+      "sha256": "6f106e1dc7d971fce6c5f4632236052dd3263afda2af210d4ccb42ec84e4deeb",
+      "git_blob": "2e3c0b345beb4df03eae77303dfa83a4310d63c1"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/demo.py",
+      "bytes": 1003,
+      "sha256": "51464d8c0dfe9ec31dda2b548bb9b6b27059873ba326455ad251f1b1f258de0b",
+      "git_blob": "8e8b2cd02e2a3df5fd2e77f53229637a8e14e4ed"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/demo_backend.py",
+      "bytes": 1960,
+      "sha256": "8889dc6bcab6362fe9cbd71550255866b322c60fbf71f830ed0022350e6ead58",
+      "git_blob": "da11b8de61634ea03ca20b430e57d99f0e2869ca"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/demo_smoke.py",
+      "bytes": 4213,
+      "sha256": "107a30c3f77c0856f6e309a3ffa076e6eff3842dbe37e03abbf8b96c72b4eea5",
+      "git_blob": "3e1079249231be6055385916c720b7bddcfaf524"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/extraction_audit.py",
+      "bytes": 4864,
+      "sha256": "2b29411a59119164a692971ed584ffcf1b30ae7c2b045852be2044a8d3696996",
+      "git_blob": "8270b934b3a3bfacbdbafa34704bb9fa40199909"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/extraction_recovery.py",
+      "bytes": 7458,
+      "sha256": "439ade803fc1894c6c48ae4b20df3032b2fa44a6e7c823dc950ec959a1641260",
+      "git_blob": "0f13d9d878eb33582e39e1507b085a6c54b12dd0"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/holdout_extraction.py",
+      "bytes": 5563,
+      "sha256": "22088dc31b85dabf0994ea112ce93721957b75e438c92a66e0ac5f0a2ea42f37",
+      "git_blob": "098bf511f081ceb76242fc0b255a86f285d9b869"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/holdout_index.py",
+      "bytes": 4913,
+      "sha256": "344b320970bd947f217189820c9bd421999775618dc083daf42b53e339e3c9c2",
+      "git_blob": "0d1e220bbbea2999a6cc1d20b941466b12f6e419"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/holdout_relations.py",
+      "bytes": 8235,
+      "sha256": "960de2683e341966e13217a1a07ef4ef5a1b1e0dada840822f0d32e2865ae5d7",
+      "git_blob": "c87c9922c5087c03dfe2be7888411ae7589b96a0"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/isolated_extraction_recovery.py",
+      "bytes": 14253,
+      "sha256": "9d53ab4837757bedc0b3258ec4ef1be841cc05fec74358b9559bb650ab055ea3",
+      "git_blob": "24d1c1adea8d65189a7559ecc09a138dcb5445b6"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/level_c.py",
+      "bytes": 24133,
+      "sha256": "def5898c6afe2c6e9a5c5cf419bd9e2e12b11bf2878300929f305b04917e5334",
+      "git_blob": "9212880307ca5e4365d86eccf7e4d9199111e131"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/level_c_audit.py",
+      "bytes": 18691,
+      "sha256": "c8823a95c1c5a52212fb7a9b7138da50ac30efeef2218d28510feee03c2085ab",
+      "git_blob": "09746eecdd31368a6122471310c536c4f4b141b5"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/level_c_embedding_preflight.py",
+      "bytes": 1607,
+      "sha256": "638b39743803ecc2adbd212f9396e672be8b88424fc1e10cd0eddbbc2229db25",
+      "git_blob": "c62143077ee0d5cbdea5391220c672b46638f777"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/level_c_input_diagnostics.py",
+      "bytes": 26200,
+      "sha256": "2d8fff7bd6a97a120ec8c0a777f1fdbde13e26a0f0e17eb4502d51f0b5c85b02",
+      "git_blob": "568283484713f703005e4d73ad2a02160d0c35ee"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/level_c_results.py",
+      "bytes": 7894,
+      "sha256": "32a3a96b7f6f97f91c7621b0e08eb9ddab0c3819ed41980d93d6e48a64d446c5",
+      "git_blob": "c3e771a2bc0c8a214dde77591d40dc5e4c11f6dc"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/level_c_semantic_review.py",
+      "bytes": 23081,
+      "sha256": "933bdeac1a9a4498b6cf74a971583e9d5e219fd38c66e290c922f65861369ba2",
+      "git_blob": "4310e3402939178272cf25f3f33f08c26af0084e"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/level_e.py",
+      "bytes": 29030,
+      "sha256": "f9627d91610f7cf36a3c6a0f2b179d7a1dda08f1fee88b728e9831b6d07d0fd4",
+      "git_blob": "667b2bf56b5cce8b0486ebec6c744daa6207cc87"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/level_e_reporting.py",
+      "bytes": 17339,
+      "sha256": "50687231bd01a603a0bd6872b07a8c64c27b89abacc7b7b41591df0f7ab6fb89",
+      "git_blob": "e699e88d6b6732efa53e5461c376085272ab5278"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/offline.py",
+      "bytes": 17361,
+      "sha256": "e1f7914d7ad764668259bdc520eb7ddff7401c0243bd437a57990fd00eb1ec63",
+      "git_blob": "c18aa390e6f973cb34b6eda8bef8411d4fa3d84b"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/package_evidence.py",
+      "bytes": 6043,
+      "sha256": "2444467cb1a5191beee8d70a4af8f7a9680039e81e49d1820fd165245960d8d3",
+      "git_blob": "30c87761126db9ba861b0d67cc6ae10d6dcc74a6"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/propmem_audit.py",
+      "bytes": 3951,
+      "sha256": "4a15962f53227ec891d60d988819ee90009df166ce1f7fe6b8429ea2e15a2213",
+      "git_blob": "a22fc8e4380eb978af33769c8de29ed05f6ca3fb"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/query_review.py",
+      "bytes": 8208,
+      "sha256": "57e3b952ab94eed08e466426590ca2fa153789a72677019f7c571c20764e1a7d",
+      "git_blob": "96c247efe434fbb3c66e87ac507ab25d46dfc1aa"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/query_review_analysis.py",
+      "bytes": 3679,
+      "sha256": "66426c189ca95253f197e6f0b49afc9b483ae7d5e1be8c7cbb198210d5b0c515",
+      "git_blob": "640143efc6396540e17e833f2623cc34d2ac5756"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/relation_audit.py",
+      "bytes": 7828,
+      "sha256": "039c02b6390eab5366745514524428f9b28a39f7e6962ed7f852da5ff4d25bc8",
+      "git_blob": "16b9c4109f81aa1bb78701b04abe10796e5d60d7"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/relation_preflight.py",
+      "bytes": 5448,
+      "sha256": "57c0ad265a28f73e295328c65a81d7cadf09a39f99149b414984c90664cf572f",
+      "git_blob": "bbc169931c72c87abe44f0fbc0b790d84162e981"
+    },
+    {
+      "status": "A",
+      "path": "tools/m5/score_review.py",
+      "bytes": 3413,
+      "sha256": "88c71f44d75244f168ed396906e047fc0fa18157b767003209b2b62363989c61",
+      "git_blob": "1e1e0e077a839281a8a26a1a78ffa54853075bcf"
+    }
+  ],
+  "worktree_clean_at_content_cutoff": true,
+  "all_worktree_files_equal_committed_blobs": true,
+  "inventory_files_excluded_from_content_cutoff": true,
+  "metadata_commit_discovery": "git log -1 --format=%H -- experiments/m5-development/final-delivery-v1",
+  "inventory_support_files": {
+    "commit-history.txt": "f8590aea1fc4e4abaac6b503f5ab05b3512789440422a990241c8ca635f60124",
+    "changed-files.txt": "ee9b2022192dddaf52f5624f2e721ebd3cf40ae4638e9a54688ba0d308cd5775",
+    "README.md": "1a6b13ff7de5b9e53fc17edd4711097d67b084757c4797913a1b762895099908"
+  },
+  "private_data_included": false,
+  "provider_requests": 0
+}

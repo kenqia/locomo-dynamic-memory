@@ -38,4 +38,4 @@ raw_max_hits = 3
 raw_neighbor_turns = 1
 raw_max_turns = 9
 raw_token_budget = 2000
-resolution_input_budget = 12000
+resolution_input_budget = 24000

@@ -1,0 +1,10 @@
+{
+  "trace_id": "synthetic-failed-trace",
+  "build_id": "2cc81c93ae4441239a929d9ba28b9268",
+  "question": "A deliberately failed synthetic request",
+  "outcome": "failed",
+  "error": {
+    "code": "invalid_source_id"
+  },
+  "provider_requests": 0
+}

@@ -1,0 +1,536 @@
+{
+  "version": "m5-level-e-postprocessing-independent-v1",
+  "status": "passed",
+  "reviewer": "/root/final_code_review_v6",
+  "checked_utc": "2026-11-05T04:55:07.878651+00:00",
+  "generation_freeze_sha256": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+  "source_review": {
+    "status": "source_arithmetic_and_contracts_passed",
+    "checked_utc": "2026-11-05T04:52:06.582730+00:00",
+    "generation_freeze_sha256": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+    "manifest_sha256": "b030f1cd63aeba84427827c9a750583fa346d8776821e8685401e9941ecde9a5",
+    "completed_reviews_sha256": "5900049cd6d97f20604d09fdddc48b7288d3aedd68d382a9b9069572e360bd85",
+    "planned": 800,
+    "reviewed": 800,
+    "quotes": 1796,
+    "failed_not_applicable": 17,
+    "supported_citation_source_ids_with_verbatim_quotes": 646,
+    "correct_abstention_full_conversation_and_gap_declarations": 195,
+    "revised_label_units": 21,
+    "partitions": [
+      {
+        "partition": "a",
+        "reviewed": 242,
+        "quotes": 529,
+        "reviewer": "final_actual_review"
+      },
+      {
+        "partition": "b",
+        "reviewed": 242,
+        "quotes": 505,
+        "reviewer": "level_e_blind_source_b"
+      },
+      {
+        "partition": "c",
+        "reviewed": 316,
+        "quotes": 762,
+        "reviewer": "level_e_blind_source_c"
+      }
+    ],
+    "summary_by_arm": {
+      "hybrid_no_resolution": {
+        "planned": 400,
+        "reviewed": 400,
+        "unreviewed": 0,
+        "execution_outcomes": {
+          "succeeded": 394,
+          "failed": 6
+        },
+        "answer_kinds": {
+          "answered": 239,
+          "abstained": 155,
+          "failed": 6
+        },
+        "source_support": {
+          "positive": 250,
+          "negative": 93,
+          "denominator": 343,
+          "rate": 0.7288629737609329,
+          "undetermined": 20,
+          "not_applicable": 31
+        },
+        "citation_support": {
+          "positive": 195,
+          "negative": 126,
+          "denominator": 321,
+          "rate": 0.6074766355140186,
+          "undetermined": 9,
+          "not_applicable": 64
+        },
+        "abstention": {
+          "positive": 100,
+          "negative": 43,
+          "denominator": 143,
+          "rate": 0.6993006993006993,
+          "undetermined": 12,
+          "not_applicable": 239
+        },
+        "wrong_person": {
+          "positive": 3,
+          "negative": 348,
+          "denominator": 351,
+          "rate": 0.008547008547008548,
+          "undetermined_or_not_applicable": 43
+        },
+        "wrong_event": {
+          "positive": 10,
+          "negative": 341,
+          "denominator": 351,
+          "rate": 0.02849002849002849,
+          "undetermined_or_not_applicable": 43
+        },
+        "wrong_time": {
+          "positive": 17,
+          "negative": 327,
+          "denominator": 344,
+          "rate": 0.04941860465116279,
+          "undetermined_or_not_applicable": 50
+        },
+        "list_omission": {
+          "positive": 25,
+          "negative": 324,
+          "denominator": 349,
+          "rate": 0.07163323782234957,
+          "undetermined_or_not_applicable": 45
+        }
+      },
+      "dynamic": {
+        "planned": 400,
+        "reviewed": 400,
+        "unreviewed": 0,
+        "execution_outcomes": {
+          "succeeded": 389,
+          "failed": 11
+        },
+        "answer_kinds": {
+          "abstained": 145,
+          "answered": 244,
+          "failed": 11
+        },
+        "source_support": {
+          "positive": 233,
+          "negative": 74,
+          "denominator": 307,
+          "rate": 0.758957654723127,
+          "undetermined": 25,
+          "not_applicable": 57
+        },
+        "citation_support": {
+          "positive": 197,
+          "negative": 113,
+          "denominator": 310,
+          "rate": 0.635483870967742,
+          "undetermined": 13,
+          "not_applicable": 66
+        },
+        "abstention": {
+          "positive": 95,
+          "negative": 39,
+          "denominator": 134,
+          "rate": 0.7089552238805971,
+          "undetermined": 11,
+          "not_applicable": 244
+        },
+        "wrong_person": {
+          "positive": 2,
+          "negative": 340,
+          "denominator": 342,
+          "rate": 0.005847953216374269,
+          "undetermined_or_not_applicable": 47
+        },
+        "wrong_event": {
+          "positive": 13,
+          "negative": 327,
+          "denominator": 340,
+          "rate": 0.03823529411764706,
+          "undetermined_or_not_applicable": 49
+        },
+        "wrong_time": {
+          "positive": 11,
+          "negative": 323,
+          "denominator": 334,
+          "rate": 0.03293413173652695,
+          "undetermined_or_not_applicable": 55
+        },
+        "list_omission": {
+          "positive": 15,
+          "negative": 324,
+          "denominator": 339,
+          "rate": 0.04424778761061947,
+          "undetermined_or_not_applicable": 50
+        }
+      }
+    },
+    "paired_overall": {
+      "source_support": {
+        "planned_pairs": 400,
+        "determinate_pairs": 297,
+        "excluded_pairs": 103,
+        "metric": {
+          "mean": 0.03367003367003367,
+          "bootstrap95": [
+            -0.010101010101010102,
+            0.07752525252525207
+          ],
+          "improved": 28,
+          "regressed": 18,
+          "unchanged": 251,
+          "denominator": 297,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more support or correct abstentions"
+      },
+      "citation_support": {
+        "planned_pairs": 400,
+        "determinate_pairs": 297,
+        "excluded_pairs": 103,
+        "metric": {
+          "mean": 0.026936026936026935,
+          "bootstrap95": [
+            -0.020202020202020204,
+            0.07407407407407407
+          ],
+          "improved": 31,
+          "regressed": 23,
+          "unchanged": 243,
+          "denominator": 297,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more support or correct abstentions"
+      },
+      "abstention": {
+        "planned_pairs": 400,
+        "determinate_pairs": 124,
+        "excluded_pairs": 276,
+        "metric": {
+          "mean": -0.016129032258064516,
+          "bootstrap95": [
+            -0.04032258064516129,
+            0.0
+          ],
+          "improved": 0,
+          "regressed": 2,
+          "unchanged": 122,
+          "denominator": 124,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more support or correct abstentions"
+      },
+      "wrong_person": {
+        "planned_pairs": 400,
+        "determinate_pairs": 320,
+        "excluded_pairs": 80,
+        "metric": {
+          "mean": -0.003125,
+          "bootstrap95": [
+            -0.015625,
+            0.009375
+          ],
+          "improved": 2,
+          "regressed": 3,
+          "unchanged": 315,
+          "denominator": 320,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      },
+      "wrong_event": {
+        "planned_pairs": 400,
+        "determinate_pairs": 319,
+        "excluded_pairs": 81,
+        "metric": {
+          "mean": 0.009404388714733543,
+          "bootstrap95": [
+            -0.01567398119122257,
+            0.034482758620689655
+          ],
+          "improved": 9,
+          "regressed": 6,
+          "unchanged": 304,
+          "denominator": 319,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      },
+      "wrong_time": {
+        "planned_pairs": 400,
+        "determinate_pairs": 308,
+        "excluded_pairs": 92,
+        "metric": {
+          "mean": -0.012987012987012988,
+          "bootstrap95": [
+            -0.03571428571428571,
+            0.00974025974025974
+          ],
+          "improved": 4,
+          "regressed": 8,
+          "unchanged": 296,
+          "denominator": 308,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      },
+      "list_omission": {
+        "planned_pairs": 400,
+        "determinate_pairs": 317,
+        "excluded_pairs": 83,
+        "metric": {
+          "mean": -0.01892744479495268,
+          "bootstrap95": [
+            -0.03785488958990536,
+            0.0
+          ],
+          "improved": 2,
+          "regressed": 8,
+          "unchanged": 307,
+          "denominator": 317,
+          "scope": "Conditional on both runtime success and applicable determinate labels; selected two conversations; not all planned factual accuracy or conversation-level inference."
+        },
+        "positive_difference_means": "more errors"
+      }
+    },
+    "independent_checks": {
+      "production_complete_review": 296,
+      "review_manifest_binding": 1,
+      "independent_overall": 56,
+      "independent_arms": 113,
+      "independent_conversations": 113,
+      "paired_all_items": 5601,
+      "paired_overall": 98,
+      "paired_conversation": 196,
+      "public_labels_exact_projection": 14401,
+      "partition_merge": 28787,
+      "provenance_partitions": 16,
+      "provenance_revisions": 286,
+      "provenance_quotes": 1,
+      "source_original_guard": 22
+    },
+    "bindings": {
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/packets.json": "bd7372d0a96e2ab3c118b159fd6c806e9f951aa0d25e4ae8d5c2960067d97ee9",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/private-mapping.json": "f1a62b268d9f25e3854d956d400b4c0e7ffd97f5c3b802a98fc8757783320f5f",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/manifest.json": "b030f1cd63aeba84427827c9a750583fa346d8776821e8685401e9941ecde9a5",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/completed-reviews.json": "5900049cd6d97f20604d09fdddc48b7288d3aedd68d382a9b9069572e360bd85",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/reviewer-a-packet.json": "26b4d4cb588f1342d30949e37107591379d1b6e2883785981c746578a6df6748",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/reviewer-b-packet.json": "0fef117446f42797aab08d641c627a5e58d7fc812b20228e52870005a688219c",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/reviewer-c-packet.json": "e07005adfa9aa1dc615b84344d2d604987ed7eacbdc5fdb27d8decf4b4172f3a",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/reviewer-a-initial-v1.json": "43957632b26f3593f9538a3010eca12f30a911950eaf7fc3423491a66b47be12",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/reviewer-b-initial-v1.json": "b5f773a4e5325408ba631a8b0a02a137ef6b90de0dace41ec021c6d89ba047c0",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/reviewer-c-initial-v1.json": "69c8d6f64b57350afa18a779992c52b05a2b2a86cbee74394f5bd66f2ccba700",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/reviewer-a-completed.json": "6f9387b09db341d397a0f2858a304d867e3b07acf958628945db72a07e00d114",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/reviewer-b-completed.json": "e6ce4c89f181fba0007b0bdb3868c57ef770f04cf9ebcbb51b21ee1365d93d6c",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/reviewer-c-completed.json": "f6f32b53ce85a078971cc48511ca89e74f4fdc0451f35c9d32912a74d08c11b7",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-source-review-v1/reviewer-b-boundary-recheck-v1.json": "ca7db5be706564a6e2bf6c712c9d0d18ec2e5712a6c4a9f8862132a3585d2b2c",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/level-e-results-v1/source-review-summary.json": "9d6f9acef7424409ccbcb889a6d17d195e67087d5c820107a7b9467e72bd92b4",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/level-e-results-v1/source-review-paired.json": "267a364bc9f8fd30d42bf52540c0f62340910569fe47748c11b2f228cac70013",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/level-e-results-v1/source-review-labels.json": "4e1698ef8a0ce76527fdc3be8fd5e2e9a5d5dcd8b209e8124dccc52fd6898cdb",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/level-e-results-v1/source-review-provenance.json": "198a31c4f6c06454692fb68ede22713b63e906d3116e6f4322dbef4f5c34ef3a",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/docs/m5-development/LEVEL_E_NUMERIC_REVIEW_V1.md": "a38e59bba71e742c7f87b4ea3b01f5ca2765086cee9fa0081af80f5b26c578ac",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/level-e-numeric-independent-v1.json": "751549250b64477e6bcb2e653e9176cf18ec062f4bd1f0ab9b7b383b51e0c6a1",
+      "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-preparation-v1/generation-freeze.json": "3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6",
+      "/tmp/m5_level_e_semantic_derive.py": "33be2ccf1cdb1b8e97e8344297ca5bf2fa1a83969ab9d1837721dbd0f6d25082"
+    },
+    "source_contract_note": "All 1796 quotes verified byte-for-byte within the same conversation; every supported-citation source covered. Declarations and quote existence do not independently prove all semantic judgments.",
+    "provenance_note": "Partition files and initial/final label diffs exactly reproduce provenance. Root had scored outputs for label-based boundary spotcheck; no dual-review agreement measured.",
+    "error_paired_field_note": "v1 metric.improved counts positive dynamic-minus-hybrid differences; for error indicators this means increased errors, not quality improvement.",
+    "provider_requests": 0,
+    "external_network_blocked": true,
+    "gold_sql_opened": false,
+    "raw_logs_or_credentials_read": false,
+    "labels_changed_by_this_reviewer": false,
+    "numeric_v1_unchanged": true,
+    "script_sha256": "149cc8a0e1fc9240eeaa805bfc9765eba778b053a66d04d0db6cf4ff254fa152"
+  },
+  "archive": {
+    "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-raw-terminal-v1.tar.gz",
+    "sha256": "72d6bd2dd5261ff863ec861eab780a5b580e4dec6889f5948ac73f45f44a31f5",
+    "bytes": 55172721,
+    "members": 863,
+    "manifest_sha256": "c86218adb841a95e73f8c40be42fd01602deaeb75f4dca8412f37001fc204ad9",
+    "all_members_read_back_hashed": true,
+    "exact_explicit_whitelist_match": true,
+    "regular_members_only_no_links_or_traversal": true,
+    "archive_member_mode": "0600",
+    "backup_directory_mode": "0700",
+    "snapshots": {
+      "conv-43.sqlite3": {
+        "all_schema_objects_equal": true,
+        "all_table_rows_and_rowids_equal": true,
+        "table_counts": {
+          "active_versions": 1,
+          "build_fragments": 68,
+          "build_indexes": 1,
+          "build_versions": 2,
+          "candidate_expansions": 484,
+          "candidate_queries": 484,
+          "conversations": 2,
+          "current_state_projections": 1,
+          "datasets": 1,
+          "evaluation_inputs": 0,
+          "evaluation_run_items": 0,
+          "evaluation_runs": 0,
+          "import_artifacts": 1,
+          "index_entries": 402,
+          "memories": 785,
+          "memory_relations": 7620,
+          "memory_sources": 808,
+          "query_traces": 242,
+          "relation_attempts": 400,
+          "relation_phases": 1,
+          "relation_provider_calls": 408,
+          "relation_tasks": 400,
+          "source_turns": 1355
+        },
+        "source_storage_identity": {
+          "main": {
+            "exists": true,
+            "sha256": "8182a7f4c45e40dbca9185d2b31305f71ef2e60a0d727e9dd20b3114f5eba32c"
+          },
+          "wal": {
+            "exists": true,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "snapshot_sha256": "4cd33d64fca5b6153092454eaccc08673b4a469e74fb71fb59645d69478ead22",
+        "snapshot_integrity_check": "ok"
+      },
+      "conv-44.sqlite3": {
+        "all_schema_objects_equal": true,
+        "all_table_rows_and_rowids_equal": true,
+        "table_counts": {
+          "active_versions": 1,
+          "build_fragments": 102,
+          "build_indexes": 1,
+          "build_versions": 3,
+          "candidate_expansions": 316,
+          "candidate_queries": 316,
+          "conversations": 2,
+          "current_state_projections": 1,
+          "datasets": 1,
+          "evaluation_inputs": 0,
+          "evaluation_run_items": 0,
+          "evaluation_runs": 0,
+          "import_artifacts": 1,
+          "index_entries": 392,
+          "memories": 1177,
+          "memory_relations": 7134,
+          "memory_sources": 1215,
+          "query_traces": 158,
+          "relation_attempts": 395,
+          "relation_phases": 1,
+          "relation_provider_calls": 430,
+          "relation_tasks": 384,
+          "source_turns": 1355
+        },
+        "source_storage_identity": {
+          "main": {
+            "exists": true,
+            "sha256": "2e1c122a2069a54b9b394012b08d6a752e2666d8ae8fd332f4580a61ec166660"
+          },
+          "wal": {
+            "exists": true,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "snapshot_sha256": "7d80e674bd64f90a630fac6fb7b23993edbcd6ec816e313a1af9e5549a8b35de",
+        "snapshot_integrity_check": "ok"
+      },
+      "physical-requests.sqlite3": {
+        "all_schema_objects_equal": true,
+        "all_table_rows_and_rowids_equal": true,
+        "table_counts": {
+          "physical_requests": 2112,
+          "policy": 1
+        },
+        "source_storage_identity": {
+          "main": {
+            "exists": true,
+            "sha256": "56c88b93c5737286254c314b397af55d18913e52d7f695ec60eb3f4d67a825f4"
+          },
+          "wal": {
+            "exists": false,
+            "sha256": null
+          }
+        },
+        "snapshot_sha256": "cfcac23da8519a7acf33f3b651dcc250b45c459b21edbf0da85ef1a672993ee8",
+        "snapshot_integrity_check": "ok"
+      }
+    },
+    "reference_gold_database_in_archive": false,
+    "raw_logs_credentials_wal_shm_locks_in_archive": false,
+    "all_archived_original_file_hashes_unchanged": true,
+    "report_sha256": "83127a9a5214e5a922ce8ea3564d36da5e42b14b2608984a021c6409aeca639c",
+    "archived_helper_sha256": "d96f950e6643867d33685b5a6de36bd84bd25f49b6a0d5297263deda7f471b9e"
+  },
+  "provenance": {
+    "prior_producer_authorship": [
+      "src/locomo_memory/extraction_time_diagnostics.py"
+    ],
+    "query_score_generation_config_prompt_authorship": false,
+    "candidate_selection_participation": false,
+    "scope": "Independent postprocessing arithmetic, evidence contracts and archive verification; not a second full semantic review or wholly uninvolved in all producer implementation"
+  },
+  "provider_requests": 0,
+  "external_network_blocked": true,
+  "gold_sql_opened": false,
+  "raw_logs_credentials_read": false,
+  "original_stage_or_databases_written": false,
+  "numeric_v1_modified": false,
+  "review_script_sha256": "bb36ac70984014db9d1957f3d19d4dd49bae0e0f7c2ce17c41eb7b3a34776d5b",
+  "source_intermediate_sha256": "2203bd60fc853c36ce0ac26ae46d75648ed94e0ffeb717743c4a0c36508daceb",
+  "limitations": [
+    "Quote existence and evidence contracts do not prove semantic correctness of every source judgment.",
+    "One AI reviewer per unit; no measured human, teacher, or dual-review agreement.",
+    "Root boundary spotcheck had access to scored outputs, disclosed in provenance; revised labels preserve prior versions.",
+    "Conditional paired denominators exclude failure, inapplicable and undetermined pairs; not full planned factual accuracy.",
+    "Question bootstrap within only two selected conversations; no conversation-level generalization or multiplicity adjustment.",
+    "v1 improved/regressed count positive/negative differences; on error flags positive means more errors.",
+    "Archive backups preserve logical rows, not original physical byte identity; restore is evidence replay, not permission to restart execution."
+  ],
+  "retained_review_scripts": [
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-execution-support-v1/m5_level_e_postprocessing_source_independent_review_v1.py",
+      "sha256": "149cc8a0e1fc9240eeaa805bfc9765eba778b053a66d04d0db6cf4ff254fa152",
+      "mode": "0600",
+      "source_tmp_path": "/tmp/m5_level_e_postprocessing_independent_review.py"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-execution-support-v1/m5_level_e_postprocessing_archive_independent_review_v1.py",
+      "sha256": "bb36ac70984014db9d1957f3d19d4dd49bae0e0f7c2ce17c41eb7b3a34776d5b",
+      "mode": "0600",
+      "source_tmp_path": "/tmp/m5_level_e_postprocessing_archive_independent_review.py"
+    },
+    {
+      "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-execution-support-v1/m5_level_e_postprocessing_finalize_independent_review_v1.py",
+      "sha256": "fd14c1ae511241c7602fa602ae66ccdea48578dd7f3f6b399c8582379d088d4f",
+      "mode": "0600",
+      "source_tmp_path": "/tmp/m5_level_e_postprocessing_independent_finalize.py"
+    }
+  ],
+  "retention_note": "These new independent-review code files are retained separately after the 863-member archive was frozen; archive v1 is unchanged.",
+  "delivery_index_review": {
+    "path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/docs/m5-development/FINAL_DELIVERY_EVIDENCE_INDEX_V1.md",
+    "sha256": "a904801ad2aef12fa198ff055cf6c3a31205b3c0da305b71cc41aacf64db902c",
+    "checked_scope": "Current claims for Level E numeric/source results, error-sign interpretation, provenance, not-measured boundaries, archive identity and PropMem scope agree with evidence.",
+    "propmem_audit_sha256": "98765698e71c36e990eb69e44aa33dd996ae5d3388b2892e9b643a9dd567abec",
+    "propmem_adapter_implemented": false,
+    "propmem_real_canary_run": false,
+    "git_inventory_status": "Four planned Git inventories were not yet generated at this review; no claim that they were verified.",
+    "release_main_deployment_teacher_or_course_acceptance_completed": false,
+    "results_document_sha256": "62b13b4f23b0e9446d09236ae985076406e4f2d23112b7e6b5b31e58b08775bb",
+    "root_spotcheck_boundary": "Root had official scores; label-based spotcheck is not strictly blind or a fourth independent semantic reviewer; no Gold or scores were provided to source reviewers according to preserved provenance."
+  },
+  "numeric_v1_guard_sha256": {
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/docs/m5-development/LEVEL_E_NUMERIC_REVIEW_V1.md": "a38e59bba71e742c7f87b4ea3b01f5ca2765086cee9fa0081af80f5b26c578ac",
+    "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/experiments/m5-development/level-e-numeric-independent-v1.json": "751549250b64477e6bcb2e653e9176cf18ec062f4bd1f0ab9b7b383b51e0c6a1"
+  }
+}

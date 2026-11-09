@@ -1,0 +1,51 @@
+{
+  "version": "m5-conv44-relation-successor-prepared-manifest-v1",
+  "checked_utc": "2026-11-04T17:13:42.955766+00:00",
+  "status": "prepared_not_authorized",
+  "implementation_commit": "1f7952456cf61c294df9051a53798d2e69023984",
+  "all_88_producer_blobs_match_commit": true,
+  "files": {
+    "plan.json": "699934d373556a353f837322322931cd8aec3adc76b87feada2c97a5fb9bd8a4",
+    "settings.json": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance.json": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e",
+    "authorization-template.json": "15cc17dfefe0baa0bf2a755516e9a23e53a8a8b6194a690ecfc5477ed9a43723",
+    "preparation-root-audit-v1.json": "21292e1b72e27dcd0cb5c4c3c461d9c90c6c8bd99f8ba0cceab2c41cb215e1c6",
+    "preparation-root-audit-script.py": "c7774aaafef66bec56e255eab8a4d2f1415216b86f977f1f7b886465a12ce123",
+    "terminal-root-audit-script.py": "6d74fd6cce7190e4cfab673da5dba4425344e1ab4c88b76ea297b15322a659b1"
+  },
+  "root_preparation_sha256": "21292e1b72e27dcd0cb5c4c3c461d9c90c6c8bd99f8ba0cceab2c41cb215e1c6",
+  "independent_preparation_sha256": "32565c063892a0392fecd293cfc9a96e30b7f199cf8d473ea9ad985bbc39583b",
+  "independent_preparation_report_sha256": "6cb3a3eceb7f0d83631cd5c569571a3d34b82693f892771f40b94d4f37a825cf",
+  "code_review_sha256": "f92664797e6ad9a3880a844871f32bea191d268a7c51d227f543525ae500883f",
+  "tests_sha256": "21fe123ba9aedb8e4a6371b90574542a864c64515e559cde6acce399a44882e2",
+  "stage": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/conv44-relation-successor-v1",
+  "build_id": "d9fb61417bb740e4b8eb34acb8652a46",
+  "policy": {
+    "model": "deepseek-flash",
+    "input_usd_per_million": "0.30",
+    "output_usd_per_million": "1.20",
+    "max_input_bytes": 160000,
+    "max_output_tokens": 32768,
+    "max_requests": 3,
+    "max_usd": "0.2619648"
+  },
+  "failed_tasks": 1,
+  "comparisons": 20,
+  "source_identity": {
+    "database": "aa2f5984709a3702e9e9de0a4c651b14b0c9f0fb61feb007a841a4de21f5b9ca",
+    "ledger": "bd2244d24c7b876f135940f17dc452e79b677c7781bf0aa2ff78dda8e18a02cf",
+    "plan": "82251c43a541f86a089dd649337930c501dcb00717debeb6786651f04b93529b",
+    "settings": "3e2bd434a1c75f263a35dd5f28be50d858ff8047e0e540390a68b8fce0eafe28",
+    "inheritance": "b5e312b5c54bde04f57c1d6961e6dd108a1c9594c6a6ffa8526b0ce2969cdf1e"
+  },
+  "source_terminal_sha256": "c6d816a97c3f4a44743f977f9a5f2ad4223eccb72b624c5accb9994b7fcba8be",
+  "prepared_database_logical_snapshot": "6396308ad64757ea84decf437281cca41e5eff8b613814665c3a8949c62b29ca",
+  "prepared_ledger_logical_snapshot": "9c25527a302bd5ae0a37bb3f4ba432acf909d04a85d6de76260c4edad9a8c88b",
+  "provider_requests": 0,
+  "authorization_present": false,
+  "execution_marker_present": false,
+  "holdout_qa_evidence_answers_read": false,
+  "old_budget_transferred": false,
+  "terminal_audit_script_ast_only": true,
+  "actual_invoice": "not_accessed"
+}

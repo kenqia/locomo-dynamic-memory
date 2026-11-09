@@ -1,0 +1,18 @@
+{
+  "version": "m5-cost-ledger-including-conv44-relation-successor-terminal-v1",
+  "scope": "nine approved paid phases; cumulative, terminal, non-transferable",
+  "real_provider_requests": 1863,
+  "conservative_reserved_usd": "92.1592080",
+  "reported_usage_peak_cache_miss_upper_usd_known": "10.3702023",
+  "unknown_usage_requests": 7,
+  "unknown_usage_reserved_usd": "0.3500316",
+  "parent_cumulative_terminal_sha256": "b21010b2f766d23f8240f3265183c70b17563e89a3570bf2261d728cf7b76f4d",
+  "new_phase_terminal_sha256": "24e09a0f75418be112a23d042c13cbfd1e42fed2338db1bb67a08951e78f030f",
+  "new_phase_requests": 1,
+  "new_phase_reserved_usd": "0.0537564",
+  "new_phase_known_usage_peak_upper_usd": "0.0072651",
+  "budgets_independent_not_transferable": true,
+  "remaining_capacity_authorizes_extra_attempts": false,
+  "further_recovery_authorized": false,
+  "actual_invoice": "not_accessed"
+}

@@ -1,0 +1,32 @@
+{
+  "archive": "var/m5-development/conv43-relations-raw-terminal-v2.tar.gz",
+  "sha256": "22d9cb655a975c9bc931dbd6ecbea8628ba44d5f26f1a76b6aaeda36e31d01d5",
+  "bytes": 3015384,
+  "members_sha256": {
+    "authorization.json": "fd10e327e3a56b89fdddd63302c2f3905735908812a79d5b881bef788ff31051",
+    "execution-started.json": "ff09f4df334eba5ad88eb698b7e445a4f88b14439806ce5aa9222ad573ea599e",
+    "memory.sqlite3": "d79ae3cf77a8971f5543fb4aa41747e275ee9255e8ed7fb6ccafcc2f18b3afe7",
+    "outcome.json": "2e0f48e15db5d7ecce9d918b5066c8d592bce49381a2e934b7aaaf1d92cd03cb",
+    "physical-requests.sqlite3": "00d965dcdea4f1e7447c56db359a5d9601416e9918124f41c28835bbf79a3552",
+    "plan.json": "3ecc4142916a7959b2c4fde9d421214ee872d0401bc5bf82f8d07b10478495c6",
+    "pre-execution-integrity.json": "0af03312b8aa4b13d922fbfbb2b0bffd85d841d3706896e404da232508a6a91b",
+    "pricing-recheck.json": "8aca8f1acbffc7a66cc178028ff248129184af6c7ccc19ccc9f1246afa6f2f10",
+    "pricing-recheck.md": "45396c395f2bbe150317331dcd9e4d0b485456432e0d891af7d0c9028f6abc9d",
+    "record-identity.json": "10415f6e09731a6b9fa258cc7b06942cb6ab361f2fe1fa175fe38bb3cb89a027",
+    "settings.json": "830bb4879747d32c16df0fc59a4cd87641c29a96c295f1eaec911a8ebd7146e7",
+    "sha256-manifest.json": "0948c58c6293e95d197ed297445d8a2e3a31b712a4068b33c2651a32c9e4190c",
+    "terminal-audit-v1.json": "93ba6dd8a92e2f95985d3eb2aa00928e0e9ed507314f2458c1e56970e86ce793"
+  },
+  "members_verified_by_reread": true,
+  "sqlite_backup_logical_identity_verified": true,
+  "stage_snapshots_before_after_unchanged": true,
+  "plan_sha256": "3ecc4142916a7959b2c4fde9d421214ee872d0401bc5bf82f8d07b10478495c6",
+  "private_artifacts_not_committed": true,
+  "contains_private_conversation_and_memory": true,
+  "holdout_qa_read": false,
+  "published": false,
+  "supersedes": "conv43-relations-raw-archive-v1.json",
+  "prior_archive_retained": true,
+  "prior_archive_limitation": "v1 included derived empty WAL and SHM created by read-only SQLite inspection despite exclusion description; v2 uses explicit member allowlist",
+  "runtime_sidecars_excluded": true
+}

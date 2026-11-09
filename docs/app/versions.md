@@ -13,6 +13,8 @@
 
 后端重启将等待或运行的构建标记为 `interrupted`，不重复处理已成功片段。启动锁阻止两个后端同时使用同一数据库。改动配置后，旧的不完整构建拒绝重试并返回 `build_configuration_changed`。抽取或关系 Prompt、schema 内容或版本、状态投影版本发生变化时，恢复返回 `build_contract_changed`；创建新版本继续。检查在发起模型调用或改写阶段状态之前完成，相同契约的重试仍保留成功产物。已完成版本仍可读取、固定及查询。
 
+有限校验反馈版本也进入构建契约。当前候选升级到 `safe-validation-feedback-v2-budget-aware` 后，不继续旧版本未完成的抽取或关系任务；旧完整记忆库仍可查询。原工作树和旧实验保留，不自动重建。
+
 ## 固定完整版本
 
 `GET /versions/pin?dataset_id=...&sample_id=...` 返回当前活动完整版本。传入 `build_id` 可固定指定完整版本。没有匹配完整版本时返回 HTTP 409 `no_complete_version`。候选检查接口仍允许检查已有索引的部分版本，不能将它称为完整记忆库回答。

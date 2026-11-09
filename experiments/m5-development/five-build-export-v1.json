@@ -1,0 +1,669 @@
+{
+  "status": "five_strict_exports_complete_local_copy_only",
+  "builds": [
+    {
+      "sample_id": "conv-26",
+      "build_id": "367c901b300440649bdc0bfba2af8010",
+      "status": "complete",
+      "original_source_status": "complete",
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "dataset_source_sha256": "6b0e114d7f462334ec99acf34a2f38074a27411d21022df4f3d3737e8839a3b0",
+      "build_fingerprint": "44be189a247e940d5deb6525d35b670c654cd29ccfb2a2b1cb628a356f0afae4",
+      "source_database": "/home/kenqia/my_folder/locomo-worktrees/m5-final-input-v2-20261104/var/m5-development/level-c-input-v2-preparation-v1/memory.sqlite3",
+      "source_database_main_file_sha256": "1b62ea21c13d65b4f4192f58d9c1786ffc38eb064d458bb2ea142aabb31699cf",
+      "export": "var/m5-development/five-build-export-v1/exports/conv-26.json",
+      "export_sha256": "08f4624a39c98793e0ad288e6de6c4ba058e0f30fa27f49569de0bdec0f1be78",
+      "export_bytes": 5053297,
+      "memories": 259,
+      "evidence_union_source_turns": 190,
+      "conversation_source_turns": 419,
+      "relations": 4740,
+      "relation_labels": {
+        "undetermined": 4627,
+        "UPDATE": 68,
+        "RETAIN": 45
+      },
+      "fragments": {
+        "succeeded": 21
+      },
+      "index": {
+        "build_id": "367c901b300440649bdc0bfba2af8010",
+        "status": "ready",
+        "fingerprint": "2b76ddfae066bf10b6f17485f4bcc6584e554b41d5a36a9b83f4dc6d4f86a1af",
+        "build_fingerprint": "44be189a247e940d5deb6525d35b670c654cd29ccfb2a2b1cb628a356f0afae4",
+        "memory_count": 259,
+        "embedding": {
+          "model": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+          "dimensions": 384,
+          "max_tokens": 256,
+          "length_policy": "reject",
+          "normalized": true,
+          "device": "cpu"
+        },
+        "text_schema_version": "entity-dimension-value-content-v1"
+      },
+      "projection": {
+        "fingerprint": "aaa939a99062515077626d12c0509189ab58efb345240e78ad2fdd35407a9a18",
+        "version": "current-state-v1",
+        "cutoff": "2023-10-22T09:55:00",
+        "counts": {
+          "current_states": 111,
+          "historical_states": 0,
+          "events": 112,
+          "nonfactual": 36,
+          "conflicts": 0,
+          "conditional_relations": 68
+        }
+      },
+      "lineage": {
+        "build_model_metadata": {
+          "requested_model": "deepseek-flash",
+          "known_service_version": "DeepSeek-V4.1-Flash-1017 (documented 2026-10-19; mutable service alias)",
+          "run_date": "2026-11-01",
+          "returned_models": [
+            "deepseek-flash"
+          ],
+          "artifact_versions": {
+            "projection_version": "current-state-v1",
+            "relation_prompt_version": "relations-v7-stage-evidence",
+            "relation_schema_version": "relation-v2-stage-evidence"
+          }
+        },
+        "frozen_settings_thinking": {
+          "extraction_thinking_effort": "disabled",
+          "relation_thinking_effort": "high",
+          "query_analysis_thinking_effort": "disabled",
+          "resolution_thinking_effort": "low",
+          "answer_thinking_effort": "disabled"
+        },
+        "extraction_attempts": {
+          "records": 21,
+          "thinking_efforts": {
+            "disabled": 21
+          },
+          "requested_models": {
+            "deepseek-flash": 21
+          },
+          "returned_models": {
+            "deepseek-flash": 21
+          }
+        },
+        "relation_attempts": {
+          "records": 256,
+          "thinking_efforts": {
+            "high": 256
+          },
+          "requested_models": {
+            "deepseek-flash": 256
+          },
+          "returned_models": {
+            "deepseek-flash": 256
+          }
+        },
+        "relation_attempt_records_source": "legacy_relation_tasks.metadata_json.calls",
+        "limitation": "historical metadata retained; mutable model aliases are not immutable pins; no claim of all-chain thinking disabled"
+      },
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-30",
+      "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+      "status": "complete",
+      "original_source_status": "complete",
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "dataset_source_sha256": "6b0e114d7f462334ec99acf34a2f38074a27411d21022df4f3d3737e8839a3b0",
+      "build_fingerprint": "c0f39de6dd02e0db090d69c440c14b5bc279ee018581da4438ec0580a963bb17",
+      "source_database": "/home/kenqia/my_folder/locomo-worktrees/m5-final-input-v2-20261104/var/m5-development/level-c-input-v2-preparation-v1/memory.sqlite3",
+      "source_database_main_file_sha256": "1b62ea21c13d65b4f4192f58d9c1786ffc38eb064d458bb2ea142aabb31699cf",
+      "export": "var/m5-development/five-build-export-v1/exports/conv-30.json",
+      "export_sha256": "efb5c9cdfea490358982f1c2b82818759aa46aad83d6f0d3f459415c268ec1ae",
+      "export_bytes": 4897537,
+      "memories": 244,
+      "evidence_union_source_turns": 154,
+      "conversation_source_turns": 369,
+      "relations": 4460,
+      "relation_labels": {
+        "undetermined": 4117,
+        "RETAIN": 70,
+        "UPDATE": 273
+      },
+      "fragments": {
+        "succeeded": 19
+      },
+      "index": {
+        "build_id": "b8f34a05c8ef4585a1fc3c917745aa53",
+        "status": "ready",
+        "fingerprint": "c642b0a0ecfcef63d4a11ca8a6c86234fc043e04be4a4f76766fdb0bc3d74254",
+        "build_fingerprint": "c0f39de6dd02e0db090d69c440c14b5bc279ee018581da4438ec0580a963bb17",
+        "memory_count": 244,
+        "embedding": {
+          "model": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+          "dimensions": 384,
+          "max_tokens": 256,
+          "length_policy": "reject",
+          "normalized": true,
+          "device": "cpu"
+        },
+        "text_schema_version": "entity-dimension-value-content-v1"
+      },
+      "projection": {
+        "fingerprint": "db319d9616ecfa22c2695d75a83545c05f238af5cb0ffb0d92da6d2a599ed37b",
+        "version": "current-state-v1",
+        "cutoff": "2023-07-23T18:46:00",
+        "counts": {
+          "current_states": 119,
+          "historical_states": 1,
+          "events": 72,
+          "nonfactual": 52,
+          "conflicts": 0,
+          "conditional_relations": 272
+        }
+      },
+      "lineage": {
+        "build_model_metadata": {
+          "requested_model": "deepseek-flash",
+          "known_service_version": "DeepSeek-V4.1-Flash-1017 (documented 2026-10-19; mutable service alias)",
+          "run_date": "2026-11-01",
+          "returned_models": [
+            "deepseek-flash"
+          ],
+          "artifact_versions": {
+            "projection_version": "current-state-v1",
+            "relation_prompt_version": "relations-v7-stage-evidence",
+            "relation_schema_version": "relation-v2-stage-evidence"
+          }
+        },
+        "frozen_settings_thinking": {
+          "extraction_thinking_effort": "disabled",
+          "relation_thinking_effort": "high",
+          "query_analysis_thinking_effort": "disabled",
+          "resolution_thinking_effort": "low",
+          "answer_thinking_effort": "disabled"
+        },
+        "extraction_attempts": {
+          "records": 19,
+          "thinking_efforts": {
+            "disabled": 19
+          },
+          "requested_models": {
+            "deepseek-flash": 19
+          },
+          "returned_models": {
+            "deepseek-flash": 19
+          }
+        },
+        "relation_attempts": {
+          "records": 247,
+          "thinking_efforts": {
+            "high": 247
+          },
+          "requested_models": {
+            "deepseek-flash": 247
+          },
+          "returned_models": {
+            "deepseek-flash": 247
+          }
+        },
+        "relation_attempt_records_source": "legacy_relation_tasks.metadata_json.calls",
+        "limitation": "historical metadata retained; mutable model aliases are not immutable pins; no claim of all-chain thinking disabled"
+      },
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-41",
+      "build_id": "8d459492549b4a3e88005211f036addf",
+      "status": "complete",
+      "original_source_status": "complete",
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "dataset_source_sha256": "6b0e114d7f462334ec99acf34a2f38074a27411d21022df4f3d3737e8839a3b0",
+      "build_fingerprint": "116fb41692285aeb29d73d620165d8c30a06297749f46a4aae6beaa46309a312",
+      "source_database": "/home/kenqia/my_folder/locomo-worktrees/m5-final-input-v2-20261104/var/m5-development/level-c-input-v2-preparation-v1/memory.sqlite3",
+      "source_database_main_file_sha256": "1b62ea21c13d65b4f4192f58d9c1786ffc38eb064d458bb2ea142aabb31699cf",
+      "export": "var/m5-development/five-build-export-v1/exports/conv-41.json",
+      "export_sha256": "e15b30e89de463cca4ff9fcd347b332a72525f0fbfb8506a5476df120fd4b488",
+      "export_bytes": 6147480,
+      "memories": 321,
+      "evidence_union_source_turns": 243,
+      "conversation_source_turns": 663,
+      "relations": 5767,
+      "relation_labels": {
+        "undetermined": 5566,
+        "UPDATE": 77,
+        "RETAIN": 123,
+        "SUPERSEDE": 1
+      },
+      "fragments": {
+        "succeeded": 34
+      },
+      "index": {
+        "build_id": "8d459492549b4a3e88005211f036addf",
+        "status": "ready",
+        "fingerprint": "be470b8702cede02d1372e3c00ff055429835c3b46e0b02ca4a99a82b8db938b",
+        "build_fingerprint": "116fb41692285aeb29d73d620165d8c30a06297749f46a4aae6beaa46309a312",
+        "memory_count": 321,
+        "embedding": {
+          "model": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+          "dimensions": 384,
+          "max_tokens": 256,
+          "length_policy": "reject",
+          "normalized": true,
+          "device": "cpu"
+        },
+        "text_schema_version": "entity-dimension-value-content-v1"
+      },
+      "projection": {
+        "fingerprint": "0115f3e11193e92e18fb3dd6973e4aa02d9dda5282aaa70456334ac4fb237403",
+        "version": "current-state-v1",
+        "cutoff": "2023-08-16T11:08:00",
+        "counts": {
+          "current_states": 147,
+          "historical_states": 0,
+          "events": 133,
+          "nonfactual": 41,
+          "conflicts": 0,
+          "conditional_relations": 77
+        }
+      },
+      "lineage": {
+        "build_model_metadata": {
+          "requested_model": "deepseek-flash",
+          "known_service_version": "DeepSeek-V4.1-Flash-1017 (documented 2026-10-19; mutable service alias)",
+          "run_date": "2026-11-02",
+          "returned_models": [
+            "deepseek-flash"
+          ],
+          "artifact_versions": {
+            "projection_version": "current-state-v1",
+            "relation_prompt_version": "relations-v7-stage-evidence",
+            "relation_schema_version": "relation-v2-stage-evidence"
+          }
+        },
+        "frozen_settings_thinking": {
+          "extraction_thinking_effort": "disabled",
+          "relation_thinking_effort": "high",
+          "query_analysis_thinking_effort": "disabled",
+          "resolution_thinking_effort": "low",
+          "answer_thinking_effort": "disabled"
+        },
+        "extraction_attempts": {
+          "records": 35,
+          "thinking_efforts": {
+            "disabled": 35
+          },
+          "requested_models": {
+            "deepseek-flash": 35
+          },
+          "returned_models": {
+            "deepseek-flash": 35
+          }
+        },
+        "relation_attempts": {
+          "records": 318,
+          "thinking_efforts": {
+            "high": 318
+          },
+          "requested_models": {
+            "deepseek-flash": 318
+          },
+          "returned_models": {
+            "deepseek-flash": 318
+          }
+        },
+        "relation_attempt_records_source": "legacy_relation_tasks.metadata_json.calls",
+        "limitation": "historical metadata retained; mutable model aliases are not immutable pins; no claim of all-chain thinking disabled"
+      },
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-42",
+      "build_id": "c892596ac8884f43b4cf2098349a7fa5",
+      "status": "complete",
+      "original_source_status": "complete",
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "dataset_id": "f69a07a79a2d5f4c8188300a",
+      "dataset_source_sha256": "6b0e114d7f462334ec99acf34a2f38074a27411d21022df4f3d3737e8839a3b0",
+      "build_fingerprint": "80796c954608a64e2b28d1486656a43018a2d568887f10ece4d0e9b4b0d478c2",
+      "source_database": "/home/kenqia/my_folder/locomo-worktrees/m5-final-input-v2-20261104/var/m5-development/level-c-input-v2-preparation-v1/memory.sqlite3",
+      "source_database_main_file_sha256": "1b62ea21c13d65b4f4192f58d9c1786ffc38eb064d458bb2ea142aabb31699cf",
+      "export": "var/m5-development/five-build-export-v1/exports/conv-42.json",
+      "export_sha256": "89d6bdf02e7eca10014688e0a7946fd536b846c4ff6c8b09a84bb8671680e3fd",
+      "export_bytes": 8229528,
+      "memories": 413,
+      "evidence_union_source_turns": 297,
+      "conversation_source_turns": 629,
+      "relations": 7724,
+      "relation_labels": {
+        "undetermined": 7498,
+        "UPDATE": 148,
+        "RETAIN": 78
+      },
+      "fragments": {
+        "succeeded": 32
+      },
+      "index": {
+        "build_id": "c892596ac8884f43b4cf2098349a7fa5",
+        "status": "ready",
+        "fingerprint": "0c156cab907c1dd59a25a0ff1c52a6e52cfb0dcb6bae37de4be7945c893ff44a",
+        "build_fingerprint": "80796c954608a64e2b28d1486656a43018a2d568887f10ece4d0e9b4b0d478c2",
+        "memory_count": 413,
+        "embedding": {
+          "model": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+          "dimensions": 384,
+          "max_tokens": 256,
+          "length_policy": "reject",
+          "normalized": true,
+          "device": "cpu"
+        },
+        "text_schema_version": "entity-dimension-value-content-v1"
+      },
+      "projection": {
+        "fingerprint": "78441488ff44536d061fa65eed5fffdfd8248ac8f553dac3875fa285861fa5fc",
+        "version": "current-state-v1",
+        "cutoff": "2022-11-11T00:06:00",
+        "counts": {
+          "current_states": 206,
+          "historical_states": 0,
+          "events": 137,
+          "nonfactual": 70,
+          "conflicts": 0,
+          "conditional_relations": 145
+        }
+      },
+      "lineage": {
+        "build_model_metadata": {
+          "requested_model": "deepseek-flash",
+          "known_service_version": "DeepSeek-V4.1-Flash-1017 (documented 2026-10-19; mutable service alias)",
+          "run_date": "2026-11-02",
+          "returned_models": [
+            "deepseek-flash"
+          ],
+          "artifact_versions": {
+            "projection_version": "current-state-v1",
+            "relation_prompt_version": "relations-v7-stage-evidence",
+            "relation_schema_version": "relation-v2-stage-evidence"
+          }
+        },
+        "frozen_settings_thinking": {
+          "extraction_thinking_effort": "disabled",
+          "relation_thinking_effort": "high",
+          "query_analysis_thinking_effort": "disabled",
+          "resolution_thinking_effort": "low",
+          "answer_thinking_effort": "disabled"
+        },
+        "extraction_attempts": {
+          "records": 34,
+          "thinking_efforts": {
+            "disabled": 34
+          },
+          "requested_models": {
+            "deepseek-flash": 34
+          },
+          "returned_models": {
+            "deepseek-flash": 34
+          }
+        },
+        "relation_attempts": {
+          "records": 415,
+          "thinking_efforts": {
+            "high": 415
+          },
+          "requested_models": {
+            "deepseek-flash": 415
+          },
+          "returned_models": {
+            "deepseek-flash": 415
+          }
+        },
+        "relation_attempt_records_source": "legacy_relation_tasks.metadata_json.calls",
+        "limitation": "historical metadata retained; mutable model aliases are not immutable pins; no claim of all-chain thinking disabled"
+      },
+      "strict_roundtrip": true
+    },
+    {
+      "sample_id": "conv-43",
+      "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+      "status": "complete",
+      "original_source_status": "related",
+      "schema_version": "memory-export-v2",
+      "relation_contract_version": "relation-v2-stage-evidence",
+      "dataset_id": "610b0aa9bfd787ff0882a806",
+      "dataset_source_sha256": "f3088c2c7cd5062f0459bb26c1c3aec6bd0b8e0b9f4c442d72b170f554be319d",
+      "build_fingerprint": "e7bf70017616b07b0e9d12c8fca8aa681cc4fbdc58d64e0568bf435ec8a66a25",
+      "source_database": "/home/kenqia/my_folder/locomo-worktrees/m5-final-development-20261104/var/m5-development/conv43-relation-proposal-v1/memory.sqlite3",
+      "source_database_main_file_sha256": "f4958a75ed33080804ae7126481adc27f450f5722c47768be542558c122dd3ae",
+      "export": "var/m5-development/five-build-export-v1/exports/conv-43.json",
+      "export_sha256": "2ae95deb13dcf22e1bb91cff44db88feba7c3bcf1b753e907ba121f4ac972f17",
+      "export_bytes": 8027134,
+      "memories": 402,
+      "evidence_union_source_turns": 300,
+      "conversation_source_turns": 680,
+      "relations": 7620,
+      "relation_labels": {
+        "undetermined": 7465,
+        "UPDATE": 94,
+        "RETAIN": 60,
+        "SUPERSEDE": 1
+      },
+      "fragments": {
+        "succeeded": 34
+      },
+      "index": {
+        "build_id": "b19ae777b6e642c9855ea278ebd4cd81",
+        "status": "ready",
+        "fingerprint": "7367e858eb489c68054d5b8bf3002cb1c22239ea8796db254f191204920fb2f5",
+        "build_fingerprint": "e7bf70017616b07b0e9d12c8fca8aa681cc4fbdc58d64e0568bf435ec8a66a25",
+        "memory_count": 402,
+        "embedding": {
+          "model": "sentence-transformers/all-MiniLM-L6-v2",
+          "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+          "dimensions": 384,
+          "max_tokens": 256,
+          "length_policy": "reject",
+          "normalized": true,
+          "device": "cpu"
+        },
+        "text_schema_version": "entity-dimension-value-content-v1"
+      },
+      "projection": {
+        "fingerprint": "254608d6164226d1c2c30f92cd9f764f224d51af1863f1489c1d64112333a70d",
+        "version": "current-state-v1",
+        "cutoff": "2024-01-12T13:41:00",
+        "counts": {
+          "current_states": 200,
+          "historical_states": 0,
+          "events": 140,
+          "nonfactual": 62,
+          "conflicts": 0,
+          "conditional_relations": 95
+        }
+      },
+      "lineage": {
+        "build_model_metadata": {
+          "requested_model": "deepseek-flash",
+          "known_service_version": "DeepSeek-V4.1-Flash-1017 (documented 2026-10-19; mutable service alias)",
+          "run_date": "2026-11-04",
+          "returned_models": [
+            "deepseek-flash"
+          ],
+          "artifact_versions": {
+            "projection_version": "current-state-v1",
+            "relation_prompt_version": "relations-v7-stage-evidence",
+            "relation_schema_version": "relation-v2-stage-evidence"
+          }
+        },
+        "frozen_settings_thinking": {
+          "extraction_thinking_effort": "disabled",
+          "relation_thinking_effort": "high",
+          "query_analysis_thinking_effort": "disabled",
+          "resolution_thinking_effort": "low",
+          "answer_thinking_effort": "disabled"
+        },
+        "extraction_attempts": {
+          "records": 36,
+          "thinking_efforts": {
+            "disabled": 36
+          },
+          "requested_models": {
+            "deepseek-flash": 36
+          },
+          "returned_models": {
+            "deepseek-flash": 36
+          }
+        },
+        "relation_attempts": {
+          "records": 408,
+          "thinking_efforts": {
+            "high": 408
+          },
+          "requested_models": {
+            "deepseek-flash": 408
+          },
+          "returned_models": {
+            "deepseek-flash": 401,
+            "not_reported": 7
+          }
+        },
+        "relation_attempt_records_source": "relation_provider_calls.metadata_json",
+        "limitation": "historical metadata retained; mutable model aliases are not immutable pins; no claim of all-chain thinking disabled"
+      },
+      "strict_roundtrip": true
+    }
+  ],
+  "authorization_basis": "user continue-total-task authorization; reversible local scratch completion within six-Build acceptance; no extension of original paid relation stage",
+  "source_relation_stage": "/home/kenqia/my_folder/locomo-worktrees/m5-final-development-20261104/var/m5-development/conv43-relation-proposal-v1",
+  "source_relation_plan_sha256": "3ecc4142916a7959b2c4fde9d421214ee872d0401bc5bf82f8d07b10478495c6",
+  "source_relation_terminal_audit_sha256": "93ba6dd8a92e2f95985d3eb2aa00928e0e9ed507314f2458c1e56970e86ce793",
+  "source_relation_audit_full_object_equal": true,
+  "source_relation_status": "related",
+  "source_relation_published": false,
+  "original_sources_and_ledger_unchanged": true,
+  "sqlite_backup_includes_committed_wal": true,
+  "source_relation_logical_before_after": {
+    "schema_sha256": "fdfce3fd246ab587e081d62d4f33becbd8f4e8bc2ff3a8bd65e43065f5bc36e8",
+    "tables": {
+      "active_versions": "ada4649f83f308c5b804db2044c6c93e7dfdd9d3b42f07b30fdddd36c66b8439",
+      "build_fragments": "d344a7ebf90214237e409fda2fa42c5b85ad41b56d8d645642bc748e8eb8b089",
+      "build_indexes": "c1034adfbb2b2436ae060e2cac6f304fd63925c1c51c3d08aa5afa54f2783df5",
+      "build_versions": "3ad8a9b54ef9675d05c78baa7f7bcb4d956fb1ac2a1c3265b99f6aea86cdb713",
+      "candidate_queries": "b1197071a84e1470d8e64db64b7ad3f3d85c07af7d4dc3d50852f14cee16ab8c",
+      "conversations": "7eca06239b2c57282c1104617dd12223549a2ba852fa22b7e82d73596ca2c933",
+      "current_state_projections": "e4c05265368f708dc1693e2c1574df433e914e4749b947fa732c144163c556c5",
+      "datasets": "8a1a15dd1a76b1a2695bb362b1c9dd180c3a7d5756704f7eee6aa88547bfee7d",
+      "import_artifacts": "55080894399990fcaac6190dfd73001f8379a0e76fb2aca52c684af6a517ca8b",
+      "index_entries": "d77658e539f5d2bd583cc9843ee7683ebc76a06c0bfc6979ef6fdd9aa4236b81",
+      "memories": "f72efcce36f3055aa6911786e11966b1dc8ca344c7f583fc5dc9a7efd64d6355",
+      "memory_relations": "9848596918bf42b518c3fdb47496b62e450ab571749342f2bd10b1f29ffa221c",
+      "memory_sources": "0ae51097ab9a53a83d6d7dda0835a6da322e4b392f5c42e003e5daba11778b21",
+      "relation_attempts": "b1dac209dedefbd30bdc2a56af6da804e2c99e65de9bb93c4a45146c8a52cc46",
+      "relation_phases": "a8a0d7aaf0a4e7145081a33361d0a3a056bcca06b5982c880e86939273f80551",
+      "relation_provider_calls": "99939bab50775cd8b97eb82d3b9d6022298bd88ef294342ee9249257b6384092",
+      "relation_tasks": "7d59eacad0579e0a98cc3eb3d7c29fcedf5e47e2e46cc2898b0dca73d571fe24",
+      "source_turns": "5e9a7aa13781a5ec3e6599619c5e93fe4f022eca70893d45606b8b854fb46648"
+    }
+  },
+  "development_logical_before_after": {
+    "schema_sha256": "3a509092e3b99a14109118aefe2b82f4a4fdef04c963fa3db2377ff842e46d27",
+    "tables": {
+      "active_versions": "de3a38c1998b03ba2b96a588885ef3b9b4b468f9ae018c9717c4e4b035792370",
+      "build_fragments": "04d2b804fab589ac0b38f1bd7524510d3194cf14b3ba71a418d3f05396ac1436",
+      "build_indexes": "d5304d07665b80e7ba5570ffac5564988310407121700b920958efaa13601475",
+      "build_versions": "10bc4da1e8f044ddf4e7f0162f4f8c9188b9b51f9d32ff304992827175f9d7b5",
+      "candidate_expansions": "5087744f81c6a561c374b354720e30532f2ef60cf83e08124b3c86fa201f27ff",
+      "candidate_queries": "607efcbeee53341a4222a4ba12ace0514d207e3b5999601c6fdeba9a47f656ab",
+      "conversations": "8ec6cd194bd56b08d93fc088ffc0202028f144490c58c0e792621a3b01856084",
+      "current_state_projections": "0ff1b5bf4706007e626c42e695c7e279b668ada91a25fa3991e8c72c7fdb812c",
+      "datasets": "90bd2149926f27cf2d29a1e6335c1924487cfaf04a1aa94211c79dd2d6a1e310",
+      "evaluation_inputs": "029f153cfcbbb1744712bf4e3f7ba375bc129215c3d4ee876c3413e411689cf4",
+      "evaluation_run_items": "32d2a5b7469c724de7097f2de3a984135dc8fa30c54696ad2e4608eb0f64fa20",
+      "evaluation_runs": "aa3e8fb4fe8e264668575aa7897e7a1224059501110aa5ae6693711455474af5",
+      "import_artifacts": "ea6e03846f10e6a0e5eba8f6c9d13e6999f12fb79da40dc1fdac682cd8cc2063",
+      "index_entries": "ae84e74f4c30648c5959dd3333a3e73fab813bdd9bfd89c4d011488a82dece48",
+      "memories": "d67947a185a9a63ba1d3b5ace3ab060c02c298991abad50fc6fd9db0ba348ab2",
+      "memory_relations": "8e2170215b52d7fc92d263161eeb4f0f389e22eb15acd2cb0d4906ae3b314a08",
+      "memory_sources": "666823e7017b1f14f3b612f876e19d7beda4479867e241a0f81694265986bafb",
+      "query_traces": "8cf10153327a5012d0f49de0b1502a8d48ef622b2c12785971497a41f401938f",
+      "relation_attempts": "60a77299ac239d592ef764824007b9226ed77a4b90562c5749793f3428bd1505",
+      "relation_phases": "57039761944dac5f62c1cadbd04d3b84c7ae7be774721daa01fb3d497511cefb",
+      "relation_provider_calls": "97686eb6c49b18dfd888a4d1c8a614501f8353120382f863d495e2018d7918d1",
+      "relation_tasks": "af0f4bf86075ee565a163b7f0720a06805ec4661e675bf8f50348714af430a59",
+      "source_turns": "9692c728c8e8b0eca5229d2bf87e9559205a0d6ff8ff2b0a4a7a8476f6cb6c89"
+    }
+  },
+  "source_ledger_logical_before_after": {
+    "schema_sha256": "1ce5860570b6233853eef6219392a8d62cdac1d68f53b5ea95b9486f3d70e6d2",
+    "tables": {
+      "physical_requests": "61c861d72df11bd218183f02dc0c86ea2d914860dfb15577593d40f30aa37f62",
+      "policy": "c837374c24da3edac1174810c1dc3071a87557c89a85d4e30c110f331701f3ac"
+    }
+  },
+  "copy_logical_after": {
+    "schema_sha256": "fdfce3fd246ab587e081d62d4f33becbd8f4e8bc2ff3a8bd65e43065f5bc36e8",
+    "tables": {
+      "active_versions": "bfeefecbfe0fa76fce8cb8f094457f7a2122cc4decfda729d4915af27477608b",
+      "build_fragments": "d344a7ebf90214237e409fda2fa42c5b85ad41b56d8d645642bc748e8eb8b089",
+      "build_indexes": "c1034adfbb2b2436ae060e2cac6f304fd63925c1c51c3d08aa5afa54f2783df5",
+      "build_versions": "4cf96e4720b25057678ab68ed6b341a85298053f19746e990dbc12adaffdfb96",
+      "candidate_queries": "b1197071a84e1470d8e64db64b7ad3f3d85c07af7d4dc3d50852f14cee16ab8c",
+      "conversations": "7eca06239b2c57282c1104617dd12223549a2ba852fa22b7e82d73596ca2c933",
+      "current_state_projections": "e4c05265368f708dc1693e2c1574df433e914e4749b947fa732c144163c556c5",
+      "datasets": "8a1a15dd1a76b1a2695bb362b1c9dd180c3a7d5756704f7eee6aa88547bfee7d",
+      "import_artifacts": "55080894399990fcaac6190dfd73001f8379a0e76fb2aca52c684af6a517ca8b",
+      "index_entries": "d77658e539f5d2bd583cc9843ee7683ebc76a06c0bfc6979ef6fdd9aa4236b81",
+      "memories": "f72efcce36f3055aa6911786e11966b1dc8ca344c7f583fc5dc9a7efd64d6355",
+      "memory_relations": "9848596918bf42b518c3fdb47496b62e450ab571749342f2bd10b1f29ffa221c",
+      "memory_sources": "0ae51097ab9a53a83d6d7dda0835a6da322e4b392f5c42e003e5daba11778b21",
+      "relation_attempts": "b1dac209dedefbd30bdc2a56af6da804e2c99e65de9bb93c4a45146c8a52cc46",
+      "relation_phases": "a8a0d7aaf0a4e7145081a33361d0a3a056bcca06b5982c880e86939273f80551",
+      "relation_provider_calls": "99939bab50775cd8b97eb82d3b9d6022298bd88ef294342ee9249257b6384092",
+      "relation_tasks": "7d59eacad0579e0a98cc3eb3d7c29fcedf5e47e2e46cc2898b0dca73d571fe24",
+      "source_turns": "5e9a7aa13781a5ec3e6599619c5e93fe4f022eca70893d45606b8b854fb46648"
+    }
+  },
+  "copy_changed_tables": [
+    "active_versions",
+    "build_versions"
+  ],
+  "copy_build_changed_columns": [
+    "status",
+    "phase",
+    "updated_at"
+  ],
+  "conv44_full_build_row_unchanged": true,
+  "all_other_tables_and_provider_metadata_unchanged": true,
+  "copied_database": "var/m5-development/five-build-export-v1/memory.sqlite3",
+  "copied_database_main_file_sha256": "2c6bee0e76cf398ba657fcece992993a9250e7fb32d9a88b746beaab6348de12",
+  "source_settings_sha256": "830bb4879747d32c16df0fc59a4cd87641c29a96c295f1eaec911a8ebd7146e7",
+  "copied_settings_sha256": "830bb4879747d32c16df0fc59a4cd87641c29a96c295f1eaec911a8ebd7146e7",
+  "script_sha256": "4dc064e11d4d174fd21f7037379a3382b10d85b6a218e58afd0c7c0445a8a071",
+  "private_directory_mode": "0o700",
+  "private_file_modes": {
+    "memory.sqlite3": "0o600",
+    "settings.json": "0o600",
+    "exports/conv-26.json": "0o600",
+    "exports/conv-30.json": "0o600",
+    "exports/conv-41.json": "0o600",
+    "exports/conv-42.json": "0o600",
+    "exports/conv-43.json": "0o600"
+  },
+  "provider_requests": 0,
+  "credentials_accessed": false,
+  "query_or_evaluation_run": false,
+  "holdout_annotations_nonnull_sql_count": 0,
+  "holdout_qa_evidence_answers_read": false,
+  "remote_write": false,
+  "production_database_written": false,
+  "level_e_executed": false,
+  "sixth_build": "conv-44 remains failed; six complete Builds not achieved",
+  "limitation": "strict source/schema/index/projection validity and local copy publication do not prove semantic relation accuracy, QA quality or release readiness"
+}

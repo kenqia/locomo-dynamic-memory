@@ -1,0 +1,7 @@
+{
+  "command": "PYTHONPATH=tools/integration/offline_guard:src:. /home/kenqia/my_folder/locomo-dynamic-memory/.venv/bin/python -m pytest tests/test_m5_level_c.py -q",
+  "passed": 5,
+  "wall_seconds": 34.39,
+  "warning": "existing Starlette/httpx deprecation",
+  "real_provider_requests": 0
+}

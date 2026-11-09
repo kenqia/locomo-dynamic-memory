@@ -1,0 +1,13 @@
+{
+  "status": "verified",
+  "physical_requests": 75,
+  "conservative_reserved_usd": "3.3289083",
+  "original_paid_producer_contract_unchanged": true,
+  "recovery_prepared_snapshots_still_match": true,
+  "recovery_authorization_present": false,
+  "recovery_started": false,
+  "original_research_database_unchanged": true,
+  "query_review_protocol_and_scorer_frozen_sha_match": true,
+  "provider_requests_during_check": 0,
+  "limitation": "Integrity of local artifacts and scope only; no semantic truth or completion claim"
+}

@@ -12,6 +12,43 @@ from test_relations import relation
 from test_retrieval import ControlledEmbedder, build
 
 
+@pytest.mark.parametrize('physical_allowance', [0, 1])
+def test_local_budget_rejection_removes_unsent_checkpoint_and_preserves_real_calls(settings, sample, physical_allowance):
+    import sqlite3
+    from locomo_memory.m5_budget import BudgetTransport
+    observed = []
+    def provider(request):
+        observed.append(request)
+        return completion({'judgments': []})  # Actual request, invalid complete batch.
+    base_model = DeepSeekModel(settings, api_key='synthetic',
+        transport=httpx.MockTransport(two_memory_provider))
+    app = create_app(settings, model=base_model, embedder=ControlledEmbedder())
+    path = settings.db_path.parent/'relation-budget.sqlite3'
+    guard = BudgetTransport(path, httpx.MockTransport(provider), max_requests=physical_allowance,
+        max_usd='1', model='deepseek-flash', input_usd_per_million='.30',
+        output_usd_per_million='1.20', max_input_bytes=160000, max_output_tokens=32768)
+    guarded_model = DeepSeekModel(settings, api_key='synthetic', transport=guard)
+    with TestClient(app) as client:
+        bid = build(client, sample)
+        assert client.post(f'/builds/{bid}/index').status_code == 201
+        app.state.relations.model = guarded_model
+        assert client.post(f'/builds/{bid}/relations').status_code == 202
+        task = client.get(f'/builds/{bid}/relation-tasks').json()['items'][0]
+        assert task['error_code'] == 'physical_request_budget_exhausted'
+        history = task['diagnostic_history'][0]
+        assert history['status'] == 'failed'
+        assert len(history['calls']) == physical_allowance
+        assert all(c['status'] == 'invalid_output' for c in history['calls'])
+        assert len(client.get(f'/builds/{bid}').json()['model_metadata']['calls']) == 1+physical_allowance
+    assert len(observed) == physical_allowance
+    with sqlite3.connect(path) as db:
+        assert db.execute('SELECT COUNT(*) FROM physical_requests').fetchone()[0] == physical_allowance
+    with TestClient(create_app(settings, model=base_model, embedder=ControlledEmbedder())) as client:
+        reloaded = client.get(f'/builds/{bid}/relation-tasks').json()['items'][0]
+        assert reloaded == task
+        assert len(client.get(f'/builds/{bid}').json()['model_metadata']['calls']) == 1+physical_allowance
+
+
 def test_internal_and_logical_retries_keep_history_after_restart(settings, sample):
     settings = settings.model_copy(update={'model_retries': 2})
     fixed = False

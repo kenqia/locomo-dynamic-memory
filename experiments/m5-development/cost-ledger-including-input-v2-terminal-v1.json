@@ -1,0 +1,48 @@
+{
+  "scope": "four approved M5 paid phases, terminal; historical phases on original branch",
+  "real_provider_requests": 1429,
+  "conservative_reserved_usd": "70.7806551",
+  "reported_usage_peak_cache_miss_upper_usd_known": "7.9025151",
+  "unknown_usage_requests": 7,
+  "unknown_usage_reserved_usd": "0.3500316",
+  "actual_invoice": "not_accessed",
+  "budgets_independent_not_transferable": true,
+  "remaining_capacity_authorizes_extra_attempts": false,
+  "source_original_branch": "codex/m5-final-development-20261104",
+  "source_original_commit": "0aae59c",
+  "source_original_file": "cost-ledger-terminal-v1.json",
+  "source_original_sha256": "667de1e2d51c2b8ef6a9e6b7a08ec7c3f850c65bb123beedaf0b61cb7637b91c",
+  "input_v2_terminal_ledger": {
+    "physical_ledger_requests": 522,
+    "request_statuses": {
+      "reserved": 0,
+      "response_received": 522,
+      "response_usage_unknown": 0,
+      "transport_unknown": 0
+    },
+    "reserved_usd": "27.8063415",
+    "reservations_by_status_usd": {
+      "reserved": "0",
+      "response_received": "27.8063415",
+      "response_usage_unknown": "0",
+      "transport_unknown": "0"
+    },
+    "unknown_usage_requests": 0,
+    "partial_usage_requests": 0,
+    "unknown_usage_reserved_usd": "0",
+    "reported_usage": {
+      "prompt_tokens": 7814253,
+      "completion_tokens": 201595,
+      "total_tokens": 8015848
+    },
+    "known_complete_usage_peak_cache_miss_upper_usd": "2.5861899",
+    "all_reported_fields_peak_cache_miss_upper_usd": "2.5861899",
+    "reported_cost_scope": "reported fields only; missing usage remains unknown and fully reserved",
+    "reported_partial_usage_included_in_token_totals": true,
+    "unknown_reservations_retained": true,
+    "remaining_requests": 978,
+    "remaining_reserved_capacity_usd": "319.1760585",
+    "actual_invoice_usd": "not_accessed",
+    "policy_verified": true
+  }
+}

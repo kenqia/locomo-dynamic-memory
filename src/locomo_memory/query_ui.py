@@ -9,12 +9,12 @@ def render_queries(request, dataset_id, sample_id, build):
     strategy_columns = st.columns([1, 2.35], gap="large", vertical_alignment="bottom")
     strategy = strategy_columns[0].selectbox(
         "问答策略",
-        ["dynamic", "dynamic_raw_fallback"],
-        format_func=lambda value: "Dynamic" if value == "dynamic" else "Dynamic + 原文兜底",
+        ["hybrid_no_resolution", "dynamic", "dynamic_raw_fallback"],
+        format_func=lambda value: {"hybrid_no_resolution": "Hybrid（默认）", "dynamic": "Dynamic", "dynamic_raw_fallback": "Dynamic + 原文兜底"}[value],
         key="query_strategy",
     )
     strategy_columns[1].caption(
-        "Dynamic 使用结构化 Memory；原文兜底只在结构化证据不足时补充有限原始轮次。"
+        "Hybrid 直接回答检索与扩展证据；Dynamic 额外解析有效性。真实问答可能产生模型费用。"
     )
     input_columns = st.columns([2.4, 1], gap="large")
     question = input_columns[0].text_input(
@@ -77,6 +77,6 @@ def render_queries(request, dataset_id, sample_id, build):
                     st.text(source["text"])
         with st.expander("初始候选、历史扩展、有效集合与排除理由"):
             st.json({"initial": trace["initial"], "expanded": trace["expanded"], "resolution": trace["resolution"],
-                     "effective_memories": trace["effective_memories"], "evidence_budget": trace["evidence_budget"]})
+                     "effective_memories": trace["effective_memories"], "answer_context_items": trace.get("answer_context_items", []), "evidence_budget": trace["evidence_budget"]})
     with st.expander("完整 Trace、实际配置、模型调用及用量"):
         st.json(trace)

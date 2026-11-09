@@ -5,6 +5,7 @@ from pathlib import Path
 import sqlite3
 
 import httpx
+import pytest
 
 from locomo_memory.query_schemas import EvidenceAnswer
 
@@ -31,8 +32,10 @@ def test_response_audit_keeps_fixed_reason_and_never_retains_answer(tmp_path, mo
     assert synthetic_private_text not in saved
     assert 'reasoning_content' not in saved
     errors = json.loads(saved)[0]['errors']
-    assert errors == [{'type': 'value_error', 'field_path': None,
-                       'cause': 'Answer must preserve evidence uncertainty'}]
+    # The diagnostic candidate replaced this generic ValueError with a safe code.
+    # The historical audit keeps its fixed fallback; do not rewrite its old output.
+    assert errors == [{'type': 'answer_evidence_status_required', 'field_path': None,
+                       'cause': 'other_validation_error'}]
 
 
 def test_snapshot_digest_detects_mutated_artifact_and_reuses_identical_copy(tmp_path, monkeypatch):
@@ -53,6 +56,7 @@ def test_snapshot_digest_detects_mutated_artifact_and_reuses_identical_copy(tmp_
     assert module.artifact_digest(source) == before
 
 
+@pytest.mark.controlled_data
 def test_repeat_report_keeps_failed_item_in_denominator(tmp_path):
     path = Path(__file__).resolve().parents[1] / 'experiments/issue-15-answer-output-live/report.py'
     spec = importlib.util.spec_from_file_location('answer_repeat_report_test', path)

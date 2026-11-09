@@ -1,0 +1,29 @@
+{
+  "version": "m5-level-e-execution-support-archive-v1",
+  "files": [
+    {
+      "original_path": "/tmp/m5_level_e_execution_preflight.py",
+      "archive_path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-execution-support-v1/m5_level_e_execution_preflight.py",
+      "sha256": "0a5596e5dfcb828253d4e156e9786c5abf68dddfa1effee5b963ddf5411e05b0"
+    },
+    {
+      "original_path": "/tmp/m5_level_e_once_runner.py",
+      "archive_path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-execution-support-v1/m5_level_e_once_runner.py",
+      "sha256": "b6682fd2fb5ac8eb852725ed29a001f80f65911c95f4ec1ab56f5d7a736fa877"
+    },
+    {
+      "original_path": "/tmp/m5_level_e_root_preparation_audit.py",
+      "archive_path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-execution-support-v1/m5_level_e_root_preparation_audit.py",
+      "sha256": "e83891049452fb84dd5e12cc0105618a33a9316dcfaba05df688e0b51123580c"
+    },
+    {
+      "original_path": "/tmp/level_e_independent_terminal_audit.py",
+      "archive_path": "/home/kenqia/my_folder/locomo-worktrees/m5-final-conv44-relations-20261104/var/m5-development/level-e-execution-support-v1/level_e_independent_terminal_audit.py",
+      "sha256": "2954de59fd2c95342f6be63f37874130b131dde443cb671f397d79359931148f"
+    }
+  ],
+  "warning": "Archives are evidence only; never restart execution/preflight or overwrite existing authorization.",
+  "source_producers_unchanged": true,
+  "provider_requests_by_archive": 0,
+  "gold_read_by_archive": false
+}
