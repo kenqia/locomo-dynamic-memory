@@ -4815,8 +4815,8 @@
     },
     {
       "path": "tests/test_sidecar_research.py",
-      "bytes": 6778,
-      "sha256": "6f7b7218e0ec664b54e720a35b981543e871c543e422e8491b70788b36922071"
+      "bytes": 6858,
+      "sha256": "1848b8a4d096b75d691c2e03fce9ee89e366716d748f5bd59d2d73cfed96f302"
     },
     {
       "path": "tests/test_sidecar_schema.py",
@@ -5266,5 +5266,11 @@
   ],
   "source_product_commit": "0401155aa2c270c48b942e4b410a9f4b390156b3",
   "source_sidecar_commit": "cd4db4c055d6d57256858ed3b7136ccea395122d",
-  "sidecar_adoption": "Default off; offline diagnostic only; ADR 0004; known temporal P2 deferred by owner."
+  "sidecar_adoption": "Default off; offline diagnostic only; ADR 0004; known temporal P2 deferred by owner.",
+  "submission_test_correction": {
+    "date": "2026-11-09",
+    "path": "tests/test_sidecar_research.py",
+    "prior_sha256": "6f7b7218e0ec664b54e720a35b981543e871c543e422e8491b70788b36922071",
+    "reason": "Pin dynamic strategy in Sidecar preservation test; production default remains Hybrid."
+  }
 }
