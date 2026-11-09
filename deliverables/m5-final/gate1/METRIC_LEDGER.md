@@ -78,6 +78,6 @@ K 单位 = Memory 排名；分子 = 唯一 Source Turn 覆盖；每臂 399/400 �
 | ID | 指标 | 值 | 来源 | 等级 |
 |---|---|---|---|---|
 | M50 | main `5519dd2` GitHub Actions "Checks" | completed / success | run 42582449214（负责人提供，本审计 API 复核） | VA |
-| M51 | main `5519dd2` 本地公开离线回归（排除 live_model / local_embedding / controlled_data） | 第 1 次：1,018 项全部 `.`，无 F/E，摘要行与退出码未捕获；第 2 次（含 JUnit 与退出码）运行中 | `/tmp/m5audit/pytest-5519dd2*.txt` → 完成后复制入 `audit/` | PEND |
+| M51 | main `5519dd2` 本地公开离线回归（排除 live_model / local_embedding / controlled_data） | 1,018 tests，0 failures，0 errors，exit 0，913.9 s，1 条既有弃用 warning | `audit/evidence/public-tests-5519dd2.json` | VA |
 | M52 | PR #41 作者端记录：1018 passed、28 deselected、899.01 s | — | `docs/release/PRODUCT_FREEZE.md` | VA |
 | M53 | 六份真实 MemoryExport：2,031 Memory / 37,445 关系 / 1,465 引用 Source | — | `six-memory-exports-manifest.json` | VA |

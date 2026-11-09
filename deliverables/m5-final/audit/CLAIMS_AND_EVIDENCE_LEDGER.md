@@ -67,7 +67,7 @@ E25 = Level E 独立留出评测：conv-43/44，400 题 × {Hybrid, Dynamic}，p
 | C50 | 公共 `POST /queries` 与 Release 页面默认 Hybrid，Dynamic 显式可选 | `release_queries.py`、`docs/release/DEFAULTS_AND_ROLLBACK.md`、tests/release | VERIFIED-ARTIFACT（代码存在） | Implemented |
 | C51 | Product Console（Overview / Memory / Query-Evidence / Experiments / Demo，离线 Replay）在 main | PR #41 merge `1549712`；`console_*.py`；作者外真人复核 xiaozhuozi39 绑定 `0401155`；CI run 42582449214 success | VERIFIED-ARTIFACT | Implemented and Accepted |
 | C52 | main `5519dd2` CI 通过 | GitHub Actions "Checks" run 42582449214：completed/success（负责人提供，2026-11-09 本审计经 API 复核 head_sha=5519dd2） | VERIFIED-ARTIFACT | "main 5519dd2 的 CI 检查通过" |
-| C52b | 本审计独立本地公开离线回归 | 第 1 次：1,018 项全 `.`、无 F/E，摘要/退出码未捕获；第 2 次带 JUnit 与退出码运行中（`/tmp/m5audit/pytest-5519dd2-r2.txt`） | PENDING | 完成后更新 |
+| C52b | 本审计独立本地公开离线回归 | 1,018 tests / 0 failures / 0 errors / exit 0，913.9 s；排除 live_model / local_embedding / controlled_data；`audit/evidence/public-tests-5519dd2.json`、`pytest-5519dd2-run2.txt` | VERIFIED-ARTIFACT | "离线公开回归 1,018 项通过（排除项不计）" |
 | C53 | 六份真实 MemoryExport：2031 Memory / 37,445 关系 | `six-memory-exports-manifest.json` | VERIFIED-ARTIFACT | "完整性校验通过，不代表语义正确" |
 | C54 | 60 关系单位 AI 诊断 50/60 | PERSONAL_EXPERIMENT_SUMMARY | DOC-ONLY | **NOT CLAIMABLE** 为四标签准确率（无 SUPERSEDE/CONFLICT 覆盖） |
 
