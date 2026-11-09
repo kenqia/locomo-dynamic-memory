@@ -1,0 +1,13 @@
+{
+  "schema": "public-console-replay-v1",
+  "mode": "OFFLINE_SYNTHETIC_REPLAY",
+  "provider_calls": 0,
+  "generator": "tools/team_v2/freeze_demo.py",
+  "generator_sha256": "7ddfac8fab3f63e7d8433d3c472896f43bab1fa36b18e30682257736bbb6cb17",
+  "checksum_basis": "UTF-8 file bytes with CRLF normalized to LF",
+  "quality_claim": "none; controlled synthetic application cases, not model scores",
+  "files": {
+    "snapshot.json": "737a34065994eca5e1be7340585ceca573bb3135877c74c7c49f0a305831f2f8",
+    "research-evidence.json": "c6fbdee83a0825de24b7f0157968b4b652ceeb38e2dda43743cf044f6a0de26b"
+  }
+}

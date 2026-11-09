@@ -1,0 +1,25 @@
+{
+  "source_product_commit": "0401155aa2c270c48b942e4b410a9f4b390156b3",
+  "main_baseline": "ba349cf7a8b784ff6c739767ee392802055feff5",
+  "runtime_code_commit": "4081ece",
+  "targeted_passed": 27,
+  "warnings": 1,
+  "product_module_sha256": {
+    "console_ui.py": "c8f3c41d0eeb141681edff91ddd1c70450f8356fe6c0dfa987839d9af92ffc89",
+    "console_replay.py": "de25098a0f748e2e4cd32bb440c588a8f3993ec11c89e6917b1fd06d3b1d4280",
+    "console_theme.py": "fbef88b54d51cbef15b2cf205ade9773ae1b0577bbdf6be29c1db520f05ca400",
+    "console_widgets.py": "940d44d64b456bc6111f6f8e35890c0ad04d5123809f4f918503df4d76761f8d",
+    "evidence_ui.py": "92703e18b324710d57aa04abb46765b08328ee1a499cc501c1ab95aeca4feff2",
+    "frozen_report_ui.py": "276b81554835b63b28a226ff7dda4c5f85443532569725a2282a26aa8316d400"
+  },
+  "unchanged_main_core": {
+    "query_ui.py": true,
+    "queries.py": true,
+    "config.py": true,
+    "ui.py": true,
+    "api.py": true,
+    "replay_ui.py": true
+  },
+  "human_review": "xiaozhuozi39 record explicitly binds 0401155; owner accepts and authorizes freeze",
+  "provider_requests": 0
+}

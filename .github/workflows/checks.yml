@@ -29,7 +29,12 @@ jobs:
           version: "0.9.11"
           enable-cache: true
       - name: Install locked development dependencies
-        run: uv sync --locked
+        run: |
+          runner_python=$(printf '%s\n' "$RUNNER_TOOL_CACHE"/Python/3.12.*/x64/bin/python | sort -V | tail -n 1)
+          test -x "$runner_python"
+          "$runner_python" --version
+          echo "UV_PYTHON=$runner_python" >> "$GITHUB_ENV"
+          uv sync --locked --python "$runner_python" --no-python-downloads
       - name: Check whitespace in the proposed changes
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}

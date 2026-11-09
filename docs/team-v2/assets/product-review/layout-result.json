@@ -1,0 +1,1879 @@
+{
+  "status": "passed",
+  "source": "local working tree; not submitted for member review",
+  "base_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+  "browser": "157.0.4341.42",
+  "source_sha256_lf": {
+    "console_ui.py": "c8f3c41d0eeb141681edff91ddd1c70450f8356fe6c0dfa987839d9af92ffc89",
+    "console_theme.py": "fbef88b54d51cbef15b2cf205ade9773ae1b0577bbdf6be29c1db520f05ca400",
+    "console_widgets.py": "940d44d64b456bc6111f6f8e35890c0ad04d5123809f4f918503df4d76761f8d",
+    "evidence_ui.py": "92703e18b324710d57aa04abb46765b08328ee1a499cc501c1ab95aeca4feff2"
+  },
+  "checks": [
+    {
+      "role": "presenter",
+      "page": "Overview",
+      "width": 1280,
+      "header": {
+        "x": 38.390625,
+        "y": 31.515625,
+        "width": 1203.21875,
+        "height": 86.6875,
+        "bottom": 118.203125
+      },
+      "brand": {
+        "x": 58.390625,
+        "y": 50.359375,
+        "width": 240,
+        "height": 48,
+        "bottom": 98.359375
+      },
+      "nav": {
+        "x": 314.390625,
+        "y": 47.515625,
+        "width": 771.21875,
+        "height": 53.6875,
+        "bottom": 101.203125
+      },
+      "data": {
+        "x": 38.390625,
+        "y": 129.71875,
+        "width": 1203.21875,
+        "height": 117.484375,
+        "bottom": 247.203125
+      },
+      "summary": {
+        "x": 55.390625,
+        "y": 144.3125,
+        "width": 1169.21875,
+        "height": 36.78125,
+        "bottom": 181.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "role": "presenter",
+      "page": "Memory",
+      "width": 1280,
+      "header": {
+        "x": 38.390625,
+        "y": 31.515625,
+        "width": 1203.21875,
+        "height": 86.6875,
+        "bottom": 118.203125
+      },
+      "brand": {
+        "x": 58.390625,
+        "y": 50.359375,
+        "width": 240,
+        "height": 48,
+        "bottom": 98.359375
+      },
+      "nav": {
+        "x": 314.390625,
+        "y": 47.515625,
+        "width": 771.21875,
+        "height": 53.6875,
+        "bottom": 101.203125
+      },
+      "data": {
+        "x": 38.390625,
+        "y": 129.71875,
+        "width": 1203.21875,
+        "height": 117.484375,
+        "bottom": 247.203125
+      },
+      "summary": {
+        "x": 55.390625,
+        "y": 144.3125,
+        "width": 1169.21875,
+        "height": 36.78125,
+        "bottom": 181.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "role": "presenter",
+      "page": "Query",
+      "width": 1280,
+      "header": {
+        "x": 38.390625,
+        "y": 31.515625,
+        "width": 1203.21875,
+        "height": 86.6875,
+        "bottom": 118.203125
+      },
+      "brand": {
+        "x": 58.390625,
+        "y": 50.359375,
+        "width": 240,
+        "height": 48,
+        "bottom": 98.359375
+      },
+      "nav": {
+        "x": 314.390625,
+        "y": 47.515625,
+        "width": 771.21875,
+        "height": 53.6875,
+        "bottom": 101.203125
+      },
+      "data": {
+        "x": 38.390625,
+        "y": 129.71875,
+        "width": 1203.21875,
+        "height": 117.484375,
+        "bottom": 247.203125
+      },
+      "summary": {
+        "x": 55.390625,
+        "y": 144.3125,
+        "width": 1169.21875,
+        "height": 36.78125,
+        "bottom": 181.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "role": "presenter",
+      "page": "Experiments",
+      "width": 1280,
+      "header": {
+        "x": 38.390625,
+        "y": 31.515625,
+        "width": 1203.21875,
+        "height": 86.6875,
+        "bottom": 118.203125
+      },
+      "brand": {
+        "x": 58.390625,
+        "y": 50.359375,
+        "width": 240,
+        "height": 48,
+        "bottom": 98.359375
+      },
+      "nav": {
+        "x": 314.390625,
+        "y": 47.515625,
+        "width": 771.21875,
+        "height": 53.6875,
+        "bottom": 101.203125
+      },
+      "data": {
+        "x": 38.390625,
+        "y": 129.71875,
+        "width": 1203.21875,
+        "height": 117.484375,
+        "bottom": 247.203125
+      },
+      "summary": {
+        "x": 55.390625,
+        "y": 144.3125,
+        "width": 1169.21875,
+        "height": 36.78125,
+        "bottom": 181.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "role": "presenter",
+      "page": "Demo",
+      "width": 1280,
+      "header": {
+        "x": 38.390625,
+        "y": 31.515625,
+        "width": 1203.21875,
+        "height": 86.6875,
+        "bottom": 118.203125
+      },
+      "brand": {
+        "x": 58.390625,
+        "y": 50.359375,
+        "width": 240,
+        "height": 48,
+        "bottom": 98.359375
+      },
+      "nav": {
+        "x": 314.390625,
+        "y": 47.515625,
+        "width": 771.21875,
+        "height": 53.6875,
+        "bottom": 101.203125
+      },
+      "data": {
+        "x": 38.390625,
+        "y": 129.71875,
+        "width": 1203.21875,
+        "height": 117.484375,
+        "bottom": 247.203125
+      },
+      "summary": {
+        "x": 55.390625,
+        "y": 144.3125,
+        "width": 1169.21875,
+        "height": 36.78125,
+        "bottom": 181.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "role": "reviewer",
+      "page": "Overview",
+      "width": 1280,
+      "header": {
+        "x": 38.390625,
+        "y": 31.515625,
+        "width": 1203.21875,
+        "height": 86.6875,
+        "bottom": 118.203125
+      },
+      "brand": {
+        "x": 58.390625,
+        "y": 50.359375,
+        "width": 240,
+        "height": 48,
+        "bottom": 98.359375
+      },
+      "nav": {
+        "x": 314.390625,
+        "y": 47.515625,
+        "width": 771.21875,
+        "height": 53.6875,
+        "bottom": 101.203125
+      },
+      "data": {
+        "x": 38.390625,
+        "y": 129.71875,
+        "width": 1203.21875,
+        "height": 117.484375,
+        "bottom": 247.203125
+      },
+      "summary": {
+        "x": 55.390625,
+        "y": 144.3125,
+        "width": 1169.21875,
+        "height": 36.78125,
+        "bottom": 181.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "role": "reviewer",
+      "page": "Memory",
+      "width": 1280,
+      "header": {
+        "x": 38.390625,
+        "y": 31.515625,
+        "width": 1203.21875,
+        "height": 86.6875,
+        "bottom": 118.203125
+      },
+      "brand": {
+        "x": 58.390625,
+        "y": 50.359375,
+        "width": 240,
+        "height": 48,
+        "bottom": 98.359375
+      },
+      "nav": {
+        "x": 314.390625,
+        "y": 47.515625,
+        "width": 771.21875,
+        "height": 53.6875,
+        "bottom": 101.203125
+      },
+      "data": {
+        "x": 38.390625,
+        "y": 129.71875,
+        "width": 1203.21875,
+        "height": 117.484375,
+        "bottom": 247.203125
+      },
+      "summary": {
+        "x": 55.390625,
+        "y": 144.3125,
+        "width": 1169.21875,
+        "height": 36.78125,
+        "bottom": 181.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "role": "reviewer",
+      "page": "Query",
+      "width": 1280,
+      "header": {
+        "x": 38.390625,
+        "y": 31.515625,
+        "width": 1203.21875,
+        "height": 86.6875,
+        "bottom": 118.203125
+      },
+      "brand": {
+        "x": 58.390625,
+        "y": 50.359375,
+        "width": 240,
+        "height": 48,
+        "bottom": 98.359375
+      },
+      "nav": {
+        "x": 314.390625,
+        "y": 47.515625,
+        "width": 771.21875,
+        "height": 53.6875,
+        "bottom": 101.203125
+      },
+      "data": {
+        "x": 38.390625,
+        "y": 129.71875,
+        "width": 1203.21875,
+        "height": 117.484375,
+        "bottom": 247.203125
+      },
+      "summary": {
+        "x": 55.390625,
+        "y": 144.3125,
+        "width": 1169.21875,
+        "height": 36.78125,
+        "bottom": 181.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "role": "reviewer",
+      "page": "Experiments",
+      "width": 1280,
+      "header": {
+        "x": 38.390625,
+        "y": 31.515625,
+        "width": 1203.21875,
+        "height": 86.6875,
+        "bottom": 118.203125
+      },
+      "brand": {
+        "x": 58.390625,
+        "y": 50.359375,
+        "width": 240,
+        "height": 48,
+        "bottom": 98.359375
+      },
+      "nav": {
+        "x": 314.390625,
+        "y": 47.515625,
+        "width": 771.21875,
+        "height": 53.6875,
+        "bottom": 101.203125
+      },
+      "data": {
+        "x": 38.390625,
+        "y": 129.71875,
+        "width": 1203.21875,
+        "height": 117.484375,
+        "bottom": 247.203125
+      },
+      "summary": {
+        "x": 55.390625,
+        "y": 144.3125,
+        "width": 1169.21875,
+        "height": 36.78125,
+        "bottom": 181.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "role": "reviewer",
+      "page": "Demo",
+      "width": 1280,
+      "header": {
+        "x": 38.390625,
+        "y": 31.515625,
+        "width": 1203.21875,
+        "height": 86.6875,
+        "bottom": 118.203125
+      },
+      "brand": {
+        "x": 58.390625,
+        "y": 50.359375,
+        "width": 240,
+        "height": 48,
+        "bottom": 98.359375
+      },
+      "nav": {
+        "x": 314.390625,
+        "y": 47.515625,
+        "width": 771.21875,
+        "height": 53.6875,
+        "bottom": 101.203125
+      },
+      "data": {
+        "x": 38.390625,
+        "y": 129.71875,
+        "width": 1203.21875,
+        "height": 117.484375,
+        "bottom": 247.203125
+      },
+      "summary": {
+        "x": 55.390625,
+        "y": 144.3125,
+        "width": 1169.21875,
+        "height": 36.78125,
+        "bottom": 181.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 181.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "role": "presenter",
+      "page": "Overview",
+      "width": 768,
+      "header": {
+        "x": 23.03125,
+        "y": 31.515625,
+        "width": 721.9375,
+        "height": 150.6875,
+        "bottom": 182.203125
+      },
+      "brand": {
+        "x": 43.03125,
+        "y": 47.515625,
+        "width": 545.9375,
+        "height": 48,
+        "bottom": 95.515625
+      },
+      "nav": {
+        "x": 43.03125,
+        "y": 111.515625,
+        "width": 681.9375,
+        "height": 53.6875,
+        "bottom": 165.203125
+      },
+      "data": {
+        "x": 23.03125,
+        "y": 193.71875,
+        "width": 721.9375,
+        "height": 117.484375,
+        "bottom": 311.203125
+      },
+      "summary": {
+        "x": 40.03125,
+        "y": 208.3125,
+        "width": 687.9375,
+        "height": 36.78125,
+        "bottom": 245.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "role": "presenter",
+      "page": "Memory",
+      "width": 768,
+      "header": {
+        "x": 23.03125,
+        "y": 31.515625,
+        "width": 721.9375,
+        "height": 150.6875,
+        "bottom": 182.203125
+      },
+      "brand": {
+        "x": 43.03125,
+        "y": 47.515625,
+        "width": 545.9375,
+        "height": 48,
+        "bottom": 95.515625
+      },
+      "nav": {
+        "x": 43.03125,
+        "y": 111.515625,
+        "width": 681.9375,
+        "height": 53.6875,
+        "bottom": 165.203125
+      },
+      "data": {
+        "x": 23.03125,
+        "y": 193.71875,
+        "width": 721.9375,
+        "height": 117.484375,
+        "bottom": 311.203125
+      },
+      "summary": {
+        "x": 40.03125,
+        "y": 208.3125,
+        "width": 687.9375,
+        "height": 36.78125,
+        "bottom": 245.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "role": "presenter",
+      "page": "Query",
+      "width": 768,
+      "header": {
+        "x": 23.03125,
+        "y": 31.515625,
+        "width": 721.9375,
+        "height": 150.6875,
+        "bottom": 182.203125
+      },
+      "brand": {
+        "x": 43.03125,
+        "y": 47.515625,
+        "width": 545.9375,
+        "height": 48,
+        "bottom": 95.515625
+      },
+      "nav": {
+        "x": 43.03125,
+        "y": 111.515625,
+        "width": 681.9375,
+        "height": 53.6875,
+        "bottom": 165.203125
+      },
+      "data": {
+        "x": 23.03125,
+        "y": 193.71875,
+        "width": 721.9375,
+        "height": 117.484375,
+        "bottom": 311.203125
+      },
+      "summary": {
+        "x": 40.03125,
+        "y": 208.3125,
+        "width": 687.9375,
+        "height": 36.78125,
+        "bottom": 245.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "role": "presenter",
+      "page": "Experiments",
+      "width": 768,
+      "header": {
+        "x": 23.03125,
+        "y": 31.515625,
+        "width": 721.9375,
+        "height": 150.6875,
+        "bottom": 182.203125
+      },
+      "brand": {
+        "x": 43.03125,
+        "y": 47.515625,
+        "width": 545.9375,
+        "height": 48,
+        "bottom": 95.515625
+      },
+      "nav": {
+        "x": 43.03125,
+        "y": 111.515625,
+        "width": 681.9375,
+        "height": 53.6875,
+        "bottom": 165.203125
+      },
+      "data": {
+        "x": 23.03125,
+        "y": 193.71875,
+        "width": 721.9375,
+        "height": 117.484375,
+        "bottom": 311.203125
+      },
+      "summary": {
+        "x": 40.03125,
+        "y": 208.3125,
+        "width": 687.9375,
+        "height": 36.78125,
+        "bottom": 245.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "role": "presenter",
+      "page": "Demo",
+      "width": 768,
+      "header": {
+        "x": 23.03125,
+        "y": 31.515625,
+        "width": 721.9375,
+        "height": 150.6875,
+        "bottom": 182.203125
+      },
+      "brand": {
+        "x": 43.03125,
+        "y": 47.515625,
+        "width": 545.9375,
+        "height": 48,
+        "bottom": 95.515625
+      },
+      "nav": {
+        "x": 43.03125,
+        "y": 111.515625,
+        "width": 681.9375,
+        "height": 53.6875,
+        "bottom": 165.203125
+      },
+      "data": {
+        "x": 23.03125,
+        "y": 193.71875,
+        "width": 721.9375,
+        "height": 117.484375,
+        "bottom": 311.203125
+      },
+      "summary": {
+        "x": 40.03125,
+        "y": 208.3125,
+        "width": 687.9375,
+        "height": 36.78125,
+        "bottom": 245.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "role": "reviewer",
+      "page": "Overview",
+      "width": 768,
+      "header": {
+        "x": 23.03125,
+        "y": 31.515625,
+        "width": 721.9375,
+        "height": 150.6875,
+        "bottom": 182.203125
+      },
+      "brand": {
+        "x": 43.03125,
+        "y": 47.515625,
+        "width": 545.9375,
+        "height": 48,
+        "bottom": 95.515625
+      },
+      "nav": {
+        "x": 43.03125,
+        "y": 111.515625,
+        "width": 681.9375,
+        "height": 53.6875,
+        "bottom": 165.203125
+      },
+      "data": {
+        "x": 23.03125,
+        "y": 193.71875,
+        "width": 721.9375,
+        "height": 117.484375,
+        "bottom": 311.203125
+      },
+      "summary": {
+        "x": 40.03125,
+        "y": 208.3125,
+        "width": 687.9375,
+        "height": 36.78125,
+        "bottom": 245.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "role": "reviewer",
+      "page": "Memory",
+      "width": 768,
+      "header": {
+        "x": 23.03125,
+        "y": 31.515625,
+        "width": 721.9375,
+        "height": 150.6875,
+        "bottom": 182.203125
+      },
+      "brand": {
+        "x": 43.03125,
+        "y": 47.515625,
+        "width": 545.9375,
+        "height": 48,
+        "bottom": 95.515625
+      },
+      "nav": {
+        "x": 43.03125,
+        "y": 111.515625,
+        "width": 681.9375,
+        "height": 53.6875,
+        "bottom": 165.203125
+      },
+      "data": {
+        "x": 23.03125,
+        "y": 193.71875,
+        "width": 721.9375,
+        "height": 117.484375,
+        "bottom": 311.203125
+      },
+      "summary": {
+        "x": 40.03125,
+        "y": 208.3125,
+        "width": 687.9375,
+        "height": 36.78125,
+        "bottom": 245.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "role": "reviewer",
+      "page": "Query",
+      "width": 768,
+      "header": {
+        "x": 23.03125,
+        "y": 31.515625,
+        "width": 721.9375,
+        "height": 150.6875,
+        "bottom": 182.203125
+      },
+      "brand": {
+        "x": 43.03125,
+        "y": 47.515625,
+        "width": 545.9375,
+        "height": 48,
+        "bottom": 95.515625
+      },
+      "nav": {
+        "x": 43.03125,
+        "y": 111.515625,
+        "width": 681.9375,
+        "height": 53.6875,
+        "bottom": 165.203125
+      },
+      "data": {
+        "x": 23.03125,
+        "y": 193.71875,
+        "width": 721.9375,
+        "height": 117.484375,
+        "bottom": 311.203125
+      },
+      "summary": {
+        "x": 40.03125,
+        "y": 208.3125,
+        "width": 687.9375,
+        "height": 36.78125,
+        "bottom": 245.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "role": "reviewer",
+      "page": "Experiments",
+      "width": 768,
+      "header": {
+        "x": 23.03125,
+        "y": 31.515625,
+        "width": 721.9375,
+        "height": 150.6875,
+        "bottom": 182.203125
+      },
+      "brand": {
+        "x": 43.03125,
+        "y": 47.515625,
+        "width": 545.9375,
+        "height": 48,
+        "bottom": 95.515625
+      },
+      "nav": {
+        "x": 43.03125,
+        "y": 111.515625,
+        "width": 681.9375,
+        "height": 53.6875,
+        "bottom": 165.203125
+      },
+      "data": {
+        "x": 23.03125,
+        "y": 193.71875,
+        "width": 721.9375,
+        "height": 117.484375,
+        "bottom": 311.203125
+      },
+      "summary": {
+        "x": 40.03125,
+        "y": 208.3125,
+        "width": 687.9375,
+        "height": 36.78125,
+        "bottom": 245.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "role": "reviewer",
+      "page": "Demo",
+      "width": 768,
+      "header": {
+        "x": 23.03125,
+        "y": 31.515625,
+        "width": 721.9375,
+        "height": 150.6875,
+        "bottom": 182.203125
+      },
+      "brand": {
+        "x": 43.03125,
+        "y": 47.515625,
+        "width": 545.9375,
+        "height": 48,
+        "bottom": 95.515625
+      },
+      "nav": {
+        "x": 43.03125,
+        "y": 111.515625,
+        "width": 681.9375,
+        "height": 53.6875,
+        "bottom": 165.203125
+      },
+      "data": {
+        "x": 23.03125,
+        "y": 193.71875,
+        "width": 721.9375,
+        "height": 117.484375,
+        "bottom": 311.203125
+      },
+      "summary": {
+        "x": 40.03125,
+        "y": 208.3125,
+        "width": 687.9375,
+        "height": 36.78125,
+        "bottom": 245.09375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 245.09375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 768,
+      "scrollWidth": 768
+    },
+    {
+      "role": "presenter",
+      "page": "Overview",
+      "width": 390,
+      "header": {
+        "x": 16,
+        "y": 31.515625,
+        "width": 358,
+        "height": 127.65625,
+        "bottom": 159.171875
+      },
+      "brand": {
+        "x": 28,
+        "y": 43.515625,
+        "width": 215.609375,
+        "height": 48,
+        "bottom": 91.515625
+      },
+      "nav": {
+        "x": 28,
+        "y": 97.90625,
+        "width": 334,
+        "height": 48.265625,
+        "bottom": 146.171875
+      },
+      "data": {
+        "x": 16,
+        "y": 170.6875,
+        "width": 358,
+        "height": 164.65625,
+        "bottom": 335.34375
+      },
+      "summary": {
+        "x": 33,
+        "y": 185.28125,
+        "width": 324,
+        "height": 83.953125,
+        "bottom": 269.234375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 269.234375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "role": "presenter",
+      "page": "Memory",
+      "width": 390,
+      "header": {
+        "x": 16,
+        "y": 31.515625,
+        "width": 358,
+        "height": 127.65625,
+        "bottom": 159.171875
+      },
+      "brand": {
+        "x": 28,
+        "y": 43.515625,
+        "width": 215.609375,
+        "height": 48,
+        "bottom": 91.515625
+      },
+      "nav": {
+        "x": 28,
+        "y": 97.90625,
+        "width": 334,
+        "height": 48.265625,
+        "bottom": 146.171875
+      },
+      "data": {
+        "x": 16,
+        "y": 170.6875,
+        "width": 358,
+        "height": 164.65625,
+        "bottom": 335.34375
+      },
+      "summary": {
+        "x": 33,
+        "y": 185.28125,
+        "width": 324,
+        "height": 83.953125,
+        "bottom": 269.234375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 269.234375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "role": "presenter",
+      "page": "Query",
+      "width": 390,
+      "header": {
+        "x": 16,
+        "y": 31.515625,
+        "width": 358,
+        "height": 127.65625,
+        "bottom": 159.171875
+      },
+      "brand": {
+        "x": 28,
+        "y": 43.515625,
+        "width": 215.609375,
+        "height": 48,
+        "bottom": 91.515625
+      },
+      "nav": {
+        "x": 28,
+        "y": 97.90625,
+        "width": 334,
+        "height": 48.265625,
+        "bottom": 146.171875
+      },
+      "data": {
+        "x": 16,
+        "y": 170.6875,
+        "width": 358,
+        "height": 164.65625,
+        "bottom": 335.34375
+      },
+      "summary": {
+        "x": 33,
+        "y": 185.28125,
+        "width": 324,
+        "height": 83.953125,
+        "bottom": 269.234375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 269.234375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "role": "presenter",
+      "page": "Experiments",
+      "width": 390,
+      "header": {
+        "x": 16,
+        "y": 31.515625,
+        "width": 358,
+        "height": 127.65625,
+        "bottom": 159.171875
+      },
+      "brand": {
+        "x": 28,
+        "y": 43.515625,
+        "width": 215.609375,
+        "height": 48,
+        "bottom": 91.515625
+      },
+      "nav": {
+        "x": 28,
+        "y": 97.90625,
+        "width": 334,
+        "height": 48.265625,
+        "bottom": 146.171875
+      },
+      "data": {
+        "x": 16,
+        "y": 170.6875,
+        "width": 358,
+        "height": 164.65625,
+        "bottom": 335.34375
+      },
+      "summary": {
+        "x": 33,
+        "y": 185.28125,
+        "width": 324,
+        "height": 83.953125,
+        "bottom": 269.234375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 269.234375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "role": "presenter",
+      "page": "Demo",
+      "width": 390,
+      "header": {
+        "x": 16,
+        "y": 31.515625,
+        "width": 358,
+        "height": 127.65625,
+        "bottom": 159.171875
+      },
+      "brand": {
+        "x": 28,
+        "y": 43.515625,
+        "width": 215.609375,
+        "height": 48,
+        "bottom": 91.515625
+      },
+      "nav": {
+        "x": 28,
+        "y": 97.90625,
+        "width": 334,
+        "height": 48.265625,
+        "bottom": 146.171875
+      },
+      "data": {
+        "x": 16,
+        "y": 170.6875,
+        "width": 358,
+        "height": 164.65625,
+        "bottom": 335.34375
+      },
+      "summary": {
+        "x": 33,
+        "y": 185.28125,
+        "width": 324,
+        "height": 83.953125,
+        "bottom": 269.234375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 269.234375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "role": "reviewer",
+      "page": "Overview",
+      "width": 390,
+      "header": {
+        "x": 16,
+        "y": 31.515625,
+        "width": 358,
+        "height": 127.65625,
+        "bottom": 159.171875
+      },
+      "brand": {
+        "x": 28,
+        "y": 43.515625,
+        "width": 215.609375,
+        "height": 48,
+        "bottom": 91.515625
+      },
+      "nav": {
+        "x": 28,
+        "y": 97.90625,
+        "width": 334,
+        "height": 48.265625,
+        "bottom": 146.171875
+      },
+      "data": {
+        "x": 16,
+        "y": 170.6875,
+        "width": 358,
+        "height": 164.65625,
+        "bottom": 335.34375
+      },
+      "summary": {
+        "x": 33,
+        "y": 185.28125,
+        "width": 324,
+        "height": 83.953125,
+        "bottom": 269.234375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 269.234375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "role": "reviewer",
+      "page": "Memory",
+      "width": 390,
+      "header": {
+        "x": 16,
+        "y": 31.515625,
+        "width": 358,
+        "height": 127.65625,
+        "bottom": 159.171875
+      },
+      "brand": {
+        "x": 28,
+        "y": 43.515625,
+        "width": 215.609375,
+        "height": 48,
+        "bottom": 91.515625
+      },
+      "nav": {
+        "x": 28,
+        "y": 97.90625,
+        "width": 334,
+        "height": 48.265625,
+        "bottom": 146.171875
+      },
+      "data": {
+        "x": 16,
+        "y": 170.6875,
+        "width": 358,
+        "height": 164.65625,
+        "bottom": 335.34375
+      },
+      "summary": {
+        "x": 33,
+        "y": 185.28125,
+        "width": 324,
+        "height": 83.953125,
+        "bottom": 269.234375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 269.234375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "role": "reviewer",
+      "page": "Query",
+      "width": 390,
+      "header": {
+        "x": 16,
+        "y": 31.515625,
+        "width": 358,
+        "height": 127.65625,
+        "bottom": 159.171875
+      },
+      "brand": {
+        "x": 28,
+        "y": 43.515625,
+        "width": 215.609375,
+        "height": 48,
+        "bottom": 91.515625
+      },
+      "nav": {
+        "x": 28,
+        "y": 97.90625,
+        "width": 334,
+        "height": 48.265625,
+        "bottom": 146.171875
+      },
+      "data": {
+        "x": 16,
+        "y": 170.6875,
+        "width": 358,
+        "height": 164.65625,
+        "bottom": 335.34375
+      },
+      "summary": {
+        "x": 33,
+        "y": 185.28125,
+        "width": 324,
+        "height": 83.953125,
+        "bottom": 269.234375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 269.234375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "role": "reviewer",
+      "page": "Experiments",
+      "width": 390,
+      "header": {
+        "x": 16,
+        "y": 31.515625,
+        "width": 358,
+        "height": 127.65625,
+        "bottom": 159.171875
+      },
+      "brand": {
+        "x": 28,
+        "y": 43.515625,
+        "width": 215.609375,
+        "height": 48,
+        "bottom": 91.515625
+      },
+      "nav": {
+        "x": 28,
+        "y": 97.90625,
+        "width": 334,
+        "height": 48.265625,
+        "bottom": 146.171875
+      },
+      "data": {
+        "x": 16,
+        "y": 170.6875,
+        "width": 358,
+        "height": 164.65625,
+        "bottom": 335.34375
+      },
+      "summary": {
+        "x": 33,
+        "y": 185.28125,
+        "width": 324,
+        "height": 83.953125,
+        "bottom": 269.234375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 269.234375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 390,
+      "scrollWidth": 390
+    },
+    {
+      "role": "reviewer",
+      "page": "Demo",
+      "width": 390,
+      "header": {
+        "x": 16,
+        "y": 31.515625,
+        "width": 358,
+        "height": 127.65625,
+        "bottom": 159.171875
+      },
+      "brand": {
+        "x": 28,
+        "y": 43.515625,
+        "width": 215.609375,
+        "height": 48,
+        "bottom": 91.515625
+      },
+      "nav": {
+        "x": 28,
+        "y": 97.90625,
+        "width": 334,
+        "height": 48.265625,
+        "bottom": 146.171875
+      },
+      "data": {
+        "x": 16,
+        "y": 170.6875,
+        "width": 358,
+        "height": 164.65625,
+        "bottom": 335.34375
+      },
+      "summary": {
+        "x": 33,
+        "y": 185.28125,
+        "width": 324,
+        "height": 83.953125,
+        "bottom": 269.234375
+      },
+      "badges": [
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 222.0625,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        },
+        {
+          "height": 36.78125,
+          "bottom": 269.234375,
+          "font": "16px",
+          "background": "rgb(229, 240, 255)"
+        }
+      ],
+      "mainWidth": 390,
+      "scrollWidth": 390
+    }
+  ],
+  "page_errors": [],
+  "external_requests": [],
+  "provider_calls": 0,
+  "api_started": false,
+  "database_opened": false
+}

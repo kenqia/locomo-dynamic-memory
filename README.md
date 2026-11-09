@@ -4,9 +4,10 @@
 
 2026-11-09 后续[真实模型回归](experiments/live-boundary-20261109/README.md)完成：62 次请求，12 道已曝光题中普通题 F1 0.517381→0.456314，没有整体收益证据。六组实体探针有局部抽取恢复，但引用仍不完整；AI 审阅存在漏检，已收到莫远序（2026-11-09）提交的18对[人工核查意见](experiments/live-boundary-20261109/HUMAN_REVIEW.md)。E25 冻结成绩不变。
 
-# LoCoMo Personal Core Release
 
-个人核心系统的 M5 交付候选，等待团队整合。课程截止：2026-11-09 24:00（北京时间）。
+# LoCoMo Dynamic Memory
+
+M5 个人核心与 Product Research Console 整合版。课程截止：2026-11-09 24:00（北京时间）。
 当前冻结实验与工程验收分开记录，最新状态见 [Release清单](RELEASE_MANIFEST.md)。
 这不是团队最终报告、PPTX、MP4或课程平台提交。
 
@@ -36,6 +37,9 @@ scripts/personal-release start
 ```
 
 后端 `http://127.0.0.1:8000`，页面 `http://127.0.0.1:8501`。
+正常启动默认进入 Research Console：Overview → Memory → Query/Evidence → Experiments → Demo。
+Console 只读已有 Build、Memory、Trace 和冻结实验；切换顶部“五阶段工作流”可进入上传、构建、问答与评测。
+公共问答及原工作流仍默认使用 Hybrid；Console 不会自动生成回答或修改 Build。
 统一启动器默认使用新的 `var/personal-app/memory.sqlite3`，不会指向研究数据库。
 `--config /absolute/path/to/local.toml` 读取自选配置，启动时仅新建快照，不改配置原件。
 正常应用启动本身不调用模型；点击真实Build/问答/评测可能收费，需要用户自己的授权和Provider配置。本次Release验收未调用真实付费模型。
@@ -57,6 +61,20 @@ DeepSeek官方Provider是可选项；认证发现遵循 [本地凭据说明](doc
 页面流程：上传许可允许的LoCoMo格式数据 → 选择对话 → 抽取 → Index → 关系/Projection → 发布完整Build → Memory/Source检查 → 问答 → 引用Source Turn/Trace → JSON导出。
 全流程见 [运行/数据入口](docs/release/RUNBOOK.md)，原有接口和数据模型见 [应用文档](docs/app/running.md) 与 [JSON Schema](memory-export-schema.json)。
 公开包不附LoCoMo原文/QA/Gold；“导入官方”在缺原件时明确失败，可上传合成或合法受控文件。请勿把MemoryExport上传到LoCoMo原始conversation导入入口。
+
+## Product 离线演示
+
+本轮 Product 来源 `0401155`，真人复核和最终验证见 [Product 冻结记录](docs/release/PRODUCT_FREEZE.md)；冻结标签为 `product-v2-final-20261109`。
+
+下面的独立演示展示 Console 的六类合成案例、来源跳转、历史 Build、Trace 与真实冻结实验比较，不启动 API 或数据库：
+
+```sh
+uv run --locked python tools/team_v2/demo.py replay
+```
+
+打开 `http://127.0.0.1:18501`。合成 Replay 与真实冻结成绩分别标识；没有发布新的模型成绩。
+原有 `scripts/personal-release replay-offline-demo` 继续提供独立 MemoryExport/Graph 查看器。
+使用方法、来源版本与整合验证见 [Product 指南](docs/team-v2/README.md)。
 
 ## 默认策略与回滚
 
