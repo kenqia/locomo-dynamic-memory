@@ -61,8 +61,11 @@ def main():
             screenshots.append(name)
 
         def choose(label, name):
-            option = page.get_by_role('radio', name=name, exact=True)
-            if option.count() == 1:
+            settle()
+            if page.locator('.console-brand').count():
+                group = page.get_by_role('radiogroup', name=label, exact=True)
+                expect(group).to_be_visible()
+                option = group.get_by_role('radio', name=name, exact=True)
                 option.focus()
                 option.press('Space')
                 expect(option).to_be_checked()
@@ -136,6 +139,8 @@ def main():
         page.get_by_role('button', name='查看完整原文', exact=True).click()
         expect(page.get_by_text('I plan to visit Tokyo, but no date is decided.', exact=True)).to_be_visible()
         page.get_by_text('Query' if responsive else 'Query/Evidence', exact=True).click()
+        if responsive:
+            expect(page.get_by_role('heading', name='选择已有问答记录', exact=True)).to_be_visible()
         for case in data['cases']:
             labels = {'success': '当前事实', 'historical': '历史日期', 'conflict': '证据冲突',
                       'insufficient': '证据不足', 'citation_anomaly': '引用异常', 'budget_failure': '预算失败'}
