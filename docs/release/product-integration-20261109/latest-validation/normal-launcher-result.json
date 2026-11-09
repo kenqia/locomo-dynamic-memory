@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "entry": "personal-release start",
+  "console_and_legacy_workflow": "passed",
+  "synthetic_cases": 4,
+  "provider_requests": 0,
+  "launcher_returncode": 0
+}

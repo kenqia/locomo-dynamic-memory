@@ -760,8 +760,8 @@
     },
     {
       "path": "docs/release/PRODUCT_INTEGRATION.md",
-      "bytes": 7078,
-      "sha256": "f977dad0449c81e815bdb421cc2adafe22af1c25ada14d8e543d6a74c472c88d"
+      "bytes": 7484,
+      "sha256": "9d281f36899b30a8daaddbbfe2244e9ebc759f2594d7b25d5590cbddf6f19f9f"
     },
     {
       "path": "docs/release/REQUEST.md",
@@ -785,8 +785,33 @@
     },
     {
       "path": "docs/release/product-integration-20261109/Product-Human-Review-PR39.md",
-      "bytes": 2916,
-      "sha256": "cb49a37cfcf8fd7d5f4effa98ed3fed8b7d20a7c764e7af743b33c53e93a2ad5"
+      "bytes": 2915,
+      "sha256": "6a0527632943ef25317e6b1212c80dd4767787379f8ea02c473f307e4783621d"
+    },
+    {
+      "path": "docs/release/product-integration-20261109/latest-validation/layout-result.json",
+      "bytes": 42215,
+      "sha256": "c45cb587762da8006bf30bf83de5589d45235ef3c6de31e5aea6d9ed3e456fa6"
+    },
+    {
+      "path": "docs/release/product-integration-20261109/latest-validation/normal-launcher-result.json",
+      "bytes": 183,
+      "sha256": "ba1a4a3cdd522d26b7e029c802f9a57f071d053863ac07ccaecae5d8a0306c37"
+    },
+    {
+      "path": "docs/release/product-integration-20261109/latest-validation/provenance.json",
+      "bytes": 1098,
+      "sha256": "9e677a99397c08e888007e44eab8cc54cc48a3450f6654d77e72203fc5a295a7"
+    },
+    {
+      "path": "docs/release/product-integration-20261109/latest-validation/replay-result.json",
+      "bytes": 1232,
+      "sha256": "03551eb1b9688efcdc4bffa00551a45081e7842384cac5418a55a3d4bf547b22"
+    },
+    {
+      "path": "docs/release/product-integration-20261109/latest-validation/scroll-result.json",
+      "bytes": 8425,
+      "sha256": "c859748d639d1af047eb7cbd3f4ebc2dd476f3767b228ecc6ef1cc6b31d1e592"
     },
     {
       "path": "docs/release/product-integration-20261109/pre-integration-public-evidence-manifest.json",
