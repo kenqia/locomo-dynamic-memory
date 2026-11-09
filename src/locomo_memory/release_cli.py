@@ -100,7 +100,7 @@ def serve(args):
             if args.directory:
                 env["LOCOMO_REPLAY_DIRECTORY"] = str(args.directory.resolve())
     else:
-        factory, ui = "locomo_memory.api:create_app", "ui.py"
+        factory, ui = "locomo_memory.api:create_app", "console_ui.py"
         settings = load_settings(args.config)
         config = settings.snapshot()
         config["db_path"] = str(settings.db_path.resolve()) if args.config or "LOCOMO_CONFIG" in os.environ else str(ROOT / "var/personal-app/memory.sqlite3")
