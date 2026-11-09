@@ -122,6 +122,8 @@ def main():
     shutil.copy2(M5 / "PROCESS.md", process)
     for name in ("team-workflow.md", "software-requirements-specification.md"):
         shutil.copy2(ROOT / "docs/requirements" / name, process)
+    specification = process / "software-requirements-specification.md"
+    specification.write_text("\n".join(line.rstrip() for line in specification.read_text().splitlines()).rstrip() + "\n")
     for name in ("ARCHITECTURE.md", "RUNBOOK.md", "SIDECAR_FREEZE.md"):
         shutil.copy2(ROOT / "docs/release" / name, process)
     for name in ("0001-memory-architecture.md", "0003-temporal-event-sidecar.md", "0004-sidecar-offline-adoption.md"):

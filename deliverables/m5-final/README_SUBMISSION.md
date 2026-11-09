@@ -1,7 +1,9 @@
 # M5 Final Submission
 
-**Project:** 面向长期对话的动态记忆系统：设计、实现与评测  
-**Team:** 第三组「在阴雨天游泳」  
+**Project:** 面向长期对话的动态记忆系统：设计、实现与评测
+
+**Team:** 第三组「在阴雨天游泳」
+
 **Repository:** https://github.com/kenqia/locomo-dynamic-memory
 
 ## 提交内容
