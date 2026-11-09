@@ -1,6 +1,6 @@
 # 实验附录核验与勘误
 
-2026-11-09 版本说明：[当前附录](../supplement/supplement.pdf)已更新为39页，附录D.1–D.3记录免费诊断，D.4追加62次请求的真实小回归及负面结果；E22→E23多因素归因勘误保留。[本轮验证](../../experiments/live-boundary-20261109/validation.md)与[当前PDF哈希](../../experiments/live-boundary-20261109/provenance.json)单列。此前38页快照位于Git b3c9d0f，其哈希继续保存在 evidence-flow-20261109/provenance.json；不覆盖历史身份。下文37页版检查与历史数值审计属于原快照，不冒称已重新审计全部历史数据。
+2026-11-09 版本说明：[当前附录](../supplement/supplement.pdf)已更新为39页，附录D.1–D.3记录免费诊断，D.4追加62次请求的真实小回归、负面结果及莫远序（2026-11-09）提交的核查状态；E22→E23多因素归因勘误保留。[本轮验证](../../experiments/live-boundary-20261109/validation.md)与[当前PDF哈希](../../experiments/live-boundary-20261109/human-review-provenance.json)单列。此前38页快照位于Git b3c9d0f，其哈希继续保存在 evidence-flow-20261109/provenance.json；不覆盖历史身份。下文37页版检查与历史数值审计属于原快照，不冒称已重新审计全部历史数据。
 
 原件来自 docs/experiment-supplement@3392faf，37页，PDF SHA256 `2398340833f500690b6d511756ce04d117cae755cfca4a4e5a1489a36a007da3`。本Release按原件保存，未覆盖冻结实验。独立研究过程记录，不是团队最终报告。
 

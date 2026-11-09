@@ -2,7 +2,7 @@
 
 2026-11-09。**本轮没有测到整体收益。** 12 道已曝光、预选时间题在固定检索后的配对回归中，10 道普通题 F1 从 **0.517381 降至 0.456314**；配对差 −0.061067，探索性 bootstrap 95% 区间 [−0.313876, +0.233333]。这个小样本不能证明总体提升或退化，更不能替代 E25 留出评测。原 E0–E25 分数及冻结身份不变。
 
-本轮落实了上一轮免费[证据损失诊断](../evidence-flow-20261109/README.md)之后获授权的真实模型回归，保留执行失败、负面结果、AI 漏检与待人工结论。没有全局放宽 Dynamic 筛选、增加默认 K 或启用实体别名合并。
+本轮落实了上一轮免费[证据损失诊断](../evidence-flow-20261109/README.md)之后获授权的真实模型回归，保留执行失败、负面结果、AI 漏检与用户提交的有条件核查意见。没有全局放宽 Dynamic 筛选、增加默认 K 或启用实体别名合并。
 
 ## 方法和身份
 
@@ -30,7 +30,7 @@
 
 - conv-44:qa:22 候选拒绝将原文 “are going camping” 断言成已经去过，F1 降 0.75；所给原文支持谨慎区分计划与完成。
 - conv-44:qa:115 候选更长，短答 F1 降约 0.209；两臂解释却都把 Saturday **after** October 28, 2023 定位到 October 28 当天，严格之后应为 November 4。Gold 只有 “Go hiking”，测不出这个日期错误，AI 审阅也漏检。
-- conv-44:qa:81 两臂把 Monday **before** July 24, 2023 解释为 July 24，当天本身周一，严格之前应为 July 17。原文 July 27 的 “on Monday” 又偏向 July 24，需要人工处理题目/参考时间的不一致。
+- conv-44:qa:81 两臂把 Monday **before** July 24, 2023 解释为 July 24，当天本身周一，严格之前应为 July 17。原文 July 27 的 “on Monday” 又偏向 July 24，用户核查已指出该问题，题目/参考时间的不一致仍待裁定。
 - conv-43:qa:24 的 “I was in Chicago” 是 August 11 报告的过去事件，不能据此确认 August 11 当天位置；候选仍有过度精确。
 
 [作者 AI 逐案分析](author-audit.json)与模型审阅分开保存，不替换冻结标签。
@@ -43,7 +43,7 @@ e02/e05 基线空抽取，候选找回 Joanna 对 Nate 乌龟的态度/知识陈
 
 AI 审阅只有 2/4 批成功，覆盖 **9/18 对**（6 问答、3 抽取）；另外两批 `invalid_output` 原样保留。冻结 AI 包只隐藏臂标签，仍含可能提示变体身份的查询时间结构，不能保证身份盲化充分；人工可读版已去除此控制元数据。成功批原始支持计数为基线 supported 6 / unsupported 2 / not_executed 1，候选 supported 9；缺失一半且存在日期漏检，不能据此声称语义收益。旧审阅 schema 即使没有来源也要求引文，存在可复现门禁缺陷；`911ed2c` 已修复未来调用。没有读取无效原始响应来断言这就是两批失败的唯一原因。
 
-真人核查由用户填写，目前 **pending_user**。请先看 [人工填写说明](HUMAN_REVIEW.md)、[18 对可读盲输出](HUMAN_OUTPUTS.md)，填写 [human-review.csv](human-review.csv)，再看 AI 判断和 [揭盲键](blind-key.json)。未预填真人姓名、判断或签名。
+已收到复核人**莫远序**于 **2026-11-09** 提交的全部 **18/18 对**文字核查，见[核查原文](human-review-submitted.txt)、[转录表](human-review.csv)和[待裁定说明](HUMAN_REVIEW_FOLLOWUP.md)。条件判断与不同意见保留，不将提交等同于全部通过或统一真值。提交过程独立性未另行核验；原 results/AI/provenance 的 pending_user 是生成时快照，当前状态及文件SHA见[核查增量身份](human-review-provenance.json)。
 
 ## 调用与费用
 

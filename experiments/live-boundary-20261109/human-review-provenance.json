@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-09",
+  "reviewer": "莫远序",
+  "reviewed_at": "2026-11-09",
+  "status": "submitted_with_open_adjudication",
+  "coverage": {
+    "extraction_pairs": 6,
+    "query_pairs": 12,
+    "total_pairs": 18
+  },
+  "previous_snapshot_commit": "f18d76dc3227f0fd5b22be8bb6d7c28b516b812a",
+  "previous_manifest": {
+    "path": "experiments/live-boundary-20261109/provenance.json",
+    "sha256": "dae357446896015c812dbe5d1b457fc2d811324f7d10b255d6bfeca314d32cc4",
+    "scope": "f18d76d snapshot; unchanged; old hashes for updated documents and blank CSV resolve at this commit"
+  },
+  "files": {
+    "experiments/live-boundary-20261109/HUMAN_REVIEW.md": "7600a25467c86145ba1e840a6aef9950162e57288f997a1998b70cff2bf6f2b2",
+    "experiments/live-boundary-20261109/HUMAN_REVIEW_FOLLOWUP.md": "3a3997bbb1fe855445b03724d77dd527953db1e16475db019de2efa28975a2c2",
+    "experiments/live-boundary-20261109/human-review.csv": "3324ecd712effeabfcc2d82dfce4beaf85b1298ddea0ff725d120daef6fb1a4d",
+    "experiments/live-boundary-20261109/human-review-record.json": "d1438d9762878b47e4250970af2fdc3d31dbe5d1d1746b600860624837ac0658",
+    "experiments/live-boundary-20261109/human-review-submitted.txt": "83b6ec09ee504d5c00fc41479ed48b0a1d6f12127ebd8e83efa082c14fe1fdd5",
+    "experiments/live-boundary-20261109/README.md": "923452239dccb3bf741e255a963d87467ff27e50a3a37c48d81171fad5432803"
+  },
+  "updated_documents": {
+    "README.md": "79e831521bf298bee160111887e40bcf8304da1a61daf3b983713ac1340a254e",
+    "PERSONAL_EXPERIMENT_SUMMARY.md": "7cd98cca761b55b523e0d52d1e861dc60ae4e74297ab473ea514ab579692305c",
+    "EXPERIMENT_ARCHIVE_INDEX.md": "f5357b72659bb47c42ed753edc7aa2a3c47056ef75e164297aa023915580ab6a",
+    "RELEASE_MANIFEST.md": "7ce341f9bffde9d73e324a1470375524abcf3314c34921ef836fe0b6a474ddf2",
+    "docs/m5-development/EXPERIMENT_RESULTS.md": "0d35ad1f8a3ef86f62d767d1dd155ec69ed5949634f833b01fd460ae1bb37d1f",
+    "docs/m5-development/ERROR_ANALYSIS.md": "c9b3b910174c3414feac9893feffad1e07c0f37926d6b61d8076d0babfa44dd2",
+    "docs/release/SUPPLEMENT_ERRATA.md": "a9787148407bffd48506eec645bc59c24a4ce0ebf1857693995ffefde2356084",
+    "docs/supplement/supplement.md": "4fa1470c40df921fe3a441bbbe374810145f082ad7d731e4117abdc2d0882c03",
+    "docs/supplement/supplement.pdf": "e33ba07a616749b7d1c85edef93c02bb7f4c33004b8dd6dd99b585fac0e18095"
+  },
+  "supplement_pdf_pages": 39,
+  "additional_model_calls": 0,
+  "production_code_changes": false,
+  "validation": {
+    "transcription": "18 IDs/reviewer/date/excerpts/X-Y mappings checked; no unprovided dimension votes inferred",
+    "source_reference_ids": "all submission Dxx:yy IDs found in corresponding supplied packet",
+    "failed_variants": "q05/Y and q10/Y remain failed",
+    "frozen_artifacts": "12 previously published generation/review/result/AI/plan/key/provenance files byte-identical to f18d76d",
+    "source_normalization": "CRLF to LF only; original attachment hash in human-review-record.json",
+    "review": "non-author AI spec reviewer checked transcription and qualifications; no material findings",
+    "tests": "data/document-only change; no code test rerun; prior 1024 passed/1 skipped belongs to earlier code validation",
+    "notion": "no linked task updated"
+  },
+  "qa_improvement": "not established; no new binary human accuracy derived from qualified review"
+}
