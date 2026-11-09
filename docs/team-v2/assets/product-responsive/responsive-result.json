@@ -1,0 +1,839 @@
+{
+  "status": "passed",
+  "commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+  "responsive_layout": true,
+  "browser": "157.0.4341.42",
+  "checks": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "page": "Overview",
+      "main": {
+        "width": 390,
+        "scroll": 390
+      },
+      "layout": {
+        "brand": {
+          "x": 16,
+          "y": 51.03125,
+          "width": 231.609375,
+          "height": 56
+        },
+        "nav": {
+          "x": 16,
+          "y": 125.421875,
+          "width": 358,
+          "height": 48.265625
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 1404.109375
+        },
+        "font": 14.4,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "page": "Memory",
+      "main": {
+        "width": 390,
+        "scroll": 390
+      },
+      "layout": {
+        "brand": {
+          "x": 16,
+          "y": 51.03125,
+          "width": 231.609375,
+          "height": 56
+        },
+        "nav": {
+          "x": 16,
+          "y": 125.421875,
+          "width": 358,
+          "height": 48.265625
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 2242.5
+        },
+        "font": 14.4,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "page": "Query",
+      "main": {
+        "width": 390,
+        "scroll": 390
+      },
+      "layout": {
+        "brand": {
+          "x": 16,
+          "y": 51.03125,
+          "width": 231.609375,
+          "height": 56
+        },
+        "nav": {
+          "x": 16,
+          "y": 125.421875,
+          "width": 358,
+          "height": 48.265625
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 1320.171875
+        },
+        "font": 14.4,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "page": "Experiments",
+      "main": {
+        "width": 390,
+        "scroll": 390
+      },
+      "layout": {
+        "brand": {
+          "x": 16,
+          "y": 51.03125,
+          "width": 231.609375,
+          "height": 56
+        },
+        "nav": {
+          "x": 16,
+          "y": 125.421875,
+          "width": 358,
+          "height": 48.265625
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 3744.03125
+        },
+        "font": 14.4,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "page": "Demo",
+      "main": {
+        "width": 390,
+        "scroll": 390
+      },
+      "layout": {
+        "brand": {
+          "x": 16,
+          "y": 51.03125,
+          "width": 231.609375,
+          "height": 56
+        },
+        "nav": {
+          "x": 16,
+          "y": 125.421875,
+          "width": 358,
+          "height": 48.265625
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 1496.84375
+        },
+        "font": 14.4,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "page": "Overview",
+      "main": {
+        "width": 768,
+        "scroll": 768
+      },
+      "layout": {
+        "brand": {
+          "x": 23.03125,
+          "y": 51.03125,
+          "width": 585.9375,
+          "height": 56
+        },
+        "nav": {
+          "x": 23.03125,
+          "y": 135.03125,
+          "width": 721.9375,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 1098.890625
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "page": "Memory",
+      "main": {
+        "width": 768,
+        "scroll": 768
+      },
+      "layout": {
+        "brand": {
+          "x": 23.03125,
+          "y": 51.03125,
+          "width": 585.9375,
+          "height": 56
+        },
+        "nav": {
+          "x": 23.03125,
+          "y": 135.03125,
+          "width": 721.9375,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 2168.5625
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "page": "Query",
+      "main": {
+        "width": 768,
+        "scroll": 768
+      },
+      "layout": {
+        "brand": {
+          "x": 23.03125,
+          "y": 51.03125,
+          "width": 585.9375,
+          "height": 56
+        },
+        "nav": {
+          "x": 23.03125,
+          "y": 135.03125,
+          "width": 721.9375,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 1263.484375
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "page": "Experiments",
+      "main": {
+        "width": 768,
+        "scroll": 768
+      },
+      "layout": {
+        "brand": {
+          "x": 23.03125,
+          "y": 51.03125,
+          "width": 585.9375,
+          "height": 56
+        },
+        "nav": {
+          "x": 23.03125,
+          "y": 135.03125,
+          "width": 721.9375,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 3233.84375
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "page": "Demo",
+      "main": {
+        "width": 768,
+        "scroll": 768
+      },
+      "layout": {
+        "brand": {
+          "x": 23.03125,
+          "y": 51.03125,
+          "width": 585.9375,
+          "height": 56
+        },
+        "nav": {
+          "x": 23.03125,
+          "y": 135.03125,
+          "width": 721.9375,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 1076.421875
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "page": "Overview",
+      "main": {
+        "width": 1024,
+        "scroll": 1024
+      },
+      "layout": {
+        "brand": {
+          "x": 30.71875,
+          "y": 51.03125,
+          "width": 826.5625,
+          "height": 56
+        },
+        "nav": {
+          "x": 30.71875,
+          "y": 135.03125,
+          "width": 962.5625,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 964.9375
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "page": "Memory",
+      "main": {
+        "width": 1024,
+        "scroll": 1024
+      },
+      "layout": {
+        "brand": {
+          "x": 30.71875,
+          "y": 51.03125,
+          "width": 826.5625,
+          "height": 56
+        },
+        "nav": {
+          "x": 30.71875,
+          "y": 135.03125,
+          "width": 962.5625,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 1791.90625
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "page": "Query",
+      "main": {
+        "width": 1024,
+        "scroll": 1024
+      },
+      "layout": {
+        "brand": {
+          "x": 30.71875,
+          "y": 51.03125,
+          "width": 826.5625,
+          "height": 56
+        },
+        "nav": {
+          "x": 30.71875,
+          "y": 135.03125,
+          "width": 962.5625,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 1208.109375
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "page": "Experiments",
+      "main": {
+        "width": 1024,
+        "scroll": 1024
+      },
+      "layout": {
+        "brand": {
+          "x": 30.71875,
+          "y": 51.03125,
+          "width": 826.5625,
+          "height": 56
+        },
+        "nav": {
+          "x": 30.71875,
+          "y": 135.03125,
+          "width": 962.5625,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 2602.59375
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 900
+      },
+      "page": "Demo",
+      "main": {
+        "width": 1024,
+        "scroll": 1024
+      },
+      "layout": {
+        "brand": {
+          "x": 30.71875,
+          "y": 51.03125,
+          "width": 826.5625,
+          "height": 56
+        },
+        "nav": {
+          "x": 30.71875,
+          "y": 135.03125,
+          "width": 962.5625,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 1024,
+          "height": 1076.421875
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "page": "Overview",
+      "main": {
+        "width": 1280,
+        "scroll": 1280
+      },
+      "layout": {
+        "brand": {
+          "x": 38.390625,
+          "y": 51.03125,
+          "width": 240,
+          "height": 56
+        },
+        "nav": {
+          "x": 294.390625,
+          "y": 54.1875,
+          "width": 811.21875,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 902.40625
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "page": "Memory",
+      "main": {
+        "width": 1280,
+        "scroll": 1280
+      },
+      "layout": {
+        "brand": {
+          "x": 38.390625,
+          "y": 51.03125,
+          "width": 240,
+          "height": 56
+        },
+        "nav": {
+          "x": 294.390625,
+          "y": 54.1875,
+          "width": 811.21875,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 1720.375
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "page": "Query",
+      "main": {
+        "width": 1280,
+        "scroll": 1280
+      },
+      "layout": {
+        "brand": {
+          "x": 38.390625,
+          "y": 51.03125,
+          "width": 240,
+          "height": 56
+        },
+        "nav": {
+          "x": 294.390625,
+          "y": 54.1875,
+          "width": 811.21875,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 1136.578125
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "page": "Experiments",
+      "main": {
+        "width": 1280,
+        "scroll": 1280
+      },
+      "layout": {
+        "brand": {
+          "x": 38.390625,
+          "y": 51.03125,
+          "width": 240,
+          "height": 56
+        },
+        "nav": {
+          "x": 294.390625,
+          "y": 54.1875,
+          "width": 811.21875,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 2582.21875
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "page": "Demo",
+      "main": {
+        "width": 1280,
+        "scroll": 1280
+      },
+      "layout": {
+        "brand": {
+          "x": 38.390625,
+          "y": 51.03125,
+          "width": 240,
+          "height": 56
+        },
+        "nav": {
+          "x": 294.390625,
+          "y": 54.1875,
+          "width": 811.21875,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 1001.8125
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "page": "Overview",
+      "main": {
+        "width": 1920,
+        "scroll": 1920
+      },
+      "layout": {
+        "brand": {
+          "x": 88,
+          "y": 51.03125,
+          "width": 240,
+          "height": 56
+        },
+        "nav": {
+          "x": 344,
+          "y": 54.1875,
+          "width": 1352,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 40,
+          "y": 0,
+          "width": 1840,
+          "height": 914.78125
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "page": "Memory",
+      "main": {
+        "width": 1920,
+        "scroll": 1920
+      },
+      "layout": {
+        "brand": {
+          "x": 88,
+          "y": 51.03125,
+          "width": 240,
+          "height": 56
+        },
+        "nav": {
+          "x": 344,
+          "y": 54.1875,
+          "width": 1352,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 40,
+          "y": 0,
+          "width": 1840,
+          "height": 1725.75
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "page": "Query",
+      "main": {
+        "width": 1920,
+        "scroll": 1920
+      },
+      "layout": {
+        "brand": {
+          "x": 88,
+          "y": 51.03125,
+          "width": 240,
+          "height": 56
+        },
+        "nav": {
+          "x": 344,
+          "y": 54.1875,
+          "width": 1352,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 40,
+          "y": 0,
+          "width": 1840,
+          "height": 1141.953125
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "page": "Experiments",
+      "main": {
+        "width": 1920,
+        "scroll": 1920
+      },
+      "layout": {
+        "brand": {
+          "x": 88,
+          "y": 51.03125,
+          "width": 240,
+          "height": 56
+        },
+        "nav": {
+          "x": 344,
+          "y": 54.1875,
+          "width": 1352,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 40,
+          "y": 0,
+          "width": 1840,
+          "height": 2627.96875
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    },
+    {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "page": "Demo",
+      "main": {
+        "width": 1920,
+        "scroll": 1920
+      },
+      "layout": {
+        "brand": {
+          "x": 88,
+          "y": 51.03125,
+          "width": 240,
+          "height": 56
+        },
+        "nav": {
+          "x": 344,
+          "y": 54.1875,
+          "width": 1352,
+          "height": 61.6875
+        },
+        "content": {
+          "x": 40,
+          "y": 0,
+          "width": 1840,
+          "height": 1004.5
+        },
+        "font": 17.6,
+        "active": "rgb(37, 99, 166)"
+      }
+    }
+  ],
+  "page_errors": [],
+  "external_requests": [],
+  "provider_calls": 0,
+  "api_started": false,
+  "database_opened": false,
+  "human_review": "pending; browser automation is not member acceptance"
+}

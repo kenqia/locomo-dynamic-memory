@@ -1,5 +1,18 @@
 # Product 与 main 整合验收
 
+## 最新候选：0401155 与当前 main
+
+负责人在本轮再次授权更新、同步 Notion、收尾并冻结 Product。main 最新基准为 `ba349cf7a8b784ff6c739767ee392802055feff5`，其时间范围、上下文与证据回归更新均通过普通 merge 保留，README 冲突保留双方内容。
+
+本轮 Product 来源为 `0401155aa2c270c48b942e4b410a9f4b390156b3`（运行代码 `60f14bf`），代码整合提交 `4081ece`。新增 `console_theme.py`、`console_widgets.py`，以及来源自动显示、分页、原始字段默认折叠和整页滚动、窄屏与角色布局。原五阶段、main Hybrid 默认及独立 MemoryExport Replay 保持。
+
+xiaozhuozi39 的[最新真人逐项记录](product-integration-20261109/Product-Human-Review-PR39.md)明确绑定 `0401155`，通过项包括来源 1→2→1→2→1、六案例、字段与滚轮、分页/窗口/角色及旧五阶段。[原附件回执](https://github.com/kenqia/locomo-dynamic-memory/pull/39#issuecomment-6734327474)。旧入口命令参数仍有一处待补占位；负责人明确接受当前复核并授权冻结，未将占位误写为完整命令证据。
+
+已独立取得 27 项定向检查通过（包含 main 入口往返），以及六案例 Chromium、历史 Build、来源、无效 ID 恢复、实验完整分母、成本和实际无损下载通过。当前完整公开回归、30 场景布局、11 场景滚轮和正常 main 启动器检查继续执行，最终结果补录后收尾。
+
+上一候选 `8bc8499` 的 [完整 CI](https://github.com/kenqia/locomo-dynamic-memory/actions/runs/42554239053)成功；上一轮本地 full 只留下中断进度，没有完整结果，不将其记为通过。以下为上一候选的历史核验记录，当前状态以本节及最终结果为准。
+
+
 日期：2026-11-09，Asia/Shanghai。负责人授权整合 Product、最终验证并收尾。本文记录当前候选的实际验证，不代表 Delivery、Sidecar 或课程平台已完成。
 
 ## 版本与真人复核

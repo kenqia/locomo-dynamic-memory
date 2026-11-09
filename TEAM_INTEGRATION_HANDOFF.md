@@ -4,9 +4,9 @@
 
 ## Product：#39、#26–29
 
-2026-11-09：按负责人授权，将Thorns-06最终候选`739888347e5651036a1c42040f75dbe0d8f6f456`的产品模块与公开证据选择性整合到main基准`0ebb2b8`。没有合并安全分支的不同历史或覆盖个人核心。
+2026-11-09：按负责人授权，将Thorns-06最终候选`0401155aa2c270c48b942e4b410a9f4b390156b3`的产品模块与公开证据选择性整合到main基准`ba349cf`。没有合并安全分支的不同历史或覆盖个人核心。
 
-正常`personal-release start`进入Console，顶部“五阶段工作流”保留原有上传、构建、问答、M5/Bonus与导出。公共查询及原页面仍默认Hybrid；Console读取已有Build和Trace，不自动生成或连接SQLite。四个产品模块和合成Replay的具体入口见[Product指南](docs/team-v2/README.md)。
+正常`personal-release start`进入Console，顶部“五阶段工作流”保留原有上传、构建、问答、M5/Bonus与导出。公共查询及原页面仍默认Hybrid；Console读取已有Build和Trace，不自动生成或连接SQLite。六个产品模块和合成Replay的具体入口见[Product指南](docs/team-v2/README.md)。
 
 原独立MemoryExport/Graph Replay继续使用`personal-release replay-offline-demo`。Product合成Replay使用`tools/team_v2/demo.py replay`；两者入口及数据契约分开，未将真实导出误标成合成，也未把历史757题报告当作新的M5成绩。
 

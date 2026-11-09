@@ -1,5 +1,7 @@
 # Product Console 后续增量验证
 
+> 历史记录：以下行为、命令、截图与结果仅对应文内注明的版本。复现历史命令请使用当时的 Git 提交；当前送审入口见 [Product 复核说明](../product-review.md)。
+
 日期：2026-11-06，北京时间（D4，功能冻结前）。基准：`7a159d7e3f2baacdc7ae510cb42a060befb1afba`。
 范围：#27 Timeline / Evidence，#28 比较与无数据库 Replay，#29 自动化验收与素材。
 继续使用 A 线分支和 draft PR #39；不将此记录当作真实成员复核或任务关闭。
@@ -20,7 +22,7 @@
 
 ## 运行
 
-无数据库入口与 3–5 分钟操作脚本见 [demo_fixture/README.md](../../demo_fixture/README.md)。
+无数据库入口与 3–5 分钟操作脚本见 [demo_fixture/README.md](../../../demo_fixture/README.md)。
 原 `demo.py prepare/api/ui` 合成应用模式和原五阶段工作流保留。
 
 ```powershell
@@ -53,12 +55,12 @@ Playwright 环境准备：`uv venv var/console-browser --python 3.12`，然后
 - 八张最终截图逐张检查；WebM 是 **28 秒、1280×900** 的真实合成操作素材，浏览器解码/起播检查通过。它不是正式 3–5 分钟 MP4，也不代表真实成员已全片验收。
 - 产品运行代码 `b1a91c7` 的完整 Linux CI：**599 passed / 6 deselected / 1 warning**，见 [CI 证据](https://github.com/kenqia/locomo-dynamic-memory/actions/runs/42135688652)。最终提交状态以 PR checks 为准。
 
-材料：[目录与校验清单](assets/product-followup/artifact-manifest.json)、[浏览器结果](assets/product-followup/replay-result.json)、
-[播放检查](assets/product-followup/video-playback.json)、[WebM 素材](assets/product-followup/console-replay-clip.webm)。
-截图：[Overview](assets/product-followup/replay-overview.png)、[Memory/Source](assets/product-followup/replay-memory-source.png)、
-[成功](assets/product-followup/replay-success.png)、[证据不足](assets/product-followup/replay-insufficient.png)、
-[引用异常](assets/product-followup/replay-citation_anomaly.png)、[预算失败](assets/product-followup/replay-budget_failure.png)、
-[实验比较](assets/product-followup/replay-experiments.png)、[Demo](assets/product-followup/replay-demo.png)。
+材料：[目录与校验清单](../assets/product-followup/artifact-manifest.json)、[浏览器结果](../assets/product-followup/replay-result.json)、
+[播放检查](../assets/product-followup/video-playback.json)、[WebM 素材](../assets/product-followup/console-replay-clip.webm)。
+截图：[Overview](../assets/product-followup/replay-overview.png)、[Memory/Source](../assets/product-followup/replay-memory-source.png)、
+[成功](../assets/product-followup/replay-success.png)、[证据不足](../assets/product-followup/replay-insufficient.png)、
+[引用异常](../assets/product-followup/replay-citation_anomaly.png)、[预算失败](../assets/product-followup/replay-budget_failure.png)、
+[实验比较](../assets/product-followup/replay-experiments.png)、[Demo](../assets/product-followup/replay-demo.png)。
 
 AI `code-review` 两轴：Standards 无明确违规或重要异味；Spec 的 API 记录排序说明发现已修复，复查后两轴 **0 项未解决发现**。
 该检查不替代非作者真人复核；保持 draft / pending。
