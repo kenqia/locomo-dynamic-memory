@@ -68,6 +68,8 @@
 
 `b91d74f` 的 [API Console / 旧入口检查](assets/product-responsive/api-legacy-result.json) 也通过：在全新 ignored 目录生成合成数据、启动本地 API/UI，四案例与原五阶段入口往返成功，服务端口占用错误正确透传。真实模型调用 0；该检查产生的合成数据库未上传。
 
+清单中 JSON 的 SHA-256 和字节数按 UTF-8 / LF 计算，PNG 按原始字节计算；Windows checkout 的 CRLF 需先规范为 LF。这与 Git 中保存的材料一致。
+
 本轮没有调用真实模型、修改冻结数据或生产逻辑。最终非作者成员验收仍待基于新版本补录；保持 Draft PR，未合并、未关闭 Issue。Notion 当前缺少可用连接工具，本轮更新需负责人补录。
 
 回滚：停止本地 Demo，使用独立 checkout 打开基准 `7398883`；若撤销已提交改动，按提交做普通 revert，不改写共享分支历史。旧截图与验证记录保留在 [上一轮交接](product-final-handoff.md)。

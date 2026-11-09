@@ -106,8 +106,8 @@
     {
       "file": "responsive-result.json",
       "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
-      "bytes": 17469,
-      "sha256": "4baa30b4f893788cf19193f39faad9a8e6dd2591aa86219e585d766a05b11438"
+      "bytes": 16630,
+      "sha256": "cd273233ff65d28ec6cbff04c349f21f6285bab46ae28e5136751444a7af32e5"
     },
     {
       "file": "frozen-research-report.json",
@@ -118,21 +118,22 @@
     {
       "file": "main-compatibility.json",
       "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
-      "bytes": 1186,
-      "sha256": "c5f12109d813171dd8281cccb3512e4bf6350aac479a910111f62bee151fc89d"
+      "bytes": 1154,
+      "sha256": "98e2ddd439be8a84ca4ca38b895fdc22b78275ee902944f3313c517689754ef5"
     },
     {
       "file": "six-case-result.json",
       "runtime_commit": "66b6f9e0c4271012209eb39f3e872e8366dd7edd",
-      "bytes": 1159,
-      "sha256": "1e767ead8f0333345c22fe38ff550ff6805d30af3b5b04b87998e1e0f3e4c8fb"
+      "bytes": 1119,
+      "sha256": "3447e55706f31ca4d61b5e2f9cdf4e7e1a3558c2cd6c6d277a683769438be44f"
     },
     {
       "file": "api-legacy-result.json",
       "runtime_commit": "b91d74f3fd33aa8ccfedae1d9956e6818cacd3c6",
-      "bytes": 501,
-      "sha256": "408d36769e6dbeb61db76e7d4cc3d88380b5f05477708141396045bd029d3b3d"
+      "bytes": 481,
+      "sha256": "cdc8319e3ca416031482359589be487e3a0739f47adaa1e5abd6b054497bb5d2"
     }
   ],
-  "unarchived_materials": "Six-case screenshots/WebM and API fixture/screenshots remain under ignored var/responsive-*; result JSONs are archived. No active database or formal MP4 is published."
+  "unarchived_materials": "Six-case screenshots/WebM and API fixture/screenshots remain under ignored var/responsive-*; result JSONs are archived. No active database or formal MP4 is published.",
+  "hash_normalization": "JSON: UTF-8 bytes with CRLF normalized to LF; PNG: raw bytes. bytes counts the hashed representation. This matches tracked Git blobs on Windows and Linux."
 }
