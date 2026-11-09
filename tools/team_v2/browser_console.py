@@ -34,6 +34,8 @@ def main():
         page.on('pageerror', lambda error: errors.append(str(error)))
 
         def capture(name):
+            expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=20000)
+            page.wait_for_function('() => !document.querySelector(\'[data-stale="true"]\')')
             # Fit Streamlit's internal scroll content into the real viewport;
             # body full_page alone clips it. Desktop width remains 1280px.
             main = page.get_by_test_id('stMain')
@@ -44,10 +46,10 @@ def main():
             page.set_viewport_size({'width': 1280, 'height': 900})
 
         page.goto(args.url)
-        expect(page.get_by_role('heading', name='Research Console', exact=True)).to_be_visible(timeout=60000)
-        expect(page.get_by_text('后端已连接 · Console 只读', exact=True)).to_be_visible()
-        expect(page.get_by_text('当前 Build：', exact=False)).to_contain_text('complete')
-        expect(page.get_by_text('unknown 原样保留', exact=False)).to_be_visible()
+        expect(page.get_by_role('heading', name='Overview · 工作概览', exact=True)).to_be_visible(timeout=60000)
+        expect(page.locator('.console-context')).to_contain_text('只读浏览')
+        expect(page.locator('.console-context')).to_contain_text('已完成')
+        expect(page.get_by_test_id('stMetric').filter(has=page.get_by_text('unknown', exact=True))).to_contain_text('3')
         capture('overview.png')
         page.get_by_role('button', name='视图设置', exact=True).click()
         page.get_by_text('评审者', exact=True).click()
@@ -59,7 +61,7 @@ def main():
         page.get_by_role('button', name='查看完整原文', exact=True).click()
         expect(page.get_by_text('I live in Paris.', exact=True)).to_be_visible()
         capture('memory.png')
-        page.get_by_text('Query/Evidence', exact=True).click()
+        page.get_by_text('Query', exact=True).click()
         expected_answers = ('Alex lives in Rome.', 'Alex lives in Paris.',
                             'Sam reports birth years 1990 and 1992; the contradiction remains unresolved.',
                             'Insufficient evidence for the passport number.')
@@ -79,7 +81,8 @@ def main():
         page.get_by_text('五阶段工作流', exact=True).click()
         expect(page.get_by_role('heading', name='上传一份对话数据', exact=True)).to_be_visible()
         page.get_by_text('五阶段工作流', exact=True).click()
-        expect(page.get_by_role('heading', name='Research Console', exact=True)).to_be_visible()
+        expect(page.locator('.console-brand-title')).to_have_text('Dynamic Memory')
+        expect(page.get_by_role('radio', name='Overview', exact=True)).to_be_attached()
         assert not errors, errors
         summary = {'status': 'passed', 'browser': browser.version,
                    'viewport': {'width': 1280, 'height': 900},
