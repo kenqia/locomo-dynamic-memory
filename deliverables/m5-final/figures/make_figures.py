@@ -15,11 +15,12 @@ H, D = '#4C6A92', '#C8743A'
 E = ROOT / 'experiments/m5-development'
 OS = json.loads((E / 'level-e-results-v1/official-scores.json').read_text())
 RT = json.loads((E / 'level-e-runtime-terminal-v1.json').read_text())
-AUD = json.loads((ROOT / 'experiments/evidence-flow-20261109/audit.json').read_text())
+AUDIT_SUMMARY = 'deliverables/m5-final/figures/evidence-flow-summary.json'
+AUD = json.loads((ROOT / AUDIT_SUMMARY).read_text())
 inputs = {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in [
     'experiments/m5-development/level-e-results-v1/official-scores.json',
     'experiments/m5-development/level-e-runtime-terminal-v1.json',
-    'experiments/evidence-flow-20261109/audit.json']}
+    AUDIT_SUMMARY]}
 
 # ---- recompute from items
 by = {}

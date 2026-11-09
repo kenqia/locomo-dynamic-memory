@@ -1,0 +1,16 @@
+{
+  "version": "m5-public-evidence-flow-summary-v1",
+  "source_sha256": "95ab517d49f8aac19f91d3d90c365a6faecd9b897fe49e0d1d41f852e76b9af2",
+  "summary": {
+    "all_memory_source_recall_successful": {
+      "initial": 0.7457320814923908,
+      "expanded": 0.7873772704958273,
+      "resolver_input": 0.7873772704958273,
+      "effective": 0.5525803878252331,
+      "delivered": 0.5510769513991164
+    },
+    "resolver_lost_gold_questions": 107,
+    "budget_lost_gold_questions": 2
+  },
+  "scope": "aggregate figure inputs only; original cases and dialogue text omitted"
+}
