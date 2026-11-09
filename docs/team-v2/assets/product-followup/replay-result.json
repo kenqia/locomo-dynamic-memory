@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "browser": "156.0.4314.58",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "cases_replayed": 6,
+  "historical_build_checked": true,
+  "source_jumps_checked": true,
+  "api_started": false,
+  "database_opened": false,
+  "provider_calls": 0,
+  "page_errors": [],
+  "external_origins_blocked": [],
+  "screenshots": [
+    "replay-overview.png",
+    "replay-memory-source.png",
+    "replay-success.png",
+    "replay-insufficient.png",
+    "replay-citation_anomaly.png",
+    "replay-budget_failure.png",
+    "replay-experiments.png",
+    "replay-demo.png"
+  ],
+  "video": "console-replay-clip.webm",
+  "human_review": "pending; browser automation is not member acceptance"
+}

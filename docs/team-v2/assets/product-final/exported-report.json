@@ -1,0 +1,1061 @@
+{
+  "schema": "v2-public-aggregate-v1",
+  "source_commit": "f41c94b79d0d59a81a1a26ac343ac82420560898",
+  "run_id": "a2abe1fb49be45ccba291728e1f6b3c9",
+  "original_baseline": {
+    "questions": 757,
+    "planned_combinations": 3028,
+    "succeeded": 2969,
+    "failed": 56,
+    "unknown": 3,
+    "source": "experiments/research-v2/postbaseline-atlas-summary.json#/runs/a2abe1fb49be45ccba291728e1f6b3c9/all_items",
+    "aggregate": {
+      "planned": 3028,
+      "states": {
+        "succeeded": 2969,
+        "failed": 56,
+        "unknown": 3
+      },
+      "execution_success_rate": 0.9805151915455746,
+      "qa_successful_scorable": {
+        "mean": 0.5154439325238733,
+        "measured": 2969,
+        "unknown": 59
+      },
+      "full_denominator_qa_score": null,
+      "initial_retrieval_source_overlap": 0.7469130193346458,
+      "final_evidence_source_overlap": 0.6760891513958303,
+      "full_text_input_coverage": 1.0,
+      "semantic_citation_correctness": null,
+      "severe_error_ratio": null
+    },
+    "groups": {
+      "conversation": {
+        "conv-26": {
+          "planned": 796,
+          "states": {
+            "succeeded": 792,
+            "failed": 4
+          },
+          "execution_success_rate": 0.9949748743718593,
+          "qa_successful_scorable": {
+            "mean": 0.5328063820581708,
+            "measured": 792,
+            "unknown": 4
+          },
+          "full_denominator_qa_score": 0.5301289630528534,
+          "initial_retrieval_source_overlap": 0.7461669505962522,
+          "final_evidence_source_overlap": 0.6486371379897785,
+          "full_text_input_coverage": 1.0,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        },
+        "conv-30": {
+          "planned": 420,
+          "states": {
+            "succeeded": 374,
+            "failed": 43,
+            "unknown": 3
+          },
+          "execution_success_rate": 0.8904761904761904,
+          "qa_successful_scorable": {
+            "mean": 0.44423565633524265,
+            "measured": 374,
+            "unknown": 46
+          },
+          "full_denominator_qa_score": null,
+          "initial_retrieval_source_overlap": 0.695925925925926,
+          "final_evidence_source_overlap": 0.649074074074074,
+          "full_text_input_coverage": 1.0,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        },
+        "conv-41": {
+          "planned": 772,
+          "states": {
+            "succeeded": 765,
+            "failed": 7
+          },
+          "execution_success_rate": 0.9909326424870466,
+          "qa_successful_scorable": {
+            "mean": 0.5456698943205279,
+            "measured": 765,
+            "unknown": 7
+          },
+          "full_denominator_qa_score": 0.5407221103046682,
+          "initial_retrieval_source_overlap": 0.7872960372960373,
+          "final_evidence_source_overlap": 0.7242424242424242,
+          "full_text_input_coverage": 1.0,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        },
+        "conv-42": {
+          "planned": 1040,
+          "states": {
+            "succeeded": 1038,
+            "failed": 2
+          },
+          "execution_success_rate": 0.9980769230769231,
+          "qa_successful_scorable": {
+            "mean": 0.5055768559236261,
+            "measured": 1038,
+            "unknown": 2
+          },
+          "full_denominator_qa_score": 0.5046045927391576,
+          "initial_retrieval_source_overlap": 0.735391479562464,
+          "final_evidence_source_overlap": 0.6707325849165228,
+          "full_text_input_coverage": 1.0,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        }
+      },
+      "category": {
+        "1": {
+          "planned": 444,
+          "states": {
+            "succeeded": 433,
+            "failed": 11
+          },
+          "execution_success_rate": 0.9752252252252253,
+          "qa_successful_scorable": {
+            "mean": 0.34689897930088653,
+            "measured": 433,
+            "unknown": 11
+          },
+          "full_denominator_qa_score": 0.3383046352191078,
+          "initial_retrieval_source_overlap": 0.6722744688261929,
+          "final_evidence_source_overlap": 0.6389411354928596,
+          "full_text_input_coverage": 1.0,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        },
+        "2": {
+          "planned": 520,
+          "states": {
+            "succeeded": 506,
+            "failed": 14
+          },
+          "execution_success_rate": 0.9730769230769231,
+          "qa_successful_scorable": {
+            "mean": 0.3795049998260772,
+            "measured": 506,
+            "unknown": 14
+          },
+          "full_denominator_qa_score": 0.36928755752306747,
+          "initial_retrieval_source_overlap": 0.9215425531914894,
+          "final_evidence_source_overlap": 0.9029255319148937,
+          "full_text_input_coverage": 1.0,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        },
+        "3": {
+          "planned": 128,
+          "states": {
+            "succeeded": 128
+          },
+          "execution_success_rate": 1.0,
+          "qa_successful_scorable": {
+            "mean": 0.10870865430289854,
+            "measured": 128,
+            "unknown": 0
+          },
+          "full_denominator_qa_score": 0.10870865430289854,
+          "initial_retrieval_source_overlap": 0.6333333333333333,
+          "final_evidence_source_overlap": 0.5361111111111111,
+          "full_text_input_coverage": 1.0,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        },
+        "4": {
+          "planned": 1244,
+          "states": {
+            "succeeded": 1225,
+            "failed": 16,
+            "unknown": 3
+          },
+          "execution_success_rate": 0.9847266881028939,
+          "qa_successful_scorable": {
+            "mean": 0.45404207343945285,
+            "measured": 1225,
+            "unknown": 19
+          },
+          "full_denominator_qa_score": null,
+          "initial_retrieval_source_overlap": 0.7839912280701754,
+          "final_evidence_source_overlap": 0.7587719298245614,
+          "full_text_input_coverage": 1.0,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        },
+        "5": {
+          "planned": 692,
+          "states": {
+            "succeeded": 677,
+            "failed": 15
+          },
+          "execution_success_rate": 0.9783236994219653,
+          "qa_successful_scorable": {
+            "mean": 0.912850812407681,
+            "measured": 677,
+            "unknown": 15
+          },
+          "full_denominator_qa_score": 0.8930635838150289,
+          "initial_retrieval_source_overlap": 0.6170634920634921,
+          "final_evidence_source_overlap": 0.40575396825396826,
+          "full_text_input_coverage": 1.0,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        }
+      },
+      "strategy": {
+        "dynamic": {
+          "planned": 757,
+          "states": {
+            "succeeded": 709,
+            "failed": 48
+          },
+          "execution_success_rate": 0.9365918097754293,
+          "qa_successful_scorable": {
+            "mean": 0.5500084198797083,
+            "measured": 709,
+            "unknown": 48
+          },
+          "full_denominator_qa_score": 0.5151333813668602,
+          "initial_retrieval_source_overlap": 0.7833648542159181,
+          "final_evidence_source_overlap": 0.5867848699763594,
+          "full_text_input_coverage": null,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        },
+        "full_text": {
+          "planned": 757,
+          "states": {
+            "succeeded": 756,
+            "unknown": 1
+          },
+          "execution_success_rate": 0.9986789960369881,
+          "qa_successful_scorable": {
+            "mean": 0.46548373103388435,
+            "measured": 756,
+            "unknown": 1
+          },
+          "full_denominator_qa_score": null,
+          "initial_retrieval_source_overlap": null,
+          "final_evidence_source_overlap": null,
+          "full_text_input_coverage": 1.0,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        },
+        "hybrid_no_resolution": {
+          "planned": 757,
+          "states": {
+            "succeeded": 753,
+            "failed": 3,
+            "unknown": 1
+          },
+          "execution_success_rate": 0.9947159841479525,
+          "qa_successful_scorable": {
+            "mean": 0.5246587570800327,
+            "measured": 753,
+            "unknown": 4
+          },
+          "full_denominator_qa_score": null,
+          "initial_retrieval_source_overlap": 0.7820723928200564,
+          "final_evidence_source_overlap": 0.7739282005637146,
+          "full_text_input_coverage": null,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        },
+        "vector": {
+          "planned": 757,
+          "states": {
+            "succeeded": 751,
+            "failed": 5,
+            "unknown": 1
+          },
+          "execution_success_rate": 0.9920739762219286,
+          "qa_successful_scorable": {
+            "mean": 0.5238659403805399,
+            "measured": 751,
+            "unknown": 6
+          },
+          "full_denominator_qa_score": null,
+          "initial_retrieval_source_overlap": 0.6772571768555704,
+          "final_evidence_source_overlap": 0.6622713074520303,
+          "full_text_input_coverage": null,
+          "semantic_citation_correctness": null,
+          "severe_error_ratio": null
+        }
+      }
+    }
+  },
+  "paired": {
+    "n": 757,
+    "pair_states": {
+      "both_succeeded": 705,
+      "hybrid_only_succeeded": 48,
+      "dynamic_only_succeeded": 3,
+      "unknown": 1
+    },
+    "comparable": 705,
+    "dynamic_wins": 136,
+    "hybrid_wins": 110,
+    "ties": 459,
+    "mean_dynamic_gain_on_wins": 0.30471073403442084,
+    "mean_dynamic_loss_on_losses": -0.20962400490220445,
+    "mean_paired_delta": 0.026073786226154243,
+    "paired_hybrid_mean": 0.5242998888931095,
+    "paired_dynamic_mean": 0.5503736751192637,
+    "hybrid": {
+      "n": 757,
+      "states": {
+        "succeeded": 753,
+        "failed": 3,
+        "unknown": 1
+      },
+      "scorable": 753,
+      "success_rate": 0.9947159841479525,
+      "successful_qa_mean": 0.5246587570800327,
+      "full_denominator_score": null,
+      "full_denominator_bounds": [
+        0.5218864518907063,
+        0.5232074558537182
+      ],
+      "unknown_score_items": 1
+    },
+    "dynamic": {
+      "n": 757,
+      "states": {
+        "succeeded": 709,
+        "failed": 48
+      },
+      "scorable": 709,
+      "success_rate": 0.9365918097754293,
+      "successful_qa_mean": 0.5500084198797083,
+      "full_denominator_score": 0.5151333813668602,
+      "full_denominator_bounds": [
+        0.5151333813668602,
+        0.5151333813668602
+      ],
+      "unknown_score_items": 0
+    },
+    "costs": {
+      "hybrid": {
+        "Query Analysis": 0.49142248,
+        "Resolution": 0.0,
+        "Answer": 9.10625688,
+        "all": 9.59767936
+      },
+      "dynamic": {
+        "Query Analysis": 0.49085448,
+        "Resolution": 96.28555104,
+        "Answer": 2.154116,
+        "all": 98.93052152
+      }
+    }
+  },
+  "groups": {
+    "conversation": {
+      "conv-26": {
+        "n": 199,
+        "pair_states": {
+          "both_succeeded": 197,
+          "hybrid_only_succeeded": 1,
+          "dynamic_only_succeeded": 1
+        },
+        "comparable": 197,
+        "dynamic_wins": 39,
+        "hybrid_wins": 28,
+        "ties": 130,
+        "mean_dynamic_gain_on_wins": 0.23692620471946696,
+        "mean_dynamic_loss_on_losses": -0.21632401475267454,
+        "mean_paired_delta": 0.016157612035453423,
+        "paired_hybrid_mean": 0.5416881286768794,
+        "paired_dynamic_mean": 0.5578457407123328,
+        "hybrid": {
+          "n": 199,
+          "states": {
+            "succeeded": 198,
+            "failed": 1
+          },
+          "scorable": 198,
+          "success_rate": 0.9949748743718593,
+          "successful_qa_mean": 0.5408763319712001,
+          "full_denominator_score": 0.538158360453757,
+          "full_denominator_bounds": [
+            0.538158360453757,
+            0.538158360453757
+          ],
+          "unknown_score_items": 0
+        },
+        "dynamic": {
+          "n": 199,
+          "states": {
+            "succeeded": 198,
+            "failed": 1
+          },
+          "scorable": 198,
+          "success_rate": 0.9949748743718593,
+          "successful_qa_mean": 0.5550283379814624,
+          "full_denominator_score": 0.5522392508559275,
+          "full_denominator_bounds": [
+            0.5522392508559275,
+            0.5522392508559275
+          ],
+          "unknown_score_items": 0
+        },
+        "costs": {
+          "hybrid": {
+            "Query Analysis": 0.1180096,
+            "Resolution": 0.0,
+            "Answer": 2.4407768,
+            "all": 2.5587864
+          },
+          "dynamic": {
+            "Query Analysis": 0.1179696,
+            "Resolution": 22.58127328,
+            "Answer": 0.63999008,
+            "all": 23.33923296
+          }
+        }
+      },
+      "conv-30": {
+        "n": 105,
+        "pair_states": {
+          "both_succeeded": 61,
+          "hybrid_only_succeeded": 43,
+          "unknown": 1
+        },
+        "comparable": 61,
+        "dynamic_wins": 7,
+        "hybrid_wins": 14,
+        "ties": 40,
+        "mean_dynamic_gain_on_wins": 0.2520713588465689,
+        "mean_dynamic_loss_on_losses": -0.19186904483919293,
+        "mean_paired_delta": -0.015109296980700303,
+        "paired_hybrid_mean": 0.42904192785290984,
+        "paired_dynamic_mean": 0.4139326308722095,
+        "hybrid": {
+          "n": 105,
+          "states": {
+            "succeeded": 104,
+            "unknown": 1
+          },
+          "scorable": 104,
+          "success_rate": 0.9904761904761905,
+          "successful_qa_mean": 0.4743002656701686,
+          "full_denominator_score": null,
+          "full_denominator_bounds": [
+            0.46978312028283364,
+            0.4793069298066432
+          ],
+          "unknown_score_items": 1
+        },
+        "dynamic": {
+          "n": 105,
+          "states": {
+            "succeeded": 62,
+            "failed": 43
+          },
+          "scorable": 62,
+          "success_rate": 0.5904761904761905,
+          "successful_qa_mean": 0.4117056863253274,
+          "full_denominator_score": 0.24310240525876475,
+          "full_denominator_bounds": [
+            0.24310240525876475,
+            0.24310240525876475
+          ],
+          "unknown_score_items": 0
+        },
+        "costs": {
+          "hybrid": {
+            "Query Analysis": 0.06050048,
+            "Resolution": 0.0,
+            "Answer": 1.2196184,
+            "all": 1.28011888
+          },
+          "dynamic": {
+            "Query Analysis": 0.0608456,
+            "Resolution": 9.48769896,
+            "Answer": 0.17434944,
+            "all": 9.722894
+          }
+        }
+      },
+      "conv-41": {
+        "n": 193,
+        "pair_states": {
+          "both_succeeded": 188,
+          "hybrid_only_succeeded": 4,
+          "dynamic_only_succeeded": 1
+        },
+        "comparable": 188,
+        "dynamic_wins": 34,
+        "hybrid_wins": 32,
+        "ties": 122,
+        "mean_dynamic_gain_on_wins": 0.3288037036744956,
+        "mean_dynamic_loss_on_losses": -0.20596015189088646,
+        "mean_paired_delta": 0.02440745247034299,
+        "paired_hybrid_mean": 0.5674980953166242,
+        "paired_dynamic_mean": 0.5919055477869671,
+        "hybrid": {
+          "n": 193,
+          "states": {
+            "succeeded": 192,
+            "failed": 1
+          },
+          "scorable": 192,
+          "success_rate": 0.9948186528497409,
+          "successful_qa_mean": 0.5655710516641944,
+          "full_denominator_score": 0.5626406317073851,
+          "full_denominator_bounds": [
+            0.5626406317073851,
+            0.5626406317073851
+          ],
+          "unknown_score_items": 0
+        },
+        "dynamic": {
+          "n": 193,
+          "states": {
+            "succeeded": 189,
+            "failed": 4
+          },
+          "scorable": 189,
+          "success_rate": 0.9792746113989638,
+          "successful_qa_mean": 0.5940647776928563,
+          "full_denominator_score": 0.5817525543209835,
+          "full_denominator_bounds": [
+            0.5817525543209835,
+            0.5817525543209835
+          ],
+          "unknown_score_items": 0
+        },
+        "costs": {
+          "hybrid": {
+            "Query Analysis": 0.13271064,
+            "Resolution": 0.0,
+            "Answer": 2.32589944,
+            "all": 2.45861008
+          },
+          "dynamic": {
+            "Query Analysis": 0.13192552,
+            "Resolution": 32.29401304,
+            "Answer": 0.57138952,
+            "all": 32.99732808
+          }
+        }
+      },
+      "conv-42": {
+        "n": 260,
+        "pair_states": {
+          "both_succeeded": 259,
+          "dynamic_only_succeeded": 1
+        },
+        "comparable": 259,
+        "dynamic_wins": 56,
+        "hybrid_wins": 36,
+        "ties": 167,
+        "mean_dynamic_gain_on_wins": 0.34386986442434264,
+        "mean_dynamic_loss_on_losses": -0.21457435105307043,
+        "mean_paired_delta": 0.044525234632635725,
+        "paired_hybrid_mean": 0.5021531305086646,
+        "paired_dynamic_mean": 0.5466783651413003,
+        "hybrid": {
+          "n": 260,
+          "states": {
+            "succeeded": 259,
+            "failed": 1
+          },
+          "scorable": 259,
+          "success_rate": 0.9961538461538462,
+          "successful_qa_mean": 0.5021531305086646,
+          "full_denominator_score": 0.5002217723144006,
+          "full_denominator_bounds": [
+            0.5002217723144006,
+            0.5002217723144006
+          ],
+          "unknown_score_items": 0
+        },
+        "dynamic": {
+          "n": 260,
+          "states": {
+            "succeeded": 260
+          },
+          "scorable": 260,
+          "success_rate": 1.0,
+          "successful_qa_mean": 0.5471398586087055,
+          "full_denominator_score": 0.5471398586087055,
+          "full_denominator_bounds": [
+            0.5471398586087055,
+            0.5471398586087055
+          ],
+          "unknown_score_items": 0
+        },
+        "costs": {
+          "hybrid": {
+            "Query Analysis": 0.18020176,
+            "Resolution": 0.0,
+            "Answer": 3.11996224,
+            "all": 3.300164
+          },
+          "dynamic": {
+            "Query Analysis": 0.18011376,
+            "Resolution": 31.92256576,
+            "Answer": 0.76838696,
+            "all": 32.87106648
+          }
+        }
+      }
+    },
+    "category": {
+      "1": {
+        "n": 111,
+        "pair_states": {
+          "both_succeeded": 101,
+          "hybrid_only_succeeded": 9,
+          "dynamic_only_succeeded": 1
+        },
+        "comparable": 101,
+        "dynamic_wins": 33,
+        "hybrid_wins": 15,
+        "ties": 53,
+        "mean_dynamic_gain_on_wins": 0.21361905829110583,
+        "mean_dynamic_loss_on_losses": -0.14795494822458224,
+        "mean_paired_delta": 0.04782281881423524,
+        "paired_hybrid_mean": 0.3434820861738859,
+        "paired_dynamic_mean": 0.3913049049881212,
+        "hybrid": {
+          "n": 111,
+          "states": {
+            "succeeded": 110,
+            "failed": 1
+          },
+          "scorable": 110,
+          "success_rate": 0.990990990990991,
+          "successful_qa_mean": 0.3338589187395712,
+          "full_denominator_score": 0.3308511807329084,
+          "full_denominator_bounds": [
+            0.3308511807329084,
+            0.3308511807329084
+          ],
+          "unknown_score_items": 0
+        },
+        "dynamic": {
+          "n": 111,
+          "states": {
+            "succeeded": 102,
+            "failed": 9
+          },
+          "scorable": 102,
+          "success_rate": 0.918918918918919,
+          "successful_qa_mean": 0.3940045301026167,
+          "full_denominator_score": 0.3620582168510532,
+          "full_denominator_bounds": [
+            0.3620582168510532,
+            0.3620582168510532
+          ],
+          "unknown_score_items": 0
+        },
+        "costs": {
+          "hybrid": {
+            "Query Analysis": 0.06413456,
+            "Resolution": 0.0,
+            "Answer": 1.4158692,
+            "all": 1.48000376
+          },
+          "dynamic": {
+            "Query Analysis": 0.06412656,
+            "Resolution": 14.24275624,
+            "Answer": 0.5759628,
+            "all": 14.8828456
+          }
+        }
+      },
+      "2": {
+        "n": 130,
+        "pair_states": {
+          "both_succeeded": 117,
+          "hybrid_only_succeeded": 13
+        },
+        "comparable": 117,
+        "dynamic_wins": 31,
+        "hybrid_wins": 30,
+        "ties": 56,
+        "mean_dynamic_gain_on_wins": 0.3151525283584042,
+        "mean_dynamic_loss_on_losses": -0.15060204344297523,
+        "mean_paired_delta": 0.044886043383087805,
+        "paired_hybrid_mean": 0.42134274666486554,
+        "paired_dynamic_mean": 0.4662287900479533,
+        "hybrid": {
+          "n": 130,
+          "states": {
+            "succeeded": 130
+          },
+          "scorable": 130,
+          "success_rate": 1.0,
+          "successful_qa_mean": 0.41826936836696765,
+          "full_denominator_score": 0.41826936836696765,
+          "full_denominator_bounds": [
+            0.41826936836696765,
+            0.41826936836696765
+          ],
+          "unknown_score_items": 0
+        },
+        "dynamic": {
+          "n": 130,
+          "states": {
+            "succeeded": 117,
+            "failed": 13
+          },
+          "scorable": 117,
+          "success_rate": 0.9,
+          "successful_qa_mean": 0.4662287900479533,
+          "full_denominator_score": 0.41960591104315803,
+          "full_denominator_bounds": [
+            0.41960591104315803,
+            0.41960591104315803
+          ],
+          "unknown_score_items": 0
+        },
+        "costs": {
+          "hybrid": {
+            "Query Analysis": 0.0806448,
+            "Resolution": 0.0,
+            "Answer": 1.5683988,
+            "all": 1.6490436
+          },
+          "dynamic": {
+            "Query Analysis": 0.0805248,
+            "Resolution": 16.09574168,
+            "Answer": 0.3128084,
+            "all": 16.48907488
+          }
+        }
+      },
+      "3": {
+        "n": 32,
+        "pair_states": {
+          "both_succeeded": 32
+        },
+        "comparable": 32,
+        "dynamic_wins": 2,
+        "hybrid_wins": 3,
+        "ties": 27,
+        "mean_dynamic_gain_on_wins": 0.1255335231424324,
+        "mean_dynamic_loss_on_losses": -0.09937259163265355,
+        "mean_paired_delta": -0.0014703352691592436,
+        "paired_hybrid_mean": 0.11029029984335217,
+        "paired_dynamic_mean": 0.10881996457419292,
+        "hybrid": {
+          "n": 32,
+          "states": {
+            "succeeded": 32
+          },
+          "scorable": 32,
+          "success_rate": 1.0,
+          "successful_qa_mean": 0.11029029984335217,
+          "full_denominator_score": 0.11029029984335217,
+          "full_denominator_bounds": [
+            0.11029029984335217,
+            0.11029029984335217
+          ],
+          "unknown_score_items": 0
+        },
+        "dynamic": {
+          "n": 32,
+          "states": {
+            "succeeded": 32
+          },
+          "scorable": 32,
+          "success_rate": 1.0,
+          "successful_qa_mean": 0.10881996457419292,
+          "full_denominator_score": 0.10881996457419292,
+          "full_denominator_bounds": [
+            0.10881996457419292,
+            0.10881996457419292
+          ],
+          "unknown_score_items": 0
+        },
+        "costs": {
+          "hybrid": {
+            "Query Analysis": 0.02038608,
+            "Resolution": 0.0,
+            "Answer": 0.38390272000000003,
+            "all": 0.4042888
+          },
+          "dynamic": {
+            "Query Analysis": 0.02036208,
+            "Resolution": 4.110552,
+            "Answer": 0.124658,
+            "all": 4.25557208
+          }
+        }
+      },
+      "4": {
+        "n": 311,
+        "pair_states": {
+          "both_succeeded": 296,
+          "hybrid_only_succeeded": 12,
+          "dynamic_only_succeeded": 2,
+          "unknown": 1
+        },
+        "comparable": 296,
+        "dynamic_wins": 66,
+        "hybrid_wins": 56,
+        "ties": 174,
+        "mean_dynamic_gain_on_wins": 0.3086429618133234,
+        "mean_dynamic_loss_on_losses": -0.17898459353011678,
+        "mean_paired_delta": 0.034957088655381094,
+        "paired_hybrid_mean": 0.4665991216598081,
+        "paired_dynamic_mean": 0.5015562103151892,
+        "hybrid": {
+          "n": 311,
+          "states": {
+            "succeeded": 308,
+            "failed": 2,
+            "unknown": 1
+          },
+          "scorable": 308,
+          "success_rate": 0.9903536977491961,
+          "successful_qa_mean": 0.4624651153805802,
+          "full_denominator_score": null,
+          "full_denominator_bounds": [
+            0.4580040370971663,
+            0.46121947118076756
+          ],
+          "unknown_score_items": 1
+        },
+        "dynamic": {
+          "n": 311,
+          "states": {
+            "succeeded": 299,
+            "failed": 12
+          },
+          "scorable": 299,
+          "success_rate": 0.9614147909967846,
+          "successful_qa_mean": 0.5007909709774633,
+          "full_denominator_score": 0.4814678466953747,
+          "full_denominator_bounds": [
+            0.4814678466953747,
+            0.4814678466953747
+          ],
+          "unknown_score_items": 0
+        },
+        "costs": {
+          "hybrid": {
+            "Query Analysis": 0.21359736000000001,
+            "Resolution": 0.0,
+            "Answer": 3.7483064,
+            "all": 3.9619037599999998
+          },
+          "dynamic": {
+            "Query Analysis": 0.21335736,
+            "Resolution": 41.29763792,
+            "Answer": 0.90643248,
+            "all": 42.41742776
+          }
+        }
+      },
+      "5": {
+        "n": 173,
+        "pair_states": {
+          "both_succeeded": 159,
+          "hybrid_only_succeeded": 14
+        },
+        "comparable": 159,
+        "dynamic_wins": 4,
+        "hybrid_wins": 6,
+        "ties": 149,
+        "mean_dynamic_gain_on_wins": 1.0,
+        "mean_dynamic_loss_on_losses": -1.0,
+        "mean_paired_delta": -0.012578616352201259,
+        "paired_hybrid_mean": 0.9056603773584906,
+        "paired_dynamic_mean": 0.8930817610062893,
+        "hybrid": {
+          "n": 173,
+          "states": {
+            "succeeded": 173
+          },
+          "scorable": 173,
+          "success_rate": 1.0,
+          "successful_qa_mean": 0.9132947976878613,
+          "full_denominator_score": 0.9132947976878613,
+          "full_denominator_bounds": [
+            0.9132947976878613,
+            0.9132947976878613
+          ],
+          "unknown_score_items": 0
+        },
+        "dynamic": {
+          "n": 173,
+          "states": {
+            "succeeded": 159,
+            "failed": 14
+          },
+          "scorable": 159,
+          "success_rate": 0.9190751445086706,
+          "successful_qa_mean": 0.8930817610062893,
+          "full_denominator_score": 0.8208092485549133,
+          "full_denominator_bounds": [
+            0.8208092485549133,
+            0.8208092485549133
+          ],
+          "unknown_score_items": 0
+        },
+        "costs": {
+          "hybrid": {
+            "Query Analysis": 0.11265968,
+            "Resolution": 0.0,
+            "Answer": 1.98977976,
+            "all": 2.10243944
+          },
+          "dynamic": {
+            "Query Analysis": 0.11248368,
+            "Resolution": 20.5388632,
+            "Answer": 0.23425432,
+            "all": 20.8856012
+          }
+        }
+      }
+    }
+  },
+  "provider_cost_estimates": {
+    "full_text": {
+      "physical_http": 758,
+      "states": {
+        "settled": 757,
+        "unknown": 1
+      },
+      "known_peak_estimate_cny": 95.2605184,
+      "unknown_reservation_cny": 2.359296,
+      "usage_missing_requests": 1,
+      "prompt_cache_hit_tokens": 1042560,
+      "prompt_cache_miss_tokens": 47189184,
+      "prompt_tokens": 48231744,
+      "completion_tokens": 105056,
+      "token_weighted_cache_hit_rate": 0.021615639691569103,
+      "http_seconds_known": 1559.4025877220774,
+      "physical_internal_retries": 1,
+      "billing_notice": "Frozen peak tariff estimate; not account debit. Missing differs from zero."
+    },
+    "vector": {
+      "physical_http": 1609,
+      "states": {
+        "settled": 1608,
+        "unknown": 1
+      },
+      "known_peak_estimate_cny": 9.55745572,
+      "unknown_reservation_cny": 2.359296,
+      "usage_missing_requests": 1,
+      "prompt_cache_hit_tokens": 1023743,
+      "prompt_cache_miss_tokens": 4136677,
+      "prompt_tokens": 5160420,
+      "completion_tokens": 155394,
+      "token_weighted_cache_hit_rate": 0.19838365869444735,
+      "http_seconds_known": 1689.5658359647987,
+      "physical_internal_retries": 96,
+      "billing_notice": "Frozen peak tariff estimate; not account debit. Missing differs from zero."
+    },
+    "hybrid_no_resolution": {
+      "physical_http": 1603,
+      "states": {
+        "settled": 1602,
+        "unknown": 1
+      },
+      "known_peak_estimate_cny": 9.59767936,
+      "unknown_reservation_cny": 2.359296,
+      "usage_missing_requests": 1,
+      "prompt_cache_hit_tokens": 992384,
+      "prompt_cache_miss_tokens": 4165328,
+      "prompt_tokens": 5157712,
+      "completion_tokens": 153416,
+      "token_weighted_cache_hit_rate": 0.19240779632519225,
+      "http_seconds_known": 1687.3010758600267,
+      "physical_internal_retries": 90,
+      "billing_notice": "Frozen peak tariff estimate; not account debit. Missing differs from zero."
+    },
+    "dynamic": {
+      "physical_http": 2261,
+      "states": {
+        "settled": 2261
+      },
+      "known_peak_estimate_cny": 98.93052152,
+      "unknown_reservation_cny": 0.0,
+      "usage_missing_requests": 0,
+      "prompt_cache_hit_tokens": 2373888,
+      "prompt_cache_miss_tokens": 36165647,
+      "prompt_tokens": 38539535,
+      "completion_tokens": 3313034,
+      "token_weighted_cache_hit_rate": 0.061596176497718515,
+      "http_seconds_known": 15985.839399981813,
+      "physical_internal_retries": 84,
+      "billing_notice": "Frozen peak tariff estimate; not account debit. Missing differs from zero."
+    }
+  },
+  "shared_build_cost": {
+    "physical_http": 1357,
+    "states": {
+      "settled": 1354,
+      "reserved": 3
+    },
+    "known_peak_estimate_cny": 89.65501696,
+    "unknown_reservation_cny": 7.077888,
+    "usage_missing_requests": 3,
+    "prompt_cache_hit_tokens": 2592124,
+    "prompt_cache_miss_tokens": 10603078,
+    "prompt_tokens": 13195202,
+    "completion_tokens": 8543147,
+    "token_weighted_cache_hit_rate": 0.19644443487867788,
+    "http_seconds_known": 38360.196137737985,
+    "physical_internal_retries": 26,
+    "billing_notice": "Frozen peak tariff estimate; not account debit. Missing differs from zero."
+  },
+  "semantic_notice": "Official QA difference is not evidence correctness. Existing independent AI review remains a separate artifact; unknown costs are reservations, not zero.",
+  "e1": {
+    "out_of_fold": {
+      "outcome": {
+        "n": 757,
+        "states": {
+          "succeeded": 709,
+          "failed": 48
+        },
+        "scorable": 709,
+        "success_rate": 0.9365918097754293,
+        "successful_qa_mean": 0.5500084198797083,
+        "full_denominator_score": 0.5151333813668602,
+        "full_denominator_bounds": [
+          0.5151333813668602,
+          0.5151333813668602
+        ],
+        "unknown_score_items": 0
+      },
+      "choices": {
+        "dynamic": 757
+      },
+      "hybrid_fraction": 0.0,
+      "paired_successful_n": 705,
+      "paired_qa_mean": 0.5503736751192637,
+      "paired_delta_vs_dynamic": 0.0,
+      "selected_historical_cost_cny": 98.93052152,
+      "selected_unknown_reservation_cny": 0.0,
+      "notice": "Selected historical outcomes and costs; not new execution or measured counterfactual provider billing."
+    },
+    "semantic_quality": "Full-denominator severe errors, incorrect refusals and citation semantics not evaluated; cannot approve production adoption."
+  },
+  "e5": {
+    "cold_encoding_cpu_reduction": 0.6421863909531219,
+    "cold_local_retrieval_cpu_reduction": 0.5735954745764443,
+    "warm_encoding_cpu_reduction": 0.9901986958458098,
+    "deepseek_physical_calls": 0,
+    "provider_token_saving": 0,
+    "provider_cny_saving": 0,
+    "scope": "Isolated query encoding + warm in-memory ranking replay of fixed index. Does not include production SQLite loading per query, paid analysis/resolution/answer, or new Build. Wall/CPU costs include benchmark tracing overhead; sequential phases share model warmup."
+  },
+  "source_hashes": {
+    "paired-diagnosis.json": "2b734ff38dd06bd0a7bcdcfbf08b9340bba9ddc3aefcd36b0ba37376008fe32b",
+    "router-simulation.json": "c59ce2b8a3b0a47bf1878b892868fd7eda8183810a641a3428e7b09f8fabed95",
+    "cache-benchmark.json": "5c0c76cb9a6974ebe011edfcdb2323e73430a96b3934901a696ad3076934d465",
+    "postbaseline-atlas-summary.json": "82ebceb95efd4fb99071565de639859b1ae919e55ed978d817eb31dcb0af07fe"
+  },
+  "independent_human_review": "pending; aggregates are not human semantic ground truth",
+  "new_provider_calls": 0
+}

@@ -1,0 +1,170 @@
+{
+  "schema": "product-final-evidence-v1",
+  "date_beijing": "2026-11-09",
+  "runtime_commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+  "baseline_commit": "2201eeb227bba8a49b10889c7698e41bc5a86418",
+  "main_commit_checked": "0ebb2b8f832e306c37389881b9b7187129e5311a",
+  "environment": {
+    "os": "Windows",
+    "python": "3.12.12",
+    "playwright": "1.64.0",
+    "browser": "157.0.4341.42",
+    "interaction_viewport": {
+      "width": 1280,
+      "height": 900
+    }
+  },
+  "targeted_tests": {
+    "passed": 20,
+    "warnings": 1,
+    "scope": "Console / Experiments / Replay affected scope"
+  },
+  "export_semantically_equal_to": "demo_fixture/product-v1/research-evidence.json",
+  "checksum_basis": "Raw PNG bytes; JSON bytes with CRLF normalized to LF",
+  "human_acceptance": "pending; author and AI/browser automation do not replace member acceptance",
+  "integration_scope": "Unmerged additive main candidate smoke; not full main regression or merged production acceptance",
+  "artifacts": [
+    {
+      "file": "before-overview.png",
+      "scene": "overview",
+      "commit": "2201eeb227bba8a49b10889c7698e41bc5a86418",
+      "width": 1280,
+      "height": 900,
+      "source_run": "product-final-before-01",
+      "bytes": 107371,
+      "sha256": "f5e73f3bee2a353db95a080356e82aa13b2602c41e7b12a78b2b9017933a659e"
+    },
+    {
+      "file": "before-experiments.png",
+      "scene": "experiments",
+      "commit": "2201eeb227bba8a49b10889c7698e41bc5a86418",
+      "width": 1280,
+      "height": 900,
+      "source_run": "product-final-before-01",
+      "bytes": 109475,
+      "sha256": "f28419af1e3f8e9b8a3876f7bd228ce95e6bd413237726eb48d16766146778a4"
+    },
+    {
+      "file": "before-cost.png",
+      "scene": "cost",
+      "commit": "2201eeb227bba8a49b10889c7698e41bc5a86418",
+      "width": 1280,
+      "height": 900,
+      "source_run": "product-final-before-01",
+      "bytes": 135741,
+      "sha256": "10b51ed2f554428c248576efa501061e5a6a05ecbcdbe6b303d56ed7bd7daaad"
+    },
+    {
+      "file": "before-missing-run.png",
+      "scene": "missing-run",
+      "commit": "2201eeb227bba8a49b10889c7698e41bc5a86418",
+      "width": 1280,
+      "height": 900,
+      "source_run": "product-final-before-01",
+      "bytes": 107807,
+      "sha256": "ea6c62280d858d03d46c72b665cadbcdf5b0aec4fb602dcc69ad51d291150300"
+    },
+    {
+      "file": "before-demo.png",
+      "scene": "demo",
+      "commit": "2201eeb227bba8a49b10889c7698e41bc5a86418",
+      "width": 1280,
+      "height": 900,
+      "source_run": "product-final-before-01",
+      "bytes": 123158,
+      "sha256": "4bb38726911a53c422916b2c72454e8af44e2bd890630642cc70b42c77c311a5"
+    },
+    {
+      "file": "after-overview.png",
+      "scene": "overview",
+      "commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+      "width": 1280,
+      "height": 900,
+      "source_run": "product-final-evidence-01",
+      "bytes": 107823,
+      "sha256": "1df7f5f3220952b718ffcb3609b0b0e7ef4310d97f370b2b6b7dc45bbcf6f3b7"
+    },
+    {
+      "file": "after-experiments.png",
+      "scene": "experiments",
+      "commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+      "width": 1280,
+      "height": 900,
+      "source_run": "product-final-evidence-01",
+      "bytes": 123676,
+      "sha256": "903c4be26332e45e966d69e7479310746fe162e2739c33c77ad50daab97862d8"
+    },
+    {
+      "file": "after-cost.png",
+      "scene": "cost",
+      "commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+      "width": 1280,
+      "height": 900,
+      "source_run": "product-final-evidence-01",
+      "bytes": 103660,
+      "sha256": "c0ba9cbdfe5597832fab2f3461c7c2a95e3479fe0b98c3371740f8d632fc1e60"
+    },
+    {
+      "file": "after-missing-run.png",
+      "scene": "missing-run",
+      "commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+      "width": 1280,
+      "height": 900,
+      "source_run": "product-final-evidence-01",
+      "bytes": 68299,
+      "sha256": "104840f250f9bdd2e1ed968e0feec07bb3a68a50eff6ac390bd67927b3b84103"
+    },
+    {
+      "file": "after-demo.png",
+      "scene": "demo",
+      "commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+      "width": 1280,
+      "height": 900,
+      "source_run": "product-final-evidence-01",
+      "bytes": 116189,
+      "sha256": "50b04f6729cf70192c1b7287e0d9d82d73301fa3dd7226acbc39e0bf37f5880c"
+    },
+    {
+      "file": "full-experiments.png",
+      "scene": "experiments expanded height; not fixed-viewport comparison",
+      "commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+      "width": 1280,
+      "height": 2346,
+      "bytes": 278556,
+      "sha256": "a687e49d78aae086df795d98ac2635ac33731b2d6825a2245653cad99b38eff2"
+    },
+    {
+      "file": "full-demo.png",
+      "scene": "demo expanded height; not fixed-viewport comparison",
+      "commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+      "width": 1280,
+      "height": 1138,
+      "bytes": 139359,
+      "sha256": "26f59689c8031122f8c04160024c789e41706816d3ea0c242aedc4e74ed77ca6"
+    },
+    {
+      "file": "before-result.json",
+      "commit": "2201eeb227bba8a49b10889c7698e41bc5a86418",
+      "bytes": 1736,
+      "sha256": "3ae0c9898cffe7e91f87c0ad7a181e4b0db164d367ac649e2a73fdc5414aee6e"
+    },
+    {
+      "file": "after-result.json",
+      "commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+      "bytes": 1734,
+      "sha256": "da272148a7aeaa1885eddb2a81710854d7a5aa4942ae6fc9efb136b27b323d39"
+    },
+    {
+      "file": "main-compatibility.json",
+      "commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+      "bytes": 1134,
+      "sha256": "e73d761ce8ba0912c2198d07631a5ee8bca308459bbbb274bd96a34612f30509"
+    },
+    {
+      "file": "exported-report.json",
+      "commit": "a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e",
+      "bytes": 33613,
+      "sha256": "0011e840f01d4205056ee10de8489c4ce3d9abea76d1a7ddb46c7a7499464e2f"
+    }
+  ]
+}

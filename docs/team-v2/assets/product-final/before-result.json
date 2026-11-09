@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "commit": "2201eeb227bba8a49b10889c7698e41bc5a86418",
+  "browser": "157.0.4341.42",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "final_layout": false,
+  "source_jumps_checked": true,
+  "dimensions_checked": [
+    "conversation",
+    "category",
+    "strategy"
+  ],
+  "lossless_export_checked": false,
+  "missing_run_checked": true,
+  "api_started": false,
+  "database_opened": false,
+  "provider_calls": 0,
+  "page_errors": [],
+  "external_origins_blocked": [],
+  "width_checks": [
+    {
+      "scene": "overview",
+      "client": 1280,
+      "scroll": 1280,
+      "scope": "main document; table readability also inspected in screenshots"
+    },
+    {
+      "scene": "experiments",
+      "client": 1280,
+      "scroll": 1280,
+      "scope": "main document; table readability also inspected in screenshots"
+    },
+    {
+      "scene": "cost",
+      "client": 1280,
+      "scroll": 1280,
+      "scope": "main document; table readability also inspected in screenshots"
+    },
+    {
+      "scene": "missing-run",
+      "client": 1280,
+      "scroll": 1280,
+      "scope": "main document; table readability also inspected in screenshots"
+    },
+    {
+      "scene": "demo",
+      "client": 1280,
+      "scroll": 1280,
+      "scope": "main document; table readability also inspected in screenshots"
+    }
+  ],
+  "screenshots": [
+    "overview.png",
+    "experiments.png",
+    "cost.png",
+    "missing-run.png",
+    "demo.png"
+  ],
+  "scope": "Changed Overview, Experiments, Demo and shared navigation. Six-case and legacy evidence retained at their recorded commits.",
+  "human_review": "pending; automation is not member acceptance"
+}

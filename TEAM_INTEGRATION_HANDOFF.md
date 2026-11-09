@@ -4,15 +4,13 @@
 
 ## Product：#39、#26–29
 
-GitHub只读核实：PR39 OPEN，head `7a159d7e3f2baacdc7ae510cb42a060befb1afba`，base `codex/v2-6d-production-safe`，分支`team/product-console-v2-6d`；目前标题仅Overview/Console导航(#26)，不能据此宣称Timeline/比较/视频均完成。
+2026-11-09：按负责人授权，将Thorns-06最终候选`739888347e5651036a1c42040f75dbe0d8f6f456`的产品模块与公开证据选择性整合到main基准`0ebb2b8`。没有合并安全分支的不同历史或覆盖个人核心。
 
-接入边界：继续Streamlit→FastAPI，不让Console直接访问SQLite。Build、Source、Relation、Projection和Index必须来自同一完整build_id；Trace读取`GET /queries/{id}`，引用定位(dataset_id,sample_id,dia_id)。公开默认Hybrid，Dynamic显式可选；新Console不可暗自恢复Dynamic默认。
+正常`personal-release start`进入Console，顶部“五阶段工作流”保留原有上传、构建、问答、M5/Bonus与导出。公共查询及原页面仍默认Hybrid；Console读取已有Build和Trace，不自动生成或连接SQLite。四个产品模块和合成Replay的具体入口见[Product指南](docs/team-v2/README.md)。
 
-Timeline接现有`/builds/{id}/bonus/timeline?entity=...&dimension=...`，Graph接`/bonus/graph`并保留结构归属边与模型关系边的区别。实验比较读取冻结公开聚合JSON，不触发评测run；答案、Gold及逐字source审阅留受控目录。
+原独立MemoryExport/Graph Replay继续使用`personal-release replay-offline-demo`。Product合成Replay使用`tools/team_v2/demo.py replay`；两者入口及数据契约分开，未将真实导出误标成合成，也未把历史757题报告当作新的M5成绩。
 
-离线演示独立factory=`locomo_memory.release_viewer:create_replay_app`，UI=`replay_ui.py`；共享ExportCatalog负责SHA/身份/来源/时间。可在Console里增加链接，不得把只读按钮转到`POST /queries`/Build/Resolve/Answer。独立Replay目前不依赖PR39。
-
-队友仍须提供最终Console/Timeline/Trace/比较页面的可审查commit、浏览器证据和无key路径；合流只调整展示/HTTP契约，不重写个人QA或重新调参。
+真人复核由xiaozhuozi39完成，公开留有本地跑通反馈与真人截图；负责人明确确认其已完整复核并授权整合。整合验证、版本、局限与回滚见[Product整合验收](docs/release/PRODUCT_INTEGRATION.md)。任务关闭以实际main合并及验证证据为准。
 
 ## Architecture：#38、#30–33
 

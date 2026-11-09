@@ -1,0 +1,135 @@
+{
+  "schema": "product-ui-rework-evidence-v1",
+  "date_beijing": "2026-11-08",
+  "baseline_commit": "44d20dc6779c26b89a9cd76b1b022474d380ff5d",
+  "runtime_commit": "e6dd29a2091d35ba6201a3b2d3af3c64ad27f67a",
+  "environment": {
+    "os": "Windows",
+    "python": "3.12.12",
+    "playwright": "1.64.0",
+    "browser": "157.0.4341.42",
+    "interaction_viewport": {
+      "width": 1280,
+      "height": 900
+    }
+  },
+  "checksum_basis": "Raw PNG bytes; JSON bytes with CRLF normalized to LF",
+  "targeted_tests": {
+    "passed": 29,
+    "warnings": 1,
+    "commit": "e6dd29a2091d35ba6201a3b2d3af3c64ad27f67a"
+  },
+  "scope": "First-step Memory and Query/Evidence candidate only. Direction and independent human acceptance pending.",
+  "human_review": "pending; partial prior feedback is not acceptance of this revision",
+  "artifacts": [
+    {
+      "file": "before-memory.png",
+      "commit": "44d20dc6779c26b89a9cd76b1b022474d380ff5d",
+      "scene": "Memory: Paris selected, exact source opened",
+      "source_run": "product-ui-rework-before-03",
+      "source_file": "viewport-replay-memory-source.png",
+      "width": 1280,
+      "height": 900,
+      "bytes": 115054,
+      "sha256": "b6004569521d4fca5faddb7b554c7e7a9adebc067ba66b1da6a79d6f39fddb79"
+    },
+    {
+      "file": "after-memory.png",
+      "commit": "e6dd29a2091d35ba6201a3b2d3af3c64ad27f67a",
+      "scene": "Memory: Paris selected, exact source opened",
+      "source_run": "product-ui-rework-final-02",
+      "source_file": "viewport-replay-memory-source.png",
+      "width": 1280,
+      "height": 900,
+      "bytes": 111422,
+      "sha256": "136af3e2a8290e5c6b04d9e78be88030327d16933b57546b4c8bfda30b893bab"
+    },
+    {
+      "file": "before-query.png",
+      "commit": "44d20dc6779c26b89a9cd76b1b022474d380ff5d",
+      "scene": "Query/Evidence: success loaded, answer/citations selected, source opened",
+      "source_run": "product-ui-rework-before-03",
+      "source_file": "viewport-replay-success.png",
+      "width": 1280,
+      "height": 900,
+      "bytes": 89961,
+      "sha256": "3bdca43c383a9cc6f54433c9ca6513de9ad5634b94e6a21e50420167c91fe7d8"
+    },
+    {
+      "file": "after-query.png",
+      "commit": "e6dd29a2091d35ba6201a3b2d3af3c64ad27f67a",
+      "scene": "Query/Evidence: success loaded, source opened, review detail collapsed",
+      "source_run": "product-ui-rework-final-02",
+      "source_file": "viewport-replay-success.png",
+      "width": 1280,
+      "height": 900,
+      "bytes": 79762,
+      "sha256": "495b3ff24812d367964ec48d9551a656ef8e2f061b75ebe4c81ed7bc668f1d36"
+    },
+    {
+      "file": "after-query-full.png",
+      "commit": "e6dd29a2091d35ba6201a3b2d3af3c64ad27f67a",
+      "scene": "Query/Evidence: same result, expanded screenshot height; not a fixed-viewport comparison",
+      "source_run": "product-ui-rework-final-02",
+      "source_file": "replay-success.png",
+      "width": 1280,
+      "height": 1255,
+      "bytes": 105357,
+      "sha256": "dee2c1699101ea972ad712f083de330113a2c00cb8602e68afa7756ede22c168"
+    },
+    {
+      "file": "after-insufficient.png",
+      "commit": "e6dd29a2091d35ba6201a3b2d3af3c64ad27f67a",
+      "scene": "Query/Evidence: insufficient evidence",
+      "source_run": "product-ui-rework-final-02",
+      "source_file": "viewport-replay-insufficient.png",
+      "width": 1280,
+      "height": 900,
+      "bytes": 84008,
+      "sha256": "44ca85aa9ce21994b2ab850503d30ea33e775396f1e8841c548ab2044e713a29"
+    },
+    {
+      "file": "after-citation-anomaly.png",
+      "commit": "e6dd29a2091d35ba6201a3b2d3af3c64ad27f67a",
+      "scene": "Query/Evidence: citation validation failure",
+      "source_run": "product-ui-rework-final-02",
+      "source_file": "viewport-replay-citation_anomaly.png",
+      "width": 1280,
+      "height": 900,
+      "bytes": 88165,
+      "sha256": "b5239f08f532854ee696e79caa04cdd117cb07c6e6f3ff3870e3e0297369df44"
+    },
+    {
+      "file": "after-budget-failure.png",
+      "commit": "e6dd29a2091d35ba6201a3b2d3af3c64ad27f67a",
+      "scene": "Query/Evidence: evidence budget failure",
+      "source_run": "product-ui-rework-final-02",
+      "source_file": "viewport-replay-budget_failure.png",
+      "width": 1280,
+      "height": 900,
+      "bytes": 89102,
+      "sha256": "059d8e199ef622cf27dd7bc9ce4a8cca93eba894f80d4d9a8979b65c9833c05a"
+    },
+    {
+      "file": "before-result.json",
+      "commit": "44d20dc6779c26b89a9cd76b1b022474d380ff5d",
+      "scene": "Original browser result; lists all local run files, only selected screenshots are exported here.",
+      "bytes": 1161,
+      "sha256": "f6be45982faacdf04798b00ce726ba5e911b62bc450bd42bd97bce6b9a51a4c8"
+    },
+    {
+      "file": "after-result.json",
+      "commit": "e6dd29a2091d35ba6201a3b2d3af3c64ad27f67a",
+      "scene": "Original browser result; lists all local run files, only selected screenshots are exported here.",
+      "bytes": 1159,
+      "sha256": "3447e55706f31ca4d61b5e2f9cdf4e7e1a3558c2cd6c6d277a683769438be44f"
+    },
+    {
+      "file": "live-browser-result.json",
+      "commit": "37e99108da95b007b7e3d80e72a1972b2b7278bc",
+      "scene": "Original browser result; lists all local run files, only selected screenshots are exported here.",
+      "bytes": 501,
+      "sha256": "cdc8319e3ca416031482359589be487e3a0739f47adaa1e5abd6b054497bb5d2"
+    }
+  ]
+}
