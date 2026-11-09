@@ -73,3 +73,8 @@ def test_supported_intervals_preserve_precision_and_ambiguous_ranges_stay_unknow
 ])
 def test_qualified_and_mixed_ranges_are_never_collapsed_to_one_endpoint(question):
     assert explicit_question_date(question) is None
+
+
+def test_from_a_person_and_a_conjunction_do_not_hide_the_exact_date():
+    question = 'What did Alex receive from John on July 22, 2023 and where did he put it?'
+    assert explicit_question_date(question) == date(2023, 7, 22)

@@ -31,6 +31,7 @@ CASES = [
     ('Where from 2023-07-01 to 2023-07-31?', None, None),
     ('Where on 2023-02-30?', None, None),
     ('Where now?', None, None),
+    ('What did Alex receive from John on July 22, 2023 and where did he put it?', '2023-07-22', None),
 ]
 
 
@@ -50,7 +51,7 @@ def run(baseline_ref):
             before_point=before_point, after_point=after_point, after_interval=interval,
             before_pass=before_point == expected_point and expected_bounds is None,
             after_pass=after_point == expected_point and bounds == expected_bounds))
-    return dict(scope='20 synthetic temporal parsing boundaries; not answer quality or model coreference',
+    return dict(scope='Synthetic temporal parsing boundaries; not answer quality or model coreference',
         baseline_ref=baseline_ref, baseline_temporal_sha256=hashlib.sha256(source).hexdigest(),
         implementation_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
         model_calls=0, before_passed=sum(row['before_pass'] for row in rows),

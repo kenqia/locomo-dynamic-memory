@@ -38,7 +38,9 @@ def conversation_cutoff(db, dataset_id: str, sample_id: str) -> tuple[datetime, 
 
 def explicit_question_date(question):
     """Recognize one exact date; ambiguous ranges stay in the original question."""
-    if re.search(r'\b(?:between|from)\b.+\b(?:and|to|until|through)\b', question, re.I):
+    month_words = '|'.join([*MONTHS, *(name[:3] for name in MONTHS)])
+    if re.search(r'\b(?:between|from)\s+(?:the\s+)?(?:\d{1,4}|' + month_words
+                 + r')\b.+\b(?:and|to|until|through)\b', question, re.I):
         return None
     matches = []
     patterns = [
