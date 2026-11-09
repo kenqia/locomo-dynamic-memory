@@ -10,8 +10,8 @@
     },
     {
       "path": ".github/workflows/checks.yml",
-      "bytes": 1404,
-      "sha256": "fdb0e437615cd125001d4514edae034d79eedee2217b59da555c22b29d593c2d"
+      "bytes": 1708,
+      "sha256": "ace28957f9bcfb3b7fbfe8502968892bc49f3aaedbbe8f99089668a51a283315"
     },
     {
       "path": ".python-version",
@@ -760,8 +760,8 @@
     },
     {
       "path": "docs/release/PRODUCT_INTEGRATION.md",
-      "bytes": 7484,
-      "sha256": "9d281f36899b30a8daaddbbfe2244e9ebc759f2594d7b25d5590cbddf6f19f9f"
+      "bytes": 7764,
+      "sha256": "6cf3b25716d9ac5864a266c162c6b38d9c074b9a3673a25d961c87a1fc17626c"
     },
     {
       "path": "docs/release/REQUEST.md",
