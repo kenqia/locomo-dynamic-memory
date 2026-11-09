@@ -1,0 +1,84 @@
+{
+  "stage": "ARCH04",
+  "source_archive_sha": "4d1d072f2c7075ebcac10879269bdcfd736e683b",
+  "requires": [
+    "ARCH01",
+    "ARCH02",
+    "ARCH03"
+  ],
+  "review_status": "pending_real_member_review",
+  "real_historical_builds_checked": 0,
+  "files": [
+    {
+      "path": "docs/adr/0003-temporal-event-sidecar.md",
+      "sha256": "3e67999b230caaa5e240f8be212fc5b44b428482fa9ec8086160943f6ad0ffe7"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-ALGORITHM.md",
+      "sha256": "e3a7d595df5a9e1827d568243ec2f9ef8e5cda42687d2bc5b62b80dc35b6a424"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-PR-DRAFT.md",
+      "sha256": "b6894e8c10174c9fcda437ea021efbb45aa4b7f8ee22a91145184b2c003838da"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-README.md",
+      "sha256": "a3b9dac169d9c346b005a8a7cc4dacbcb86fbc05513bc5841225570135730d27"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-REVIEW.md",
+      "sha256": "e93d51fc021e785c17a683677beb8efeaeff3cec9665d0b8283fd8f100bc341f"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-VALIDATION.md",
+      "sha256": "715df32f5d71b3f171bf529278172a85f89b0d2b72a4fa759ff1e9ad38a74b11"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-compatibility/compatibility.json",
+      "sha256": "4731b9f849f62fd9bf72468766f8ca3ae8718e47a77b18aea7d9dad17f216568"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH04-compatibility/compatibility.md",
+      "sha256": "affbd22dd160b843903058db2f2f0bff2b9f0222bce8139a218113b36d5cfd10"
+    },
+    {
+      "path": "docs/sidecar-v0/PRODUCT-EXAMPLE.json",
+      "sha256": "855bed4636e7f8c44baafb597a1744ecbab362f0a8b6fca93a006534ce7178a5"
+    },
+    {
+      "path": "tests/test_sidecar_release.py",
+      "sha256": "95a7d1e7bedbfdf9a889a1ae2801039be23d711dfdb1b32ded69e070746ffb13"
+    },
+    {
+      "path": "tools/research_v2/sidecar_compatibility.py",
+      "sha256": "91f884e1115c91704f4ed7f64492cb50aad58be477fb754a1e6b30e52400c6e5"
+    },
+    {
+      "path": "tools/research_v2/sidecar_core.py",
+      "sha256": "3077e1611b22c933e67c3e2fd371ef15333d2c49fcaaaf3f391deff5341ba1b0"
+    },
+    {
+      "path": "tests/test_sidecar_core.py",
+      "sha256": "a95e13cc34ce547922fc32d946936c656ef3a196c782b688f9711c99644f12a3"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH02-FILES.sha256",
+      "sha256": "31857114f099f0200aaff148b39d4ff3ed3061b22937c54cae5a383c2ba58638"
+    },
+    {
+      "path": "tools/research_v2/sidecar_research.py",
+      "sha256": "4aaaf6fc9227d9497574c6b586bca2594c0878de3ae22af832a81a3bfcd9b2b2"
+    },
+    {
+      "path": "tests/test_sidecar_adjacent_research.py",
+      "sha256": "8e9cd728153952e52edfb95be4bd4ebfcdfcc3df5d77358c42857980c4ec0168"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH03-FILES.sha256",
+      "sha256": "f90e707afa45da164c08f26c1acc375c2c79fcb6048910ef9b1a355407676fba"
+    }
+  ],
+  "reviewed_head": "915972b3f72fda699c26e44b969a1ed1b3081ca8",
+  "rule_version": "deterministic-sidecar-v0.5.1-research",
+  "research_source_head": "2deefd54c7367dffb2a6c4b8e59e72155a884659"
+}

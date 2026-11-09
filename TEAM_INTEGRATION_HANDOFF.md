@@ -14,11 +14,9 @@
 
 ## Architecture：#38、#30–33
 
-只读核实PR38仍OPEN、CHANGES_REQUESTED，head `0f470a3b3aac782b42b082b199e2fa81a12cf837`，base `codex/v2-6d-research-safe`。语义审查问题未关闭，不进入个人默认问答链。
+2026-11-09：负责人接受默认关闭、仅公开离线诊断范围，授权将已由 Thorns-06 复核通过的 `cd4db4c` 选择性整合 main 并冻结。研究规则、七文件专项与合成兼容入口保留，生产应用与 Product 不导入 Sidecar。已知时间修饰 P2 延期，真实 QA 接入不在本轮采用范围。
 
-后续仅在非作者复核通过后按opt-in Sidecar接入；默认关闭不产生新字段语义或额外检索/模型调用。复核顺序：source身份/原文支持→事件归属→报告时间与事件时间→显式冲突/替代条件→并列/Unknown保留→关闭路径等价。Sidecar不能改写已有Memory/Relation/Projection或隐藏失败Trace。
-
-队友需提供修复commit、逐项审查关闭证据、开/关隔离回归和回滚命令。现有个人Graph不是该Sidecar已通过验收的替代证据。
+采用决定见 [ADR 0004](docs/adr/0004-sidecar-offline-adoption.md)，当前启动、验证、冻结与回滚见 [Sidecar 冻结说明](docs/release/SIDECAR_FREEZE.md)。原 ARCH01–04、ADR 0003 为历史材料，不代表当前仍等待复核。任务完成状态以实际合并及验证记录为准。
 
 ## Delivery：#34–37
 
