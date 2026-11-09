@@ -1,0 +1,15 @@
+digraph G { rankdir=TB; graph [fontname="Noto Sans CJK SC", nodesep=0.5, ranksep=0.55, pad=0.2];
+ node [shape=box, style="rounded,filled", fillcolor="#EEF2F7", color="#4C6A92", fontname="Noto Sans CJK SC", fontsize=17, margin="0.22,0.12"];
+ edge [color="#4C6A92", fontname="Noto Sans CJK SC", fontsize=15, penwidth=1.6];
+ s1 [label="原文 D1:1 · 5 月 1 日\n\"I live in Paris.\"", shape=note, fillcolor="#FFFFFF"];
+ s2 [label="原文 D2:1 · 5 月 2 日\n\"I moved from Paris to Rome.\"", shape=note, fillcolor="#FFFFFF"];
+ m1 [label="记忆：Alex lives in Paris."]; m2 [label="记忆：Alex lives in Rome."];
+ cs [label="当前状态：Rome\n历史：Paris（仍可回答历史问题）", fillcolor="#DDE6F2"];
+ c1 [label="Sam 出生年 1990"]; c2 [label="Sam 出生年 1992"];
+ cc [label="冲突：保留双方来源", fillcolor="#FBEAEA", color="#AA3333"];
+ s1 -> m1 [label=" 来源"]; s2 -> m2 [label=" 来源"];
+ m1 -> m2 [label="  替代", color="#C8743A", fontcolor="#C8743A"]; {rank=same; m1; m2}
+ m2 -> cs; c1 -> c2 [dir=both, label=" 冲突", color="#AA3333", fontcolor="#AA3333"]; {rank=same; c1; c2}
+ c1 -> cc [style=invis]; c2 -> cc;
+ {rank=same; s1; s2}
+}
