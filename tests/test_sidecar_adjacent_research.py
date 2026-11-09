@@ -78,3 +78,34 @@ def test_control_flow_abort_is_not_swallowed(monkeypatch):
     monkeypatch.setattr(wrapper, 'diagnose', abort)
     with pytest.raises(StudyAbort):
         wrapper.research_view(object(), CASES[0]['input'], enabled=True)
+
+
+@pytest.mark.parametrize('qualifier', ['before', 'after', 'around', 'by'])
+@pytest.mark.parametrize('expression, source_expression', [
+    ('April 2026', 'in April 2026'),
+    ('last week', 'last week'),
+])
+def test_qualified_month_or_relative_time_cannot_borrow_unqualified_range(
+    qualifier, expression, source_expression,
+):
+    data = deepcopy(CASES[3]['input'])
+    data['claims'][0]['content'] = f'I arrived {qualifier} {expression}.'
+    data['sources'][0]['text'] = f'I arrived {source_expression}.'
+    result = diagnose(SidecarInput.model_validate(data), enabled=True)
+    interval = result.claims[0].event_time
+    assert interval.status == 'unknown'
+    assert interval.start is None and interval.end is None
+
+
+@pytest.mark.parametrize('expression, start, end', [
+    ('in April 2026', '2026-04-01', '2026-04-30'),
+    ('last week', '2026-04-27', '2026-05-03'),
+])
+def test_matching_unqualified_month_or_relative_time_preserves_range(expression, start, end):
+    data = deepcopy(CASES[3]['input'])
+    data['claims'][0]['content'] = data['sources'][0]['text'] = f'I arrived {expression}.'
+    result = diagnose(SidecarInput.model_validate(data), enabled=True)
+    interval = result.claims[0].event_time
+    assert interval.status == 'range'
+    assert interval.start.isoformat() == start
+    assert interval.end.isoformat() == end

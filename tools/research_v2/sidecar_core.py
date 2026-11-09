@@ -17,12 +17,14 @@ from tools.research_v2.sidecar_schema import (
     Contract, EventLink, SidecarInput, SidecarRecord, StateClaim, TimeInterval,
 )
 
-RULE_VERSION = 'deterministic-sidecar-v0.5-research'
+RULE_VERSION = 'deterministic-sidecar-v0.5.1-research'
 MONTH = '(?:' + '|'.join(MONTHS) + ')'
 DAY_PATTERN = rf'\b(?:\d{{4}}-\d{{2}}-\d{{2}}|{MONTH}\s+\d{{1,2}}(?:,?\s+\d{{4}})?)\b'
 MONTH_PATTERN = rf'\b{MONTH}\s+\d{{4}}\b'
 REL_PATTERN = r'\b(?:yesterday|this week|last week|last (?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)|recently|next month)\b'
 TIME_QUALIFIER = r'before|after|around|by|about|circa|approximately|since|until|through|between|near|no later than|no earlier than|at least|at most'
+TIME_PATTERN = rf'(?P<day>{DAY_PATTERN})|{MONTH_PATTERN}|{REL_PATTERN}'
+QUALIFIER_PATTERN = re.compile(rf'\b(?:{TIME_QUALIFIER})\s*$', re.I)
 PLACE = r'[A-Za-z]+(?: [A-Za-z]+)*?'
 
 class ClaimDiagnostic(Contract):
@@ -52,7 +54,7 @@ class QueryDiagnostic(Contract):
 
 class SidecarDiagnostics(Contract):
     diagnostic_schema: Literal['sidecar-diagnostics-v0.5-research'] = 'sidecar-diagnostics-v0.5-research'
-    rule_version: Literal['deterministic-sidecar-v0.5-research'] = RULE_VERSION
+    rule_version: Literal['deterministic-sidecar-v0.5.1-research'] = RULE_VERSION
     mode: Literal['diagnostic_only'] = 'diagnostic_only'
     record: SidecarRecord
     claims: tuple[ClaimDiagnostic, ...] = ()
@@ -107,6 +109,27 @@ def _assertion(text, entity):
     return None
 
 
+def _time_expressions_agree(claim_text, source_text, anchor):
+    claim_times = list(re.finditer(TIME_PATTERN, claim_text, re.I))
+    if not claim_times:
+        return True
+    source_times = list(re.finditer(TIME_PATTERN, source_text, re.I))
+    if len(claim_times) != 1 or len(source_times) != 1:
+        return False
+
+    claim_match, source_match = claim_times[0], source_times[0]
+    claim_qualifier = QUALIFIER_PATTERN.search(claim_text[:claim_match.start()])
+    source_qualifier = QUALIFIER_PATTERN.search(source_text[:source_match.start()])
+    claim_modifier = claim_qualifier[0].strip().casefold() if claim_qualifier else ''
+    source_modifier = source_qualifier[0].strip().casefold() if source_qualifier else ''
+    if claim_modifier != source_modifier:
+        return False
+    if claim_match['day'] and source_match['day']:
+        day = _parse_day(claim_match[0], anchor)
+        return day is not None and day == _parse_day(source_match[0], anchor)
+    return claim_match[0].casefold() == source_match[0].casefold()
+
+
 def _owned_text(snapshot, claim, *, include_conflicts=False):
     # Only narrow first-person assertions by the cited speaker are eligible for
     # automatic rules. Quoted/reported speech and narrator claims stay unknown.
@@ -145,27 +168,8 @@ def _owned_text(snapshot, claim, *, include_conflicts=False):
         # A dated Memory must agree with the cited source, including month and
         # relative expressions. Different forms remain unverified, not silently
         # replaced by the source date. Undated summaries may still use source time.
-        broad_time = rf'(?:{DAY_PATTERN}|{MONTH_PATTERN}|{REL_PATTERN})'
-        claim_times = re.findall(broad_time, claim.content, re.I)
-        if claim_times and not re.search(DAY_PATTERN, claim.content, re.I):
-            source_times = re.findall(broad_time, parts[0], re.I)
-            if [v.casefold() for v in claim_times] != [v.casefold() for v in source_times]:
-                continue
-        claim_days = list(re.finditer(DAY_PATTERN, claim.content, re.I))
-        if claim_days:
-            source_days = list(re.finditer(DAY_PATTERN, parts[0], re.I))
-            anchor = source.reported_at.date()
-            if len(claim_days) != 1 or len(source_days) != 1:
-                continue
-            claim_day = _parse_day(claim_days[0].group(), anchor)
-            if claim_day is None or claim_day != _parse_day(source_days[0].group(), anchor):
-                continue
-            qualifiers = []
-            for text, match in ((claim.content, claim_days[0]), (parts[0], source_days[0])):
-                q = re.search(rf'\b({TIME_QUALIFIER})\s*$', text[:match.start()], re.I)
-                qualifiers.append(q[1].casefold() if q else '')
-            if qualifiers[0] != qualifiers[1]:
-                continue
+        if not _time_expressions_agree(claim.content, parts[0], source.reported_at.date()):
+            continue
         texts.append((source, parts[0]))
     return texts
 
@@ -226,15 +230,13 @@ def _time(snapshot, claim):
         return TimeInterval(basis='Not all cited assertions support the claim and its time.')
     candidates = []
     for source,text in _owned_text(snapshot,claim,include_conflicts=True):
-        expressions = list(re.finditer(DAY_PATTERN, text, re.I))
-        expressions += list(re.finditer(MONTH_PATTERN, text, re.I))
-        expressions += list(re.finditer(REL_PATTERN, text, re.I))
+        expressions = list(re.finditer(TIME_PATTERN, text, re.I))
         # Do not attach one of several dates to an arbitrary predicate.
         if len(expressions) != 1:
             continue
         expression = expressions[0].group()
         prefix = text[:expressions[0].start()]
-        qualifier = re.search(rf'\b(?:{TIME_QUALIFIER})\s*$', prefix, re.I)
+        qualifier = QUALIFIER_PATTERN.search(prefix)
         if qualifier:
             candidates.append(TimeInterval(
                 original_expression=text[qualifier.start():expressions[0].end()],
