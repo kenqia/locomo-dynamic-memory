@@ -146,12 +146,23 @@ def main():
     observed = []
     started = time.monotonic()
     delegate = httpx.HTTPTransport(retries=0)
-    transport = BudgetTransport(args.ledger, delegate, **policy)
+
+    class AuditTransport(httpx.BaseTransport):
+        def handle_request(self, request):
+            # Hash the body that is actually sent, without inspecting/storing headers.
+            messages=json.loads(request.content)['messages']
+            observed[-1]['actual_messages_sha256']=hashlib.sha256(
+                json.dumps(messages,ensure_ascii=False).encode()).hexdigest()
+            observed[-1]['actual_messages_utf8_bytes']=len(json.dumps(messages,ensure_ascii=False).encode())
+            dump(args.output.with_suffix('.progress.json'),observed)
+            return delegate.handle_request(request)
+
+    transport = BudgetTransport(args.ledger, AuditTransport(), **policy)
 
     class ObservedModel(DeepSeekModel):
         def generate(self, operation, payload, schema, **kwargs):
             messages = request_messages(operation,payload,schema)
-            entry = dict(operation=operation, messages_sha256=hashlib.sha256(
+            entry = dict(operation=operation, planned_messages_sha256=hashlib.sha256(
                 json.dumps(messages,ensure_ascii=False).encode()).hexdigest())
             observed.append(entry)
             def checkpoint(call):

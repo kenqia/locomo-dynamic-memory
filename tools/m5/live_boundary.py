@@ -158,8 +158,10 @@ def run_one(private,job):
         '--producer',str(private/job['producer']),'--job',str(private/'jobs'/(job['job_id']+'.json')),
         '--output',str(result),'--ledger',str(private/'physical-requests.sqlite3')],check=True,cwd=ROOT)
     value=json.loads(result.read_text())
-    stop = any(c.get('http_status') in {401,402,403} or c.get('error_code')=='physical_request_budget_exhausted'
+    stop = value.get('error',{}).get('code')=='physical_request_budget_exhausted' or any(c.get('http_status') in {401,402,403} or c.get('error_code')=='physical_request_budget_exhausted'
         for o in value['observations'] for c in o.get('metadata',{}).get('calls',[]))
+    if stop:
+        write(private/'global-stop.json',dict(job_id=job['job_id'],reason='balance_auth_or_budget_stop'))
     return stop
 
 
@@ -168,7 +170,7 @@ def execute(private):
     if (private/'generation-freeze.json').exists() or (private/'execution-started.json').exists():
         raise ValueError('execution_already_started_no_automatic_resume')
     write(private/'execution-started.json',dict(plan_sha256=sha(private/'plan.json')))
-    stopped=False
+    stopped=(private/'global-stop.json').exists()
     for name in plan['order']:
         job=json.loads((private/'jobs'/name).read_text())
         if stopped:
@@ -231,7 +233,7 @@ def review(private):
     write(private/'blind-key.json',keys)
     write(private/'review-packets.json',packets)
     write(private/'review-started.json',dict(generation_freeze_sha256=sha(private/'generation-freeze.json')))
-    stopped=False; names=[]
+    stopped=(private/'global-stop.json').exists(); names=[]
     for i in range(4):
         job=dict(job_id=f'r{i:02d}',kind='review',producer='candidate',instructions=REVIEW_INSTRUCTIONS,
             packets=packets[i::4],settings=settings({}))
@@ -245,11 +247,25 @@ def review(private):
     return dict(status='ai_review_frozen',batches=4,human_review='pending')
 
 
+def checked_reviews(private):
+    review=json.loads((private/'review-freeze.json').read_text())
+    expected={f'r{i:02d}.json' for i in range(4)}
+    if (review['generation_freeze_sha256']!=sha(private/'generation-freeze.json')
+        or set(review['jobs'])!=expected or set(review['results'])!=expected
+        or review['packets_sha256']!=sha(private/'review-packets.json')
+        or review['blind_key_sha256']!=sha(private/'blind-key.json')
+        or any(sha(private/'jobs'/n)!=h for n,h in review['jobs'].items())
+        or any(sha(private/'results'/n)!=h for n,h in review['results'].items())):
+        raise ValueError('review_not_frozen_or_changed')
+    return {n:json.loads((private/'results'/n).read_text()) for n in sorted(expected)}
+
+
 def score(private,public):
     from locomo_memory.evaluation_metrics import qa_score,map_evidence,coverage,normalize
     from tools.m5.level_c import ledger_summary
     from tools.m5.offline import paired
     plan,results=frozen_results(private)
+    review_results=checked_reviews(private)
     data=json.loads((ROOT/'data/raw/locomo/locomo10.json').read_text()); reference={s['sample_id']:s['qa'] for s in data}
     rows=[]
     for ordinal,qid in enumerate(sorted(f'{c}:qa:{n}' for c,ns in SELECTION.items() for n in ns)):
@@ -279,6 +295,10 @@ def score(private,public):
         paired=paired([r['arms']['candidate']['score']-r['arms']['baseline']['score'] for r in ordinary]),
         budget=ledger_summary(private/'physical-requests.sqlite3'),model_calls_scope='generation plus AI review',
         human_review='pending_user',rows=rows)
+    common=[r for r in ordinary if all(r['arms'][a]['outcome']=='succeeded' for a in ('baseline','candidate'))]
+    summary['common_successful_ordinary']=dict(denominator=len(common),arms={
+        a:sum(r['arms'][a]['score'] for r in common)/len(common) if common else None
+        for a in ('baseline','candidate')})
     summary['paired']['scope']='exploratory bootstrap; 12 preselected exposed temporal questions; ordinary subset only'
     public.mkdir(parents=True,exist_ok=True)
     write(public/'results.json',summary);write(public/'plan.json',plan)
@@ -287,8 +307,6 @@ def score(private,public):
     write(public/'outputs.json',results)
     for name in ('review-packets.json','blind-key.json','review-freeze.json'):
         if (private/name).exists():write(public/name,json.loads((private/name).read_text()))
-    review_results={p.name:json.loads(p.read_text()) for p in sorted((private/'results').glob('r*.json'))
-        if '.progress.' not in p.name and '.started.' not in p.name}
     write(public/'ai-review.json',dict(reviewer='deepseek-flash; identity blinded; AI only',
         independent_human_truth=False,results=review_results))
     return {k:v for k,v in summary.items() if k not in {'rows'}}
