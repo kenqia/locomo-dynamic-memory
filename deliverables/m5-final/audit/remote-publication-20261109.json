@@ -1,0 +1,104 @@
+{
+  "pr": "https://github.com/kenqia/locomo-dynamic-memory/pull/43",
+  "artifact_commit": "b21940bf991e064dba86ef9f56eed27fb5cd7ea0",
+  "task_updates": [
+    {
+      "id": "411583f94406813bb486ec3c6ce2c809",
+      "issue": 34,
+      "status": "待复核",
+      "result": "success",
+      "previous_description": "2026-11-07 Delivery分支已有2份PDF草稿，但本任务的claim→Run/Build/分母/来源/审阅类型台账未在完整分支树找到；仍待Owner提供可核验产物。本次没有把缺上传等同于未开展。"
+    },
+    {
+      "id": "411583f94406816da885cdbc558f2d16",
+      "issue": 35,
+      "status": "待复核",
+      "result": "success",
+      "previous_description": "2026-11-07 核到Owner在Delivery分支fbc9bb0提交15页汇报PDF与3页技术报告，本轮可打开并渲染18页，不能计为未做。内容仍是11/04快照，缺个人Release/六导出/C两版/E400及新默认；缺可编辑原件、正式MP4/字幕/引用附件和完整包。未开PR/无Issue回执；本人反查数字和现场改稿待核验。"
+    },
+    {
+      "id": "411583f9440681af805ae4ace80fda5e",
+      "issue": 36,
+      "status": "待复核",
+      "result": "success",
+      "previous_description": "2026-11-07 Delivery分支已有2份PDF草稿，但本任务的正式3–5分钟MP4、字幕、分镜/脚本未在完整分支树找到；仍待Owner提供可核验产物。本次没有把缺上传等同于未开展。"
+    },
+    {
+      "id": "411583f944068165b3e4d21db0b25a9b",
+      "issue": 37,
+      "status": "待复核",
+      "result": "success",
+      "previous_description": "2026-11-07 核到Owner在Delivery分支fbc9bb0提交15页汇报PDF与3页技术报告，本轮可打开并渲染18页，不能计为未做。内容仍是11/04快照，缺个人Release/六导出/C两版/E400及新默认；缺可编辑原件、正式MP4/字幕/引用附件和完整包。未开PR/无Issue回执；本人反查数字和现场改稿待核验。"
+    },
+    {
+      "id": "411583f9440681359779f4b416a55c55",
+      "issue": 25,
+      "status": "待复核",
+      "result": "success",
+      "previous_description": "2026-11-07 核到Owner在Delivery分支fbc9bb0提交15页汇报PDF与3页技术报告，本轮可打开并渲染18页，不能计为未做。内容仍是11/04快照，缺个人Release/六导出/C两版/E400及新默认；缺可编辑原件、正式MP4/字幕/引用附件和完整包。未开PR/无Issue回执；本人反查数字和现场改稿待核验。"
+    }
+  ],
+  "document_updates": [
+    {
+      "id": "411583f94406813a910bff7b7117011f",
+      "result": "success",
+      "operation": "prepend_status_preserve_history"
+    },
+    {
+      "id": "411583f94406813cb296caa66c5a9bba",
+      "result": "success",
+      "operation": "prepend_status_preserve_history"
+    },
+    {
+      "id": "411583f94406819a867cc65d151b42d0",
+      "result": "success",
+      "operation": "prepend_status_preserve_history"
+    }
+  ],
+  "authorization": "用户确认推送、创建待复核PR并同步Notion",
+  "transport_errors": 1,
+  "verification": [
+    {
+      "id": "411583f9440681359779f4b416a55c55",
+      "kind": "task",
+      "verified": true
+    },
+    {
+      "id": "411583f94406819a867cc65d151b42d0",
+      "kind": "document",
+      "verified": true
+    },
+    {
+      "id": "411583f94406813cb296caa66c5a9bba",
+      "kind": "document",
+      "verified": true
+    },
+    {
+      "id": "411583f94406816da885cdbc558f2d16",
+      "kind": "task",
+      "verified": true
+    },
+    {
+      "id": "411583f9440681af805ae4ace80fda5e",
+      "kind": "task",
+      "verified": true
+    },
+    {
+      "id": "411583f944068165b3e4d21db0b25a9b",
+      "kind": "task",
+      "verified": true
+    },
+    {
+      "id": "411583f94406813bb486ec3c6ce2c809",
+      "kind": "task",
+      "verified": true
+    },
+    {
+      "id": "411583f94406813a910bff7b7117011f",
+      "kind": "document",
+      "verified": true
+    }
+  ],
+  "execution_status": "PUBLISHED_AND_NOTION_SYNCED_REVIEW_PENDING",
+  "all_verified": true
+}

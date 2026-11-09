@@ -1,6 +1,8 @@
 # M5 提交前核验 · 2026-11-09
 
-材料已齐备，完整回归收尾状态见下表。课程口径、受控 JSON、真人签收和正式提交由负责人后续处理，不以自动检查代替验收。
+**发布更新：** 获负责人本轮确认后，交付分支已推送并创建[草稿PR43](https://github.com/kenqia/locomo-dynamic-memory/pull/43)；Notion五条Delivery任务与三份管理资料已同步并回读核验，状态均保持待复核。材料固定于 `b21940b`，最新PR CI以GitHub实态为准，未合并、关票或课程提交。
+
+材料已齐备，完整回归结果见下表。课程口径、受控 JSON、真人签收和正式提交由负责人后续处理，不以自动检查代替验收。
 
 ## 提交入口与版本
 
@@ -37,18 +39,18 @@
 
 ## GitHub 与 Notion
 
-- 核验时没有 open PR；Delivery Issues #25、#34–#37 仍开放，待材料非作者验收及整合，不提前关票。
+- 首轮核验时没有 open PR；现已创建草稿PR43。Delivery Issues #25、#34–#37 仍开放，待材料非作者验收及整合，不提前关票。
 - Issue #20 已明确低优先级延期，保持开放，不为关票补跑付费实验。
-- 最新 main `4baa981` 的 [CI 42624419764](https://github.com/kenqia/locomo-dynamic-memory/actions/runs/42624419764) 失败在同一条 Sidecar 测试（1200 passed / 1 failed）。本地修正尚未推送，远端 CI 尚未转绿，不能宣称远端完成。
-- Notion 的 Product 和 Architecture 任务已验收完成；Delivery 五条任务及三份管理资料仍有旧状态。已准备 `remote-closeout-plan-20261109.json`，拟同步为“待复核”，保留“验收通过”为否，取得 PR 后补真实链接。
-- 本轮未执行 push、创建 PR、远端合并、关票、Notion 写入或课程提交。依据用户提供的 AGENTS.md，远端写操作需另获明确确认。
+- 最新 main `4baa981` 的 [CI 42624419764](https://github.com/kenqia/locomo-dynamic-memory/actions/runs/42624419764) 失败在同一条 Sidecar 测试（1200 passed / 1 failed）。修正已随PR43推送，main仍为旧提交；PR最新CI与main旧CI分别记录，尚未合并。
+- Notion 的 Product 和 Architecture 任务已验收完成；Delivery五条任务及三份管理资料的旧状态已在本轮同步。已按 `remote-closeout-plan-20261109.json` 更新五任务为“待复核”，补上PR43、Issue与固定版本材料链接，保留“验收通过”为否；三份管理资料已补当前状态，历史内容保留。
+- 首轮本地冻结时未执行远端写入；负责人随后明确确认，本轮已push、创建草稿PR43并同步Notion。未执行远端合并、关票、标记完成或课程提交。
 
 ## 负责人后续办理
 
 - 补充课程更正口径，核对当前 14 页报告、10 页汇报的适用要求及提交命名/渠道。
 - 通过获准的受控渠道提交六份完整 Memory JSON，保存实际接收与回执。当前包只含公开清单和 Schema。
 - 安排非作者全片观看、听音、字幕同步和报告/PPT 复核，填写真实结论。内部任务要求的独立 30 秒备用片段尚未发现，不冒称已交。
-- 获得最终授权后，推送交付分支、创建待复核 PR 并同步 Notion；非作者复核通过且合并、验证完成后再标完成或关闭 Delivery Issues。
+- 交付分支、草稿PR43和Notion已同步；非作者复核通过且合并、验证完成后再标完成或关闭Delivery Issues。
 - 由负责人执行正式课程提交并登记真实回执。
 
 ## 回滚与证据位置
