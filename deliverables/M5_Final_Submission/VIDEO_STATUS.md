@@ -1,3 +1,11 @@
-# Video delivery status
+# 视频检查记录
 
-Pending final Console-operation recording and human acceptance. Do not treat this preview ZIP as the complete final package until the accepted MP4 is placed in 03_Demo and the package is rebuilt.
+文件：`03_Demo/PROJECT-MILESTONE5-3-在阴雨天游泳-演示视频-配音版.mp4`。
+
+- SHA-256：`9a01753775b82e770eca87ff8124b2060a3d58f74f3d253eea83660278af83a9`。
+- 时长 291 秒；1920×1080；30 fps；H.264 视频及 AAC 音频。
+- `ffmpeg -v error -i <视频路径> -f null -` 全片解码成功，无解码错误。
+- 已抽查 70 秒和 265 秒画面，字幕可见；已核对旁白稿对离线合成回放、E12 历史实验与 E25 留出实验的区分。
+- `Final_Demo.srt` 来自最终配音字幕，不沿用早期分镜的字幕时轴；旁白稿为 `Final_Demo_Narration.txt`。
+
+待真人非作者完整观看并听音，核对全片画面、字幕同步、隐私和实际操作后签收。此记录仅为自动检查和 AI 抽查，不声明真人验收或课程提交完成。

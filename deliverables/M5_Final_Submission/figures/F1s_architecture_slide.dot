@@ -1,0 +1,9 @@
+digraph G { rankdir=LR; graph [fontname="Noto Sans CJK SC", nodesep=0.3, ranksep=0.45, pad=0.15];
+ node [shape=box, style="rounded,filled", fillcolor="#EEF2F7", color="#4C6A92", fontname="Noto Sans CJK SC", fontsize=15, margin="0.18,0.1"];
+ edge [color="#4C6A92", penwidth=1.4];
+ UI [label="Web 页面\nConsole · 五阶段工作流"]; API [label="FastAPI", fillcolor="#DDE6F2"];
+ B [label="构建\n抽取 · 索引 · 关系"]; V [label="完整构建版本", fillcolor="#DDE6F2"];
+ Q [label="查询\nHybrid / Dynamic"]; A [label="回答 + 引用\n+ Trace", fillcolor="#DDE6F2"];
+ S [label="SQLite", shape=cylinder]; M [label="DeepSeek\n+ 本地向量模型", style="rounded,dashed"];
+ UI -> API -> B -> V -> Q -> A; API -> S [style=dashed, arrowhead=none]; B -> M [style=dashed]; Q -> M [style=dashed];
+}

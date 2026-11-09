@@ -1,0 +1,13 @@
+{
+  "verified_submission_files": 67,
+  "verified_source_files": 1078,
+  "excluded_controlled_study_files": 12,
+  "zip_bytes": 63920662,
+  "zip_sha256": "f6908e677cb61d9a47e31d9ceb260d0fba66530183eb3ce396baeef933c31bf3",
+  "backup": "/home/kenqia/my_folder/locomo-worktrees/m5-delivery-backup-20261109",
+  "source_base_commit": "5ed8a88147b812d97ed25e68342f67d96c7f3833",
+  "clean_source_tests": 52,
+  "full_regression": "PASS: 1201 selected cases covered exactly once; 0 failures",
+  "current_remote_main": "4baa9811e55a5442c23a4c68b24080a64363c563",
+  "remote_ci": "FAIL: known Sidecar test, fixed locally but not pushed"
+}

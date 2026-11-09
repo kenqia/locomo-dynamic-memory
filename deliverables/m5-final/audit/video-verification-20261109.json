@@ -1,0 +1,27 @@
+{
+  "programs": [],
+  "streams": [
+    {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1"
+    },
+    {
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "r_frame_rate": "0/0"
+    }
+  ],
+  "format": {
+    "duration": "291.000000",
+    "size": "20743449"
+  },
+  "sha256": "9a01753775b82e770eca87ff8124b2060a3d58f74f3d253eea83660278af83a9",
+  "full_decode": "PASS",
+  "subtitle_cues": 46,
+  "subtitle_time_bounds": "PASS",
+  "human_full_playback_and_signoff": "owner_followup",
+  "original_preserved": true
+}

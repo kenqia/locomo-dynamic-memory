@@ -1,0 +1,11 @@
+{
+  "run": "https://github.com/kenqia/locomo-dynamic-memory/actions/runs/42624419764",
+  "head": "4baa9811e55a5442c23a4c68b24080a64363c563",
+  "failed_tests": [
+    "tests/test_sidecar_research.py::test_real_api_trace_answer_budget_and_storage_preserved"
+  ],
+  "test_summaries": [
+    "1 failed, 1200 passed, 28 deselected, 1 warning in 254.04s (0:04:14)"
+  ],
+  "raw_log_retained": false
+}

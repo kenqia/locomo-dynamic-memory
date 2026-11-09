@@ -1,0 +1,12 @@
+digraph G { rankdir=LR; graph [fontname="Noto Sans CJK SC", fontsize=11, nodesep=0.25, ranksep=0.35, newrank=true];
+ node [shape=box, style="rounded,filled", fillcolor="#EEF2F7", color="#4C6A92", fontname="Noto Sans CJK SC", fontsize=10.5];
+ edge [color="#4C6A92", fontname="Noto Sans CJK SC", fontsize=9];
+ subgraph cluster_b { label="构建流程（失败不发布，旧完整版本继续可用）"; color="#BBBBBB"; style=rounded;
+  b1 [label="导入对话\nSourceTurn"]; b2 [label="原子抽取\n结构校验"]; b3 [label="BM25 + Dense\n索引"]; b4 [label="关系判断\nRETAIN/UPDATE/\nSUPERSEDE/CONFLICT/未确定"]; b5 [label="CurrentState\n投影"]; b6 [label="完整版本发布", fillcolor="#DDE6F2"];
+  b1 -> b2 -> b3 -> b4 -> b5 -> b6; }
+ subgraph cluster_q { label="查询流程（固定一个完整 Build）"; color="#BBBBBB"; style=rounded;
+  q1 [label="问题\n+ Query Analysis"]; q2 [label="BM25 前 20\nDense 前 20\n→ RRF(60) 初始 20\n[Trace: initial]"]; q3 [label="历史扩展\n一跳关系 / 同 state_key\n合计 ≤ 60\n[Trace: expanded]"];
+  q4 [label="Resolve\n选择有效 Memory + 理由\n[Trace: effective]", fillcolor="#F6E3D4", color="#C8743A"]; q5 [label="Answer\n证据预算 6000\n[Trace: delivered]"]; q6 [label="回答 + 引用\n+ Trace\n[Trace: answer/citations]", fillcolor="#DDE6F2"];
+  q1 -> q2 -> q3; q3 -> q5 [label="Hybrid（默认）"]; q3 -> q4 [label="Dynamic（显式）", color="#C8743A", fontcolor="#C8743A"]; q4 -> q5 [color="#C8743A"]; q5 -> q6; }
+ {rank=same; b1; q1}
+}

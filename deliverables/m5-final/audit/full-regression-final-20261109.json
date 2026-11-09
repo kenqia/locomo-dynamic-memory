@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "passed": 1201,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "selected_public_cases": 1201,
+  "covered_exactly_once": true,
+  "parts": [
+    {
+      "shard": 1,
+      "tests": 531,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "shard": 2,
+      "tests": 670,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "marker_selection": "not live_model and not local_embedding and not controlled_data",
+  "deselection_note": "6 deselected within selected files; all-marker-excluded files account for the other 22 of the whole-suite 28 exclusions. Selected node IDs matched exactly."
+}

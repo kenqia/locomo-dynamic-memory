@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "files": 14,
+  "findings": [],
+  "scope": "existing scanner on final documents, PDF text, Office XML text and final subtitles; excludes video pixels/audio"
+}

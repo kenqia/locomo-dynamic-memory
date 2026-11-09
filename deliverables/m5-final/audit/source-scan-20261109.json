@@ -1,0 +1,6 @@
+{
+  "source_files": 1078,
+  "findings": [],
+  "upstream_literal_catalog_available": true,
+  "scope": "existing package scanner: credential patterns and exact known upstream text; not human media review"
+}
