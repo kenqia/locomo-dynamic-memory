@@ -24,7 +24,7 @@ def main():
     errors, blocked, screenshots = [], [], []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(channel='msedge' if os.name == 'nt' else None, headless=True, args=['--disable-gpu'])
-        context = browser.new_context(viewport={'width': 1280, 'height': 900},
+        context = browser.new_context(viewport={'width': 1280, 'height': 900}, accept_downloads=True,
                                       record_video_dir=str(args.output / 'video'),
                                       record_video_size={'width': 1280, 'height': 900})
         page = context.new_page()
@@ -42,6 +42,7 @@ def main():
 
         def settle():
             expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=20000)
+            page.wait_for_function('() => !document.querySelector(\'[data-stale="true"]\')')
 
         def capture(name):
             settle()
@@ -61,6 +62,16 @@ def main():
             screenshots.append(name)
 
         def choose(label, name):
+            settle()
+            if responsive:
+                group = page.get_by_role('radiogroup', name=label, exact=True)
+                expect(group).to_be_visible()
+                option = group.get_by_role('radio', name=name, exact=True)
+                option.focus()
+                option.press('Space')
+                expect(option).to_be_checked()
+                settle()
+                return
             control = page.get_by_role('combobox', name=label, exact=True)
             try:
                 settle()
@@ -95,7 +106,9 @@ def main():
 
         page.goto(args.url)
         page.add_style_tag(content='* { scroll-behavior: auto !important; }')
-        expect(page.get_by_role('heading', name='Research Console', exact=True)).to_be_visible(timeout=60000)
+        expect(page.get_by_role('heading', name=re.compile(r'^(Research Console|Overview · 工作概览)$'))).to_be_visible(timeout=60000)
+        responsive = page.get_by_role('heading', name='Overview · 工作概览', exact=True).count() > 0
+        controls_v2 = page.locator('.st-key-console_data_context').count() > 0
         capture('replay-overview.png')
         page.get_by_text('Memory', exact=True).click()
         expect(page.get_by_role('heading', name=re.compile(r'^Memory ·'))).to_be_visible()
@@ -103,20 +116,26 @@ def main():
         reworked = page.get_by_role('heading', name='Memory · 记忆与来源', exact=True).count() > 0
         if reworked:
             assert page.get_by_test_id('stDataFrame').count() == 0
-        page.get_by_role('button', name='查看完整原文', exact=True).click()
+        if page.get_by_role('button', name='查看完整原文', exact=True).count():
+            page.get_by_role('button', name='查看完整原文', exact=True).click()
         settle()
         expect(page.get_by_text('I live in Paris.', exact=True)).to_be_visible()
         capture('replay-memory-source.png')
-        page.get_by_text('数据 / 对话 / Build', exact=True).click()
+        data_label = '数据与版本 · 更换所选记录' if controls_v2 else '数据与版本' if responsive else '数据 / 对话 / Build'
+        page.get_by_text(data_label, exact=True).click()
         older = data['builds'][1]['build_id']
-        choose('冻结 / 历史 Build', '版本 2 · complete' if reworked else f'complete · {older}')
-        if reworked:
+        choose('构建版本' if controls_v2 else '冻结 / 历史 Build',
+               '版本 2 · 已完成' if controls_v2 else '版本 2 · complete' if reworked else f'complete · {older}')
+        if controls_v2:
+            expect(page.locator('.st-key-console_context_summary')).to_contain_text('当前版本 2')
+        elif reworked:
             expect(page.get_by_test_id('stJson').first).to_contain_text(older)
         else:
             expect(page.locator('.dm-context')).to_contain_text(older)
         primary = data['cases'][0]['build_id']
-        choose('冻结 / 历史 Build', '版本 1 · complete' if reworked else f'complete · {primary}')
-        page.get_by_text('数据 / 对话 / Build', exact=True).click()
+        choose('构建版本' if controls_v2 else '冻结 / 历史 Build',
+               '版本 1 · 已完成' if controls_v2 else '版本 1 · complete' if reworked else f'complete · {primary}')
+        page.get_by_text(data_label, exact=True).click()
         if reworked:
             memory = page.get_by_role('radio', name='Alex plans to visit Tokyo.', exact=True)
             memory.focus()
@@ -125,11 +144,16 @@ def main():
             settle()
         else:
             choose('检查记忆', 'Alex plans to visit Tokyo.')
-        page.get_by_role('button', name='查看完整原文', exact=True).click()
+        if page.get_by_role('button', name='查看完整原文', exact=True).count():
+            page.get_by_role('button', name='查看完整原文', exact=True).click()
         expect(page.get_by_text('I plan to visit Tokyo, but no date is decided.', exact=True)).to_be_visible()
-        page.get_by_text('Query/Evidence', exact=True).click()
+        page.get_by_text('Query' if responsive else 'Query/Evidence', exact=True).click()
+        if responsive:
+            expect(page.get_by_role('heading', name='选择已有问答记录', exact=True)).to_be_visible()
         for case in data['cases']:
-            choose('冻结案例', case['case_id'])
+            labels = {'success': '当前事实', 'historical': '历史日期', 'conflict': '证据冲突',
+                      'insufficient': '证据不足', 'citation_anomaly': '引用异常', 'budget_failure': '预算失败'}
+            choose('冻结案例', labels[case['case_id']] if responsive else case['case_id'])
             page.get_by_role('button', name='载入冻结案例', exact=True).click()
             settle()
             trace = data['traces'][case['trace_id']]
@@ -153,10 +177,18 @@ def main():
                             has=page.get_by_text('评审详情 · 阶段 Trace', exact=True))
                         field = {'initial': 'initial_candidates', 'expanded': 'candidates',
                                  'effective/delivered': 'source_delivery', 'answer/citations': 'answer'}[stage]
-                        expect(detail.get_by_test_id('stJson').first).to_contain_text(field)
+                        fields = detail.get_by_test_id('stExpander').filter(has=page.get_by_text('本阶段已记录字段', exact=True))
+                        if fields.count():
+                            fields = fields.last
+                            if fields.locator('details').first.get_attribute('open') is None:
+                                fields.locator('summary').first.click()
+                            expect(fields.get_by_test_id('stJson')).to_contain_text(field)
+                        else:
+                            expect(detail.get_by_test_id('stJson').first).to_contain_text(field)
                 source_area = page.locator('.st-key-console_answer_sources') if reworked else page
-                source_area.get_by_role('button', name='查看完整原文', exact=True).click()
-                expect(page.get_by_text('I moved from Paris to Rome on 2 May 2023.', exact=True)).to_be_visible()
+                if source_area.get_by_role('button', name='查看完整原文', exact=True).count():
+                    source_area.get_by_role('button', name='查看完整原文', exact=True).click()
+                expect(source_area.get_by_text('I moved from Paris to Rome on 2 May 2023.', exact=True)).to_be_visible()
                 if reworked:
                     page.get_by_text('评审详情 · 阶段 Trace', exact=True).click()
             if case['case_id'] in ('success', 'insufficient', 'citation_anomaly', 'budget_failure'):
@@ -176,7 +208,7 @@ def main():
             settle()
             page.get_by_role('button', name='读取已有 Trace', exact=True).click()
             expect(page.get_by_text('Trace ID 格式无效', exact=False)).to_be_visible()
-            choose('冻结案例', 'success')
+            choose('冻结案例', '当前事实' if responsive else 'success')
             page.get_by_role('button', name='载入冻结案例', exact=True).click()
             expect(page.get_by_role('group', name='Chat message from assistant', exact=True)
                    .get_by_text('Alex lives in Rome.', exact=True)).to_be_visible()
@@ -190,9 +222,30 @@ def main():
         page.get_by_text('原 Run', exact=True).click()
         settle()
         expect(page.get_by_text('可比成功配对', exact=True)).to_be_visible()
+        if controls_v2:
+            group = page.get_by_role('radiogroup', name='查看分组详情', exact=True)
+            for name, expected in (('Full Text', 'unknown'), ('Dynamic', '0.5151')):
+                option = group.get_by_role('radio', name=name, exact=True)
+                option.focus()
+                option.press('Space')
+                settle()
+                expect(page.get_by_test_id('stMetric').filter(has=page.get_by_text('完整分母 QA', exact=True))).to_contain_text(expected)
+            option = page.get_by_role('radiogroup', name='成本策略', exact=True).get_by_role('radio', name='Dynamic', exact=True)
+            option.focus()
+            option.press('Space')
+            settle()
+            expect(page.get_by_test_id('stMetric').filter(has=page.get_by_text('已知峰值价估算 CNY', exact=True))).to_contain_text('98.9305')
+            page.get_by_text('完整精度与成本明细', exact=True).click()
+            with page.expect_download() as download:
+                page.get_by_role('button', name='下载冻结报告 JSON', exact=True).click()
+            exported = args.output / 'frozen-research-report.json'
+            download.value.save_as(exported)
+            reference = json.loads((ROOT / 'demo_fixture/product-v1/research-evidence.json').read_text(encoding='utf-8'))
+            assert json.loads(exported.read_text(encoding='utf-8')) == reference
+            page.get_by_text('完整精度与成本明细', exact=True).click()
         capture('replay-experiments.png')
         page.get_by_text('Demo', exact=True).click()
-        expect(page.get_by_text('当前为固定快照 Replay', exact=False)).to_be_visible()
+        expect(page.get_by_text('以下为合成案例' if responsive else '当前为固定快照 Replay', exact=False)).to_be_visible()
         capture('replay-demo.png')
         assert not errors, errors
         video = page.video
@@ -205,6 +258,8 @@ def main():
                   'provider_calls': 0, 'page_errors': errors, 'external_origins_blocked': sorted(set(blocked)),
                   'screenshots': screenshots, 'video': 'console-replay-clip.webm',
                   'ui_reworked': reworked, 'invalid_trace_recovery_checked': reworked,
+                  'lossless_export_checked': controls_v2,
+                  'full_denominator_unknown_checked': controls_v2, 'historical_cost_checked': controls_v2,
                   'fixed_viewport_screenshots': ['viewport-' + name for name in screenshots],
                   'human_review': 'pending; browser automation is not member acceptance'}
         (args.output / 'replay-result.json').write_text(json.dumps(result, indent=2) + '\n', encoding='utf-8')

@@ -57,7 +57,7 @@ def test_console_navigation_reads_memories_and_saved_trace_without_generation(se
         app, calls = console_app(client, monkeypatch)
         app.run()
         assert not app.exception
-        assert app.selectbox(key=f'console_build_{dataset_id}_conv-a').value == build_id
+        assert app.session_state[f'console_build_{dataset_id}_conv-a'] == build_id
         assert not any(build_id in item.value for item in app.caption)
         app.radio(key='console_page').set_value('Memory').run()
         assert not app.exception
@@ -104,9 +104,9 @@ def test_experiments_retains_unmeasured_full_denominator_as_unknown(client, monk
     assert not app.exception
     metrics = {item.label: item.value for item in app.metric}
     assert metrics['完整分母 QA'] == '0.5151'
-    app.selectbox(key='experiment_group_strategy').set_value('full_text').run()
+    app.radio(key='experiment_group_strategy').set_value('full_text').run()
     assert {item.label: item.value for item in app.metric}['完整分母 QA'] == 'unknown'
-    app.selectbox(key='experiment_group_strategy').set_value('hybrid_no_resolution').run()
+    app.radio(key='experiment_group_strategy').set_value('hybrid_no_resolution').run()
     assert {item.label: item.value for item in app.metric}['完整分母 QA'] == 'unknown'
 
 
@@ -138,7 +138,8 @@ def test_trace_from_other_build_is_rejected(settings, sample, monkeypatch):
         app.button(key='console_load_trace').click().run()
         assert not app.exception
         assert any('属于其他 Build' in warning.value for warning in app.warning)
-        assert not app.text
+        assert not app.chat_message
+        assert not any(item.value == 'Alex lives in Rome.' for item in app.text)
         assert all(method == 'GET' for method, _ in calls)
 
 
@@ -162,7 +163,7 @@ def test_overview_uses_recorded_completion_time_for_recent_report(client, monkey
     app.run()
     assert not app.exception
     assert any('本页最近完成报告：z-new' in item.value for item in app.caption)
-    assert app.selectbox(key='console_run').value == 'z-new'
+    assert app.radio(key='console_run').value == 'z-new'
     app.button(key='console_load_report').click().run()
     assert any('2026-11-04T08:00:00Z' in item.value for item in app.caption)
     assert all(method == 'GET' for method, _ in calls)

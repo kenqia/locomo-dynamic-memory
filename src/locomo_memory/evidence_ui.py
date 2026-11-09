@@ -4,13 +4,45 @@ from urllib.parse import quote
 import httpx
 import streamlit as st
 
+from locomo_memory.console_widgets import compact_choice
 
-def page_items(request, path, key, compact=False, **params):
-    controls, summary = st.columns([1, 6], vertical_alignment='center') if compact else (st, st)
-    with controls.popover('分页'):
-        offset = int(st.number_input('列表起始位置', min_value=0, step=20, key=key))
+
+def select_list_page(key, number):
+    st.session_state[key] = (number - 1) * 20
+
+
+def jump_list_page(key, widget_key):
+    select_list_page(key, int(st.session_state[widget_key]))
+
+
+def page_items(request, path, key, *, label='记录', show_count=True, **params):
+    offset = max(0, int(st.session_state.get(key, 0))) // 20 * 20
     page = request('GET', path, params={**params, 'limit': 20, 'offset': offset})
-    summary.caption(f"本页 {len(page['items'])} 项 / 全部 {page['total']} 项 · offset {offset}")
+    total = page['total']
+    pages = max(1, (total + 19) // 20)
+    if offset > (pages - 1) * 20:
+        offset = (pages - 1) * 20
+        page = request('GET', path, params={**params, 'limit': 20, 'offset': offset})
+    st.session_state[key] = offset
+    number = offset // 20 + 1
+    if pages == 1 and not show_count:
+        return page['items']
+    with st.container(key='pager_' + key):
+        if pages == 1:
+            if show_count:
+                st.caption(f'共 {total} 条{label} · 已全部显示' if total else f'暂无{label}')
+        else:
+            st.caption(f'{label} {offset + 1}–{offset + len(page["items"])} / 共 {total} 条 · 每页 20 条')
+            with st.container(horizontal=True, vertical_alignment='center', key='pager_controls_' + key):
+                st.button('上一页', key=key + '_previous', disabled=number == 1,
+                          on_click=select_list_page, args=(key, number - 1))
+                st.text(f'第 {number} / {pages} 页')
+                st.button('下一页', key=key + '_next', disabled=number == pages,
+                          on_click=select_list_page, args=(key, number + 1))
+                widget_key = key + '_page'
+                st.session_state[widget_key] = number
+                st.number_input('跳转页码', min_value=1, max_value=pages, key=widget_key,
+                                width=140, on_change=jump_list_page, args=(key, widget_key))
     return page['items']
 
 
@@ -23,31 +55,27 @@ def render_sources(request, source_ids, build, key):
     if not ids:
         st.info('此阶段没有记录来源引用。')
         return
-    source_id = st.selectbox('来源引用', ids,
+    source_id = compact_choice('来源引用', ids,
                              format_func=lambda sid: f'来源 {ids.index(sid) + 1} · {sid.rsplit("/", 1)[-1]}',
                              key=f'{key}_id')
     parts = source_id.split('/')
     if len(parts) != 3 or parts[:2] != [build['dataset_id'], build['sample_id']]:
-        st.error('来源 ID 无法映射到当前数据集 / 对话，保留异常，不猜测修正。')
+        st.error('来源不属于当前数据集或对话，无法展示原文。')
         return
-    if st.button('查看完整原文', key=f'{key}_open'):
-        st.session_state.pop(f'{key}_source', None)
-        ds, sample, dia = (quote(part, safe='') for part in parts)
-        try:
-            source = request('GET', f'/datasets/{ds}/conversations/{sample}/turns/{dia}')
-            if (source.get('source_id'), source.get('dataset_id'), source.get('sample_id'), source.get('dia_id')) != (
-                    source_id, parts[0], parts[1], parts[2]):
-                st.error('后端返回的来源身份与引用不一致，未展示原文。')
-                return
-            st.session_state[f'{key}_source'] = source
-        except httpx.HTTPError:
-            st.error('引用原文读取失败，保留引用异常，不生成替代原文。')
-    source = st.session_state.get(f'{key}_source')
-    if source and source['source_id'] == source_id:
-        st.caption(f"{source['speaker']} · 报告时间（原文）: {source['session_time']}")
-        st.text(source['text'])
-        with st.expander('核对来源身份'):
-            st.json({field: source[field] for field in ('source_id', 'dataset_id', 'sample_id', 'dia_id')})
+    ds, sample, dia = (quote(part, safe='') for part in parts)
+    try:
+        source = request('GET', f'/datasets/{ds}/conversations/{sample}/turns/{dia}')
+        if (source.get('source_id'), source.get('dataset_id'), source.get('sample_id'), source.get('dia_id')) != (
+                source_id, parts[0], parts[1], parts[2]):
+            st.error('后端返回的来源身份与引用不一致，未展示原文。')
+            return
+    except httpx.HTTPError:
+        st.error('无法读取引用原文，请核对来源或连接。')
+        return
+    st.caption(f"{source['speaker']} · 报告时间（原文）: {source['session_time']}")
+    st.text(source['text'])
+    with st.expander('核对来源身份'):
+        st.json({field: source[field] for field in ('source_id', 'dataset_id', 'sample_id', 'dia_id')})
 
 
 def render_memory_summary(memory):
@@ -56,7 +84,8 @@ def render_memory_summary(memory):
     statement = {'fact': '事实陈述', 'plan': '计划', 'intention': '意愿', 'uncertain': '不确定'}.get(
         memory['statement_type'], memory['statement_type'])
     polarity = {'positive': '肯定', 'negative': '否定'}.get(memory['polarity'], memory['polarity'])
-    st.caption(f"{statement} · {memory['statement_type']} / {polarity} · {memory['polarity']} · {memory['memory_type']}")
+    kind = {'state': '状态', 'event': '事件'}.get(memory['memory_type'], memory['memory_type'])
+    st.caption(f"{statement} · {polarity} · {kind}")
     time = memory.get('time', {})
     st.caption('报告时间（原文）：' + ('；'.join(memory.get('session_times', [])) or 'unknown'))
     st.caption(f"事件时间：{recorded(time.get('event_start'))} → {recorded(time.get('event_end'))}")
@@ -71,18 +100,18 @@ def render_memory_inspector(request, build, reviewer=False):
         st.info('请先选择含有 Memory 的 Build。')
         return
     build_id = build['build_id']
-    memories = page_items(request, f'/builds/{build_id}/memories', f'console_memory_offset_{build_id}', compact=True)
-    st.caption('选择一条记忆，检查原文、时间和关系。按 API Memory 记录顺序展示，不代表事件时间排序。')
+    memories = page_items(request, f'/builds/{build_id}/memories', f'console_memory_offset_{build_id}', label='记忆')
+    st.caption('列表按记录顺序展示，未按事件时间排序。')
     if not memories:
         st.info('当前页尚无 Memory。')
         return
     by_id = {memory['memory_id']: memory for memory in memories}
-    selection, detail = st.columns([1, 1.6], gap='large')
+    with st.container(key='console_memory_layout'):
+        selection, detail = st.columns([1, 1.6], gap='large')
     with selection:
-        st.markdown('**记忆时间线**')
+        st.markdown('**记忆列表**')
         memory_id = st.radio('检查记忆', list(by_id), format_func=lambda mid: by_id[mid]['content'],
                              key=f'console_memory_{build_id}', label_visibility='collapsed')
-        st.caption('报告时间不替代事件时间；计划、否定和未知边界均保留。')
     with detail:
         with st.container(border=True):
             st.markdown('**选中记忆**')
@@ -90,7 +119,7 @@ def render_memory_inspector(request, build, reviewer=False):
             st.markdown('**原文证据**')
             render_sources(request, by_id[memory_id]['source_ids'], build, f'memory_source_{build_id}')
     st.subheader('这条记忆的关系与冲突')
-    relations = page_items(request, f'/builds/{build_id}/relations', f'console_relation_offset_{build_id}', compact=True)
+    relations = page_items(request, f'/builds/{build_id}/relations', f'console_relation_offset_{build_id}', label='关系')
     selected_relations = [r for r in relations if memory_id in (r['old_memory_id'], r['new_memory_id'])]
     if selected_relations:
         for relation in selected_relations:
@@ -102,7 +131,7 @@ def render_memory_inspector(request, build, reviewer=False):
                     st.text(f"{label}：{memory['content'] if memory else '内容不在当前 Memory 页，请在评审详情核对引用 ID'}")
                 st.text(relation.get('reason') or '关系理由：unknown')
     else:
-        st.caption('当前关系页未记录与这条记忆相连的关系；不根据时间较新推断替代。')
+        st.caption('当前关系页没有与这条记忆相连的记录。')
     with st.expander('评审详情 · 关系的适用条件与来源证据', expanded=reviewer):
         st.json(relations)
     if build['status'] in ('related', 'complete'):
@@ -121,7 +150,7 @@ def render_trace_inspector(request, build, trace, reviewer=False):
         st.text(trace['question'])
     error = trace.get('error')
     if error:
-        st.error(f"问答执行失败：{error.get('stage', 'unknown')} / {error.get('code', 'unknown')}；失败不代表没有证据。")
+        st.error(f"问答执行失败：{error.get('stage', 'unknown')} / {error.get('code', 'unknown')}")
     answer = trace.get('answer')
     if answer:
         with st.chat_message('assistant'):
@@ -150,7 +179,7 @@ def render_trace_inspector(request, build, trace, reviewer=False):
                  'initial_candidate_tokens': trace.get('initial', {}).get('candidate_token_count'),
                  'initial_candidate_budget': trace.get('initial', {}).get('config', {}).get('candidate_token_budget'),
                  'resolution_budgets': trace.get('resolution_budgets'),
-                 'evidence_budget': trace.get('evidence_budget'), 'usage_summary': trace.get('usage_summary')})
+                 'evidence_budget': trace.get('evidence_budget'), 'usage_summary': trace.get('usage_summary')}, expanded=1)
     with st.expander('版本身份与完整 Trace（已保存字段）'):
         st.caption(f"Trace: {trace['trace_id']} · Build: {trace['build_id']} · outcome: {trace['outcome']}")
         st.caption('exact wire：未记录' if not trace.get('exact_wire') else 'exact wire：已记录，本页不展示原始 wire')
@@ -158,7 +187,7 @@ def render_trace_inspector(request, build, trace, reviewer=False):
         # No prompts, request/response wire or credential-bearing config snapshots.
         st.json({key: trace[key] for key in ('trace_id', 'build_id', 'question', 'outcome', 'time',
                  'initial', 'expanded', 'resolution', 'effective_memories', 'answer', 'error',
-                 'evidence_budget', 'resolution_budgets', 'source_delivery', 'stage_seconds', 'usage_summary') if key in trace})
+                 'evidence_budget', 'resolution_budgets', 'source_delivery', 'stage_seconds', 'usage_summary') if key in trace}, expanded=1)
 
 
 def render_trace_stages(request, build, trace):
@@ -176,7 +205,7 @@ def render_trace_stages(request, build, trace):
         section = {'resolution': trace.get('resolution'), 'source_delivery': trace.get('source_delivery'),
                    'resolution_budgets': trace.get('resolution_budgets')}
         memories = trace.get('effective_memories', [])
-        st.caption('有效选择与实际送达分别查看；缺少送达记录时不宣称模型已经收到。')
+        st.caption('有效记忆与送达记录分别列出；未记录送达时，无法确认模型是否收到。')
     else:
         section, memories = {'answer': trace.get('answer'), 'error': trace.get('error')}, []
     if memories:
@@ -185,5 +214,5 @@ def render_trace_stages(request, build, trace):
                 render_memory_summary(memory)
         render_sources(request, [sid for m in memories for sid in m['source_ids']], build,
                        f"trace_source_{trace['trace_id']}_{stage}")
-    st.caption('本阶段已记录字段')
-    st.json(section)
+    with st.expander('本阶段已记录字段', expanded=False):
+        st.json(section, expanded=1)

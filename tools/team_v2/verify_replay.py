@@ -15,7 +15,7 @@ if __name__ == '__main__':
     parser.add_argument('--browser-python', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--baseline', help='Export a tracked revision under the owned output for before/after screenshots.')
-    parser.add_argument('--browser-script', choices=['browser_replay.py', 'browser_product_final.py'], default='browser_replay.py')
+    parser.add_argument('--browser-script', choices=['browser_replay.py', 'browser_console_controls.py', 'browser_query_scroll.py'], default='browser_replay.py')
     args = parser.parse_args()
     requested = args.output.absolute()
     if any(path.is_symlink() for path in (requested, *requested.parents)):

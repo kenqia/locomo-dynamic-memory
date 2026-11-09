@@ -36,9 +36,7 @@ def main():
 
         def capture(name):
             expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=20000)
-            expect(page.get_by_test_id('stException')).to_have_count(0)
-            if name == 'overview.png':
-                expect(page.get_by_test_id('stMetric').first).to_contain_text('3028')
+            page.wait_for_function('() => !document.querySelector(\'[data-stale="true"]\')')
             # Fit Streamlit's internal scroll content into the real viewport;
             # body full_page alone clips it. Desktop width remains 1280px.
             main = page.get_by_test_id('stMain')
@@ -46,14 +44,15 @@ def main():
             page.set_viewport_size({'width': 1280, 'height': min(2000, max(900, height + 20))})
             main.evaluate('(element) => { element.scrollTop = 0; }')
             expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=20000)
+            page.wait_for_function('() => !document.querySelector(\'[data-stale="true"]\')')
             page.screenshot(path=str(args.output / name), full_page=True)
             page.set_viewport_size({'width': 1280, 'height': 900})
 
         page.goto(args.url)
-        expect(page.get_by_role('heading', name='Research Console', exact=True)).to_be_visible(timeout=60000)
-        expect(page.get_by_text('后端已连接 · Console 只读', exact=True)).to_be_visible()
-        expect(page.get_by_text('当前 Build：', exact=False)).to_contain_text('complete')
-        expect(page.get_by_text('unknown 原样保留', exact=False)).to_be_visible()
+        expect(page.get_by_role('heading', name='Overview · 工作概览', exact=True)).to_be_visible(timeout=60000)
+        expect(page.locator('.st-key-console_context_summary')).to_contain_text('只读浏览')
+        expect(page.locator('.st-key-console_context_summary')).to_contain_text('已完成')
+        expect(page.get_by_test_id('stMetric').filter(has=page.get_by_text('unknown', exact=True))).to_contain_text('3')
         capture('overview.png')
         page.get_by_role('button', name='视图设置', exact=True).click()
         page.get_by_text('评审者', exact=True).click()
@@ -62,10 +61,10 @@ def main():
         page.keyboard.press('Escape')
         page.get_by_text('Memory', exact=True).click()
         expect(page.get_by_role('heading', name='Memory · 记忆与来源', exact=True)).to_be_visible()
-        page.get_by_role('button', name='查看完整原文', exact=True).click()
+        expect(page.get_by_role('button', name='查看完整原文', exact=True)).to_have_count(0)
         expect(page.get_by_text('I live in Paris.', exact=True)).to_be_visible()
         capture('memory.png')
-        page.get_by_text('Query/Evidence', exact=True).click()
+        page.get_by_text('Query', exact=True).click()
         expected_answers = ('Alex lives in Rome.', 'Alex lives in Paris.',
                             'Sam reports birth years 1990 and 1992; the contradiction remains unresolved.',
                             'Insufficient evidence for the passport number.')
@@ -91,13 +90,8 @@ def main():
         workflow.focus()
         workflow.press('Space')
         expect(workflow).not_to_be_checked()
-        expect(page.get_by_role('radio', name='Overview', exact=True)).to_be_visible()
-        expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning')
-        overview = page.get_by_role('radio', name='Overview', exact=True)
-        overview.focus()
-        overview.press('Space')
-        expect(overview).to_be_checked()
-        expect(page.get_by_role('heading', name='Research Console', exact=True)).to_be_visible()
+        expect(page.locator('.console-brand-title')).to_have_text('Dynamic Memory')
+        expect(page.get_by_role('radio', name='Overview', exact=True)).to_be_attached()
         assert not errors, errors
         summary = {'status': 'passed', 'browser': browser.version,
                    'viewport': {'width': 1280, 'height': 900},

@@ -87,18 +87,18 @@ render_console(store.request, evidence_path=store.evidence_path, replay_cases=st
     assert not app.dataframe
     build = store.data['builds'][0]
     memories = store.data['memories'][build['build_id']]
-    for content, expected in (('Alex plans to visit Tokyo.', '计划 · plan'),
-                              ('Alex does not own a car.', '否定 · negative')):
+    for content, expected in (('Alex plans to visit Tokyo.', '计划 · 肯定'),
+                              ('Alex does not own a car.', '事实陈述 · 否定')):
         memory = next(item for item in memories if item['content'] == content)
         app.radio(key=f"console_memory_{build['build_id']}").set_value(memory['memory_id']).run()
         assert any(expected in item.value for item in app.caption)
         assert any('事件时间：unknown → unknown' == item.value for item in app.caption)
     app.radio(key='console_page').set_value('Query/Evidence').run()
-    app.selectbox(key='console_replay_case').set_value('budget_failure').run()
+    app.radio(key='console_replay_case').set_value('budget_failure').run()
     app.button(key='console_load_case').click().run()
     assert not app.exception
     assert any('conflict_evidence_budget_exceeded' in error.value for error in app.error)
-    app.selectbox(key='console_replay_case').set_value('citation_anomaly').run()
+    app.radio(key='console_replay_case').set_value('citation_anomaly').run()
     app.button(key='console_load_case').click().run()
     assert any('answer / invalid_output' in error.value for error in app.error)
 
@@ -148,7 +148,6 @@ render_console(store.request, evidence_path=store.evidence_path, replay_cases=st
     app.button(key='console_load_case').click().run()
     assert not app.exception and not app.error
     assert any(text.value == 'Alex lives in Rome.' for text in app.text)
-    app.button(key=f"answer_source_{store.cases[0]['trace_id']}_open").click().run()
     assert any(text.value == 'I moved from Paris to Rome on 2 May 2023.' for text in app.text)
 
 
@@ -169,7 +168,44 @@ render_sources(mismatched, [source_id], build, 'identity_check')
 ''', default_timeout=20)
     app.session_state['store'] = store
     app.run()
-    app.button(key='identity_check_open').click().run()
     assert not app.exception
     assert any('身份与引用不一致' in error.value for error in app.error)
+    assert not any(item.value == 'Wrong conversation text' for item in app.text)
+
+
+def test_source_switch_always_displays_selected_original_without_cached_click_state(monkeypatch):
+    from locomo_memory.console_replay import ReplayStore
+    monkeypatch.setitem(sys.modules, '__main__', sys.modules['__main__'])
+    store = ReplayStore(FIXTURE)
+    sources = [source for source in store.data['sources'] if source['dia_id'] in ('D2:2', 'D2:3')]
+    app = AppTest.from_string('''
+import streamlit as st
+import httpx
+from locomo_memory.evidence_ui import render_sources
+store = st.session_state['store']
+def request(method, path, **kwargs):
+    if st.session_state.get('unavailable'):
+        raise httpx.ConnectError('offline')
+    return store.request(method, path, **kwargs)
+render_sources(request, st.session_state['source_ids'], store.data['builds'][0], 'auto_sources')
+''', default_timeout=20)
+    app.session_state['store'] = store
+    app.session_state['source_ids'] = [source['source_id'] for source in sources]
+    app.session_state['auto_sources_source'] = {'source_id': sources[0]['source_id'], 'text': 'stale original'}
+    app.run()
+    assert not app.exception
+    assert [item.value for item in app.text] == [sources[0]['text']]
+    assert not app.button
+    assert not any('查看完整原文' in item.value for item in app.caption)
+    for source in (sources[1], sources[0], sources[1], sources[0]):
+        app.radio(key='auto_sources_id').set_value(source['source_id']).run()
+        assert not app.exception and not app.error
+        assert [item.value for item in app.text] == [source['text']]
+    app.session_state['unavailable'] = True
+    app.run()
+    assert not app.exception and app.error
     assert not app.text
+    app.session_state['unavailable'] = False
+    app.run()
+    assert not app.exception and not app.error
+    assert [item.value for item in app.text] == [sources[0]['text']]
