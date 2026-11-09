@@ -32,14 +32,16 @@ Problem → Hypothesis → Design → Implementation → Experiment → Observat
 **RQ1 — Answer Quality.** 在独立留出对话上，Dynamic Resolution 是否比 Hybrid Retrieval 稳定地提高长期对话 QA 质量？
 - 主指标：E25 类别 1–4 官方 token F1，完整分母（失败记 0），按题配对 bootstrap（seed 51104，2000 次）。
 - 辅助：类别 5 字面拒答（单列）；单名非作者 AI 来源盲审（条件分母）。
-- **答案：没有证据表明稳定提升。** 点估计 +0.006545，区间跨零；60 题提升 / 56 退化 / 185 不变。类别 5 为 −0.050505（区间 [−0.101010, 0]）。来源盲审共同可判定 297 对净改善 10，区间跨零。
+- **正式结论（Gate 1 冻结）**：在 E25 留出实验的设定下，Dynamic 的事实类 token F1 点估计高于 Hybrid（+0.006545），但按题配对 bootstrap 区间 [−0.020133, +0.034035] 跨零。本实验未能提供充分证据证明 Dynamic 相对 Hybrid 具有稳定的回答质量优势。**不得改写为"证明 Dynamic 无效"。**
+- 补充观测：301 对中 60 升 / 56 降 / 185 平；类别 5 字面拒答 −0.050505（区间 [−0.101010, 0]）；来源盲审共同可判定 297 对净改善 10，区间跨零。
 
 **RQ2 — Efficiency and Reliability.** Dynamic 带来多少 token / 费用 / 延迟 / 可靠性变化？
-- **答案：成本显著更高，可靠性略低。** 已报 usage 峰价估算 USD 6.8800119 vs 0.8705958（7.90×；Resolve 占 Dynamic 约 95%）；单题 p50 8.31 s vs 2.37 s（3.51×，含失败项，离线串行）；技术成功 389/400 vs 394/400。均为估算或离线观测，**非账单、非生产吞吐**。
+- **答案：Dynamic 的估算成本与延迟显著更高。** 已报 usage 峰价估算 USD 6.8800119 vs 0.8705958，比例 7.90×（**估算比例，不是实际账单**；Resolve 占 Dynamic 约 95%）；单题 p50 8.31 s vs 2.37 s（3.51×，含失败项，离线串行）。技术成功 389/400 vs 394/400，但 17 个失败中有 9 个是供应商余额拒绝（HTTP 402），**成功率差异不能全部归因于方法本身**。
 
 **RQ3 — Evidence Preservation.** 标注证据在哪一阶段被遗漏、排除或未送达？
 - 指标：Memory-rank Source Recall **代理**（initial / expanded / effective / delivered），冻结 Trace 只读审计。
-- **答案：主要下降在解析步骤。** Dynamic Recall@10 initial 0.679678 → effective/delivered 0.534318；107/400 题在解析后失去至少一个标注 Source Turn，仅 2 题因 Answer 预算再失去。**107 题是"标注来源被排除"，不是"误删"**：20 案逐案人工语义核查未完成，部分案例（如问 Tim 而标注来源谈 John）的排除可能正确。
+- **已观察现象**：固定 K=10 下，Dynamic 来源覆盖 initial 0.679678 = expanded 0.679678 → effective/delivered 0.534318（Hybrid delivered 0.681934）；107/400 题在解析后失去至少一个标注 Source Turn，仅 2 题因 Answer 预算再失去。固定 K 下历史扩展不改变前 K 覆盖（扩展项排在初始 20 之后）；扩展的覆盖增量只在成功子集、不限 K 的口径中可见（0.745732 → 0.787377）。
+- **未完成的原因判断**：107 题是"标注来源被排除"，**不等于错误删除**。20 案逐案人工语义核查未完成；部分案例（如问 Tim 而标注来源谈 John）的排除可能正确。
 
 ## 4. 叙事必须包含的十点（→ 报告章节）
 
@@ -60,9 +62,10 @@ Problem → Hypothesis → Design → Implementation → Experiment → Observat
 |---|---|---|---|
 | K1 | 从 Source Turn → 原子 Memory → MemoryRelation → CurrentState 投影 → 固定完整 Build → 带引用回答与四阶段 Trace 的可追溯记忆系统，含 Product Console 与无 key 离线回放 | A Implemented & Accepted | main `5519dd2`；PR #40/#41；CI 42582449214 success；本地回归 M50 |
 | K2 | 预先锁定配置、生成冻结后再评分的 Hybrid vs Dynamic 独立留出对照（400 题 × 2 臂），完整分母、失败保留、质量/成本/延迟/可靠性同表 | B Experimentally Validated（结论为无稳定提升） | E25，M01–M15 |
-| K3 | 阶段化证据损失审计：Source 覆盖在 initial/expanded/effective/delivered 分列，并以冻结 Trace 定位损失阶段 | B（方法与观测）；排除是否合理 → C | M20–M25 |
+| K3 | 阶段化证据损失审计：Source 覆盖按阶段分列，并以冻结 Trace 定位损失阶段 | B（研究方法与诊断贡献）；哪些排除属于错误仍未验证 → 明确为未完成 | M20–M25 |
 | K4 | 研究可信度工程：E0–E25 档案、生成冻结 SHA、非作者终态审计、数值独立重算（282 叶 0 差异）、勘误保留 | A（过程资产） | EXPERIMENT_ARCHIVE_INDEX；SUPPLEMENT_ERRATA |
-| K5 | 扩展模块（Graph 两跳、可逆压缩、Adaptive、Temporal soft priority）与 Sidecar 的实现和离线/真实 Build 评估，含负面结果 | C Research Candidate | M40–M46（多为 DOC-ONLY） |
+
+**探索性研究与负面结果（不与 K1–K4 同一成熟度）**：扩展模块（Graph 两跳、可逆压缩、Adaptive、Temporal soft priority）与 Sidecar 已实现并做过离线 / 真实 Build 评估，结果为无 QA 收益证据或建议拒绝接入（C 类；数字留 Supplement，M40–M46 多为 DOC-ONLY）。
 
 **不列为贡献**：任何"Dynamic 提升准确率"、"压缩降本"、"Graph 提升 QA"、"Sidecar 改善时间推理"。
 
@@ -101,7 +104,11 @@ Problem → Hypothesis → Design → Implementation → Experiment → Observat
 | Hindsight / Cross-Encoder / PropMem | C | 研究档案，未进 App |
 | 人工动态标签、Atomic Fact Recall、跨语言、对话级泛化 | D | Future Work |
 
-## 9. Gate 1 待负责人决定
+## 9. Gate 1 决定（负责人 2026-11-09 已裁定）
+
+1. 接受 RQ1–3，RQ1 采用 §3 正式结论措辞。2. E25 为唯一主实验结果；E12/E22/E23 只说明研究演进，不做跨实验排行。3. DOC-ONLY 扩展数字留 Supplement，正文定性。4. K3 为研究方法与诊断贡献，区分已观察现象与未完成原因判断。5. 成员职责草稿来源：`process/m5/member-review-20261107/`、`process/snapshots/2026-11-0{7,8,9}-*member*`、PR/Issue/交付文件；比例与认可由团队确认。6. 视频不增加付费 LIVE 调用；引用既有冻结真实运行记录说明真实调用能力。
+
+### 原待决事项（存档）
 
 1. **RQ 与答案措辞**：是否接受三条 RQ 及 RQ1 "无稳定提升"的表述。
 2. **主结果唯一性**：报告以 E25 为唯一主结果，E12/E23 仅作"研究演进"背景（推荐）。
@@ -109,3 +116,11 @@ Problem → Hypothesis → Design → Implementation → Experiment → Observat
 4. **Bonus DOC-ONLY 数字**：报告中只作定性描述，具体数字留 Supplement（推荐）。
 5. **K3 分类**：同意"证据损失审计"为方法贡献（B），排除合理性判定明确为未完成（C）。
 6. **团队分工数据源**：请指定（候选：`process/snapshots/2026-11-0{7,8,9}-member-quality-review.*`、`process/m5/member-review-20261107/`）；AI 不按 commit 数推断。
+
+## 修订记录
+
+| 日期 | 修订 | 原因 |
+|---|---|---|
+| 2026-11-09 Gate 1 审稿后 | RQ1 改为负责人指定正式结论；RQ2 注明 7.90× 为估算比例、成功率差含 9 个 HTTP 402；RQ3 拆分"已观察现象 / 未完成原因判断"，并写入同口径 expanded@10 = initial 的发现 | 负责人意见一.1、二.1 |
+| 同上 | K5 移出主贡献，改为"探索性研究与负面结果" | 意见二.3 |
+| 同上 | §9 记录六项裁定 | 意见一 |

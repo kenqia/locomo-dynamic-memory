@@ -1,0 +1,55 @@
+{
+  "inputs_sha256": {
+    "experiments/m5-development/level-e-results-v1/official-scores.json": "14e834d42cf9eeb5e0e161581f09e017bed97779fcfdb3efd6e3ce6045180455",
+    "experiments/m5-development/level-e-runtime-terminal-v1.json": "5f0f503a3c50f8895c8d316ca7799687686327c39c4f0011070470f20c32f437",
+    "experiments/evidence-flow-20261109/audit.json": "95ab517d49f8aac19f91d3d90c365a6faecd9b897fe49e0d1d41f852e76b9af2"
+  },
+  "outputs_sha256": {
+    "F5_e25_f1_ci.png": "3d1da1b9a1e8d699cbb5919544faed4bebce886a826b64324c8928e4482b8086",
+    "F6_e25_cost_latency.png": "e1e9e37f8f31705c29b50372fafaf6a48eed287488712b9280a5bcd83e7e1020",
+    "F7_evidence_loss.png": "524aae93f22851b8066aa0e786938116f60e3ee2ebc3e78ef286e15125f65edf"
+  },
+  "recomputed": {
+    "hybrid_f1": 0.40260599837767247,
+    "dynamic_f1": 0.4091509211459637,
+    "diff": 0.00654492276829121,
+    "ci": [
+      -0.020132663918237845,
+      0.034034671619634575
+    ],
+    "n": 301,
+    "recall_at10": {
+      "hybrid": [
+        0.6819340016708437,
+        null,
+        0.6819340016708437
+      ],
+      "dynamic": [
+        0.6796783625730994,
+        0.5343179377013964,
+        0.5343179377013964
+      ],
+      "dynamic_expanded": 0.6796783625730994
+    },
+    "success_subset_unbounded": [
+      0.7457320814923908,
+      0.7873772704958273,
+      0.5525803878252331,
+      0.5510769513991164
+    ],
+    "cost_usd": [
+      0.8705958,
+      6.8800119
+    ],
+    "p50": [
+      2.3702301470111706,
+      8.314747211501526
+    ],
+    "p95": [
+      3.9353236094524613,
+      12.403791126237023
+    ]
+  },
+  "matplotlib": "3.11.2",
+  "model_calls": 0
+}

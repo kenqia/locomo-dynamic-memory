@@ -1,7 +1,7 @@
 # Metric Ledger — Gate 1
 
 每个进入报告/PPT/视频的数字必须在此有 M-ID。报告与 PPT 中的数字须与本表**逐字一致**（报告保留 6 位小数，PPT 可取 3 位但不得改变符号或区间端点关系）。
-等级：**RC** = VERIFIED-RECOMPUTED（本次从逐项/冻结数据重算一致）；**VA** = VERIFIED-ARTIFACT（与冻结工件字段一致，未独立重算）；**DOC** = DOC-ONLY（仅在文档表格中，不得升级）；**PEND** = 待验证。
+等级：**RC** = VERIFIED-RECOMPUTED（本次从逐题冻结数据重算一致）；**AGG** = aggregate-derived cross-check（由归档聚合字段推导一致，未逐题重算）；**VA** = VERIFIED-ARTIFACT（与冻结工件字段一致，未独立重算）；**DOC** = DOC-ONLY（仅在文档表格中，不得升级）；**PEND** = 待验证。
 
 ## E25 — Level E 独立留出（主结果）
 
@@ -38,11 +38,12 @@ K 单位 = Memory 排名；分子 = 唯一 Source Turn 覆盖；每臂 399/400 �
 | ID | 指标 | Hybrid @5/@10/@20 | Dynamic @5/@10/@20 | 来源 | 等级 |
 |---|---|---|---|---|---|
 | M20 | initial | 0.601211 / 0.681934 / 0.730436 | 0.598204 / 0.679678 / 0.725173 | OS items `source_recall` | RC |
+| M20b | expanded（同口径：固定 K、399 可映射、失败记 0） | 0.601211 / 0.681934 / 0.730436 | 0.598204 / 0.679678 / 0.725173 | OS items `source_recall.expanded`，Gate 1 修订时逐题重算 | RC |
 | M21 | effective | N/A | 0.516670 / 0.534318 / 0.536511 | 同上 | RC |
 | M22 | answer delivered | 0.601211 / 0.681934 / 0.719367 | 0.516670 / 0.534318 / 0.535884 | 同上 | RC |
 | M23 | 解析后失去 ≥1 标注 Source Turn 的题数 | — | **107**/400（**非误删率**） | `experiments/evidence-flow-20261109/audit.json` summary | VA |
 | M24 | Answer 预算再失去标注来源的题数 / Answer 截断题数 | — | 2 / 12 | 同上 | VA |
-| M25 | 成功子集不限 K 覆盖 initial→expanded→effective→delivered | — | 0.745732 → 0.787377 → 0.552580 → 0.551077 | 同上（口径与 M20–22 不同，不可混用） | VA |
+| M25 | 成功子集（389 题）、**不限 K** 覆盖 initial→expanded/resolver input→effective→delivered | — | 0.745732 → 0.787377 → 0.552580 → 0.551077 | audit.json `summary.all_memory_source_recall_successful`（口径与 M20–M22 不同：分母、K、失败处理均不同，**不得与 M20–M22 连成同一曲线**） | VA |
 | M26 | 来源盲审：原文支持 | 250/343 (72.89%) | 233/307 (75.90%) | `source-review-summary.json` | VA |
 | M27 | 来源盲审配对：原文支持 D−H | — | +0.033670，CI [−0.010101, +0.077525]，297 对（28 改善 / 18 退化） | `source-review-paired.json` | VA |
 
@@ -52,7 +53,7 @@ K 单位 = Memory 排名；分子 = 唯一 Source Turn 覆盖；每臂 399/400 �
 
 | ID | 指标 | 值 | 口径 | 来源 | 等级 |
 |---|---|---|---|---|---|
-| M30 | E12 757 题完整分母 F1：Full Text / Vector / Hybrid / Dynamic | 0.464869 / 0.519714 / 0.521886 / 0.515133 | 旧 Run `a2abe1fb…`，conv-26/30/41/42；失败与 unknown 记 0（Hybrid 为下界，上界 0.523207） | `3e64811:docs/team-v2/research-evidence.json`：successful_qa_mean × 成功数 / 757 重算一致；Hybrid bounds 字段 [0.521886, 0.523207] | RC（**由 Phase 0 的 DOC 升级**） |
+| M30 | E12 757 题完整分母 F1：Full Text / Vector / Hybrid / Dynamic | 0.464869 / 0.519714 / 0.521886 / 0.515133 | 旧 Run `a2abe1fb…`，conv-26/30/41/42；失败与 unknown 记 0（Hybrid 为下界，上界 0.523207） | `3e64811:docs/team-v2/research-evidence.json`：由聚合字段 successful_qa_mean × 成功数 / 757 推导一致；Hybrid bounds 字段一致。**未用逐题原始分数重算**（逐题数据在受控归档） | **AGG**（aggregate-derived cross-check；低于 E25 的 RC） |
 | M31 | E12 成功子集 QA：H / D；D 成功 | 0.524659 / 0.550008；709/757 | — | 同上 | VA |
 | M32 | E12 共同成功 705 对配对差 | +0.026074（136 胜 / 110 负 / 459 平） | 成功子集，受选择影响 | 同上 `paired` | VA |
 | M33 | E12 查询费用估算 CNY：H / D | 9.597679 / 98.930522 | 含 cache-hit/miss 报价，**与 M07 USD 峰价口径不同** | V2-05.md | DOC |
@@ -81,3 +82,10 @@ K 单位 = Memory 排名；分子 = 唯一 Source Turn 覆盖；每臂 399/400 �
 | M51 | main `5519dd2` 本地公开离线回归（排除 live_model / local_embedding / controlled_data） | 1,018 tests，0 failures，0 errors，exit 0，913.9 s，1 条既有弃用 warning | `audit/evidence/public-tests-5519dd2.json` | VA |
 | M52 | PR #41 作者端记录：1018 passed、28 deselected、899.01 s | — | `docs/release/PRODUCT_FREEZE.md` | VA |
 | M53 | 六份真实 MemoryExport：2,031 Memory / 37,445 关系 / 1,465 引用 Source | — | `six-memory-exports-manifest.json` | VA |
+
+## 修订记录
+
+| 日期 | 修订 | 原因 |
+|---|---|---|
+| 2026-11-09 Gate 1 审稿后 | 新增 M20b（expanded，固定 K 同口径，逐题重算）；M25 明确不可与 M20–M22 连线 | 负责人意见 1：F9 口径不一致 |
+| 同上 | M30 由 RC 改为 AGG | 负责人意见 4：E12 仅聚合字段推导 |

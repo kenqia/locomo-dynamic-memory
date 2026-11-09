@@ -1,0 +1,18 @@
+digraph G { rankdir=LR; graph [fontname="Noto Sans CJK SC", fontsize=11, nodesep=0.3, ranksep=0.45];
+ node [shape=record, style=filled, fillcolor="#EEF2F7", color="#4C6A92", fontname="Noto Sans CJK SC", fontsize=10];
+ edge [color="#4C6A92", fontname="Noto Sans CJK SC", fontsize=9];
+ subgraph cluster_m { label="数据模型"; color="#BBBBBB"; style=rounded;
+  ST [label="{SourceTurn|dataset_id · sample_id · dia_id\l说话人 · 原文 · 报告时间\l}"];
+  ME [label="{Memory（原子事实）|content · source_ids[]\l陈述性质 · 极性 · state_key\lreported_at · event_time · valid\l}"];
+  RE [label="{MemoryRelation|old → new · 类型\l适用条件 · 理由 · 来源引文\l}"];
+  CS [label="{CurrentState（可重算投影）|当前 · 历史 · 计划 · 冲突\l}"];
+  BV [label="{Build|fingerprint · status\l同一版本绑定以上全部 + 索引\l}", fillcolor="#DDE6F2"];
+  ME -> ST [label="来源 1..n"]; RE -> ME [label="连接两条"]; CS -> RE [label="由关系重算"]; BV -> ME [style=dashed]; }
+ subgraph cluster_e { label="合成示例（demo_fixture，非 LoCoMo 数据）"; color="#C8743A"; style=rounded;
+  node [shape=box, style="rounded,filled"];
+  m1 [label="D1:1 · 2023-05-01\nAlex lives in Paris."]; m2 [label="D2:1 · 2023-05-02\nAlex lives in Rome.\n（I moved from Paris to Rome）"];
+  m3 [label="Sam's birth year 1990"]; m4 [label="Sam's birth year 1992"]; m5 [label="Alex plans to visit Tokyo.\n计划 ≠ 已完成"];
+  m1 -> m2 [label="SUPERSEDE", color="#C8743A", fontcolor="#C8743A"]; m3 -> m4 [label="CONFLICT", dir=both, color="#AA3333", fontcolor="#AA3333"];
+  qn [label="问现在 → Rome\n问 2023-05-01 → Paris\n问出生年 → 冲突，保留双方\n问护照号 → 证据不足", shape=note, fillcolor="#FFF8EC"];
+  m2 -> qn [style=dotted, arrowhead=none]; }
+}
