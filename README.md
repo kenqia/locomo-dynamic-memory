@@ -64,6 +64,8 @@ DeepSeek官方Provider是可选项；认证发现遵循 [本地凭据说明](doc
 
 ## Product 离线演示
 
+本轮 Product 来源 `0401155`，真人复核和最终验证见 [Product 冻结记录](docs/release/PRODUCT_FREEZE.md)；冻结标签为 `product-v2-final-20261109`。
+
 下面的独立演示展示 Console 的六类合成案例、来源跳转、历史 Build、Trace 与真实冻结实验比较，不启动 API 或数据库：
 
 ```sh

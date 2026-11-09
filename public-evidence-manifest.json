@@ -45,8 +45,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8193,
-      "sha256": "8199c055d48336b18fb07619b495e714695bd797af6b0a5cb5240208760d73cb"
+      "bytes": 8363,
+      "sha256": "09e2b87a7e54906609bd222b07b40aaae88fd8ead851af8d8f70cdff0f2d66f9"
     },
     {
       "path": "RELEASE_CODE_LINEAGE.md",
@@ -759,9 +759,14 @@
       "sha256": "2d601aff9026d2fc8b957675fc63430ab5ef7d9737eea9b726c8e27947a6f681"
     },
     {
+      "path": "docs/release/PRODUCT_FREEZE.md",
+      "bytes": 3033,
+      "sha256": "603c511b4d323684f39b8124331b1d13b956c328ec263412e7f0aea2884c1be2"
+    },
+    {
       "path": "docs/release/PRODUCT_INTEGRATION.md",
-      "bytes": 7764,
-      "sha256": "6cf3b25716d9ac5864a266c162c6b38d9c074b9a3673a25d961c87a1fc17626c"
+      "bytes": 8050,
+      "sha256": "6bf93e013a4665c62f18bc951eca0198cf31b04e4429afe6db516705928c9b06"
     },
     {
       "path": "docs/release/REQUEST.md",
@@ -802,6 +807,11 @@
       "path": "docs/release/product-integration-20261109/latest-validation/provenance.json",
       "bytes": 1098,
       "sha256": "9e677a99397c08e888007e44eab8cc54cc48a3450f6654d77e72203fc5a295a7"
+    },
+    {
+      "path": "docs/release/product-integration-20261109/latest-validation/public-tests.json",
+      "bytes": 710,
+      "sha256": "a4cca02d3b6accfdad9d8a8a50f947b62547bdb56c7006b439327864ff6192d3"
     },
     {
       "path": "docs/release/product-integration-20261109/latest-validation/replay-result.json",

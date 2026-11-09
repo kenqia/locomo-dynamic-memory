@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "passed": 1018,
+  "deselected": 28,
+  "failures": 0,
+  "errors": 0,
+  "warnings": 1,
+  "seconds": 898.74,
+  "python": "3.12.12",
+  "command": "python tools/team_v2/check.py --tb=short --junitxml=var/product-latest-public-tests.xml",
+  "selection": "not live_model and not local_embedding and not controlled_data",
+  "source_product_commit": "0401155aa2c270c48b942e4b410a9f4b390156b3",
+  "main_baseline": "ba349cf7a8b784ff6c739767ee392802055feff5",
+  "runtime_code_commit": "4081ece0afecdc00c37c620140cf984963665ad6",
+  "junit_sha256": "32297e068508d5be3acf82de9fce9ae9878f90ef758bd0682fb74637ca543723",
+  "raw_junit": "local-only var/product-latest-public-tests.xml; not published"
+}

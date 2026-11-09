@@ -8,7 +8,7 @@
 
 xiaozhuozi39 的[最新真人逐项记录](product-integration-20261109/Product-Human-Review-PR39.md)明确绑定 `0401155`，通过项包括来源 1→2→1→2→1、六案例、字段与滚轮、分页/窗口/角色及旧五阶段。[原附件回执](https://github.com/kenqia/locomo-dynamic-memory/pull/39#issuecomment-6734327474)。旧入口命令参数仍有一处待补占位；负责人明确接受当前复核并授权冻结，未将占位误写为完整命令证据。
 
-已独立取得 27 项定向检查通过（包含 main 入口往返），以及六案例 Chromium、历史 Build、来源、无效 ID 恢复、实验完整分母、成本和实际无损下载通过。30 场景布局、11 场景实际滚轮和正常 main 启动器四案例/原五阶段往返均已独立通过，页面脚本错误及真实模型调用均为 0。作者 16 份材料 SHA 全部匹配；最新运行结果与六模块/主线指纹见 [本轮证据](product-integration-20261109/latest-validation/provenance.json)。完整公开回归仍在执行，最终结果补录后收尾。
+已独立取得 27 项定向检查通过（包含 main 入口往返），以及六案例 Chromium、历史 Build、来源、无效 ID 恢复、实验完整分母、成本和实际无损下载通过。30 场景布局、11 场景实际滚轮和正常 main 启动器四案例/原五阶段往返均已独立通过，页面脚本错误及真实模型调用均为 0。作者 16 份材料 SHA 全部匹配；最新运行结果与六模块/主线指纹见 [本轮证据](product-integration-20261109/latest-validation/provenance.json)。本地完整公开回归已通过：1018 passed、28 deselected、1条既有依赖弃用warning，899.01秒；原始JUnit仅本地保留，公开[聚合结果及摘要](product-integration-20261109/latest-validation/public-tests.json)。最终CI以PR41最新提交的检查为准；冻结范围与标签见[Product冻结记录](PRODUCT_FREEZE.md)。
 
 上一候选 `8bc8499` 的 [完整 CI](https://github.com/kenqia/locomo-dynamic-memory/actions/runs/42554239053)成功；上一轮本地 full 只留下中断进度，没有完整结果，不将其记为通过。以下为上一候选的历史核验记录，当前状态以本节及最终结果为准。 最新CI前两次在下载固定Python补丁版时遇504，尚未进入测试；已将CI解释器选择改为runner自带Python 3.12，保留uv锁和所有检查，记录实际补丁版本。原workflow备份于本地var/checks-before-product-ci.yml，回滚可恢复或revert。自动化原始 JSON 中的 human_review pending 是工具模板字段，不推翻独立人工记录；人类验收以绑定0401155的附件为准。
 
