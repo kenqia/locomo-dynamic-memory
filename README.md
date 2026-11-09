@@ -7,9 +7,11 @@
 
 # LoCoMo Dynamic Memory
 
-M5 个人核心与 Product Research Console 整合版。课程截止：2026-11-09 24:00（北京时间）。
+M5 个人核心、Product Research Console 与独立离线 Sidecar 整合版。课程截止：2026-11-09 24:00（北京时间）。
 当前冻结实验与工程验收分开记录，最新状态见 [Release清单](RELEASE_MANIFEST.md)。
 这不是团队最终报告、PPTX、MP4或课程平台提交。
+
+Sidecar 保持默认关闭，仅供离线诊断；入口、已知限制及冻结版本见 [Sidecar 交付说明](docs/release/SIDECAR_FREEZE.md)。
 
 ## 从零开始
 

@@ -1,0 +1,26 @@
+{
+  "source": "cd4db4c055d6d57256858ed3b7136ccea395122d",
+  "main_base": "5519dd299dc561a9edcdfad8813ff7e60334a159",
+  "targeted": {
+    "passed": 183,
+    "warning": 1,
+    "seconds": 5.42
+  },
+  "compare": {
+    "cases": 16,
+    "compared": 15,
+    "contract_rejected": 1,
+    "provider_calls": 0
+  },
+  "compatibility": {
+    "fixtures": 2,
+    "all_passed": true,
+    "external_provider_calls": 0,
+    "real_historical_builds_checked": 0
+  },
+  "review": {
+    "standards_blockers": 0,
+    "spec_blockers": 0
+  },
+  "full_public_suite": "Run on this integration PR by the existing Checks workflow; see final PR closure record."
+}
