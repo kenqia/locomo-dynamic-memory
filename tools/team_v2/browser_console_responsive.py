@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -54,8 +55,8 @@ def main():
             page.screenshot(path=str(args.output / (name + '.png')), animations='disabled')
 
         page.goto(args.url)
-        expect(page.get_by_role('radio', name='Overview', exact=True)).to_be_attached(timeout=60000)
-        responsive = page.locator('.console-brand').count() > 0
+        expect(page.get_by_role('heading', name=re.compile(r'^(Research Console|Overview · 工作概览)$'))).to_be_visible(timeout=60000)
+        responsive = page.get_by_role('heading', name='Overview · 工作概览', exact=True).count() > 0
         for width, height in ((390, 844), (768, 1024), (1024, 900), (1280, 900), (1920, 1080)):
             page.set_viewport_size({'width': width, 'height': height})
             for name in ('Overview', 'Memory', 'Query', 'Experiments', 'Demo'):

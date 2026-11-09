@@ -90,7 +90,7 @@ def main():
         page.goto(args.url)
         page.add_style_tag(content='* { scroll-behavior: auto !important; }')
         expect(page.get_by_role('heading', name=re.compile(r'^(Research Console|Overview · 工作概览)$'))).to_be_visible(timeout=60000)
-        responsive = page.locator('.console-brand').count() > 0
+        responsive = page.get_by_role('heading', name='Overview · 工作概览', exact=True).count() > 0
         expect(page.get_by_test_id('stMetric').filter(has=page.get_by_text('原 Run 计划组合', exact=True))).to_contain_text('3028')
         final_layout = responsive or page.get_by_role('button', name='进入Memory', exact=True).count() > 0
         capture('overview')
