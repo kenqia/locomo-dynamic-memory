@@ -13,14 +13,14 @@ from .imports import canonical_json
 from .model import ModelFailure, utc_now, RESOLUTION_PROMPT, ANSWER_PROMPT, KNOWN_MODEL_VERSION
 from .query_schemas import EffectiveResolution, EvidenceAnswer, RESOLUTION_SCHEMA_VERSION, ANSWER_SCHEMA_VERSION
 from .retrieval import budget_tokens, TOKEN_BUDGET_METHOD
-from .temporal import conversation_cutoff, explicit_question_date
+from .temporal import conversation_cutoff, explicit_question_date, question_interval, QUERY_TIME_SCOPE_VERSION
 from .retry_feedback import VALIDATION_RETRY_FEEDBACK_VERSION
 from .query_payload import QUERY_PAYLOAD_VERSION
 from .resolution_delivery import complete_resolution_input, record_delivery, COMPLETE_INPUT_VERSION
 from .usage import provider_usage
 
-RESOLUTION_PROMPT_VERSION = "effective-resolution-v5-brief-decisions"
-ANSWER_PROMPT_VERSION = "evidence-answer-v8-event-boundaries"
+RESOLUTION_PROMPT_VERSION = "effective-resolution-v6-query-time-scope"
+ANSWER_PROMPT_VERSION = "evidence-answer-v9-query-time-scope"
 QUERY_EXECUTION_VERSION = "dynamic-complete-input-no-implicit-fallback-v2"
 ANSWER_EVIDENCE_BUDGET_VERSION = "unique-source-payload-v2"
 
@@ -46,6 +46,8 @@ class QueryService:
         return json.loads(row[0])
 
     def _save(self, trace):
+        from .evidence_flow import evidence_flow
+        trace['evidence_flow'] = evidence_flow(trace)
         calls = [call for operation in trace["operations"].values() for call in operation.get("calls", [])]
         trace["usage_summary"] = {"calls": len(calls), **provider_usage(calls)}
         with self.database.connect() as db:
@@ -144,6 +146,7 @@ class QueryService:
                  "known_service_version": KNOWN_MODEL_VERSION,
                  "query_fingerprint": hashlib.sha256(canonical_json({"settings": self.settings.snapshot(),
                      "query_execution_version": QUERY_EXECUTION_VERSION,
+                     "query_time_scope_version": QUERY_TIME_SCOPE_VERSION,
                      "answer_evidence_budget_version": ANSWER_EVIDENCE_BUDGET_VERSION,
                      "validation_retry_feedback_version": VALIDATION_RETRY_FEEDBACK_VERSION,
                      "query_payload_version": QUERY_PAYLOAD_VERSION,
@@ -156,9 +159,16 @@ class QueryService:
                 cutoff, cutoff_raw = conversation_cutoff(db, request.dataset_id, request.sample_id)
                 projection = db.execute("SELECT fingerprint FROM current_state_projections WHERE build_id=?", (build_id,)).fetchone()
             requested, origin = self.query_date(request, cutoff)
+            interval = question_interval(request.question) if requested is None else None
+            if interval and origin == 'conversation_cutoff':
+                origin = 'explicit_question_interval'
             trace["time"] = {"requested_date": requested.isoformat() if requested else None, "anchor_date": (requested or cutoff.date()).isoformat(),
                              "origin": origin, "cutoff": cutoff.isoformat(), "cutoff_source_time": cutoff_raw,
                              "beyond_cutoff": bool(requested and requested > cutoff.date())}
+            if interval:
+                trace['time']['query_interval'] = interval
+                if interval['start'] and interval['start'] > cutoff.date().isoformat():
+                    trace['time']['beyond_cutoff'] = True
             trace["projection_fingerprint"] = projection[0]
             tick = time.perf_counter()
             initial = self.retrieval.query(build_id, request.question)

@@ -54,6 +54,9 @@ class MemoryDraft(BaseModel):
             raise ValueError("Duplicate source reference")
         context = info.context or {}
         sources = context.get("sources")
+        targets = context.get('target_source_ids')
+        if targets is not None and not set(self.source_ids).intersection(targets):
+            raise ValueError('Memory must cite at least one extraction target source')
         if sources is not None:
             if any(source_id not in sources for source_id in self.source_ids):
                 raise ValueError("Unknown source or source from another conversation/fragment")
@@ -89,6 +92,7 @@ class Memory(MemoryDraft):
 
 
 class BuildRequest(BaseModel):
+    context_turns: int = Field(default=0, ge=0, le=3, strict=True)
     creation_token: StrictStr | None = Field(default=None, min_length=32, max_length=64)
     model_config = ConfigDict(extra="forbid")
     dataset_id: StrictStr = Field(min_length=1)

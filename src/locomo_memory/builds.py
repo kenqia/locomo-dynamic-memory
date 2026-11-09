@@ -14,6 +14,7 @@ from . import model as model_contract, projection as projection_contract, relati
 from .model import KNOWN_MODEL_VERSION, ModelFailure, utc_now
 from .relation_schemas import RelationBatch
 from .relation_selection import SELECTION_VERSION
+from .extraction_window import WINDOW_VERSION, WINDOW_GUIDANCE, extraction_sources
 
 
 class BuildError(Exception):
@@ -62,7 +63,7 @@ class BuildService:
                 CREATE UNIQUE INDEX IF NOT EXISTS unique_build_creation_token ON build_versions(json_extract(model_metadata_json,'$.creation_token')) WHERE json_extract(model_metadata_json,'$.creation_token') IS NOT NULL;
             """)
 
-    def fingerprint(self, source_sha256: str, sample_id: str) -> str:
+    def fingerprint(self, source_sha256: str, sample_id: str, *, context_turns: int = 0) -> str:
         """Use the same producer contract for new builds and recovery checks."""
         contract = {
             "source": source_sha256, "sample_id": sample_id, "settings": self.settings.snapshot(),
@@ -77,12 +78,16 @@ class BuildService:
             "relation_selection_version": SELECTION_VERSION,
             "projection_version": projection_contract.PROJECTION_VERSION,
         }
+        if context_turns:
+            contract['extraction_window'] = dict(version=WINDOW_VERSION, context_turns=context_turns,
+                                                  guidance=WINDOW_GUIDANCE)
         return hashlib.sha256(canonical_json(contract).encode()).hexdigest()
 
     def require_current_contract(self, build: dict):
         if build["config"] != self.settings.snapshot():
             raise BuildError("build_configuration_changed")
-        if build["fingerprint"] != self.fingerprint(build["source_sha256"], build["sample_id"]):
+        context_turns = build['model_metadata'].get('extraction_window', {}).get('context_turns', 0)
+        if build["fingerprint"] != self.fingerprint(build["source_sha256"], build["sample_id"], context_turns=context_turns):
             raise BuildError("build_contract_changed")
 
     def recover_interrupted(self):
@@ -91,7 +96,9 @@ class BuildService:
             db.execute("UPDATE build_fragments SET status='interrupted', error_code='interrupted', error_message='Backend stopped before this fragment completed' WHERE status='running'")
             db.execute("UPDATE build_versions SET status='interrupted', updated_at=? WHERE status IN ('queued', 'running')", (utc_now(),))
 
-    def start(self, dataset_id: str, sample_id: str, creation_token: str | None = None) -> dict:
+    def start(self, dataset_id: str, sample_id: str, creation_token: str | None = None, *, context_turns: int = 0) -> dict:
+        if type(context_turns) is not int or not 0 <= context_turns <= 3:
+            raise BuildError('invalid_context_turns', 422)
         build_id = uuid.uuid4().hex
         now = utc_now()
         with self.database.connect() as db:
@@ -100,10 +107,12 @@ class BuildService:
             if dataset is None or not turns:
                 raise BuildError("not_found", 404)
             snapshot = self.settings.snapshot()
-            fingerprint = self.fingerprint(dataset["source_sha256"], sample_id)
+            fingerprint = self.fingerprint(dataset["source_sha256"], sample_id, context_turns=context_turns)
             metadata = {"requested_model": self.settings.model_name, "known_service_version": KNOWN_MODEL_VERSION, "run_date": now[:10], "returned_models": [], "calls": [], "artifact_versions": {"relation_prompt_version": model_contract.RELATION_PROMPT_VERSION, "relation_schema_version": relation_contract.RELATION_SCHEMA_VERSION, "projection_version": projection_contract.PROJECTION_VERSION}}
             if creation_token is not None:
                 metadata["creation_token"] = creation_token
+            if context_turns:
+                metadata['extraction_window'] = dict(version=WINDOW_VERSION, context_turns=context_turns)
             try:
                 db.execute("INSERT INTO build_versions VALUES (?, ?, ?, 'queued', 'extraction', ?, ?, ?, ?, ?, ?, ?, ?)",
                            (build_id, dataset_id, sample_id, fingerprint, dataset["source_sha256"], canonical_json(snapshot), model_contract.EXTRACTION_PROMPT_VERSION, model_contract.MEMORY_SCHEMA_VERSION, canonical_json(metadata), now, now))
@@ -162,9 +171,21 @@ class BuildService:
             sources = {source_id: dict(db.execute("SELECT * FROM source_turns WHERE source_id=?", (source_id,)).fetchone()) for source_id in source_ids}
         build = self.get(build_id)
         try:
-            generated = self.model.generate("extract", {"sample_id": build["sample_id"], "sources": list(sources.values())}, ExtractionBatch, context={"sources": sources})
+            payload = {"sample_id": build["sample_id"], "sources": list(sources.values())}
+            context = {'sources': sources}
+            radius = build['model_metadata'].get('extraction_window', {}).get('context_turns', 0)
+            if radius:
+                with self.database.connect() as db:
+                    turns = [dict(row) for row in db.execute(
+                        'SELECT * FROM source_turns WHERE dataset_id=? AND sample_id=? ORDER BY position',
+                        (build['dataset_id'], build['sample_id']))]
+                sources = {s['source_id']: s for s in extraction_sources(turns, set(source_ids), radius)}
+                payload.update(sources=list(sources.values()), target_source_ids=source_ids,
+                               extraction_window_version=WINDOW_VERSION)
+                context = dict(sources=sources, target_source_ids=source_ids)
+            generated = self.model.generate("extract", payload, ExtractionBatch, context=context)
             # Injected adapters are also untrusted at the business boundary.
-            batch = ExtractionBatch.model_validate(generated.value.model_dump(mode="json"), context={"sources": sources})
+            batch = ExtractionBatch.model_validate(generated.value.model_dump(mode="json"), context=context)
             with self.database.connect() as db:
                 for index, draft in enumerate(batch.memories):
                     memory_id = hashlib.sha256(f"{fragment['fragment_id']}:{index}".encode()).hexdigest()[:24]

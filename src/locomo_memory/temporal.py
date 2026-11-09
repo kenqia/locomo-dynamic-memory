@@ -1,5 +1,6 @@
 """Parse original session timestamps without substituting the host clock."""
 
+from calendar import monthrange
 from datetime import datetime, timedelta
 import re
 
@@ -45,6 +46,8 @@ def explicit_question_date(question):
     ]
     for pattern, formats in patterns:
         for match in re.finditer(pattern, question):
+            if re.search(r'\b(before|after|since|until|between|from|by)\s*$', question[:match.start()], re.I):
+                return None
             for format in formats:
                 try:
                     matches.append(datetime.strptime(match.group().replace(",", ""), format).date())
@@ -53,6 +56,44 @@ def explicit_question_date(question):
                     continue
     unique = set(matches)
     return matches[0] if len(unique) == 1 else None
+
+
+QUERY_TIME_SCOPE_VERSION = 'explicit-month-and-date-operators-v1'
+
+
+def question_interval(question):
+    """Recognize a single named month or one date with an open-range operator.
+
+    Unsupported or competing dates remain in the question; no endpoint is guessed.
+    Bounds describe world time and never filter a source's reporting timestamp.
+    """
+    operator = re.search(r'\b(before|after|since|until|by)\s+(.+)', question, re.I)
+    if operator:
+        # Remove only this operator so the exact-date parser still rejects other ranges.
+        point = explicit_question_date(operator[2])
+        if point is not None:
+            lower = operator[1].lower() in {'after', 'since'}
+            inclusive = operator[1].lower() in {'since', 'until', 'by'}
+            return dict(start=point.isoformat() if lower else None,
+                        end=None if lower else point.isoformat(), precision='day',
+                        start_inclusive=inclusive if lower else None,
+                        end_inclusive=None if lower else inclusive)
+        return None
+    months = {**MONTHS, **{name[:3]: number for name, number in MONTHS.items()}}
+    pattern = r'\b(' + '|'.join(months) + r')\s+(\d{4})\b'
+    matches = list(re.finditer(pattern, question, re.I))
+    if len(matches) != 1 or explicit_question_date(question) is not None:
+        return None
+    # Reject mixed dates/ranges rather than treating one mentioned month as the whole scope.
+    remainder = question[:matches[0].start()] + question[matches[0].end():]
+    if re.search(r'\b\d{4}\b|\b(before|after|since|until|between|from|by)\b', remainder, re.I):
+        return None
+    month, year = months[matches[0][1].lower()], int(matches[0][2])
+    if not 1 <= year <= 9999:
+        return None
+    return dict(start=f'{year:04d}-{month:02d}-01',
+                end=f'{year:04d}-{month:02d}-{monthrange(year, month)[1]:02d}',
+                precision='month', start_inclusive=True, end_inclusive=True)
 
 
 RELATIVE_TIME_GUIDANCE = """Resolve relative time against the cited source session time,
@@ -66,6 +107,11 @@ QUERY_TIME_GUIDANCE = """Anchor relative time to the cited source session_time, 
 SourceTurn text and original_expression outrank derived time.basis and relation time descriptions.
 "this week" is the week containing that source date, never the previous week.
 Keep ranges and unknown precision; never invent a day.
+query_interval, when supplied, describes the requested range, not one exact date.
+Report time (session_time) differs from event time and a state's valid interval.
+A later report can establish an earlier event or state. Do not reject it merely
+because it was reported after the requested date. If the question instead asks what
+was known/reported by a date, distinguish that knowledge cutoff explicitly.
 Synthetic example: a 2024-04-10 source saying "this week" means 2024-04-08 through 2024-04-14.
 """
 

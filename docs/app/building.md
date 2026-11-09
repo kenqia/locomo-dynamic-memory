@@ -1,5 +1,15 @@
 # 构建与检查原子 Memory
 
+2026-11-09：新 Build 可显式设置 `POST /builds` 的 `context_turns`（整数 0–3，默认 0）。
+例如 `{"dataset_id":"…","sample_id":"conv-a","context_turns":1}` 为固定片段的目标轮次补入同会话前后各一轮。
+窗口不跨会话；`target_source_ids` 保留原片段目标，每条 Memory 必须引用至少一个目标轮次，也可引用上下文以支持指代和时间锚点。
+只引用上下文的结果整批拒绝；目标引用存在仍不证明该事实语义受支持，模型不得把无关目标引用当作许可标记。
+这只是边界上下文交付与引用约束，不保证正确消解代词或完全去重。
+
+该选项保存在 Build 的 `model_metadata.extraction_window` 中并参与构建指纹和重试检查，不修改全局配置、默认 Prompt 或既有 Build。
+省略参数或设置为 0 恢复原片段输入；已建立的非零窗口 Build 重试时继续使用原窗口。冻结 Build 不自动迁移或重建。
+验证命令：`uv run --locked pytest tests/test_extraction_window.py tests/test_contract_recovery.py -q`。
+
 你可以从已导入的原始对话抽取 Memory，检查每条陈述及其来源，并显式重试失败片段。抽取结束的版本标记为 `extracted`，`query_ready=false`；它还没有完成索引、关系与完整版本发布。[候选检查指南](retrieval.md) 说明显式索引阶段，成功后标记为 `indexed`，仍不能当作完整版本回答。[历史状态指南](relations.md) 说明后续关系、投影和显式发布流程。
 
 ## 分阶段思考配置

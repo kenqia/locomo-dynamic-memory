@@ -21,7 +21,7 @@ from .model import ANSWER_PROMPT, QUERY_ANALYSIS_PROMPT, RESOLUTION_PROMPT, KNOW
 from .queries import QueryFailure, explicit_question_date
 from .query_schemas import EvidenceAnswer, EffectiveResolution, QueryRequest
 from .retrieval import TOKEN_BUDGET_METHOD, budget_tokens, indexing_text
-from .temporal import conversation_cutoff
+from .temporal import conversation_cutoff, question_interval
 
 Strategy = Literal['dynamic', 'dynamic_raw_fallback', 'full_text', 'vector', 'hybrid_no_resolution']
 
@@ -184,6 +184,11 @@ class EvaluationService:
             cutoff, raw = conversation_cutoff(db, request.dataset_id, request.sample_id)
         requested = request.requested_date or explicit_question_date(request.question)
         condition = {'requested_date': requested.isoformat() if requested else None, 'anchor_date': (requested or cutoff.date()).isoformat(), 'cutoff': cutoff.isoformat(), 'cutoff_source_time': raw, 'beyond_cutoff': bool(requested and requested > cutoff.date())}
+        interval = question_interval(request.question) if requested is None else None
+        if interval:
+            condition['query_interval'] = interval
+            condition['beyond_cutoff'] = bool(interval['start'] and interval['start'] > cutoff.date().isoformat())
+        trace['time'] = condition
         if strategy == 'full_text':
             # Keep the complete intended input even when the provider rejects it.
             trace['initial_source_ids'] = [s['source_id'] for s in sources]
