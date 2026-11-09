@@ -1,0 +1,3880 @@
+{
+  "comparison_version": "sidecar-research-v0.3",
+  "rule_version": "deterministic-sidecar-v0.2",
+  "mode": "SYNTHETIC_DIAGNOSTIC_ONLY",
+  "provider_calls": 0,
+  "production_query_hook": false,
+  "quality_claim": "none; supplied-fields control is not production QA or a real model baseline",
+  "input_sha256_before": "429b0e0d95f18fbfbaac7b5fcbc83ef8ef740ce521d8f04ab4b2d073daaa140a",
+  "input_sha256_after": "429b0e0d95f18fbfbaac7b5fcbc83ef8ef740ce521d8f04ab4b2d073daaa140a",
+  "input_unchanged": true,
+  "environment": {
+    "os": "Linux",
+    "python": "3.12.14",
+    "machine": "x86_64"
+  },
+  "measurement": {
+    "repeats_per_valid_case": 20,
+    "warmup_per_variant": 1,
+    "ordering": "alternating per case and repetition",
+    "wall_clock": "perf_counter_ns",
+    "cpu_clock": "process_time_ns",
+    "scope": "variant function only, validation/I-O/hash/serialization outside measurement",
+    "caveat": "Local warm microbenchmark; not network latency, QA quality, billing or statistically significant evidence."
+  },
+  "summary": {
+    "cases": 16,
+    "compared": 15,
+    "contract_rejected": 1,
+    "response_unchanged_all": true,
+    "references_valid_all": true,
+    "measured_samples_per_variant": 300,
+    "control_cpu_ns": 5179218,
+    "control_wall_ns": 4977376,
+    "sidecar_cpu_ns": 64300135,
+    "sidecar_wall_ns": 64008610,
+    "mean_extra_wall_ns": 196770.78,
+    "mean_extra_cpu_ns": 197069.72333333333
+  },
+  "cases": [
+    {
+      "case_id": "ARCH01-01",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I attended the Berlin conference on May 1."
+          },
+          {
+            "source_id": "src-2",
+            "session_id": "session-1",
+            "turn_id": "D1:2",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "That same Berlin conference on May 1 had a keynote."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "Attended the Berlin conference.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          },
+          {
+            "memory_id": "mem-2",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "The same conference had a keynote.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-2"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I attended the Berlin conference on May 1."
+              },
+              {
+                "source_id": "src-2",
+                "session_id": "session-1",
+                "turn_id": "D1:2",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "That same Berlin conference on May 1 had a keynote."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "Attended the Berlin conference.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              },
+              {
+                "memory_id": "mem-2",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "The same conference had a keynote.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-2"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": [
+            {
+              "left_memory_id": "mem-1",
+              "right_memory_id": "mem-2",
+              "decision": "same_event",
+              "reason_code": "explicit_same_dated_event",
+              "reason": "Explicit same-event reference with matching named conference and date.",
+              "source_ids": [
+                "src-1",
+                "src-2"
+              ]
+            }
+          ]
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2026-05-01",
+              "end": "2026-05-01",
+              "original_expression": "May 1",
+              "anchor_source_id": "src-1",
+              "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "supported",
+            "warnings": []
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2026-05-01",
+              "end": "2026-05-01",
+              "original_expression": "May 1",
+              "anchor_source_id": "src-2",
+              "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "c3ce82497b6e0ef1e68376ef4e38e67a236366f1b1f6940e1a172f27521b52ef",
+        "response_sha256_after": "c3ce82497b6e0ef1e68376ef4e38e67a236366f1b1f6940e1a172f27521b52ef",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 8205.5,
+            "min_ns": 6120,
+            "max_ns": 75317
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 8806.0,
+            "min_ns": 6593,
+            "max_ns": 76799
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 207017.0,
+            "min_ns": 193776,
+            "max_ns": 333928
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 207705.0,
+            "min_ns": 194381,
+            "max_ns": 336323
+          }
+        }
+      },
+      "extra_median_wall_ns": 198811.5,
+      "extra_median_cpu_ns": 198899.0
+    },
+    {
+      "case_id": "ARCH01-02",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I visited Rome on May 1."
+          },
+          {
+            "source_id": "src-2",
+            "session_id": "session-1",
+            "turn_id": "D1:2",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I visited Rome again on May 8, a second trip."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "Visited Rome May 1.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          },
+          {
+            "memory_id": "mem-2",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "Visited Rome May 8 on a second trip.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-2"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I visited Rome on May 1."
+              },
+              {
+                "source_id": "src-2",
+                "session_id": "session-1",
+                "turn_id": "D1:2",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I visited Rome again on May 8, a second trip."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "Visited Rome May 1.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              },
+              {
+                "memory_id": "mem-2",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "Visited Rome May 8 on a second trip.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-2"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": [
+            {
+              "left_memory_id": "mem-1",
+              "right_memory_id": "mem-2",
+              "decision": "different_event",
+              "reason_code": "explicit_repeat_occurrence",
+              "reason": "Explicit second trip with a separate date, not merely the same topic.",
+              "source_ids": [
+                "src-1",
+                "src-2"
+              ]
+            }
+          ]
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2026-05-01",
+              "end": "2026-05-01",
+              "original_expression": "May 1",
+              "anchor_source_id": "src-1",
+              "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2026-05-08",
+              "end": "2026-05-08",
+              "original_expression": "May 8",
+              "anchor_source_id": "src-2",
+              "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "f092f6cd6ba55a16780f58921e0cafc36c421c6f38c27007b4e59e3e04b65727",
+        "response_sha256_after": "f092f6cd6ba55a16780f58921e0cafc36c421c6f38c27007b4e59e3e04b65727",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 10693.5,
+            "min_ns": 6334,
+            "max_ns": 218414
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 11370.5,
+            "min_ns": 6829,
+            "max_ns": 219806
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 353306.5,
+            "min_ns": 179625,
+            "max_ns": 3478036
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 355313.5,
+            "min_ns": 180258,
+            "max_ns": 3480614
+          }
+        }
+      },
+      "extra_median_wall_ns": 342613.0,
+      "extra_median_cpu_ns": 343943.0
+    },
+    {
+      "case_id": "ARCH01-03",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "On May 1, 2025 I graduated."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "Alex graduated.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "On May 1, 2025 I graduated."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "Alex graduated.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": []
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2025-05-01",
+              "end": "2025-05-01",
+              "original_expression": "May 1, 2025",
+              "anchor_source_id": "src-1",
+              "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "187b00ad1b95eb26182ea1fc46eaca1f2a5c03b123dcc2377ab35a7d15e0d6ef",
+        "response_sha256_after": "187b00ad1b95eb26182ea1fc46eaca1f2a5c03b123dcc2377ab35a7d15e0d6ef",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 5897.5,
+            "min_ns": 4080,
+            "max_ns": 224481
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 6484.0,
+            "min_ns": 4505,
+            "max_ns": 226205
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 101377.5,
+            "min_ns": 52299,
+            "max_ns": 1449930
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 102512.0,
+            "min_ns": 52788,
+            "max_ns": 1452966
+          }
+        }
+      },
+      "extra_median_wall_ns": 95480.0,
+      "extra_median_cpu_ns": 96028.0
+    },
+    {
+      "case_id": "ARCH01-04",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I arrived yesterday."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "Alex arrived.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I arrived yesterday."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "Alex arrived.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": []
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2026-05-09",
+              "end": "2026-05-09",
+              "original_expression": "yesterday",
+              "anchor_source_id": "src-1",
+              "basis": "Yesterday anchored to source report calendar day, not query or host time."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "3c9746a94168ff1b637288679cdfd0e9cf19d5156ce85c1dbd2e84ecb336fa74",
+        "response_sha256_after": "3c9746a94168ff1b637288679cdfd0e9cf19d5156ce85c1dbd2e84ecb336fa74",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 5350.5,
+            "min_ns": 3962,
+            "max_ns": 75257
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 5946.5,
+            "min_ns": 4449,
+            "max_ns": 76279
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 69531.0,
+            "min_ns": 47617,
+            "max_ns": 561912
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 70426.5,
+            "min_ns": 48199,
+            "max_ns": 522295
+          }
+        }
+      },
+      "extra_median_wall_ns": 64180.5,
+      "extra_median_cpu_ns": 64480.0
+    },
+    {
+      "case_id": "ARCH01-05",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I travelled recently."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "Alex travelled recently.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I travelled recently."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "Alex travelled recently.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": []
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": "recently",
+              "anchor_source_id": "src-1",
+              "basis": "Unsupported or ambiguous expression; exact dates remain unknown."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "e3e2ac5bec62875cb3ad0bc5b02554263e9f0be9fd578424ec072dcf33b40d90",
+        "response_sha256_after": "e3e2ac5bec62875cb3ad0bc5b02554263e9f0be9fd578424ec072dcf33b40d90",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 4762.0,
+            "min_ns": 3762,
+            "max_ns": 13785
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 5300.0,
+            "min_ns": 4207,
+            "max_ns": 15622
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 61841.5,
+            "min_ns": 50467,
+            "max_ns": 304105
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 62412.5,
+            "min_ns": 51032,
+            "max_ns": 305744
+          }
+        }
+      },
+      "extra_median_wall_ns": 57079.5,
+      "extra_median_cpu_ns": 57112.5
+    },
+    {
+      "case_id": "ARCH01-06",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I visited Rome in April 2026."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "Alex visited Rome.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I visited Rome in April 2026."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "Alex visited Rome.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": []
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "range",
+              "start": "2026-04-01",
+              "end": "2026-04-30",
+              "original_expression": "April 2026",
+              "anchor_source_id": "src-1",
+              "basis": "Explicit month preserved as calendar range; no exact day asserted."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "08558091e05e89ced67fe8b9cc36ae383c1d338f6acef318e1216fb47b96844d",
+        "response_sha256_after": "08558091e05e89ced67fe8b9cc36ae383c1d338f6acef318e1216fb47b96844d",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 4872.5,
+            "min_ns": 3793,
+            "max_ns": 17099
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 5391.0,
+            "min_ns": 4227,
+            "max_ns": 19995
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 56637.0,
+            "min_ns": 50676,
+            "max_ns": 156468
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 57367.5,
+            "min_ns": 51244,
+            "max_ns": 157431
+          }
+        }
+      },
+      "extra_median_wall_ns": 51764.5,
+      "extra_median_cpu_ns": 51976.5
+    },
+    {
+      "case_id": "ARCH01-07",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I plan to move to Rome next month."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "residence",
+            "state_value": "Rome",
+            "content": "Alex plans to move to Rome.",
+            "memory_type": "event",
+            "statement_type": "plan",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "plan",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I plan to move to Rome next month."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "residence",
+                "state_value": "Rome",
+                "content": "Alex plans to move to Rome.",
+                "memory_type": "event",
+                "statement_type": "plan",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": []
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": "next month",
+              "anchor_source_id": "src-1",
+              "basis": "Unsupported or ambiguous expression; exact dates remain unknown."
+            },
+            "statement_type": "plan",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": [
+              "plan_intention_or_uncertain_is_not_completed_fact"
+            ]
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "1f54127a98f2e6fc9344bfded1e0ed9c88811cd742bf6518b7accecda15fb4e0",
+        "response_sha256_after": "1f54127a98f2e6fc9344bfded1e0ed9c88811cd742bf6518b7accecda15fb4e0",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 4879.5,
+            "min_ns": 3827,
+            "max_ns": 8821
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 5469.0,
+            "min_ns": 4361,
+            "max_ns": 9860
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 53077.0,
+            "min_ns": 49248,
+            "max_ns": 131501
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 53627.0,
+            "min_ns": 49830,
+            "max_ns": 132906
+          }
+        }
+      },
+      "extra_median_wall_ns": 48197.5,
+      "extra_median_cpu_ns": 48158.0
+    },
+    {
+      "case_id": "ARCH01-08",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I completed my move to Rome on May 1, 2026."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "residence",
+            "state_value": "Rome",
+            "content": "Alex completed the move to Rome.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I completed my move to Rome on May 1, 2026."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "residence",
+                "state_value": "Rome",
+                "content": "Alex completed the move to Rome.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": []
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2026-05-01",
+              "end": "2026-05-01",
+              "original_expression": "May 1, 2026",
+              "anchor_source_id": "src-1",
+              "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "supported",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "74b6cc1278552cdcb9284bef7ae067f8681ef322dcb5bdb451a7deb9510d9963",
+        "response_sha256_after": "74b6cc1278552cdcb9284bef7ae067f8681ef322dcb5bdb451a7deb9510d9963",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 5008.5,
+            "min_ns": 3747,
+            "max_ns": 8066
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 5514.0,
+            "min_ns": 4350,
+            "max_ns": 8806
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 65995.5,
+            "min_ns": 56644,
+            "max_ns": 254868
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 66512.0,
+            "min_ns": 57182,
+            "max_ns": 256239
+          }
+        }
+      },
+      "extra_median_wall_ns": 60987.0,
+      "extra_median_cpu_ns": 60998.0
+    },
+    {
+      "case_id": "ARCH01-09",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I did not attend the Berlin conference."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "Alex did not attend the Berlin conference.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "negative",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "negative",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I did not attend the Berlin conference."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "Alex did not attend the Berlin conference.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "negative",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": []
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": "No unique supported time expression; existing derived dates not trusted as source proof."
+            },
+            "statement_type": "fact",
+            "polarity": "negative",
+            "completed": "unknown",
+            "attended": "denied",
+            "warnings": []
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "862cc17c088d3137cb080366445d8bd29bf6515a52f3fdd5e7af4bd2ba3057f8",
+        "response_sha256_after": "862cc17c088d3137cb080366445d8bd29bf6515a52f3fdd5e7af4bd2ba3057f8",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 5408.5,
+            "min_ns": 3795,
+            "max_ns": 25260
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 5906.5,
+            "min_ns": 4229,
+            "max_ns": 26985
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 47107.5,
+            "min_ns": 38567,
+            "max_ns": 219534
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 47669.5,
+            "min_ns": 39049,
+            "max_ns": 222969
+          }
+        }
+      },
+      "extra_median_wall_ns": 41699.0,
+      "extra_median_cpu_ns": 41763.0
+    },
+    {
+      "case_id": "ARCH01-10",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I applied to adopt a child."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "adoption",
+            "state_value": null,
+            "content": "Alex applied to adopt a child.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I applied to adopt a child."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "adoption",
+                "state_value": null,
+                "content": "Alex applied to adopt a child.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": []
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": "No unique supported time expression; existing derived dates not trusted as source proof."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "f8eb0587838902866e8ba7f94b63693373fdb92a03b7236e42ce373f1d5269ce",
+        "response_sha256_after": "f8eb0587838902866e8ba7f94b63693373fdb92a03b7236e42ce373f1d5269ce",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 5210.5,
+            "min_ns": 3886,
+            "max_ns": 966236
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 5728.5,
+            "min_ns": 4332,
+            "max_ns": 970520
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 60091.5,
+            "min_ns": 50188,
+            "max_ns": 2540401
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 60697.0,
+            "min_ns": 50689,
+            "max_ns": 2544007
+          }
+        }
+      },
+      "extra_median_wall_ns": 54881.0,
+      "extra_median_cpu_ns": 54968.5
+    },
+    {
+      "case_id": "ARCH01-11",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-01-01T09:00:00Z",
+            "text": "I live in Paris on January 1, 2026."
+          },
+          {
+            "source_id": "src-2",
+            "session_id": "session-1",
+            "turn_id": "D1:2",
+            "speaker": "Alex",
+            "reported_at": "2026-04-01T09:00:00Z",
+            "text": "I moved from Paris to Rome on March 1, 2026."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "residence",
+            "state_value": "Paris",
+            "content": "Alex lives in Paris.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          },
+          {
+            "memory_id": "mem-2",
+            "entity_id": "Alex",
+            "state_dimension": "residence",
+            "state_value": "Rome",
+            "content": "Alex moved from Paris to Rome.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-2"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": "Where does Alex live?",
+        "as_of": "2026-04-01"
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-01-01T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-04-01T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-01-01T09:00:00Z",
+                "text": "I live in Paris on January 1, 2026."
+              },
+              {
+                "source_id": "src-2",
+                "session_id": "session-1",
+                "turn_id": "D1:2",
+                "speaker": "Alex",
+                "reported_at": "2026-04-01T09:00:00Z",
+                "text": "I moved from Paris to Rome on March 1, 2026."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "residence",
+                "state_value": "Paris",
+                "content": "Alex lives in Paris.",
+                "memory_type": "state",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              },
+              {
+                "memory_id": "mem-2",
+                "entity_id": "Alex",
+                "state_dimension": "residence",
+                "state_value": "Rome",
+                "content": "Alex moved from Paris to Rome.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-2"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": "Where does Alex live?",
+            "as_of": "2026-04-01"
+          },
+          "event_links": [
+            {
+              "left_memory_id": "mem-1",
+              "right_memory_id": "mem-2",
+              "decision": "unknown",
+              "reason_code": "not_two_event_claims",
+              "reason": "State similarity is not proof of a shared event.",
+              "source_ids": [
+                "src-1",
+                "src-2"
+              ]
+            }
+          ]
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-01-01T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2026-01-01",
+              "end": "2026-01-01",
+              "original_expression": "January 1, 2026",
+              "anchor_source_id": "src-1",
+              "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-04-01T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2026-03-01",
+              "end": "2026-03-01",
+              "original_expression": "March 1, 2026",
+              "anchor_source_id": "src-2",
+              "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "supported",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": {
+          "evidence_status": "sufficient",
+          "reason": "Residence follows explicit dated assertions and matched move chain.",
+          "as_of": "2026-04-01",
+          "cutoff": "2026-04-01",
+          "answer": "Rome",
+          "memory_ids": [
+            "mem-2"
+          ],
+          "source_ids": [
+            "src-2"
+          ],
+          "assumptions": [
+            "Carry last supported residence until next supplied transition, within known report cutoff; diagnostic assumption, not proof of unreported real-world continuity."
+          ]
+        },
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "f0baa5f88d78e6d66b9e57f6979997f3246327ab30742bcc425948196eb7d4a0",
+        "response_sha256_after": "f0baa5f88d78e6d66b9e57f6979997f3246327ab30742bcc425948196eb7d4a0",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 9203.0,
+            "min_ns": 6802,
+            "max_ns": 18168
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 9802.0,
+            "min_ns": 7312,
+            "max_ns": 20180
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 215293.5,
+            "min_ns": 178802,
+            "max_ns": 441492
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 216130.5,
+            "min_ns": 179423,
+            "max_ns": 443644
+          }
+        }
+      },
+      "extra_median_wall_ns": 206090.5,
+      "extra_median_cpu_ns": 206328.5
+    },
+    {
+      "case_id": "ARCH01-12",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-01-01T09:00:00Z",
+            "text": "I live in Paris on January 1, 2026."
+          },
+          {
+            "source_id": "src-2",
+            "session_id": "session-1",
+            "turn_id": "D1:2",
+            "speaker": "Alex",
+            "reported_at": "2026-04-01T09:00:00Z",
+            "text": "I moved from Paris to Rome on March 1, 2026."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "residence",
+            "state_value": "Paris",
+            "content": "Alex lives in Paris.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          },
+          {
+            "memory_id": "mem-2",
+            "entity_id": "Alex",
+            "state_dimension": "residence",
+            "state_value": "Rome",
+            "content": "Alex moved from Paris to Rome.",
+            "memory_type": "event",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-2"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": "Where did Alex live on February 1, 2026?",
+        "as_of": "2026-02-01"
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-01-01T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-04-01T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-01-01T09:00:00Z",
+                "text": "I live in Paris on January 1, 2026."
+              },
+              {
+                "source_id": "src-2",
+                "session_id": "session-1",
+                "turn_id": "D1:2",
+                "speaker": "Alex",
+                "reported_at": "2026-04-01T09:00:00Z",
+                "text": "I moved from Paris to Rome on March 1, 2026."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "residence",
+                "state_value": "Paris",
+                "content": "Alex lives in Paris.",
+                "memory_type": "state",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              },
+              {
+                "memory_id": "mem-2",
+                "entity_id": "Alex",
+                "state_dimension": "residence",
+                "state_value": "Rome",
+                "content": "Alex moved from Paris to Rome.",
+                "memory_type": "event",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-2"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": "Where did Alex live on February 1, 2026?",
+            "as_of": "2026-02-01"
+          },
+          "event_links": [
+            {
+              "left_memory_id": "mem-1",
+              "right_memory_id": "mem-2",
+              "decision": "unknown",
+              "reason_code": "not_two_event_claims",
+              "reason": "State similarity is not proof of a shared event.",
+              "source_ids": [
+                "src-1",
+                "src-2"
+              ]
+            }
+          ]
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-01-01T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2026-01-01",
+              "end": "2026-01-01",
+              "original_expression": "January 1, 2026",
+              "anchor_source_id": "src-1",
+              "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-04-01T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "known",
+              "start": "2026-03-01",
+              "end": "2026-03-01",
+              "original_expression": "March 1, 2026",
+              "anchor_source_id": "src-2",
+              "basis": "Explicit date; omitted year, if any, interpreted within source report year."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "supported",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": {
+          "evidence_status": "sufficient",
+          "reason": "Residence follows explicit dated assertions and matched move chain.",
+          "as_of": "2026-02-01",
+          "cutoff": "2026-04-01",
+          "answer": "Paris",
+          "memory_ids": [
+            "mem-1"
+          ],
+          "source_ids": [
+            "src-1"
+          ],
+          "assumptions": [
+            "Carry last supported residence until next supplied transition, within known report cutoff; diagnostic assumption, not proof of unreported real-world continuity."
+          ]
+        },
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "f8d1301753a79ac280ebeaa41d21d56cbfa10ce2c958da493415d671ffd5c404",
+        "response_sha256_after": "f8d1301753a79ac280ebeaa41d21d56cbfa10ce2c958da493415d671ffd5c404",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 8580.0,
+            "min_ns": 6829,
+            "max_ns": 46417
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 9096.0,
+            "min_ns": 7296,
+            "max_ns": 47218
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 213257.0,
+            "min_ns": 175476,
+            "max_ns": 1211389
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 213881.0,
+            "min_ns": 176086,
+            "max_ns": 1214639
+          }
+        }
+      },
+      "extra_median_wall_ns": 204677.0,
+      "extra_median_cpu_ns": 204785.0
+    },
+    {
+      "case_id": "ARCH01-13",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "My birth year is 1990."
+          },
+          {
+            "source_id": "src-2",
+            "session_id": "session-1",
+            "turn_id": "D1:2",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "My birth year is 1992. These reports conflict and remain unresolved."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "birth_year",
+            "state_value": "1990",
+            "content": "Alex birth year is 1990.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          },
+          {
+            "memory_id": "mem-2",
+            "entity_id": "Alex",
+            "state_dimension": "birth_year",
+            "state_value": "1992",
+            "content": "Alex birth year is 1992.",
+            "memory_type": "state",
+            "statement_type": "fact",
+            "polarity": "positive",
+            "source_ids": [
+              "src-2"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": "What is Alex birth year?",
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "My birth year is 1990."
+              },
+              {
+                "source_id": "src-2",
+                "session_id": "session-1",
+                "turn_id": "D1:2",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "My birth year is 1992. These reports conflict and remain unresolved."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "birth_year",
+                "state_value": "1990",
+                "content": "Alex birth year is 1990.",
+                "memory_type": "state",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              },
+              {
+                "memory_id": "mem-2",
+                "entity_id": "Alex",
+                "state_dimension": "birth_year",
+                "state_value": "1992",
+                "content": "Alex birth year is 1992.",
+                "memory_type": "state",
+                "statement_type": "fact",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-2"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": "What is Alex birth year?",
+            "as_of": null
+          },
+          "event_links": [
+            {
+              "left_memory_id": "mem-1",
+              "right_memory_id": "mem-2",
+              "decision": "unknown",
+              "reason_code": "not_two_event_claims",
+              "reason": "State similarity is not proof of a shared event.",
+              "source_ids": [
+                "src-1",
+                "src-2"
+              ]
+            }
+          ]
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": "No unique supported time expression; existing derived dates not trusted as source proof."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": "No unique supported time expression; existing derived dates not trusted as source proof."
+            },
+            "statement_type": "fact",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": []
+          }
+        ],
+        "query": {
+          "evidence_status": "conflict",
+          "reason": "Incompatible birth-year assertions with no supported correction rule.",
+          "as_of": "2026-05-10",
+          "cutoff": "2026-05-10",
+          "answer": null,
+          "memory_ids": [
+            "mem-1",
+            "mem-2"
+          ],
+          "source_ids": [
+            "src-1",
+            "src-2"
+          ],
+          "assumptions": []
+        },
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "6c4fc7f276b049f08baa888ea08915f2dfe61aee59dc043698eb054785941870",
+        "response_sha256_after": "6c4fc7f276b049f08baa888ea08915f2dfe61aee59dc043698eb054785941870",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 9012.5,
+            "min_ns": 6923,
+            "max_ns": 14346
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 9573.0,
+            "min_ns": 7392,
+            "max_ns": 15822
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 248836.0,
+            "min_ns": 162261,
+            "max_ns": 555509
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 250116.5,
+            "min_ns": 162837,
+            "max_ns": 556825
+          }
+        }
+      },
+      "extra_median_wall_ns": 239823.5,
+      "extra_median_cpu_ns": 240543.5
+    },
+    {
+      "case_id": "ARCH01-14",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [],
+        "claims": [],
+        "question": "What is Alex passport number?",
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": []
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [],
+            "claims": [],
+            "question": "What is Alex passport number?",
+            "as_of": null
+          },
+          "event_links": []
+        },
+        "claims": [],
+        "query": {
+          "evidence_status": "insufficient",
+          "reason": "No extracted claims supplied; not a contradiction.",
+          "as_of": null,
+          "cutoff": null,
+          "answer": null,
+          "memory_ids": [],
+          "source_ids": [],
+          "assumptions": []
+        },
+        "retained_memory_ids": [],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "18f6961555898e2dd59255376c36214623c8af7af667840d8150fe85ee882214",
+        "response_sha256_after": "18f6961555898e2dd59255376c36214623c8af7af667840d8150fe85ee882214",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 595.5,
+            "min_ns": 417,
+            "max_ns": 634247
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 1004.5,
+            "min_ns": 816,
+            "max_ns": 636394
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 10489.0,
+            "min_ns": 9263,
+            "max_ns": 43735
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 10944.0,
+            "min_ns": 9715,
+            "max_ns": 44279
+          }
+        }
+      },
+      "extra_median_wall_ns": 9893.5,
+      "extra_median_cpu_ns": 9939.5
+    },
+    {
+      "case_id": "ARCH01-15",
+      "status": "contract_rejected",
+      "reason": "invalid_sidecar_input"
+    },
+    {
+      "case_id": "ARCH01-16",
+      "status": "compared",
+      "input": {
+        "provenance": {
+          "dataset_id": "synthetic-arch01",
+          "sample_id": "conv-synthetic-a",
+          "build_id": "synthetic-build-a",
+          "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+          "rule_version": "contract-v0.1",
+          "origin": "synthetic"
+        },
+        "sources": [
+          {
+            "source_id": "src-1",
+            "session_id": "session-1",
+            "turn_id": "D1:1",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I am planning a work trip."
+          },
+          {
+            "source_id": "src-2",
+            "session_id": "session-1",
+            "turn_id": "D1:2",
+            "speaker": "Alex",
+            "reported_at": "2026-05-10T09:00:00Z",
+            "text": "I am planning a work trip."
+          }
+        ],
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "Alex plans a work trip.",
+            "memory_type": "event",
+            "statement_type": "plan",
+            "polarity": "positive",
+            "source_ids": [
+              "src-1"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          },
+          {
+            "memory_id": "mem-2",
+            "entity_id": "Alex",
+            "state_dimension": "travel",
+            "state_value": null,
+            "content": "Alex plans a work trip.",
+            "memory_type": "event",
+            "statement_type": "plan",
+            "polarity": "positive",
+            "source_ids": [
+              "src-2"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            }
+          }
+        ],
+        "question": null,
+        "as_of": null
+      },
+      "control": {
+        "variant": "supplied_fields_only",
+        "inference": false,
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "plan",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": null
+            },
+            "statement_type": "plan",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown"
+          }
+        ],
+        "event_links": [],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ]
+      },
+      "sidecar": {
+        "diagnostic_schema": "sidecar-diagnostics-v0.2",
+        "rule_version": "deterministic-sidecar-v0.2",
+        "mode": "diagnostic_only",
+        "record": {
+          "schema_version": "temporal-event-sidecar-v0",
+          "enabled": true,
+          "mode": "diagnostic_only",
+          "snapshot": {
+            "provenance": {
+              "dataset_id": "synthetic-arch01",
+              "sample_id": "conv-synthetic-a",
+              "build_id": "synthetic-build-a",
+              "build_fingerprint": "5168503c00382bed7e8883bc301f71bbe8e5bdb4bad143f74124ae4f9439b1c7",
+              "rule_version": "contract-v0.1",
+              "origin": "synthetic"
+            },
+            "sources": [
+              {
+                "source_id": "src-1",
+                "session_id": "session-1",
+                "turn_id": "D1:1",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I am planning a work trip."
+              },
+              {
+                "source_id": "src-2",
+                "session_id": "session-1",
+                "turn_id": "D1:2",
+                "speaker": "Alex",
+                "reported_at": "2026-05-10T09:00:00Z",
+                "text": "I am planning a work trip."
+              }
+            ],
+            "claims": [
+              {
+                "memory_id": "mem-1",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "Alex plans a work trip.",
+                "memory_type": "event",
+                "statement_type": "plan",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-1"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              },
+              {
+                "memory_id": "mem-2",
+                "entity_id": "Alex",
+                "state_dimension": "travel",
+                "state_value": null,
+                "content": "Alex plans a work trip.",
+                "memory_type": "event",
+                "statement_type": "plan",
+                "polarity": "positive",
+                "source_ids": [
+                  "src-2"
+                ],
+                "event_time": {
+                  "status": "unknown",
+                  "start": null,
+                  "end": null,
+                  "original_expression": null,
+                  "anchor_source_id": null,
+                  "basis": null
+                }
+              }
+            ],
+            "question": null,
+            "as_of": null
+          },
+          "event_links": [
+            {
+              "left_memory_id": "mem-1",
+              "right_memory_id": "mem-2",
+              "decision": "unknown",
+              "reason_code": "nonpositive_or_nonfactual",
+              "reason": "Plan, uncertainty or negation is not a positive completed event identity.",
+              "source_ids": [
+                "src-1",
+                "src-2"
+              ]
+            }
+          ]
+        },
+        "claims": [
+          {
+            "memory_id": "mem-1",
+            "source_ids": [
+              "src-1"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": "No unique supported time expression; existing derived dates not trusted as source proof."
+            },
+            "statement_type": "plan",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": [
+              "plan_intention_or_uncertain_is_not_completed_fact"
+            ]
+          },
+          {
+            "memory_id": "mem-2",
+            "source_ids": [
+              "src-2"
+            ],
+            "reported_at": [
+              "2026-05-10T09:00:00+00:00"
+            ],
+            "event_time": {
+              "status": "unknown",
+              "start": null,
+              "end": null,
+              "original_expression": null,
+              "anchor_source_id": null,
+              "basis": "No unique supported time expression; existing derived dates not trusted as source proof."
+            },
+            "statement_type": "plan",
+            "polarity": "positive",
+            "completed": "unknown",
+            "attended": "unknown",
+            "warnings": [
+              "plan_intention_or_uncertain_is_not_completed_fact"
+            ]
+          }
+        ],
+        "query": null,
+        "retained_memory_ids": [
+          "mem-1",
+          "mem-2"
+        ],
+        "global_mutation": false,
+        "links_truncated": false
+      },
+      "source_memory_references_valid": true,
+      "rollback": {
+        "input_echo_only": true,
+        "response_identity_unchanged": true,
+        "response_sha256_before": "ea73197532fd3bf820105d2ac6f79bca44ba8cd7f0affae12a94753c41c7ca07",
+        "response_sha256_after": "ea73197532fd3bf820105d2ac6f79bca44ba8cd7f0affae12a94753c41c7ca07",
+        "statuses": [
+          "disabled",
+          "diagnosed",
+          "disabled"
+        ],
+        "rollback_has_no_diagnostic": true,
+        "production_query_hook": false
+      },
+      "timing": {
+        "control": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 9431.0,
+            "min_ns": 6774,
+            "max_ns": 115848
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 9997.0,
+            "min_ns": 7265,
+            "max_ns": 118078
+          }
+        },
+        "sidecar": {
+          "wall": {
+            "samples": 20,
+            "median_ns": 245830.0,
+            "min_ns": 97368,
+            "max_ns": 1534630
+          },
+          "cpu": {
+            "samples": 20,
+            "median_ns": 246962.5,
+            "min_ns": 97931,
+            "max_ns": 1537599
+          }
+        }
+      },
+      "extra_median_wall_ns": 236399.0,
+      "extra_median_cpu_ns": 236965.5
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "$defs": {
+    "EventLink": {
+      "additionalProperties": false,
+      "properties": {
+        "left_memory_id": {
+          "minLength": 1,
+          "title": "Left Memory Id",
+          "type": "string"
+        },
+        "right_memory_id": {
+          "minLength": 1,
+          "title": "Right Memory Id",
+          "type": "string"
+        },
+        "decision": {
+          "enum": [
+            "same_event",
+            "different_event",
+            "unknown"
+          ],
+          "title": "Decision",
+          "type": "string"
+        },
+        "reason_code": {
+          "minLength": 1,
+          "title": "Reason Code",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "left_memory_id",
+        "right_memory_id",
+        "decision",
+        "reason_code",
+        "reason",
+        "source_ids"
+      ],
+      "title": "EventLink",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "dataset_id": {
+          "minLength": 1,
+          "title": "Dataset Id",
+          "type": "string"
+        },
+        "sample_id": {
+          "minLength": 1,
+          "title": "Sample Id",
+          "type": "string"
+        },
+        "build_id": {
+          "minLength": 1,
+          "title": "Build Id",
+          "type": "string"
+        },
+        "build_fingerprint": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Build Fingerprint",
+          "type": "string"
+        },
+        "rule_version": {
+          "minLength": 1,
+          "title": "Rule Version",
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "synthetic",
+            "source_snapshot"
+          ],
+          "title": "Origin",
+          "type": "string"
+        }
+      },
+      "required": [
+        "dataset_id",
+        "sample_id",
+        "build_id",
+        "build_fingerprint",
+        "rule_version",
+        "origin"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "SidecarInput": {
+      "additionalProperties": false,
+      "properties": {
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SourceEvidence"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "claims": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StateClaim"
+          },
+          "title": "Claims",
+          "type": "array"
+        },
+        "question": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Question"
+        },
+        "as_of": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "As Of"
+        }
+      },
+      "required": [
+        "provenance"
+      ],
+      "title": "SidecarInput",
+      "type": "object"
+    },
+    "SourceEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "session_id": {
+          "minLength": 1,
+          "title": "Session Id",
+          "type": "string"
+        },
+        "turn_id": {
+          "minLength": 1,
+          "title": "Turn Id",
+          "type": "string"
+        },
+        "speaker": {
+          "minLength": 1,
+          "title": "Speaker",
+          "type": "string"
+        },
+        "reported_at": {
+          "format": "date-time",
+          "title": "Reported At",
+          "type": "string"
+        },
+        "text": {
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "session_id",
+        "turn_id",
+        "speaker",
+        "reported_at",
+        "text"
+      ],
+      "title": "SourceEvidence",
+      "type": "object"
+    },
+    "StateClaim": {
+      "additionalProperties": false,
+      "properties": {
+        "memory_id": {
+          "minLength": 1,
+          "title": "Memory Id",
+          "type": "string"
+        },
+        "entity_id": {
+          "minLength": 1,
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "state_dimension": {
+          "minLength": 1,
+          "title": "State Dimension",
+          "type": "string"
+        },
+        "state_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "State Value"
+        },
+        "content": {
+          "minLength": 1,
+          "title": "Content",
+          "type": "string"
+        },
+        "memory_type": {
+          "enum": [
+            "event",
+            "state"
+          ],
+          "title": "Memory Type",
+          "type": "string"
+        },
+        "statement_type": {
+          "enum": [
+            "fact",
+            "plan",
+            "intention",
+            "uncertain"
+          ],
+          "title": "Statement Type",
+          "type": "string"
+        },
+        "polarity": {
+          "enum": [
+            "positive",
+            "negative"
+          ],
+          "title": "Polarity",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "event_time": {
+          "$ref": "#/$defs/TimeInterval"
+        }
+      },
+      "required": [
+        "memory_id",
+        "entity_id",
+        "state_dimension",
+        "content",
+        "memory_type",
+        "statement_type",
+        "polarity",
+        "source_ids"
+      ],
+      "title": "StateClaim",
+      "type": "object"
+    },
+    "TimeInterval": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "known",
+            "range",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "start": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End"
+        },
+        "original_expression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Expression"
+        },
+        "anchor_source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Anchor Source Id"
+        },
+        "basis": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        }
+      },
+      "title": "TimeInterval",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "temporal-event-sidecar-v0",
+      "default": "temporal-event-sidecar-v0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "enabled": {
+      "default": false,
+      "title": "Enabled",
+      "type": "boolean"
+    },
+    "mode": {
+      "const": "diagnostic_only",
+      "default": "diagnostic_only",
+      "title": "Mode",
+      "type": "string"
+    },
+    "snapshot": {
+      "$ref": "#/$defs/SidecarInput"
+    },
+    "event_links": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/EventLink"
+      },
+      "title": "Event Links",
+      "type": "array"
+    }
+  },
+  "required": [
+    "snapshot"
+  ],
+  "title": "SidecarRecord",
+  "type": "object"
+}
