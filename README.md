@@ -1,5 +1,7 @@
 > 此分支是从main导入公开allowlist tar的安全快照，未导入个人研究分支历史。新发布身份、当前验收及main保留材料边界见[安全快照发布记录](SAFE_PUBLIC_SNAPSHOT.md)。下述运行命令适用于本快照。
 
+2026-11-09：[证据损失诊断与边界回归](experiments/evidence-flow-20261109/README.md)已增加 20 案冻结证据包、查询时间范围修复和默认关闭的新 Build 上下文窗口；[实验汇总 PDF](docs/supplement/supplement.pdf)同步更新。没有新的真实模型 QA 成绩，Level E 原结论保持不变。
+
 # LoCoMo Personal Core Release
 
 个人核心系统的 M5 交付候选，等待团队整合。课程截止：2026-11-09 24:00（北京时间）。

@@ -1,5 +1,7 @@
 # M5 Personal Core Release — pending team integration
 
+2026-11-09 增量边界：[证据损失诊断与边界回归](experiments/evidence-flow-20261109/README.md)是原安全快照之后的main修复，使用独立的工件/producer哈希和新鲜测试记录。原public-evidence-manifest及导入SHA仍描述历史Release，不是本轮新代码和38页更新PDF的当前完整性清单；不要覆盖历史清单来伪造同一冻结身份。
+
 日期：2026-11-05（北京时间）。个人核心交付候选，独立于队友Product、Architecture、Delivery及课程平台提交。
 
 当前结论：**PERSONAL_READY（仅本地个人交付候选，pending team integration）**。固定应用截点全仓991项、独立公开包937项均通过，普通Web与无凭据Replay浏览器验收通过；没有未解决P0。最终封包身份和非作者核验绑定在staging的`FINAL_ACCEPTANCE_RECEIPT.json`。没有新增付费请求、重新评分或覆盖历史实验。

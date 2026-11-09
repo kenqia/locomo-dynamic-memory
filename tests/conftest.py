@@ -1,10 +1,34 @@
 from copy import deepcopy
+from datetime import datetime, timedelta, timezone
+import time
 
 import pytest
 from fastapi.testclient import TestClient
 
 from locomo_memory.api import create_app
 from locomo_memory.config import Settings
+
+
+@pytest.fixture(autouse=True)
+def stable_offline_utc(monkeypatch, request):
+    """Keep synthetic attempt timestamps ordered when the WSL wall clock steps back.
+
+    Patch only the adapter's test clock; source timestamps, production code and
+    explicit live model checks retain their original clock semantics.
+    """
+    if request.node.get_closest_marker('live_model'):
+        return
+    from locomo_memory import model
+
+    anchor, started = datetime.now(timezone.utc), time.monotonic()
+
+    class OfflineDateTime(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            value = anchor + timedelta(seconds=time.monotonic() - started)
+            return value.astimezone(tz) if tz is not None else value.replace(tzinfo=None)
+
+    monkeypatch.setattr(model, 'datetime', OfflineDateTime)
 
 
 @pytest.fixture

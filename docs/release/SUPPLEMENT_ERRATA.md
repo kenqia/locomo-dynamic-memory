@@ -1,5 +1,7 @@
 # 实验附录核验与勘误
 
+2026-11-09 版本说明：[当前附录](../supplement/supplement.pdf)已更新为38页，新增证据损失诊断附录D，并修正下文指出的E22→E23单因素归因表述。[本轮验证](../../experiments/evidence-flow-20261109/validation.md)与[新PDF哈希](../../experiments/evidence-flow-20261109/provenance.json)单列。下文37页版排版检查和历史数值审计仍属于原快照，不冒称已重新审计全部历史数据。
+
 原件来自 docs/experiment-supplement@3392faf，37页，PDF SHA256 `2398340833f500690b6d511756ce04d117cae755cfca4a4e5a1489a36a007da3`。本Release按原件保存，未覆盖冻结实验。独立研究过程记录，不是团队最终报告。
 
 `UV_PROJECT_ENVIRONMENT=$PWD/var/supplement-build-venv bash docs/supplement/build.sh` 实际成功；20张图重建，37页，`pdftotext -layout`输出与原件逐字一致。重建PDF SHA `edf15fed6daa1b328e03eb235cfe32aaf02364b84ae281ab01c2669c85fb97d4`，字节3488506，对原件3488513；创建时间/PDF元数据不同。原件及图表恢复为3392faf的精确字节；重建副本保留在受控交付区appendix-rebuilt，不用新元数据冒充旧SHA。

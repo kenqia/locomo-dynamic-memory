@@ -1,5 +1,7 @@
 # Level E 独立留出结果
 
+2026-11-09 后续诊断：本页冻结成绩不变。[证据损失回放](../../experiments/evidence-flow-20261109/README.md)核对 400 条 Dynamic 记录，全部输入预算审计保留完整候选，107 题在解析后失去标注 Source Turn，2 题因 Answer 预算进一步丢失标注来源。排除是否合理仍需逐题原文语义核查；20 案包已保存完整证据，不能把 107 题计作“误删率”。时间/抽取边界的代码回归不属于新的留出评测，未新增模型调用或重评分。
+
 2026-11-05。固定 conv-43/44 的 400 题、Hybrid/Dynamic 共 800 项已单次生成并冻结，根代理和独立终态审计通过后才读取 Gold 评分。类别 1–4 的完整分母 F1 为 Hybrid **0.402606**、Dynamic **0.409151**；配对差 **+0.006545**，95% 题目 bootstrap 区间 **[−0.020133,+0.034035]**。800 项来源盲审也已完成，共同可判定来源支持的 297 对净改善 10 对、区间仍跨零。现有答案和来源证据没有证明稳定质量改善。
 
 生成冻结 SHA 为 `3cab5d1b486290184e67906d61427f18803b415d82fe18f5f5f7190ae89664a6`。本页使用[官方规则逐题分数与配对差](../../experiments/m5-development/level-e-results-v1/official-scores.json)、[运行/费用报告](../../experiments/m5-development/level-e-runtime-terminal-v1.json)和[派生数值](../../experiments/m5-development/level-e-derived-results-v1.json)。终态完整性见[根检查](../../experiments/m5-development/level-e-root-terminal-v1.json)及[非作者独立检查](../../experiments/m5-development/level-e-independent-terminal-v1.json)。这些检查没有读取 Gold；评分是之后的独立操作。

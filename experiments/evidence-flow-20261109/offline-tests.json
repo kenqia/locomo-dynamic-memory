@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-09",
+  "exit_code": 0,
+  "command": "uv run --locked --with pytest-xdist==3.8.0 python -m locomo_memory.release_cli run-tests -- --tb=short -n 4 --dist=loadfile --durations=12 --junitxml=/tmp/locomo-quality-20261109-backup/full-offline-tests.xml",
+  "scope": "Complete offline workspace suite including controlled_data; live_model and local_embedding excluded",
+  "tests": 1021,
+  "passed": 1020,
+  "skipped": 1,
+  "failures": 0,
+  "errors": 0,
+  "pytest_reported_seconds": 501.35,
+  "junit_seconds": 501.319,
+  "warnings": 5,
+  "warning": "Existing Starlette TestClient/httpx deprecation",
+  "junit_sha256": "923351b820316be44d5bb1425e95d4ee127c45e55d150727d8741e647c77f9f4",
+  "code_commit": "334289dd82249cb418558ae9f7dae1e0b70b67b1",
+  "offline_clock_fixture_sha256": "60ee8dac5dafa369eb03925174342d51c4ec4705792d11968bd4d13213d84b42",
+  "preexisting_untracked_user_tests": {
+    "path": "tests/test_top7_records.py",
+    "passed": 10,
+    "included_in_commit": false
+  },
+  "skip_reason": "Private M5 conversation-only snapshots not present; run tools.m5.offline first",
+  "new_model_calls": 0,
+  "project_dependency_changes": false,
+  "rerun_artifacts_byte_identical": [
+    "audit.json",
+    "time-scope-replay.json"
+  ]
+}

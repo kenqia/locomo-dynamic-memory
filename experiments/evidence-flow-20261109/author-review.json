@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-09",
+  "reviewer": "implementation_author_AI",
+  "independent": false,
+  "scope": "Provisional local packet interpretation; no accuracy aggregate and no human labels",
+  "cases": [
+    {
+      "question_id": "conv-43:qa:67",
+      "assessment": "budget_loss_relevance_uncertain",
+      "reason": "城堡旅行愿望确因预算未送达，但问题问可推荐的爱好；不能仅凭这一来源丢失断言原答案错误。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-44:qa:33",
+      "assessment": "budget_loss_relevance_uncertain",
+      "reason": "徒步经历和工作生活限制确因预算未送达，可能影响建议针对性；已有答案仍提供部分支持的建议。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:38",
+      "assessment": "joint_inference_requires_review",
+      "reason": "每条旅行记录都被要求独自证明频率比较，可能过于保守；但局部候选也不能证明全部旅行中的最多次数，需核对完整原文和评分推断边界。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:14",
+      "assessment": "claim_rejection_does_not_imply_answer_loss",
+      "reason": "写作进展或机会来源不等于写作类型，逐 Memory 排除可有道理；D15:3 仍经另一 Memory 交付并被最终答案引用，小说事实未因此丢失。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:19",
+      "assessment": "rejection_supported_by_local_text",
+      "reason": "所列 Nike/Gatorade/Under Armour 原文是品牌合作，不直接支持慈善组织；不能为提高标注来源覆盖而把品牌当慈善组织。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:20",
+      "assessment": "rejection_supported_by_local_text",
+      "reason": "Chicago 来源说明到过 Chicago，另一来源未命名地点；两者本身不支持去 Chicago 之前的城市。完整历史中的城市顺序仍待查。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:50",
+      "assessment": "rejection_supported_by_local_text",
+      "reason": "已读 The Alchemist 的来源没有明确处于受伤恢复期间，排除该候选不自动意味着 Dune 答案受损。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-44:qa:20",
+      "assessment": "inference_boundary_uncertain",
+      "reason": "多项喜爱的菜都含鸡肉，但喜爱某菜是否足以推出最偏好肉类属于推断强度问题，不能单以 ID 判断。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:1",
+      "assessment": "run_failure_and_carrier_scope",
+      "reason": "球场内技能不在题目范围，排除可合理；同轮也有场外目标，必须按实际交付来源检查。该项最终运行失败，不能当成有效空答案。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:10",
+      "assessment": "event_identity_and_modality_uncertain",
+      "reason": "已交付 Seattle 来源表达 next month 的计划；被排除比赛来源没有 Seattle 地点。需要独立证据把已发生比赛与计划连接，不能从时间近邻推定。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:119",
+      "assessment": "input_support_gap_uncertain",
+      "reason": "照片来源文本只说 Smoky Mountains，没有 sunset over a mountain range；输入缺少图片内容时，不能凭标注 ID 证明照片描述受到支持。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:128",
+      "assessment": "rejection_supported_by_local_text",
+      "reason": "常做 honey garlic chicken 的原文没有直接说 slow cooker。是否能跨来源建立该做法需要独立核查，不能以常识硬补。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:135",
+      "assessment": "wrong_person_rejection_supported",
+      "reason": "被排除的可视化学习策略属于 John，问题问 Tim；最终答案另引 D18:7 中 Tim 的 25/5 学习法。标注来源 Recall 归零不等于答案没有来源支持。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:136",
+      "assessment": "wrong_person_rejection_supported",
+      "reason": "所核来源为 John 与医生谈伤情，不足以证明 Tim 对自己伤情的陈述；完整多来源链在案例包保留，仍需人工确认问题前提。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:65",
+      "assessment": "run_failure_not_semantic_label",
+      "reason": "有拟交付记忆不等于 Answer 成功；保留该失败项，不能据有效集合覆盖推断答案质量。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:7",
+      "assessment": "run_failure_not_semantic_label",
+      "reason": "候选与有效来源保留，但没有成功答案，指标须保留失败分母。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:0",
+      "assessment": "retained_control",
+      "reason": "目标来源从初始到最终保留，作为正常交付对照，不推定整题所有语义已正确。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:100",
+      "assessment": "retained_control",
+      "reason": "来源覆盖从初始到最终保留，已有答案 four years；作为正常交付对照。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:4",
+      "assessment": "claim_rejection_does_not_imply_answer_loss",
+      "reason": "没有读 Dune 不属于已读书目；D22:13 同轮提到已读 A Dance with Dragons，最终答案保留该书，需区分 Memory 排除和同来源内事实保留。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    },
+    {
+      "question_id": "conv-43:qa:8",
+      "assessment": "rejection_supported_by_local_text",
+      "reason": "想与 Under Armour 合作不等于已经签约某户外品牌；愿望与完成状态应分开。",
+      "human_review": "pending",
+      "independent_human_truth": false
+    }
+  ]
+}

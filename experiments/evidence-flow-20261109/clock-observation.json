@@ -1,0 +1,12 @@
+{
+  "scope": "Synthetic offline pytest fixture only; not a frozen experiment record",
+  "test": "tests/test_m5_conv44_relation_recovery.py::test_strict_export_preserves_both_ledgers_and_full_mixed_provenance",
+  "logical_attempt": 2,
+  "status": "succeeded",
+  "started_at": "2026-11-09T02:57:49.682367+00:00",
+  "completed_at": "2026-11-09T02:57:49.223565+00:00",
+  "elapsed_wall_seconds": -0.458802,
+  "observed_failure": "recovery_attempt_identity_or_terminal_changed",
+  "interpretation": "Wall UTC moved backwards during the fixture; underlying host clock cause not investigated",
+  "response": "Stable monotonic-based UTC in offline tests only; production clocks and strict historical audit unchanged"
+}

@@ -1,0 +1,312 @@
+{
+  "scope": "Synthetic temporal parsing boundaries; not answer quality or model coreference",
+  "baseline_ref": "d3c4ae10fb73d70eabea42f5333e721168574190",
+  "baseline_temporal_sha256": "c2de5e20abb47b9ec2d694af1631cf2221e666bebe6296968c47af0cf011f332",
+  "implementation_commit": "334289dd82249cb418558ae9f7dae1e0b70b67b1",
+  "model_calls": 0,
+  "before_passed": 11,
+  "after_passed": 21,
+  "total": 21,
+  "cases": [
+    {
+      "question": "Where on 2023-07-22?",
+      "expected_point": "2023-07-22",
+      "expected_bounds": null,
+      "before_point": "2023-07-22",
+      "after_point": "2023-07-22",
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    },
+    {
+      "question": "Where on July 22, 2023?",
+      "expected_point": "2023-07-22",
+      "expected_bounds": null,
+      "before_point": "2023-07-22",
+      "after_point": "2023-07-22",
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    },
+    {
+      "question": "Where on 22 July 2023?",
+      "expected_point": "2023-07-22",
+      "expected_bounds": null,
+      "before_point": "2023-07-22",
+      "after_point": "2023-07-22",
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    },
+    {
+      "question": "Where on Jul 22, 2023?",
+      "expected_point": "2023-07-22",
+      "expected_bounds": null,
+      "before_point": "2023-07-22",
+      "after_point": "2023-07-22",
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    },
+    {
+      "question": "Where before 2023-07-22?",
+      "expected_point": null,
+      "expected_bounds": [
+        null,
+        "2023-07-22"
+      ],
+      "before_point": "2023-07-22",
+      "after_point": null,
+      "after_interval": {
+        "start": null,
+        "end": "2023-07-22",
+        "precision": "day",
+        "start_inclusive": null,
+        "end_inclusive": false
+      },
+      "before_pass": false,
+      "after_pass": true
+    },
+    {
+      "question": "Where after July 22, 2023?",
+      "expected_point": null,
+      "expected_bounds": [
+        "2023-07-22",
+        null
+      ],
+      "before_point": "2023-07-22",
+      "after_point": null,
+      "after_interval": {
+        "start": "2023-07-22",
+        "end": null,
+        "precision": "day",
+        "start_inclusive": false,
+        "end_inclusive": null
+      },
+      "before_pass": false,
+      "after_pass": true
+    },
+    {
+      "question": "Where since 22 July 2023?",
+      "expected_point": null,
+      "expected_bounds": [
+        "2023-07-22",
+        null
+      ],
+      "before_point": "2023-07-22",
+      "after_point": null,
+      "after_interval": {
+        "start": "2023-07-22",
+        "end": null,
+        "precision": "day",
+        "start_inclusive": true,
+        "end_inclusive": null
+      },
+      "before_pass": false,
+      "after_pass": true
+    },
+    {
+      "question": "What was known by 2023-07-22?",
+      "expected_point": null,
+      "expected_bounds": [
+        null,
+        "2023-07-22"
+      ],
+      "before_point": "2023-07-22",
+      "after_point": null,
+      "after_interval": {
+        "start": null,
+        "end": "2023-07-22",
+        "precision": "day",
+        "start_inclusive": null,
+        "end_inclusive": true
+      },
+      "before_pass": false,
+      "after_pass": true
+    },
+    {
+      "question": "Where until 2023-07-22?",
+      "expected_point": null,
+      "expected_bounds": [
+        null,
+        "2023-07-22"
+      ],
+      "before_point": "2023-07-22",
+      "after_point": null,
+      "after_interval": {
+        "start": null,
+        "end": "2023-07-22",
+        "precision": "day",
+        "start_inclusive": null,
+        "end_inclusive": true
+      },
+      "before_pass": false,
+      "after_pass": true
+    },
+    {
+      "question": "Where during July 2023?",
+      "expected_point": null,
+      "expected_bounds": [
+        "2023-07-01",
+        "2023-07-31"
+      ],
+      "before_point": null,
+      "after_point": null,
+      "after_interval": {
+        "start": "2023-07-01",
+        "end": "2023-07-31",
+        "precision": "month",
+        "start_inclusive": true,
+        "end_inclusive": true
+      },
+      "before_pass": false,
+      "after_pass": true
+    },
+    {
+      "question": "Where during February 2024?",
+      "expected_point": null,
+      "expected_bounds": [
+        "2024-02-01",
+        "2024-02-29"
+      ],
+      "before_point": null,
+      "after_point": null,
+      "after_interval": {
+        "start": "2024-02-01",
+        "end": "2024-02-29",
+        "precision": "month",
+        "start_inclusive": true,
+        "end_inclusive": true
+      },
+      "before_pass": false,
+      "after_pass": true
+    },
+    {
+      "question": "Where during February 2023?",
+      "expected_point": null,
+      "expected_bounds": [
+        "2023-02-01",
+        "2023-02-28"
+      ],
+      "before_point": null,
+      "after_point": null,
+      "after_interval": {
+        "start": "2023-02-01",
+        "end": "2023-02-28",
+        "precision": "month",
+        "start_inclusive": true,
+        "end_inclusive": true
+      },
+      "before_pass": false,
+      "after_pass": true
+    },
+    {
+      "question": "Where during Apr 2023?",
+      "expected_point": null,
+      "expected_bounds": [
+        "2023-04-01",
+        "2023-04-30"
+      ],
+      "before_point": null,
+      "after_point": null,
+      "after_interval": {
+        "start": "2023-04-01",
+        "end": "2023-04-30",
+        "precision": "month",
+        "start_inclusive": true,
+        "end_inclusive": true
+      },
+      "before_pass": false,
+      "after_pass": true
+    },
+    {
+      "question": "Where during December 2023?",
+      "expected_point": null,
+      "expected_bounds": [
+        "2023-12-01",
+        "2023-12-31"
+      ],
+      "before_point": null,
+      "after_point": null,
+      "after_interval": {
+        "start": "2023-12-01",
+        "end": "2023-12-31",
+        "precision": "month",
+        "start_inclusive": true,
+        "end_inclusive": true
+      },
+      "before_pass": false,
+      "after_pass": true
+    },
+    {
+      "question": "Where before Paris on 2023-07-22?",
+      "expected_point": "2023-07-22",
+      "expected_bounds": null,
+      "before_point": "2023-07-22",
+      "after_point": "2023-07-22",
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    },
+    {
+      "question": "What did Alex receive from John on July 22, 2023?",
+      "expected_point": "2023-07-22",
+      "expected_bounds": null,
+      "before_point": "2023-07-22",
+      "after_point": "2023-07-22",
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    },
+    {
+      "question": "Where between July 2023 and August 2023?",
+      "expected_point": null,
+      "expected_bounds": null,
+      "before_point": null,
+      "after_point": null,
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    },
+    {
+      "question": "Where from 2023-07-01 to 2023-07-31?",
+      "expected_point": null,
+      "expected_bounds": null,
+      "before_point": null,
+      "after_point": null,
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    },
+    {
+      "question": "Where on 2023-02-30?",
+      "expected_point": null,
+      "expected_bounds": null,
+      "before_point": null,
+      "after_point": null,
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    },
+    {
+      "question": "Where now?",
+      "expected_point": null,
+      "expected_bounds": null,
+      "before_point": null,
+      "after_point": null,
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    },
+    {
+      "question": "What did Alex receive from John on July 22, 2023 and where did he put it?",
+      "expected_point": "2023-07-22",
+      "expected_bounds": null,
+      "before_point": "2023-07-22",
+      "after_point": "2023-07-22",
+      "after_interval": null,
+      "before_pass": true,
+      "after_pass": true
+    }
+  ]
+}
