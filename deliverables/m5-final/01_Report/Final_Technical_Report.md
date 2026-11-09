@@ -163,7 +163,7 @@ Console 本身是只读的，不会自动构建或发起新的问答；需要执
 ### 5.3 测试与质量保证
 
 - 主分支的持续集成检查全部通过；
-- 我们在干净环境中重新运行了离线测试，**1,018 项全部通过**。需要真实模型、本地向量模型缓存或受限原始数据的测试不在这次离线运行中，不计入通过数；
+- Product 基准在干净环境中重新运行了离线测试，**1,018 项全部通过**；Sidecar 合入 main 后，另行运行的专项离线测试 **183 项全部通过**（有 1 条依赖弃用 warning）。需要真实模型、本地向量模型缓存或受限原始数据的测试不在这些离线运行中，不计入通过数；
 - Console 由作者以外的组员在本机实际操作复核，整合后又完成了六个演示案例、30 种布局和 11 种滚动场景的浏览器测试；
 - 六段真实对话的记忆导出共 2,031 条记忆、37,445 条关系，全部通过 Schema、来源、时间和版本一致性检查。这说明导出完整一致，但不代表每条关系在语义上都正确。
 
@@ -279,7 +279,7 @@ Dynamic 的估算查询费用为 6.88 美元，Hybrid 为 0.87 美元，约 7.90
 | 记忆压缩 | 降低输入 token | 节省比例可以忽略 |
 | 自适应路由 | 按问题类型选择检索方式 | 证据覆盖反而下降 |
 | 时间软优先 | 优先使用时间匹配的记忆 | 没有整体收益 |
-| 时间 / 事件 Sidecar | 用规则补充事件时间和状态判断 | 在两段真实开发对话上几乎无法给出确定判断；作为独立研究候选保留，没有进入主分支 |
+| 时间 / 事件 Sidecar | 用规则补充事件时间和状态判断 | 已合入 main，作为默认关闭、显式 opt-in 的独立离线诊断；不进入生产问答路径，真实 QA 收益尚未验证 |
 
 各方向的具体数据见附录 Research Supplement。
 
@@ -307,12 +307,27 @@ Dynamic 的估算查询费用为 6.88 美元，Hybrid 为 0.87 美元，约 7.90
 - 费用是估算值；模型服务名称不代表固定的模型权重；
 - 目前只支持英文检索。
 
-### 10.3 未来工作
+### 10.3 下一步：值得继续研究的方向
 
-1. 人工核查 20 个证据保留案例，区分合理的排除和错误的排除；
-2. 建立人工核查过的动态关系标签，测量关系判断和有效证据选择的准确率；
-3. 改进解析步骤对证据的保留，并在新的、没有公开过的对话上重新评测；
-4. 扩大评测对话数量，评估结论在不同对话之间是否稳定。
+如果继续投入时间，我们更希望围绕明确的问题做可比较的实验，而不是简单增加模块。结合现有数据模型、检索流程和实验结果，下面四个方向最值得优先考虑。
+
+**方向 A：双时间语义的动态记忆（优先级最高）**
+
+研究如何区分事实发生时间与系统获知时间，并正确回答不同 as-of 语义的问题。现有的 `session_time`、`event_start`、`valid_from`、`valid_to` 和 Source Turn 已经提供基础。下一步可以先用冻结案例验证时间语义，再设计严格的双时间查询接口。相比只限制某个时间点可见哪些记忆，这个方向进一步回答了查询中的“当时”究竟指什么。
+
+**方向 B：证据充足度驱动的自适应检索**
+
+研究系统能否判断当前候选是否已经包含回答所需的人物、时间、事件和关系证据；若不足，再沿有依据的关系补检，而不是无条件扩大 Top-K。核心假设是：在相同证据 Token 预算下，针对缺失证据进行补充，能否比固定 Top-K 获得更好的证据覆盖和回答质量。此前 Adaptive、Graph 和 Trace 的负面结果应保留为基线。
+
+**方向 C：基于可证明关系的 Graph Memory**
+
+研究如何表达并检索有来源支持的事件路径，例如“邀请 → 参加宴会 → 先遇到 A → 后与 B 交谈 → 查询 B 的名字”。当前图结构已有 Entity、Memory、Source Turn 和 MemoryRelation，但对事件参与者、事件顺序和因果关系的表达仍不完整。可参考 A-Mem 的动态链接与记忆组织思路；评价重点应是路径是否有证据支持、是否改善答案，而不是边的数量。
+
+**方向 D：更有挑战性的 Benchmark**
+
+LoCoMo 继续作为课程基线，但不应成为所有结论的唯一依据。LongMemEval 可用于补充跨会话、时间推理、知识更新和拒答评测；MemoryAgentBench 可用于观察增量交互、长程理解和选择性遗忘；2026 年提出的 LOCOMO-CONV 则可检验隐式、组合和反事实等对话式查询。这些基准更适合后续独立研究，不建议在最终交付前临时替换当前数据集。
+
+以上方向都可以从现有系统出发，先定义可证伪的问题、固定比较条件和评价指标，再决定是否扩展实现。
 
 ## 团队分工
 
@@ -322,7 +337,7 @@ M1–M4 的职责按团队工作流文档分配；M5 的职责依据各成员的
 |---|---|---|---|
 | 莫远序（组长） | kenqia | 项目管理、整体设计、接口定义、动态状态判断与集成 | 技术方向、核心系统开发与集成、实验设计与执行（E0–E25）、结果分析、最终交付协调 |
 | 黎志丽 | Thorns-06 | 对话导入、记忆构建、JSON 导出 | Product Console 主要开发：界面、记忆与来源查看、Query Trace、实验报告展示、离线演示、响应式布局和浏览器测试（PR #39，选择性整合进 PR #41） |
-| 卓新烨 | xiaozhuozi39 | 检索、证据追踪、对照实验 | 时间 / 事件 Sidecar 研究扩展：数据结构、规则实现、测试案例、离线验证与技术文档（PR #38，独立研究候选，未进入主分支）；作为非作者对 Product Console 进行了试用和复核 |
+| 卓新烨 | xiaozhuozi39 | 检索、证据追踪、对照实验 | 时间 / 事件 Sidecar 研究扩展：数据结构、规则实现、测试案例、离线验证与技术文档（PR #38；后续 PR #42 已合入 main，采用默认关闭、显式 opt-in 的独立离线诊断）；作为非作者对 Product Console 进行了试用和复核 |
 | 田亦洁 | VanadisssSSS | Web 交互、证据展示、端到端验收 | M5 前期汇报、技术报告初稿和演示素材（11 月 8 日版 PPT、报告与旁白视频）；负责最终 Console 操作演示视频的录制与制作 |
 
 项目开发中使用了 AI 编程与写作助手，参与代码实现、实验执行、数据核对和文稿初稿。AI 的检查结果与组员复核分开记录，所有提交和最终结论由组员确认。
@@ -343,6 +358,10 @@ M1–M4 的职责按团队工作流文档分配；M5 的职责依据各成员的
 4. Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. *EMNLP 2019*.
 5. Efron, B., & Tibshirani, R. J. (1993). *An Introduction to the Bootstrap*. Chapman & Hall.
 6. DeepSeek API 文档：模型、价格与 JSON 输出说明（2026 年 10–11 月访问）。
+7. Xu, W., Liang, Z., Mei, K., Gao, H., Tan, J., & Zhang, Y. (2025). A-Mem: Agentic Memory for LLM Agents. *NeurIPS 2025*. https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html
+8. Wu, D., Wang, H., Yu, W., Zhang, Y., Chang, K.-W., & Yu, D. (2025). LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory. *ICLR 2025*. https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html
+9. Hu, Y., Wang, Y., & McAuley, J. (2025). Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions (MemoryAgentBench). *arXiv:2507.05257*. https://arxiv.org/abs/2507.05257
+10. Chang, W.-Y., & Chen, Y.-N. (2026). When Users Don't Ask: Benchmarking Context-Driven Memory Retrieval in Conversational Agents (LOCOMO-CONV). *arXiv:2609.03467*. https://arxiv.org/abs/2609.03467
 
 ## 附录 A 实验配置与可追溯信息
 
