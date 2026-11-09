@@ -1,7 +1,7 @@
 # Product 真人独立操作记录模板
 
 此文件是空模板，不是已执行或通过的验收记录。由非作者成员独立操作后填写实际结果，未执行项保持“未执行”。
-依据 [负责人安排](https://github.com/kenqia/locomo-dynamic-memory/issues/23#issuecomment-6703489480)；交付入口和范围见 [收尾记录](product-closeout.md)。
+依据 [负责人安排](https://github.com/kenqia/locomo-dynamic-memory/issues/23#issuecomment-6703489480)；本轮版本、证据与操作步骤见 [当前复核说明](product-review.md)。
 
 ## 实际环境
 
@@ -29,7 +29,9 @@ uv run --locked python tools/team_v2/demo.py replay
 | --- | --- | --- |
 | 安装/启动 | 按 README 独立启动，核对实际 SHA 与合成标识 | 未执行 |
 | 版本切换 | 两个 Build 切换，内容与来源不混用 | 未执行 |
-| Memory/来源 | 选择记忆，打开原文，核对来源身份与内容 | 未执行 |
+| Memory/来源 | 选择记忆后自动显示完整原文，核对来源身份与内容 | 未执行 |
+| 分页 | 单页明确“已全部显示”；多页可前后翻页/跳转，选中项与详情一致 | 未执行 |
+| 多来源 | 来源 1→2→1→2→1 均立即显示正确原文，无“查看完整原文”按钮与旧原文残留 | 未执行 |
 | 时间/计划/否定 | 报告/事件/有效时间分开；Tokyo 是计划；car 否定保留；未知不补造 | 未执行 |
 | success | 载入后当前居住地为 Rome；引用可打开原文 | 未执行 |
 | historical | 请求日期 2023-05-01，对应 Paris | 未执行 |
@@ -37,11 +39,11 @@ uv run --locked python tools/team_v2/demo.py replay
 | insufficient | 护照号码证据不足，不编造答案 | 未执行 |
 | citation_anomaly | 显示 answer / invalid_output，失败保持失败 | 未执行 |
 | budget_failure | 显示 conflict_evidence_budget_exceeded，不当成证据不足或成功 | 未执行 |
-| Trace | 展开评审详情，逐一操作四阶段，检查原文、错误与预算 | 未执行 |
+| Trace | 逐一操作四阶段，字段区默认关闭；展开后可查看原文、错误与预算，整页滚轮正常 | 未执行 |
 | 手输 ID 恢复 | 不存在 ID、../health 给出提示，再载入 success 可恢复 | 未执行 |
 | 实验 | 能找到 3028 分母、2969 成功、56 失败、3 unknown、705 配对子集与估算成本 | 未执行 |
 | 补充 Run | 明确未提供，不借用原 Run 成绩 | 未执行 |
-| 1280px 可读性 | 核心内容无需横向滚动；与同视口旧截图比较 | 未执行 |
+| 窗口与角色 | 1280px 核心内容无横向滚动；窄屏导航/面板重排；角色横向选择，无摘要重叠 | 未执行 |
 | 旧五阶段 | 按 README 的合成 prepare/api/ui 入口检查；只用新演示目录，不连接研究 DB/真实模型 | 未执行 |
 | 连续演示 | 按 3–5 分钟路线连贯操作，记录卡点 | 未执行 |
 
@@ -57,4 +59,4 @@ uv run --locked python tools/team_v2/demo.py replay
 - 修复后复验版本、场景和结果：如适用，由本人填写。
 
 将实际记录留在 #23 / PR #39。组长的第一步方向确认、成员独立验收、CI、合并后集成验证分别记录；互相不替代。
-负责人已确认两页方向，Overview/Experiments 等后续候选见 [最终交接](product-final-handoff.md)。请按最终实际提交逐项核对，不预先记录全 Product 验收通过。
+请按 [当前送审版本](product-review.md)逐项核对；历史正面反馈不替代新 SHA 的验收，不预先记录通过。

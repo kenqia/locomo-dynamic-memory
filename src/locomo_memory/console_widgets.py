@@ -6,6 +6,8 @@ def compact_choice(label, options, *, key, format_func=str):
     values = list(options)
     if not values:
         raise ValueError('choice_requires_options')
+    if key in st.session_state and st.session_state[key] not in values:
+        del st.session_state[key]
     with st.container(key='choice_' + key):
         if len(values) == 1:
             st.caption(label)

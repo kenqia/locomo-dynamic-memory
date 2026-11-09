@@ -49,13 +49,13 @@ uv run --locked python tools/team_v2/check.py -q --tb=short tests/test_console_r
 已存在目录拒绝覆盖。只审查并复制 `bundle/` 中三个 JSON，不上传数据库或日志。
 重新生成的 ID/时间和哈希会变化，须重新核对后再更新公共固定快照。
 
-浏览器验证与录屏命令见 [后续验证记录](../docs/team-v2/product-followup-validation.md)。
+浏览器验证与录屏命令见 [后续验证记录](../docs/team-v2/product-history/product-followup-validation.md)。
 当前维护的是可供成员复现的候选版本；非作者真人复核、集成和正式验收仍为 pending。
 
 2026-11-08 第一阶段 UI 返工候选：Memory 使用列表与选中详情，Query/Evidence 优先展示回答和引用。
 手工 Trace ID 读取在展开区，阶段 Trace 在“评审详情”中；两页的视图模式在“视图设置”切换。
-同视口新旧截图、实际版本和操作说明见 [第一阶段返工记录](../docs/team-v2/product-ui-rework.md)。
+同视口新旧截图、实际版本和操作说明见 [第一阶段返工记录](../docs/team-v2/product-history/product-ui-rework.md)。
 负责人确认方向后再处理其余页面，目前不代表整个 Product 已验收。
 
 后续：负责人已确认方向，Overview、Experiments 与 Demo 引导的最终候选及职责说明见
-[Product 最终交接](../docs/team-v2/product-final-handoff.md)。旧证据保留；最终真人验收、合并和统一交付仍待完成。
+[Product 最终交接](../docs/team-v2/product-history/product-final-handoff.md)。旧证据保留；最终真人验收、合并和统一交付仍待完成。

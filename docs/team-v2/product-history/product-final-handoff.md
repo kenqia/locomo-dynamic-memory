@@ -1,5 +1,7 @@
 # Product Console：职责说明与最终候选交接
 
+> 历史记录：以下行为、命令、截图与结果仅对应文内注明的版本。复现历史命令请使用当时的 Git 提交；当前送审入口见 [Product 复核说明](../product-review.md)。
+
 记录日期：2026-11-09（北京时间）。负责人 Thorns-06，父任务 #23、子任务 #26–#29，沿用 Draft PR #39。
 依据 [11 月 8 日负责人放行](https://github.com/kenqia/locomo-dynamic-memory/issues/23#issuecomment-6721763944)，第一阶段方向已通过，本轮继续完善剩余页面。
 原冻结节点与历史证据保留；本轮跨日成果不记为按旧截止完成。最终非作者验收、合并和统一版本验收仍须分别取得证据。
@@ -54,26 +56,26 @@ Build 是一套 Memory/来源/关系/索引共同所属的构建版本；Trace �
 
 - 本轮运行代码 `a0a08edf7e11d4fe2d41f87a7a5c785eff9ca80e`；改动基准 `2201eeb227bba8a49b10889c7698e41bc5a86418`。
 - 受影响的 Console / Experiments / Replay 定向检查：20 passed / 1 条依赖弃用 warning。未为本轮重跑无改动的独立专项。
-- 本轮浏览器与独立 main 兼容性结果、实际版本和场景以 [最终证据清单](assets/product-final/manifest.json) 为准。
+- 本轮浏览器与独立 main 兼容性结果、实际版本和场景以 [最终证据清单](../assets/product-final/manifest.json) 为准。
 - 新旧固定截图均 1280×900；`full-*` 是额外扩展高度图，不当作同视口对照。
 - 首次定向运行受 Windows 临时目录权限阻塞，改用获准环境后通过。早期浏览器因 3028 同时匹配指标与隐藏原始字段而退出；定位到指标区域后通过。旧失败保留在 ignored `var/`，不计成功。
 - [Memory / Query-Evidence 原同视口证据](product-ui-rework.md)、[六案例和旧入口历史回归](product-followup-validation.md)、[第一阶段与 CI 环境处理](product-closeout.md) 保留原 SHA 和结果。
 - 最终 HEAD 的编译、完整 Linux 离线检查和 Demo prepare 以 [PR #39 checks](https://github.com/kenqia/locomo-dynamic-memory/pull/39/checks) 实际结果为准；不宣称 Windows 历史全套通过。
 
 本轮 `a0a08ed` 新鲜证据：浏览器五个场景与三种聚合维度通过，源跳转和实际下载 JSON 一致性通过；页面脚本错误 0，API/数据库未启动，真实模型请求 0。
-隔离 main 候选五页与 Hybrid 默认检查通过，五个 main 核心文件 SHA 未变，记录的网络/SQLite/生成尝试 0；完整范围见 [结果](assets/product-final/main-compatibility.json)。
-12 张新旧截图逐张检查；[清单](assets/product-final/manifest.json) 包含 16 份材料的版本/场景/环境与 SHA-256。
+隔离 main 候选五页与 Hybrid 默认检查通过，五个 main 核心文件 SHA 未变，记录的网络/SQLite/生成尝试 0；完整范围见 [结果](../assets/product-final/main-compatibility.json)。
+12 张新旧截图逐张检查；[清单](../assets/product-final/manifest.json) 包含 16 份材料的版本/场景/环境与 SHA-256。
 
 | 对应场景，固定 1280×900 | 修改前 `2201eeb` | 修改后 `a0a08ed` |
 | --- | --- | --- |
-| Overview | [原图](assets/product-final/before-overview.png) | [新图](assets/product-final/after-overview.png) |
-| Experiments 首屏 | [原图](assets/product-final/before-experiments.png) | [新图](assets/product-final/after-experiments.png) |
-| 配对与成本 | [原图](assets/product-final/before-cost.png) | [新图](assets/product-final/after-cost.png) |
-| 缺失补充 Run | [原图](assets/product-final/before-missing-run.png) | [新图](assets/product-final/after-missing-run.png) |
-| Demo | [原图](assets/product-final/before-demo.png) | [新图](assets/product-final/after-demo.png) |
+| Overview | [原图](../assets/product-final/before-overview.png) | [新图](../assets/product-final/after-overview.png) |
+| Experiments 首屏 | [原图](../assets/product-final/before-experiments.png) | [新图](../assets/product-final/after-experiments.png) |
+| 配对与成本 | [原图](../assets/product-final/before-cost.png) | [新图](../assets/product-final/after-cost.png) |
+| 缺失补充 Run | [原图](../assets/product-final/before-missing-run.png) | [新图](../assets/product-final/after-missing-run.png) |
+| Demo | [原图](../assets/product-final/before-demo.png) | [新图](../assets/product-final/after-demo.png) |
 
-另附 [完整实验页](assets/product-final/full-experiments.png)、[完整演示路线](assets/product-final/full-demo.png)，均为扩展高度图。
-浏览器实际下载的 [完整精度报告](assets/product-final/exported-report.json) 与原固定证据 JSON 数值整体一致，不是新实验运行。
+另附 [完整实验页](../assets/product-final/full-experiments.png)、[完整演示路线](../assets/product-final/full-demo.png)，均为扩展高度图。
+浏览器实际下载的 [完整精度报告](../assets/product-final/exported-report.json) 与原固定证据 JSON 数值整体一致，不是新实验运行。
 
 可复现本轮检查（每次使用新的输出目录）：
 
@@ -99,7 +101,7 @@ main 的 `query_ui.py`、`queries.py`、`config.py`、`ui.py`、`api.py` 保留�
 ## 审查、交接与剩余项
 
 - 负责人方向已确认，后续产品页面候选已按该方向实现；不是最终验收通过。
-- 非作者 xiaozhuozi39 已给出局部运行/外观正面反馈，最终版本仍须补实际 SHA、环境、命令、逐项结果与截图；可用 [真人复核空模板](product-human-review-template.md)。
+- 非作者 xiaozhuozi39 已给出局部运行/外观正面反馈，最终版本仍须补实际 SHA、环境、命令、逐项结果与截图；可用 [真人复核空模板](../product-human-review-template.md)。
 - 给 Delivery 的材料：最终同视口截图、原六类案例证据、上方固定路线、运行命令、文件校验清单和实际版本。正式媒体与统一 RC 仍由对应负责人办理。
 - 真实补充/修复 Run 尚无公开冻结材料，保持未提供。语义正确性缺少独立真值，仍为未评；合成 Demo 不作为模型成绩。
 - Notion 已有关联任务，但本会话没有可用工具；本轮摘要、状态和 Issue/PR 链接未同步，需负责人补录。

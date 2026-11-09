@@ -1,5 +1,7 @@
 # Product UI 返工：第一步方向确认候选
 
+> 历史记录：以下行为、命令、截图与结果仅对应文内注明的版本。复现历史命令请使用当时的 Git 提交；当前送审入口见 [Product 复核说明](../product-review.md)。
+
 日期：2026-11-08（北京时间）。负责人：Thorns-06。关联 #23 / #26 / #27、Draft PR #39。
 
 依据：[11 月 7 日负责人修改与交叉验收安排](https://github.com/kenqia/locomo-dynamic-memory/issues/23#issuecomment-6703489480)、
@@ -80,12 +82,12 @@ Timeline 仍按 API Memory 记录顺序呈现，不冒称事件时间排序。�
 
 | 相同 1280×900 场景 | 修改前 `44d20dc` | 修改后 `e6dd29a` |
 | --- | --- | --- |
-| Memory：选中 Paris 并打开来源 | [旧版](assets/product-ui-rework/before-memory.png) | [新版](assets/product-ui-rework/after-memory.png) |
-| Query/Evidence：success 与来源 | [旧版](assets/product-ui-rework/before-query.png) | [新版](assets/product-ui-rework/after-query.png) |
+| Memory：选中 Paris 并打开来源 | [旧版](../assets/product-ui-rework/before-memory.png) | [新版](../assets/product-ui-rework/after-memory.png) |
+| Query/Evidence：success 与来源 | [旧版](../assets/product-ui-rework/before-query.png) | [新版](../assets/product-ui-rework/after-query.png) |
 
-新版 [完整回答与原文截图](assets/product-ui-rework/after-query-full.png) 扩展了高度，仅用于查看内容，不属于相同视口对比。
-其他状态：[证据不足](assets/product-ui-rework/after-insufficient.png)、[引用异常](assets/product-ui-rework/after-citation-anomaly.png)、[预算失败](assets/product-ui-rework/after-budget-failure.png)。
-每份公开截图/运行结果的实际 commit、环境、场景与 SHA-256 见 [证据清单](assets/product-ui-rework/manifest.json)。
+新版 [完整回答与原文截图](../assets/product-ui-rework/after-query-full.png) 扩展了高度，仅用于查看内容，不属于相同视口对比。
+其他状态：[证据不足](../assets/product-ui-rework/after-insufficient.png)、[引用异常](../assets/product-ui-rework/after-citation-anomaly.png)、[预算失败](../assets/product-ui-rework/after-budget-failure.png)。
+每份公开截图/运行结果的实际 commit、环境、场景与 SHA-256 见 [证据清单](../assets/product-ui-rework/manifest.json)。
 原始结果 JSON 列出原本地运行的完整截图/视频文件名；本目录只收录清单中的截图与结果，未将本轮录像作为正式 MP4 交付。
 
 ### Standards

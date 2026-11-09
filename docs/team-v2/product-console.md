@@ -1,7 +1,8 @@
-# Product Console：导航与 API 映射
+# Product Console：模块入口与 API 映射
 
 关联：[#26](https://github.com/kenqia/locomo-dynamic-memory/issues/26)，并提供 #27 的只读入口。
-基准：`3ba1954bd0c188ad84d80dd4a4f94618857b0109`。
+PR：[#39](https://github.com/kenqia/locomo-dynamic-memory/pull/39)，分支 `team/product-console-v2-6d`。
+当前改动、实际版本、证据和复核步骤集中在 [Product 复核说明](product-review.md)。
 
 ## 使用场景与导航
 
@@ -25,20 +26,40 @@ Console 只使用 GET 和仓库内已审查的冻结 JSON，不提供构建、�
 | 实验策略摘要 | 同上 `original_baseline.groups.strategy` | `planned/states/execution_success_rate/qa_successful_scorable/full_denominator_qa_score`；null 显示 unknown |
 | Demo | 启动器与合成 fixture | 固定问题、启动方式、Replay 说明；不宣称真实模型质量 |
 
-列表使用分页控件，不把当前页数量当作全部数量。
+列表显示记录范围、总数与页码；只有一页时直接说明已全部显示。来源选中后自动显示完整原文，身份不符或读取失败时不显示旧原文。“本阶段已记录字段”默认折叠。
 Timeline、四阶段 Trace、完整原文跳转、六类合成案例与无数据库 Replay 的后续实现见
-[验证记录](product-followup-validation.md)和 [Replay 操作说明](../../demo_fixture/README.md)。
+[历史验证记录](product-history/product-followup-validation.md)和 [Replay 操作说明](../../demo_fixture/README.md)。
 实验比较支持单维策略/对话/题型聚合及成本；不伪造尚未提供的补充 Run 或联合明细。
 相关自动化验收已提供，非作者真实成员的独立复现和复核仍须完成。
 
-2026-11-08：按负责人返工安排，先提交 Memory / Query/Evidence 两页的阅读层级修改。
-新旧同视口截图、实际运行版本及方向确认步骤见 [第一阶段返工记录](product-ui-rework.md)；其余页面重排等待负责人确认方向。
+## 目录
 
-负责人后续已放行；Overview、Experiments 和统一导航的后续候选、完整精度导出及 main 集成风险见 [最终交接](product-final-handoff.md)。
+| 位置 | 职责 |
+| --- | --- |
+| `src/locomo_memory/console_ui.py` | 五页导航、数据/版本选择、Overview 与已有 Trace 入口 |
+| `src/locomo_memory/console_theme.py`、`console_widgets.py` | Console 专用样式、紧凑选项组件 |
+| `src/locomo_memory/evidence_ui.py` | 分页、Memory/关系、自动原文与四阶段 Trace |
+| `src/locomo_memory/frozen_report_ui.py` | 真实冻结实验、完整分母、成本与无损导出 |
+| `src/locomo_memory/console_replay.py` | 只读、身份/哈希校验的固定快照适配器 |
+| `demo_fixture/product-v1/` | 公开合成快照与独立的真实冻结报告，保留原校验 |
+| `tests/test_console*.py` | Console、来源、分页、实验、只读 Replay 的离线检查 |
+| `tools/team_v2/` | [运行与检查工具索引](../../tools/team_v2/README.md) |
+| `docs/team-v2/product-review.md` | 当前送审摘要、步骤、版本与证据 |
+| `docs/team-v2/product-history/` | [六轮历史记录](product-history/README.md)，结果仅适用于各自 SHA |
+| `docs/team-v2/assets/product-review/` | 当前复核证据；其他 Product 素材目录保留历史版本 |
 
 ## 启动
 
-在自己的 clone 中安装 uv，然后运行：
+优先在自己的 clone 运行静态 Replay：
+
+```sh
+uv sync --locked
+uv run --locked python tools/team_v2/demo.py replay
+```
+
+访问 `http://127.0.0.1:18501`。无需 API、活动数据库或模型凭据。已有环境可直接使用 `.\.venv\Scripts\python.exe tools/team_v2/demo.py replay`。
+
+需要核对原五阶段入口时，使用独立的合成 API/UI 模式：
 
 ```sh
 uv sync --locked
@@ -67,7 +88,6 @@ Windows 的 `.venv\Scripts\python.exe`。普通生产环境可用
 
 ## 验证与回滚
 
-先运行 `tools/team_v2/check.py tests/test_console_ui.py -q --tb=short`，再运行完整离线检查。
-截图和本机实际结果见 [Product 验证记录](product-validation.md)。
+检查命令与截图见 [当前复核说明](product-review.md)；历史结果见 [归档索引](product-history/README.md)。
 不把 API/AppTest 通过当成非作者人工验收；Reviewer 未确认时保持 pending。
 撤销本 PR 的功能提交即可回到基准 UI，无生产数据库迁移，无默认 Build/Query/模型参数修改。

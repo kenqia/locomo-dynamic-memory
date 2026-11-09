@@ -1,6 +1,5 @@
 """Read-only Research Console over public HTTP and reviewed frozen reports."""
 import json
-from html import escape
 from datetime import datetime, timezone
 from pathlib import Path
 import re
@@ -26,37 +25,52 @@ CASE_LABELS = {'success': '当前事实', 'historical': '历史日期', 'conflic
 
 
 def render_build_selector(request, replay=False):
-    with st.popover('数据与版本'):
-        datasets = page_items(request, '/datasets', 'console_dataset_offset')
-        if not datasets:
-            st.info('当前页尚无数据集。可调整分页或检查数据导入。')
-            return None
-        by_id = {item['dataset_id']: item for item in datasets}
-        dataset_id = compact_choice('数据集', list(by_id),
-                                  format_func=lambda value: f"{by_id[value]['version']} · {value}",
-                                  key='console_dataset')
-        conversations = page_items(request, f'/datasets/{dataset_id}/conversations',
-                                   f'console_conversation_offset_{dataset_id}')
-        if not conversations:
-            st.info('当前页没有对话。')
-            return None
-        sample_id = compact_choice('对话', [item['sample_id'] for item in conversations],
-                                key=f'console_sample_{dataset_id}')
-        builds = page_items(request, '/builds', f'console_build_offset_{dataset_id}_{sample_id}',
-                            dataset_id=dataset_id, sample_id=sample_id)
-        if not builds:
-            st.info('当前页没有 Build。Console 不会自动构建或调用模型。')
-            return None
-        by_build = {item['build_id']: item for item in builds}
-        build_id = compact_choice('冻结 / 历史 Build', list(by_build),
-                                format_func=lambda value: f"版本 {list(by_build).index(value) + 1} · {by_build[value]['status']}",
-                                key=f'console_build_{dataset_id}_{sample_id}')
-        build = by_build[build_id]
-        st.caption('完整版本身份')
-        st.json({field: build[field] for field in ('dataset_id', 'sample_id', 'build_id', 'fingerprint', 'status', 'phase', 'query_ready')})
-    status = {'complete': '已完成', 'related': '关系已生成', 'failed': '失败', 'interrupted': '已中断'}.get(build['status'], build['status'])
-    mode = '合成回放' if replay else '只读浏览'
-    st.markdown(f'<div class="console-context"><span>{mode}</span><span>当前版本：{escape(status)}</span></div>', unsafe_allow_html=True)
+    statuses = {'complete': '已完成', 'related': '关系已生成', 'failed': '失败', 'interrupted': '已中断'}
+    with st.container(key='console_data_context', border=True):
+        summary = st.container(horizontal=True, vertical_alignment='center', key='console_context_summary')
+        with st.expander('数据与版本 · 更换所选记录'):
+            with st.container(key='console_data_controls'):
+                dataset_column, conversation_column, build_column = st.columns([1.2, 1, 1.4], gap='large')
+            with dataset_column:
+                datasets = page_items(request, '/datasets', 'console_dataset_offset', label='数据集', show_count=False)
+                if not datasets:
+                    summary.caption('尚未选择数据集')
+                    st.info('当前页尚无数据集。请检查数据导入。')
+                    return None
+                by_id = {item['dataset_id']: item for item in datasets}
+                dataset_id = compact_choice('数据集', list(by_id),
+                                          format_func=lambda value: by_id[value]['version'], key='console_dataset')
+            with conversation_column:
+                conversations = page_items(request, f'/datasets/{dataset_id}/conversations',
+                                           f'console_conversation_offset_{dataset_id}', label='对话', show_count=False)
+                if not conversations:
+                    summary.caption('当前数据集没有可选对话')
+                    st.info('当前页没有对话。')
+                    return None
+                sample_id = compact_choice('对话', [item['sample_id'] for item in conversations],
+                                          key=f'console_sample_{dataset_id}')
+            with build_column:
+                builds = page_items(request, '/builds', f'console_build_offset_{dataset_id}_{sample_id}',
+                                    label='构建版本', show_count=False, dataset_id=dataset_id, sample_id=sample_id)
+                if not builds:
+                    summary.caption('当前对话尚无构建版本')
+                    st.info('当前页没有 Build。Console 不会自动构建或调用模型。')
+                    return None
+                by_build = {item['build_id']: item for item in builds}
+                build_id = compact_choice('构建版本', list(by_build),
+                                        format_func=lambda value: f"版本 {list(by_build).index(value) + 1} · {statuses.get(by_build[value]['status'], by_build[value]['status'])}",
+                                        key=f'console_build_{dataset_id}_{sample_id}')
+                build = by_build[build_id]
+            st.caption('版本身份 · 展开查看完整 ID 与指纹')
+            st.json({field: build[field] for field in ('dataset_id', 'sample_id', 'build_id', 'fingerprint', 'status', 'phase', 'query_ready')}, expanded=False)
+        with summary:
+            for name, label in (
+                ('mode', '合成回放' if replay else '只读浏览'),
+                ('conversation', '对话：' + sample_id),
+                ('build', f"当前版本 {list(by_build).index(build_id) + 1} · {statuses.get(build['status'], build['status'])}"),
+            ):
+                with st.container(key='console_status_' + name, border=True, width='content'):
+                    st.text(label)
     if not build['query_ready']:
         st.warning('此 Build 尚未完整发布，只供检查，不作为完整问答结果。')
     return build
@@ -83,7 +97,7 @@ def render_frozen_report(evidence_path, reviewer=False, strategies=False):
 def render_runs(request):
     st.subheader('后端保存的 Run / 报告')
     st.caption('按本页已记录的完成时间排序，不代表全部报告的最新结果。')
-    runs = page_items(request, '/evaluation-runs', 'console_run_offset')
+    runs = page_items(request, '/evaluation-runs', 'console_run_offset', label='评测 Run')
     if not runs:
         st.info('当前页没有已保存的评测 Run。')
         return
@@ -220,7 +234,8 @@ def render_backend(request, page, reviewer, replay_cases=()):
     elif page == 'Memory':
         render_memory(request, build, reviewer)
     elif page == 'Query/Evidence':
-        render_trace(request, build, replay_cases, reviewer)
+        with st.container(key='console_query_page'):
+            render_trace(request, build, replay_cases, reviewer)
 
 
 def select_page(page):
@@ -232,15 +247,15 @@ def render_console(request, evidence_path=EVIDENCE, replay_cases=()):
     with st.container(key='console_header'):
         brand, navigation, settings = st.columns([2, 5, 1], vertical_alignment='center')
         with brand:
-            st.markdown('<div class="console-brand"><span class="console-brand-mark">DM</span>'
-                        '<span class="console-brand-title">Dynamic Memory</span></div>', unsafe_allow_html=True)
+            st.html('<div class="console-brand"><span class="console-brand-mark">DM</span>'
+                    '<span class="console-brand-title">Dynamic Memory</span></div>')
         with navigation:
             with st.container(key='console_nav'):
                 page = st.radio('页面导航', PAGES, format_func=lambda value: PAGE_LABELS.get(value, value),
                                 horizontal=True, key='console_page', label_visibility='collapsed')
         with settings:
             with st.popover('视图设置'):
-                reviewer = st.radio('使用场景', ('展示者', '评审者'), key='console_role') == '评审者'
+                reviewer = st.radio('使用场景', ('展示者', '评审者'), key='console_role', horizontal=True) == '评审者'
     try:
         render_backend(request, page, reviewer, replay_cases)
     except httpx.HTTPStatusError as error:

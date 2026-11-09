@@ -1,5 +1,7 @@
 # Product 第一阶段返工收尾记录
 
+> 历史记录：以下行为、命令、截图与结果仅对应文内注明的版本。复现历史命令请使用当时的 Git 提交；当前送审入口见 [Product 复核说明](../product-review.md)。
+
 日期：2026-11-08（北京时间）。关联 #23、#26–#29、Draft PR #39。此记录不是任务关闭、第二阶段方向确认或非作者验收。
 
 历史状态提示：负责人随后已在 #23 明确确认方向；本轮后续实现与 main 集成风险见 [最终候选交接](product-final-handoff.md)。下文保留第一阶段当时的记录。
@@ -12,7 +14,7 @@
 | 专项回归 | `e6dd29a`，29 passed / 1 warning | 已执行 |
 | 离线 Replay 浏览器 | `e6dd29a`，六类案例、版本/来源/阶段、无效 ID 恢复；真实模型请求 0 | 已执行 |
 | 原合成 API/UI 和旧五阶段入口 | `37e9910` 浏览器回归，四例、入口与启动器退出码 | 已执行 |
-| 同视口对照与文件完整性 | 8 张截图，7 张固定 1280×900、1 张扩展高度；[11 份材料校验清单](assets/product-ui-rework/manifest.json) | 已核对 |
+| 同视口对照与文件完整性 | 8 张截图，7 张固定 1280×900、1 张扩展高度；[11 份材料校验清单](../assets/product-ui-rework/manifest.json) | 已核对 |
 | 成员反馈 | [xiaozhuozi39 11 月 8 日 17:53 反馈](https://github.com/kenqia/locomo-dynamic-memory/issues/23#issuecomment-6720040739)：本地运行和新版呈现总体正面 | 未附实际 SHA、完整逐项结果，不作验收通过 |
 
 ## CI 环境阻塞与处理
@@ -41,7 +43,7 @@
 | 正式媒体与统一版本 | 按团队分工完成正式 MP4、PPTX/PDF、报告、验收记录和统一 RC |
 | Notion | 当前无可用连接或已关联记录；负责人补录摘要与 Issue/PR 链接，不能声称本次已同步 |
 
-成员可使用 [真人操作记录空模板](product-human-review-template.md) 补充证据；模板本身不表示已执行。
+成员可使用 [真人操作记录空模板](../product-human-review-template.md) 补充证据；模板本身不表示已执行。
 
 另外，[#24 的交叉复核指派](https://github.com/kenqia/locomo-dynamic-memory/issues/24#issuecomment-6703754063) 要求 Thorns-06 对 `codex/sidecar-research-20261107@2deefd54` 做真人非作者复核。
 这属于独立任务，在另一目录执行；当前没有 Thorns-06 本人执行的证据。AI 可以辅助准备和检查，不能代替本人结论。

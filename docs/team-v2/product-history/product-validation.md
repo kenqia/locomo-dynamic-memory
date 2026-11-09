@@ -1,5 +1,7 @@
 # Product Console 本机验证
 
+> 历史记录：以下行为、命令、截图与结果仅对应文内注明的版本。复现历史命令请使用当时的 Git 提交；当前送审入口见 [Product 复核说明](../product-review.md)。
+
 日期：2026-11-04，北京时间（D2）。Owner：@Thorns-06。
 基准：`3ba1954bd0c188ad84d80dd4a4f94618857b0109`。
 关联：#23 / #26；#27–#29 仍待后续交付。
@@ -47,12 +49,12 @@ CLI 端口占用探针确认直接服务和启动器均返回实际退出码 **3
 
 已逐张检查的合成 UI 截图：
 
-- [Overview](assets/product-console/overview.png)
-- [Memory](assets/product-console/memory.png)
-- [Query / Evidence](assets/product-console/trace.png)
-- [Experiments](assets/product-console/experiments.png)
-- [Demo](assets/product-console/demo.png)
-- [浏览器结果 JSON](assets/product-console/browser-result.json)
+- [Overview](../assets/product-console/overview.png)
+- [Memory](../assets/product-console/memory.png)
+- [Query / Evidence](../assets/product-console/trace.png)
+- [Experiments](../assets/product-console/experiments.png)
+- [Demo](../assets/product-console/demo.png)
+- [浏览器结果 JSON](../assets/product-console/browser-result.json)
 
 这些是 #26 的 Console 冒烟证据，不冒称 #29 全流程浏览器验收或另一台机器的人工复现。
 

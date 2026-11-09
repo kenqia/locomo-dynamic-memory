@@ -1,5 +1,7 @@
 # Product Console：页面适配与文案调整
 
+> 历史记录：以下行为、命令、截图与结果仅对应文内注明的版本。复现历史命令请使用当时的 Git 提交；当前送审入口见 [Product 复核说明](../product-review.md)。
+
 日期：2026-11-09。对应 #23、#26–#29 / Draft PR #39。本轮依据负责人在工作区提出的页面修改意见；改动基准 `739888347e5651036a1c42040f75dbe0d8f6f456`，页面代码 `8b40d23f882568565fb637004e9fce16797dbf94`。
 
 ## 可见变化
@@ -55,18 +57,18 @@
 
 | 查看内容 | 实际截图 |
 | --- | --- |
-| 桌面 Overview，1920×1080 | [查看](assets/product-responsive/overview-1920.png) |
-| 桌面 Overview，1280×900 | [查看](assets/product-responsive/overview-1280.png) |
-| 平板 Overview，768×1024 | [查看](assets/product-responsive/overview-768.png) |
-| 手机 Overview，390×844 | [查看](assets/product-responsive/overview-390.png) |
-| 桌面 / 手机 Memory | [桌面](assets/product-responsive/memory-1920.png) · [手机](assets/product-responsive/memory-390.png) |
-| 桌面 / 手机 Query | [桌面](assets/product-responsive/query-1280.png) · [手机](assets/product-responsive/query-390.png) |
-| 桌面 / 手机 Experiments | [桌面](assets/product-responsive/experiments-1280.png) · [手机](assets/product-responsive/experiments-390.png) |
-| 桌面 / 手机 Demo | [桌面](assets/product-responsive/demo-1280.png) · [手机](assets/product-responsive/demo-390.png) |
+| 桌面 Overview，1920×1080 | [查看](../assets/product-responsive/overview-1920.png) |
+| 桌面 Overview，1280×900 | [查看](../assets/product-responsive/overview-1280.png) |
+| 平板 Overview，768×1024 | [查看](../assets/product-responsive/overview-768.png) |
+| 手机 Overview，390×844 | [查看](../assets/product-responsive/overview-390.png) |
+| 桌面 / 手机 Memory | [桌面](../assets/product-responsive/memory-1920.png) · [手机](../assets/product-responsive/memory-390.png) |
+| 桌面 / 手机 Query | [桌面](../assets/product-responsive/query-1280.png) · [手机](../assets/product-responsive/query-390.png) |
+| 桌面 / 手机 Experiments | [桌面](../assets/product-responsive/experiments-1280.png) · [手机](../assets/product-responsive/experiments-390.png) |
+| 桌面 / 手机 Demo | [桌面](../assets/product-responsive/demo-1280.png) · [手机](../assets/product-responsive/demo-390.png) |
 
-[证据与 SHA-256 清单](assets/product-responsive/manifest.json)、[25 场景原始结果](assets/product-responsive/responsive-result.json)、[main 候选结果](assets/product-responsive/main-compatibility.json)、[六案例结果](assets/product-responsive/six-case-result.json)。环境为 Python 3.12.12、Streamlit 1.66.0、Edge 157.0.4341.42。本轮没有将自动化浏览器录制宣称为正式 MP4。
+[证据与 SHA-256 清单](../assets/product-responsive/manifest.json)、[25 场景原始结果](../assets/product-responsive/responsive-result.json)、[main 候选结果](../assets/product-responsive/main-compatibility.json)、[六案例结果](../assets/product-responsive/six-case-result.json)。环境为 Python 3.12.12、Streamlit 1.66.0、Edge 157.0.4341.42。本轮没有将自动化浏览器录制宣称为正式 MP4。
 
-`b91d74f` 的 [API Console / 旧入口检查](assets/product-responsive/api-legacy-result.json) 也通过：在全新 ignored 目录生成合成数据、启动本地 API/UI，四案例与原五阶段入口往返成功，服务端口占用错误正确透传。真实模型调用 0；该检查产生的合成数据库未上传。
+`b91d74f` 的 [API Console / 旧入口检查](../assets/product-responsive/api-legacy-result.json) 也通过：在全新 ignored 目录生成合成数据、启动本地 API/UI，四案例与原五阶段入口往返成功，服务端口占用错误正确透传。真实模型调用 0；该检查产生的合成数据库未上传。
 
 清单中 JSON 的 SHA-256 和字节数按 UTF-8 / LF 计算，PNG 按原始字节计算；Windows checkout 的 CRLF 需先规范为 LF。这与 Git 中保存的材料一致。
 
