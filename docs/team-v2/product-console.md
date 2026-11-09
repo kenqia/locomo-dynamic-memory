@@ -1,6 +1,6 @@
 # Product Console：模块入口与 API 映射
 
-关联：[#26](https://github.com/kenqia/locomo-dynamic-memory/issues/26)，并提供 #27 的只读入口。
+关联：父任务 [#23](https://github.com/kenqia/locomo-dynamic-memory/issues/23)，子任务 #26–#29。
 PR：[#39](https://github.com/kenqia/locomo-dynamic-memory/pull/39)，分支 `team/product-console-v2-6d`。
 当前改动、实际版本、证据和复核步骤集中在 [Product 复核说明](product-review.md)。
 

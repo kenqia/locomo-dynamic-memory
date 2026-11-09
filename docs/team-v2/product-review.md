@@ -7,7 +7,7 @@ Owner：Thorns-06；非作者 Reviewer：xiaozhuozi39。关联 #23、#26–#29�
 ## 版本与改动
 
 - 远端对照基准：`43b6c6e05a9a10f1ae4c3ec0aed42dcf912bbcda`；本地起点 `1fff3a3` 另包含上轮未推送的 JSON 换行校验修正，本轮一并提交。
-- 运行代码提交、浏览器环境与文件校验以本轮 [证据清单](assets/product-review/manifest.json) 为准；后续证据/说明提交不改写运行代码 SHA。
+- 运行代码提交：`60f14bf5f8bf44086dd96907ac23f6e394255c57`。浏览器环境与 16 份材料校验见本轮 [证据清单](assets/product-review/manifest.json)；后续证据/说明提交不改写运行代码 SHA。
 - 主要变化：导航四周留白和响应式排列；统一浅蓝状态标签；页内宽版数据/对话/版本面板；两种角色横向选择，摘要与评审详情分离。
 - Memory：分页显示范围/总数、前后页与页码跳转，单页说明“已全部显示”；翻页后选中项与详情同步。
 - 来源：选中即显示完整原文，删除查看按钮和临时说明。来源 1→2→1 反复切换始终按当前 ID 读取，保留作用域和完整身份校验；失败不显示旧原文。
@@ -41,7 +41,9 @@ uv run --locked python tools/team_v2/demo.py replay
 
 ## 验证与边界
 
-送审代码需完成：26 项 Console/实验/Replay/Evidence 定向检查、六案例与实际无损导出、30 个布局场景、来源自动显示/字段折叠及 11 个滚轮操作场景。具体通过结果、环境与 SHA 见证据清单；GitHub CI 以 PR 当前 HEAD 的实际 checks 为准，不借用旧提交的通过结果。
+固定送审代码已通过：26 项 Console/实验/Replay/Evidence 定向检查（1 条既有依赖弃用 warning）、六案例与实际无损导出、30 个布局场景、来源自动显示/字段折叠及 11 个滚轮操作场景。新合成 API/UI 的四案例、原五阶段往返与启动端口错误透传也通过，真实模型调用 0。具体结果、环境与 SHA 见证据清单；GitHub CI 以 PR 当前 HEAD 的实际 checks 为准，不借用旧提交的通过结果。
+
+主要材料：[桌面 Overview](assets/product-review/presenter-overview-1280.png) · [版本面板](assets/product-review/version-panel-1280.png) · [手机评审视图](assets/product-review/reviewer-overview-390.png) · [来源 1](assets/product-review/auto-source-1-1.png) / [来源 2](assets/product-review/auto-source-2-2.png) · [六案例/导出结果](assets/product-review/replay-result.json) · [滚轮记录](assets/product-review/scroll-result.json)。来源切换截图中原始字段已由测试手动展开，默认关闭由浏览器及单元检查分别验证。
 
 ```powershell
 .\.venv\Scripts\python.exe tools/team_v2/check.py -q --tb=short tests/test_console_ui.py tests/test_console_experiments_ui.py tests/test_console_replay.py tests/test_console_evidence_ui.py
@@ -49,7 +51,7 @@ uv run --locked python tools/team_v2/demo.py replay
 
 浏览器与 main 增量候选检查入口见 [工具索引](../../tools/team_v2/README.md)。浏览器环境独立，不增加项目模型依赖。
 
-已记录的 main 为 `0ebb2b8f832e306c37389881b9b7187129e5311a`，与分配的安全分支没有共同历史。增量候选仅向独立 main 导出添加六个 Product 模块和公开 fixture，保留其 Hybrid 默认与核心文件字节；不代表合并、生产验证或 main 全量回归，不能整分支覆盖 main。
+本轮核对的最新 main 为 `f18d76dc3227f0fd5b22be8bb6d7c28b516b812a`，与分配的安全分支没有共同历史。[增量候选检查](assets/product-review/main-compatibility.json)通过：只向独立 main 导出添加六个 Product 模块和公开 fixture，保留其 Hybrid 默认与五个核心文件字节；不代表合并、生产验证或 main 全量回归，不能整分支覆盖 main。
 
 正式 PPTX/PDF、MP4、技术报告和统一 RC 按 Delivery/负责人分工；短浏览器 WebM 仅为素材。本轮不代替 Thorns-06 执行另项 Sidecar 真人复核。
 

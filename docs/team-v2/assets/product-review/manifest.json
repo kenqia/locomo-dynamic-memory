@@ -1,0 +1,135 @@
+{
+  "schema": "product-review-evidence-v1",
+  "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+  "baseline_commit": "43b6c6e05a9a10f1ae4c3ec0aed42dcf912bbcda",
+  "main_commit": "f18d76dc3227f0fd5b22be8bb6d7c28b516b812a",
+  "environment": {
+    "python": "3.12.12",
+    "streamlit": "1.66.0",
+    "browser": "Edge 157.0.4341.42"
+  },
+  "targeted_tests": {
+    "passed": 26,
+    "warnings": 1,
+    "scope": "Console UI, experiments, replay, evidence; existing dependency deprecation warning"
+  },
+  "hash_normalization": "JSON UTF-8 with CRLF normalized to LF; PNG raw bytes. bytes counts this representation.",
+  "source_state_note": "Browser metadata records capture before publication; runtime/source hashes bind the committed code. Human review remains pending.",
+  "unarchived_materials": "Complete screenshots, short browser WebM and synthetic API fixture remain in ignored var/product-submit-*; no database or formal MP4 published.",
+  "human_review": "pending real non-author execution on final submitted SHA",
+  "provider_calls": 0,
+  "items": [
+    {
+      "file": "presenter-overview-1280.png",
+      "scene": "presenter-overview-1280",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 106707,
+      "sha256": "c34b929046a5688632ff16beace38b97fb3f70ca66e1c899ef9aafe320e58e12"
+    },
+    {
+      "file": "reviewer-query-1280.png",
+      "scene": "reviewer-query-1280",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 83286,
+      "sha256": "690a0095ad3eb29ad9467fdfd55946715923b50cf032b1f2b503d5f852db94e3"
+    },
+    {
+      "file": "presenter-memory-1280.png",
+      "scene": "presenter-memory-1280",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 96623,
+      "sha256": "1e0a024ccdea2f2bf47447c3d40d2074044c08c09b86d9b4d402aca06bec02ea"
+    },
+    {
+      "file": "presenter-experiments-1280.png",
+      "scene": "presenter-experiments-1280",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 105243,
+      "sha256": "b7ed7191766d3074eea1a5c382e692d515dd28037a1b4ca2ff5539c928cbbf05"
+    },
+    {
+      "file": "reviewer-overview-390.png",
+      "scene": "reviewer-overview-390",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 71387,
+      "sha256": "0855aa4352305a11f593c569ac7e07b152e5a4b4f9d396af5f601eb139a6420d"
+    },
+    {
+      "file": "version-panel-1280.png",
+      "scene": "version-panel-1280",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 108907,
+      "sha256": "ef70b0058638795d35af3b72698f48c7467b1a062e733768fc3b86cbc8661f97"
+    },
+    {
+      "file": "view-settings-reviewer-390.png",
+      "scene": "view-settings-reviewer-390",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 85266,
+      "sha256": "ad6a2d376cfabca0c142bffd8301956621f2a18dbdf405d659f5c34317549f5f"
+    },
+    {
+      "file": "auto-source-1-1.png",
+      "scene": "source automatically shown after repeated switching; fields manually opened during wheel checks",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 91825,
+      "sha256": "8250ec67801fa9de5774e176aa3878744069a0234202d862524185c8346684f8"
+    },
+    {
+      "file": "auto-source-2-2.png",
+      "scene": "source automatically shown after repeated switching; fields manually opened during wheel checks",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 95069,
+      "sha256": "bacd15e8595752c76d4445852e44660110a7afab259f1ecad3ea7b54adba4101"
+    },
+    {
+      "file": "layout-result.json",
+      "scene": "30 role/page/viewport scenes",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 42216,
+      "sha256": "188f6db34adb397785c48e58e6a933fa08fddc122559b7f7e6d934d035bacf84"
+    },
+    {
+      "file": "scroll-result.json",
+      "scene": "11 native wheel operations; source switching/default folding asserted by harness",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 7698,
+      "sha256": "5238583791c44c98e02ad21ac47d4975230edaca3458e04b9ab1972b895e564d"
+    },
+    {
+      "file": "scroll-environment.json",
+      "scene": "browser and source stylesheet hash at capture",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 206,
+      "sha256": "2fd0cde21f301d1531bd0ab5c5f4b6b928a813698f1bc03f145e659c1c492cc6"
+    },
+    {
+      "file": "replay-result.json",
+      "scene": "six cases, build/source/stages/recovery/report/cost/download",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 1233,
+      "sha256": "fc2f2a0340f9479854d0b3330a4055fe5d78d7cbd27a9eb184f079fab330c9cc"
+    },
+    {
+      "file": "exported-report.json",
+      "scene": "actual browser download equal to public frozen report",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 33613,
+      "sha256": "0011e840f01d4205056ee10de8489c4ce3d9abea76d1a7ddb46c7a7499464e2f"
+    },
+    {
+      "file": "main-compatibility.json",
+      "scene": "isolated current-main candidate; not a merge or full main regression",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 1154,
+      "sha256": "a6ae81193b694b89ff3aa72292aadfbf48dd5472d24fa667b2d552fde44342bf"
+    },
+    {
+      "file": "api-legacy-result.json",
+      "scene": "fresh local synthetic API/UI and original workflow",
+      "runtime_commit": "60f14bf5f8bf44086dd96907ac23f6e394255c57",
+      "bytes": 481,
+      "sha256": "cdc8319e3ca416031482359589be487e3a0739f47adaa1e5abd6b054497bb5d2"
+    }
+  ]
+}
