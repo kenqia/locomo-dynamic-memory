@@ -1,0 +1,138 @@
+{
+  "baseline_commit": "739888347e5651036a1c42040f75dbe0d8f6f456",
+  "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+  "responsive_harness_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+  "browser": "Edge 157.0.4341.42",
+  "python": "3.12.12",
+  "streamlit": "1.66.0",
+  "viewports": [
+    [
+      390,
+      844
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      1024,
+      900
+    ],
+    [
+      1280,
+      900
+    ],
+    [
+      1920,
+      1080
+    ]
+  ],
+  "scope": "25 page/viewport scenes, keyboard navigation, source jump, failure recovery, grouped metrics and lossless download; unmerged main candidate smoke.",
+  "human_review": "pending for this revision",
+  "provider_calls": 0,
+  "items": [
+    {
+      "file": "overview-1920.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 109719,
+      "sha256": "f896ed8ef9a497b9e2e20d91be1fda99acda399b26df3838a0796ce4310dd2f2"
+    },
+    {
+      "file": "overview-1280.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 104866,
+      "sha256": "6fb9a0f91dd50be845cdb63b6db1ac4fbbcbb3e5ca1cc684e049d5be6d0131a4"
+    },
+    {
+      "file": "overview-768.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 95031,
+      "sha256": "318e0f3f0969f76d771992943819d2e188e69eba0ff8cc3a6b127c34de4c19e6"
+    },
+    {
+      "file": "overview-390.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 59772,
+      "sha256": "1040e664ccda3f62ed9662a23e979bf23c1e498dd14534b5ea2c05a820dd5862"
+    },
+    {
+      "file": "memory-1920.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 110783,
+      "sha256": "087c8ed4af738f7ca79e4421bbc939e063204f37c1c322c1f8a29d8b953b4cf0"
+    },
+    {
+      "file": "memory-390.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 52719,
+      "sha256": "d082539bc186fa4fb6bed3ab061f5270a083384cdc020aeadeac7f43c6d0723f"
+    },
+    {
+      "file": "query-1280.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 78000,
+      "sha256": "b3a586feb5ad6f2c743323764c429ee4bad33ac7aa0e13e9e863b6f27b5660b2"
+    },
+    {
+      "file": "query-390.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 54894,
+      "sha256": "1a89bea277a93cc081f7012414d558c8e599c84195b9baaad2b6cafbad9a8857"
+    },
+    {
+      "file": "experiments-1280.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 104439,
+      "sha256": "daf4124e5987418a1627e4e05048da74f71be5c0b62f472023e684b1ca816cb9"
+    },
+    {
+      "file": "experiments-390.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 76114,
+      "sha256": "ba21ccfdf816832636044c2c1479a6752ed873948776a0d30bdb5f427883d40e"
+    },
+    {
+      "file": "demo-1280.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 104401,
+      "sha256": "82ed642bd7a68e152696759c818c5d8e903c69dd7c93c4b199f6d55dcb5b7e85"
+    },
+    {
+      "file": "demo-390.png",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 72861,
+      "sha256": "9410c68fe02154ff1c4bc8d9fc06b6c4356e757d7cb0d0d026309ae61cc638c0"
+    },
+    {
+      "file": "responsive-result.json",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 17469,
+      "sha256": "4baa30b4f893788cf19193f39faad9a8e6dd2591aa86219e585d766a05b11438"
+    },
+    {
+      "file": "frozen-research-report.json",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 33613,
+      "sha256": "0011e840f01d4205056ee10de8489c4ce3d9abea76d1a7ddb46c7a7499464e2f"
+    },
+    {
+      "file": "main-compatibility.json",
+      "runtime_commit": "8b40d23f882568565fb637004e9fce16797dbf94",
+      "bytes": 1186,
+      "sha256": "c5f12109d813171dd8281cccb3512e4bf6350aac479a910111f62bee151fc89d"
+    },
+    {
+      "file": "six-case-result.json",
+      "runtime_commit": "66b6f9e0c4271012209eb39f3e872e8366dd7edd",
+      "bytes": 1159,
+      "sha256": "1e767ead8f0333345c22fe38ff550ff6805d30af3b5b04b87998e1e0f3e4c8fb"
+    },
+    {
+      "file": "api-legacy-result.json",
+      "runtime_commit": "b91d74f3fd33aa8ccfedae1d9956e6818cacd3c6",
+      "bytes": 501,
+      "sha256": "408d36769e6dbeb61db76e7d4cc3d88380b5f05477708141396045bd029d3b3d"
+    }
+  ],
+  "unarchived_materials": "Six-case screenshots/WebM and API fixture/screenshots remain under ignored var/responsive-*; result JSONs are archived. No active database or formal MP4 is published."
+}
