@@ -35,12 +35,17 @@ def main():
         page.on('pageerror', lambda error: errors.append(str(error)))
 
         def capture(name):
+            expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=20000)
+            expect(page.get_by_test_id('stException')).to_have_count(0)
+            if name == 'overview.png':
+                expect(page.get_by_test_id('stMetric').first).to_contain_text('3028')
             # Fit Streamlit's internal scroll content into the real viewport;
             # body full_page alone clips it. Desktop width remains 1280px.
             main = page.get_by_test_id('stMain')
             height = main.evaluate('(element) => element.scrollHeight')
             page.set_viewport_size({'width': 1280, 'height': min(2000, max(900, height + 20))})
             main.evaluate('(element) => { element.scrollTop = 0; }')
+            expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=20000)
             page.screenshot(path=str(args.output / name), full_page=True)
             page.set_viewport_size({'width': 1280, 'height': 900})
 

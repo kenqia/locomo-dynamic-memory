@@ -4510,8 +4510,8 @@
     },
     {
       "path": "tools/team_v2/browser_console.py",
-      "bytes": 6175,
-      "sha256": "1a49d248b16343e8098b671b90b283904f506ac42baa141f9aa0c6a60d8e1bb2"
+      "bytes": 6616,
+      "sha256": "9cb4879dd19bb86cee2d68a2393fadf503168a715fbbd146a6dc734786465b18"
     },
     {
       "path": "tools/team_v2/browser_product_final.py",
