@@ -55,7 +55,7 @@
     },
     {
       "path": "tools/research_v2/sidecar_core.py",
-      "sha256": "e131aeefbc66273393dbf2c7e0475c7a0956d21d97498709cfcceb1fd34ea3ea"
+      "sha256": "d884f2a697a946e658667c5389a07dcc44ab8f9c9f91d932d757bf91f232e9e8"
     },
     {
       "path": "tests/test_sidecar_core.py",
@@ -63,9 +63,22 @@
     },
     {
       "path": "docs/sidecar-v0/ARCH02-FILES.sha256",
-      "sha256": "41d85fdeac1ca7222e5a6c0408a5e242ef58dc5f812eb736674b10452a88199e"
+      "sha256": "f58be8ec7d758f7e90bad8b469eb395cd642fd5167b95202168e7c6957485a1d"
+    },
+    {
+      "path": "tools/research_v2/sidecar_research.py",
+      "sha256": "4aaaf6fc9227d9497574c6b586bca2594c0878de3ae22af832a81a3bfcd9b2b2"
+    },
+    {
+      "path": "tests/test_sidecar_adjacent_research.py",
+      "sha256": "40dd82cf5c6163ac8ccc4fa8044540a4ac9552f7abc0dff5339eb5de260b704d"
+    },
+    {
+      "path": "docs/sidecar-v0/ARCH03-FILES.sha256",
+      "sha256": "f90e707afa45da164c08f26c1acc375c2c79fcb6048910ef9b1a355407676fba"
     }
   ],
-  "reviewed_head": "0f470a3b3aac782b42b082b199e2fa81a12cf837",
-  "rule_version": "deterministic-sidecar-v0.3"
+  "reviewed_head": "3e0b217452477b23920d50bfafb48667eb6e84ed",
+  "rule_version": "deterministic-sidecar-v0.5-research",
+  "research_source_head": "2deefd54c7367dffb2a6c4b8e59e72155a884659"
 }

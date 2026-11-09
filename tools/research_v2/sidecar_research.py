@@ -7,11 +7,10 @@ from dataclasses import dataclass
 import hashlib
 import json
 from typing import Any, Literal
-from pydantic import ValidationError
 from tools.research_v2.sidecar_core import diagnose, SidecarDiagnostics
 from tools.research_v2.sidecar_schema import SidecarInput
 
-RESEARCH_VERSION='sidecar-research-v0.3'
+RESEARCH_VERSION='sidecar-research-v0.5-research'
 
 
 def canonical_bytes(value):
@@ -50,7 +49,7 @@ def research_view(response, snapshot=None, *, enabled=False, max_event_pairs=100
                 raise ValueError('Original response and diagnostic snapshot scopes differ')
         value=diagnose(validated,enabled=True,max_event_pairs=max_event_pairs)
         return ResearchView(response=response,status='diagnosed',diagnostic=value)
-    except (ValidationError,ValueError,TypeError,RuntimeError):
+    except Exception:
         # Do not emit snapshot text, model errors or credentials in error details.
         return ResearchView(response=response,status='diagnostic_failed',error_code='sidecar_diagnostic_failed')
 
