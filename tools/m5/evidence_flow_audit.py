@@ -21,7 +21,10 @@ def audit(stage, freeze_sha):
         raise ValueError('freeze_sha_mismatch')
     freeze = json.loads((stage/'generation-freeze.json').read_text())
     lock = json.loads((stage/'final-system-lock.json').read_text())
-    if freeze['status'] != 'generation_complete' or sha(stage/'plan.json') != freeze['plan_sha256']:
+    plan = json.loads((stage/'plan.json').read_text())
+    if (freeze['status'] != 'generation_complete' or sha(stage/'plan.json') != freeze['plan_sha256']
+            or sha(stage/'final-system-lock.json') != plan['final_lock_sha256']
+            or sha(stage/'inputs.json') != plan['inputs_sha256']):
         raise ValueError('generation_not_frozen')
     items = []
     for name, expected in sorted(freeze['item_hashes'].items()):
@@ -82,6 +85,7 @@ def audit(stage, freeze_sha):
                 resolver_complete=trace.get('resolution_budgets', {}).get('resolve', {}).get('within_budget'),
                 answer_truncated=trace.get('evidence_budget', {}).get('truncated'),
                 flow=flow, answer=trace.get('answer'),
+                decisions=trace.get('resolution', {}).get('decisions'),
                 expanded_memories=list(memories.values())))
     # Strata are deterministic diagnostic samples, never a representative accuracy estimate.
     chosen = []
@@ -95,8 +99,22 @@ def audit(stage, freeze_sha):
         chosen.extend((label, row) for row in candidates[:limit])
     chosen.extend(('additional_rejection', row) for row in rows if row not in [x[1] for x in chosen]
                   and row['gold_losses'])
-    cases = [{k: v for k, v in row.items() if k not in {'flow', 'expanded_memories'}} | dict(stratum=label)
-             for label, row in chosen[:20]]
+    cases = []
+    # Only publish excerpts that exactly match the already tracked public dataset.
+    public_path = Path(__file__).resolve().parents[2]/'data/raw/locomo/locomo10.json'
+    public_sources = {(sample['sample_id'], turn['dia_id']): turn['text']
+        for sample in json.loads(public_path.read_text())
+        for session, turns in sample['conversation'].items()
+        if session.startswith('session_') and isinstance(turns, list) for turn in turns}
+    for label, row in chosen[:20]:
+        case = {**row, 'stratum': label}
+        source_ids = {sid for memory in row['expanded_memories'] for sid in memory['source_ids']}
+        originals = [source_maps[row['sample_id']][sid] for sid in sorted(source_ids)]
+        if any(public_sources.get((row['sample_id'], s['dia_id'])) != s['text'] for s in originals):
+            raise ValueError('case_source_not_in_tracked_public_dataset')
+        case['sources'] = [{k: s[k] for k in ('source_id', 'dia_id', 'speaker', 'session_id', 'session_time', 'text', 'position')}
+                           for s in originals]
+        cases.append(case)
     summary = dict(planned=len(rows), scorable=sum(r['scorable'] for r in rows),
         succeeded=sum(r['outcome'] == 'succeeded' for r in rows),
         complete_resolver_inputs=sum(r['resolver_complete'] is True for r in rows),
@@ -127,7 +145,9 @@ def audit(stage, freeze_sha):
             fixed_decision_delivered_source_recall=sum(delivered_recalls)/len(delivered_recalls)))
     if sha(stage/'generation-freeze.json') != freeze_sha or source_storage_identity(ref_path) != reference['storage_identity']:
         raise ValueError('frozen_input_changed_during_audit')
-    return dict(version='level-e-evidence-flow-audit-v1', freeze_sha256=freeze_sha, summary=summary,
+    return dict(version='level-e-evidence-flow-audit-v1', freeze_sha256=freeze_sha,
+        public_source_provenance=dict(path='data/raw/locomo/locomo10.json', sha256=sha(public_path),
+            license='CC-BY-NC-4.0', exact_text_match=True), summary=summary,
         cases=cases, prefix_replay=prefixes, model_calls=0,
         limitations=['Exposed holdout; retrospective diagnostic only.',
             'Source IDs and rejection reasons do not establish semantic applicability.',

@@ -58,7 +58,18 @@ def test_month_range_reaches_resolver_and_answer_without_source_time_filter(sett
     ('since May 1, 2023', ('2023-05-01', None)),
     ('between July 2023 and August 2023', None),
     ('from 2023-07-01 to 2023-07-31', None),
+    ('from 2023-01-01 until 2023-05-01', None),
+    ('on 2023-01-01 and before 2023-05-01', None),
 ])
 def test_supported_intervals_preserve_precision_and_ambiguous_ranges_stay_unknown(question, expected):
     interval = question_interval(question)
     assert ((interval['start'], interval['end']) if interval else None) == expected
+
+
+@pytest.mark.parametrize('question', [
+    'Where from July 2023 to August 1, 2023?',
+    'Where between July 2023 and August 1, 2023?',
+    'Where before the 1 May 2023?',
+])
+def test_qualified_and_mixed_ranges_are_never_collapsed_to_one_endpoint(question):
+    assert explicit_question_date(question) is None

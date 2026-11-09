@@ -38,6 +38,8 @@ def conversation_cutoff(db, dataset_id: str, sample_id: str) -> tuple[datetime, 
 
 def explicit_question_date(question):
     """Recognize one exact date; ambiguous ranges stay in the original question."""
+    if re.search(r'\b(?:between|from)\b.+\b(?:and|to|until|through)\b', question, re.I):
+        return None
     matches = []
     patterns = [
         (r"\b\d{4}-\d{2}-\d{2}\b", ("%Y-%m-%d",)),
@@ -46,7 +48,7 @@ def explicit_question_date(question):
     ]
     for pattern, formats in patterns:
         for match in re.finditer(pattern, question):
-            if re.search(r'\b(before|after|since|until|between|from|by)\s*$', question[:match.start()], re.I):
+            if re.search(r'\b(before|after|since|until|between|from|by)\s+(?:the\s+)?$', question[:match.start()], re.I):
                 return None
             for format in formats:
                 try:
@@ -69,6 +71,8 @@ def question_interval(question):
     """
     operator = re.search(r'\b(before|after|since|until|by)\s+(.+)', question, re.I)
     if operator:
+        if re.search(r'\b\d{4}\b|\b(between|from)\b', question[:operator.start()], re.I):
+            return None
         # Remove only this operator so the exact-date parser still rejects other ranges.
         point = explicit_question_date(operator[2])
         if point is not None:
