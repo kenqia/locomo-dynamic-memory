@@ -91,7 +91,7 @@ def export_fixture(output):
                 'relations': {}, 'projections': {}, 'traces': {}, 'cases': [], 'runs': []}
 
     def capture_case(client, kind, question, **extra):
-        response = client.post('/queries', json={'dataset_id': dataset_id, 'sample_id': 'conv-a',
+        response = client.post('/queries', json={'strategy': 'dynamic', 'dataset_id': dataset_id, 'sample_id': 'conv-a',
                                'build_id': build_id, 'question': question, **extra})
         assert response.status_code in (201, 422, 502), response.text
         trace_id = response.json().get('trace_id') or response.json()['error']['trace_id']
