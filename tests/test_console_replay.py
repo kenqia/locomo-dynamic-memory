@@ -87,18 +87,18 @@ render_console(store.request, evidence_path=store.evidence_path, replay_cases=st
     assert not app.dataframe
     build = store.data['builds'][0]
     memories = store.data['memories'][build['build_id']]
-    for content, expected in (('Alex plans to visit Tokyo.', '计划 · plan'),
-                              ('Alex does not own a car.', '否定 · negative')):
+    for content, expected in (('Alex plans to visit Tokyo.', '计划 · 肯定'),
+                              ('Alex does not own a car.', '事实陈述 · 否定')):
         memory = next(item for item in memories if item['content'] == content)
         app.radio(key=f"console_memory_{build['build_id']}").set_value(memory['memory_id']).run()
         assert any(expected in item.value for item in app.caption)
         assert any('事件时间：unknown → unknown' == item.value for item in app.caption)
     app.radio(key='console_page').set_value('Query/Evidence').run()
-    app.selectbox(key='console_replay_case').set_value('budget_failure').run()
+    app.radio(key='console_replay_case').set_value('budget_failure').run()
     app.button(key='console_load_case').click().run()
     assert not app.exception
     assert any('conflict_evidence_budget_exceeded' in error.value for error in app.error)
-    app.selectbox(key='console_replay_case').set_value('citation_anomaly').run()
+    app.radio(key='console_replay_case').set_value('citation_anomaly').run()
     app.button(key='console_load_case').click().run()
     assert any('answer / invalid_output' in error.value for error in app.error)
 
@@ -172,4 +172,4 @@ render_sources(mismatched, [source_id], build, 'identity_check')
     app.button(key='identity_check_open').click().run()
     assert not app.exception
     assert any('身份与引用不一致' in error.value for error in app.error)
-    assert not app.text
+    assert not any(item.value == 'Wrong conversation text' for item in app.text)

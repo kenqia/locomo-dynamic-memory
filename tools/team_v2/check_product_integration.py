@@ -10,7 +10,8 @@ import zipfile
 
 from demo import ROOT, demo_environment
 
-PRODUCT_FILES = ['console_ui.py', 'console_replay.py', 'evidence_ui.py', 'frozen_report_ui.py']
+PRODUCT_FILES = ['console_ui.py', 'console_replay.py', 'evidence_ui.py', 'frozen_report_ui.py',
+                 'console_theme.py', 'console_widgets.py']
 CORE_FILES = ['query_ui.py', 'queries.py', 'config.py', 'ui.py', 'api.py']
 
 

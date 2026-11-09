@@ -10,7 +10,6 @@ from locomo_memory.ui_theme import apply_app_theme
 ROOT = Path(__file__).resolve().parents[2]
 st.set_page_config(page_title='LoCoMo offline Replay', layout='wide')
 apply_app_theme()
-st.caption('OFFLINE SYNTHETIC DEMO · REPLAY · 固定合成快照 · 无 API / 数据库 / 模型请求 · 不代表真实 QA 质量')
 try:
     store = ReplayStore(ROOT / 'demo_fixture/product-v1')
 except (OSError, ValueError, KeyError):

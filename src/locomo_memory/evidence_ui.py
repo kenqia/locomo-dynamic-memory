@@ -4,13 +4,15 @@ from urllib.parse import quote
 import httpx
 import streamlit as st
 
+from locomo_memory.console_widgets import compact_choice
+
 
 def page_items(request, path, key, compact=False, **params):
     controls, summary = st.columns([1, 6], vertical_alignment='center') if compact else (st, st)
     with controls.popover('分页'):
         offset = int(st.number_input('列表起始位置', min_value=0, step=20, key=key))
     page = request('GET', path, params={**params, 'limit': 20, 'offset': offset})
-    summary.caption(f"本页 {len(page['items'])} 项 / 全部 {page['total']} 项 · offset {offset}")
+    summary.caption(f"本页 {len(page['items'])} 项 / 共 {page['total']} 项")
     return page['items']
 
 
@@ -23,12 +25,12 @@ def render_sources(request, source_ids, build, key):
     if not ids:
         st.info('此阶段没有记录来源引用。')
         return
-    source_id = st.selectbox('来源引用', ids,
+    source_id = compact_choice('来源引用', ids,
                              format_func=lambda sid: f'来源 {ids.index(sid) + 1} · {sid.rsplit("/", 1)[-1]}',
                              key=f'{key}_id')
     parts = source_id.split('/')
     if len(parts) != 3 or parts[:2] != [build['dataset_id'], build['sample_id']]:
-        st.error('来源 ID 无法映射到当前数据集 / 对话，保留异常，不猜测修正。')
+        st.error('来源不属于当前数据集或对话，无法展示原文。')
         return
     if st.button('查看完整原文', key=f'{key}_open'):
         st.session_state.pop(f'{key}_source', None)
@@ -41,7 +43,7 @@ def render_sources(request, source_ids, build, key):
                 return
             st.session_state[f'{key}_source'] = source
         except httpx.HTTPError:
-            st.error('引用原文读取失败，保留引用异常，不生成替代原文。')
+            st.error('无法读取引用原文，请核对来源或连接。')
     source = st.session_state.get(f'{key}_source')
     if source and source['source_id'] == source_id:
         st.caption(f"{source['speaker']} · 报告时间（原文）: {source['session_time']}")
@@ -56,7 +58,8 @@ def render_memory_summary(memory):
     statement = {'fact': '事实陈述', 'plan': '计划', 'intention': '意愿', 'uncertain': '不确定'}.get(
         memory['statement_type'], memory['statement_type'])
     polarity = {'positive': '肯定', 'negative': '否定'}.get(memory['polarity'], memory['polarity'])
-    st.caption(f"{statement} · {memory['statement_type']} / {polarity} · {memory['polarity']} · {memory['memory_type']}")
+    kind = {'state': '状态', 'event': '事件'}.get(memory['memory_type'], memory['memory_type'])
+    st.caption(f"{statement} · {polarity} · {kind}")
     time = memory.get('time', {})
     st.caption('报告时间（原文）：' + ('；'.join(memory.get('session_times', [])) or 'unknown'))
     st.caption(f"事件时间：{recorded(time.get('event_start'))} → {recorded(time.get('event_end'))}")
@@ -72,17 +75,17 @@ def render_memory_inspector(request, build, reviewer=False):
         return
     build_id = build['build_id']
     memories = page_items(request, f'/builds/{build_id}/memories', f'console_memory_offset_{build_id}', compact=True)
-    st.caption('选择一条记忆，检查原文、时间和关系。按 API Memory 记录顺序展示，不代表事件时间排序。')
+    st.caption('列表按记录顺序展示，未按事件时间排序。')
     if not memories:
         st.info('当前页尚无 Memory。')
         return
     by_id = {memory['memory_id']: memory for memory in memories}
-    selection, detail = st.columns([1, 1.6], gap='large')
+    with st.container(key='console_memory_layout'):
+        selection, detail = st.columns([1, 1.6], gap='large')
     with selection:
-        st.markdown('**记忆时间线**')
+        st.markdown('**记忆列表**')
         memory_id = st.radio('检查记忆', list(by_id), format_func=lambda mid: by_id[mid]['content'],
                              key=f'console_memory_{build_id}', label_visibility='collapsed')
-        st.caption('报告时间不替代事件时间；计划、否定和未知边界均保留。')
     with detail:
         with st.container(border=True):
             st.markdown('**选中记忆**')
@@ -102,7 +105,7 @@ def render_memory_inspector(request, build, reviewer=False):
                     st.text(f"{label}：{memory['content'] if memory else '内容不在当前 Memory 页，请在评审详情核对引用 ID'}")
                 st.text(relation.get('reason') or '关系理由：unknown')
     else:
-        st.caption('当前关系页未记录与这条记忆相连的关系；不根据时间较新推断替代。')
+        st.caption('当前关系页没有与这条记忆相连的记录。')
     with st.expander('评审详情 · 关系的适用条件与来源证据', expanded=reviewer):
         st.json(relations)
     if build['status'] in ('related', 'complete'):
@@ -121,7 +124,7 @@ def render_trace_inspector(request, build, trace, reviewer=False):
         st.text(trace['question'])
     error = trace.get('error')
     if error:
-        st.error(f"问答执行失败：{error.get('stage', 'unknown')} / {error.get('code', 'unknown')}；失败不代表没有证据。")
+        st.error(f"问答执行失败：{error.get('stage', 'unknown')} / {error.get('code', 'unknown')}")
     answer = trace.get('answer')
     if answer:
         with st.chat_message('assistant'):
@@ -176,7 +179,7 @@ def render_trace_stages(request, build, trace):
         section = {'resolution': trace.get('resolution'), 'source_delivery': trace.get('source_delivery'),
                    'resolution_budgets': trace.get('resolution_budgets')}
         memories = trace.get('effective_memories', [])
-        st.caption('有效选择与实际送达分别查看；缺少送达记录时不宣称模型已经收到。')
+        st.caption('有效记忆与送达记录分别列出；未记录送达时，无法确认模型是否收到。')
     else:
         section, memories = {'answer': trace.get('answer'), 'error': trace.get('error')}, []
     if memories:

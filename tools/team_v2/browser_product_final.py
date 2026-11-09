@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -38,9 +39,19 @@ def main():
 
         def settle():
             expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=20000)
+            page.wait_for_function('() => !document.querySelector(\'[data-stale="true"]\')')
 
         def choose(label, name):
             settle()
+            keys = {'聚合维度': 'experiment_dimension', '查看分组详情': 'experiment_group_strategy', '成本策略': 'experiment_cost'}
+            area = page.locator('.st-key-choice_' + keys[label]) if label in keys else page
+            option = area.get_by_role('radio', name=name, exact=True)
+            if option.count() == 1:
+                option.focus()
+                option.press('Space')
+                expect(option).to_be_checked()
+                settle()
+                return
             control = page.get_by_role('combobox', name=label, exact=True)
             control.evaluate('(el) => el.scrollIntoView({block: "center", behavior: "instant"})')
             control.focus()
@@ -78,18 +89,19 @@ def main():
 
         page.goto(args.url)
         page.add_style_tag(content='* { scroll-behavior: auto !important; }')
-        expect(page.get_by_role('heading', name='Research Console', exact=True)).to_be_visible(timeout=60000)
+        expect(page.get_by_role('heading', name=re.compile(r'^(Research Console|Overview · 工作概览)$'))).to_be_visible(timeout=60000)
+        responsive = page.locator('.console-brand').count() > 0
         expect(page.get_by_test_id('stMetric').filter(has=page.get_by_text('原 Run 计划组合', exact=True))).to_contain_text('3028')
-        final_layout = page.get_by_role('button', name='进入Memory', exact=True).count() > 0
+        final_layout = responsive or page.get_by_role('button', name='进入Memory', exact=True).count() > 0
         capture('overview')
         if final_layout:
-            page.get_by_role('button', name='进入Memory', exact=True).click()
+            page.get_by_role('button', name='进入 Memory' if responsive else '进入Memory', exact=True).click()
         else:
             page.get_by_text('Memory', exact=True).click()
         expect(page.get_by_role('heading', name='Memory · 记忆与来源', exact=True)).to_be_visible()
         page.get_by_role('button', name='查看完整原文', exact=True).click()
         expect(page.get_by_text('I live in Paris.', exact=True)).to_be_visible()
-        page.get_by_text('Query/Evidence', exact=True).click()
+        page.get_by_text('Query' if responsive else 'Query/Evidence', exact=True).click()
         expect(page.get_by_role('heading', name='选择已有问答记录', exact=True)).to_be_visible()
         page.get_by_role('button', name='载入冻结案例', exact=True).click()
         expect(page.get_by_role('group', name='Chat message from assistant', exact=True)
@@ -127,7 +139,7 @@ def main():
         page.get_by_text('原 Run', exact=True).click()
         page.get_by_text('Demo', exact=True).click()
         expect(page.get_by_role('heading', name='Demo · 合成应用 Replay', exact=True)).to_be_visible()
-        expect(page.get_by_text('当前为固定快照 Replay', exact=False)).to_be_visible()
+        expect(page.get_by_text('以下为合成案例' if responsive else '当前为固定快照 Replay', exact=False)).to_be_visible()
         capture('demo')
         assert not errors, errors
         assert not blocked, blocked

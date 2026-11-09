@@ -41,6 +41,7 @@ def main():
 
         def settle():
             expect(page.get_by_test_id('stApp')).to_have_attribute('data-test-script-state', 'notRunning', timeout=20000)
+            page.wait_for_function('() => !document.querySelector(\'[data-stale="true"]\')')
 
         def capture(name):
             settle()
@@ -60,6 +61,13 @@ def main():
             screenshots.append(name)
 
         def choose(label, name):
+            option = page.get_by_role('radio', name=name, exact=True)
+            if option.count() == 1:
+                option.focus()
+                option.press('Space')
+                expect(option).to_be_checked()
+                settle()
+                return
             control = page.get_by_role('combobox', name=label, exact=True)
             try:
                 settle()
@@ -94,7 +102,8 @@ def main():
 
         page.goto(args.url)
         page.add_style_tag(content='* { scroll-behavior: auto !important; }')
-        expect(page.get_by_role('heading', name='Research Console', exact=True)).to_be_visible(timeout=60000)
+        expect(page.get_by_role('heading', name=re.compile(r'^(Research Console|Overview · 工作概览)$'))).to_be_visible(timeout=60000)
+        responsive = page.locator('.console-brand').count() > 0
         capture('replay-overview.png')
         page.get_by_text('Memory', exact=True).click()
         expect(page.get_by_role('heading', name=re.compile(r'^Memory ·'))).to_be_visible()
@@ -106,7 +115,7 @@ def main():
         settle()
         expect(page.get_by_text('I live in Paris.', exact=True)).to_be_visible()
         capture('replay-memory-source.png')
-        page.get_by_text('数据 / 对话 / Build', exact=True).click()
+        page.get_by_text('数据与版本' if responsive else '数据 / 对话 / Build', exact=True).click()
         older = data['builds'][1]['build_id']
         choose('冻结 / 历史 Build', '版本 2 · complete' if reworked else f'complete · {older}')
         if reworked:
@@ -115,7 +124,7 @@ def main():
             expect(page.locator('.dm-context')).to_contain_text(older)
         primary = data['cases'][0]['build_id']
         choose('冻结 / 历史 Build', '版本 1 · complete' if reworked else f'complete · {primary}')
-        page.get_by_text('数据 / 对话 / Build', exact=True).click()
+        page.get_by_text('数据与版本' if responsive else '数据 / 对话 / Build', exact=True).click()
         if reworked:
             memory = page.get_by_role('radio', name='Alex plans to visit Tokyo.', exact=True)
             memory.focus()
@@ -126,9 +135,11 @@ def main():
             choose('检查记忆', 'Alex plans to visit Tokyo.')
         page.get_by_role('button', name='查看完整原文', exact=True).click()
         expect(page.get_by_text('I plan to visit Tokyo, but no date is decided.', exact=True)).to_be_visible()
-        page.get_by_text('Query/Evidence', exact=True).click()
+        page.get_by_text('Query' if responsive else 'Query/Evidence', exact=True).click()
         for case in data['cases']:
-            choose('冻结案例', case['case_id'])
+            labels = {'success': '当前事实', 'historical': '历史日期', 'conflict': '证据冲突',
+                      'insufficient': '证据不足', 'citation_anomaly': '引用异常', 'budget_failure': '预算失败'}
+            choose('冻结案例', labels[case['case_id']] if responsive else case['case_id'])
             page.get_by_role('button', name='载入冻结案例', exact=True).click()
             settle()
             trace = data['traces'][case['trace_id']]
@@ -175,7 +186,7 @@ def main():
             settle()
             page.get_by_role('button', name='读取已有 Trace', exact=True).click()
             expect(page.get_by_text('Trace ID 格式无效', exact=False)).to_be_visible()
-            choose('冻结案例', 'success')
+            choose('冻结案例', '当前事实' if responsive else 'success')
             page.get_by_role('button', name='载入冻结案例', exact=True).click()
             expect(page.get_by_role('group', name='Chat message from assistant', exact=True)
                    .get_by_text('Alex lives in Rome.', exact=True)).to_be_visible()
@@ -191,7 +202,7 @@ def main():
         expect(page.get_by_text('可比成功配对', exact=True)).to_be_visible()
         capture('replay-experiments.png')
         page.get_by_text('Demo', exact=True).click()
-        expect(page.get_by_text('当前为固定快照 Replay', exact=False)).to_be_visible()
+        expect(page.get_by_text('以下为合成案例' if responsive else '当前为固定快照 Replay', exact=False)).to_be_visible()
         capture('replay-demo.png')
         assert not errors, errors
         video = page.video
