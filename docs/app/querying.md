@@ -1,5 +1,26 @@
 # 使用有效证据回答问题
 
+2026-11-09：查询保留明确月份和开放日期范围的结构，见下文更新。
+
+## 时间范围与逐阶段证据诊断
+
+`before/after/since/until/by` 直接修饰日期时，不再把日期当作点查询。
+单个英文月份（如 `during July 2023`）转换为 `time.query_interval` 的 `start/end/precision` 与端点包含标记；
+明确页面/API `requested_date` 优先于问题区间。未支持的多端点范围保留原问题，不选择其中一天。
+`anchor_date` 在无点日期时仍提供对话截止锚点；`query_interval` 才表达已解析的范围。
+Dynamic 的 `origin=explicit_question_interval` 区分这种情况，Hybrid/Full Text 的 Answer 也获得相同区间。
+完整位于已知范围之后的区间保留不足约束；跨越截止日期的区间仍需模型说明已知部分和缺口。
+
+报告时间 `session_time` 与事件时间、状态有效时间不同。迟报证据可能描述较早的真实状态，系统不会仅因报告时间晚于查询日期而硬过滤它。
+Prompt 要求区分“当时真实状态”与“截至当时已知什么”；后者尚无独立 API 模式及完整双时态过滤契约。
+
+新保存的 Trace 增加 `evidence_flow`，分别记录 initial、expanded、resolver_input、effective、delivered 的 Memory/Source IDs。
+排除记录区分 `resolver_rejected`、`resolution_input_omitted`、`answer_budget` 和 `delivery_unobserved`，保留模型原排除理由。
+不存在的阶段使用 `null`；delivered 表示已记录的 Answer 上下文，是否实际发出/收到响应仍需核查 operations/provider 元数据。
+ID 覆盖与合法引用不能证明答案受到原文支持。
+
+历史冻结 Trace 不改写；可通过[离线审计记录](../../experiments/evidence-flow-20261109/README.md)的命令重新派生。
+
 完整版本支持英文当前与历史问答。后端先固定一个完整 BuildVersion，再执行问题分析、真实 BM25/Dense/RRF 检索、相关历史扩展、有效证据解析与答案生成。查询只追加候选、扩展和 Trace 记录，不修改 Memory、全局关系或 Current State，也不在线补抽原文。
 
 ## 准备和操作

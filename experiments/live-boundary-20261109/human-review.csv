@@ -1,0 +1,245 @@
+packet_id,reviewer,reviewed_at,support_X,support_Y,person_X,person_Y,time_X,time_Y,missing_fact_X,missing_fact_Y,source_ids,verbatim_quotes,rationale,disagreement
+e00,莫远序,2026-11-09,部分可接受，但有语义风险。,与 X 基本相同；pet_acquisition 比 X 的 pet_ownership 略好，但同样把反事实愿望写成事件并锚定具体日期。,,,,,,,public/conv-42/D5:11,,"e00 — 目标 public/conv-42/D5:11
+可确认事实
+
+主体：Joanna。
+
+可确认：Joanna 自述“最近发现”自己对蟑螂过敏。
+
+逐字依据：D5:11：“I found out recently I'm allergic to cockroaches as well”。
+
+仅喜爱/愿望/反事实/不确定
+
+“I wish I wasn't allergic!”：愿望，不是“她不过敏”的事实。
+
+“I would get two turtles today if I could!”：反事实愿望/假设意图，不是她实际获得两只乌龟。
+
+“who knows if I'll ever get a pet”：不确定信息。
+
+“as well”暗示她还有其他过敏，但原文未说具体对象；不能补成“对乌龟过敏”。
+
+X 核查
+
+部分可接受，但有语义风险。
+
+“Joanna is allergic to cockroaches”可确认，引用 D5:11 支持。
+
+“Joanna wishes she were not allergic”内容可确认，但标成 statement_type: fact、polarity: negative 容易误导；应视为愿望/态度，不是“不过敏”的事实。
+
+“would get two turtles today”被标为 event 且给出 2022-03-18，属于把反事实愿望事件化、日期过度精确；可保留“愿望/假设意图”，不宜当作实际事件日期。
+
+Y 核查
+
+与 X 基本相同；pet_acquisition 比 X 的 pet_ownership 略好，但同样把反事实愿望写成事件并锚定具体日期。
+
+蟑螂过敏、愿望、不确定三项引用 D5:11 均支持。
+
+引用
+
+public/conv-42/D5:11：“I found out recently I'm allergic to cockroaches as well”支持蟑螂过敏。
+
+同源：“I wish I wasn't allergic!”支持愿望。
+
+同源：“I would get two turtles today if I could!”支持反事实。
+
+同源：“who knows if I'll ever get a pet”支持不确定。
+
+待核对
+
+是否把“wishes she were not allergic”作为负向过敏事实。建议不要。
+
+“today”可锚定消息日期，但不应因此写成已发生事件。X/Y 均需降级为愿望/假设。",
+e01,莫远序,2026-11-09,“Nate has turtles”可确认。,“Nate will send Joanna pictures of his turtles”比 X 准确，补出了收件人。,,,,,,,public/conv-42/D5:12,,"e01 — 目标 public/conv-42/D5:12
+可确认事实
+
+主体：Nate。
+
+可确认：Nate 有乌龟；Nate 表示会发乌龟照片给 Joanna。
+
+逐字依据：D5:12：“I'll be sure to send you pics of my turtles”。
+
+仅意图/承诺
+
+“I'll be sure to send you pics”是未来承诺/意图，不是已发送。
+
+“Maybe there are other animals you could consider”是建议，不是事实。
+
+X 核查
+
+“Nate has turtles”可确认。
+
+“Nate will send pictures of his turtles”是意图，但未写“给 Joanna”；原文有“send you”，收件人是 Joanna，X 略缺实体关系。
+
+statement_type: intention可接受，但 content 用“will send”偏确定，建议改为“Nate 说会/打算发”。
+
+Y 核查
+
+“Nate will send Joanna pictures of his turtles”比 X 准确，补出了收件人。
+
+仍建议把“will”明确为承诺/意图，不是已发生事件。
+
+引用 D5:12 支持。
+
+引用
+
+public/conv-42/D5:12：“my turtles”支持 Nate 有乌龟。
+
+同源：“I'll be sure to send you pics of my turtles”支持对 Joanna 的发送意图。
+
+待核对
+
+不要把“会发照片”当作已发送事实。X 的收件人缺失、Y 的“will”措辞需人工确认。",
+e02,莫远序,2026-11-09,“Joanna loves Nate's turtles”内容方向可接受，引用 D8:14 支持“your turtles”。,抽取为空，理由为“只有喜爱表达，无可独立评估事实”。如果规范只抽客观事实，Y 可辩；如果允许抽主观态度，则 Y 漏抽。,,,,,,,public/conv-42/D8:14,,"e02 — 目标 public/conv-42/D8:14
+可确认内容
+
+主体：Joanna；对象：Nate 的乌龟。
+
+Joanna 表达强烈喜爱：“I love your turtles so much!”
+
+这是主观喜爱/态度，不是“乌龟客观上可爱”或独立事实。
+
+X 核查
+
+“Joanna loves Nate's turtles”内容方向可接受，引用 D8:14 支持“your turtles”。
+
+但标为 statement_type: fact 不合适；若 schema 支持态度，应标为 affection/attitude，不是客观 fact。
+
+Y 核查
+
+抽取为空，理由为“只有喜爱表达，无可独立评估事实”。如果规范只抽客观事实，Y 可辩；如果允许抽主观态度，则 Y 漏抽。
+
+从本核查表强调“区分喜爱”看，Y 的谨慎有合理性，但需与 schema 对齐。
+
+引用
+
+public/conv-42/D8:14：“I love your turtles so much!”直接支持喜爱态度。
+
+“your turtles”指 Nate 的乌龟；Nate 拥有乌龟由上下文支持，但目标句本身主要是态度。
+
+待核对
+
+是否允许抽取主观喜爱。若允许，X 应改类型；若不允许，Y 空更合适。两者不能同时作为最终答案。",
+e03,莫远序,2026-11-09,两条记忆基本可确认：修改旧食谱；制作了某物。,“Joanna revised one of her old recipes”可确认。,,,,,,,public/conv-42/D20:2,,"e03 — 目标 public/conv-42/D20:2
+可确认事实
+
+主体：Joanna。
+
+可确认：Joanna 说她刚修改了一个旧食谱，并做了“这个”。
+
+逐字依据：D20:2：“I just revised on of my old recipes and made this!”（原文有拼写错误 on of）。
+
+“Cute turtles!”是主观评价；“Bummer about the setback”是同情/回应，不是独立事实。
+
+X 核查
+
+两条记忆基本可确认：修改旧食谱；制作了某物。
+
+“made something from a revised recipe”是合理推断，但“something”比 Y 的“dish”更稳。
+
+未给具体日期，只保留 just，没有过度精确。
+
+Y 核查
+
+“Joanna revised one of her old recipes”可确认。
+
+“made a dish from a revised recipe”中“dish”是轻度补全；原文只说“made this”，上下文像食物，但未明说“dish”。建议写“made this（上下文指食物/成品）”。
+
+引用
+
+public/conv-42/D20:2：“I just revised on of my old recipes and made this!”支持两条事件。
+
+“Cute turtles!”只支持主观评价，不应作为客观事实。
+
+待核对
+
+是否把“made this”拆为独立事件；可以。
+
+是否把“this”具体化为“dish”；建议不要过度具体。X 较稳，Y 略具体。",
+e04,莫远序,2026-11-09,三条：压力、强劲对手、乌龟让他振作，均有原文支持。,将压力和强劲对手合并，可接受，但 state_value 只写“tournament progress”，未体现“tough competitors”。,,,,,,,public/conv-42/D24:3,,"e04 — 目标 public/conv-42/D24:3
+可确认事实
+
+主体：Nate。
+
+可确认：Nate 说最近因比赛进展/强劲对手感到压力；他的乌龟总能让他振作。
+
+逐字依据：D24:3：“I've been getting so stressed lately because of my tournament progress - tough competitors - but my turtles always cheer me up.”
+
+X 核查
+
+三条：压力、强劲对手、乌龟让他振作，均有原文支持。
+
+“Nate faces tough competitors”可确认是他自述，不是外部核实事实。
+
+“Nate's turtles cheer him up”是主观效果；state_dimension: pet_ownership与“cheer up”不完全匹配，建议拆成拥有乌龟 + 情感支持，或改维度。
+
+“lately”未给具体日期，处理较好。
+
+Y 核查
+
+将压力和强劲对手合并，可接受，但 state_value 只写“tournament progress”，未体现“tough competitors”。
+
+乌龟让他振作一条与 X 相同，维度也略不匹配。
+
+未过度精确时间。
+
+引用
+
+public/conv-42/D24:3 整句支持压力、对手、乌龟安慰。
+
+“my turtles”支持 Nate 有乌龟。
+
+待核对
+
+“tough competitors”是否单独成条；X 和 Y 都可辩。
+
+pet_ownership 与“cheer me up”应如何拆维度，需要 schema 统一。",
+e05,莫远序,2026-11-09,抽取为空，理由为只有感叹/评论，没有独立可评估事实。,抽取“Joanna never knew turtles could be so interesting until she met Nate's turtles”方向可接受，但：,,,,,,,public/conv-42/D25:26,,"e05 — 目标 public/conv-42/D25:26
+可确认内容
+
+主体：Joanna；对象：Nate 的乌龟。
+
+Joanna 说：在遇到 Nate 的乌龟之前，她从不知道乌龟可以这么有趣。
+
+逐字依据：D25:26：“I never knew turtles could be so interesting until I met your turtles.”
+
+这是 Joanna 的主观认知/经历陈述；“turtles are interesting”是她的评价，不是客观事实。
+
+X 核查
+
+抽取为空，理由为只有感叹/评论，没有独立可评估事实。
+
+若规范只抽客观事实，X 可辩；但它漏掉了“Joanna 自述遇到 Nate 的乌龟后改变看法”这一主观认知/经历。若 schema 允许 attitude/experience，X 过严。
+
+Y 核查
+
+抽取“Joanna never knew turtles could be so interesting until she met Nate's turtles”方向可接受，但：
+
+statement_type: fact 不合适，应标为态度/认知/经历。
+
+polarity: negative 语义别扭。
+
+state_value: ""turtles are interesting"" 容易被读成客观事实，应改为“Joanna 觉得乌龟有趣/她对乌龟兴趣改变”。
+
+时间未设，尚可；不要补具体见面时间。
+
+引用
+
+public/conv-42/D25:26 直接支持该主观认知/经历。
+
+“your turtles”指 Nate 的乌龟；可支持 Joanna 声称见过/接触过 Nate 的乌龟，但不应扩成客观事件细节。
+
+待核对
+
+是否允许抽主观认知/态度。若允许，Y 应改类型；若不允许，X 空更一致。两者需二选一。",
+q00,莫远序,2026-11-09,✅ 基本正确,✅ 基本正确,,,,,,,610b0aa9bfd787ff0882a806/conv-43/D21:11;610b0aa9bfd787ff0882a806/conv-43/D21:13,,答案 “Violin” 正确。D21:11 直接说 “I'm learning how to play the violin now”；D21:13 支持已练约四个月。X/Y 解释均支持 2023-12。D21:13 单独不证明乐器，但合并引用可。,
+q01,莫远序,2026-11-09,✅ 正确,✅ 正确,,,,,,,,,无送达来源，X/Y 均 insufficient、不补答案，符合要求。,
+q02,莫远序,2026-11-09,⚠️ 部分正确，Y 更好,✅ 较准确,,,,,,,610b0aa9bfd787ff0882a806/conv-43/D6:3;610b0aa9bfd787ff0882a806/conv-43/D7:1,,原文只支持：John 在 2023-08-11 说自己在 Chicago；2023-08-15 与队友会合。不能支持 8/12–8/15 每天位置。X 答案把“与队友会合”塞进“where”答案，虽状态为 insufficient，但表述不如 Y。Y “Chicago on August 11; no supported location for August 12–15”更准确。另：记忆 John was in Chicago 缺时间锚点，建议锚定 2023-08-11。引用 D6:3、D7:1。,
+q03,莫远序,2026-11-09,✅ 正确,✅ 正确,,,,,,,610b0aa9bfd787ff0882a806/conv-43/D10:9,,原文只支持 Tim 计划“next month”去 Universal Studios，未说具体州。不能按常识补 California/Florida。X/Y 均 insufficient 正确。引用 D10:9。,
+q04,莫远序,2026-11-09,⚠️ 基本正确但需限定时段,⚠️ 同 X,,,,,,,610b0aa9bfd787ff0882a806/conv-43/D18:1,,D18:1 支持 Tim 在 2023-11-16 说“last Friday”去了 UK 的城堡，锚定 2023-11-10，在“16 日前一周”内。答案“At a castle in the UK”可支持 11/10 当天，但不能证明整周都在城堡。建议答案写“At a castle in the UK on 10 Nov (last Friday)”，不要把“整周”说过头。引用 D18:1。,
+q05,莫远序,2026-11-09,✅ 正确,❌ 失败,,,,,,,610b0aa9bfd787ff0882a806/conv-43/D8:12,,X 答案 “Piano” 正确，D8:12 2023-08-21 明确“started learning how to play the piano”。Y outcome: failed，应标失败，不补答案。X 额外记忆“violin for about four months”把约四个月算成 2023-08-06 起始，属计算性精确，建议改区间/近似。,
+q06,莫远序,2026-11-09,⚠️ 日期与计划强度需核对,⚠️ 同 X，且更详细但更强,,,,,,,610b0aa9bfd787ff0882a806/conv-44/D26:20;610b0aa9bfd787ff0882a806/conv-44/D26:25;610b0aa9bfd787ff0882a806/conv-44/D26:29,,关键：2023-10-28 本身是星期六；“the Saturday after October 28”字面是 2023-11-04。原文 D26:20-21 于 10/28 说“Saturday”，可指当天，也可指下一个周六，未明说“next Saturday”。X/Y 都锚定 2023-10-28 并判 sufficient，对字面问题有过度精确风险。内容上：D26:20-21 支持“周六、带零食、探索”；D26:25、D26:29 是 Audrey 的提议/建议（trail、lake、pups），未显示 Andrew 确认，Y 把它们都写成 plan 偏强；X 的“go hiking”也是从 trail 推断。建议：若按字面 11/04，应判 insufficient/不确定；若题目本意是 10/28 当天，则可答“探索/trail、带零食、带狗”，但不要写成全部已确认。,
+q07,莫远序,2026-11-09,✅ 正确,✅ 正确,,,,,,,,,无送达来源，X/Y 均 insufficient，未从 q09 的 Audrey 信息误推 Andrew。,
+q08,莫远序,2026-11-09,❌ X 有问题；Y 较正确,✅ 较正确,,,,,,,610b0aa9bfd787ff0882a806/conv-44/D14:1,,"原文 D14:1 是 2023-08-04 的计划：“My girlfriend, Toby and I are going camping.” 这只是计划，不是已完成；且问“where”，原文只给“camping”，没有地点。X 判 sufficient 并答“Camping with his girlfriend Toby”不妥：Toby 在后文语境中更像狗名，不是女友名；X 有实体归属风险。Y 判 insufficient、指出只有计划、无目的地，较稳。引用 D14:1。",
+q09,莫远序,2026-11-09,✅ 正确,✅ 正确,,,,,,,610b0aa9bfd787ff0882a806/conv-44/D6:4;610b0aa9bfd787ff0882a806/conv-44/D6:2,,答案“Positive reinforcement training class”正确。D6:4 直接支持类型；D6:2 支持 2023-05-11 报名、workshop 在“next month”。X 多引 D6:2 不错误，但类型主要靠 D6:4。,
+q10,莫远序,2026-11-09,✅ 正确,❌ 失败,,,,,,,610b0aa9bfd787ff0882a806/conv-44/D1:12,,"问题问 2023 年 3 月是否有宠物狗。D1:12 2023-03-27：“No, no pets right now.” 支持“No”。后续 Toby、领养、家庭狗都在 3 月后或非 Andrew 本人，不能反推 3 月有狗。X 答案正确；Y failed 应标失败。X 记忆列表很长，含后续事实，但答案引用 D1:12 足够。",
+q11,莫远序,2026-11-09,❌ 字面不正确,❌ 字面不正确,,,,,,,610b0aa9bfd787ff0882a806/conv-44/D13:1,,关键日期：2023-07-24 是星期一；“Monday before July 24”字面是 2023-07-17。原文 D13:1 于 2023-07-27 说“on Monday”，锚定的是 2023-07-24，不是 7/17。X/Y 都答“volunteered at a pet shelter”并锚定 7/24，若题目本意问 7/24 则答案正确；按字面“7/24 之前的周一”则证据不足，应判 insufficient/不确定。引用 D13:1。,

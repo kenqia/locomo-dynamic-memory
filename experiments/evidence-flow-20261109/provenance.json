@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-09",
+  "implementation_commit": "334289dd82249cb418558ae9f7dae1e0b70b67b1",
+  "baseline_commit": "d3c4ae10fb73d70eabea42f5333e721168574190",
+  "model_calls": 0,
+  "files": {
+    "audit.json": "95ab517d49f8aac19f91d3d90c365a6faecd9b897fe49e0d1d41f852e76b9af2",
+    "time-scope-replay.json": "e5ea89bd08806c9f6610efb8ec383d62b5b3749eb1028041807164bfb1543198",
+    "author-review.json": "235e6dfcb661e4019e77dc6943d2ce7b9779b5a5675b82f3658a796a7931540d",
+    "clock-observation.json": "3a99cb8366b2c12457dae04a377879ed6e7186cb676c3bfbdff08029b84359b7",
+    "README.md": "beb7302ce0543040194f82a380ac09ee591287ad268e0f00b01134e45939e46f",
+    "validation.md": "9ec579c31979b63cf10f36d7faa116ee55053d1d4a43418daf594234f9d592ed",
+    "offline-tests.json": "92328096794a0847c69749ac035bb138ca9ed404bccae92f0697b1e98bcb3f12"
+  },
+  "code_files": {
+    "src/locomo_memory/evidence_flow.py": "22828f52d61c089b02974be9793c17285c1cd92fe9c646ff1dfdae790f10e00f",
+    "src/locomo_memory/temporal.py": "40e154b06bf558e10db2270ad6a9e4487b768fee4cd2d5f910f7b221fbadd7c9",
+    "src/locomo_memory/extraction_window.py": "242c2332409bc2737eba638a6c7aa3286e8990204ae25cb56fcbac0b4fb4bc40",
+    "tools/m5/evidence_flow_audit.py": "06a9a21914955ca8b3ebe9436eaf0572743b6327d425df1fd2b219daaa2f831a",
+    "tools/m5/time_scope_replay.py": "e7fa47482de3d304b17aadf974f082f772f0b9f3358b56618c3020a9b25e5ff4"
+  },
+  "supplement_pdf": {
+    "path": "docs/supplement/supplement.pdf",
+    "pages": 38,
+    "sha256": "e72a074cd73550911fc6a310a6725061fa8d8c72b3aae8adb49a99e871b404da"
+  },
+  "human_applicability_review": "pending",
+  "qa_improvement": "not_measured",
+  "test_clock_fixture_sha256": "60ee8dac5dafa369eb03925174342d51c4ec4705792d11968bd4d13213d84b42",
+  "test_clock_scope": "Offline pytest only; live_model excluded; production timestamps unchanged"
+}

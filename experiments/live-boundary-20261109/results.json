@@ -1,0 +1,663 @@
+{
+  "scope": "12 exposed temporal questions; fixed retrieval; paired live regression only",
+  "questions": 12,
+  "ordinary": 10,
+  "adversarial": 2,
+  "arms": {
+    "baseline": {
+      "succeeded": 11,
+      "ordinary_f1": 0.5173809523809524,
+      "ordinary_em": 0.1,
+      "adversarial_refusal": 1.0
+    },
+    "candidate": {
+      "succeeded": 11,
+      "ordinary_f1": 0.4563144045496987,
+      "ordinary_em": 0.2,
+      "adversarial_refusal": 1.0
+    }
+  },
+  "paired": {
+    "mean": -0.06106654783125372,
+    "bootstrap95": [
+      -0.3138755199049316,
+      0.23333333333333334
+    ],
+    "improved": 2,
+    "regressed": 3,
+    "unchanged": 5,
+    "denominator": 10,
+    "scope": "exploratory bootstrap; 12 preselected exposed temporal questions; ordinary subset only"
+  },
+  "budget": {
+    "physical_requests": 62,
+    "reserved_usd": "3.5863482",
+    "usage_unknown_requests": 1,
+    "reported_prompt_tokens": 1150920,
+    "reported_completion_tokens": 51849,
+    "reported_usage_peak_miss_upper_usd": "0.4074948",
+    "actual_invoice": "not_accessed",
+    "unknown_reservations_retained": true
+  },
+  "model_calls_scope": "generation plus AI review",
+  "human_review": "pending_user",
+  "rows": [
+    {
+      "question_id": "conv-43:qa:147",
+      "question": "What instrument is Tim learning to play in December 2023?",
+      "category": 4,
+      "reference_answer": "violin",
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "Violin",
+            "citations": [
+              {
+                "memory_id": "d4f3700152f8012fdc053006",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D21:11"
+                ]
+              },
+              {
+                "memory_id": "d00210c6602dbe3c140d64a5",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D21:13"
+                ]
+              }
+            ],
+            "explanation": "Tim said on 6 December 2023 that he is learning to play the violin and had been playing for about four months, which supports December 2023."
+          },
+          "score": 1.0,
+          "em": 1.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 9.145058148999851,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "Violin",
+            "citations": [
+              {
+                "memory_id": "d4f3700152f8012fdc053006",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D21:11"
+                ]
+              },
+              {
+                "memory_id": "d00210c6602dbe3c140d64a5",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D21:13"
+                ]
+              }
+            ],
+            "explanation": "Tim stated on 6 December 2023 that he is learning to play the violin and has been playing for about four months, which places the activity within December 2023."
+          },
+          "score": 1.0,
+          "em": 1.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 10.071252762999393,
+          "error": null
+        }
+      }
+    },
+    {
+      "question_id": "conv-43:qa:195",
+      "question": "What new activity has John started learning in August 2023?",
+      "category": 5,
+      "reference_answer": null,
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "insufficient",
+            "answer": "No information available.",
+            "citations": [],
+            "explanation": "No delivered memories or raw sources were supplied, so there is no evidence about any activity John started learning in August 2023."
+          },
+          "score": 1.0,
+          "em": null,
+          "delivered_source_recall": 0.0,
+          "elapsed_seconds": 8.419520758000544,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "insufficient",
+            "answer": "No information available.",
+            "citations": [],
+            "explanation": "No delivered memories or sources were supplied, so no activity John started learning in August 2023 can be identified."
+          },
+          "score": 1.0,
+          "em": null,
+          "delivered_source_recall": 0.0,
+          "elapsed_seconds": 8.970083930000328,
+          "error": null
+        }
+      }
+    },
+    {
+      "question_id": "conv-43:qa:24",
+      "question": "Where was John between August 11 and August 15 2023?",
+      "category": 2,
+      "reference_answer": "Chicago",
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "insufficient",
+            "answer": "Chicago; and he met back up with his teammates on August 15.",
+            "citations": [
+              {
+                "memory_id": "a097b4ff32c5a1f59e654608",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D6:3"
+                ]
+              },
+              {
+                "memory_id": "b3772c101fc83b54a8b58335",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D7:1"
+                ]
+              }
+            ],
+            "explanation": "John was in Chicago as of the 11 August 2023 message, and he says he met back up with his teammates on the 15th after his trip. The sources do not establish where he was on each day between August 11 and August 15, so the full period is not covered."
+          },
+          "score": 0.16666666666666666,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 8.368171533999885,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "insufficient",
+            "answer": "Chicago on August 11; no supported location for August 12–15.",
+            "citations": [
+              {
+                "memory_id": "a097b4ff32c5a1f59e654608",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D6:3"
+                ]
+              },
+              {
+                "memory_id": "b3772c101fc83b54a8b58335",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D7:1"
+                ]
+              }
+            ],
+            "explanation": "John reported on August 11, 2023 that he was in Chicago. He also reported meeting back up with his teammates on August 15 after his trip, but that establishes a reunion, not a location for August 12–15. No delivered evidence states where John was on August 12, 13, 14, or 15."
+          },
+          "score": 0.18181818181818182,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 11.49726744200052,
+          "error": null
+        }
+      }
+    },
+    {
+      "question_id": "conv-43:qa:32",
+      "question": "Which US states might Tim be in during September 2023 based on his plans of visiting Universal Studios?",
+      "category": 3,
+      "reference_answer": "California or Florida",
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "insufficient",
+            "answer": "No information available.",
+            "citations": [
+              {
+                "memory_id": "bc2eca4856a79ad31bdda641",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D10:9"
+                ]
+              }
+            ],
+            "explanation": "Tim's plan to visit Universal Studios in September 2023 (next month relative to 31 August 2023) is supported, but the source does not specify which Universal Studios location or US state, so no state can be identified."
+          },
+          "score": 0.0,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 8.418534127000385,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "insufficient",
+            "answer": "No information available.",
+            "citations": [
+              {
+                "memory_id": "bc2eca4856a79ad31bdda641",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D10:9"
+                ]
+              }
+            ],
+            "explanation": "Tim's plan to visit Universal Studios 'next month' (September 2023) is supported, but the source does not specify which Universal Studios location or US state, so no state can be identified."
+          },
+          "score": 0.0,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 8.648454544000742,
+          "error": null
+        }
+      }
+    },
+    {
+      "question_id": "conv-43:qa:46",
+      "question": "Where was Tim in the week before 16 November 2023?",
+      "category": 2,
+      "reference_answer": "UK",
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "At a castle in the UK.",
+            "citations": [
+              {
+                "memory_id": "29e8e031cf5ff0c2c1a7f439",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D18:1"
+                ]
+              }
+            ],
+            "explanation": "Tim said he went to a castle during his UK trip \"last Friday,\" which anchors to 2023-11-10, within the week before 16 November 2023. This is the only supported location for that week."
+          },
+          "score": 0.4,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 8.910425854000096,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "At a castle in the UK.",
+            "citations": [
+              {
+                "memory_id": "29e8e031cf5ff0c2c1a7f439",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D18:1"
+                ]
+              }
+            ],
+            "explanation": "Tim reported on 16 November 2023 that he went to a castle during his UK trip \"last Friday,\" which anchors to 10 November 2023, within the week before 16 November 2023."
+          },
+          "score": 0.4,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 8.833329034000599,
+          "error": null
+        }
+      }
+    },
+    {
+      "question_id": "conv-43:qa:95",
+      "question": "What new activity has Tim started learning in August 2023?",
+      "category": 4,
+      "reference_answer": "play the piano",
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "Piano",
+            "citations": [
+              {
+                "memory_id": "c75553c089d27a807d7b7027",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-43/D8:12"
+                ]
+              }
+            ],
+            "explanation": "Tim said on 21 August 2023 that he had started learning to play the piano. The violin is a separate instrument he was learning as of December 2023, not the August 2023 new activity."
+          },
+          "score": 0.6666666666666666,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 8.739173877999747,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "failed",
+          "answer": null,
+          "score": 0,
+          "em": null,
+          "delivered_source_recall": 0,
+          "elapsed_seconds": 0.5934618339997542,
+          "error": {
+            "code": "model_http_error",
+            "stage": "resolve"
+          }
+        }
+      }
+    },
+    {
+      "question_id": "conv-44:qa:115",
+      "question": "What did Andrew and Audrey plan to do on the Saturday after October 28, 2023?",
+      "category": 4,
+      "reference_answer": "Go hiking",
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "Go hiking; Audrey planned to bring snacks.",
+            "citations": [
+              {
+                "memory_id": "09ab9bd1dcc9103f20bdabec",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D26:20",
+                  "610b0aa9bfd787ff0882a806/conv-44/D26:21"
+                ]
+              },
+              {
+                "memory_id": "ef03f629fdc4eb4f0a7ac085",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D26:21"
+                ]
+              }
+            ],
+            "explanation": "On 28 October 2023 (a Saturday), Andrew proposed Saturday and Audrey agreed, so the plan was for that same day; Audrey also planned to bring snacks."
+          },
+          "score": 0.4444444444444444,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 9.188142549000077,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "Go hiking on Saturday, bringing snacks, checking out the trail, and trying the trail by the lake with the dogs.",
+            "citations": [
+              {
+                "memory_id": "09ab9bd1dcc9103f20bdabec",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D26:20",
+                  "610b0aa9bfd787ff0882a806/conv-44/D26:21"
+                ]
+              },
+              {
+                "memory_id": "ef03f629fdc4eb4f0a7ac085",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D26:21"
+                ]
+              },
+              {
+                "memory_id": "3ea0695cde756411a609099a",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D26:25"
+                ]
+              },
+              {
+                "memory_id": "1d34c8b42e2bbb65dd257613",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D26:29"
+                ]
+              }
+            ],
+            "explanation": "The plan was made on 28 October 2023, a Saturday, so 'Saturday' refers to that same day. Andrew proposed grabbing snacks and exploring; Audrey agreed to bring snacks, check out the trail, and try the lakeside trail with the dogs."
+          },
+          "score": 0.23529411764705882,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 11.671213904999604,
+          "error": null
+        }
+      }
+    },
+    {
+      "question_id": "conv-44:qa:128",
+      "question": "What type of training was the workshop Andrew signed up for in May 2023?",
+      "category": 5,
+      "reference_answer": null,
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "insufficient",
+            "answer": "No information available.",
+            "citations": [],
+            "explanation": "No delivered memories or raw sources were supplied, so the type of training for Andrew's May 2023 workshop cannot be determined."
+          },
+          "score": 1.0,
+          "em": null,
+          "delivered_source_recall": 0.0,
+          "elapsed_seconds": 7.274562859000071,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "insufficient",
+            "answer": "No information available.",
+            "citations": [],
+            "explanation": "No delivered memories or sources were supplied, so the type of training for the workshop Andrew signed up for in May 2023 cannot be determined."
+          },
+          "score": 1.0,
+          "em": null,
+          "delivered_source_recall": 0.0,
+          "elapsed_seconds": 7.559325569999601,
+          "error": null
+        }
+      }
+    },
+    {
+      "question_id": "conv-44:qa:22",
+      "question": "Where did Andrew go during the first weekend of August 2023?",
+      "category": 2,
+      "reference_answer": "camping with girlfriend",
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "Camping with his girlfriend Toby.",
+            "citations": [
+              {
+                "memory_id": "1bdc7a3834a5ba7593128ab2",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D14:1"
+                ]
+              }
+            ],
+            "explanation": "On 4 August 2023 (Friday), Andrew said he and Toby were going camping that weekend, i.e., 5-6 August 2023. This is a stated plan, not a confirmed report of the trip."
+          },
+          "score": 0.75,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 9.288733793000574,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "insufficient",
+            "answer": "No information available.",
+            "citations": [
+              {
+                "memory_id": "1bdc7a3834a5ba7593128ab2",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D14:1"
+                ]
+              }
+            ],
+            "explanation": "The only delivered evidence is a plan, not a completed trip: on 4 August 2023 Andrew said he and his girlfriend Toby were going camping that weekend. A plan does not establish where he actually went, and no destination is given. The first weekend of August 2023 (5-6 August) is within the requested month, but the requested fact (where Andrew went) is unsupported."
+          },
+          "score": 0.0,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 10.720857735000209,
+          "error": null
+        }
+      }
+    },
+    {
+      "question_id": "conv-44:qa:70",
+      "question": "What type of training was the workshop Audrey signed up for in May 2023?",
+      "category": 4,
+      "reference_answer": "Positive reinforcement training",
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "Positive reinforcement training class.",
+            "citations": [
+              {
+                "memory_id": "49375442b7ff3f6ae8155ee1",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D6:4"
+                ]
+              }
+            ],
+            "explanation": "Audrey described the workshop she signed up for as a positive reinforcement training class, per the 11 May 2023 source."
+          },
+          "score": 0.8571428571428571,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 8.11202485800004,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "Positive reinforcement training class.",
+            "citations": [
+              {
+                "memory_id": "49375442b7ff3f6ae8155ee1",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D6:4"
+                ]
+              },
+              {
+                "memory_id": "03a9c99d79f2b2d8fd449315",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D6:2"
+                ]
+              }
+            ],
+            "explanation": "Audrey described the workshop she signed up for as a positive reinforcement training class, focused on bonding with her pet. The sign-up was reported on 11 May 2023; the workshop itself was described as occurring 'next month.'"
+          },
+          "score": 0.8571428571428571,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 8.550565977999213,
+          "error": null
+        }
+      }
+    },
+    {
+      "question_id": "conv-44:qa:8",
+      "question": "Did Andrew have a pet dog during March 2023?",
+      "category": 2,
+      "reference_answer": "No",
+      "arms": {
+        "baseline": {
+          "outcome": "failed",
+          "answer": null,
+          "score": 0,
+          "em": null,
+          "delivered_source_recall": 0,
+          "elapsed_seconds": 18.97336058200017,
+          "error": {
+            "code": "invalid_output",
+            "stage": "resolve"
+          }
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "No.",
+            "citations": [
+              {
+                "memory_id": "bf21ec34934cb0b58effa83f",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D1:12"
+                ]
+              }
+            ],
+            "explanation": "On 27 March 2023, within the requested March 2023 interval, Andrew stated he had no pets right now. Later reports of a dog (Toby) and adoptions are from after March 2023 and do not establish dog ownership during that month; the April 2023 statement was only an intention to get a dog."
+          },
+          "score": 1.0,
+          "em": 1.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 21.405446126000243,
+          "error": null
+        }
+      }
+    },
+    {
+      "question_id": "conv-44:qa:81",
+      "question": "What did Andrew and his GF do on the Monday before July 24, 2023?",
+      "category": 4,
+      "reference_answer": "volunteered at a pet shelter",
+      "arms": {
+        "baseline": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "They volunteered at a pet shelter.",
+            "citations": [
+              {
+                "memory_id": "53e578254a3552107aab4cc5",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D13:1"
+                ]
+              }
+            ],
+            "explanation": "Andrew said he and his girlfriend volunteered at a pet shelter on Monday; the source session on Thursday 27 July 2023 anchors 'on Monday' to 24 July 2023."
+          },
+          "score": 0.8888888888888888,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 9.891011593999792,
+          "error": null
+        },
+        "candidate": {
+          "outcome": "succeeded",
+          "answer": {
+            "status": "sufficient",
+            "answer": "They volunteered at a pet shelter.",
+            "citations": [
+              {
+                "memory_id": "53e578254a3552107aab4cc5",
+                "source_ids": [
+                  "610b0aa9bfd787ff0882a806/conv-44/D13:1"
+                ]
+              }
+            ],
+            "explanation": "Andrew reported on 27 July 2023 that he and his girlfriend volunteered at a pet shelter 'on Monday,' i.e., 24 July 2023, the Monday before the requested date."
+          },
+          "score": 0.8888888888888888,
+          "em": 0.0,
+          "delivered_source_recall": 1.0,
+          "elapsed_seconds": 10.379578889000186,
+          "error": null
+        }
+      }
+    }
+  ],
+  "common_successful_ordinary": {
+    "denominator": 8,
+    "arms": {
+      "baseline": 0.5633928571428571,
+      "candidate": 0.4453930056871233
+    }
+  }
+}
