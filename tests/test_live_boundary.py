@@ -73,3 +73,18 @@ def test_changed_blinded_review_packet_blocks_scoring_before_gold(tmp_path):
     with pytest.raises(ValueError,match='review_not_frozen_or_changed'):
         score(private,tmp_path/'public')
     assert not (tmp_path/'public').exists()
+
+
+def test_source_empty_refusal_review_does_not_require_an_impossible_quote():
+    import httpx
+    from tools.m5.live_boundary_worker import review_schema
+    from test_builds import completion
+    packet=dict(packet_id='q-empty',sources=[])
+    judgments=[dict(packet_id='q-empty',variant=v,semantic_support='supported',
+        person_attribution='uncertain',temporal_precision='not_applicable',
+        missing_supported_fact='no',reason='No supplied evidence; refusal makes no factual assertion.',quotes=[])
+        for v in ('X','Y')]
+    model=DeepSeekModel(Settings(model_retries=0),api_key='synthetic-test-key',
+        transport=httpx.MockTransport(lambda request:completion({'judgments':judgments})))
+    result=model.generate('boundary_review',{'packets':[packet]},review_schema(),context={'packets':[packet]})
+    assert len(result.value.judgments)==2

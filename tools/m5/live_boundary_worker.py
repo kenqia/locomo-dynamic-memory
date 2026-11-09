@@ -94,7 +94,7 @@ def review_schema():
                 raise ValueError('review_scope_incomplete')
             sources = {p['packet_id']:{s['source_id']:s['text'] for s in p['sources']} for p in context['packets']}
             for j in self.judgments:
-                if j.semantic_support!='not_executed' and not j.quotes:
+                if j.semantic_support!='not_executed' and sources[j.packet_id] and not j.quotes:
                     raise ValueError('review_quote_required')
                 if any(q.source_id not in sources[j.packet_id] or q.quote not in sources[j.packet_id][q.source_id] for q in j.quotes):
                     raise ValueError('review_quote_not_verbatim')
