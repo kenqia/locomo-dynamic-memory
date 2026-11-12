@@ -1,0 +1,272 @@
+[
+  {
+    "url": "https://app.notion.com/411583f9440681f59b01e3afa00e70e3",
+    "编号": "M5-ACC-01",
+    "任务": "确认 M5 页数、命名、渠道与展示要求",
+    "状态": "待评估",
+    "验收通过": "__NO__",
+    "阻塞": "__YES__",
+    "Issue 链接": null,
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681abad02d3eb51950a41",
+    "编号": "M5-ACC-02",
+    "任务": "完成团队非作者验收、彩排和最终 RC 冻结",
+    "状态": "待评估",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": null,
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f94406810ca453dffd18026949",
+    "编号": "M5-ARCH-01",
+    "任务": "[v2][6d][ARCH-01] 事件/时间/状态 Schema 与冻结边界案例",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/30",
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/42"
+  },
+  {
+    "url": "https://app.notion.com/411583f94406819ab88ac35bf92523cf",
+    "编号": "M5-ARCH-02",
+    "任务": "[v2][6d][ARCH-02] 确定性 Event/Time/State Sidecar",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/31",
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/42"
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681a99f23e882bdb9bb67",
+    "编号": "M5-ARCH-03",
+    "任务": "[v2][6d][ARCH-03] opt-in入口、开关/回滚、最小消融",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/32",
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/42"
+  },
+  {
+    "url": "https://app.notion.com/411583f94406815aa3baf0003e19a2f9",
+    "编号": "M5-ARCH-04",
+    "任务": "[v2][6d][ARCH-04] 离线回归、ADR、可展示样例、PR",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/33",
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/42"
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681898e90e4b9e8adfb9f",
+    "编号": "M5-CORE-01",
+    "任务": "复核已合并个人核心 Release 的版本与公开验收",
+    "状态": "待复核",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": null,
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/40"
+  },
+  {
+    "url": "https://app.notion.com/411583f94406819a8fc5eecc6898cc8b",
+    "编号": "M5-CORE-02",
+    "任务": "确认六份 MemoryExport v2 的受控交付渠道",
+    "状态": "待复核",
+    "验收通过": "__NO__",
+    "阻塞": "__YES__",
+    "Issue 链接": null,
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f944068107a1d8f5c057f3859e",
+    "编号": "M5-CORE-03",
+    "任务": "核对 M5 实验指标、完整分母与结论",
+    "状态": "待复核",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": null,
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681ebbf65f7dcfa71955f",
+    "编号": "M5-CORE-04",
+    "任务": "核对 Bonus A–D 的采用边界与演示措辞",
+    "状态": "待复核",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": null,
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681abbf42d266fe1c20c8",
+    "编号": "M5-CORE-05",
+    "任务": "复核 37 页研究附录、勘误与 E0–E25 索引",
+    "状态": "待复核",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": null,
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681ab8a10d0e9865ef190",
+    "编号": "M5-CORE-06",
+    "任务": "由非作者复现普通应用和零凭据 Replay",
+    "状态": "待复核",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": null,
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681a2912bc358b19767f2",
+    "编号": "M5-CORE-07",
+    "任务": "核对归档、公开包和受控材料的版本清单",
+    "状态": "待复核",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": null,
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f94406813bb486ec3c6ce2c809",
+    "编号": "M5-DEL-01",
+    "任务": "[v2][6d][DEL-01] 研究叙事与指标来源台账",
+    "状态": "待评估",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/34",
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f94406816da885cdbc558f2d16",
+    "编号": "M5-DEL-02",
+    "任务": "[v2][6d][DEL-02] 12–15页正式可编辑PPTX和PDF初稿",
+    "状态": "进行中",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/35",
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681af805ae4ace80fda5e",
+    "编号": "M5-DEL-03",
+    "任务": "[v2][6d][DEL-03] 3–5分钟MP4实录、字幕/分镜/操作脚本",
+    "状态": "待评估",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/36",
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f944068165b3e4d21db0b25a9b",
+    "编号": "M5-DEL-04",
+    "任务": "[v2][6d][DEL-04] v2技术报告、图示、交付包、答辩Q&A",
+    "状态": "进行中",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/37",
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681de8dfde6b8e46712f0",
+    "编号": "M5-INT-01",
+    "任务": "将 Product PR #39 整合到个人核心并复验",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": null,
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/41"
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681f6848de6e5e9f6ae95",
+    "编号": "M5-INT-02",
+    "任务": "决定 Sidecar 修复后接入或从最终范围排除",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": null,
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/42"
+  },
+  {
+    "url": "https://app.notion.com/411583f944068138acadf38c9b5dc2e1",
+    "编号": "M5-PROD-01",
+    "任务": "[v2][6d][PROD-01] 统一信息架构、Overview 和离线启动",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/26",
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/41"
+  },
+  {
+    "url": "https://app.notion.com/411583f944068159b5acc2ec6321897e",
+    "编号": "M5-PROD-02",
+    "任务": "[v2][6d][PROD-02] Memory Timeline、Query Trace 与来源跳转",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/27",
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/41"
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681c09cd5ce008ba007ea",
+    "编号": "M5-PROD-03",
+    "任务": "[v2][6d][PROD-03] 真实实验比较页和离线 Demo Fixture",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/28",
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/41"
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681c49114f120f423fcdf",
+    "编号": "M5-PROD-04",
+    "任务": "[v2][6d][PROD-04] 应用/浏览器 E2E、PR、交付录像素材",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/29",
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/41"
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681f8ae07f74744620893",
+    "编号": "M5-SUB-01",
+    "任务": "负责人确认后提交 M5 并登记真实回执",
+    "状态": "待开始",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": null,
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f944068136b2e0d979edf8cd94",
+    "编号": "M5-TRACK-ARCHITECTURE",
+    "任务": "[v2][Architecture] 6-day Temporal Event Sidecar opt-in MVP",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/24",
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/42"
+  },
+  {
+    "url": "https://app.notion.com/411583f9440681359779f4b416a55c55",
+    "编号": "M5-TRACK-DELIVERY",
+    "任务": "[v2][Delivery] 6-day Presentation, Technical Report & Demo Release",
+    "状态": "进行中",
+    "验收通过": "__NO__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/25",
+    "PR 链接": null
+  },
+  {
+    "url": "https://app.notion.com/411583f94406811a9bd7cde5fedc58b1",
+    "编号": "M5-TRACK-PRODUCT",
+    "任务": "[v2][Product] 6-day Research Console + Evidence Demo",
+    "状态": "已完成",
+    "验收通过": "__YES__",
+    "阻塞": "__NO__",
+    "Issue 链接": "https://github.com/kenqia/locomo-dynamic-memory/issues/23",
+    "PR 链接": "https://github.com/kenqia/locomo-dynamic-memory/pull/41"
+  }
+]

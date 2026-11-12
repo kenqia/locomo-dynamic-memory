@@ -1,0 +1,7 @@
+{
+  "compileall": "PASS",
+  "browser_runner_shell_syntax": "PASS",
+  "whitespace_diff_against_origin_main": "PASS",
+  "application_diff_against_origin_main": "empty",
+  "new_runtime_dependencies": false
+}

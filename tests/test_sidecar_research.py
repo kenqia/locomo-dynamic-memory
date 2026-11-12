@@ -107,11 +107,12 @@ def test_real_api_trace_answer_budget_and_storage_preserved(settings,sample):
     controlled=DeepSeekModel(settings,api_key='synthetic-test-key',transport=httpx.MockTransport(counted))
     with TestClient(create_app(settings,model=controlled,embedder=ControlledEmbedder())) as client:
         dataset_id,build_id=complete_build(client,sample)
-        response=client.post('/queries',json={'dataset_id':dataset_id,'sample_id':'conv-a',
+        response=client.post('/queries',json={'strategy':'dynamic','dataset_id':dataset_id,'sample_id':'conv-a',
             'question':'Where does Alex live?'})
         assert response.status_code==201
         trace=response.json();before=canonical_bytes(trace)
         assert 'Rome' in trace['answer']['answer']
+        assert trace['resolution']['status']=='sufficient'
         state=client.get(f'/builds/{build_id}/current-state').json()
         relations=client.get(f'/builds/{build_id}/relations').json()
         exported=client.get(f'/builds/{build_id}/export').json()

@@ -1,0 +1,17 @@
+digraph G { rankdir=TB; graph [fontname="Noto Sans CJK SC", fontsize=11, nodesep=0.25, ranksep=0.32, pad=0.2];
+ node [shape=box, style="rounded,filled", fillcolor="#EEF2F7", color="#4C6A92", fontname="Noto Sans CJK SC", fontsize=11];
+ edge [color="#4C6A92", fontname="Noto Sans CJK SC", fontsize=9];
+ subgraph cluster_ui { label="Web（Streamlit，只经 HTTP）"; color="#BBBBBB"; style=rounded;
+   C [label="Product Console\nOverview · Memory · Query\nExperiments · Demo（只读）"]; W [label="五阶段工作流 ui.py\n导入 · 构建 · 问答 · 评测"]; }
+ A [label="FastAPI\napi.py", fillcolor="#DDE6F2"];
+ subgraph cluster_core { label="业务模块（src/locomo_memory）"; color="#BBBBBB"; style=rounded;
+   I [label="Import\nSourceTurn"]; B [label="Atomic Memory Build\n抽取 · 校验 · 检查点"]; X [label="Index\nBM25 + MiniLM(384) + RRF"];
+   R [label="MemoryRelation\n+ CurrentState 投影"]; V [label="完整 Build 版本\n（原子发布）", fillcolor="#DDE6F2"];
+   H [label="Hybrid（默认）\n检索 + 历史扩展 → Answer"]; D [label="Dynamic（显式）\n+ Resolve 有效证据", fillcolor="#F6E3D4", color="#C8743A"];
+   Q [label="Answer + Citations\n+ 四阶段 Trace"]; E [label="Evaluation\n冻结 Run / 报告"]; X2 [label="MemoryExport v2\nJSON + Schema"]; }
+ S [label="SQLite", shape=cylinder]; M [label="DeepSeek deepseek-flash\n（抽取 · 关系 · 分析 · 解析 · 回答）", shape=box, style="rounded,dashed"];
+ F [label="demo_fixture/product-v1\n合成快照（SHA 校验）", shape=note]; RP [label="离线 Replay\n0 模型调用 · 无数据库", fillcolor="#E8F3E8", color="#5B8C5A"];
+ C -> A; W -> A; A -> I -> B -> X -> V; B -> R -> V; V -> H -> Q; V -> D -> Q; V -> E; V -> X2;
+ A -> S [style=dashed, arrowhead=none]; B -> M [style=dashed]; D -> M [style=dashed]; H -> M [style=dashed, label="Answer"];
+ F -> RP; RP -> C [label="ReplayStore 只读 GET（不经 FastAPI）"];
+}
